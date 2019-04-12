@@ -16,7 +16,7 @@ Drupal предоставляет обширный API для разработч
 ## См. также
 
 - {Drupal 8}(drupal:8)
-- {Философия Drupal}([)the-drupal-way)
+- {Философия Drupal}(the-drupal-way)
 - {Нормы поведения}(code-of-conduct)
 - {Часто задаваемые вопросы}(faq)
 
