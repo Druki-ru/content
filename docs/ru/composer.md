@@ -45,6 +45,10 @@ composer remove drupal/paragraphs
 composer update --with-dependencies -o
 ```
 
+## См. также
+
+- {Drush — коммандная утилита для управления Drupal}(drush)
+
 ## Ссылки
 
 - [Официальный сайт Composer](https://getcomposer.org/) (англ)
