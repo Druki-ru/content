@@ -1,6 +1,6 @@
 ---
 id: installation
-title: Установка Drupal 8
+title: Установка
 core: 8
 category-area: Первое знакомство
 category-order: 1
