@@ -19,6 +19,19 @@ path: /docs/8
 - Шаблонизатор PHPTemplate был заменен на Twig.
 - И многие другие изменения.
 
+## См. также
+
+- {Установка Drupal 8}(installation:8)
+- {Административный интерфейс}(admin:8)
+- {Модули}(modules:8)
+- {Темы оформления}(themes:8)
+- {Дистрибутивы}(distributions:8)
+- {Плагины}(plugins:8)
+- {Сервисы}(services:8)
+- {Хуки}(hooks:8)
+- {Контроллеры}(controllers:8)
+- {Libraries API}(libraries-api:8)
+
 ## Ссылки
 
 - [Создайте нечто невероятное](https://www.drupal.org/ru/8), официальное промо Drupal 8.
