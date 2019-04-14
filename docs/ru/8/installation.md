@@ -1,6 +1,6 @@
 ---
 id: installation
-title: Установка
+title: Руководство по установке
 core: 8
 category-area: Первое знакомство
 category-order: 1
