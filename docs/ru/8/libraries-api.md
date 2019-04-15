@@ -65,6 +65,125 @@ cuddly-slider:
 
 В дальнейшем, другие библиотеки также смогут использовать вашу библиотеку `[module-theme-name]/cuddly-slider` в качестве зависимости.
 
+## Свойства библиотек
+
+Вы можете добавлять свойства к своим библиотекам. Распологаются они после пути до файла в фигурных скобках `{}`. Все ассеты должны иметь данное значение, как минимум пустой маппинг, сами же свойства являются опциональными.
+
+### Свойства ассетов
+
+#### attributes
+
+- **Применимо**: CSS и JS
+
+Позволяет задать аттрибуты к тегу подключения.
+
+Например:
+
+```yaml
+cuddly-slider:
+  version: 1.x
+  css:
+    layout:
+      css/cuddly-slider-layout.css: {
+        attributes: {
+          crossorigin: anonymous
+        }
+      }
+```
+
+В результате добавит на страницу:
+
+```html
+<link rel="stylesheet" href="/modules/custom/MODULENAME/css/cuddly-slider-layout.css" crossorigin="anonymous">
+```
+
+#### browsers
+
+- **Применимо**: CSS и JS
+
+Позволяет задать условия, для каких браузеров данный ассет будет подключен.
+
+Например:
+
+```yaml
+cuddly-slider:
+  version: 1.x
+  css:
+    layout:
+      css/cuddly-slider-layout.css: {
+        browsers: {
+          IE: 'lte IE 9'
+          '!IE': false
+        }
+      }
+```
+
+В результате добавит на страницу:
+
+```html
+<!--[if lte IE 9]>
+<script src="/modules/custom/MODULENAME/css/cuddly-slider-layout.css"></script>
+<![endif]-->
+```
+
+#### media
+
+- **Применимо**: CSS
+- **По умолчанию**: `all`
+
+Позволяет задать медиа тип, для которого загружать данный ассет.
+
+Например:
+
+```yaml
+cuddly-slider:
+  version: 1.x
+  css:
+    layout:
+      css/cuddly-slider-layout.css: {
+        media: print
+      }
+```
+
+В результате добавит на страницу:
+
+```html
+<link rel="stylesheet" href="/modules/custom/MODULENAME/css/cuddly-slider-layout.css" media="print">
+```
+
+#### minified
+
+- **Применимо**: CSS и JS
+- **По умолчанию**: `false`
+
+Позволяет указать, что данный ассет уже минифицирован и его не следует обрабатывать.
+
+Например:
+
+```yaml
+cuddly-slider:
+  version: 1.x
+  css:
+    layout:
+      css/cuddly-slider-layout.css: {
+        minified: true
+      }
+```
+
+#### preprocess
+
+- **Применимо**: CSS и JS
+- **По умолчанию**: `true`
+
+Определяет, должен ли данный ассет аггрегироваться. Например, если на странице подключается 10 CSS файлов, и у всех стоит `true`, то при включении кэширования, данные файлы будут собраны в один, а те, у которых данное значение стоит `false`, будут подключены отдельно.
+
+#### weight
+
+- **Применимо**: CSS и JS
+- **По умолчанию**: 0
+
+Позволяет менят вес ассета в пределах своей группы. Чем больше вес, тем позднее будет подключена библиотека.
+
 ## Ссылки
 
 - [Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module) (англ)
