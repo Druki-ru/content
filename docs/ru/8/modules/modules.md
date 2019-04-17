@@ -21,6 +21,9 @@ search-keywords:
 
 Минимальный состав модуля — папка, которая станет корнем модуля, а также файл `*.info.yml`, описывающий модуль.
 
+> [!TIP]
+> Для быстрого создания всех необходимых файлов и папок модуля, можете использовать команду {Drush}(drush) `drush generate module`.
+
 ### Даем название модулю
 
 У модуля обязательно должно быть название (машинное имя). Оно будет использовано Drupal для того чтобы взаимодействовать с вашим модулем. Для именования модуля есть определенные правила, которые нельзя нарушать:
@@ -39,13 +42,39 @@ search-keywords:
 Например, вы хотите назвать свой будущий модуль `hello_world`, для этого потребуется сначала создать папку с соответствующим названием по одному из пути: `/modules/custom/hello_world` или `/sites/all/modules/hello_world` (только при использовании мультисайтинга). Вы можете не создавать папку `custom` и разместить модуль по пути `/modules/hello_world`, но это крайне не рекомендуется, так как ваши собственные модули для проекта будут перемешаны с контриб модулями.
 
 > [!TIP]
-> Лучшей практикой является создание собственных модулей по пути `/modules/custom/NAME`, а модули с drupal.org в `/modules/contrib/NAME`. Это позволит вам исключить загруженные модули из VCS (git), а также поможет легче ориентироваться где код под проект, а где готовые решения. Загружая модули при помощи `{Composer}(composer)`, они автоматически будут распологаться в `/modules/contrib`.
+> Лучшей практикой является создание собственных модулей по пути `/modules/custom/NAME`, а модули с drupal.org в `/modules/contrib/NAME`. Это позволит вам исключить загруженные модули из VCS (git), а также поможет легче ориентироваться где код под проект, а где готовые решения. Загружая модули при помощи {Composer}(composer), они автоматически будут распологаться в `/modules/contrib`.
 
 ### Создание .info.yml файла
 
 В папке, созданной для модуля, вы также должны создать файл с названием вашего модуля и `.info.yml` окончанием. Например, для модуля `hello_world` необходимо создать `hello_world.info.yml`. Данный файл обязательно должен иметь машинное название модуля.
 
 В данном файле вы описываете базовую информацию вашего модуля.
+
+Пример:
+
+```yaml
+name: Hello World Module
+description: Creates a page showing "Hello World".
+package: Custom
+
+type: module
+core: 8.x
+
+dependencies:
+  - drupal:link
+  - drupal:views
+  - paragraphs:paragraphs
+  - webform:webform (>=8.x-5.x)
+
+test_dependencies:
+ - drupal:image
+
+configure: hello_world.settings
+
+php: 5.6
+
+hidden: true
+```
 
 #### Структура .info.yml файла
 
@@ -60,6 +89,51 @@ search-keywords:
 - **php**: (опционально) Указание минимальной версии PHP необходимой для работы модуля. Пользователи не смогут включить модуль, если версия, на которой работает сайт, не удовлетворяет данному требованию.
 - **hidden**: (опционально) По умолчанию значение `false`, указав `true`, модуль не будет отображаться в списке модулей. Например, это хорошее решение для модулей с тестами или модулей с примерами, которые не предназначены для использования. Вы можете указать `$settings['extension_discovery_scan_tests'] = TRUE` в settings.php чтобы они начали отображаться.
 - **Запрещенные для использования**: Данные файлы могут также содержать `version` и `project`. Данные значения добавляются в файл автоматически drupal.org, если вы публикуте модуль как полноценный проект. Для избежания проблем, не задавайте данные значение вручную.
+
+### Создание composer.json
+
+Создание composer.json файла позволяет корректно обрабатывать модуль при помощи {Composer}(composer). Данный файл является обязательным если вы собираетесь публиковать модуль на drupal.org и они имеет зависимости отличные от ядра.
+
+При помощи данного файлы вы объявляете свой модуль как пакет Composer. Минимально необходимыми значениями являются `name` - машинное имя пакета в формате `drupal/{module_name}` и `type` равный `drupal-module`.
+
+Вы также можете указывать другие необходимые параметры, зависимости, всё как это делается в Composer.
+
+Пример:
+
+```json
+{
+    "name": "drupal/mobile_detect",
+    "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices.",
+    "type": "drupal-module",
+    "homepage": "https://drupal.org/project/mobile_detect",
+    "authors": [
+        {
+            "name": "Matthew Donadio (mpdonadio)",
+            "homepage": "https://www.drupal.org/u/mpdonadio",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Darryl Norris (darol100)",
+            "email": "admin@darrylnorris.com",
+            "homepage": "https://www.drupal.org/u/darol100",
+            "role": "Co-maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://drupal.org/project/issues/mobile_detect",
+        "irc": "irc://irc.freenode.org/drupal-contribute",
+        "source": "https://cgit.drupalcode.org/mobile_detect"
+    },
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "require": {
+        "mobiledetect/mobiledetectlib": "~2.8"
+    }
+}
+```
+
+> [!NOTE]
+> При генерации модуля при помощи {Drush}(drush), вам будет предложено сгенерировать данный файл. Если вы пропустили данный шаг, или хотите сгенерировать файл для уже существующего модуля, воспользуйтес командой `drush generate composer`.
 
 ## Ссылки
 
