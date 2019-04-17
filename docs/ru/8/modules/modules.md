@@ -135,6 +135,16 @@ hidden: true
 > [!NOTE]
 > При генерации модуля с помощью {Drush}(drush), вам будет предложено сгенерировать данный файл. Если вы пропустили данный шаг, или хотите сгенерировать для уже существующего модуля, воспользуйтесь командой `drush generate composer`.
 
+## См. также
+
+- {Плагины}(plugins:8)
+- {Сервисы}(services:8)
+- {Libraries API}(libraries-api:8)
+- {Хуки}(hooks:8)
+- {Form API}(form-api:8)
+- {Маршрутизация}(routing:8)
+
 ## Ссылки
 
+- [Creating custom module](https://www.drupal.org/docs/8/creating-custom-modules) (англ)
 - [Drupal 8 Hello World: Пишем свой первый модуль](https://niklan.net/blog/66), Niklan, 2014
