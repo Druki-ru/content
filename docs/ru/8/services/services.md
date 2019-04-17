@@ -32,6 +32,58 @@ Dependency Injection предпочтительный способ внедре�
 > [!IMPORTANT]
 > Dependency Injection не работает в объекте объявления собственного типа сущности. На данный момент рекомендуется использовать глобальный объект `\Drupal`, пока не будет решен [вопрос](https://www.drupal.org/node/2913224).
 
+Пример Dependency Injection подключения зависимостей для {формы}(form-api:8):
+
+```php
+class MyForm extends ConfigFormBase {
+
+  /**
+   * The media storage.
+   *
+   * @var \Drupal\media\MediaStorage
+   */
+  protected $mediaStorage;
+
+  /**
+   * The media view builder.
+   *
+   * @var \Drupal\Core\Entity\EntityViewBuilderInterface
+   */
+  protected $mediaViewBuilder;
+
+  /**
+   * Constructs a FrontpageSettingsForm object.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The factory for configuration objects.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function __construct(
+    ConfigFactoryInterface $config_factory,
+    EntityTypeManagerInterface $entity_type_manager
+  ) {
+
+    parent::__construct($config_factory);
+
+    $this->mediaStorage = $entity_type_manager->getStorage('media');
+    $this->mediaViewBuilder = $entity_type_manager->getViewBuilder('media');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function create(ContainerInterface $container): object {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('entity_type.manager')
+    );
+  }
+```
+
 ### Используя глобальный объект
 
 Для легаси-кода, где нет возможности использовать Dependency Injection существует специальный глобальный объект `\Drupal`.
