@@ -16,7 +16,7 @@ search-keywords:
 - **defaults**:
   - **Обязательный параметр.** Должен быть один из перечисленных:
     - **_controller**: Значение типа [callable (callback-функция)](https://www.php.net/manual/en/language.types.callable.php):
-      - **Class:method**: В формате `\Drupal\[module name]\Controller\[ClassName]::[method]`, например `_controller: '\Drupal\foo\Controller\FooController::build'`,.
+      - **Class:method**: В формате `\Drupal\[module name]\Controller\[ClassName]::[method]`, например `_controller: '\Drupal\foo\Controller\FooController::build'`.
 
         В данном случае Drupal вызовет метод `build()` класса `FooController` из неймспейса `\Drupal\foo\Controller`.
 
