@@ -49,7 +49,50 @@ core: 8
   - `$module_list = \Drupal::service('extension.list.module')->getList();`: Получение всех модулей из кэша.
 - `system_register()` удален без замены.
 
+### Модуль комментариев больше не запоминает IP адреса для комментариев по умолчанию
+
+- [#2994780](https://www.drupal.org/node/2994780)
+
+Модуль комментариев больше не будет записывать IP адреса по умолчанию при отправке комментариев.
+
+Существующие сайты продолжат логировать IP, но это может быть изменено в **settings.php**.
+
+```php
+$conf['comment.settings']['log_ip_addresses'] = FALSE;
+```
+
+### Сущность workflow теперь имеет дополнительные операции доступа
+
+- [#2929327](https://www.drupal.org/node/2929327)
+
+Сущность `workflow` теперь поддерживает дополнительные операции прав доступа, которые отражают состояния и переходы.
+
+Список доступных операций состояний и перехода для состояния "foo" и перехода "bar".
+
+- `add-state`: Предоставляет пользователю добавлять новое состояние.
+- `update-state:foo`: Предоставляет пользователю права на редактирование состояния "foo".
+- `delete-state:foo`: Предоставляет пользователю права на удаление состояния "foo".
+- `add-transition`: Предоставляет пользователю права на добавление нового перехода.
+- `update-transition:bar`: Предоставляет пользователю права на редактирование перехода "bar".
+- `delete-transition:bar`: Предоставляет пользователю права на удаление перехода "bar".
+
+Пример {хука}(hooks:8) определение прав доступа для рабочего процесса `fancy_workflow`:
+
+```php
+/**
+ * Implements hook_ENTITY_TYPE_access() for the workflow entity.
+ */
+function fancy_workflows_workflow_access(WorkflowInterface $workflow, $operation, AccountInterface $account) {
+  if ($operation === 'add-transition' && $workflow->getTypePlugin()->getPluginId() === 'fancy_workflow') {
+    return AccessResult::allowedIfHasPermission($account, 'administer fancy workflow transitions');
+  }
+}
+```
+
 ## Прочие изменения
+
+- [#2988067](https://www.drupal.org/node/2988067) Новый интерфейс `SynchronizableInterface` доступе для всех типов сущностей.
+- [#2981627](https://www.drupal.org/node/2981627) В `EntityAdapter` добавлен семантический метод `getEntity()` в дополнение к `getValue()`.
 
 
 ## Ссылки
