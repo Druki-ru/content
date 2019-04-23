@@ -93,7 +93,16 @@ function fancy_workflows_workflow_access(WorkflowInterface $workflow, $operation
 
 - [#2988067](https://www.drupal.org/node/2988067) Новый интерфейс `SynchronizableInterface` доступе для всех типов сущностей.
 - [#2981627](https://www.drupal.org/node/2981627) В `EntityAdapter` добавлен семантический метод `getEntity()` в дополнение к `getValue()`.
-
+- [#2997122](https://www.drupal.org/node/2997122) Теперь вы можете использовать вызываемые {сервисы}(services:8) в качестве {контроллеров}(routing:8), при помощи магического метода [__invoke](https://php.net/manual/en/language.oop5.magic.php#object.invoke).
+- [#2998929](https://www.drupal.org/node/2998929) Добавлен трейт `EntityOwnerTrait`, который может быть добавлен к сущностям в связке с `owner` ключем для сущности.
+- [#2999035](https://www.drupal.org/node/2999035) `Schema::fieldSetDefault` и `Schema::fieldSetNoDefault` помечены устаревшими в пользу `Schema::changeField`.
+- [#2997808](https://www.drupal.org/node/2997808) Добавлены три новых {хука}(hooks:8) `hook_aggregator_fetcher_info_alter()`, `hook_aggregator_parser_info_alter()`, `hook_aggregator_processor_info_alter()` для редактирования плагинов модуля Aggregator.
+- [#2996668](https://www.drupal.org/node/2996668) Добавлено новое свойства для элемента формы `#label_for`.
+- [#2999418](https://www.drupal.org/node/2999418) Хранилище секций Layout Builder модуля теперь могут предоставлять свои вкладки (local tasks).
+- [#3000572](https://www.drupal.org/node/3000572) MySQL `Schema::renameTable()` теперь ввсегда возвращает `NULL`.
+- [#2992821](https://www.drupal.org/node/2992821) Изменены проверки прав доступа к формам создания, редактирования и удаление пользоватлей. Теперь они более гибкие.
+- [#2986827](https://www.drupal.org/node/2986827) В построитель запросов добавлен новый метод-условие `alwaysFalse()`, который позволяет "обнулить" результат запроса.
+- [#3000819](https://www.drupal.org/node/3000819) Атрибут `data-drupal-link-system-path` теперь устанавливается только для системных путей и {маршрута}(routing:8) `<front>`.
 
 ## Ссылки
 
