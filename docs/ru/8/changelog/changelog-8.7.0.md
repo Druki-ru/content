@@ -101,7 +101,7 @@ function fancy_workflows_workflow_access(WorkflowInterface $workflow, $operation
 
 В ядро добавлена новая {библиотека}(libraries:8) `drupal.message`, которую необходимо подключать там, где вы хотите использовать данный API.
 
-Пример создания нового экземпляра класс сообщений:
+Пример создания нового экземпляра класса сообщений:
 
 ```javascript
 const messages = new Drupal.messages();
