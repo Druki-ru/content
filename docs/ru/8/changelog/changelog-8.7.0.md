@@ -19,13 +19,38 @@ core: 8
 
 ## Подробные изменения
 
-### Прекращение поддержи PHP 5.5 и 5.6 [#2938726](https://www.drupal.org/node/2938726)
+### Прекращение поддержи PHP 5.5 и 5.6
 
-Начиная с 6 марта 2019 г., прекращается официальная поддержка PHP 5.5 и 5.6 версий.
+- [#2938726](https://www.drupal.org/node/2938726)
+
+Начиная с релиза Drupal 8.7.0, прекращается официальная поддержка PHP 5.5 и 5.6 версий. Drupal 8.6.x становится последним релизом Drupal 8 с поддержкой PHP 5.
+
+Уже имеющиеся сайты продолжат работать на данных версиях после обновления, но стабильность  не гарантируется. Установка новых сайтов на PHP ниже 7-й версии будет запрещена.
+
+### _system_rebuild_module_data() и подобные функции заменены на сервисы
+
+- [#2709919](https://www.drupal.org/node/2709919)
+
+В Drupal имеются некоторые внутренние функции для управления местоположением модулей и тем, обновление данной информации и.т. Данные функции перенесены в {сервисы}(services:8).
+
+- `system_get_info('module')` => `\Drupal::service('extension.list.module')->getAllInstalledInfo()`
+- `system_get_info('profile')` => `\Drupal::service('extension.list.profile')->getAllInstalledInfo()`
+- `system_get_info('theme')` => `\Drupal::service('extension.list.theme')->getAllInstalledInfo()`
+- `system_get_info('theme_engine')` => `\Drupal::service('extension.list.theme_engine')->getAllInstalledInfo()`
+- `system_get_info('module', 'module_name')` => `\Drupal::service('extension.list.module')->getExtensionInfo('module_name')`
+- `system_get_info('profile', 'profile_name')` => `\Drupal::service('extension.list.profile')->getExtensionInfo('profile_name')`
+- `system_get_info('theme', 'theme_name')` => `\Drupal::service('extension.list.theme')->getExtensionInfo('theme_name')`
+- `system_get_info('theme_engine', 'theme_engine_name') ` => `\Drupal::service('extension.list.theme_engine')->getExtensionInfo('theme_engine_name')`
+- `system_list('theme')` => `\Drupal::service('theme_handler')->listInfo()`
+- `system_list_reset()` => `\Drupal::service('extension.list.TYPE')->reset()`
+- `system_rebuild_module_data()`:
+  - `\Drupal::service('extension.list.module')->reset();`: Сброс информации о модулях.
+  - `$module_list = \Drupal::service('extension.list.module')->reset()->getList();`: Сброс информации и получение всех модулей.
+  - `$module_list = \Drupal::service('extension.list.module')->getList();`: Получение всех модулей из кэша.
+- `system_register()` удален без замены.
 
 ## Прочие изменения
 
-- 
 
 ## Ссылки
 
