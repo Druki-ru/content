@@ -105,7 +105,13 @@ $element = [
 <div data-drupal-messages-fallback class="hidden"></div>
 ```
 
-Скорее всего, вам не потребуется использовать данное значение, так как Drupal по умолчанию добавлен на все страницы область для системных сообщений. Тем не менее, если ваш код предоставляет варианты отображения страницы, вам необходимо проследить за данной областью самостоятельно используя данную возможность.
+Скорее всего, вам не потребуется использовать данное значение, так как Drupal по умолчанию добавляет фолбек разметку на все страницы. Тем не менее, если ваш код предоставляет варианты отображения страницы, вам необходимо проследить за данной областью самостоятельно используя данную возможность.
+
+### Media Library виджет готовится к изменениям UI/UX
+
+- [#3024762](https://www.drupal.org/node/3024762)
+
+TODO, должны быть ещё минимум 2 изменения на эту тему.
 
 ## Прочие изменения
 
@@ -150,6 +156,20 @@ $element = [
 - [#3009182](https://www.drupal.org/node/3009182) Добавлен новый класс `\Drupal\Core\Utility\TableSort`, который заменяет все функции из `tablesort.inc`, которые теперь помечены устаревшими.
 - [#3016699](https://www.drupal.org/node/3016699) Плагины `Block` и `Condition` теперь используют `context_definitions` ключ, для описания своих контекстов, вместо `context`.
 - [#3018097](https://www.drupal.org/node/3018097) CSS id для заголовка пагинации теперь имеет уникальный id вместо `pagination-heading`. Для вывода данного значения в шаблонах используйте `{{ heading_id }}`.
+- [#3018742](https://www.drupal.org/node/3018742) Медиа сущности больше не доступны по `/media/{id}`, даже для пользователей с пермишеном `view media`. Данное поведение меняется в настройках медиа модуля.
+- [#3016262](https://www.drupal.org/node/3016262) Плагины `SectionStorage` для Layout Builder больше не поддерживают возможность указывать свой список секций. Теперь они доллжны использовать `context_definitions` в аннотации.
+- [#3012353](https://www.drupal.org/node/3012353) Плагины для хранилиза Layout Section теперь загружаются используя данные из `context_defintions`.
+- [#3020367](https://www.drupal.org/node/3020367) `DateTimeIso8601::getDateTime()` теперь работает как задуманно.
+- [#3019830](https://www.drupal.org/node/3019830) `$file->url()` помечен устаревшим методом, используйте `$file->createFileUrl()`.
+- [#3020137](https://www.drupal.org/node/3020137) Идентификатор комментария перемещен в разметку самого комментария.
+- [#3009364](https://www.drupal.org/node/3009364) Плагин обработки Migrate API `d6_search_configuration_rankings` признан устаревшим. Используйте `search_configuration_rankings`.
+- [#3021135](https://www.drupal.org/node/3021135) Оптимизировано использование маршрутизации для REST модуля.
+- [#3018300](https://www.drupal.org/node/3018300) `Action` плагины `EmailAction`, `GotoAction`, `MessageAction` перенесены в неймспейс `Drupal\Core\Action\Plugin\Action`.
+- [#3022574](https://www.drupal.org/node/3022574) `LayoutBuilderEntityViewDisplay::getRuntimeSections()` помечен устаревшим.
+- [#3022118](https://www.drupal.org/node/3022118) Плагины `SectionStorage` теперь должны реализовывать `isApplicable()`.
+- [#3020140](https://www.drupal.org/node/3020140) Layout Builder теперь поставляется с секцией "один ряд".
+- [#3024321](https://www.drupal.org/node/3024321) `canonical` ссылки теперь имеют в значениях абсолютные URL, вместо относительных. Хоть абсолютные URL и являются правильными, согласно [RFC6596](https://tools.ietf.org/html/rfc6596), Google их [не поддерживает](https://github.com/GoogleChrome/lighthouse/issues/3178).
+- 
 
 ## Ссылки
 
