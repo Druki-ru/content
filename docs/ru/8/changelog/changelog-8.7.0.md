@@ -115,7 +115,9 @@ TODO, должны быть ещё минимум 2 изменения на эт
 
 ### Изменения Entity Update API
 
-- [#3029997](https://www.drupal.org/node/3029997)
+- [#3029997](https://www.drupal.org/node/3029997), [#3034742](https://www.drupal.org/node/3034742)
+
+#### Обновление схем
 
 Начиная с Drupal 8.7.0, предоставлен новый Entity Update API для конвертации схемы контент сущностей из одного состояния в другое.
 
@@ -129,6 +131,200 @@ TODO, должны быть ещё минимум 2 изменения на эт
 - Добавлен новый трейт `\Drupal\Core\Entity\Sql\SqlFieldableEntityTypeListenerTrait`.
 
 Примеры конвертации сущностей для поддержки ревизий можно наблюдать в ядре: [#2880149](https://www.drupal.org/project/drupal/issues/2880149), [#2880152](https://www.drupal.org/project/drupal/issues/2880152).
+
+#### Автоматические обновления сущностей удалены
+
+В Drupal 8 был представлен концепт автоматического обновления сущностей, который позволял обновлять схемы сущностей и их полей с минимальными усилиями, например, используя команду {Drush}(drush) `drush entity-updates`.
+
+Тем не менее, на практике, автоматические обновления показали что они опасны, потому что ведут к непредсказуемым результатам, критическим ошибкам. Использование данной возможности было прекращено в ядре ещё до релиза Drupal 8.
+
+Начиная с Drupal 8.7.0 автоматические обновления схем сущностей и полей больше недоступны. Теперь, когда хранилище для данных или сущности нужно создать, обновить или удалить, необходимо прописать это явно, используя [Update API](https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Extension!module.api.php/group/update_api/8.7.x) и [Entity Definition Update Manager](https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!EntityDefinitionUpdateManagerInterface.php/interface/EntityDefinitionUpdateManagerInterface/8.7.x).
+
+Entity Definition Update Manager теперь не поддерживает изменения таблиц, лдя этого необходимо использовать представленный новый API для обновления схем.
+
+#### Примеры
+
+**Установка** нового типа сущности.
+
+```php
+/**
+ * Implements hook_update_N().
+ */
+function example_update_8701() {
+  \Drupal::entityDefinitionUpdateManager()->installEntityType(new ConfigEntityType([
+    'id' => 'rest_resource_config',
+    'label' => new TranslatableMarkup('REST resource configuration'),
+    'config_prefix' => 'resource',
+    'admin_permission' => 'administer rest resources',
+    'label_callback' => 'getLabelFromPlugin',
+    'entity_keys' => ['id' => 'id'],
+    'config_export' => [
+      'id',
+      'plugin_id',
+      'granularity',
+      'configuration',
+    ],
+  ]));
+}
+```
+
+**Обновление** существующего типа сущности, когда это **не затрагивает актуальную схему**.
+
+```php
+function example_update_8701() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = $definition_update_manager->getEntityType('comment');
+  $keys = $entity_type->getKeys();
+  $keys['published'] = 'status';
+  $entity_type->set('entity_keys', $keys);
+  $definition_update_manager->updateEntityType($entity_type);
+}
+```
+
+**Обновление** существующего типа сущности, когда это **также меняет схему** (например, делает сущность ревизионной). Обратите внимание что используется `hook_post_update_NAME()`, так как это произведет вызов необходимых событий при изменении свойств сущности `revisionable` и `translatable`.
+
+```php
+/**
+ * Implements hook_post_update_NAME().
+ */
+function taxonomy_post_update_make_taxonomy_term_revisionable(&$sandbox) {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  /** @var \Drupal\Core\Entity\EntityLastInstalledSchemaRepositoryInterface $last_installed_schema_repository */
+  $last_installed_schema_repository = \Drupal::service('entity.last_installed_schema.repository');
+
+  $entity_type = $definition_update_manager->getEntityType('taxonomy_term');
+  $field_storage_definitions = $last_installed_schema_repository->getLastInstalledFieldStorageDefinitions('taxonomy_term');
+
+  // Update the entity type definition.
+  $entity_keys = $entity_type->getKeys();
+  $entity_keys['revision'] = 'revision_id';
+  $entity_keys['revision_translation_affected'] = 'revision_translation_affected';
+  $entity_type->set('entity_keys', $entity_keys);
+  $entity_type->set('revision_table', 'taxonomy_term_revision');
+  $entity_type->set('revision_data_table', 'taxonomy_term_field_revision');
+  $revision_metadata_keys = [
+    'revision_default' => 'revision_default',
+    'revision_user' => 'revision_user',
+    'revision_created' => 'revision_created',
+    'revision_log_message' => 'revision_log_message',
+  ];
+  $entity_type->set('revision_metadata_keys', $revision_metadata_keys);
+
+  // Update the field storage definitions and add the new ones required by a
+  // revisionable entity type.
+  $field_storage_definitions['langcode']->setRevisionable(TRUE);
+  $field_storage_definitions['name']->setRevisionable(TRUE);
+  $field_storage_definitions['description']->setRevisionable(TRUE);
+  $field_storage_definitions['changed']->setRevisionable(TRUE);
+
+  $field_storage_definitions['revision_id'] = BaseFieldDefinition::create('integer')
+    ->setName('revision_id')
+    ->setTargetEntityTypeId('taxonomy_term')
+    ->setTargetBundle(NULL)
+    ->setLabel(new TranslatableMarkup('Revision ID'))
+    ->setReadOnly(TRUE)
+    ->setSetting('unsigned', TRUE);
+
+  $field_storage_definitions['revision_default'] = BaseFieldDefinition::create('boolean')
+    ->setName('revision_default')
+    ->setTargetEntityTypeId('taxonomy_term')
+    ->setTargetBundle(NULL)
+    ->setLabel(new TranslatableMarkup('Default revision'))
+    ->setDescription(new TranslatableMarkup('A flag indicating whether this was a default revision when it was saved.'))
+    ->setStorageRequired(TRUE)
+    ->setInternal(TRUE)
+    ->setTranslatable(FALSE)
+    ->setRevisionable(TRUE);
+
+  $field_storage_definitions['revision_translation_affected'] = BaseFieldDefinition::create('boolean')
+    ->setName('revision_translation_affected')
+    ->setTargetEntityTypeId('taxonomy_term')
+    ->setTargetBundle(NULL)
+    ->setLabel(new TranslatableMarkup('Revision translation affected'))
+    ->setDescription(new TranslatableMarkup('Indicates if the last edit of a translation belongs to current revision.'))
+    ->setReadOnly(TRUE)
+    ->setRevisionable(TRUE)
+    ->setTranslatable(TRUE);
+
+  $field_storage_definitions['revision_created'] = BaseFieldDefinition::create('created')
+    ->setName('revision_created')
+    ->setTargetEntityTypeId('taxonomy_term')
+    ->setTargetBundle(NULL)
+    ->setLabel(new TranslatableMarkup('Revision create time'))
+    ->setDescription(new TranslatableMarkup('The time that the current revision was created.'))
+    ->setRevisionable(TRUE);
+  $field_storage_definitions['revision_user'] = BaseFieldDefinition::create('entity_reference')
+    ->setName('revision_user')
+    ->setTargetEntityTypeId('taxonomy_term')
+    ->setTargetBundle(NULL)
+    ->setLabel(new TranslatableMarkup('Revision user'))
+    ->setDescription(new TranslatableMarkup('The user ID of the author of the current revision.'))
+    ->setSetting('target_type', 'user')
+    ->setRevisionable(TRUE);
+  $field_storage_definitions['revision_log_message'] = BaseFieldDefinition::create('string_long')
+    ->setName('revision_log_message')
+    ->setTargetEntityTypeId('taxonomy_term')
+    ->setTargetBundle(NULL)
+    ->setLabel(new TranslatableMarkup('Revision log message'))
+    ->setDescription(new TranslatableMarkup('Briefly describe the changes you have made.'))
+    ->setRevisionable(TRUE)
+    ->setDefaultValue('');
+
+  $definition_update_manager->updateFieldableEntityType($entity_type, $field_storage_definitions, $sandbox);
+
+  return t('Taxonomy terms have been converted to be revisionable.');
+}
+```
+
+**Удаление** типа сущности.
+
+```php
+function example_update_8701() {
+  $entity_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = $entity_update_manager->getEntityType('entity_type_id');
+  $entity_update_manager->uninstallEntityType($entity_type);
+}
+```
+
+---
+
+**Установка** нового хранилища поля.
+
+```php
+function example_update_8701() {
+  $field_storage_definition = BaseFieldDefinition::create('boolean')
+    ->setLabel(t('Revision translation affected'))
+    ->setDescription(t('Indicates if the last edit of a translation belongs to current revision.'))
+    ->setReadOnly(TRUE)
+    ->setRevisionable(TRUE)
+    ->setTranslatable(TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('revision_translation_affected', 'block_content', 'block_content', $field_storage_definition);
+}
+```
+
+**Обновление** существующего хранилища поля.
+
+```php
+function example_update_8701() {
+  $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $field_storage_definition = $entity_definition_update_manager->getFieldStorageDefinition('hostname', 'comment');
+  $field_storage_definition->setDefaultValueCallback(Comment::class . '::getDefaultHostname');
+  $entity_definition_update_manager->updateFieldStorageDefinition($field_storage_definition);
+}
+```
+
+**Удаление** существующего хранилища поля.
+
+```php
+function example_update_8701() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  if ($content_translation_status = $definition_update_manager->getFieldStorageDefinition('content_translation_status', 'taxonomy_term')) {
+    $definition_update_manager->uninstallFieldStorageDefinition($content_translation_status);
+  }
+}
+```
 
 ### Изменения File API
 
@@ -240,6 +436,19 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 - [#2997196](https://www.drupal.org/node/2997196) Добавлен новый интерфейс `EmailValidatorInterface`, для тайпхинтинга сервиса `email.validator`.
 - [#2955581](https://www.drupal.org/node/2955581) Исправлина нормализация для полей "Date" и "Date range", которые настроены на хранение "Даты и времени" или "Только даты".
 - [#3030634](https://www.drupal.org/node/3030634) Трейт `SerializationTrait` помечен устаревшим.
+- [#3035096](https://www.drupal.org/node/3035096) Секции лейаутов теперь могут иметь third-party settings.
+- [#3002434](https://www.drupal.org/node/3002434) Переменная `attributes` в `hook_process_html()` теперь всегда будет массивом.
+- [#3035507](https://www.drupal.org/node/3035507) Названия файлов теперь также получаются суффикс `_NUMBER` если были переименованы при помощи `file_save_upload()` и `FILE_EXISTS_RENAME`.
+- [#3035954](https://www.drupal.org/node/3035954) CSS классы для Layout Builder теперь следуют [BEM стандартам](http://getbem.com/introduction/). 👀
+- [#2925634](https://www.drupal.org/node/2925634) Рендер базовых полей для сущности node теперь учитывает настройки полей. Таким образом, вы можете выключить поля `node.title`, `node.uid`, `node.created` и всю соответствующую обработку.
+- [#3035166](https://www.drupal.org/node/3035166) Списки секций теперь различают пустые секции, которы были удалены от тех, что только что были созданы.
+- [#3036709](https://www.drupal.org/node/3036709) Доступен новый хелпер метод для подключения сервиса 'current_user' в Kernel тестах.
+- [#3036823](https://www.drupal.org/node/3036823) `Drupal\Component\DependencyInjection\Container` больше не реализует `Symfony\Component\DependencyInjection\ResettableContainerInterface`. В дальнейшем планируется реализовывать `Symfony\Component\DependencyInjection\ResettableContainerInterface`, когда будет решено, какой версии будет Symfony (4 или 5) в Drupal 9.
+- [#3036722](https://www.drupal.org/node/3036722) Доступен новый API для управления вариантами сущности.
+- [#3006076](https://www.drupal.org/node/3006076) `Drupal\migrate_drupal\Plugin\migrate::PLUGIN_METHOD` помечен устаревшим.
+- [#2954670](https://www.drupal.org/node/2954670) Добавлен новый сервис `migrate_drupal.field_discovery`, который упрощает процесс обнаружения и добавления обработчиков для полей при миграции `node` из Drupal 6 и сущностей с полями из Drupal 7.
+- [#2961643](https://www.drupal.org/node/2961643) Сериализуемые свойства полей теперь остаются в сериализованном состоянии при загрузки из хранилища.
+- [#3036689](https://www.drupal.org/node/3036689) Тесты ядра теперь устанавливают все необходимые сущности, прежде чем устанавливать любые другие конфигурации.
 - 
 
 ## Ссылки
