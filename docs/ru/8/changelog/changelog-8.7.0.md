@@ -5,9 +5,6 @@ path: /docs/8/changelog/8.7.0
 core: 8
 ---
 
-> [!NOTE]
-> Список изменений не полный.
-
 ## Обновление с 8.6.x
 
 > [!WARNING]
@@ -257,6 +254,7 @@ function taxonomy_post_update_make_taxonomy_term_revisionable(&$sandbox) {
     ->setLabel(new TranslatableMarkup('Revision create time'))
     ->setDescription(new TranslatableMarkup('The time that the current revision was created.'))
     ->setRevisionable(TRUE);
+
   $field_storage_definitions['revision_user'] = BaseFieldDefinition::create('entity_reference')
     ->setName('revision_user')
     ->setTargetEntityTypeId('taxonomy_term')
@@ -265,6 +263,7 @@ function taxonomy_post_update_make_taxonomy_term_revisionable(&$sandbox) {
     ->setDescription(new TranslatableMarkup('The user ID of the author of the current revision.'))
     ->setSetting('target_type', 'user')
     ->setRevisionable(TRUE);
+
   $field_storage_definitions['revision_log_message'] = BaseFieldDefinition::create('string_long')
     ->setName('revision_log_message')
     ->setTargetEntityTypeId('taxonomy_term')
