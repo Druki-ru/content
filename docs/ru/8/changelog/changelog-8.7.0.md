@@ -113,6 +113,63 @@ $element = [
 
 TODO, должны быть ещё минимум 2 изменения на эту тему.
 
+### Изменения Entity Update API
+
+- [#3029997](https://www.drupal.org/node/3029997)
+
+Начиная с Drupal 8.7.0, предоставлен новый Entity Update API для конвертации схемы контент сущностей из одного состояния в другое.
+
+Обратите внимание что если производится обновление для сущностей, где уже имеется содержимое, необходимо использовать `hook_post_update_NAME()`.
+
+Новый API:
+
+- `\Drupal\Core\Entity\EntityDefinitionUpdateManager` получил новый метод `updateFieldableEntityType(EntityTypeInterface $entity_type, array $field_storage_definitions, array &$sandbox = NULL)`.
+- `\Drupal\Core\Entity\EntityTypeListenerInterface` получил новый метод `onFieldableEntityTypeUpdate(EntityTypeInterface $entity_type, EntityTypeInterface $original, array $field_storage_definitions, array $original_field_storage_definitions, array &$sandbox = NULL)`.
+- `\Drupal\Core\Entity\EntityStorageInterface` получил новый метод `restore(EntityInterface $entity)`.
+- Добавлен новый трейт `\Drupal\Core\Entity\Sql\SqlFieldableEntityTypeListenerTrait`.
+
+Примеры конвертации сущностей для поддержки ревизий можно наблюдать в ядре: [#2880149](https://www.drupal.org/project/drupal/issues/2880149), [#2880152](https://www.drupal.org/project/drupal/issues/2880152).
+
+### Изменения File API
+
+- [#3006851](https://www.drupal.org/node/3006851)
+
+Следующие функции были помечены устаревшими:
+
+```php
+file_unmanaged_copy($source, $destination, $replace)
+file_unmanaged_prepare($source, $destination, $replace)
+file_unmanaged_move($source, $destination, $replace)
+file_unmanaged_delete($path)
+file_unmanaged_delete_recursive($path, $callback)
+file_unmanaged_save_data($data, $destination, $replace)
+file_prepare_directory($dir)
+file_destination($destination, $replace)
+file_create_filename($basename, $directory)
+```
+
+Вместо них необходимо использовать соответствующие методы {сервиса}(services:8) `file_system`.
+
+```php
+try {
+  \Drupal::service('file_system')->copy($source, $destination, $replace);
+  \Drupal::service('file_system')->move($source, $destination, $replace);
+  \Drupal::service('file_system')->delete($path);
+  \Drupal::service('file_system')->deleteRecursive($path, $callback);
+  \Drupal::service('file_system')->saveData();
+  \Drupal::service('file_system')->prepareDirectory($directory, $options);
+  \Drupal::service('file_system')->getDestinationFilename($destination, $replace);
+  \Drupal::service('file_system')->createFilename($basename, $directory);
+} 
+catch (\Drupal\Core\File\Exception\FileException $e) {
+  // Log or set message or doing something else.
+}
+```
+
+Соответветствующим образом константы `FILE_EXISTS_RENAME`, `FILE_EXISTS_REPLACE` и `FILE_EXISTS_ERROR` помечены устаревшими. Вместо них используйте константы интерфейса `FileSystemInterface::EXISTS_RENAME`, `FileSystemInterface::EXISTS_REPLACE`, `FileSystemInterface::EXISTS_ERROR`.
+
+Изменения также коснулись аргумента `$destination` для методов `copy()`, `move()` и `saveData()` - теперь они обязательны. Если вы хотите сохранить старое поведение, сохраняя файлы в корень основной директории, вы можете использовать `'public://'` или `file_default_scheme() . '://'` в качестве значения аргумента.
+
 ## Прочие изменения
 
 - [#2709919](https://www.drupal.org/node/2709919) Фукция `_system_rebuild_module_data()` и подобные ей заменены на сервисы.
@@ -169,6 +226,20 @@ TODO, должны быть ещё минимум 2 изменения на эт
 - [#3022118](https://www.drupal.org/node/3022118) Плагины `SectionStorage` теперь должны реализовывать `isApplicable()`.
 - [#3020140](https://www.drupal.org/node/3020140) Layout Builder теперь поставляется с секцией "один ряд".
 - [#3024321](https://www.drupal.org/node/3024321) `canonical` ссылки теперь имеют в значениях абсолютные URL, вместо относительных. Хоть абсолютные URL и являются правильными, согласно [RFC6596](https://tools.ietf.org/html/rfc6596), Google их [не поддерживает](https://github.com/GoogleChrome/lighthouse/issues/3178).
+- [#3011154](https://www.drupal.org/node/3011154) Процедурная функция `twig_without()` помечена устаревшей. Используйте сервис `twig.extension` и метод `without()`. Это изменение **не касается** Twig фильтра `without`.
+- [#3001185](https://www.drupal.org/node/3001185) Сервис `session_handler.write_check` удален из `core.services.yml`.
+- [#2934242](https://www.drupal.org/node/2934242) Хуки `hook_test_group_started()`, `hook_test_group_finished()`, `hook_test_finished()` помечены устаревшими.
+- [#2946161](https://www.drupal.org/node/2946161) `ConfigurablePluginInterface` помечен устаревшим в пользу `ConfigurableInterface`, `DependentPluginInterface`.
+- [#3029284](https://www.drupal.org/node/3029284) `RevisionableInterface`, `TranslatableInterface` и прочие интерфейыс, предназначенные для сущностей, теперь расширяют `EntityInterface`.
+- [#3029850](https://www.drupal.org/node/3029850) Добавлен новый рендер елемент `layout_builder` для отображения интерфейса Layout Builder.
+- [#3030415](https://www.drupal.org/node/3030415) Разрешение "Use the administration toolbar" переименовано в "Use the toolbar".
+- [#3021276](https://www.drupal.org/node/3021276) Добавлена новая Ajax команда `AnnounceCommand`.
+- [#3031697](https://www.drupal.org/node/3031697) Доступ к данным Layout Builder при помощи REST закрыт, до тех пор, пока не [будет решено](https://www.drupal.org/project/drupal/issues/2942975), как правильно его отдавать.
+- [#3032274](https://www.drupal.org/node/3032274) Добавлен хук для управления формами Layout Builder.
+- [#3042512](https://www.drupal.org/node/3042512) А потом его удалили. 🤫 Ведь у нас уже есть `hook_entity_form_display_alter()`. 💅
+- [#2997196](https://www.drupal.org/node/2997196) Добавлен новый интерфейс `EmailValidatorInterface`, для тайпхинтинга сервиса `email.validator`.
+- [#2955581](https://www.drupal.org/node/2955581) Исправлина нормализация для полей "Date" и "Date range", которые настроены на хранение "Даты и времени" или "Только даты".
+- [#3030634](https://www.drupal.org/node/3030634) Трейт `SerializationTrait` помечен устаревшим.
 - 
 
 ## Ссылки
