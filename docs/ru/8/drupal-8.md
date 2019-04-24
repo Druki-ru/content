@@ -21,6 +21,7 @@ path: /docs/8
 
 ## См. также
 
+- {Drupal 9}(drupal:9)
 - {Установка Drupal 8}(installation:8)
 - {Административный интерфейс}(admin:8)
 - {Модули}(modules:8)
