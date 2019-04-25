@@ -41,16 +41,57 @@ category-title: Интернет-ресурсы
 
 ## Локальные сообщества
 
-### Южное сообщество Drupal
+### Южное Drupal сообщество 
 
 - **Сайт**: <https://drupalyug.ru/>
 - **YouTube канал**: <https://www.youtube.com/user/drupalyug>
 - **Вконтакте**: <https://vk.com/drupalyug>
 
-### DrupalSib - Сообщество Drupal в Сибири
+### Сибирское Drupal сообщество
 
 - **YouTube канал**: <https://www.youtube.com/channel/UCsub8D1aEETAvE71JDnfAXw>
 - **Вконтакте**: <https://vk.com/drupalsib>
 
-## Промо и обучающие сайты
+### Томское Drupal сообщество
 
+- **Вконтакте**: <https://vk.com/tomsk_drupal>
+
+### Омское Drupal сообщество
+
+- **Вконтакте**: <https://vk.com/drupalomsk>
+
+### Московское Drupal сообщество
+
+- **Сайт**: <https://drupalcafe.ru/>
+- **Telegram**: <https://t.me/DrupalMoscow>
+- **Вконтакте**: <https://vk.com/drupalcafemoscow>
+- **Facebook**: <https://www.facebook.com/groups/198890550213775/>
+- **Twitter**: <https://twitter.com/DrupalCafeMsk>
+- **Skype**: <https://join.skype.com/jehrNdnP4M2a>
+
+### Питерское Drupal сообщество
+
+- **Сайт**: <https://drupalspb.org/>
+- **Вконтакте**: <https://vk.com/drupalspb>
+- **Twitter**: <https://twitter.com/DrupalSPB>
+
+## Блоги
+
+У нашего сообщества многие разработчики и начинающие пользователи делятся своим опытом и знаниями на своих личных ресурсах и страничках.
+
+- <http://xandeadx.ru/>
+- <http://drup.by>
+- <http://drupalbook.ru/>
+- <http://boolboost.com/>
+- <https://batkor.ru>
+- <https://niklan.net/>
+
+## YouTube каналы
+
+- <https://www.youtube.com/user/SiteMadeRu>
+- <https://www.youtube.com/channel/UCdVPCpneA3HiUaLg1DJm1gA>
+- <https://youtube.com/c/NiklanNet>
+
+## Прочие ресурсы
+
+- <https://drupal.dru.io/> — промо-сайт "Почему мы выбираем Drupal?"
