@@ -1,7 +1,7 @@
 ---
 id: community
 title: Сообщество
-category-area: Drupal сообщество
+category-area: 'Drupal сообщество'
 category-order: 1
 category-title: Введение
 ---

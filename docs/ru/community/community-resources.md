@@ -1,8 +1,8 @@
 ---
 id: community-resource
 title: Интернет-ресурсы
-path: /community/resources
-category-area: Drupal сообщество
+path: /docs/community/resources
+category-area: 'Drupal сообщество'
 category-order: 2
 category-title: Интернет-ресурсы
 ---
