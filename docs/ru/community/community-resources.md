@@ -22,11 +22,35 @@ category-title: Интернет-ресурсы
 
 ## Сообщества
 
-#### drupal.ru
+### drupal.ru
 
 Главный сайт российского Drupal сообщества. На нем вы найдете, как актуальную информацию и новости о Drupal, так и сможете обсудить вопросы на форуме.
 
-- **Официальный сайт**: <https://drupal.ru>
+- **Сайт**: <https://drupal.ru>
+- **Репозиторий на GitLab**: <https://gitlab.com/drupal.ru/7>
 - **Вконтакте**: <https://vk.com/drupalrus>
-- **Twitter**: [@drupalru](https://twitter.com/drupalru)
+- **Twitter**: <https://twitter.com/drupalru>
 - **Facebook**: <https://www.facebook.com/drupalru>
+
+### dru.io
+
+Сайт русскоязычного Drupal сообщества. Является альтерантивой drupal.ru, но по большей части аудитория одна и та же.
+
+- **Сайт**: <https://dru.io>
+- **Репозиторий на GitHub**: <https://github.com/dru-io/Dru.io>
+
+## Локальные сообщества
+
+### Южное сообщество Drupal
+
+- **Сайт**: <https://drupalyug.ru/>
+- **YouTube канал**: <https://www.youtube.com/user/drupalyug>
+- **Вконтакте**: <https://vk.com/drupalyug>
+
+### DrupalSib - Сообщество Drupal в Сибири
+
+- **YouTube канал**: <https://www.youtube.com/channel/UCsub8D1aEETAvE71JDnfAXw>
+- **Вконтакте**: <https://vk.com/drupalsib>
+
+## Промо и обучающие сайты
+
