@@ -485,7 +485,7 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 
 ## См. также
 
-- {Drupal 8.8.0}(chagelog-8.8.0:8) — следующий минорный релиз Drupal. 
+- {Drupal 8.8.0}(changelog-8.8.0:8) — следующий минорный релиз Drupal. 
 
 ## Ссылки
 
