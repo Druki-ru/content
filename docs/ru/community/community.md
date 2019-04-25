@@ -1,6 +1,7 @@
 ---
 id: community
 title: Сообщество
+path: /community/resources
 category-area: Drupal сообщество
 category-order: 1
 category-title: Введение
