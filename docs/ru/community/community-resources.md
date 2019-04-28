@@ -1,5 +1,5 @@
 ---
-id: community-resource
+id: community-resources
 title: Интернет-ресурсы
 path: /docs/community/resources
 category-area: 'Drupal сообщество'
