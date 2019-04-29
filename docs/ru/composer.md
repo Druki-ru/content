@@ -1,6 +1,8 @@
 ---
 id: composer
 title: Composer
+metatags:
+  description: 'Узнайте что такое Composer и как им пользоваться в Drupal.'
 ---
 
 **Composer** — пакетный менеджер для языка программирования PHP, написанный на PHP. Основная задача Composer — управление зависимостями проекта, также, как это делает npm\yarn для node.js, pip для python и др.

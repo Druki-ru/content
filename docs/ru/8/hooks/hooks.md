@@ -4,6 +4,9 @@ title: Хуки
 core: 8
 search-keywords:
  - hooks
+metatags:
+  title: 'Drupal 8: Хуки (hooks)'
+  description: 'Хуки позволяют внедряться в ход работы Drupal, модифицировать или влиять на результат работы.'
 ---
 
 Хуки позволяют взаимодействовать с ядром Drupal и другими модулями.

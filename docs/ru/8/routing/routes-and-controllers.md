@@ -5,6 +5,9 @@ path: /docs/8/routing/routes-and-controllers
 core: 8
 category-area: Маршрутизация
 category-order: 2
+metatags:
+  title: 'Маршрутизация Drupal 8: Маршруты и контроллеры'
+  description: 'Разбираемся для чего нужен маршрут (роут), а для чего контроллер, и как они дополняют друг друга.'
 ---
 
 Маршрутизация состоит из двух частей:

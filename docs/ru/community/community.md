@@ -4,6 +4,9 @@ title: Сообщество
 category-area: 'Drupal сообщество'
 category-order: 1
 category-title: Введение
+metatags:
+  title: 'Drupal сообщество'
+  description: 'Узнайте что такое Drupal сообщество.'
 ---
 
 > _Приходите за программным обеспечением, оставайтесь ради сообщества._ <cite>— Drupal.org</cite>

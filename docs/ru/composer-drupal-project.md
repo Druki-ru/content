@@ -3,6 +3,8 @@ id: composer-drupal-project
 title: Composer Drupal Project
 search-keywords:
   - Установка при помощи композера
+metatags:
+  description: 'Рекомендуемый способ установки Drupal 8 при помощи Composer.'
 ---
 
 **Composer Drupal Project** — шаблон проекта предоставляет стартовый набор для управления зависимостями сайта при помощи {Composer}(composer).

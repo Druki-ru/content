@@ -5,6 +5,9 @@ core: 8
 search-keywords:
  - где как подключать JS JavaScript CSS добавить на страницу
  - куда вставить JS CSS скрипт
+metatags:
+  title: 'Drupal 8: Libraries API'
+  description: 'Подключаем JavaScript и CSS в Drupal 8 правильно!'
 ---
 
 В Drupal 8 CSS и JS загружаются по принципу ассетов. Библиотека может содержать один и более CSS файлов, один и более JS файлов, а также JS настройки.
