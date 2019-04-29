@@ -3,6 +3,9 @@ id: changelog-8.8.0
 title: 'Drupal 8.8.0'
 path: /docs/8/changelog/8.8.0
 core: 8
+metatags:
+  title: Список изменений Drupal 8.8.0
+  description: Актуальный список изменений Drupal 8.8.0, релиз которого запланирован на 4 декабря 2019 г.
 ---
 
 
