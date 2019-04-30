@@ -2,6 +2,7 @@
 id: theme-structure
 core: 8
 title: Структура темы
+path: /docs/8/themes/structure
 metatags:
   title: 'Темы оформления Drupal 8: Структура темы'
   description: 'Из каких папок может состоять тема оформления и что в них должно находиться.'
