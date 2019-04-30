@@ -11,6 +11,9 @@ search-keywords:
   - где держать верстку
   - куда ложить верстку
   - как поменять оформление сайта
+category-area: 'Темы оформления'
+category-title: 'Создание темы'
+category-order: 1
 ---
 
 todo
