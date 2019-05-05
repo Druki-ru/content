@@ -30,6 +30,7 @@ metatags:
 - [#2853355](https://www.drupal.org/node/2853355) Добавлен новый трейт `ConfigurableTrait` для уменьшения кода плагинов.
 - [#2835616](https://www.drupal.org/node/2835616) Функции `entity_get_display()` и `entity_get_form_display()` получили замену в виде сервиса `entity_display.repository`.
 - [#3033656](https://www.drupal.org/node/3033656) Функции для просмотра сущностней помечены устаревшими.
+- [#3051463](https://www.drupal.org/node/3051463) Функции `user_delete()` и `user_delete_multiple()` помечены устаревшими.
 
 ## Ссылки
 
