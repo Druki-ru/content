@@ -4,7 +4,7 @@ core: 8
 title: Структура темы
 path: /docs/8/themes/structure
 metatags:
-  title: 'Темы оформления Drupal 8: Структура темы'
+  title: 'Drupal 8: Структура темы оформления'
   description: 'Из каких папок может состоять тема оформления и что в них должно находиться.'
 search-keywords:
   - как создать свою тему
