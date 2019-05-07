@@ -33,6 +33,7 @@ metatags:
 - [#3051463](https://www.drupal.org/node/3051463) Функции `user_delete()` и `user_delete_multiple()` помечены устаревшими.
 - [#3040204](https://www.drupal.org/node/3040204) Установка идентификатора раскрытого фильтра Views теперь обрабатываются корректно.
 - [#3050078](https://www.drupal.org/node/3050078) Third party settings для форматтеров полей теперь передаются вместе с рендер элементом и доступы по ключу `#third_party_settings`.
+- [#3051983](https://www.drupal.org/node/3051983) Функция `drupal_schema_get_field_value()` помечена устаревшей.
 
 ## Ссылки
 
