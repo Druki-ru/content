@@ -25,4 +25,4 @@ Drupal используется, создается, проводит обуче
 
 ## Ссылки
 
-- [Официальное Drupal сообщество](https://www.drupal.org/community) (англ), Drupal.org.
+- [Официальное Drupal сообщество](https://www.drupal.org/community) (англ.), Drupal.org.

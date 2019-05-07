@@ -39,5 +39,5 @@ metatags:
 
 ## Ссылки
 
-- [Plugin API](https://www.drupal.org/docs/8/api/plugin-api) (англ)
+- [Plugin API](https://www.drupal.org/docs/8/api/plugin-api) (англ.)
 - [Drupal 8: Plugin API — создание собственных типов плагинов](https://niklan.net/blog/134), Niklan, 2016.

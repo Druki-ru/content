@@ -92,4 +92,4 @@ Drupal 8.9.0 будет получать патчи от Drupal 9.0.0, но ни
 
 ## Ссылки
 
-- [Drupal 9](https://www.drupal.org/documentation/9) (англ), Drupal.org.
+- [Drupal 9](https://www.drupal.org/documentation/9) (англ.), Drupal.org.

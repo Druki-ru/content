@@ -34,4 +34,4 @@ Drupal сообщество не одобряет написание кода с
 
 ## Ссылки
 
-- [Coding Standards](https://www.drupal.org/docs/develop/standards) (англ) — официальная страница со всеми актуальными стандартами, Drupal.org.
+- [Coding Standards](https://www.drupal.org/docs/develop/standards) (англ.) — официальная страница со всеми актуальными стандартами, Drupal.org.

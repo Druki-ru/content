@@ -494,5 +494,5 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 
 ## Ссылки
 
-- [Change records for Drupal](https://www.drupal.org/list-changes/drupal) (англ)
-- [Drupal 8.7.0](https://www.drupal.org/project/drupal/releases/8.7.0) (англ), Drupal.org.
+- [Change records for Drupal](https://www.drupal.org/list-changes/drupal) (англ.)
+- [Drupal 8.7.0](https://www.drupal.org/project/drupal/releases/8.7.0) (англ.), Drupal.org.

@@ -36,4 +36,4 @@ metatags:
 
 ## Ссылки
 
-- [Change records for Drupal](https://www.drupal.org/list-changes/drupal) (англ)
+- [Change records for Drupal](https://www.drupal.org/list-changes/drupal) (англ.)

@@ -53,7 +53,7 @@ composer update --with-dependencies -o
 
 ## Ссылки
 
-- [Официальный сайт Composer](https://getcomposer.org/) (англ)
-- [Документая по Composer](https://getcomposer.org/doc/) (англ)
-- [Packagist — Основной репозиторий Composer](https://packagist.org/) (англ)
+- [Официальный сайт Composer](https://getcomposer.org/) (англ.)
+- [Документая по Composer](https://getcomposer.org/doc/) (англ.)
+- [Packagist — Основной репозиторий Composer](https://packagist.org/) (англ.)
 - [Drupal 8: Работа с Composer](https://niklan.net/blog/130), Niklan, 2016

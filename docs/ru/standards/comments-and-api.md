@@ -76,4 +76,4 @@ category-title: API документация и комментарии
 
 ## Ссылки
 
-- [API documentation and comment standards](https://www.drupal.org/docs/develop/standards/api-documentation-and-comment-standards), Drupal.org.
+- [API documentation and comment standards](https://www.drupal.org/docs/develop/standards/api-documentation-and-comment-standards) (англ.), Drupal.org.

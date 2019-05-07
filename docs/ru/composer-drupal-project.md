@@ -84,5 +84,5 @@ Composer Drupal Project является официально рекомендо
 
 ## Ссылки
 
-- [GitHub репозиторий проекта](https://github.com/drupal-composer/drupal-project) (англ)
+- [GitHub репозиторий проекта](https://github.com/drupal-composer/drupal-project) (англ.)
 - [Drupal 8: Два варианта установки ядра](https://niklan.net/blog/185), Niklan, 2018

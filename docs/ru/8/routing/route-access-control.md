@@ -153,6 +153,6 @@ foo.content:
 
 ## Ссылки
 
-- [Custom route access checking](https://www.drupal.org/docs/8/api/routing-system/access-checking-on-routes/custom-route-access-checking) (англ)
-- [Advanced route access checking](https://www.drupal.org/docs/8/api/routing-system/access-checking-on-routes/advanced-route-access-checking) (англ)
+- [Custom route access checking](https://www.drupal.org/docs/8/api/routing-system/access-checking-on-routes/custom-route-access-checking) (англ.)
+- [Advanced route access checking](https://www.drupal.org/docs/8/api/routing-system/access-checking-on-routes/advanced-route-access-checking) (англ.)
 - [Drupal 8: Сервис access_check — гибкая и переиспользуемая провека прав доступа к маршрутам](https://niklan.net/blog/199), Niklan, 2019.

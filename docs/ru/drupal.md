@@ -25,7 +25,7 @@ Drupal предоставляет обширный API для разработч
 
 ## Ссылки
 
-- [Официальный сайт Drupal сообщества](https://drupal.org) (англ)
-- [Официальный промо-сайт Drupal](https://drupal.com) (англ)
+- [Официальный сайт Drupal сообщества](https://drupal.org) (англ.)
+- [Официальный промо-сайт Drupal](https://drupal.com) (англ.)
 - [Сайт русскоязычного сообщества Drupal](https://dru.io)
 - [«Drupal Россия»](https://drupal.ru)

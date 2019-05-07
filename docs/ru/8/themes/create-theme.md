@@ -87,5 +87,5 @@ regions:
 
 ## Ссылки
 
-- [Defining a theme with an .info.yml file](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file) (англ), Drupal.org.
+- [Defining a theme with an .info.yml file](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file) (англ.), Drupal.org.
 - [Разработка тем оформления для Drupal 8](https://iamdroid.net/ru/blog/drupal-8-theme-development-prepare), I am droid, 2017.
