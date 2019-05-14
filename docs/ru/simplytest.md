@@ -5,7 +5,7 @@ search-keywords:
   - как где попробовать друпал drupal
 metatags:
   title: 'Simplytest — демо-сайт на Drupal'
-  description: 'Simplytest — онлайн сервирс для установки демонстрационного сайта на Drupal.'
+  description: 'Simplytest — онлайн сервис для установки демонстрационного сайта на Drupal.'
 ---
 
 **Simplytest** — онлайн сервис позволяющий установить Drupal, модуль или дистрибутив и попробовать их.
