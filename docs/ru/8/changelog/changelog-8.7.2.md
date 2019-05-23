@@ -27,7 +27,7 @@ metatags:
 - [#3053129](https://www.drupal.org/node/3053129), [#3050448](https://www.drupal.org/node/3050448) Исправлены ссылки на документацию Twig, которые были изменены и теперь отдают 404.
 - [#3052971](https://www.drupal.org/node/3052971) Исправлено уведомление "Notice: Undefined index: #include_fallback in Drupal\Core\Render\Element\StatusMessages::generatePlaceholder()".
 - [#3034599](https://www.drupal.org/node/3034599) Исправлена ошибка для PHP 7 "Undefined class constant 'SOURCE_IDS_HASH'".
-- [#3001299](https://www.drupal.org/node/3001299) Исправлена ошибка "Uncaught exception 'Error' with message 'Call to a member function wasDefaultRevision() on null'", присходящая при попытке загрузить перевод сущности, для ызка, который не представлен в текущей версии сущности.
+- [#3001299](https://www.drupal.org/node/3001299) Исправлена ошибка "Uncaught exception 'Error' with message 'Call to a member function wasDefaultRevision() on null'", присходящая при попытке загрузить перевод сущности, для языка, который не представлен в текущей версии сущности.
 - [#3055495](https://www.drupal.org/node/3055495) Тесты поисковой страницы для миграций перенесены в соответствующие неймспейсы.
 - [#3042124](https://www.drupal.org/node/3042124) Исправлена ошибка, приводящая к пустому телу ответа, когда пользователь является администратором и произошла ошибка на сайте.
 - [#3024460](https://www.drupal.org/node/3024460) Добавлена миграция языковых настроек типов комментариев из Drupal 7.
