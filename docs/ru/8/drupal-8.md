@@ -26,14 +26,6 @@ metatags:
 - {Drupal 9}(drupal:9)
 - {Установка Drupal 8}(installation:8)
 - {Административный интерфейс}(admin:8)
-- {Модули}(modules:8)
-- {Темы оформления}(themes:8)
-- {Дистрибутивы}(distributions:8)
-- {Плагины}(plugins:8)
-- {Сервисы}(services:8)
-- {Хуки}(hooks:8)
-- {Контроллеры}(controllers:8)
-- {Libraries API}(libraries-api:8)
 
 ## Ссылки
 
