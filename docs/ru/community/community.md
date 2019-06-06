@@ -1,9 +1,10 @@
 ---
 id: community
 title: Сообщество
-category-area: 'Drupal сообщество'
-category-order: 1
-category-title: Введение
+category:
+  area: Drupal сообщество
+  order: 1
+  title: Введение
 metatags:
   title: 'Drupal сообщество'
   description: 'Узнайте что такое Drupal сообщество.'

@@ -1,9 +1,10 @@
 ---
 id: standards
 title: Стандарты кодирования Drupal
-category-area: Стандарты кодирования
-category-order: 1
-category-title: Введение
+category:
+  area: Стандарты кодирования
+  order: 1
+  title: Введение
 metatags:
   description: 'Узнайте какие в Drupal имеются стандарты, почему они есть и почему вы должны им следовать.'
 ---

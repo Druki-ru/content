@@ -6,9 +6,10 @@ path: /docs/8/admin/appearance
 metatags:
   title: 'Drupal 8: Оформление'
   description: 'Административная страница управления темами оформления сайта.'
-category-area: 'Административный интерфейс'
-category-title: 'Оформление'
-category-order: 4
+category:
+  area: Административный интерфейс
+  title: Оформление
+  order: 4
 ---
 
 ![Административная страница Drupal 8: Оформление](https://i.imgur.com/yogCm5Z.png)

@@ -2,9 +2,10 @@
 id: standards-php
 title: Стандарты кодирования PHP
 path: /docs/standards/php
-category-area: Стандарты кодирования
-category-order: 2
-category-title: PHP
+category:
+  area: Стандарты кодирования
+  order: 2
+  title: PHP
 metatags:
   title: 'Drupal: Стандарты кодирования PHP'
   description: 'Стандарты кодирования на языке программирования PHP.'

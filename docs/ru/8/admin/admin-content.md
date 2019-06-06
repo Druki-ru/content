@@ -6,9 +6,10 @@ path: /docs/8/admin/content
 metatags:
   title: 'Drupal 8: Содержимое'
   description: 'Административная страница обзора содержимого сайта.'
-category-area: 'Административный интерфейс'
-category-title: 'Содержимое'
-category-order: 2
+category:
+  area: Административный интерфейс
+  title: Содержимое
+  order: 2
 ---
 
 ![Административная страница Drupal 8: Содержимое](https://i.imgur.com/bygiFPG.png)

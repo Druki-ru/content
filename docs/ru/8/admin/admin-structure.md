@@ -6,9 +6,10 @@ path: /docs/8/admin/structure
 metatags:
   title: 'Drupal 8: Структура'
   description: 'Административная страница содержащая ссылки на настройки структуры сайта.'
-category-area: 'Административный интерфейс'
-category-title: 'Структура'
-category-order: 3
+category:
+  area: Административный интерфейс
+  title: Структура
+  order: 3
 ---
 
 ![Административная страница Drupal 8: Структура](https://i.imgur.com/T2rdljY.png)

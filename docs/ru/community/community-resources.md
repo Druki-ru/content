@@ -2,9 +2,10 @@
 id: community-resources
 title: Интернет-ресурсы
 path: /docs/community/resources
-category-area: 'Drupal сообщество'
-category-order: 2
-category-title: Интернет-ресурсы
+category:
+  area: Drupal сообщество
+  order: 2
+  title: Интернет-ресурсы
 metatags:
   title: 'Drupal сообщество: Интернет-ресурсы'
   description: 'Узнайте какие сайты есть у сообщества, группы в соц. сетях, публичные групповые чаты и локальные адреса сообществ.'

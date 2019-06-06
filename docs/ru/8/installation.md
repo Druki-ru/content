@@ -2,9 +2,10 @@
 id: installation
 title: Руководство по установке
 core: 8
-category-area: Первое знакомство
-category-order: 1
-category-title: Установка
+category:
+  area: Первое знакомство
+  order: 1
+  title: Установка
 search-keywords:
   - Как устанавливать установить Drupal
 metatags:
