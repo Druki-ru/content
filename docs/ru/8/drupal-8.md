@@ -23,9 +23,9 @@ metatags:
 
 ## См. также
 
-- {Drupal 9}(drupal:9)
-- {Установка Drupal 8}(installation:8)
-- {Административный интерфейс}(admin:8)
+- [Drupal 9](../9/drupal-9.md)
+- [Установка Drupal 8](installation.md)
+- [Административный интерфейс](admin/admin.md)
 
 ## Ссылки
 

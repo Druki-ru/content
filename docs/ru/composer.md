@@ -49,7 +49,7 @@ composer update --with-dependencies -o
 
 ## См. также
 
-- {Drush — командная утилита для управления Drupal}(drush)
+- [Drush — командная утилита для управления Drupal](drush.md)
 
 ## Ссылки
 

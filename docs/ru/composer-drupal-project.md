@@ -7,7 +7,7 @@ metatags:
   description: 'Рекомендуемый способ установки Drupal 8 при помощи Composer.'
 ---
 
-**Composer Drupal Project** — шаблон проекта предоставляет стартовый набор для управления зависимостями сайта при помощи {Composer}(composer).
+**Composer Drupal Project** — шаблон проекта предоставляет стартовый набор для управления зависимостями сайта при помощи [Composer](composer.md).
 
 Данный способ установки Drupal является альтернативой установки Drupal из архива, скаченного на drupal.org.
 
@@ -18,13 +18,13 @@ Composer Drupal Project является официально рекомендо
 Шаблон предоставляет свой composer.json файл, который берет на себя задачи:
 
 - Ядро Drupal будет установлено в `web` директорию.
-- Будет использоваться сгенерированный {Composer'ом}(composer) `vendor/autoload.php` (автолоадер зависимостей), вместо поставляемого Drupal `/web/vendor/autoload.php`.
+- Будет использоваться сгенерированный [Composer'ом](composer.md) `vendor/autoload.php` (автолоадер зависимостей), вместо поставляемого Drupal `/web/vendor/autoload.php`.
 - Модули (пакеты типа `drupal-module`) будут установлены в `web/modules/contrib`.
 - Темы оформления (пакеты типа `drupal-theme`) будут установлены в `web/themes/contrib`.
-- {Установочные профили}(distributions) (пакеты типа `drupal-profile`) будут установлены в `web/profiles/contrib`.
+- [Установочные профили](8/distributions/distributions.md) (пакеты типа `drupal-profile`) будут установлены в `web/profiles/contrib`.
 - Будут созданы со всеми необходимыми правами файлы по умолчанию `settings.php` и `services.yml`.
 - Будет создана `web/sites/default/files`.
-- Последняя версия {Drush}(drush) будет установлена с сайтом по пути `vendor/bin/drush`.
+- Последняя версия [Drush](drush.md) будет установлена с сайтом по пути `vendor/bin/drush`.
 - Последняя версия DrupalConsole будет установлена с сайтом по пути `vendor/bin/drupal`.
 - Будут созданы переменные окружения основанные на вашем `.env` файле. Для примера смотрите [.env.example](https://github.com/drupal-composer/drupal-project/blob/8.x/.env.example).
 
@@ -32,7 +32,7 @@ Composer Drupal Project является официально рекомендо
 
 ### Должен ли я коммитить в репозиторий проекта контриб модули которые я скачал?
 
-Рекомендация {Composer}(composer) — **нет**. Они представляют [аргументацию против данного подхода, а также решения, если все же решите так делать](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
+Рекомендация [Composer](composer.md) — **нет**. Они представляют [аргументацию против данного подхода, а также решения, если все же решите так делать](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
 
 ### Должен ли я коммитить в репозиторий проекта скафолд файлы?
 

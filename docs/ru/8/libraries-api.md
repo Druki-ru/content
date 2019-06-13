@@ -47,7 +47,7 @@ cuddly-slider:
 Пример выше предполагает что JavaScript файл `cuddy-slider.js` находится в папке `js` вашего модуля или темы. Если вам необходимо подключить библиотеку относительно корня Drupal ядра, путь должен начинаться с `/`. Библиотека будет называться `cuddly-slider`.
 
 > [!NOTE]
-> Используя {Drush}(drush), вы можете сгенерировать заготовку для библиотеки, как для модуля, так и для темы используя команды: `drush generate module-libraries`, `drush generate theme-libraries`, `drush generate yml-module-libraries`, `drush generate yml-theme-libraries`.
+> Используя [Drush](../drush.md), вы можете сгенерировать заготовку для библиотеки, как для модуля, так и для темы используя команды: `drush generate module-libraries`, `drush generate theme-libraries`, `drush generate yml-module-libraries`, `drush generate yml-theme-libraries`.
 
 ## Подключение зависимостей
 
