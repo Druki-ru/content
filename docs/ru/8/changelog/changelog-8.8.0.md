@@ -37,7 +37,7 @@ metatags:
 - [#2769027](https://www.drupal.org/node/2769027) Для SQLite включена опция [WAL](https://www.sqlite.org/wal.html) (Write-Ahead Logging) по умолчанию.
 - [#3047897](https://www.drupal.org/node/3047897) Конструктор `NodeNewComments` изменен. В него добавили два новых параметра, которые ожидают экземпляры объектов `EntityTypeManagerInterface` и `EntityFieldManagerInterface`, соответственно. Для старого кода будет выводиться предупреждение об ошибке и сервисы будут автоматически получены из глобального контейнера.
 - [#3030340](https://www.drupal.org/node/3030340) Объект `WebTestBase` помечен устаревшим.
-- [#3056869](https://www.drupal.org/node/3056869) Поддержка PHPUnit 4.x прекращена, теперь будет запрашиваться версия ^6.5. В соответствии с данным изменением, {Drush}(drush) команды `drupal-phpunit-upgrade` и `drupal-phpunit-upgrade-check` больше не нужны и были удалены.
+- [#3056869](https://www.drupal.org/node/3056869) Поддержка PHPUnit 4.x прекращена, теперь будет запрашиваться версия ^6.5. В соответствии с данным изменением, [Drush](../../drush.md) команды `drupal-phpunit-upgrade` и `drupal-phpunit-upgrade-check` больше не нужны и были удалены.
 - [#3056639](https://www.drupal.org/node/3056639) `MailManagerInterface::mail()` теперь позволяет переопределять сообщение об ошибке.
 - [#3035273](https://www.drupal.org/node/3035273) Несколько функций относящихся с к uri и scheme файлов помечены устаревшими и перенесены в `\Drupal\Core\StreamWrapper\StreamWrapperManagerInterface`.
 - [#2943918](https://www.drupal.org/node/2943918) `ConfigImporter` теперь также получает сервис `extension.list.module` в качестве аргумента.
