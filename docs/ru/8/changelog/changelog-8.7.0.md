@@ -16,7 +16,7 @@ metatags:
 
 Модуль JSON:API теперь в ядре.
 
-- Перед обновлением на 8.7.0, вам необходимо удалить контриб модуль при помощи {Composer}(composer) `composer remove drupal/jsonapi`, если не используете композер, то папку с модулем.
+- Перед обновлением на 8.7.0, вам необходимо удалить контриб модуль при помощи [Composer](../../composer.md) `composer remove drupal/jsonapi`, если не используете композер, то папку с модулем.
 - Проведите обновление до Drupal 8.7.0 как обычно, с запуском всех необходимых обновлений баз данных.
 - Если вы использовали данный модуль как зависимость для своих, замените зависимость с `jsonapi:jsonapi` на `drupal:jsonapi`.
 - Сбросьте кэш.
@@ -33,7 +33,7 @@ metatags:
 
 Уже имеющиеся сайты продолжат работать на данных версиях после обновления, но стабильность  не гарантируется, также будет показано предупреждение о старой версии PHP. Установка новых сайтов на PHP ниже 7-й версии будет запрещена.
 
-**Начиная с {Drupal 8.8.0}(changelog-8.8.0:8) минимальная версия PHP 7.0.8**.
+**Начиная с [Drupal 8.8.0](changelog-8.8.0.md) минимальная версия PHP 7.0.8**.
 
 ### JavaScript Messages API
 
@@ -45,7 +45,7 @@ metatags:
 
 #### Настройка и примеры
 
-В ядро добавлена новая {библиотека}(libraries-api:8) `drupal.message`, которую необходимо подключать там, где вы хотите использовать данный API.
+В ядро добавлена новая [библиотека](../libraries-api.md) `drupal.message`, которую необходимо подключать там, где вы хотите использовать данный API.
 
 Пример создания нового экземпляра класса сообщений:
 
@@ -154,7 +154,7 @@ $element = [
 
 #### Автоматические обновления сущностей удалены
 
-В Drupal 8 был представлен концепт автоматического обновления сущностей, который позволял обновлять схемы сущностей и их полей с минимальными усилиями, например, используя команду {Drush}(drush) `drush entity-updates`.
+В Drupal 8 был представлен концепт автоматического обновления сущностей, который позволял обновлять схемы сущностей и их полей с минимальными усилиями, например, используя команду [Drush](../../drush.md) `drush entity-updates`.
 
 Тем не менее, на практике, автоматические обновления показали что они опасны, потому что ведут к непредсказуемым результатам и критическим ошибкам. Использование данной возможности было прекращено в ядре ещё до релиза Drupal 8.
 
@@ -368,7 +368,7 @@ file_destination($destination, $replace)
 file_create_filename($basename, $directory)
 ```
 
-Вместо них необходимо использовать соответствующие методы {сервиса}(services:8) `file_system`.
+Вместо них необходимо использовать соответствующие методы [сервиса](../services/services.md) `file_system`.
 
 ```php
 try {
@@ -397,16 +397,16 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 - [#2929327](https://www.drupal.org/node/2929327) Сущность workflow теперь имеет дополнительные операции доступа.
 - [#2988067](https://www.drupal.org/node/2988067) Новый интерфейс `SynchronizableInterface` доступе для всех типов сущностей.
 - [#2981627](https://www.drupal.org/node/2981627) В `EntityAdapter` добавлен семантический метод `getEntity()` в дополнение к `getValue()`.
-- [#2997122](https://www.drupal.org/node/2997122) Теперь вы можете использовать вызываемые {сервисы}(services:8) в качестве {контроллеров}(routing:8), при помощи магического метода [__invoke](https://php.net/manual/en/language.oop5.magic.php#object.invoke).
+- [#2997122](https://www.drupal.org/node/2997122) Теперь вы можете использовать вызываемые [сервисы](../services/services.md) в качестве [контроллеров](../routing/routing.md), при помощи магического метода [__invoke](https://php.net/manual/en/language.oop5.magic.php#object.invoke).
 - [#2998929](https://www.drupal.org/node/2998929) Добавлен трейт `EntityOwnerTrait`, который может быть добавлен к сущностям в связке с `owner` ключем для сущности.
 - [#2999035](https://www.drupal.org/node/2999035) `Schema::fieldSetDefault` и `Schema::fieldSetNoDefault` помечены устаревшими в пользу `Schema::changeField`.
-- [#2997808](https://www.drupal.org/node/2997808) Добавлены три новых {хука}(hooks:8) `hook_aggregator_fetcher_info_alter()`, `hook_aggregator_parser_info_alter()`, `hook_aggregator_processor_info_alter()` для редактирования плагинов модуля Aggregator.
+- [#2997808](https://www.drupal.org/node/2997808) Добавлены три новых [хука](../hooks/hooks.md) `hook_aggregator_fetcher_info_alter()`, `hook_aggregator_parser_info_alter()`, `hook_aggregator_processor_info_alter()` для редактирования плагинов модуля Aggregator.
 - [#2996668](https://www.drupal.org/node/2996668) Добавлено новое свойства для элемента формы `#label_for`.
 - [#2999418](https://www.drupal.org/node/2999418) Хранилище секций Layout Builder модуля теперь могут предоставлять свои вкладки (local tasks).
 - [#3000572](https://www.drupal.org/node/3000572) MySQL `Schema::renameTable()` теперь ввсегда возвращает `NULL`.
 - [#2992821](https://www.drupal.org/node/2992821) Изменены проверки прав доступа к формам создания, редактирования и удаление пользоватлей. Теперь они более гибкие.
 - [#2986827](https://www.drupal.org/node/2986827) В построитель запросов добавлен новый метод-условие `alwaysFalse()`, который позволяет "обнулить" результат запроса.
-- [#3000819](https://www.drupal.org/node/3000819) Атрибут `data-drupal-link-system-path` теперь устанавливается только для системных путей и {маршрута}(routing:8) `<front>`.
+- [#3000819](https://www.drupal.org/node/3000819) Атрибут `data-drupal-link-system-path` теперь устанавливается только для системных путей и [маршрута](../routing/routing.md) `<front>`.
 - [#3001134](https://www.drupal.org/node/3001134) Статус "модерирования" по умолчанию для модуля workflow теперь можно изменять из администартивного интерфейса.
 - [#3003360](https://www.drupal.org/node/3003360) `KernelTestBase::installSchema()` теперь будет выдавать уведомление о устаревшем API.
 - [#3001224](https://www.drupal.org/node/3001224) Вкладка ревизий теперь отображается даже при 1 ревизии.
@@ -424,12 +424,12 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 - [#2979986](https://www.drupal.org/node/2979986) Функция `taxonomy_check_vocabulary_hierarchy()` и `\Drupal\taxonomy\VocabularyInterface::setHierarchy()` помечены устаревшими.
 - [#3014010](https://www.drupal.org/node/3014010) `ConfigInstallerInterface` получил новый метод `getSourceStorage()`.
 - [#3014611](https://www.drupal.org/node/3014611) `PluralTranslatableMarkup::DELIMITER` помечен устаревшим в пользу `Drupal\Component\Gettext\PoItem::DELIMITER`.
-- [#3006470](https://www.drupal.org/node/3006470) {Плагины}(plugins:8) `MigrateField` теперь имеют "вес" (`weight`).
+- [#3006470](https://www.drupal.org/node/3006470) [Плагины](../plugins/plugins.md) `MigrateField` теперь имеют "вес" (`weight`).
 - [#3009286](https://www.drupal.org/node/3009286) Плагины `MigrateField` email, entityreference и number_default перемещены из `Core\Field` в модуль `field`.
 - [#2880055](https://www.drupal.org/node/2880055) `datetime` и `datelist` элементы теперь учитывают свойство `#date_timezone`, которое по умолчанию получается при помощи `drupal_get_user_timezone()`.
 - [#2925510](https://www.drupal.org/node/2925510) Исправлена ошибка с отображением заголовков у блоков с раскрытыми фильтрами Views.
 - [#2986918](https://www.drupal.org/node/2986918) Плагины Views `ViewsDisplayExtender` теперь могут добавлять свою валидацию данных.
-- [#3015367](https://www.drupal.org/node/3015367) Добавлен новый {хук}(hooks:8) `hook_entity_preload()`. Данный хук позволяет подменять данные, прежде чем сущности будут загружены, например, ревизию для загрузки.
+- [#3015367](https://www.drupal.org/node/3015367) Добавлен новый [хук](../hooks/hooks.md) `hook_entity_preload()`. Данный хук позволяет подменять данные, прежде чем сущности будут загружены, например, ревизию для загрузки.
 - [#3009182](https://www.drupal.org/node/3009182) Добавлен новый класс `\Drupal\Core\Utility\TableSort`, который заменяет все функции из `tablesort.inc`, которые теперь помечены устаревшими.
 - [#3016699](https://www.drupal.org/node/3016699) Плагины `Block` и `Condition` теперь используют `context_definitions` ключ, для описания своих контекстов, вместо `context`.
 - [#3018097](https://www.drupal.org/node/3018097) CSS id для заголовка пагинации теперь имеет уникальный id вместо `pagination-heading`. Для вывода данного значения в шаблонах используйте `{{ heading_id }}`.
@@ -490,7 +490,7 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 
 ## См. также
 
-- {Drupal 8.8.0}(changelog-8.8.0:8) — следующий минорный релиз Drupal. 
+- [Drupal 8.8.0](changelog-8.8.0.md) — следующий минорный релиз Drupal. 
 
 ## Ссылки
 
