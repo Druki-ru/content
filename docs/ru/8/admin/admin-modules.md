@@ -52,4 +52,4 @@ category:
 
 ## См. также
 
-- [Drupal 8: Создание собственного модуля](/docs/ru/8/modules/create-module.md)
+- [Drupal 8: Создание собственного модуля](../modules/create-module.md)
