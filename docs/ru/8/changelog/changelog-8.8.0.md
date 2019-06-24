@@ -20,6 +20,48 @@ metatags:
 
 На данный момент информация отсутствует. Она появится ближе к релизу или в день релиза.
 
+## Оформление и темизация
+
+### Классы для визуалции были удалены для filter модуля
+
+- [#3061520](https://www.drupal.org/node/3061520)
+
+Все CSS классы (`filter-wrapper`, `filter-guidelines`, `filter-list` и `filter-help`), которые использовались для справочного раздела о текстовых форматах ввода, были удалены. Также были удалены все стили для данных классов из **filter.admin.css**.
+
+> [!NOTE]
+> Данное изменение не повлияет на темы, которые наследуются от Stable или Classy.
+
+Если вы хотите вернуть данные классы обратно, можете воспользоваться следующим кодом в своей теме:
+
+```php
+/**
+ * Implements hook_element_info_alter().
+ */
+function THEMENAME_element_info_alter(array &$info) {
+  if (array_key_exists('text_format', $info)) {
+    $info['text_format']['#process'][] = 'THEMENAME_process_text_format';
+  }
+}
+
+/**
+ * #process callback, for adding classes to filter components.
+ *
+ * @param array $element
+ *   Render array for the text_format element.
+ *
+ * @return array
+ *   Text_format element with the filter classes added.
+ */
+function THEMENAME_process_text_format(array $element) {
+  $element['format']['#attributes']['class'][] = 'filter-wrapper';
+  $element['format']['guidelines']['#attributes']['class'][] = 'filter-guidelines';
+  $element['format']['format']['#attributes']['class'][] = 'filter-list';
+  $element['format']['help']['#attributes']['class'][] = 'filter-help';
+
+  return $element;
+}
+```
+
 ## Прочие изменения
 
 - [#3033540](https://www.drupal.org/node/3033540) Формы модуля `action` были перенесены в `src/Form`.
@@ -43,6 +85,9 @@ metatags:
 - [#2943918](https://www.drupal.org/node/2943918) `ConfigImporter` теперь также получает сервис `extension.list.module` в качестве аргумента.
 - [#3059344](https://www.drupal.org/node/3059344) Добавлен подкласс `\Symfony\Component\Validator\ConstraintViolation` в Drupal `\Drupal\Core\Validation\ConstraintViolation` для использования в `\Drupal\Core\TypedData\Validation\ExecutionContext::addViolation()`.
 - [#3057326](https://www.drupal.org/node/3057326) Передача File сущности в качестве первого аргумента в `assertFileExists` и `assertFileNotExists` помечена устаревшей.
+- [#3060703](https://www.drupal.org/node/3060703) Добавленна новая переменная `file_size` для шаблона **file-link.html.twig**.
+- [#3054692](https://www.drupal.org/node/3054692) `\Drupal\system\SystemRequirements::phpVersionWithPdoDisallowMultipleStatements()` помечен устаревшим.
+- [#2869168](https://www.drupal.org/node/2869168) Добавлена возможность ограничивать доступные операторы для раскрытых фильтров.
 
 ## Ссылки
 
