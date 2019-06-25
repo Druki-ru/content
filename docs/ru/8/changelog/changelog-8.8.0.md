@@ -20,9 +20,39 @@ metatags:
 
 На данный момент информация отсутствует. Она появится ближе к релизу или в день релиза.
 
-## Оформление и темизация
+## Список изменений
 
-### Классы для визуализации были удалены для filter модуля
+### Общие изменения
+
+#### Путь то конфигураций синхронизации теперь хранится в $settings вместо $config_directories
+
+- [#3018145](https://www.drupal.org/node/3018145)
+
+Путь до конфигураций синхронизации теперь хранится в `$settings['config_sync_directory']` файла **settings.php**.
+
+Возможность указания нескольких конфигурационных директорий в `$config_directories` помечена устеаревшим. Если ваш собственный или контрибный код опирается на данную особенность, вам необходимо перенести настройки либо в `$settings`, либо в другое храналище, например, в State или конфигурации напрямую.
+
+Как результат упрощения настройки пути до директории, были также помечены устаревшими функции `config_get_config_directory()` и `drupal_install_config_directories()`, а также константа `CONFIG_SYNC_DIRECTORY`.
+
+Для получения пути до данной директории, вместо старого варианта `config_get_config_directory(CONFIG_SYNC_DIRECTORY)` используйте `Settings::get('config_sync_directory')`.
+
+##### Обновление settings.php
+
+**Было**
+
+```php
+$config_directories['sync'] = 'sites/default/files/config_YLZJmmpOqc_KBWbMc2I58ky3-8c7qtg4G-OpSqFClHs5E0NL9YMFgyF4RRTv8IFdl_kAMs_Bdw/sync';
+````
+
+**Стало**
+
+```php
+$settings['config_sync_directory'] = 'sites/default/files/config_YLZJmmpOqc_KBWbMc2I58ky3-8c7qtg4G-OpSqFClHs5E0NL9YMFgyF4RRTv8IFdl_kAMs_Bdw/sync';
+```
+
+### Оформление и темизация
+
+#### Классы для визуализации были удалены для filter модуля
 
 - [#3061520](https://www.drupal.org/node/3061520)
 
@@ -91,4 +121,4 @@ function THEMENAME_process_text_format(array $element) {
 
 ## Ссылки
 
-- [Change records for Drupal](https://www.drupal.org/list-changes/drupal) (англ.)
+- [Спиок изменений Drupal](https://www.drupal.org/list-changes/drupal) (англ.)
