@@ -24,7 +24,9 @@ metatags:
 
 ### Общие изменения
 
-#### [#3018145](https://www.drupal.org/node/3018145) Путь до конфигураций синхронизации теперь хранится в $settings вместо $config_directories
+#### Путь до конфигураций синхронизации теперь хранится в $settings вместо $config_directories
+
+- [#3018145](https://www.drupal.org/node/3018145)
 
 Путь до конфигураций синхронизации теперь хранится в `$settings['config_sync_directory']` файла **settings.php**.
 
@@ -52,7 +54,9 @@ $settings['config_sync_directory'] = 'sites/default/files/config_YLZJmmpOqc_KBWb
 
 - [#3060703](https://www.drupal.org/node/3060703) Добавленна новая переменная `file_size` для шаблона **file-link.html.twig**.
 
-#### [#3061520](https://www.drupal.org/node/3061520) Классы для визуализации были удалены для filter модуля
+#### Классы для визуализации были удалены для filter модуля
+
+- [#3061520](https://www.drupal.org/node/3061520)
 
 Все CSS классы (`filter-wrapper`, `filter-guidelines`, `filter-list` и `filter-help`), которые использовались для справочного раздела о текстовых форматах ввода, были удалены. Также были удалены все стили для данных классов из **filter.admin.css**.
 
