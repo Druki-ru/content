@@ -2,7 +2,7 @@
 id: drupal
 core: 8
 title: Drupal 8
-path: /docs/8
+path: /8
 metatags:
   description: 'Что такое Drupal 8?'
 ---

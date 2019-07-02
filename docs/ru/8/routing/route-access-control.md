@@ -1,7 +1,7 @@
 ---
 id: route-access-control
 title: Контроль доступа
-path: /docs/8/routing/access-control
+path: /8/routing/access-control
 core: 8
 category:
   area: Маршрутизация

@@ -2,7 +2,7 @@
 id: admin-content
 title: Содержимое
 core: 8
-path: /docs/8/admin/content
+path: /8/admin/content
 metatags:
   title: 'Drupal 8: Содержимое'
   description: 'Административная страница обзора содержимого сайта.'

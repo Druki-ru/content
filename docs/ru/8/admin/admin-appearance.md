@@ -2,7 +2,7 @@
 id: admin-appearance
 title: Оформление
 core: 8
-path: /docs/8/admin/appearance
+path: /8/admin/appearance
 metatags:
   title: 'Drupal 8: Оформление'
   description: 'Административная страница управления темами оформления сайта.'

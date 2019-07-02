@@ -2,7 +2,7 @@
 id: create-theme
 core: 8
 title: Создание темы оформления
-path: /docs/8/themes/create
+path: /8/themes/create
 metatags:
   title: 'Drupal 8: Создание темы оформления'
   description: 'Создание собственной темы оформления. Структура её *.info.yml файла, минимальный состав, требования и прочие ньюансы.'

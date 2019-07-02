@@ -2,7 +2,7 @@
 id: admin-structure
 title: Структура
 core: 8
-path: /docs/8/admin/structure
+path: /8/admin/structure
 metatags:
   title: 'Drupal 8: Структура'
   description: 'Административная страница содержащая ссылки на настройки структуры сайта.'

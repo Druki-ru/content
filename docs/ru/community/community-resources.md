@@ -1,7 +1,7 @@
 ---
 id: community-resources
 title: Интернет-ресурсы
-path: /docs/community/resources
+path: /community/resources
 category:
   area: Drupal сообщество
   order: 2

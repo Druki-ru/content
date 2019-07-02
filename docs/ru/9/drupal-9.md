@@ -2,7 +2,7 @@
 id: drupal
 core: 9
 title: Drupal 9
-path: /docs/9
+path: /9
 metatags:
   description: 'Узнайте что готовится в следующем мажорном релизе Drupal, релиз которого планируется 3 июня 2020 г.'
 ---

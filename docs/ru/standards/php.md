@@ -1,7 +1,7 @@
 ---
 id: standards-php
 title: Стандарты кодирования PHP
-path: /docs/standards/php
+path: /standards/php
 category:
   area: Стандарты кодирования
   order: 2

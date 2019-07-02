@@ -1,7 +1,7 @@
 ---
 id: routes-and-controllers
 title: Маршруты и контроллеры
-path: /docs/8/routing/routes-and-controllers
+path: /8/routing/routes-and-controllers
 core: 8
 category:
   area: Маршрутизация

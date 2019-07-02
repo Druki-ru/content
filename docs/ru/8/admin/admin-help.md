@@ -2,7 +2,7 @@
 id: admin-help
 title: Справка
 core: 8
-path: /docs/8/admin/help
+path: /8/admin/help
 metatags:
   title: 'Drupal 8: Справка'
   description: 'Административная страница содержащая справку по различным активным модулям.'

@@ -2,7 +2,7 @@
 id: admin-config
 title: Конфигурация
 core: 8
-path: /docs/8/admin/config
+path: /8/admin/config
 metatags:
   title: 'Drupal 8: Конфигурация'
   description: 'Административная страница управления конфигурациями сайта.'
