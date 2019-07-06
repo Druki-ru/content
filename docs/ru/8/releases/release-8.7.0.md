@@ -1,7 +1,7 @@
 ---
-id: changelog-8.7.0
+id: release-8.7.0
 title: 'Drupal 8.7.0'
-path: /8/changelog/8.7.0
+path: /8/releases/8.7.0
 core: 8
 metatags:
   title: 'Drupal 8.7.0: Список изменений'
@@ -33,7 +33,7 @@ metatags:
 
 Уже имеющиеся сайты продолжат работать на данных версиях после обновления, но стабильность  не гарантируется, также будет показано предупреждение о старой версии PHP. Установка новых сайтов на PHP ниже 7-й версии будет запрещена.
 
-**Начиная с [Drupal 8.8.0](changelog-8.8.0.md) минимальная версия PHP 7.0.8**.
+**Начиная с [Drupal 8.8.0](release-8.8.0.md) минимальная версия PHP 7.0.8**.
 
 ### JavaScript Messages API
 
@@ -490,7 +490,7 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 
 ## См. также
 
-- [Drupal 8.8.0](changelog-8.8.0.md) — следующий минорный релиз Drupal. 
+- [Drupal 8.8.0](release-8.8.0.md) — следующий минорный релиз Drupal. 
 
 ## Ссылки
 
