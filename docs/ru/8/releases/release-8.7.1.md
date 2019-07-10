@@ -1,7 +1,7 @@
 ---
 id: release-8.7.1
 title: 'Drupal 8.7.1'
-path: /8/release/8.7.1
+path: /8/releases/8.7.1
 core: 8
 metatags:
   title: 'Drupal 8.7.1: Список изменений'
@@ -24,4 +24,4 @@ metatags:
 
 ## Ссылки
 
-- [Официльные примечания к выпуску](https://www.drupal.org/project/drupal/releases/8.7.1) (англ.), Drupal.org, 8 мая 2019.
+- [Официальные примечания к выпуску](https://www.drupal.org/project/drupal/releases/8.7.1) (англ.), Drupal.org, 8 мая 2019.
