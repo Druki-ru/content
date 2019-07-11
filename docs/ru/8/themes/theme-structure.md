@@ -22,27 +22,27 @@ category:
 
 Давайте посмотрим на пример структуры темы:
 
-```
-  |-my_theme_name.breakpoints.yml
-  |-my_theme_name.info.yml
-  |-my_theme_name.libraries.yml
-  |-my_theme_name.theme
-  |-config
-  |  |-install
-  |  |  |-my_theme_name.settings.yml
-  |  |-schema
-  |  |  |-my_theme_name.schema.yml
-  |-css
-  |  |-style.css
-  |-js
-  |  |-my-custom-script.js
-  |-images
-  |  |-buttons.png
-  |-logo.svg
-  |-screenshot.png
-  |-templates
-  |  |-maintenance-page.html.twig
-  |  |-node.html.twig
+```html
+  ├─ my_theme_name.breakpoints.yml
+  ├─ my_theme_name.info.yml
+  ├─ my_theme_name.libraries.yml
+  ├─ my_theme_name.theme
+  ├─ config/
+  │  ├─ install/
+  │  │   └─ my_theme_name.settings.yml
+  │  └─ schema/
+  │       └─ my_theme_name.schema.yml
+  ├─ css/
+  │   └─ style.css
+  ├─ js/
+  │   └─ my-custom-script.js
+  ├─images
+  │   └─ buttons.png
+  ├─ logo.svg
+  ├─ screenshot.png
+  └─ templates/
+       ├─ maintenance-page.html.twig
+       └─ node.html.twig
 ```
 
 Ниже представлено описание общих файлов, которые можно найти в теме оформления.
