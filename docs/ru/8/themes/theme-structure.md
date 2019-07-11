@@ -33,16 +33,16 @@ category:
   │  └─ schema/
   │       └─ my_theme_name.schema.yml
   ├─ css/
-  │   └─ style.css
+  │  └─ style.css
   ├─ js/
-  │   └─ my-custom-script.js
-  ├─images
-  │   └─ buttons.png
+  │  └─ my-custom-script.js
+  ├─ images
+  │  └─ buttons.png
   ├─ logo.svg
   ├─ screenshot.png
   └─ templates/
-       ├─ maintenance-page.html.twig
-       └─ node.html.twig
+     ├─ maintenance-page.html.twig
+     └─ node.html.twig
 ```
 
 Ниже представлено описание общих файлов, которые можно найти в теме оформления.
