@@ -29,9 +29,9 @@ category:
   ├─ my_theme_name.theme
   ├─ config/
   │  ├─ install/
-  │  │   └─ my_theme_name.settings.yml
+  │  │  └─ my_theme_name.settings.yml
   │  └─ schema/
-  │       └─ my_theme_name.schema.yml
+  │     └─ my_theme_name.schema.yml
   ├─ css/
   │  └─ style.css
   ├─ js/
@@ -67,12 +67,12 @@ category:
 
 Хранение .css файлов в css/ папке является хорошей практикой. Если вы используете препроцессоры, возможно стоит подумать о создании следующей структуры:
 
-```
-  |-styles
-  |  |-css
-  |    |-style.css
-  |  |-scss
-  |    |-style.scss
+```html
+  └─ styles/
+     ├─ css/
+     │  └─ style.css
+     └─ scss/
+        └─ style.scss
 ```
 
 Это позволить отделить исходные файлы стилей, из которых они собираются, от конечных, которые будут использоваться на странице.
