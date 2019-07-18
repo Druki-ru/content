@@ -88,6 +88,7 @@ metatags:
 У нашего сообщества многие разработчики и начинающие пользователи делятся своим опытом и знаниями на своих личных ресурсах и страничках.
 
 - <http://xandeadx.ru/>
+- <https://iamdroid.net>
 - <http://drup.by>
 - <http://drupalbook.ru/>
 - <http://boolboost.com/>

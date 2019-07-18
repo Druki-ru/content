@@ -95,5 +95,5 @@ class MyForm extends ConfigFormBase {
 
 ## Ссылки
 
-- [Service Container (Symfony)](https://symfony.com/doc/3.4/service_container.html)
+- [Service Container](https://symfony.com/doc/3.4/service_container.html) (англ.), Symfony.
 - [Drupal 8: Services](https://niklan.net/blog/150), Niklan, 2017.

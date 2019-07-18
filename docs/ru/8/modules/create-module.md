@@ -136,5 +136,5 @@ hidden: true
 
 ## Ссылки
 
-- [Creating custom module](https://www.drupal.org/docs/8/creating-custom-modules) (англ.)
+- [Официальная документация по созданию модулей](https://www.drupal.org/docs/8/creating-custom-modules) (англ.)
 - [Drupal 8 Hello World: Пишем свой первый модуль](https://niklan.net/blog/66), Niklan, 2014

@@ -145,4 +145,4 @@ function THEMENAME_process_text_format(array $element) {
 
 ## Ссылки
 
-- [Спиок изменений Drupal](https://www.drupal.org/list-changes/drupal) (англ.)
+- [Спиок изменений Drupal](https://www.drupal.org/list-changes/drupal) (англ.), drupal.org.

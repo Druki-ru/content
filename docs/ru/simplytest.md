@@ -49,5 +49,5 @@ metatags:
 
 ## Ссылки
 
-- [Simplytest.me](https://simplytest.me/) — сайт сервиса.
-- [simplytest](https://www.drupal.org/project/simplytest) — проект на drupal.org с исходными кодами сервиса.
+- [Сайт сервиса.](https://simplytest.me/) (англ.)
+- [Проект на drupal.org с исходным кодом](https://www.drupal.org/project/simplytest) (англ.)

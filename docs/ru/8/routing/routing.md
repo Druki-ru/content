@@ -24,5 +24,5 @@ metatags:
 
 ## Ссылки
 
-- [Routing (Symfony)](https://symfony.com/doc/current/routing.html) (англ.)
-- [Routing (Drupal)](https://www.drupal.org/docs/8/api/routing-system) (англ.)
+- [Routing](https://symfony.com/doc/current/routing.html) (англ.), Symfony.
+- [Routing system](https://www.drupal.org/docs/8/api/routing-system) (англ.), drupal.org.

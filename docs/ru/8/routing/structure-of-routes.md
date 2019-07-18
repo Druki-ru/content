@@ -102,4 +102,4 @@ foo.content:
 
 ## Ссылки
 
-- [Structure of routes](https://www.drupal.org/docs/8/api/routing-system/structure-of-routes) (англ.), Drupal документация.
+- [Structure of routes](https://www.drupal.org/docs/8/api/routing-system/structure-of-routes) (англ.), drupal.org.
