@@ -445,7 +445,7 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 - [#3022574](https://www.drupal.org/node/3022574) `LayoutBuilderEntityViewDisplay::getRuntimeSections()` помечен устаревшим.
 - [#3022118](https://www.drupal.org/node/3022118) Плагины `SectionStorage` теперь должны реализовывать `isApplicable()`.
 - [#3020140](https://www.drupal.org/node/3020140) Layout Builder теперь поставляется с секцией "один ряд".
-- [#3024321](https://www.drupal.org/node/3024321) `canonical` ссылки теперь имеют в значениях абсолютные URL, вместо относительных. Хоть абсолютные URL и являются правильными, согласно [RFC6596](https://tools.ietf.org/html/rfc6596), Google их [не поддерживает](https://github.com/GoogleChrome/lighthouse/issues/3178).
+- [#3024321](https://www.drupal.org/node/3024321) `canonical` ссылки теперь имеют в значениях абсолютные URL, вместо относительных. Хоть относительные URL и являются правильными, согласно [RFC6596](https://tools.ietf.org/html/rfc6596), Google их [не поддерживает](https://github.com/GoogleChrome/lighthouse/issues/3178).
 - [#3011154](https://www.drupal.org/node/3011154) Процедурная функция `twig_without()` помечена устаревшей. Используйте сервис `twig.extension` и метод `without()`. Это изменение **не касается** Twig фильтра `without`.
 - [#3001185](https://www.drupal.org/node/3001185) Сервис `session_handler.write_check` удален из `core.services.yml`.
 - [#2934242](https://www.drupal.org/node/2934242) Хуки `hook_test_group_started()`, `hook_test_group_finished()`, `hook_test_finished()` помечены устаревшими.

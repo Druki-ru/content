@@ -36,7 +36,7 @@ category:
   │  └─ style.css
   ├─ js/
   │  └─ my-custom-script.js
-  ├─ images
+  ├─ images/
   │  └─ buttons.png
   ├─ logo.svg
   ├─ screenshot.png
