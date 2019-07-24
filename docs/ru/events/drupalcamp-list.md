@@ -1,5 +1,6 @@
 ---
 id: drupalcamp-list
+path: /events/drupalcamp-list
 title: Список мероприятий DrupalCamp
 metatags:
   description: 'Будущие и прошешие мероприятия DrupalCamp. Информация, отчеты, доклады и докладчики.'
