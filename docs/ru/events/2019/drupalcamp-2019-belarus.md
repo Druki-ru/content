@@ -1,13 +1,28 @@
 ---
 id: drupalcamp-2019-belarus
 path: /events/drupalcamp-2019-belarus
-title: DrupalCamp Belarus, 2019
+title: Drupal Camp Belarus, 2019
 metatags:
-  description: 'DrupalCamp 2019 в Минске, Беларусь. Даты проведения, докладчики, доклады.'
+  description: 'Drupal Camp 2019 в Минске, Беларусь. Даты проведения, докладчики, доклады.'
 ---
 
 **Даты проведения:** 18-19 мая 2019, 8:40 - 18:15\
 **Место проведения:** Отель Renaissance, Минск, Беларусь.
+**Стоимость участия:** 50-250 BYN
+
+5 лет прошло с последней PHP-конференции в Беларуси, сфокусированной на CMF Drupal.
+
+Мы вернулись и не просто так - отрабатывать тишину за упущенные годы будем с размахом, которого белорусское Drupal-сообществе еще не видело.
+
+На конференции соберутся представители комьюнити со всего мира. Убедитесь сами!
+
+Вместе разберемся со всеми нюансами: от написания кода до управления проектами и создания комплексной архитектуры решений.
+
+## Расписание
+
+- 17 мая, Pre Party
+- 18 мая, Сonference Day
+- 19 мая, Contribution Day
 
 ## Список докладчиков
 
@@ -74,5 +89,5 @@ metatags:
 
 ## Ссылки
 
-- [DrupalCamp Belarus, 2019](https://drupalcamp.by/) (англ.)
+- [Drupal Camp Belarus, 2019](https://drupalcamp.by/) (англ.)
 - [Drupal Camp Belarus 2019 (YouTube плейлист)](https://www.youtube.com/playlist?list=PLIk3nG9tqdWWXUx-c08Dc9GPFhzozawVQ)
