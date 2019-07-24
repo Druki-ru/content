@@ -490,9 +490,8 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 
 ## См. также
 
-- [Drupal 8.8.0](release-8.8.0.md) — следующий минорный релиз Drupal. 
+- [Drupal 8.8.0](release-8.8.0.md) — следующий минорный релиз. 
 
 ## Ссылки
 
-- [Список изменений Drupal](https://www.drupal.org/list-changes/drupal) (англ.), Drupal.org
-- [Drupal 8.7.0](https://www.drupal.org/project/drupal/releases/8.7.0) (англ.), Drupal.org.
+- [Drupal 8.7.0](https://www.drupal.org/project/drupal/releases/8.7.0) (англ.), drupal.org

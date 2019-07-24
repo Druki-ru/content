@@ -105,4 +105,4 @@ category:
 
 ## Ссылки
 
-- [Drupal 8 Theme folder structure](https://www.drupal.org/docs/8/theming-drupal-8/drupal-8-theme-folder-structure) (англ.), Drupal.org.
+- [Drupal 8 Theme folder structure](https://www.drupal.org/docs/8/theming-drupal-8/drupal-8-theme-folder-structure) (англ.), drupal.org

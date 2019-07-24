@@ -180,3 +180,7 @@ metatags:
 ## См. также
 
 - [Объявления безопасности](../../security/security.md)
+
+## Ссылки
+
+- [Change records for Drupal core](https://www.drupal.org/list-changes/drupal) (англ.), drupal.org

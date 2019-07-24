@@ -49,4 +49,4 @@ category:
 
 ## Ссылки
 
-- [Drupal 8: Добавление пункта меню в Toolbar](https://niklan.net/blog/138), Niklan, 2017.
+- [Drupal 8: Добавление пункта меню в Toolbar](https://niklan.net/blog/138), Niklan, 2017

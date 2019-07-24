@@ -75,4 +75,4 @@ class FooController extends ControllerBase {
 
 ## Ссылки
 
-- [Drupal 8 Hello World: Пишем свой первый модуль](https://niklan.net/blog/66), Niklan, 2014.
+- [Drupal 8 Hello World: Пишем свой первый модуль](https://niklan.net/blog/66), Niklan, 2014

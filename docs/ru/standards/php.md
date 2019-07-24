@@ -364,4 +364,4 @@ if (!defined('MAINTENANCE_MODE')) {
 
 ## Ссылки
 
-- [Coding standards](https://www.drupal.org/docs/develop/standards/coding-standards) (англ.), Drupal.org.
+- [Coding standards](https://www.drupal.org/docs/develop/standards/coding-standards) (англ.), drupal.org

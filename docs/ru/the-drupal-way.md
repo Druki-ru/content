@@ -65,7 +65,8 @@ Drupal уже второй десяток лет, он появился не в�
 
 ## Ссылки
 
- * [The Drupal Way](http://sharonkrossa.com/drupallets/drupal-way), Sharon Krossa, 2011.
+ * [The Drupal Way](http://sharonkrossa.com/drupallets/drupal-way), Sharon Krossa, 2011
  * [The Drupal Way™](https://www.jeffgeerling.com/blogs/jeff-geerling/the-drupal-way), Jeff Geernling, 2013
- * [Implementing a Web Design the Drupal Way (not just any old way)](https://www.annertech.com/blog/implement-web-design-drupal-way), Anthony Lindsay, 2015.
+ * [Implementing a Web Design the Drupal Way (not just any old way)](https://www.annertech.com/blog/implement-web-design-drupal-way), Anthony Lindsay, 2015
  * [Programming The Drupal Way](http://www.kwallcompany.com/blog/programming-drupal-way), Sebastian, 2013
+ 

@@ -29,7 +29,7 @@ metatags:
 
 ## Ссылки
 
-- [Создайте нечто невероятное](https://www.drupal.org/ru/8), официальное промо Drupal 8.
-- [Drupal 8: Невероятные возможности для каждого](https://dru.io/drupal-8.0), русскоязычное сообщество.
-- [Вышел Drupal 8](https://habr.com/ru/post/271293/), Хабр, 2015 г.
-- [Вышел Drupal 8](https://www.linux.org.ru/news/opensource/12132309), Linux.org.ru, 2015 г.
+- [Создавайте нечто невероятное](https://www.drupal.org/ru/8), официальное промо Drupal 8
+- [Drupal 8: Невероятные возможности для каждого](https://dru.io/drupal-8.0), dru.io
+- [Вышел Drupal 8](https://habr.com/ru/post/271293/), Хабр, 2015
+- [Вышел Drupal 8](https://www.linux.org.ru/news/opensource/12132309), Linux.org.ru, 2015

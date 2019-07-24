@@ -14,8 +14,8 @@ metatags:
 
 ## Ссылки
 
-- [Рекомендации по безопасности](https://www.drupal.org/security), Drupal.org.
-- [RSS фид релизов безопасности для ядра Drupal](http://drupal.org/security/rss.xml), Drupal.org.
-- [RSS фид релизов безопасности для контриб модулей](http://drupal.org/security/contrib/rss.xml), Drupal.org.
-- [RSS фид анонсов релизов безопасности](http://drupal.org/security/psa/rss.xml), Drupal.org.
-- [@drupalsecurity в Twitter](https://twitter.com/drupalsecurity), Twitter.
+- [Рекомендации по безопасности](https://www.drupal.org/security), drupal.org
+- [RSS фид релизов безопасности для ядра Drupal](http://drupal.org/security/rss.xml), drupal.org
+- [RSS фид релизов безопасности для контриб модулей](http://drupal.org/security/contrib/rss.xml), drupal.org
+- [RSS фид анонсов релизов безопасности](http://drupal.org/security/psa/rss.xml), drupal.org
+- [@drupalsecurity в Twitter](https://twitter.com/drupalsecurity), Twitter

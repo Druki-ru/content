@@ -202,4 +202,4 @@ function module_name_update_8701() {
 
 ## Ссылки
 
-- [API documentation and comment standards](https://www.drupal.org/docs/develop/standards/api-documentation-and-comment-standards) (англ.), Drupal.org.
+- [API documentation and comment standards](https://www.drupal.org/docs/develop/standards/api-documentation-and-comment-standards) (англ.), drupal.org

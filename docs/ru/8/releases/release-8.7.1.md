@@ -24,4 +24,4 @@ metatags:
 
 ## Ссылки
 
-- [Официальные примечания к выпуску](https://www.drupal.org/project/drupal/releases/8.7.1) (англ.), Drupal.org, 8 мая 2019.
+- [Drupal 8.7.1](https://www.drupal.org/project/drupal/releases/8.7.1) (англ.), drupal.org, 8 мая 2019

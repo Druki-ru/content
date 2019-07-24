@@ -51,4 +51,4 @@ category:
 
 ## Ссылки
 
-- [Drupal 8: Theme Negotiator — программное переключение тем](https://niklan.net/blog/126), Niklan, 2016.
+- [Drupal 8: Theme Negotiator — программное переключение тем](https://niklan.net/blog/126), Niklan, 2016
