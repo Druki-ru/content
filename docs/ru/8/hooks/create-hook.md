@@ -98,7 +98,7 @@ $results = \Drupal::moduleHandler()->invokeAll('to_rule_them_all');
 
 Пример регистрации хука `hook_to_rule_them_all_alter($value)`.
 
-```
+```php
 $value_to_alter = 'Hello World!`;
 
 \Drupal::moduleHandler()->alter('to_rule_them_all', $value_to_alter);
