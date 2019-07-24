@@ -91,3 +91,4 @@ metatags:
 
 - [Drupal Camp Belarus, 2019](https://drupalcamp.by/) (англ.)
 - [Drupal Camp Belarus 2019 (YouTube плейлист)](https://www.youtube.com/playlist?list=PLIk3nG9tqdWWXUx-c08Dc9GPFhzozawVQ)
+- [DrupalCamp Belarus 2019](https://photos.google.com/share/AF1QipPsAsDifC_SwhYGXJch6GShGdFeBGr_aIxAjNfOUE9PkM3ygsa1GrO_BYPkxKyOdA?key=NXZyZ0pHbWlJQkhRRjNUdUliRzJmeksyY1RBazR3), Google Photo, Adrey Yurtaev
