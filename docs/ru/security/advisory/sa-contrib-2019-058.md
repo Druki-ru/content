@@ -4,7 +4,7 @@ title: 'SA-CONTRIB-2019-058'
 path: /security/sa-contrib-2019-058
 metatags:
   title: 'Drupal: SA-CONTRIB-2019-058'
-  description: 'Умеренно критическая уявзимость модуля Metatag. Устранена в версии 8.x-1.9'
+  description: 'Умеренно критическая уязвимость модуля Metatag. Устранена в версии 8.x-1.9'
 ---
 
 **Проект:** [Metatag](https://www.drupal.org/project/metatag)\
