@@ -10,6 +10,7 @@ metatags:
 
 ## 2019
 
+- [SA-CONTRIB-2019-058](advisory/sa-contrib-2019-058.md) - 24 июля 2019
 - [SA-CORE-2019-008](advisory/sa-core-2019-008.md) - 17 июля 2019
 - [SA-CORE-2019-007](advisory/sa-core-2019-007.md) - 8 мая 2019
 
