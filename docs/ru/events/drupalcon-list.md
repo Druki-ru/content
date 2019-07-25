@@ -10,7 +10,7 @@ metatags:
 
 ## 2019
 
-- DrupalCon Amsterdam, 28-31 октября, Амстердам, Нидерланды.
+- [DrupalCon Amsterdam 2019](2019/drupalcon-2019-amsterdam.md), 28-31 октября, Амстердам, Нидерланды.
 - DrupalCon Seattle, 8-12 апреля, Сиэтл, США.
 
 ## 2018
