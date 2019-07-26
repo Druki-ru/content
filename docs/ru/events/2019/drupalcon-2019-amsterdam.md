@@ -10,8 +10,7 @@ metatags:
 **Место проведения:** Амстердам, Нидерланды.\
 **Стоимость участия:** ??
 
-
-## Ключевые докладчики
+## Ключевые доклады
 
 - **Driesnote** - Dries Buytaert, основатель Drupal Project.
 - **If I can do it, so can you** - Sue Black, Professor of Computer Science and technology evangelist, UK.
@@ -543,6 +542,415 @@ metatags:
 **Время проведения:** 13:30 - 14:45\
 **Место проведения:** Auditorium\
 **Докладчик:** Boris Veldhuijzen Van Zanten
+
+### Среда, 30 октября
+
+#### Business + Marketing
+
+##### Making support the backbone of your business
+
+**Время проведения:** 19:00 - 09:40\
+**Место проведения:** Auditorium\
+**Докладчики:**
+
+- Anthony Lindsay, Annertech, Дублин, Ирландия.
+- Stella Power, Annertech, Дублин, Ирландия.
+
+##### Women on top: How to get (and keep) women in your leadership roles
+
+**Время проведения:** 19:00 - 09:40\
+**Место проведения:** G 109\
+**Докладчики:**
+
+- Shannon Vettes, Acquia.
+- Lindsey Catlett, Acquia.
+- Jenn Sramek, Acquia.
+
+##### How to build up resilience and keep burnout at bay
+
+**Время проведения:** 11:30 - 12:10\
+**Место проведения:** G 106\
+**Докладчик:** Jochen Lillich, Freistil It Ltd, Дублин, Ирландия.
+
+###### Green Tech Thinking
+
+**Время проведения:** 15:00 - 15:20\
+**Место проведения:** G 106\
+**Докладчик:** Janne Koponen, Wunder, Хельсинки, Финляндия.
+
+##### The Pains And Gains Of Bringing Agile ABM Marketing To A Global Drupal Development Agency
+
+**Время проведения:** 15:00 - 15:40\
+**Место проведения:** G 105\
+**Докладчики:**
+
+- Nathan Roach, Axelerant, Кузель, Германия.
+- Madhura Birdi, Axelerant, Пунe, Индия.
+- Priyasha Agnihotri, Axelerant, Дели, Индия.
+- Sheshank Anand, Axelerant, Джайпур, Индия.
+
+##### Layout builder ecosystem
+
+**Время проведения:** 16:15 - 16:35\
+**Место проведения:** G 102\
+**Докладчик:** Boyan Borisov, FFW, Франция.
+
+##### Drupal SEO Pitfalls and How To Avoid Them
+
+**Время проведения:** 15:00 - 15:40\
+**Место проведения:** G 102\
+**Докладчики:**
+
+- Brent Gees, Dropsolid, Гент, Бельгия. 
+- Wouter De Bruycker, Dropsolid, Гент, Бельгия. 
+
+#### DevOps + Infrastructure 
+
+##### How to utilize Open Source tools to create CI/CD & DevOps workflows without the vendor lock-in
+
+**Время проведения:** 09:00 - 09:20\
+**Место проведения:** G 104\
+**Докладчик:** Aleksandr Tolstikov, Smile Open Source Solutions, Париж, Франция.
+
+##### Drupal HA: a story from the trenches
+
+**Время проведения:** 09:25 - 09:45\
+**Место проведения:** G 104\
+**Докладчик:** Bram Vogelaar, Inuits.eu, Роттердам, Нидерланды.
+
+##### [PANEL] How companies are currently using Kubernetes with Drupal
+
+**Время проведения:** 10:15 - 10:55\
+**Место проведения:** G 102\
+**Докладчик:** Michael Schmid, Amazee.
+
+##### [PANEL] The battle of the local development tools
+
+**Время проведения:** 11:30 - 12:10\
+**Место проведения:** G 102\
+**Докладчик:** Michael Schmid, Amazee.
+
+##### Combining DevOps and Emotional Intelligence
+
+**Время проведения:** 15:00 - 15:20\
+**Место проведения:** G 109\
+**Докладчики:**
+
+- Kevin Bridges, Drud Technology, LLC., Денвер, США.
+- Elli Ludwigson, Open Strategy Partners, Кёльн, Германия.
+
+##### Deploying PHP applications with Ansible, Ansible Vault and Ansistrano
+
+**Время проведения:** 15:25 - 15:45\
+**Место проведения:** G 109\
+**Докладчик:** Oliver Davies, Inviqa.
+
+##### Drupal Docker and Debugging
+
+**Время проведения:** 17:15 - 17:35\
+**Место проведения:** G 106\
+**Докладчик:** Rahul Kumar, Srijan Technologies Pvt Ltd, Нью-Дели, Индия.
+
+##### Death Star Security: A Realtime Look At How A Site Is Hacked
+
+**Время проведения:** 17:40 - 18:00\
+**Место проведения:** G 106\
+**Докладчик:** Chris Teitzel, Lockr.
+
+#### Drupal + Backend
+
+##### Scaling up and accelerating Drupal 8 with NoSQL
+
+**Время проведения:** 09:00 - 09:40\
+**Место проведения:** G 102\
+**Докладчик:** Frédéric MARAND, OSInet, Вильбон-Сюр-Ивет, Франция.
+
+##### Do you know what your Drupal is doing? Observe it!
+
+**Время проведения:** 09:00 - 09:40\
+**Место проведения:** G 107\
+**Докладчик:** Luca Lusso, Wellnet, Милан, Италия.
+
+##### Advanced migration techniques
+
+**Время проведения:** 10:15 - 10:55\
+**Место проведения:** G 105\
+**Докладчик:** Daniel Sipos, Webomelette.
+
+##### Composer and Drupal: Past, Present and Future
+
+**Время проведения:** 10:15 - 10:55\
+**Место проведения:** G 109\
+**Докладчики:**
+
+- Greg Anderson, Pantheon Systems, Сан-Франциско, США.
+- Ryan Aslett, Drupal Association, Портленд, США.
+
+##### Find security vulnerabilities through code review
+
+**Время проведения:** 11:30 - 12:10\
+**Место проведения:** G 103\
+**Докладчик:** Klaus Purer, Jobiqo, Вена, Австрия.
+
+##### I Think It’s a Kitten Wearing a Bowtie? Drupal Media Image Caption Suggestions Using AI
+
+**Время проведения:** 11:30 - 12:10\
+**Место проведения:** G 105\
+**Докладчики:**
+
+- Laura Johnson, Myplanet, Торонто, Канада.
+- Ryan Aslett, Myplanet, Торонто, Канада.
+
+##### Building amazing searches with Search API
+
+**Время проведения:** 15:00 - 15:40\
+**Место проведения:** G 102\
+**Докладчик:** Thomas Seidl.
+
+##### Caching in Drupal 8 has evolved: Tips on how to improve your code
+
+**Время проведения:** 15:00 - 15:40\
+**Место проведения:** G 104\
+**Докладчик:** Kristiaan Van den Eynde, Factorial Gmbh, Гамбург, Германия. 
+
+##### [Machine Learning] Creating more relevant search results with "Learn to Rank"
+
+**Время проведения:** 16:15 - 16:55\
+**Место проведения:** Auditorium\
+**Докладчики:**
+
+- Nick Veenhof, Dropsolid, Гент, Бельгия.
+- Mattias Michaux, Dropsolid, Гент, Бельгия.
+
+##### Drupal 8 BOGOFs: A Hitchhiker's Guide to Less Popular Symfony Components
+
+**Время проведения:** 17:15 - 17:35\
+**Место проведения:** G 102\
+**Докладчик:** Deji Akala, Ijed Ltd, Суиндон, Англия.
+
+##### Deep dive into Content Security Policy
+
+**Время проведения:** 17:40 - 18:00\
+**Место проведения:** G 102\
+**Докладчик:** Priya Sundharam, Unimity Solutions Pvt Ltd, Ченнай, Индия.
+
+##### Drupal.org Infrastructure Update
+
+**Время проведения:** 17:15 - 17:55\
+**Место проведения:** G 103\
+**Докладчики:**
+
+- Timothy Lehnen, Drupal Association, Портленд, США.
+- Neil Drumm, Drupal Association, Портленд, США.
+- Ryan Aslett, Drupal Association, Портленд, США.
+- Brendan Blaine, Drupal Association, Портленд, США.
+- Mark Mangoba, Drupal Association, Портленд, США.
+
+#### Drupal + Frontend
+
+##### Designing the future of the Drupal Admin UI
+
+**Время проведения:** 09:00 - 09:40\
+**Место проведения:** G 103\
+**Докладчики:**
+
+- Sascha Eggenberger
+- Archita Arora
+- Cristina Chumillas
+
+##### Quick wins for an accessible website
+
+**Время проведения:** 10:15 - 10:55\
+**Место проведения:** G 107\
+**Докладчик:**  Marloes Bosch, LimoenGroen, Амстердам, Нидерланды.
+
+##### Progressive decoupling in action: using Vue.js to add rich application-like functionality to the course pages of a UK Higher Education institution's Drupal 8 site
+
+**Время проведения:** 11:30 - 12:10\
+**Место проведения:** Auditorium\
+**Докладчик:** Phil Wolstenholme, CTI Digital, Манчестер, Англия.
+
+##### SVGs in Drupal Frontends - Creating configurable blazing effects
+
+**Время проведения:** 16:15 - 16:55\
+**Место проведения:** G 106\
+**Докладчики:**
+
+- Melinda Kovacs - Sztankovits, 1xINTERNET, Франкфурт-на-Майне, Германия.
+- Francisco Jose Seva Mora, 1xINTERNET, Франкфурт-на-Майне, Германия.
+
+##### Live preview with Gatsby and decoupled Drupal
+
+**Время проведения:** 17:15 - 17:55\
+**Место проведения:** Auditorium\
+**Докладчики:**
+
+- Preston So, Gatsby, Нью-Йорк, США.
+- Matt Davis, Third and Grove, Сан-Франциско, США.
+
+#### Drupal Community + Being Human
+
+##### Judging a book by its cover - how inclusive is your community?
+
+**Время проведения:** 09:00 - 09:40\
+**Место проведения:** G 106\
+**Докладчик:** Alanna Burke, Self-employed, Потстаун, США.
+
+##### Fixing the mistakes we -all- make as developers, leaders and teams
+
+**Время проведения:** 10:15 - 10:55\
+**Место проведения:** G 104\
+**Докладчики:**
+
+- Jordana Fung, Freelancer, Парамарибо, Суринама.
+- Jacqui Tenderwolf, Freelancer, Парамарибо, Суринама.
+
+##### Drupal Association Public Board Meeting
+
+**Время проведения:** 09:00 - 09:40\
+**Место проведения:** G 107\
+**Докладчик:** Heather Rocker, Drupal Association, Портленд, США.
+
+##### Dries Q&A
+
+**Время проведения:** 15:00 - 15:40\
+**Место проведения:** G 107\
+**Докладчики:**
+
+- Rachel Lawson, Drupal Association, Кинг Линн, Англия.
+- Dries Buytaert
+
+##### Science of Sleep: How sleep deprivation harms your health, well-being, and productivity
+
+**Время проведения:** 16:15 - 16:35\
+**Место проведения:** G 105\
+**Докладчик:** Michael Ivashchenko, Five Jars, Бишкек, Киргизия. 
+
+##### Design your workplace embracing "Diversity and Inclusion" and walk on air all the time
+
+**Время проведения:** 16:40 - 17:00\
+**Место проведения:** G 105\
+**Докладчик:** Rakhi Mandhania, Colab Cooperative, Гургаон, Индия.
+
+##### 7 cultural models to adapt to a world of increased complexity
+
+**Время проведения:** 16:40 - 16:55\
+**Место проведения:** G 107\
+**Докладчик:** Kristof Van Tomme.
+
+##### Limba - Using Drupal as a Cultural Heritage Preservation Too
+
+**Время проведения:** 16:15 - 16:55\
+**Место проведения:** G 103\
+**Докладчики:**
+
+- Dave Hall, Skwashd Services, Ньюстед, Австралия.
+- Julie Saylor Briggs, Victorian Corporation for Aboriginal Language, Джелонг, Австралия.
+- Julia Topliss, Web Prophets, Сент-Килда, Австралия.
+
+##### Core initiatives and corporate roadmaps — Lessons learnt from 5 years of running an initiative
+
+**Время проведения:** 17:15 - 17:55\
+**Место проведения:** G 107\
+**Докладчик:** Dick Olsson, Pfizer Inc. 
+
+##### Is Speaking At DrupalCon Really Worth Your Time?
+
+**Время проведения:** 17:15 - 17:55\
+**Место проведения:** G 109\
+**Докладчик:** Dmitry Drozdik, Five Jars.
+
+#### Industry
+
+##### Content Management as Critical Success Factor for Personalized Medicine
+
+**Время проведения:** 09:00 - 09:40\
+**Место проведения:** G 105\
+**Докладчики:**
+
+- Rudolf Koopmann, bio.logis GIM GmbH, Франкфурт-на-Майне, Германия.
+- Markus Kalkbrenner, bio.logis GIM GmbH, Франкфурт-на-Майне, Германия.
+
+##### Accelerating International Education via Drupal: A Georgia Tech Case Study
+
+**Время проведения:** 10:15 - 10:55\
+**Место проведения:** G 103\
+**Докладчик:** Jimmy Kriigel, Georgia Institute Of Technology, Атланта, США.
+
+##### Taking Drupal Commerce to Market: 2019 Roadmap
+
+**Время проведения:** 10:15 - 10:55\
+**Место проведения:** Auditorium\
+**Докладчик:** Ryan Szrama, Centarro, Гринвилл, США.
+
+##### Building a platform for sustainability
+
+**Время проведения:** 11:30 - 12:10\
+**Место проведения:** G 104\
+**Докладчики:**
+
+- Eveliina Vikstrom, Neste, Финляндия.
+- Jari Nousiainen, Siili Solutions, Финляндия.
+
+##### Expanding Drupal Universe : Exploring how new technologies help finding new customers
+
+**Время проведения:** 11:30 - 12:10\
+**Место проведения:** G 109\
+**Докладчик:** Shashank Merothiya, Srijan Technologies, Дели, Индия.
+
+##### Create and theme amazing PDFs using Drupal 8
+
+**Время проведения:** 15:00 - 15:20\
+**Место проведения:** G 103\
+**Докладчик:** Taher Jodhpurwala, Axelerant, Бангалор, Индия.
+
+##### In Their Own Words: Stories of Web Accessibility
+
+**Время проведения:** 15:25 - 15:45\
+**Место проведения:** G 103\
+**Докладчик:** Helena McCabe, Lullabot, Орландо, США.
+
+##### 4 Keys to a Successful Globalization Strategy and CMS Platform Architecture
+
+**Время проведения:** 15:00 - 15:40\
+**Место проведения:** Auditorium\
+**Докладчики:** 
+
+- Ann-Marie Sheppard, IBM, Калгари, Канада.
+- Tina Williams, IBM, Research Triangle Park, Северная Каролина, США.
+
+##### How we implemented a Drupal Commerce marketplace for safety equipment
+
+**Время проведения:** 16:15 - 16:55\
+**Место проведения:** G 104\
+**Докладчики:** 
+
+- Mario Schnauss, Unic AG, Цюрих, Швейцария.
+- Kai Hartung, Unic AG, Цюрих, Швейцария.
+
+##### Connecting Drupal to Print: A seamless, smart, and bidirectional integration into an Adobe InDesign based publishing workflow
+
+**Время проведения:** 17:15 - 17:55\
+**Место проведения:** G 104\
+**Докладчик:** Christian Kreutzer, ppi media GmbH, Киль, Германия.
+
+##### Content driven eCommerce with Drupal Commerce
+
+**Время проведения:** 17:15 - 17:55\
+**Место проведения:** G 104\
+**Докладчик:** Eirik Morland1, Ny Media, Норвегия.
+
+#### Keynote
+
+##### If I can do it, so can you
+
+**Время проведения:** 13:30 - 14:45\
+**Место проведения:** Auditorium\
+**Докладчик:** Sue Black.
+
+### Четверг, 31 октября 2019
+
+Данный день полностью посвящен контрибуции в Drupal и проекты.
 
 ## Ссылки
 
