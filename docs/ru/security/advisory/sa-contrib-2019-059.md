@@ -3,7 +3,7 @@ id: sa-contrib-2019-059
 title: 'SA-CONTRIB-2019-059'
 path: /security/sa-contrib-2019-059
 metatags:
-  title: 'Drupal: SA-CONTRIB-2019-059'
+  title: 'Facebook Messenger Customer Chat Plugin: SA-CONTRIB-2019-059'
   description: 'Критическая уязвимость модуля Facebook Messenger Customer Chat Plugin. Устранена в версии 7.x-1.1'
 ---
 
