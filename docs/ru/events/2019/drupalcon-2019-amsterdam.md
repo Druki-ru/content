@@ -3,7 +3,7 @@ id: drupalcon-2019-amsterdam
 path: /events/drupalcon-2019-amsterdam
 title: DrupalCon Amsterdam 2019
 metatags:
-  description: 'DrupalCon 2019 в Амстердаме, Нидерланды. Даты проведения, докладчики, доклады.'
+  description: 'DrupalCon Amsterdam 2019, Амстердам, Нидерланды. Даты проведения, докладчики, доклады.'
 ---
 
 **Даты проведения:** 28-31 октября 2019\
