@@ -1,7 +1,7 @@
 ---
 id: create-service
 title: Создание сервиса
-path: /services/create
+path: /8/services/create
 core: 8
 metatags:
   title: 'Drupal 8: Создание сервиса'
