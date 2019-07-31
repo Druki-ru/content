@@ -48,7 +48,55 @@ Drupal GovCon — это серцибение [Drupal сообщества](../.
 
 ### Четверг, 25 июля, 2019
 
+- [Measuring What Matters: Using Analytics to Inform Content Strategy](https://youtu.be/wGUmlQFdXEc) (англ.), jasonhamrick.
+- [Webforms for government](https://youtu.be/ra0DiIQfvQI) (англ.), jrockowitz.
+- [Hex, Drugs, & Rock 'n' Roll](https://youtu.be/gEa8ZL9nSj0) (англ.), mjovel, nxs.
+- [Content and SEO: Better together](https://youtu.be/iffGcxhys00) (англ.), TheAmy.
+- [Successful Project Estimation: How To Get Your Weekends Back](https://youtu.be/V26cre771Lg) (англ.), stephenpashby, David Minton.
+- [Var_Dumps are for Chumps: An Introduction to Xdebug](https://youtu.be/W_im3I_yH0A) (англ.), ccrampton.
+- [Cloud Management with Drupal and Ansible](https://youtu.be/qj_qUtQ_gvE) (англ.), jonpugh.
+- [Making Drupal Friendly for Editors and Clients](https://youtu.be/1YmxISpK4Sg) (англ.), nJim.
+- [Debugging: CSS and JS It just looks Magical](https://youtu.be/GcGc0l_sTOQ) (англ.), wesruv.
+- [Georgia GovHub: a case study](https://youtu.be/0wCjBhCurBo) (англ.), dsayswhat.
+- [Migration Migraine](https://youtu.be/jmV50a6LCsU) (англ.), jgreenberg.
+- [Why We Can't Have Nice Things: 19 Overused Drupal Buzzwords to Stop Using in 2019](https://youtu.be/fX_faQojSnE) (англ.), ClintonAtMobomo.
+- [Google Analytics 201](https://youtu.be/cav47ACODvo) (англ.), Andrew_Mallis.
+- [The Big (Government Website) Bang: Drupal and USWDS v2 (Panel Discussion)](https://youtu.be/YQpiNwMr2A8) (англ.), dboeger.
+- [Decoupled and Headless Drupal Planning for the Future](https://youtu.be/2iwnv1yaFiQ) (англ.), suniltaneja.
+- [Drupal and USWDS v2 for Prototyping and Site Building](https://youtu.be/cXy88gKfv9I) (англ.), dboeger.
+- [Javascript for Everyone: Accessibility and Javascript](https://youtu.be/yUKvqc3L-y8) (англ.), sbrackat.
+- [Learn Symfony before you learn Drupal, 8 reasons why](https://youtu.be/mQJ95euPPIo) (англ.), ybom.
+- [Drupal GovCon: The Making](https://youtu.be/Lln1NYoh0fk) (англ.), bendygirl.
+- [The Ethics of Privacy and Technology](https://youtu.be/t78l9OEfOgg) (англ.), Cellar Door.
+- [Mastering the CDN: Present & Future](https://youtu.be/Hei6uR5j0as) (англ.), populist.
+- [Layout builder in the real world](https://youtu.be/a7i1GpXxenw) (англ.), wesruv.
+- [Speed Up Drupal deliveries with CICD Pipeline](https://youtu.be/D-PRP79c-Gw) (англ.), gobinathm.
+- [The State of Drupal 9](https://youtu.be/hiZBAh2iCGs) (англ.), Amber Himes Matz.
+- [Commit! Your! Config! -- A Primer](https://youtu.be/oxkL70mKkDo) (англ.), alison.
+- [Collaborating on Content Audits](https://youtu.be/WqnHlWMNYLI) (англ.), dmkelner.
+- [Maneuvering agile requirements on government projects using Design Thinking Framework](https://youtu.be/uYAmGTTBi5s) (англ.), rrabiela, lylydia20148.
+- [Single Sign On with Drupal](https://youtu.be/h5r7trxG8n0) (англ.), dangur.
+- [Unicorn Hunting - How to find (and keep) great engineering talent](https://youtu.be/-VlbyL4yd7Q) (англ.), jasonschulte.
+- [Future proofing design work with Web components](https://youtu.be/YI2nRfDmm-Y) (англ.), btopro.
+
 ### Пятница, 26 июля, 2019
+
+- [Accessibility and Design: How to Create the Best Online Experience](https://youtu.be/4TzvD7qXDnk) (англ.), klocraft, courtneyclark.
+- [Multilingual 101](https://youtu.be/HRl1RRbDTOg) (англ.), zombree, pbarclay, mgreen.
+- [Composer 101 : Govern your Drupal project with Composer !](https://youtu.be/3FOxjoVg2V0) (англ.), Rahul.
+- [Content Creation and Verification with Selenium and Python](https://youtu.be/-p-prI60JDo) (англ.), andersontqa.
+- [Stop Reporting Pageviews & Other Tips for Actually Useful Reports](https://youtu.be/Bup1snu4nh8) (англ.), elpatterson.
+- [git, for users of git](https://youtu.be/Q4rxnO_Hj1g) (англ.), alison.
+- [Managing Burnout in the Tech Community](https://youtu.be/MLcOX_wvtpM) (англ.), dmkelner.
+- [Making your site scream: building for frontend performance](https://youtu.be/08tIOqkYa6o) (англ.), adam.weingarten.
+- [Neil Armstrong's Lessons for Building Government Websites](https://youtu.be/xkLCIvtgLTA) (англ.), NoahWolfe.
+- [From User Acceptance Testing to Automated Testing](https://youtu.be/Q2_m7xy2gMI) (англ.), stephencross.
+- [Running Drupal on Kubernetes the "Easy Way"](https://youtu.be/2R-OFmCOp34) (англ.), ClintonAtMobomo.
+- [A Better Idea: User-First for Federal Agencies](https://youtu.be/TednMW38s-A) (англ.), claymarshall, jabaliwilliams, marcrambeau.
+- [Web Accessibility… like a BOSS!](https://youtu.be/oNjo4KbdQiQ) (англ.), laura.gates.
+- [DevOps for Drupal and Other Web Applications](https://youtu.be/zO2xKgceJ44) (англ.), sk33lz.
+- [ERD is the Word: Simplifying Content Structure](https://youtu.be/UJWo4LTrmCM) (англ.), cleake.
+- [How to give feedback while keeping your head](https://youtu.be/1qmtnbbnifw) (англ.), Danielle_Sheffler.
 
 ## Ссылки
 
