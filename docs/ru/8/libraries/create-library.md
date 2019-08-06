@@ -9,7 +9,7 @@ metatags:
 category:
   area: Библиотеки
   title: Объявление
-  order: 1
+  order: 2
 ---
 
 Для того чтобы объявить библиотеку, добавьте файл `*.libraries.yml` в корне вашего модуля или темы (рядом с .info.yml файлом). Например, если ваш модуль называется `foo`, то файл должен иметь название `foo.libraries.yml`.
@@ -187,3 +187,5 @@ cuddly-slider:
 ## Ссылки
 
 - [Drupal 8: Libraries API (Добавление CSS/JS на страницы)](https://niklan.net/blog/72), Niklan, 2015
+- [Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module) (англ.), drupal.org
+- [Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 theme](https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme) (англ.), drupal.org
