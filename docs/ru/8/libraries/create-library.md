@@ -1,7 +1,7 @@
 ---
 id: create-library
 core: 8
-title: Создание библиотеки
+title: Объявление библиотеки
 path: /8/libraries/create
 metatags:
   title: 'Drupal 8: Объявление библиотеки'
