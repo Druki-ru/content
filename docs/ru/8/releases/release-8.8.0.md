@@ -195,7 +195,7 @@ jquery.ui.effects.scale:
 - [#3035273](https://www.drupal.org/node/3035273) Несколько функций относящихся к uri и scheme файлов помечены устаревшими и перенесены в `\Drupal\Core\StreamWrapper\StreamWrapperManagerInterface`.
 - [#3059344](https://www.drupal.org/node/3059344) Добавлен подкласс `\Symfony\Component\Validator\ConstraintViolation` в Drupal `\Drupal\Core\Validation\ConstraintViolation` для использования в `\Drupal\Core\TypedData\Validation\ExecutionContext::addViolation()`.
 - [#3054692](https://www.drupal.org/node/3054692) `\Drupal\system\SystemRequirements::phpVersionWithPdoDisallowMultipleStatements()` помечен устаревшим.
-- [#3067713](https://www.drupal.org/node/3067713) Добавлен новый хук `element_plugin_alter()`.
+- [#3067713](https://www.drupal.org/node/3067713) Добавлен новый хук `hook_element_plugin_alter()`.
 
 ## Content Moderation
 
