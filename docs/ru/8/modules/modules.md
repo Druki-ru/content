@@ -100,7 +100,7 @@ category:
 
 - [Плагины](../plugins/plugins.md)
 - [Сервисы](../services/services.md)
-- [Libraries API](../libraries-api.md)
+- [Libraries API](../libraries/libraries.md)
 - [Хуки](../hooks/hooks.md)
 - [Form API](../form-api/form-api.md)
 - [Маршрутизация](../routing/routing.md)

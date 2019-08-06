@@ -1,20 +1,16 @@
 ---
-id: libraries-api
-title: Libraries API
+id: create-library
 core: 8
-search-keywords:
- - где как подключать JS JavaScript CSS добавить на страницу
- - куда вставить JS CSS скрипт
+title: Создание библиотеки
+path: /8/libraries/create
 metatags:
-  title: 'Drupal 8: Libraries API'
-  description: 'Подключаем JavaScript и CSS в Drupal 8 правильно!'
+  title: 'Drupal 8: Объявление библиотеки'
+  description: 'Обьявление собственной библиотеки в Drupal 8.'
+category:
+  area: Библиотеки
+  title: Объявление
+  order: 1
 ---
-
-В Drupal 8 CSS и JS загружаются по принципу ассетов. Библиотека может содержать один и более CSS файлов, один и более JS файлов, а также JS настройки.
-
-Drupal загружает только те библиотеки на странице, которые были запрошены в момент её построения. Таким образом, Drupal не загружает все существующие библиотеки на одной странице, так как это вредит производительности.
-
-## Объявление библиотеки
 
 Для того чтобы объявить библиотеку, добавьте файл `*.libraries.yml` в корне вашего модуля или темы (рядом с .info.yml файлом). Например, если ваш модуль называется `foo`, то файл должен иметь название `foo.libraries.yml`.
 
@@ -47,10 +43,10 @@ cuddly-slider:
 Пример выше предполагает что JavaScript файл `cuddy-slider.js` находится в папке `js` вашего модуля или темы. Если вам необходимо подключить библиотеку относительно корня Drupal ядра, путь должен начинаться с `/`. Библиотека будет называться `cuddly-slider`.
 
 > [!NOTE]
-> Используя [Drush](../drush.md), вы можете сгенерировать заготовку для библиотеки, как для модуля, так и для темы используя команды: `drush generate module-libraries`, `drush generate theme-libraries`, `drush generate yml-module-libraries`, `drush generate yml-theme-libraries`.
+> Используя [Drush](../../drush.md), вы можете сгенерировать заготовку для библиотеки, как для модуля, так и для темы используя команды: `drush generate module-libraries`, `drush generate theme-libraries`, `drush generate yml-module-libraries`, `drush generate yml-theme-libraries`.
 
 ## Подключение зависимостей
-
+ 
 Допустим вы подключаете JavaScript файл, которому необходимо jQuery для работы. jQuery поставляется Drupal ядром по умолчанию, и вам не нужно заботиться об этом. Но подключая вашу библиотеку на странице, jQuery не подключится, так как Drupal не будет знать, что он нужен. Для этого, библиотекам можно указывать зависимости, которые также необходимо подключить на странице где будет вызвана ваша библиотека.
 
 Для этого вам потребуется знать название библиотеки, и модуль или тему, которая его объявляет. Зависимости указываются в формате `[module-theme-name]/[library-name]`. Зависимости указываются в разделе dependencies конкретной библиотеки. 
@@ -68,7 +64,7 @@ cuddly-slider:
   dependencies:
     - core/jquery
 ```
-
+ 
 В дальнейшем, другие библиотеки также смогут использовать вашу библиотеку `[module-theme-name]/cuddly-slider` в качестве зависимости.
 
 ## Свойства ассетов
@@ -96,7 +92,7 @@ cuddly-slider:
 ```
 
 В результате добавит на страницу:
-
+ 
 ```html
 <link rel="stylesheet" href="/modules/custom/MODULENAME/css/cuddly-slider-layout.css" crossorigin="anonymous">
 ```
@@ -121,9 +117,9 @@ cuddly-slider:
         }
       }
 ```
-
+ 
 В результате добавит на страницу:
-
+ 
 ```html
 <!--[if lte IE 9]>
 <script src="/modules/custom/MODULENAME/css/cuddly-slider-layout.css"></script>
@@ -148,9 +144,9 @@ cuddly-slider:
         media: print
       }
 ```
-
+ 
 В результате добавит на страницу:
-
+ 
 ```html
 <link rel="stylesheet" href="/modules/custom/MODULENAME/css/cuddly-slider-layout.css" media="print">
 ```
@@ -161,7 +157,7 @@ cuddly-slider:
 - **По умолчанию**: `false`
 
 Позволяет указать, что данный ассет уже минифицирован и его не следует обрабатывать.
-
+ 
 Например:
 
 ```yaml
@@ -188,31 +184,6 @@ cuddly-slider:
 
 Позволяет менят вес ассета в пределах своей группы. Чем больше вес, тем позднее будет подключена библиотека.
 
-## Подключение библиотек
-
-Для того чтобы ассеты библиотеки были загружены на странице, к странице нужно указать зависимость от данной библиотеки. Это можно сделать различными способами и на разных этапах выполнения.
-
-### Подключение через render array
-
-Для того чтобы подключить библиотеку при помощи render array, вы должны модифицировать его примерно таким образом:
-
-```php
-$build['some_render_element']['#attached']['library'][] = 'mymodule/cuddly-slider';
-```
-
-Данный способ применим ко всем render array, не зависимо где вы находитесь. Это может касаться hook theme, форм, препроцесса страниц, render element и др.
-
-### Подключение библиотеки из Twig
-
-Вы можете подключить библиотеку к шаблону, при помощи испоьзования необходимого `hook_preprocess_HOOK()` и способа подключения через render array, а также при помощи специальной Twig функции `attach_library()`.
-
-```twig
-{{ attach_library('mymodule/cuddly-slider') }}
-<div>Some markup {{ message }}</div>
-```
-
 ## Ссылки
 
-- [Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module) (англ.), drupal.org
-- [Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 theme](https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme) (англ.), drupal.org
 - [Drupal 8: Libraries API (Добавление CSS/JS на страницы)](https://niklan.net/blog/72), Niklan, 2015
