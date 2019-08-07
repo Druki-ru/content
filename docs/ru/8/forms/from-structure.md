@@ -1,7 +1,7 @@
 ---
 id: from-structure
 title: Структура форм
-path: /8/form/structure
+path: /8/forms/structure
 core: 8
 metatags:
   title: 'Drupal 8: Структура форм'
