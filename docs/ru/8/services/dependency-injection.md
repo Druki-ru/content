@@ -49,7 +49,7 @@ Dependency Injection у сервисов производится через к�
 ```yaml
 services:
   example.complex:
-    class: Drupal\example\Complex
+    class: Drupal\mymodule\MyObject
     arguments: ['@example.foo', '@example.bar']
 ```
 
@@ -69,12 +69,14 @@ class MyObject {
    * The foo object.
    *
    * @var Drupal\example\FooInterface
+   */
   protected $foo;
 
   /**
    * The bar object.
    *
    * @var Drupal\example\BarInterface
+   */
   protected $bar;
 
   /**
