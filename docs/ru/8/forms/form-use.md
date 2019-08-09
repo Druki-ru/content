@@ -1,10 +1,10 @@
 ---
 id: form-use
-title: Использование формы
+title: Использование форм
 path: /8/forms/use
 core: 8
 metatags:
-  title: 'Drupal 8: Использование формы'
+  title: 'Drupal 8: Использование форм'
   description: 'Использование форм в Drupal 8.'
 category:
   area: Формы
