@@ -124,6 +124,8 @@ class FooForm extends FormBase {
 
 Конфигурационные формы имеют дополнительный метод `getEditableConfigNames()`, который должен возвращать массив состоящий из идентификаторов конфигураций. В отличии от `FormBase::config()`, данные конфигурации будут загружены в режиме для чтения и записи, так, вы сможете без проблем записать туда необходимые данные в обработчике формы.
 
+Пример `/src/Form/FooSettingsForm`:
+
 ```php
 <?php
 
@@ -187,7 +189,7 @@ class FooSettingsForm extends ConfigFormBase {
 ```
 
 > [!TIP]
-> Для генерации простой формы при помощи [Drush](../../drush.md) используйте команду `drush generate form-config`.
+> Для генерации конфигурационной формы при помощи [Drush](../../drush.md) используйте команду `drush generate form-config`.
 
 ## Ссылки
 
