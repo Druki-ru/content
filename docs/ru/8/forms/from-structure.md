@@ -151,3 +151,7 @@ Drupal предоставляет базовый объект `Drupal\Core\Form\
     $form_state->setRedirect('<front>');
   }
 ```
+
+## Ссылки
+
+- [Drupal 8: Form API что изменилось и как использовать](https://niklan.net/blog/73), Niklan, 2015
