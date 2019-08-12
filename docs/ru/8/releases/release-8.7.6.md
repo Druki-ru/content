@@ -10,6 +10,8 @@ metatags:
 
 **Дата релиза**: 8 августа 2019 г.
 
+## Список изменений
+
 - [#2825516](https://www.drupal.org/node/2825516) Исправлена ошибка при которой `hook_node_access()` вызывался с `$op = 'delete'` при генерации формы создания материала.
 - [#3029627](https://www.drupal.org/node/3029627) `FormatterBase` теперь включает в себя third party settings.
 - [#2973137](https://www.drupal.org/node/2973137) Исправлена ошибка при которой `EntityViewsData` не проводил валидацию ревизий.
