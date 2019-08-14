@@ -79,7 +79,7 @@ class FooEvent extends Event {
 
 Сервис `event_dispatcher` содержит всего один единственный метод `dispatch()`, который принимает в качестве аргументов:
 
-- `$event_name`: Строковое название в виде строки.
+- `$event_name`: Строковое название события.
 - `Event $event`: (опционально) Объект события, который расширяет `Symfony\Component\EventDispatcher\Event`.
 
 Пример вызова события:
