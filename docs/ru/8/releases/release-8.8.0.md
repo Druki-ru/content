@@ -188,6 +188,9 @@ jquery.ui.effects.scale:
 ## Оформление и темизация
 
 - [#3060703](https://www.drupal.org/node/3060703) Добавленна новая переменная `file_size` для шаблона **file-link.html.twig**.
+- [#3074716](https://www.drupal.org/node/3074716) Переменная `link` в `template_preprocess_file_link()` теперь формируется как рендер массив, вместо готовой строки.
+- [#3066713](https://www.drupal.org/node/3066713) Класс подтверждения сообщения о смене пароля изменен с `password-confirm` на `password-confirm-message`. В темах Stable и Classy будут присутствовать оба класса.
+- [#2960810](https://www.drupal.org/node/2960810) Добавлены новые варианты для шаблонов страниц, которые позволят оформлять страницы для отличных от HTTP 200 ответов: `page--401.html.twig`, `page--403.html.twig`, `page--404.html.twig` и `page--4xx.html.twig`. Если для страниц данных ошибок указаны ноды, данные шаблоны не будут работать.
 
 ## Core API
 
@@ -196,10 +199,13 @@ jquery.ui.effects.scale:
 - [#3059344](https://www.drupal.org/node/3059344) Добавлен подкласс `\Symfony\Component\Validator\ConstraintViolation` в Drupal `\Drupal\Core\Validation\ConstraintViolation` для использования в `\Drupal\Core\TypedData\Validation\ExecutionContext::addViolation()`.
 - [#3054692](https://www.drupal.org/node/3054692) `\Drupal\system\SystemRequirements::phpVersionWithPdoDisallowMultipleStatements()` помечен устаревшим.
 - [#3067713](https://www.drupal.org/node/3067713) Добавлен новый хук `hook_element_plugin_alter()`.
+- [#3009387](https://www.drupal.org/node/3009387) Функция `drupal_get_user_timezone()` была заменена на [подписчик события](../events/events.md). Теперь можно использовать стандартную функцию PHP `date_default_timezone_get()` для получения актуального часового пояса.
+- [#3075098](https://www.drupal.org/node/3075098) Для удобства переиспользования `\Drupal\Component\PhpStorage\FileStorage::htaccessLines()`, данный метод был помечен устаревшим и его логику перенесли в `\Drupal\Component\FileSecurity\FileSecurity::htaccessLines()`. Также, теперь пакет `drupal/core-php-storage` имеет зависимость на `drupal/core-file-security`.
 
 ## Content Moderation
 
 - [#3056217](https://www.drupal.org/node/3056217) Добавлен новый метод `getOriginalState()` для сервиса `content_moderation.moderation_information` и `\Drupal\content_moderation\ModerationInformationInterface`. Это позволит получать предыдущее состояние ревизии в момент подготовки к сохранению новой.
+- [#3052114](https://www.drupal.org/node/3052114) Для материалов, которые находятся в процессе "синхронизации", больше не будет создаваться новая ревизия.
 
 ## Entity API
 
@@ -211,6 +217,8 @@ jquery.ui.effects.scale:
 - [#3043694](https://www.drupal.org/node/3043694) Возможность передачи массива для `link_uri` плагина источника Migrate API помечено устаревшим.
 - [#3054173](https://www.drupal.org/node/3054173) Объекты, возвращаемые `getMessageIterator()` теперь содержат ID `source` и `destination`.
 - [#2929443](https://www.drupal.org/node/2929443) Модули теперь могут объявлять свой статус обновления до Drupal 8.
+- [#3073707](https://www.drupal.org/node/3073707) Миграции теперь могут валидировать сущность. В случае провала валидации, сохранение сущности не произойдет.
+- [#3060969](https://www.drupal.org/node/3060969) `MigrateIdMapInterface::getMessageIterator()` помечен устаревшим в пользу `MigrateIdMapInterface::getMessages()`. 
 
 ## User
 
@@ -222,6 +230,8 @@ jquery.ui.effects.scale:
 - [#3040204](https://www.drupal.org/node/3040204) Установка идентификатора раскрытого фильтра Views теперь обрабатываются корректно.
 - [#3047897](https://www.drupal.org/node/3047897) Конструктор `NodeNewComments` изменен. В него добавили два новых параметра, которые ожидают экземпляры объектов `EntityTypeManagerInterface` и `EntityFieldManagerInterface`, соответственно. Для старого кода будет выводиться предупреждение об ошибке, и сервисы будут автоматически получены из глобального контейнера.
 - [#2869168](https://www.drupal.org/node/2869168) Добавлена возможность ограничивать доступные операторы для раскрытых фильтров.
+- [#3074409](https://www.drupal.org/node/3074409) `<channel>` элемент, создаваемый в RSS лентах Views, больше не рендерится в процессе preprocess обработки.
+- [#3066604](https://www.drupal.org/node/3066604) `Drupal\views\Form\ViewsExposedForm` теперь принимает информацию о текущем пути (`CurrentPathStack`) в качестве параметра конструктора.
 
 ## File API
 
@@ -233,6 +243,10 @@ jquery.ui.effects.scale:
 - [#3030340](https://www.drupal.org/node/3030340) Объект `WebTestBase` помечен устаревшим.
 - [#3056869](https://www.drupal.org/node/3056869) Поддержка PHPUnit 4.x прекращена, теперь будет запрашиваться версия ^6.5. В соответствии с данным изменением, [Drush](../../drush.md) команды `drupal-phpunit-upgrade` и `drupal-phpunit-upgrade-check` больше не нужны и были удалены.
 - [#3057326](https://www.drupal.org/node/3057326) Передача File сущности в качестве первого аргумента в `assertFileExists` и `assertFileNotExists` помечена устаревшей.
+- [#2906685](https://www.drupal.org/node/2906685) Добавлен новый метод `JSWebAssert::waiteForElementRemoved()`, который позволяет дождаться удаление определенного элемента со страницы, прежде чем продолжить.
+- [#2949692](https://www.drupal.org/node/2949692) `Drupal\simpletest\TestDiscovery` помечен устаревшим в пользу `Drupal\Core\Test\TestDiscovery`.
+- [#3075252](https://www.drupal.org/node/3075252) Simpletest функции тестирования БД помечены устаревшими и перенесены в `Drupal\Core\Test\TestDatabase`.
+- [#2948547](https://www.drupal.org/node/2948547)  Simpletest функции связанные с PHPUnit теперь являются классами `\Drupal\Core\Test\PhpUnitTestRunner` и `\Drupal\Core\Test\JUnitConverter`.
 
 ## Конфигурации
 
@@ -257,7 +271,9 @@ jquery.ui.effects.scale:
 - [#3063510](https://www.drupal.org/node/3063510) `\Drupal\Core\Cache\Apcu4Backend` помечен устаревшим. Если вы пользовались им, все вызовы должны быть перенаправлены на `\Drupal\Core\Cache\ApcuBackend`.
 - [#3068527](https://www.drupal.org/node/3068527) `HelpSection` плагины теперь могут указывать вес (`weight`).
 - [#3070036](https://www.drupal.org/node/3070036) Теперь для блока поиска можно выбирать, куда будет перенаправлен пользователь при отправке запроса.
-- [#3069730](https://www.drupal.org/node/3069730) wikimedia/composer-merge-plugin удалён в пользу путей до репозиториев.
+- [#3069730](https://www.drupal.org/node/3069730) `wikimedia/composer-merge-plugin` удалён в пользу путей до репозиториев.
+- [#3059717](https://www.drupal.org/node/3059717) Добавлен [Composer](../../composer.md) плагин `drupal/core-vendor-cleanup`, который позволяет подчищать в пакетах после установки и обновления различные директории. Например test и documentation. Что должно позволить облегчить проекты и улучшить безопасность.
+- [#3075873](https://www.drupal.org/node/3075873) Скафолд файлы теперь также будут присутствовать в `drupal/core` пакете. Добавлены соответствующие тесты, которые следят чтобы они были идентичны при дублировании.
 
 ## См. также
 
