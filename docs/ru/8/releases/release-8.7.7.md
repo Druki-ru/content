@@ -39,6 +39,10 @@ metatags:
 - [#2962765](https://www.drupal.org/node/2962765) Добавлены примеры как задавать переменные MINK в `phpunit.xml.dist`.
 - [#2849413](https://www.drupal.org/node/2849413) Исправлена неполадка, приводящая к фатальной ошибке, если ImageStyle пытается построить URL с использованием StreamWrapper, который ещё не зарегистрирован.
 
+## Известные проблемы
+
+- [#3078671](https://www.drupal.org/project/drupal/issues/3078671) Некоторые пользователи сообщают о проблемах с пакетом `webflo/drupal-core-require-dev`.
+
 ## Ссылки
 
 - [Drupal 8.7.7](https://www.drupal.org/project/drupal/releases/8.7.7) (англ.), drupal.org, 4 сентября 2019
