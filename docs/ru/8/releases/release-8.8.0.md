@@ -185,12 +185,221 @@ jquery.ui.effects.scale:
   deprecated: The "%library_id%" asset library is deprecated in drupal:8.8.0 and will be removed in drupal:9.0.0. Require jQuery UI as an explicit dependency or create a pure JavaScript solution. See https://www.drupal.org/node/3064015
 ```
 
+## Исключение модулей из синхронизации конфигураций
+
+- [#3079028](https://www.drupal.org/node/3079028)
+
+В ядро добавлена возможность указывать список [модулей](../modules/modules.md), который будут исключены из в момент экспорта конфигураций.
+
+Для того чтобы исключить модули из конфигураций, их необходимо перечислить в настройке `config_exclude_modules`.
+
+```php
+$settings['config_exclude_modules'] = ['devel'];
+```
+
+> ![WARNING]
+> Все конфигурации, которые явно или неявно зависимы от перечисленных модулей, также будут исключены из экспорта.
+
+## Представлены официальные Composer шаблоны для установки Drupal
+
+- [#3082474](https://www.drupal.org/node/3082474) 
+
+Ранее, Drupal проекты управляемые через Composer использовали шаблоны проектов вроде [drupal-composer/drupal-project](../../composer-drupal-project.md) для управления зависимостями и проектом. Начиная с Drupal 8.8.0 аналогичные темплейты предоставляются официально ядром.
+
+Вы можете выбирать из двух шаблонов:
+
+- **drupal/recommended-project** — рекомендуемый шаблон для создания новых сайтов на Drupal, при котором корень проекта находится на уровень выше. Это означает, что файл "index.php", папка "core" и т.д. расположены в директории "web", вместо того чтобы располагаться рядом с "composer.json" и "vendor" директорией в корне проекта. Данная структура рекомендуется, потому что она позволяет настроиться веб-сервер, что он будет предоставлять доступ только к "web" директории. Папка "vendor" и подобные будут находиться за пределами корня "web" директории, что положительно для безопасности.
+- **drupal/legacy-project** — данный шаблон создает новый сайт со структурой как она была в [Drupal 8.7.0](./release-8.7.0.md) и ранее. Файл "index.php" , "core" директория и т.д. расположене в корне проекте рядом с "composer.json" и "vendor" директорией. Используйте данный шаблон только если у вас нет возможности использовать рекомендуемый шаблон.
+
+Для создания нового проекта используйте желаемый шаблон, например:
+
+```shell script
+composer -n create-project drupal/recommended-project:^8.8@dev my-project
+```
+
+> ![NOTICE]
+> Узнайте больше о том как управлять Drupal проектом при помощи [Composer](../../composer.md).
+
+## Синонимы путей конвертированы в сущности
+
+- [#3013865](https://www.drupal.org/node/3013865)
+
+Начиная с Drupal 8.8.0, алиасы путей конвертированы в ревизионные контент-сущности `path_alias`.
+
+Сервис `path.alias_storage` продолжит работать для поддержки обратной совместимости, но его хуки помечены уставрешими.
+
+Представленные ниже изменения рекомендуются для того чтобы полностью использовать все возможности новой системы и подготовить свой код к [Drupal 9](../../9/drupal-9.md).
+
+### Используйте объекты синонимов вместо массивов
+
+Устаревший массив предоставляющий информацию о синониме:
+
+```php
+$alias = [
+  'source' => '/a/system/path',
+  'alias' => '/a-path-alias',
+  'langcode' => 'en',
+];
+```
+
+Используйте методы объекта синонима для получения значений:
+
+- `$alias['source']` становится `$path_alias->getPath()`
+- `$alias['alias']` становится `$path_alias->getAlias()`
+- `$alias['langcode']` становится `$path_alias->language()->getId()`
+
+### Хуки
+
+Используйте [хуки](../hooks/hooks.md) для сущностей, вместо старых, предназначенных для старых синонимов.
+
+Ранее:
+
+```php
+hook_path_insert($path)
+hook_path_update($path)
+hook_path_delete($path)
+```
+
+Сейчас:
+
+```php
+hook_entity_insert(Drupal\Core\Entity\EntityInterface $entity)
+hook_path_alias_insert(Drupal\Core\Path\PathAliasInterface $path_alias)
+
+hook_entity_update(Drupal\Core\Entity\EntityInterface $entity)
+hook_path_alias_update(Drupal\Core\Path\PathAliasInterface $path_alias)
+
+hook_entity_delete(Drupal\Core\Entity\EntityInterface $entity)
+hook_path_alias_delete(Drupal\Core\Path\PathAliasInterface $path_alias)
+```
+
+Использование хуков, помеченных устаревшими, в ядре заменены следующим образом:
+
+```php
+menu_link_content_path_insert() -> menu_link_content_path_alias_insert()
+menu_link_content_path_update() -> menu_link_content_path_alias_update()
+menu_link_content_path_delete() -> menu_link_content_path_alias_delete()
+
+system_path_insert() -> PathAlias::postSave()
+system_path_update() -> PathAlias::postSave()
+system_path_delete() -> PathAlias::postDelete()
+```
+
+### Хранилище синонимов
+
+Ранее:
+
+```php
+\Drupal::service('path.alias_storage')->load($conditions)
+\Drupal::service('path.alias_storage')->save($source, $alias, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $pid = NULL)
+\Drupal::service('path.alias_storage')->delete($conditions)
+```
+
+Новый вариант:
+
+```php
+\Drupal::entityTypeManager()->getStorage('path_alias')->load($id)
+\Drupal::entityTypeManager()->getStorage('path_alias')->loadByProperties(array $values)
+\Drupal::entityTypeManager()->getStorage('path_alias')->save($path_alias)
+\Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
+```
+
+### Формы
+
+Объекты форм и их ID изменены следующим образом:
+
+<table>
+  <thead>
+    <tr>
+      <th>Старый объект</th>
+      <th>Старый ID формы</th>
+      <th></th>
+      <th>Новый объект</th>
+      <th>Новый ID формы</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`Drupal\path\Form\AddForm`</td>
+      <td>`path_admin_add`</td>
+      <td>-></td>
+      <td>`Drupal\path\PathAliasForm`</td>
+      <td>`path_alias_form`</td>
+    </tr>
+    <tr>
+      <td>`Drupal\path\Form\EditForm`</td>
+      <td>`path_admin_edit`</td>
+      <td>-></td>
+      <td>`Drupal\path\PathAliasForm`</td>
+      <td>`path_alias_form`</td>
+    </tr>
+    <tr>
+      <td>`Drupal\path\Form\DeleteForm`</td>
+      <td>`path_alias_delete`</td>
+      <td>-></td>
+      <td>`Drupal\Core\Entity\ContentEntityDeleteForm`</td>
+      <td>`path_alias_delete_form`</td>
+    </tr>
+    <tr>
+      <td>`Drupal\path\Form\PathFormBase`</td>
+      <td>Отсутствует</td>
+      <td>-></td>
+      <td>`Drupal\path\PathAliasForm`</td>
+      <td>Отсутствует</td>
+    </tr>
+  </tbody>
+</table>
+
+Код, используйщий хуки `hook_form_alter()` или `hook_form_FORM_ID_alter()` должен быть обновлён.
+
+### Маршруты
+
+Также были изменены маршруты:
+
+<table>
+  <thead>
+    <th>
+      <td>Старое имя маршрута</td>
+      <td>Новое имя маршрута</td>
+    </th>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td>`path.admin_add`</td>
+      <td>`entity.path_alias.add_form`</td>
+    </tr>
+    <tr>
+      <td>`path.admin_edit`</td>
+      <td>`entity.path_alias.edit_form`</td>
+    </tr>
+    <tr>
+      <td>`path.delete`</td>
+      <td>`entity.path_alias.delete_form`</td>
+    </tr>
+    <tr>
+      <td>`path.admin_overview`</td>
+      <td>`entity.path_alias.collection`</td>
+    </tr>
+  </tbody>
+</table>
+
+Маршрут `path.admin_overview_filter` помечен устаревшим и ему на замену пришел стандартный маршрут сущностей `entity.path_alias.collection`.
+
+### Миграции
+
+Плагин назначения `url_alias` помечен устаревшим в пользу общего для сущностей `entity:path_alias`. Миграции для Drupal 6 и 7 обновлены должным образом.
+
 ## Оформление и темизация
 
 - [#3060703](https://www.drupal.org/node/3060703) Добавленна новая переменная `file_size` для шаблона **file-link.html.twig**.
 - [#3074716](https://www.drupal.org/node/3074716) Переменная `link` в `template_preprocess_file_link()` теперь формируется как рендер массив, вместо готовой строки.
 - [#3066713](https://www.drupal.org/node/3066713) Класс подтверждения сообщения о смене пароля изменен с `password-confirm` на `password-confirm-message`. В темах Stable и Classy будут присутствовать оба класса.
 - [#2960810](https://www.drupal.org/node/2960810) Добавлены новые варианты для шаблонов страниц, которые позволят оформлять страницы для отличных от HTTP 200 ответов: `page--401.html.twig`, `page--403.html.twig`, `page--404.html.twig` и `page--4xx.html.twig`. Если для страниц данных ошибок указаны ноды, данные шаблоны не будут работать.
+- [#3066038](https://www.drupal.org/node/3066038) `base theme` значение в `*.info.yml` файле темы является обязательным.
+- [#3061281](https://www.drupal.org/node/3061281) Добавлена JavaScript функция `Drupal.theme.checkbox` для идентичной темизации `checkbox` элементов (`Drupal.theme('checkbox')`).
+- [#3066722](https://www.drupal.org/node/3066722) Добавлена новая функция `Drupal.theme.ajaxProgressBar` при помощи которой можно изменить обертку над AJAX индикатором прогресса.
+- [#3066723](https://www.drupal.org/node/3066723) Классы для AJAX индикатора прогресса перенсены в новый элемент. Данное изменение не касается тем `stable` и `classy`.
 
 ## Core API
 
@@ -211,6 +420,7 @@ jquery.ui.effects.scale:
 
 - [#2835616](https://www.drupal.org/node/2835616) Функции `entity_get_display()` и `entity_get_form_display()` получили замену в виде сервиса `entity_display.repository`.
 - [#3033656](https://www.drupal.org/node/3033656) Функции для просмотра сущностней помечены устаревшими.
+- [#3075567](https://www.drupal.org/node/3075567) `EntityType::getLowercaseLabel()` помечен устаревшим. `EntityType::getSingularLabel()` теперь возвращает название сущности в нижнем регистре.
 
 ## Migrate API
 
@@ -238,6 +448,14 @@ jquery.ui.effects.scale:
 - [#3038437](https://www.drupal.org/node/3038437) Функция `file_scan_directory()` помечена устаревшей и перенесена в сервис `file_system`.
 - [#3039255](https://www.drupal.org/node/3039255) Функция `file_directory_temp()` помечена устаревшей и перенесена в сервис `file_system`.
 
+## JSON:API
+
+- [#3078389](https://www.drupal.org/node/3078389) Элементы ссылок теперь сериализуются с двойным дефисом (`--`) вместо двоеточия (`:`).
+- [#3078036](https://www.drupal.org/node/3078036) Изменена сигнатура метода `Drupal\jsonapi\Context\FieldResolver::resolveInternalEntityQueryPath()`.
+- [#3084710](https://www.drupal.org/node/3084710) Нормалайзер сущности предоставляемый JSON:API был удален.
+- [#3084746](https://www.drupal.org/node/3084746) `\Drupal\jsonapi\ResourceType\ResourceType::getFieldMapping()` помечен устаревшим.
+- [#3084721](https://www.drupal.org/node/3084721) Свойство `\Drupal\jsonapi\ResourceType\ResourceType::$disabledFields` и `ResourceType::$invertedFieldMapping` помечены устаревшими. 
+
 ## Тестирование
 
 - [#3030340](https://www.drupal.org/node/3030340) Объект `WebTestBase` помечен устаревшим.
@@ -247,6 +465,9 @@ jquery.ui.effects.scale:
 - [#2949692](https://www.drupal.org/node/2949692) `Drupal\simpletest\TestDiscovery` помечен устаревшим в пользу `Drupal\Core\Test\TestDiscovery`.
 - [#3075252](https://www.drupal.org/node/3075252) Simpletest функции тестирования БД помечены устаревшими и перенесены в `Drupal\Core\Test\TestDatabase`.
 - [#2948547](https://www.drupal.org/node/2948547)  Simpletest функции связанные с PHPUnit теперь являются классами `\Drupal\Core\Test\PhpUnitTestRunner` и `\Drupal\Core\Test\JUnitConverter`.
+- [#3077623](https://www.drupal.org/node/3077623) Конструктор `\Drupal\Core\Extension\Extension` теперь валидирует ввод в режиме разработки.
+- [#3076634](https://www.drupal.org/node/3076634) Функции `simpletest_clean_*()` были помечены устаревшими и перенесены в соответствующие классы.
+- [#3082134](https://www.drupal.org/node/3082134) Название сервиса `simpletest.config_schema_checker` изменено на `testing.config_schema_checker`, так как он не имеет отношения к Simpletest модулю.
 
 ## Конфигурации
 
@@ -274,6 +495,9 @@ jquery.ui.effects.scale:
 - [#3069730](https://www.drupal.org/node/3069730) `wikimedia/composer-merge-plugin` удалён в пользу путей до репозиториев.
 - [#3059717](https://www.drupal.org/node/3059717) Добавлен [Composer](../../composer.md) плагин `drupal/core-vendor-cleanup`, который позволяет подчищать в пакетах после установки и обновления различные директории. Например test и documentation. Что должно позволить облегчить проекты и улучшить безопасность.
 - [#3075873](https://www.drupal.org/node/3075873) Скафолд файлы теперь также будут присутствовать в `drupal/core` пакете. Добавлены соответствующие тесты, которые следят чтобы они были идентичны при дублировании.
+- [#3072313](https://www.drupal.org/node/3072313) Для элемента формы `dropbutton` добавлена настройка `#dropbutton_type`.
+- [#3021778](https://www.drupal.org/node/3021778), [#2874695](https://www.drupal.org/node/2874695) `menu_local_tabs()`, `menu_primary_local_tasks()` и `menu_secondary_local_tasks()` помечены устаревшими.
+- [#2940126](https://www.drupal.org/node/2940126) `file_ensure_htaccess()` и `file_save_htaccess()` помечены устаревшими.
 
 ## См. также
 
