@@ -217,7 +217,7 @@ $settings['config_exclude_modules'] = ['devel'];
 composer -n create-project drupal/recommended-project:^8.8@dev my-project
 ```
 
-> [!NOTICE]
+> [!NOTE]
 > Узнайте больше о том как управлять Drupal проектом при помощи [Composer](../../composer.md).
 
 ## Синонимы путей конвертированы в сущности
@@ -308,47 +308,13 @@ system_path_delete() -> PathAlias::postDelete()
 
 Объекты форм и их ID изменены следующим образом:
 
-<table>
-  <thead>
-    <tr>
-      <th>Старый объект</th>
-      <th>Старый ID формы</th>
-      <th></th>
-      <th>Новый объект</th>
-      <th>Новый ID формы</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>`Drupal\path\Form\AddForm`</td>
-      <td>`path_admin_add`</td>
-      <td>-></td>
-      <td>`Drupal\path\PathAliasForm`</td>
-      <td>`path_alias_form`</td>
-    </tr>
-    <tr>
-      <td>`Drupal\path\Form\EditForm`</td>
-      <td>`path_admin_edit`</td>
-      <td>-></td>
-      <td>`Drupal\path\PathAliasForm`</td>
-      <td>`path_alias_form`</td>
-    </tr>
-    <tr>
-      <td>`Drupal\path\Form\DeleteForm`</td>
-      <td>`path_alias_delete`</td>
-      <td>-></td>
-      <td>`Drupal\Core\Entity\ContentEntityDeleteForm`</td>
-      <td>`path_alias_delete_form`</td>
-    </tr>
-    <tr>
-      <td>`Drupal\path\Form\PathFormBase`</td>
-      <td>Отсутствует</td>
-      <td>-></td>
-      <td>`Drupal\path\PathAliasForm`</td>
-      <td>Отсутствует</td>
-    </tr>
-  </tbody>
-</table>
+|Старый объект|Старый ID формы||Новый объект|Новый ID формы|
+|--- |--- |--- |--- |--- |
+|`Drupal\path\Form\AddForm`|`path_admin_add`|->|`Drupal\path\PathAliasForm`|`path_alias_form`|
+|`Drupal\path\Form\EditForm`|`path_admin_edit`|->|`Drupal\path\PathAliasForm`|`path_alias_form`|
+|`Drupal\path\Form\DeleteForm`|`path_alias_delete`|->|`Drupal\Core\Entity\ContentEntityDeleteForm`|`path_alias_delete_form`|
+|`Drupal\path\Form\PathFormBase`|Отсутствует|->|`Drupal\path\PathAliasForm`|Отсутствует|
+
 
 Код, используйщий хуки `hook_form_alter()` или `hook_form_FORM_ID_alter()` должен быть обновлён.
 
@@ -356,33 +322,12 @@ system_path_delete() -> PathAlias::postDelete()
 
 Также были изменены маршруты:
 
-<table>
-  <thead>
-    <tr>
-      <th>Старое имя маршрута</th>
-      <th>Новое имя маршрута</th>
-    </tr>
-  </thead>
-  
-  <tbody>
-    <tr>
-      <td>`path.admin_add`</td>
-      <td>`entity.path_alias.add_form`</td>
-    </tr>
-    <tr>
-      <td>`path.admin_edit`</td>
-      <td>`entity.path_alias.edit_form`</td>
-    </tr>
-    <tr>
-      <td>`path.delete`</td>
-      <td>`entity.path_alias.delete_form`</td>
-    </tr>
-    <tr>
-      <td>`path.admin_overview`</td>
-      <td>`entity.path_alias.collection`</td>
-    </tr>
-  </tbody>
-</table>
+|Старое имя маршрута|Новое имя маршрута|
+|--- |--- |
+|`path.admin_add`|`entity.path_alias.add_form`|
+|`path.admin_edit`|`entity.path_alias.edit_form`|
+|`path.delete`|`entity.path_alias.delete_form`|
+|`path.admin_overview`|`entity.path_alias.collection`|
 
 Маршрут `path.admin_overview_filter` помечен устаревшим и ему на замену пришел стандартный маршрут сущностей `entity.path_alias.collection`.
 
