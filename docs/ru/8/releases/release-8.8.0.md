@@ -217,7 +217,7 @@ $settings['config_exclude_modules'] = ['devel'];
 composer -n create-project drupal/recommended-project:^8.8@dev my-project
 ```
 
-> ![NOTICE]
+> [!NOTICE]
 > Узнайте больше о том как управлять Drupal проектом при помощи [Composer](../../composer.md).
 
 ## Синонимы путей конвертированы в сущности
@@ -358,10 +358,10 @@ system_path_delete() -> PathAlias::postDelete()
 
 <table>
   <thead>
-    <th>
-      <td>Старое имя маршрута</td>
-      <td>Новое имя маршрута</td>
-    </th>
+    <tr>
+      <th>Старое имя маршрута</th>
+      <th>Новое имя маршрута</th>
+    </tr>
   </thead>
   
   <tbody>
