@@ -335,6 +335,50 @@ system_path_delete() -> PathAlias::postDelete()
 
 Плагин назначения `url_alias` помечен устаревшим в пользу общего для сущностей `entity:path_alias`. Миграции для Drupal 6 и 7 обновлены должным образом.
 
+## Изменения браузеров, поддерживаемых Drupal ядром
+
+- [#3079238](https://www.drupal.org/node/3079238)
+
+Начиная с Druapl 8.8.0, Drupal ядро поддерживает следующие браузеры:
+
+- Последние две мажорные версии:
+  - Браузеры для ПК:
+    - Google Chrome
+    - Firefox
+    - Safari
+    - Microsoft Edge
+    - Opera
+  - Мобильные браузеры:
+    - Safari for iOS
+- Последнюю мажорную версию:
+  - Браузеры для ПК:
+    - Firefox ESR
+    - Internet Explorer
+  - Мобильные браузеры:
+    - Chrome for Android
+    - Chrome for iOS
+    - UC Browser
+    - Opera Mini
+    - Samsung Internet
+    
+Поддержка браузеров означает:
+
+- Drupal принимает сообщения об ошибках на поддерживаемых браузерах.
+- Контрибуторы сами проверяют значительные изменения в нескольких браузерах на предмет регрессий, но это зависит от конкретных контрибуторов по конкретной задаче. На данный момент Drupal не имеет автоматизированных тестов для всех поддерживаемых браузеров.
+- По умолчанию, Drupal ядро не принимает сообщения об ошибках для неподдерживаемых браузеров. Разработчики и команда безопасности Drupal будут принимать решения о значимости исправления в каждом конкретном случае, и вносить изменения при необходимости.
+- Drupal может начать использование возможностей браузера, если все поддерживаемые браузеры имеют аналогичную поддержку или соответствующие полифилы. В каждой мажорной версии, полифилы, которые больше не требуются для хотябы одного поддерживаемого браузера, будут удалены.
+
+> [!NOTE]
+> Это также означает, что сборщики ES5 и ES6 для JavaScript в ядре, также нацелены на данные браузеры.
+
+## Новая эксперементальная тема административного интерфейса — Claro
+
+- [#3087157](https://www.drupal.org/node/3087157)
+
+В ядро добавлена новая эксперементальная тема оформления для административного интерфейса — Claro.
+
+![Claro - Node edit](https://www.drupal.org/files/issues/2019-09-07/claro_node_add.png)
+
 ## Оформление и темизация
 
 - [#3060703](https://www.drupal.org/node/3060703) Добавленна новая переменная `file_size` для шаблона **file-link.html.twig**.
@@ -345,6 +389,15 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3061281](https://www.drupal.org/node/3061281) Добавлена JavaScript функция `Drupal.theme.checkbox` для идентичной темизации `checkbox` элементов (`Drupal.theme('checkbox')`).
 - [#3066722](https://www.drupal.org/node/3066722) Добавлена новая функция `Drupal.theme.ajaxProgressBar` при помощи которой можно изменить обертку над AJAX индикатором прогресса.
 - [#3066723](https://www.drupal.org/node/3066723) Классы для AJAX индикатора прогресса перенсены в новый элемент. Данное изменение не касается тем `stable` и `classy`.
+- [#3084859](https://www.drupal.org/node/3084859) Для разработки тем и использования современных возможностей CSS, Drupal ядро теперь использует PostCSS.
+- [#3086531](https://www.drupal.org/node/3086531) [Темы оформления](../themes/themes.md) теперь могут быть помечены как эксперементальные: `experimental: true`.
+- [#3064015](https://www.drupal.org/node/3064015) jQuery UI постепенно выводится из ядра и помечается устаревшим.
+- [#3067969](https://www.drupal.org/node/3067969) jQuery UI библиотеки, помеченные устаревшими, больше не используются ядром. Данные библиотеки выносятся в соответствующие модули, если они вам по прежнему нужны. Например [jQuery UI Accordion](https://www.drupal.org/project/jquery_ui_accordion) — там же вы найдете все аналогичные проекты.
+- [#3086383](https://www.drupal.org/node/3086383) html5shif полифил помечен устаревшим.
+- [#3086643](https://www.drupal.org/node/3086643) [Popper.js](https://popper.js.org/) добавлен в ядро на замену jQuery UI Position.
+- [#3086669](https://www.drupal.org/node/3086669) domready помечен устаревшим.
+- [#3086653](https://www.drupal.org/node/3086653) matchMedia полифил помечен устаревшим.
+- [#3089511](https://www.drupal.org/node/3089511) classList полифил помечен устаревшим.
 
 ## Core API
 
@@ -355,6 +408,12 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3067713](https://www.drupal.org/node/3067713) Добавлен новый хук `hook_element_plugin_alter()`.
 - [#3009387](https://www.drupal.org/node/3009387) Функция `drupal_get_user_timezone()` была заменена на [подписчик события](../events/events.md). Теперь можно использовать стандартную функцию PHP `date_default_timezone_get()` для получения актуального часового пояса.
 - [#3075098](https://www.drupal.org/node/3075098) Для удобства переиспользования `\Drupal\Component\PhpStorage\FileStorage::htaccessLines()`, данный метод был помечен устаревшим и его логику перенесли в `\Drupal\Component\FileSecurity\FileSecurity::htaccessLines()`. Также, теперь пакет `drupal/core-php-storage` имеет зависимость на `drupal/core-file-security`.
+- [#3068163](https://www.drupal.org/node/3068163) Для "select" элемента формы добавлена возможность указывать сортировку опцй.
+- [#2981313](https://www.drupal.org/node/2981313) Сортировка по умолчанию для заголовка таблицы, теперь может быть указана в параметре `initial_click_sort`.
+- [#3086401](https://www.drupal.org/node/3086401) Скаффолд операции "append" теперь могут применяться к файлам которые не являются "скаффолдными".
+- [#3024684](https://www.drupal.org/node/3024684) Для виджетов автодополнения `entity_reference_autocomplete` и `entity_reference_autocomplete_tags` добавлена возможность указывать кол-во отображаемых результатов.
+- [#3086403](https://www.drupal.org/node/3086403) Добавлена новая Ajax команда `MessageCommand`, для установки системных сообщений в ответе.
+- [#2779457](https://www.drupal.org/node/2779457) Пагинация теперь является сервисом. В связи с этим, все связанные глобальные переменные и функции помечены устаревшими.
 
 ## Content Moderation
 
@@ -366,6 +425,7 @@ system_path_delete() -> PathAlias::postDelete()
 - [#2835616](https://www.drupal.org/node/2835616) Функции `entity_get_display()` и `entity_get_form_display()` получили замену в виде сервиса `entity_display.repository`.
 - [#3033656](https://www.drupal.org/node/3033656) Функции для просмотра сущностней помечены устаревшими.
 - [#3075567](https://www.drupal.org/node/3075567) `EntityType::getLowercaseLabel()` помечен устаревшим. `EntityType::getSingularLabel()` теперь возвращает название сущности в нижнем регистре.
+- [#3086279](https://www.drupal.org/node/3086279) Добавлен новый API для установки типа сущности с поддержкой полей `EntityDefinitionUpdateManager::installFieldableEntityType()`.
 
 ## Migrate API
 
@@ -373,7 +433,8 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3054173](https://www.drupal.org/node/3054173) Объекты, возвращаемые `getMessageIterator()` теперь содержат ID `source` и `destination`.
 - [#2929443](https://www.drupal.org/node/2929443) Модули теперь могут объявлять свой статус обновления до Drupal 8.
 - [#3073707](https://www.drupal.org/node/3073707) Миграции теперь могут валидировать сущность. В случае провала валидации, сохранение сущности не произойдет.
-- [#3060969](https://www.drupal.org/node/3060969) `MigrateIdMapInterface::getMessageIterator()` помечен устаревшим в пользу `MigrateIdMapInterface::getMessages()`. 
+- [#3060969](https://www.drupal.org/node/3060969) `MigrateIdMapInterface::getMessageIterator()` помечен устаревшим в пользу `MigrateIdMapInterface::getMessages()`.
+- [#3047268](https://www.drupal.org/node/3047268) Добавлены два новых сервиса: `migrate.lookup` и `migrate.stub`.
 
 ## User
 
@@ -387,6 +448,10 @@ system_path_delete() -> PathAlias::postDelete()
 - [#2869168](https://www.drupal.org/node/2869168) Добавлена возможность ограничивать доступные операторы для раскрытых фильтров.
 - [#3074409](https://www.drupal.org/node/3074409) `<channel>` элемент, создаваемый в RSS лентах Views, больше не рендерится в процессе preprocess обработки.
 - [#3066604](https://www.drupal.org/node/3066604) `Drupal\views\Form\ViewsExposedForm` теперь принимает информацию о текущем пути (`CurrentPathStack`) в качестве параметра конструктора.
+- [#3023427](https://www.drupal.org/node/3023427) `Drupal\views\Plugin\views\field\LinkBase` теперь требует `EntityManager` и `LanguageManager`.
+- [#3088233](https://www.drupal.org/node/3088233) Добавлены новые [хуки](../hooks/hooks.md) для изменения Views UI.
+- [#2791359](https://www.drupal.org/node/2791359) `Drupal\views\Plugin\EntityReferenceSelection\ViewsSelection::__construct` теперь также принимает `$renderer` параметр.
+- [#3087832](https://www.drupal.org/node/3087832) Из конфигураций Views удалено значение `core`. Если ваши конфигурации в профиле, модуле или теме используют его, то его необходимо удалить.
 
 ## File API
 
@@ -399,7 +464,32 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3078036](https://www.drupal.org/node/3078036) Изменена сигнатура метода `Drupal\jsonapi\Context\FieldResolver::resolveInternalEntityQueryPath()`.
 - [#3084710](https://www.drupal.org/node/3084710) Нормалайзер сущности предоставляемый JSON:API был удален.
 - [#3084746](https://www.drupal.org/node/3084746) `\Drupal\jsonapi\ResourceType\ResourceType::getFieldMapping()` помечен устаревшим.
-- [#3084721](https://www.drupal.org/node/3084721) Свойство `\Drupal\jsonapi\ResourceType\ResourceType::$disabledFields` и `ResourceType::$invertedFieldMapping` помечены устаревшими. 
+- [#3084721](https://www.drupal.org/node/3084721) Свойство `\Drupal\jsonapi\ResourceType\ResourceType::$disabledFields` и `ResourceType::$invertedFieldMapping` помечены устаревшими.
+- [#3085275](https://www.drupal.org/node/3085275) JSON:API теперь сериализует отображаемое имя пользователя в новом поле `display_name`, которое предназначено только для чтения. Поле `name` по прежнему содержит оригинальное, не изменненное имя пользователя.
+- [#3079797](https://www.drupal.org/node/3079797) Типы ресурсов JSON:API теперь могут быть программно настроены при помощи [событий](../events/events.md).
+- [#3088385](https://www.drupal.org/node/3088385) `Drupal\jsonapi\JsonApiResource\Link::merge` теперь предоставляет ошибку сравнения, когда принята попытка создать ссылку с разными типами связей.
+- [#3087821](https://www.drupal.org/node/3087821) Построение объекта ссылки JSON:API при помощи массива с типами ресурсов помечено устаревшим. Теперь можно указывать только один конкретный тип.
+
+## Media & Media Library
+
+- [#3075165](https://www.drupal.org/node/3075165) `Drupal\media_library\Form\FileUploadForm` теперь принимает `file_usage` [сервис](../services/services.md) в конструкторе.
+- [#3085857](https://www.drupal.org/node/3085857) Добавлен шаблон для оформления ошибок вставки медиа элементов. **Stable и Stark темы не предоставляют шаблоны по умолчанию.**
+- [#3087129](https://www.drupal.org/node/3087129) Улучшена поддержка мильтиязычных сайтов для Media Library виджетов. Дублей больше не будет!
+- [#3087775](https://www.drupal.org/node/3087775) Добавлен новый фильтр "Встраевыемые медиа". Он вводит поддержку тега `<drupal-media>` и трансформацию его в встроенную медиа-сущность.
+- [#3088444](https://www.drupal.org/node/3088444) Добавлены фильтры для Views, определяюище доступ к медиа-сущностям по статусу опубликован/не опубликован.
+
+## Help Topics
+
+- [#3072984](https://www.drupal.org/node/3072984) Содержимое Help Topics теперь "индексируемо" (можно искать по ним).
+
+## Search
+
+- [#3075696](https://www.drupal.org/node/3075696) Функции для поискового индекса перенесы в сервис `search.index`, а функции помечены устаревшими.
+
+## Content Moderation
+
+- [#3087336](https://www.drupal.org/node/3087336) Content Moderation теперь совместим с Workspaces.
+- [#3087295](https://www.drupal.org/node/3087295) Методы сервиса `content_moderation.moderation_information` `isLatestRevision`, `getLatestRevision`, и `getLatestRevisionId` помечены устаревшими.
 
 ## Тестирование
 
@@ -413,6 +503,11 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3077623](https://www.drupal.org/node/3077623) Конструктор `\Drupal\Core\Extension\Extension` теперь валидирует ввод в режиме разработки.
 - [#3076634](https://www.drupal.org/node/3076634) Функции `simpletest_clean_*()` были помечены устаревшими и перенесены в соответствующие классы.
 - [#3082134](https://www.drupal.org/node/3082134) Название сервиса `simpletest.config_schema_checker` изменено на `testing.config_schema_checker`, так как он не имеет отношения к Simpletest модулю.
+- [#3083549](https://www.drupal.org/node/3083549) Опция `--browser` для `run-tests.sh` помечена устаревшей.
+- [#3083055](https://www.drupal.org/node/3083055) Для установочного профиля "testing" теперь необходимо явно указывать тему оформления для установки. Значение по умолчанию `classy` удалено.
+- [#3082383](https://www.drupal.org/node/3082383) Добавлена новый тип теста `BuildTest`.
+- [#3085950](https://www.drupal.org/node/3085950) Тесты Nightwatch теперь используются Stark тему по умолчанию, вместо Classy.
+- [#3078763](https://www.drupal.org/node/3078763) PHPUnit 7 может быть использован для тестов на PHP 7.1+.
 
 ## Конфигурации
 
@@ -443,6 +538,15 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3072313](https://www.drupal.org/node/3072313) Для элемента формы `dropbutton` добавлена настройка `#dropbutton_type`.
 - [#3021778](https://www.drupal.org/node/3021778), [#2874695](https://www.drupal.org/node/2874695) `menu_local_tabs()`, `menu_primary_local_tasks()` и `menu_secondary_local_tasks()` помечены устаревшими.
 - [#2940126](https://www.drupal.org/node/2940126) `file_ensure_htaccess()` и `file_save_htaccess()` помечены устаревшими.
+- [#3030645](https://www.drupal.org/node/3030645) `tracker_page()` и `tracker.pages.inc` помечены устаревшими. Логика была перенесена в `\Drupal\tracker\Controller\TrackerController::buildContent`.
+- [#3052704](https://www.drupal.org/node/3052704) `drupal_installation_attempted()` помечен устаревшим.
+- [#3085704](https://www.drupal.org/node/3085704) Для формы восстановления пароля добавлена защита от флуда.
+- [#3000069](https://www.drupal.org/node/3000069) `drupal_process_states()` помечен устаревшим.
+- [#3084856](https://www.drupal.org/node/3084856) `NodeController::add()` помечен устаревшим.
+- [#3086614](https://www.drupal.org/node/3086614) Конфигурации [установочных профилей](../distributions/distributions.md) теперь имеют приоритет над конфигурациями по умолчанию, предоставляемых модулями.
+- [#3082634](https://www.drupal.org/node/3082634) Добавлены `Drupal.deprecationError()` и `Drupal.deprecatedProperty()` для запуска ошибок устаревшего кода для JavaScript.
+- [#3071740](https://www.drupal.org/node/3071740) Добавлен трейт `CacheTagsChecksumTrait`.
+- [#3086773](https://www.drupal.org/node/3086773) Форкнутая версия `SimpleAnnotationReader` от Doctrine теперь предоставляется Drupal ядром и должна быть использована вместо оригинального.
 
 ## См. также
 
