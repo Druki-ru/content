@@ -10,7 +10,7 @@ metatags:
 
 ## 2020
 
-- [DrupalCon Minneapolis 2020](2020/drupalcon-2020-minneapolis.md), 18-22 моая, Миннеаполис, Миннесота, США.
+- [DrupalCon Minneapolis 2020](2020/drupalcon-2020-minneapolis.md), 18-22 мая, Миннеаполис, Миннесота, США.
 
 ## 2019
 
