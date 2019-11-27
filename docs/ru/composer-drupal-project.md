@@ -11,7 +11,8 @@ metatags:
 
 Данный способ установки Drupal является альтернативой установки Drupal из архива, скаченного на drupal.org.
 
-Composer Drupal Project является официально рекомендованным способом установки как Drupal, так и всех необходимых зависимостей.
+> [!NOTE]
+> Начиная с [Drupal 8.8.0](8/releases/release-8.8.0.md) предоставляются официальный шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](../drupal-recommended-project.md) в качестве замены или альтернативы.
 
 ## Что предоставляет данный шаблон
 
@@ -81,6 +82,12 @@ Composer Drupal Project является официально рекомендо
     }
 },
 ```
+
+## См. также
+
+- [drupal/recommended-project](drupal-recommended-project.md) — рекомендуемый шаблон для всех сайтов.
+- [drupal/legacy-project](drupal-legacy-project.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](8/releases/release-8.8.0.md).
+- [Composer](composer.md)
 
 ## Ссылки
 
