@@ -290,31 +290,28 @@ system_path_delete() -> PathAlias::postDelete()
 Ранее:
 
 ```php
-\Drupal::service('path.alias_storage')->load($conditions)
-\Drupal::service('path.alias_storage')->save($source, $alias, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $pid = NULL)
-\Drupal::service('path.alias_storage')->delete($conditions)
+Drupal::service('path.alias_storage')->load($conditions)
+Drupal::service('path.alias_storage')->save($source, $alias, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $pid = NULL)
+Drupal::service('path.alias_storage')->delete($conditions)
 ```
 
 Новый вариант:
 
 ```php
-\Drupal::entityTypeManager()->getStorage('path_alias')->load($id)
-\Drupal::entityTypeManager()->getStorage('path_alias')->loadByProperties(array $values)
-\Drupal::entityTypeManager()->getStorage('path_alias')->save($path_alias)
-\Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
+Drupal::entityTypeManager()->getStorage('path_alias')->load($id)
+Drupal::entityTypeManager()->getStorage('path_alias')->loadByProperties(array $values)
+Drupal::entityTypeManager()->getStorage('path_alias')->save($path_alias)
+Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
 ```
 
 ### Формы
 
 Объекты форм и их ID изменены следующим образом:
 
-|Старый объект|Старый ID формы||Новый объект|Новый ID формы|
-|--- |--- |--- |--- |--- |
-|`Drupal\path\Form\AddForm`|`path_admin_add`|->|`Drupal\path\PathAliasForm`|`path_alias_form`|
-|`Drupal\path\Form\EditForm`|`path_admin_edit`|->|`Drupal\path\PathAliasForm`|`path_alias_form`|
-|`Drupal\path\Form\DeleteForm`|`path_alias_delete`|->|`Drupal\Core\Entity\ContentEntityDeleteForm`|`path_alias_delete_form`|
-|`Drupal\path\Form\PathFormBase`|Отсутствует|->|`Drupal\path\PathAliasForm`|Отсутствует|
-
+- `Drupal\path\Form\AddForm` (`path_admin_add`) -> `Drupal\path\PathAliasForm` (`path_alias_form`)
+- `Drupal\path\Form\EditForm` (`path_admin_edit`) -> `Drupal\path\PathAliasForm` (`path_alias_form`)
+- `Drupal\path\Form\DeleteForm` (`path_alias_delete`) -> `Drupal\Core\Entity\ContentEntityDeleteForm` (`path_alias_delete_form`)
+- `Drupal\path\Form\PathFormBase` -> `Drupal\path\PathAliasForm`
 
 Код, используйщий хуки `hook_form_alter()` или `hook_form_FORM_ID_alter()` должен быть обновлён.
 
@@ -322,18 +319,53 @@ system_path_delete() -> PathAlias::postDelete()
 
 Также были изменены маршруты:
 
-|Старое имя маршрута|Новое имя маршрута|
-|--- |--- |
-|`path.admin_add`|`entity.path_alias.add_form`|
-|`path.admin_edit`|`entity.path_alias.edit_form`|
-|`path.delete`|`entity.path_alias.delete_form`|
-|`path.admin_overview`|`entity.path_alias.collection`|
+- `path.admin_add` -> `entity.path_alias.add_form`
+- `path.admin_edit` -> `entity.path_alias.edit_form`
+- `path.delete` -> `entity.path_alias.delete_form`
+- `path.admin_overview` -> `entity.path_alias.collection`
 
 Маршрут `path.admin_overview_filter` помечен устаревшим и ему на замену пришел стандартный маршрут сущностей `entity.path_alias.collection`.
 
 ### Миграции
 
 Плагин назначения `url_alias` помечен устаревшим в пользу общего для сущностей `entity:path_alias`. Миграции для Drupal 6 и 7 обновлены должным образом.
+
+## Подсистема синоноимов путей ядра перенесена в модуль path_alias
+
+- [#3092086](https://www.drupal.org/node/3092086)
+
+Система синонимов путей всегда была частью ядра Drupal. После того как синонимы стали сущностями, был создан новый модуль с API — `path_alias`. Данный модуль является обязательным в Drupal 8.8.0 и последующих релизах, но в конечном итоге, начиная с [Drupal 9](../../9/drupal-9.md) он будет опциональным.
+
+Следующие сервисы подверглись изменениям:
+
+- `path.alias_manager` помечен устаревшим и заменен новым сервисом `path_alias.manager`.
+- `path.alias_whitelist` стал алиасом для нового сервиса `path_alias.whitelist`. Сам сервис перестал существовать. Если вам необходимо в своих сервисах сохранить поддержку с [Drupal 8.7.0](release-8.7.0.md) и ниже, используйте `ContainerBuilder::findDefinition('path.alias_whitelist')`.
+- `path_subscriber` помечен устаревшим и заменен новым сервисом `path_alias.subscriber`.
+- `path_processor_alias` помечен устаревшим и заменен новым сервисом `path_alias.path_processor`.
+
+Следующие интерфейсы заменены на новые:
+
+- `Drupal\Core\Path\AliasManagerInterface` на `Drupal\path_alias\AliasManagerInterface`
+- `Drupal\Core\Path\AliasManager` на `Drupal\path_alias\AliasManager`
+- `Drupal\Core\Path\AliasWhitelistInterface` на `Drupal\path_alias\AliasWhitelistInterface`
+- `Drupal\Core\Path\AliasWhitelist` на `Drupal\path_alias\AliasWhitelist`
+- `Drupal\Core\EventSubscriber\PathSubscriber` на `Drupal\path_alias\EventSubscriber\PathAliasSubscriber`
+- `Drupal\Core\PathProcessor\PathProcessorAlias` на `Drupal\path_alias\PathProcessor\AliasPathProcessor`
+
+**Требуется обновление кода**
+
+Для того чтобы код был совместим с текущим (Drupal 8.8.0) релизом, необходимо произвести следующие изменения:
+
+- Если ваш код как-то изменяет или заменяет сервис `path.alias_manager`, вы должны сделать аналогично с новым сервисом `path_alias.manager`.
+- Если ваш код изменяет или заменяет сервис `path.alias_whitelist`, вам необходимо заменить его использование на `path_alias.whitelist `, либо использовать `ContainerBuilder::findDefinition('path.alias_whitelist')`.
+
+Для того чтобы код был совместим с будущим [Drupal 9](../../9/drupal-9.md), необходимо произвести следующие изменения:
+
+- Все использования API, обращающиеся к старым сервисам или объектам должны быть заменены на новые.
+- Если ваши объекты реализют легаси интерфейсы, вам необходимо их заменить на новые.
+- Классы и интерфейсы которые расширяют легаси варианты, должны заменить их на новые варианты.
+
+Самое важное, как указано выше, модуль `path_alias` будет опциональным в Drupal 9, таким образом, код должен быть отрефакторен с учётом того, что данный API может отсутствовать, а также, явно указывать зависимость на новый модуль, если она требуется.
 
 ## Изменения браузеров, поддерживаемых Drupal ядром
 
@@ -398,6 +430,7 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3086669](https://www.drupal.org/node/3086669) domready помечен устаревшим.
 - [#3086653](https://www.drupal.org/node/3086653) matchMedia полифил помечен устаревшим.
 - [#3089511](https://www.drupal.org/node/3089511) classList полифил помечен устаревшим.
+- [#3084730](https://www.drupal.org/node/3084730) jQuery UI Sortable помечен устаревшим и использование данной библиотеке в ядре прекращено. Ранее, где применялась данная библиотека теперь используется [SortableJS](https://github.com/SortableJS/Sortable).
 
 ## Core API
 
@@ -452,6 +485,7 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3088233](https://www.drupal.org/node/3088233) Добавлены новые [хуки](../hooks/hooks.md) для изменения Views UI.
 - [#2791359](https://www.drupal.org/node/2791359) `Drupal\views\Plugin\EntityReferenceSelection\ViewsSelection::__construct` теперь также принимает `$renderer` параметр.
 - [#3087832](https://www.drupal.org/node/3087832) Из конфигураций Views удалено значение `core`. Если ваши конфигурации в профиле, модуле или теме используют его, то его необходимо удалить.
+- [#3090442](https://www.drupal.org/node/3090442) Вызов `ViewsData::get()` без аргумента `$key` помечен устаревшим.
 
 ## File API
 
@@ -469,14 +503,19 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3079797](https://www.drupal.org/node/3079797) Типы ресурсов JSON:API теперь могут быть программно настроены при помощи [событий](../events/events.md).
 - [#3088385](https://www.drupal.org/node/3088385) `Drupal\jsonapi\JsonApiResource\Link::merge` теперь предоставляет ошибку сравнения, когда принята попытка создать ссылку с разными типами связей.
 - [#3087821](https://www.drupal.org/node/3087821) Построение объекта ссылки JSON:API при помощи массива с типами ресурсов помечено устаревшим. Теперь можно указывать только один конкретный тип.
+- [#3087598](https://www.drupal.org/node/3087598) JSON:API теперь возвращает коды ошибок в виде строк, а не чисел, как этого требует спецификация.
 
-## Media & Media Library
+## Media и Media Library
 
 - [#3075165](https://www.drupal.org/node/3075165) `Drupal\media_library\Form\FileUploadForm` теперь принимает `file_usage` [сервис](../services/services.md) в конструкторе.
 - [#3085857](https://www.drupal.org/node/3085857) Добавлен шаблон для оформления ошибок вставки медиа элементов. **Stable и Stark темы не предоставляют шаблоны по умолчанию.**
 - [#3087129](https://www.drupal.org/node/3087129) Улучшена поддержка мильтиязычных сайтов для Media Library виджетов. Дублей больше не будет!
 - [#3087775](https://www.drupal.org/node/3087775) Добавлен новый фильтр "Встраевыемые медиа". Он вводит поддержку тега `<drupal-media>` и трансформацию его в встроенную медиа-сущность.
 - [#3088444](https://www.drupal.org/node/3088444) Добавлены фильтры для Views, определяюище доступ к медиа-сущностям по статусу опубликован/не опубликован.
+- [#3087431](https://www.drupal.org/node/3087431) Media Library теперь стабильный модуль.
+- [#3089300](https://www.drupal.org/node/3089300), [#3089298](https://www.drupal.org/node/3089298) Media Library больше не предоставляет классы для оформления. Они перенесены в темы Classy и Seven.
+- [#3089245](https://www.drupal.org/node/3089245) Media Library теперь предоставляет шаблоны `media-library-wrapper.html.twig` и `media-library-item.html.twig` для более точного и гибкого оформления.
+- [#3089217](https://www.drupal.org/node/3089217) `\Drupal\media_library\Form\AddFormBase` теперь требует указывать ID формы для всех дочерних форм.
 
 ## Help Topics
 
@@ -490,6 +529,10 @@ system_path_delete() -> PathAlias::postDelete()
 
 - [#3087336](https://www.drupal.org/node/3087336) Content Moderation теперь совместим с Workspaces.
 - [#3087295](https://www.drupal.org/node/3087295) Методы сервиса `content_moderation.moderation_information` `isLatestRevision`, `getLatestRevision`, и `getLatestRevisionId` помечены устаревшими.
+
+## Workspaces
+
+- [#3092447](https://www.drupal.org/node/3092447) Добавлена возможность создания рабочих подпространств для обеспечения разветвленного процесса создания содержимого. Например, теперь можно отправлять содержимое с разных локальных версий сайта на сервер для разработки, а он уже все вместе сможет отправить на боевую версию.
 
 ## Тестирование
 
@@ -508,6 +551,8 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3082383](https://www.drupal.org/node/3082383) Добавлена новый тип теста `BuildTest`.
 - [#3085950](https://www.drupal.org/node/3085950) Тесты Nightwatch теперь используются Stark тему по умолчанию, вместо Classy.
 - [#3078763](https://www.drupal.org/node/3078763) PHPUnit 7 может быть использован для тестов на PHP 7.1+.
+- [#3041703](https://www.drupal.org/node/3041703) `\Drupal\Tests\taxonomy\Functional\TaxonomyTestTrait` перемещен в Traits директорию `\Drupal\Tests\taxonomy\Traits\TaxonomyTestTrait`.
+- [#3082086](https://www.drupal.org/node/3082086) `assertTrue()` и `assertFalse()` помечены устаревшими для PHPUnit Kernel, Functional и FunctionalJavascript тестов.
 
 ## Конфигурации
 
@@ -547,6 +592,8 @@ system_path_delete() -> PathAlias::postDelete()
 - [#3082634](https://www.drupal.org/node/3082634) Добавлены `Drupal.deprecationError()` и `Drupal.deprecatedProperty()` для запуска ошибок устаревшего кода для JavaScript.
 - [#3071740](https://www.drupal.org/node/3071740) Добавлен трейт `CacheTagsChecksumTrait`.
 - [#3086773](https://www.drupal.org/node/3086773) Форкнутая версия `SimpleAnnotationReader` от Doctrine теперь предоставляется Drupal ядром и должна быть использована вместо оригинального.
+- [#3075385](https://www.drupal.org/node/3075385) Базовые поля `aggregator_feed.title`, `aggregator_item.title` и `taxonomy_term.name` теперь учитывают настройки отображения.
+- [#3081957](https://www.drupal.org/node/3081957) Модуль Place Block помечен устаревшим и будет удален в [Drupal 9](../../9/drupal-9.md).
 
 ## См. также
 
