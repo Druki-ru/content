@@ -85,6 +85,7 @@ metatags:
 
 ## См. также
 
+- [Руководство по установке Drupal](8/installation.md)
 - [drupal/recommended-project](drupal-recommended-project.md) — рекомендуемый шаблон для всех сайтов.
 - [drupal/legacy-project](drupal-legacy-project.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](8/releases/release-8.8.0.md).
 - [Composer](composer.md)
