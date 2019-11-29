@@ -9,7 +9,7 @@ metatags:
 ---
 
 > [!IMPORTANT]
-> Будущий релиз Drupal. Не предназначен для использования на продакшен сайтах. Список изменений неполный и многое может измениться.
+> Будущий релиз Drupal. Не предназначен для использования на рабочих проектах.
 
 **Дата релиза**: 4 декабря 2019 г.\
 **Перевод на поддержку безопасности**: 3 июня 2020 г.\
@@ -17,9 +17,9 @@ metatags:
 
 ## Обновление с 8.7.x
 
-На данный момент информация отсутствует. Она появится ближе к релизу или в день релиза.
+Прежде чем обновляться, убедитесь, что сервер, на котором работает сайт, имеет версию PHP как минимум 7.1. [Drupal 8.7.0](release-8.7.0.md) последний релиз который поддерживает PHP 5.6.
 
----
+_Дополнительная информация появится в день релиза_
 
 ## Путь до конфигураций синхронизации теперь хранится в $settings вместо $config_directories
 
@@ -533,6 +533,7 @@ Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
 ## Workspaces
 
 - [#3092447](https://www.drupal.org/node/3092447) Добавлена возможность создания рабочих подпространств для обеспечения разветвленного процесса создания содержимого. Например, теперь можно отправлять содержимое с разных локальных версий сайта на сервер для разработки, а он уже все вместе сможет отправить на боевую версию.
+- [#3096868](https://www.drupal.org/node/3096868) Сущность `workspace_association` была удалена. Она была предназначена для внутреннего использования, а её возможности теперь выполняют ревизии.
 
 ## Тестирование
 
@@ -553,6 +554,7 @@ Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
 - [#3078763](https://www.drupal.org/node/3078763) PHPUnit 7 может быть использован для тестов на PHP 7.1+.
 - [#3041703](https://www.drupal.org/node/3041703) `\Drupal\Tests\taxonomy\Functional\TaxonomyTestTrait` перемещен в Traits директорию `\Drupal\Tests\taxonomy\Traits\TaxonomyTestTrait`.
 - [#3082086](https://www.drupal.org/node/3082086) `assertTrue()` и `assertFalse()` помечены устаревшими для PHPUnit Kernel, Functional и FunctionalJavascript тестов.
+- [#3091784](https://www.drupal.org/node/3091784) Модуль SimpleTest помечен устаревшим.
 
 ## Конфигурации
 
@@ -594,6 +596,12 @@ Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
 - [#3086773](https://www.drupal.org/node/3086773) Форкнутая версия `SimpleAnnotationReader` от Doctrine теперь предоставляется Drupal ядром и должна быть использована вместо оригинального.
 - [#3075385](https://www.drupal.org/node/3075385) Базовые поля `aggregator_feed.title`, `aggregator_item.title` и `taxonomy_term.name` теперь учитывают настройки отображения.
 - [#3081957](https://www.drupal.org/node/3081957) Модуль Place Block помечен устаревшим и будет удален в [Drupal 9](../../9/drupal-9.md).
+- [#3075102](https://www.drupal.org/node/3075102) Плагины редактора CKEditor теперь принимают `state` в качестве параметра конструктора.
+- [#3089181](https://www.drupal.org/node/3089181) Сервис `argument_resolver.raw_parameter` был удалён.
+- [#3093409](https://www.drupal.org/node/3093409) Текущая версия ядра больше не задается в ручную, а обновляется composer в процессе обновления.
+- [#3057191](https://www.drupal.org/node/3057191) `\Drupal\Component\Utility\Crypt::randomBytes()` помечен устаревшим в пользу стандартной PHP функции `random_bytes()`.
+- [#3057322](https://www.drupal.org/node/3057322) `\Drupal\Component\Utility\Unicode::caseFlip()` помечен устаревшим, так как в PHP 7 он больше не нужен.
+- [#3054488](https://www.drupal.org/node/3054488) `\Drupal\Component\Utility\Crypt::hashEquals()` помечен устаревшим в пользу стандартной PHP функции `hash_equals()`.
 
 ## См. также
 
