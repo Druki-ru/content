@@ -15,6 +15,8 @@ metatags:
 
 ## 9.0.x
 
+- [9.0.0](release-9.0.0.md) - 3 июня 2020
+
 ## См. также
 
 - [Список релизов Drupal 8](../../8/releases/releases.md)
