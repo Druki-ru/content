@@ -12,7 +12,7 @@ metatags:
 Данный способ установки Drupal является альтернативой установки Drupal из архива, скаченного на drupal.org.
 
 > [!NOTE]
-> Начиная с [Drupal 8.8.0](8/releases/release-8.8.0.md) предоставляются официальный шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](../drupal-recommended-project.md) в качестве замены или альтернативы.
+> Начиная с [Drupal 8.8.0](8/releases/release-8.8.0.md) предоставляются официальный шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](drupal-recommended-project.md) в качестве замены или альтернативы.
 
 ## Что предоставляет данный шаблон
 

@@ -13,7 +13,7 @@ metatags:
 
 Composer позволяет создавать новые проекты из уже имеющихся. Это равносильно клонированию репозитория проекта с последующим вызовом `composer install`.
 
-Для Drupal также существует ряд готовых composer проекта с Drupal:
+Для Drupal также существует ряд готовых composer проектов с Drupal:
 
 - **Официальные**
   - [drupal/recommended-project](drupal-recommended-project.md) (рекомендуемый шаблон для всех проектов)
