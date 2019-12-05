@@ -123,7 +123,7 @@ composer remove drupal/paragraphs
 
 ## См. также
 
-- [Drush — командная утилита для управления Drupal](drush.md)
+- [Drush — командная утилита для управления Drupal](../drush.md)
 
 ## Ссылки
 

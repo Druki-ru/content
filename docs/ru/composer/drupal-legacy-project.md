@@ -36,9 +36,10 @@ composer -n create-project drupal/legacy-project:^8.8@dev my_new_site
 
 ## См. также
 
-- [Руководство по установке Drupal](8/installation.md)
+- [Руководство по установке Drupal](../8/installation.md)
 - [drupal/recommended-project](drupal-recommended-project.md) — рекомендуемый шаблон для всех сайтов.
 - [Composer](composer.md)
+- [drupal/core-recommended](drupal-core-recommended.md)
 
 ## Ссылки
 
