@@ -107,7 +107,7 @@ Scaffold файлы хранятся в тех проектах, которые 
 
 В примере ниже, scaffold файл `robots.txt` копируется из его оригинального местоположения `[web-root]/robots.txt` в папку assets:
 
-```
+```json
 {
   "name": "drupal/assets",
   ...
