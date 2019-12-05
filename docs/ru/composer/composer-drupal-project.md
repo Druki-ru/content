@@ -1,8 +1,9 @@
 ---
-id: composer-drupal-project
-title: Composer Drupal Project
+id: drupal-composer-drupal-project
+title: drupal-composer/drupal-project
 search-keywords:
   - Установка при помощи композера
+  - composer
 metatags:
   description: 'Рекомендуемый способ установки Drupal 8 при помощи Composer.'
 ---

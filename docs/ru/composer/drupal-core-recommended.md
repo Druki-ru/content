@@ -1,6 +1,8 @@
 ---
 id: drupal-core-recommended
-title: Drupal core recommended
+title: drupal/core-recommended
+search-keywords:
+  - composer
 metatags:
   description: 'Метапакет Composer с Drupal ядром.'
 ---
@@ -13,5 +15,10 @@ metatags:
 
 ## См. также
 
-- [drupal/recommended-project](drupal-recommended-project.md) — рекомендуемый шаблон для всех сайтов.
-- [drupal/legacy-project](drupal-legacy-project.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](../8/releases/release-8.8.0.md).
+- [drupal/recommended-project](drupal-recommended-project.md)
+- [drupal/legacy-project](drupal-legacy-project.md)
+- [drupal/core-composer-scaffold](drupal-core-composer-scaffold.md)
+
+## Ссылки
+
+- [drupal/core-recommended](https://github.com/drupal/core-recommended), Github

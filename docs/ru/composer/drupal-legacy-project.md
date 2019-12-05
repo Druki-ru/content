@@ -1,8 +1,9 @@
 ---
 id: drupal-legacy-project
-title: Composer Drupal Legacy Project
+title: drupal/legacy-project
 search-keywords:
   - Установка при помощи композера
+  - composer
 metatags:
   description: 'Альтернативный способ установки Drupal 8 при помощи Composer.'
 ---
@@ -40,6 +41,7 @@ composer -n create-project drupal/legacy-project:^8.8@dev my_new_site
 - [drupal/recommended-project](drupal-recommended-project.md) — рекомендуемый шаблон для всех сайтов.
 - [Composer](composer.md)
 - [drupal/core-recommended](drupal-core-recommended.md)
+- [drupal/core-composer-scaffold](drupal-core-composer-scaffold.md)
 
 ## Ссылки
 
