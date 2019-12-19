@@ -11,7 +11,7 @@ metatags:
 ## 2019
 
 - [SA-CORE-2019-012](advisory/sa-core-2019-012.md) - 19 декабря 2019
-- [SA-CORE-2019-011](advisory/sa-core-2019-01.md) - 19 декабря 2019
+- [SA-CORE-2019-011](advisory/sa-core-2019-011.md) - 19 декабря 2019
 - [SA-CORE-2019-010](advisory/sa-core-2019-010.md) - 19 декабря 2019
 - [SA-CORE-2019-009](advisory/sa-core-2019-009.md) - 19 декабря 2019
 - [SA-CONTRIB-2019-060](advisory/sa-contrib-2019-060.md) - 24 июля 2019
