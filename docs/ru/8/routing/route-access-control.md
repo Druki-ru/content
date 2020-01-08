@@ -121,7 +121,7 @@ class FooAccessCheck implements AccessInterface {
 
 Метод должен возвращаться экземпляр объекта `Drupal\Core\Access\AccessResultInterface` в качестве результата проверки прав доступа.
 
-В качетсве аргументов метод проверки доступа принимает:
+В качестве аргументов метод проверки доступа принимает:
 
 - Первым делом все динамические части маршрута `{name}`. Они должны идти в том же порядке что и в `path` и теми же названиями.
 - Любой из данных объектов в любом порядке:
@@ -156,4 +156,4 @@ foo.content:
 
 - [Custom route access checking](https://www.drupal.org/docs/8/api/routing-system/access-checking-on-routes/custom-route-access-checking) (англ.), drupal.org
 - [Advanced route access checking](https://www.drupal.org/docs/8/api/routing-system/access-checking-on-routes/advanced-route-access-checking) (англ.), drupal.org
-- [Drupal 8: Сервис access_check — гибкая и переиспользуемая провека прав доступа к маршрутам](https://niklan.net/blog/199), Niklan, 2019
+- [Drupal 8: Сервис access_check — гибкая и переиспользуемая проверка прав доступа к маршрутам](https://niklan.net/blog/199), Niklan, 2019

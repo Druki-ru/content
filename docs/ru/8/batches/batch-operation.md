@@ -5,7 +5,7 @@ title: Обработка операции
 core: 8
 metatags:
   title: 'Drupal 8: Обработка операции'
-  description: 'Обрабокта пакетной операции в Drupal 8.'
+  description: 'Обработка пакетной операции в Drupal 8.'
 category:
   area: Пакетная обработка
   title: Обработка операции

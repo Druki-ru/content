@@ -24,23 +24,23 @@ metatags:
 - [#3058013](https://www.drupal.org/node/3058013) [@plach](https://www.drupal.org/u/plach) повышен до Framework Manager. Исправлено упоминание в MAINTAINERS.txt.
 - [#2927012](https://www.drupal.org/node/2927012) Исправлена ошибка, при которой `_drupal_log_error()` возвращать код `exit` равный 0 при ошибках.
 - [#3043907](https://www.drupal.org/node/3043907) Улучшена обработка исключения для `DatabaseCacheBackend::ensureBinExists()`.
-- [#3023220](https://www.drupal.org/node/3023220) Предотвращение выполнение ненужного кода в Layout Builder, когда поля ренедрятся изолировано (результаты Views, FieldBlock и т.д.).
+- [#3023220](https://www.drupal.org/node/3023220) Предотвращение выполнение ненужного кода в Layout Builder, когда поля рендерятся изолировано (результаты Views, FieldBlock и т.д.).
 - [#3046007](https://www.drupal.org/node/3046007) Исправлена ошибка, когда при некоторых ситуациях данные о поле не очищались при удалении bundle сущности, что приводило к невозможности применения обновлений.
 - [#3056348](https://www.drupal.org/node/3056348) Исправлен комментарий для `NodeRevisionDeleteForm`, который по ошибке описывал, что форма откатывает ревизию, а не удаляет её.
 - [#3051908](https://www.drupal.org/node/3051908) Исправлена ошибка в документации "json.api.php", которая описывала неправильный параметр запроса.
 - [#3053330](https://www.drupal.org/node/3053330) Исправлен формат зависимостей модуля Workspaces для соответствия стандартам.
-- [#3045211](https://www.drupal.org/node/3045211) Исправлена проблема, при которой миграции ссылок создавали некорректные аттрибуты.
+- [#3045211](https://www.drupal.org/node/3045211) Исправлена проблема, при которой миграции ссылок создавали некорректные атрибуты.
 - [#3055474](https://www.drupal.org/node/3055474) `template_preprocess_file_link` теперь не пытается загрузить файл из `stdClass` объекта и всегда ожидает сущность файла.
 - [#3055918](https://www.drupal.org/node/3055918) Исправлена опечатка в `LibraryDiscoveryParser::parseLibraryInfo()`.
 - [#3053827](https://www.drupal.org/node/3053827) Исправлена ошибка утечки метаданных кэша при использовании JSON:API для получения комментария с родителем.
 - [#3035980](https://www.drupal.org/node/3035980) Улучшено сообщение об ошибке при передаче `NULL` в `EntityStorageBase::load()`.
 - [#3048434](https://www.drupal.org/node/3048434) Тест `FileManagedAccessTest` перенесен в пространство имен `Kernel`.
-- [#2892440](https://www.drupal.org/node/2892440) Добавлен новый хелпер для тестов `JSWebAssert::assertNoElementAfterWait()`, который проверяет наличие элемента на странице спустя определенный таймаут, например, когда элемент должен был удалиться со страницы.
+- [#2892440](https://www.drupal.org/node/2892440) Добавлен новый хелпер для тестов `JSWebAssert::assertNoElementAfterWait()`, который проверяет наличие элемента на странице спустя определенный тайм-аут, например, когда элемент должен был удалиться со страницы.
 - [#3056536](https://www.drupal.org/node/3056536) Улучшен код теста `LayoutBuilderDisableInteractionsTest`, для решения проблемы, когда он мог непредсказуемо провалиться.
 - [#3048707](https://www.drupal.org/node/3048707) Аргументы для Views AJAX теперь декодируют HTML.
 - [#3052940](https://www.drupal.org/node/3052940) Исправлен тип параметра `$expected` в комментарии для `FilterHtmlTest::testfilterAttributes()`.
 - [#3055001](https://www.drupal.org/node/3055001) Исправлена опечатка в `comment_help()`.
-- [#3043087](https://www.drupal.org/node/3043087) Улучшена производительносать для блоков с контекстами.
+- [#3043087](https://www.drupal.org/node/3043087) Улучшена производительность для блоков с контекстами.
 - [#2901792](https://www.drupal.org/node/2901792) Отключены все анимации в JavaScript тестах.
 
 ## Ссылки
