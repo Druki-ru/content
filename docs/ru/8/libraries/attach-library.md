@@ -26,7 +26,7 @@ $build['some_render_element']['#attached']['library'][] = 'mymodule/cuddly-slide
 
 ### Подключение библиотеки в Twig шаблонах
 
-Вы можете подключить библиотеку к шаблону, при помощи испоьзования необходимого `hook_preprocess_HOOK()` и способа подключения через render array, а также при помощи специальной Twig функции `attach_library()`.
+Вы можете подключить библиотеку к шаблону, при помощи использования необходимого `hook_preprocess_HOOK()` и способа подключения через render array, а также при помощи специальной Twig функции `attach_library()`.
 
 ```twig
 {{ attach_library('mymodule/cuddly-slider') }}

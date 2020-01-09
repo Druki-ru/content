@@ -27,7 +27,7 @@ metatags:
 
 ## Migrate API
 
-- [#3042223](https://www.drupal.org/node/3042223) Форматер поля `text_plain` теперь обрабатывается как `string`.
+- [#3042223](https://www.drupal.org/node/3042223) Форматтер поля `text_plain` теперь обрабатывается как `string`.
 - [#3049895](https://www.drupal.org/node/3049895) `setupMigrations()` перемещен из `FormBase` в `CredentialForm`.
 - [#3060603](https://www.drupal.org/node/3060603) Исправлена ошибка, при попытке показать превью для media_library в модуле Views, когда недостаточно аргументов для обработки виджета.
 - [#2979966](https://www.drupal.org/node/2979966) Добавлена поддержка миграции языка для терминов таксономии из D7 где используется модуль i18n_taxonomy.

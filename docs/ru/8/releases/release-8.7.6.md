@@ -22,7 +22,7 @@ metatags:
 - [#3068661](https://www.drupal.org/node/3068661) Исправлено описание для `AccessResult`.
 - [#2780475](https://www.drupal.org/node/2780475) Улучшены проверки `JavascriptTestBase::assertEscaped()` и `JavascriptTestBase::assertUnescaped()`.
 - [#3060550](https://www.drupal.org/node/3060550) Улучшена обработка URL параметра для OEmbed ссылки в query параметре.
-- [#1476782](https://www.drupal.org/node/1476782) В методе `DatabaseStatementPrefetch::current()` `array_unshift()` заменан на `array_shift()`.
+- [#1476782](https://www.drupal.org/node/1476782) В методе `DatabaseStatementPrefetch::current()` `array_unshift()` заменен на `array_shift()`.
 - [#3065212](https://www.drupal.org/node/3065212) Улучшен запрос для материалов Workspaces на мультиязычных сайтах.
 - [#3063020](https://www.drupal.org/node/3063020) Названия стилей CKEditor теперь являются переводимыми.
 - [#2863986](https://www.drupal.org/node/2863986) Улучшен процесс обновления модулей. Теперь он не будет прерываться, если у модуля появилась новая зависимость в виде сервиса, о котором на момент обновления не знает контейнер.
