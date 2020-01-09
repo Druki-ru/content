@@ -3,7 +3,7 @@ id: drupalcamp-list
 path: /events/drupalcamp-list
 title: Список мероприятий DrupalCamp
 metatags:
-  description: 'Будущие и прошешие мероприятия DrupalCamp. Информация, отчеты, доклады и докладчики.'
+  description: 'Будущие и прошедшие мероприятия DrupalCamp. Информация, отчеты, доклады и докладчики.'
 ---
 
 На данной странице представлен список мероприятий из категории DrupalCamp.
