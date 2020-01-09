@@ -24,7 +24,7 @@ metatags:
 - [#3058013](https://www.drupal.org/node/3058013) [@plach](https://www.drupal.org/u/plach) повышен до Framework Manager. Исправлено упоминание в MAINTAINERS.txt.
 - [#2927012](https://www.drupal.org/node/2927012) Исправлена ошибка, при которой `_drupal_log_error()` возвращать код `exit` равный 0 при ошибках.
 - [#3043907](https://www.drupal.org/node/3043907) Улучшена обработка исключения для `DatabaseCacheBackend::ensureBinExists()`.
-- [#3023220](https://www.drupal.org/node/3023220) Предотвращение выполнение ненужного кода в Layout Builder, когда поля рендерятся изолировано (результаты Views, FieldBlock и т.д.).
+- [#3023220](https://www.drupal.org/node/3023220) Предотвращение выполнения ненужного кода в Layout Builder, когда поля рендерятся изолировано (результаты Views, FieldBlock и т.д.).
 - [#3046007](https://www.drupal.org/node/3046007) Исправлена ошибка, когда при некоторых ситуациях данные о поле не очищались при удалении bundle сущности, что приводило к невозможности применения обновлений.
 - [#3056348](https://www.drupal.org/node/3056348) Исправлен комментарий для `NodeRevisionDeleteForm`, который по ошибке описывал, что форма откатывает ревизию, а не удаляет её.
 - [#3051908](https://www.drupal.org/node/3051908) Исправлена ошибка в документации "json.api.php", которая описывала неправильный параметр запроса.
