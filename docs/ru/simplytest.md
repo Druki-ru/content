@@ -35,7 +35,7 @@ metatags:
 ## Установка Drupal
 
 1. Перейдите на [официальный сайт сервиса](https://simplytest.me/).
-1. В поле "Enter a project name" укажите "Drupal Core" и выберите подходящую верси. Рекомендуется использовать [актуальную версию](8/changelog/changelog.md).
+1. В поле "Enter a project name" укажите "Drupal Core" и выберите подходящую версию. Рекомендуется использовать [актуальную версию](8/changelog/changelog.md).
 1. (опционально) Раскройте "Advanced options" и отметьте "Bypass Installation".
 1. Нажмите кнопку "Launch sandbox" и дождитесь окончания процесса. Это может занять несколько минут.
 
