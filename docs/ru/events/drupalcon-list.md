@@ -3,7 +3,7 @@ id: drupalcon-list
 path: /events/drupalcon-list
 title: Список мероприятий DrupalCon
 metatags:
-  description: 'Будущие и прошешие мероприятия DrupalCon. Информация, отчеты, доклады и докладчики.'
+  description: 'Будущие и прошедшие мероприятия DrupalCon. Информация, отчеты, доклады и докладчики.'
 ---
 
 На данной странице представлен список мероприятий из категории DrupalCon.
