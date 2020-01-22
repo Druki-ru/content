@@ -13,7 +13,7 @@ metatags:
 Данный способ установки Drupal является альтернативой установки Drupal из архива, скаченного на drupal.org.
 
 > [!NOTE]
-> Начиная с [Drupal 8.8.0](../8/releases/release-8.8.0.md) предоставляются официальный шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](drupal-recommended-project.md) в качестве замены или альтернативы.
+> Начиная с [Drupal 8.8.0](../8/releases/release-8.8.0.md) предоставляются официальные шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](drupal-recommended-project.md) в качестве замены или альтернативы.
 
 ## Что предоставляет данный шаблон
 
@@ -95,3 +95,4 @@ metatags:
 
 - [GitHub репозиторий проекта](https://github.com/drupal-composer/drupal-project) (англ.)
 - [Drupal 8: Два варианта установки ядра](https://niklan.net/blog/185), Niklan, 2018
+- [Миграция с drupal-composer/drupal-project на drupal/recommended-project](https://niklan.net/blog/209), Niklan, 2020
