@@ -1,5 +1,5 @@
 ---
-id: release-8.8.8
+id: release-8.8.1
 title: 'Drupal 8.8.1'
 path: /8/releases/8.8.1
 core: 8
