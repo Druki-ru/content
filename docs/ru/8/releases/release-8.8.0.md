@@ -484,6 +484,7 @@ Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
 - [#2791359](https://www.drupal.org/node/2791359) `Drupal\views\Plugin\EntityReferenceSelection\ViewsSelection::__construct` теперь также принимает `$renderer` параметр.
 - [#3087832](https://www.drupal.org/node/3087832) Из конфигураций Views удалено значение `core`. Если ваши конфигурации в профиле, модуле или теме используют его, то его необходимо удалить.
 - [#3090442](https://www.drupal.org/node/3090442) Вызов `ViewsData::get()` без аргумента `$key` помечен устаревшим.
+- [#3072765](https://www.drupal.org/node/3072765) Views UI больше не подключает библиотеку `jquery.ui.tabs`.
 
 ## File API
 

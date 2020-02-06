@@ -62,6 +62,7 @@ metatags:
 - [#3046937](https://www.drupal.org/node/3046937) Тест `TrackerUserUidTest` перенесен в `Kernel` неймспейс. Также `TrackerTestBase` помечен устаревшим.
 - [#3052140](https://www.drupal.org/node/3052140) Исправлена ошибка, из-за которой было невозможно конвертировать тип сущности без поддержки ревизий, в сущность в поддержкой ревизий.
 - [#3049938](https://www.drupal.org/node/3049938) Исправлены ссылка на ишью для устаревшего `KernelTestBase`.
+- [#3055990](https://www.drupal.org/node/3055990) В тестах `WebDriverTestBase` отключены анимации. Если они вам нужны, вы можете установить `FALSE` для свойства `$disableCssAnimations`.
 
 ## Ссылки
 
