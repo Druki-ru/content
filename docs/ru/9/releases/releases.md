@@ -19,4 +19,6 @@ metatags:
 
 ## См. также
 
+- [Change records for Drupal core](https://www.drupal.org/list-changes/drupal) (англ.), drupal.org
 - [Список релизов Drupal 8](../../8/releases/releases.md)
+- [Изменения Drupal (@drupal_changes_ru)](https://t.me/drupal_changes_ru) Telegram канал со списком изменений на русском.

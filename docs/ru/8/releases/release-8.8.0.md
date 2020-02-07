@@ -601,6 +601,7 @@ Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
 - [#3057191](https://www.drupal.org/node/3057191) `\Drupal\Component\Utility\Crypt::randomBytes()` помечен устаревшим в пользу стандартной PHP функции `random_bytes()`.
 - [#3057322](https://www.drupal.org/node/3057322) `\Drupal\Component\Utility\Unicode::caseFlip()` помечен устаревшим, так как в PHP 7 он больше не нужен.
 - [#3054488](https://www.drupal.org/node/3054488) `\Drupal\Component\Utility\Crypt::hashEquals()` помечен устаревшим в пользу стандартной PHP функции `hash_equals()`.
+- [#3087592](https://www.drupal.org/node/3087592) Прекращена официальная поддержка веб-сервера Hiawatha.
 
 ## См. также
 

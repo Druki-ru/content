@@ -18,6 +18,16 @@ metatags:
 
 Новый функционал и возможности будут добавляться начиная с Drupal 9.1.0.
 
+## Drupal 8.8.0 — минимальная версия для обновления на Drupal 9 
+
+- [#3098327](https://www.drupal.org/node/3098327)
+
+Для обновления с Drupal 8 до Drupal 9 необходимо иметь как минимум версию Drupal 8.8.0.
+
+Изменение связано с тем, что все апдейт хуки до 8.8.0-rc1 были удалены из Drupal 9. Это означает, что Drupal 9 не содержит обновлений для базы данных для более ранних версий и вы не сможете корректно произвести обновление.
+
+Перед обновлением до Drupal 9, вам будет необходимо обновить сайт как минимум до [Drupal 8.8.0](../../8/releases/release-8.8.0.md), а затем обновляться до Drupal 9.
+
 ## Исходный код jQuery UI был добавлен в ядро Drupal
 
 - [#3089526](https://www.drupal.org/node/3089526)
@@ -42,3 +52,4 @@ metatags:
 - [#3095199](https://www.drupal.org/node/3095199) Twig проапгрейжен до 2.х версии.
 - [#2955931](https://www.drupal.org/node/2955931) Зависимость `easyrdf/easyrdf` перенесена в `require-dev`.
 - [#3096454](https://www.drupal.org/node/3096454) Функция `twig_without()` — удалена.
+- [#3111612](https://www.drupal.org/node/3111612) Параметр `Connection` для Select query builder теперь находится на первой позиции. Было: `public function __construct($table, $alias, Connection $connection, $options = []) {}`, стало: `public function __construct(Connection $connection, $table, $alias = NULL, $options = []) {}`.
