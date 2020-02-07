@@ -84,7 +84,7 @@ metatags:
 },
 ```
 
-## См. также
+## Смотрите также
 
 - [Руководство по установке Drupal](../8/installation.md)
 - [drupal/recommended-project](drupal-recommended-project.md) — рекомендуемый шаблон для всех сайтов.

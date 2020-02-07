@@ -603,7 +603,7 @@ Drupal::entityTypeManager()->getStorage('path_alias')->delete($path_alias)
 - [#3054488](https://www.drupal.org/node/3054488) `\Drupal\Component\Utility\Crypt::hashEquals()` помечен устаревшим в пользу стандартной PHP функции `hash_equals()`.
 - [#3087592](https://www.drupal.org/node/3087592) Прекращена официальная поддержка веб-сервера Hiawatha.
 
-## См. также
+## Смотрите также
 
 - [Drupal 8.7.0](release-8.7.0.md) — предыдущий минорный релиз.
 

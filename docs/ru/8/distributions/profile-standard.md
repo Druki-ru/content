@@ -33,7 +33,7 @@ metatags:
 
 ![Результат установки стандартного установочного профиля](https://i.imgur.com/HMsqEav.png)
 
-## См. также
+## Смотрите также
 
 - [Дистрибутивы Drupal](./distributions.md)
 - [Руководство по установке Drupal](../installation.md)

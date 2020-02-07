@@ -17,7 +17,7 @@ metatags:
 
 - [9.0.0](release-9.0.0.md) - 3 июня 2020
 
-## См. также
+## Смотрите также
 
 - [Change records for Drupal core](https://www.drupal.org/list-changes/drupal) (англ.), drupal.org
 - [Список релизов Drupal 8](../../8/releases/releases.md)

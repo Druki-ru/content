@@ -200,6 +200,6 @@ $bag->setFlag();
 
 - [#3083486](https://www.drupal.org/node/3083486) Конфигурация `action.settings.recursion_limit` и её схема была удалена. Drupal ядро не использовало данную конфигурацию.
 
-## См. также
+## Смотрите также
 
 - [Drupal 9](../../9/drupal-9.md)

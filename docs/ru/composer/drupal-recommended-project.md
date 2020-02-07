@@ -33,7 +33,7 @@ metatags:
 composer -n create-project drupal/recommended-project:^8.8@dev my_new_site 
 ```
 
-## См. также
+## Смотрите также
 
 - [Руководство по установке Drupal](../8/installation.md)
 - [drupal/legacy-project](drupal-legacy-project.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](../8/releases/release-8.8.0.md).

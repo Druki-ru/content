@@ -486,7 +486,7 @@ catch (\Drupal\Core\File\Exception\FileException $e) {
 - [#3003756](https://www.drupal.org/node/3003756) Обновлен Drupal Coder/PHPCS.
 - [#3047051](https://www.drupal.org/node/3047051) Заголовок и описание ссылки теперь могут быть изменены в отличных от стандартных Workspaces, а также в формах редактирования `node` сущности при использовании content moderation.
 
-## См. также
+## Смотрите также
 
 - [Drupal 8.8.0](release-8.8.0.md) — следующий минорный релиз. 
 

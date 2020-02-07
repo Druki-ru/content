@@ -21,7 +21,7 @@ metatags:
 - Шаблонизатор PHPTemplate был заменен на Twig.
 - И многие другие изменения.
 
-## См. также
+## Смотрите также
 
 - [Drupal 9](../9/drupal-9.md)
 - [Установка Drupal 8](installation.md)

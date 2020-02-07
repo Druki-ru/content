@@ -261,7 +261,7 @@ Scaffold файлы хранятся в тех проектах, которые 
 > [!NOTE]
 > `append` и `prepend` операции переопределяют значение `symlink` на `false`.
 
-## См. также
+## Смотрите также
 
 - [drupal/recommended-project](drupal-recommended-project.md)
 - [drupal/legacy-project](drupal-legacy-project.md)

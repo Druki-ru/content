@@ -24,7 +24,7 @@ metatags:
 
 ![Результат установки минимального установочного профиля](https://i.imgur.com/WwDFmkR.png)
 
-## См. также
+## Смотрите также
 
 - [Дистрибутивы Drupal](./distributions.md)
 - [Руководство по установке Drupal](../installation.md)

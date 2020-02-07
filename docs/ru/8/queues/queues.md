@@ -132,7 +132,7 @@ $queue->createQueue();
 $queue->deleteQueue();
 ```
 
-## См. также
+## Смотрите также
 
 - [Batch API — пакетная обработка данных](../batches/batches.md)
 

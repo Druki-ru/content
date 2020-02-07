@@ -48,7 +48,7 @@ metatags:
 
 ![Страница рецепта демонстрационного профиля Umami](https://i.imgur.com/WryBbAf.png)
 
-## См. также
+## Смотрите также
 
 - [Дистрибутивы Drupal](./distributions.md)
 - [Руководство по установке Drupal](../installation.md)
