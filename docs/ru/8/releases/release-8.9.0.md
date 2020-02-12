@@ -196,6 +196,10 @@ $bag->setFlag();
 
 - [#3105980](https://www.drupal.org/node/3105980) Метод `\Drupal\migrate_drupal\Tests\StubTestTrait::createStub` был переименован в `createEntityStub`.
 
+## Производительность
+
+- [#3092180](https://www.drupal.org/node/3092180) Добавлен новый кэш контекст `protocol_version`, который позволяет иметь различные результаты для разных протоколов (HTTP/1.0, HTTP/1.1 или HTTP/2).
+
 ## Прочие изменения
 
 - [#3083486](https://www.drupal.org/node/3083486) Конфигурация `action.settings.recursion_limit` и её схема была удалена. Drupal ядро не использовало данную конфигурацию.
