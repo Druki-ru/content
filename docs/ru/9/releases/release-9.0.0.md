@@ -54,3 +54,4 @@ metatags:
 - [#2955931](https://www.drupal.org/node/2955931) Зависимость `easyrdf/easyrdf` перенесена в `require-dev`.
 - [#3096454](https://www.drupal.org/node/3096454) Функция `twig_without()` — удалена.
 - [#3111612](https://www.drupal.org/node/3111612) Параметр `Connection` для Select query builder теперь находится на первой позиции. Было: `public function __construct($table, $alias, Connection $connection, $options = []) {}`, стало: `public function __construct(Connection $connection, $table, $alias = NULL, $options = []) {}`.
+- [#3113653](https://www.drupal.org/node/3113653) PHPUnit обновлён до 8 версии. Изменения в тестах пока не требуются, но в планах стоит обновление до PHPUnit 9 которое повлечёт за собой изменения.
