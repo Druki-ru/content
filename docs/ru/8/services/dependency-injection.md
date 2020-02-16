@@ -20,9 +20,101 @@ category:
 
 В Drupal можно встретить несколько реализаций DI, которые зависят от того, с чем мы на данный момент работаем. В каждом случае есть только один правильный подход, и только он заработает.
 
-## Процедурный подход
+## Два способа инъекции зависимостей
 
-Данный подход **не является DI**, но это то, как иногда приходится обращаться к сервисам и внедрять их в legacy код.
+В данном разделе представлен старый и новый способ иньекции зависимостей **для объектов которые наследуются от родителей с собственным конструктором**.
+
+### Старый
+
+Данный подход вы можете заметить как в ядре так и в контрибе. Данный способ использовался с момента релиза Drupal 8 и применяется до сих пор, но со временем стали понятны его недостатки и неудобства, поэтому был выработан более универсальный способ о котором чуть позже.
+
+Старый подход выглядит примерно следующим образом:
+
+```php
+  /**
+   * Constructs a new FooBlock object.
+   *
+   * @param array $configuration
+   *   The plugin configuration.
+   * @param $plugin_id
+   *   The plugin ID.
+   * @param $plugin_definition
+   *   The plugin definition.
+   * @param \Drupal\Core\Session\AccountProxyInterface $account_proxy
+   *   The account proxy.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountProxyInterface $account_proxy) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->currentUser = $account_proxy;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('current_user')
+    );
+  }
+```
+
+В нём при помощи именованного конструктора создавался экземпляр объекта где мы сразу передаём список всех аргументов конструктора. Затем мы их принимаем в конструкторе в соответствующем порядке, часть данныех передаем родителю, а то что добавили для себя, записываем в свойства.
+
+Недостатки данного подхода в следующем:
+
+- Нам нужно следить за конструктором и поддерживать его.
+- Все объекты наследуемые от нашего, также должны соблюдать наш конструктор. В конечном итоге кол-во аргументов может стать слишком большим.
+- Нам нужно следить за тем что запрашивает родительский класс.
+
+### Современный
+
+Данный подход приходит на замену предыдущему и решает все его проблемы разом. Данный подход постепенно внедряется в ядро начиная с [Drupal 9](../../9/drupal-9.md).
+
+Он имеет два разных варианта.
+
+Первый вариант применяется, когда у родительского объекта объявлен статический метод `create()`. В таком случае вызов проходит через него:
+
+```php
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    $instance = parent::create($container, $configuration, $plugin_id, $plugin_definition);
+    $instance->currentUser = $container->get('current_user');
+
+    return $instance;
+  }
+```
+
+Второй вариант используется в том случае, когда родительский объект не объявляет `create()` (плагины где DI опционален, например блоки). В таком случае мы создаём новый статический объект сами:
+
+```php
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    $instance = new static($configuration, $plugin_id, $plugin_definition);
+    $instance->currentUser = $container->get('current_user');
+
+    return $instance;
+  }
+```
+
+Как вы можете заметить, в данном подходе вызывается родительский `create()` а его результат записывается в экземпляр объекта `$instance`. Затем, мы добавляем в него свойство с нужным нам сервисом. Как вы можете заметить, конструктор в данном случае не описывается, так как в этом нет нобходимости, его сигнатура остаётся неизменной.
+
+Это позволяет:
+
+- Сократить количество кода, благодаря отсутствию необходимости описания конструктора.
+- Сделать код обратно совместимым. Никакие изменения нашего объекта для его наследников, как и изменения родителя для нашего объекта не представляют проблем.
+- Проще вносить изменения. Добавление новых зависимостей не повлечет никаких проблем, так как наследникам не потребуется следить за этим. Аналогично, появление новых зависимостей от родительского элемента не сломает наш.
+
+## Процедурный код
+
+Данный подход **не является Dependency Injection**, но это то, как иногда приходится обращаться к сервисам и внедрять их в legacy код.
 
 В Drupal существует одноимённый глобальный объект `\Drupal`, который имеет свой собственный Service Container из которого можно вызывать сервисы. Основным методом объекта является `::service()`, где в качестве аргумента принимается название сервиса, а в качестве результата, возвращается его экземпляр объекта.
 
@@ -35,7 +127,7 @@ $service = \Drupal::service('example.simple');
 > [!IMPORTANT]
 > Везде, где есть поддержка Dependency Injection данный подход - неправильный и является плохой практикой. Если вы используете его в подобных объектах, задумайтесь о рефакторинге.
 
-## DI в сервисах
+## Dependency Injection в сервисах
 
 Dependency Injection у сервисов производится через конструктор, или одно из соответствующих свойств типа `configurator`, `factory` и `calls`.
 
@@ -92,7 +184,7 @@ class MyObject {
 }
 ```
 
-## DI в плагинах
+## Dependency Injection в плагинах
 
 При работе с [плагинами](../plugins/plugins.md) вы также можете использовать Dependency Injection, но только для тех типов плагинов, где предусмотрена поддержка DI. В подавляющем большинстве случаев DI поддерживается всеми плагинами, поэтому, вы можете сразу пробовать использовать DI, но если что-то не получается, возможно плагин не предусмотрел поддержку DI. Подобное поведение обычно делается осмысленно разработчиками. Поэтому, нужно уточнить, с какой целью это сделано. Возможно, вы найдете ответ в менеджере плагинов.
 
@@ -173,33 +265,13 @@ class FooBlock extends BlockBase implements ContainerFactoryPluginInterface {
   protected $currentUser;
 
   /**
-   * Constructs a new FooBlock object.
-   *
-   * @param array $configuration
-   *   The plugin configuration.
-   * @param $plugin_id
-   *   The plugin ID.
-   * @param $plugin_definition
-   *   The plugin definition.
-   * @param \Drupal\Core\Session\AccountProxyInterface $account_proxy
-   *   The account proxy.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountProxyInterface $account_proxy) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-
-    $this->currentUser = $account_proxy;
-  }
-
-  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('current_user')
-    );
+    $instance = new static($configuration, $plugin_id, $plugin_definition);
+    $instance->currentUser = $container->get('current_user');
+
+    return $instance;
   }
 
   /**
@@ -220,7 +292,7 @@ class FooBlock extends BlockBase implements ContainerFactoryPluginInterface {
 > [!NOTE]
 > Обратите внимание, что в конструкторе передаются все необходимые родительскому объекту (`BlockBase`) аргументы. У некоторых блоков родители также могут запрашивать сервисы, и вам необходимо их также передавать. Для этого изучите `__construct()` родительского объекта плагина.
 
-## DI в формах
+## Dependency Injection в формах
 
 При работе с [формами](../form-api/form-api.md), Dependency Injection очень похож на тот что у плагинов, только без аргументов с данными для плагинов.
 
@@ -319,23 +391,15 @@ class FooForm extends FormBase {
   protected $currentUser;
 
   /**
-   * Constructs a new FooForm object.
-   *
-   * @param \Drupal\Core\Session\AccountProxyInterface $account_proxy
-   *   The account proxy.
-   */
-  public function __construct(AccountProxyInterface $account_proxy) {
-    $this->currentUser = $account_proxy;
-  }
-
-  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('current_user')
-    );
+    $instance = parent::create($container);
+    $instance->currentUser = $container->get('current_user');
+
+    return $instance;
   }
+
 
   /**
    * {@inheritdoc}
@@ -387,7 +451,7 @@ class FooForm extends FormBase {
 }
 ```
 
-## DI в деритивах (Derivatives)
+## Dependency Injection в деритивах (Derivatives)
 
 Деритивы являются частью системы плагинов, поэтому у них также немного отличается DI, но похож на предыдущие.
 
@@ -489,7 +553,7 @@ class FooDeriver extends DeriverBase implements ContainerDeriverInterface {
 }
 ```
 
-## DI в хендлерах сущностей
+## Dependency Injection в хендлерах сущностей
 
 При работе с хендлерами сущности, вы также можете использовать Dependency Injection.
 
