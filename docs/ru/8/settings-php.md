@@ -1,10 +1,10 @@
 ---
 id: settings-php
-title: settings.php — настройки сайта
+title: settings.php — настройки окружения сайта
 core: 8
 metatags:
-  title: 'Drupal 8: settings.php — настройки сайта'
-  description: 'Обзор возможных настроек сайта.'
+  title: 'Drupal 8: settings.php — настройки окружения сайта'
+  description: 'Обзор возможных настроек окружения сайта.'
 ---
 
 **settings.php** — файл с настройками для конкретного сайта. Данный сайт содержит специфичные настройки для конкретного сайта.
