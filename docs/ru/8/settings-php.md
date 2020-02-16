@@ -139,3 +139,44 @@ $settings['deployment_identifier'] = \Drupal::VERSION;
 ```php
 $settings['update_free_access'] = FALSE;
 ```
+
+#### Прокси
+
+Если сайту необходимо обращаться во внешний интернет через прокси, вы можете указать соответствующие настройки.
+
+Для различных запросов может использоваться различный прокси. Для этого имеется три настройки:
+
+- `$settings['http_client_config']['proxy']['http']` — для проксирования запросов с HTTP.
+- `$settings['http_client_config']['proxy']['https']` — для проксирования запросов с HTTPS.
+- `$settings['http_client_config']['proxy']['no']` — массив из доверенных хостов, запросы к которым будут идти напрямую, без использования прокси.
+
+**Пример:**
+
+```php
+$settings['http_client_config']['proxy']['http'] = 'http://proxy_user:proxy_pass@example.com:8080';
+$settings['http_client_config']['proxy']['https'] = 'http://proxy_user:proxy_pass@example.com:8080';
+$settings['http_client_config']['proxy']['no'] = ['127.0.0.1', 'localhost'];
+```
+
+#### Обратный прокси
+
+Обратные прокси часто используются для улучшения производительности высоконагруженных сайтов и также могут предоставить новые способы кэширования, безопасности и шифрования. В окружении где Drupal находится за обратным прокси, должен быть получен реальный IP адрес клиента для корректной работы различных подсистем, таких как логирование, статистика и управление доступом. В самом простом сценарии прокси сервер добавляет заголовок `X-Forwarded-For` в запрос, который содержит IP адрес клиента. Тем не менее HTTP заголовки уязвимы к спуфингу, что позволяет получить доступ к заголовку `X-Forwarded-For`. Следовательно, Drupal требует указывать адреса всех удалённых прокси для корректной работы.
+
+Включение данной настройки позволяет корректно определять IP адрес клиента. Если ваш сайт работает на шаред хостинге или не имеет обратного прокси, данные настройки должны быть закомментированы (по умолчанию).
+
+Для того чтобы данная настройка работала вы должны указать все возможные IP адреса обратных прокси в `reverse_proxy_addresses`. Если полный список адресов не доступен в вашем окружении (например, вы используете CDN) вы можете указать `$_SERVER['REMOTE_ADDR']` прямо в настройках. Но будьте аккуратны, это открывает возможности для спуфинга если вы не предпримите дополнительных мер предодсторожности.
+
+Вы также можете настроить доверенные HTTP заголовки для обратного прокси. Общие значения:
+
+- `\Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL`
+- `\Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED`
+
+Имейте в виду что значение по умолчанию `\Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL | \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED` небезопасно. Вы должны указать только те заголовки, которые используются обратным прокси.
+
+Например `\Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL` будет считать доверенными следующие заголовки: `X-Forwarded-For`, `X-Forwarded-Host`, `X-Forwarded-Proto`, `X-Forwarded-Port`.
+
+**Пример:**
+
+```php
+$settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL | \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED;
+```
