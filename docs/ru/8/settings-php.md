@@ -117,7 +117,7 @@ $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
 **Пример:**
 
 ```php
-$settings['deployment_identifier'] = \Drupal::VERSION;
+$settings['deployment_identifier'] = Drupal::VERSION;
 ```
 
 #### Контроль доступа для update.php
@@ -178,7 +178,7 @@ $settings['http_client_config']['proxy']['no'] = ['127.0.0.1', 'localhost'];
 **Пример:**
 
 ```php
-$settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL | \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED;
+use Symfony\Component\HttpFoundation\Request;$settings['reverse_proxy_trusted_headers'] = Request::HEADER_X_FORWARDED_ALL | Request::HEADER_FORWARDED;
 ```
 
 #### Vary: Cookie
@@ -230,7 +230,7 @@ $settings['form_cache_expiration'] = 21600;
 $settings['class_loader_auto_detect'] = FALSE;
 ``` 
 
-Если APC расширение не найдно, или оно отключено, то будет использован автозагрузчик [Comoposer](../composer/composer.md), который хорошо подходит для разработки, так как не сломается если код был перемещён в файловой системе. Вы также можете задекорировать базовый загрузчик с любым другим решением, а не только Symfony APC, так как все продакшен сайты должны иметь кэш для загрузчика в том или ином виде.
+Если APC расширение не найдно, или оно отключено, то будет использован автозагрузчик [Composer](../composer/composer.md), который хорошо подходит для разработки, так как не сломается если код был перемещён в файловой системе. Вы также можете задекорировать базовый загрузчик с любым другим решением, а не только Symfony APC, так как все продакшен сайты должны иметь кэш для загрузчика в том или ином виде.
 
 Для того чтобы задекорировать автозагрузчик, нужно переопределить переменную `$class_loader`.
 
@@ -239,7 +239,7 @@ $settings['class_loader_auto_detect'] = FALSE;
 ```php
 if ($settings['hash_salt']) {
   $prefix = 'drupal.' . hash('sha256', 'drupal.' . $settings['hash_salt']);
-  $apc_loader = new \Symfony\Component\ClassLoader\ApcClassLoader($prefix, $class_loader);
+  $apc_loader = new ApcClassLoader($prefix, $class_loader);
   unset($prefix);
   $class_loader->unregister();
   $apc_loader->register();
@@ -260,4 +260,32 @@ if ($settings['hash_salt']) {
 
 ```php
 $settings['allow_authorize_operations'] = FALSE;
+```
+
+#### Права доступа файлов
+
+При помощи настроек `file_chmod_directory` и `file_chmod_file` вы можете задать права по умолчанию для папки с файлами и непосредственно файлов. Значение должны быть задано в соответствии с Linux chmod в восмеричном виде (с видущим нулём).
+
+**Пример:**
+
+```php
+$settings['file_chmod_directory'] = 0775;
+$settings['file_chmod_file'] = 0664;
+```
+
+#### Основной URL публичных файлов
+
+В настройке `file_public_base_url` вы можете указать альтернативный основной URL который будет использован для публичных файлов.
+
+Значение отличное от основного домена Drupal сайта будет использовано для доступа к публичным файлам. Эта настройка может быть использована как простая интеграция с CDN или для улучшения безопасности путём обслуживания загруженных пользователями файлов с другого домена или поддомена но ведущие на тот же сервер.
+
+Например, если указать в настройке `http://downloads.example.com/files` то все пути типа `/sites/default/files/js/js_tzTgUlQwCuDqAJy4wyzIGJDhQU5AS7XxLzo_MCisroE.js` будут заменены на `http://downloads.example.com/files/js/js_tzTgUlQwCuDqAJy4wyzIGJDhQU5AS7XxLzo_MCisroE.js`.
+
+> [!NOTE]
+> В значении не должно быть закрывающего слэша.
+
+**Пример:**
+
+```php
+$settings['file_public_base_url'] = 'http://downloads.example.com/files';
 ```
