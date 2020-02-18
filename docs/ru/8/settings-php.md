@@ -360,7 +360,7 @@ $settings['maintenance_theme'] = 'bartik';
 
 По умолчанию, активные конфигурации хранятся в таблице `{config}` базы данных. Для того чтобы использовать отличное хранилище вы можете сделать следующие действия перед [установкой Drupal](installation.md):
 
-- Создать «active» директорию и указать её в [$config_directories][#config-directories]. Для безопасности, эта папка должна находиться за пределами инсталяции Drupal.
+- Создать «active» директорию и указать её в [$config_directories](#config-directories). Для безопасности, эта папка должна находиться за пределами инсталяции Drupal.
 - Переопределить значение для `bootstrap_config_storage`. В качестве значения должен быть объект который реализует `\Drupal\Core\Config\StorageInterface`.
 - Переопределить [сервис](services/services.md) `config.storage.active`. Для этого новое определение должно быть помещено в `services.yml` файл рядом с `settings.php` файлом.
 
