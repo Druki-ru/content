@@ -180,6 +180,10 @@ $bag->setFlag();
 
 - [#3040758](https://www.drupal.org/node/3040758) В теме оформления Classy на поля с меткой «в строку» теперь добавляется класс `clearfix`. Если вызовет проблемы в вашей теме, вы можете переопределить данное поведение перезаписав шаблон `field.html.twig` в своей теме.
 
+## Path alias
+
+- [#3114366](https://www.drupal.org/node/3114366) Теперь при сохранении сущности синонима будет вызываться ошибка о несоответствии схемы БД если до сих пор не были запущены обновления синонимов из [Drupal 8.8.0](release-8.8.0.md).  Для того чтобы отключить данное поведение, вы можете добавить настройку `$settings['system.path_alias_schema_check'] = FALSE;` в [settings.php](../settings-php.md).
+
 ## Views
 
 - [#3092185](https://www.drupal.org/node/3092185) Добавлен `rel="nofollow"` для заголовков сортировки таблиц.
@@ -204,6 +208,7 @@ $bag->setFlag();
 
 - [#3083486](https://www.drupal.org/node/3083486) Конфигурация `action.settings.recursion_limit` и её схема была удалена. Drupal ядро не использовало данную конфигурацию.
 - [#3111613](https://www.drupal.org/node/3111613) Удалены два `protected` метода у `Drupal\Core\Entity\Sql\SqlContentEntityStorageSchema`. Они не использовались ядром, а так как являются защищёнными, не относятся к публичному API.
+- [#3113062](https://www.drupal.org/node/3113062) Функция `system_user_timezone()` помечена как `@internal` и будет удалена в [Drupal 9](../../9/releases/release-9.0.0.md).
 
 ## Смотрите также
 
