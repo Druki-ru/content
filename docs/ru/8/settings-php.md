@@ -5,6 +5,10 @@ core: 8
 metatags:
   title: 'Drupal 8: settings.php — настройки окружения сайта'
   description: 'Обзор возможных настроек окружения сайта.'
+category:
+  area: Настройки окружения
+  title: settings.php
+  order: 1
 ---
 
 **settings.php** — файл с настройками для конкретного сайта. Данный сайт содержит специфичные настройки для конкретного сайта.
@@ -663,3 +667,6 @@ ini_set('pcre.backtrack_limit', 200000);
 ini_set('pcre.recursion_limit', 200000);
 ```
 
+## Смотрите также
+
+- [settings.local.php](settings-local-php.md) — локальные настройки окружения.
