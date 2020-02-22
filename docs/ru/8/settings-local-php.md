@@ -176,4 +176,4 @@ $settings['skip_permissions_hardening'] = TRUE;
 
 ## Смотрите также
 
-- [settings.php] — основные настройки окружения.
+- [settings.php](settings-php.md) — основные настройки окружения.
