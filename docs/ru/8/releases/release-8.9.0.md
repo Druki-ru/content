@@ -209,6 +209,7 @@ $bag->setFlag();
 - [#3083486](https://www.drupal.org/node/3083486) Конфигурация `action.settings.recursion_limit` и её схема была удалена. Drupal ядро не использовало данную конфигурацию.
 - [#3111613](https://www.drupal.org/node/3111613) Удалены два `protected` метода у `Drupal\Core\Entity\Sql\SqlContentEntityStorageSchema`. Они не использовались ядром, а так как являются защищёнными, не относятся к публичному API.
 - [#3113062](https://www.drupal.org/node/3113062) Функция `system_user_timezone()` помечена как `@internal` и будет удалена в [Drupal 9](../../9/releases/release-9.0.0.md).
+- [#3054049](https://www.drupal.org/node/3054049) Добавлена новая [проверка доступа маршрута](../routing/route-access-control.md) `_entity_bundles`, при помощи которой можно создать [маршрут](../routing/routing.md) принимающий только конкретные бандлы сущности из аргумента. Например: `_entity_bundles: 'node:article|page'`.
 
 ## Смотрите также
 

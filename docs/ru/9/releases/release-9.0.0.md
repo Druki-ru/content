@@ -39,6 +39,10 @@ metatags:
 ## Оформление и темизация
 
 - [#3103178](https://www.drupal.org/node/3103178) Темы оформления из ядра (Bartik, Claro, Seven и Umami) больше не наследуются от Classy. Тема Classy будет переведена в контриб до релиза Drupal 10.
+- [#3115102](https://www.drupal.org/node/3115102) Добавлен полифил `es6-promise` ([stefanpenner/es6-promise](https://github.com/stefanpenner/es6-promise)) для поддержки `Promise`.
+- [#3113447](https://www.drupal.org/node/3113447) Добавлен полифил `drupal.object.assign` для поддержки `Object.assign()`.
+- [#3113446](https://www.drupal.org/node/3113446) Добавлен полифил `drupal.array.find` для поддержки `Array.find()`.
+- [#3112670](https://www.drupal.org/node/3112670) Popper.js обновлён до версии 2.0.6.
 
 ## Тестирование
 
