@@ -43,6 +43,7 @@ metatags:
 - [#3113447](https://www.drupal.org/node/3113447) Добавлен полифил `drupal.object.assign` для поддержки `Object.assign()`.
 - [#3113446](https://www.drupal.org/node/3113446) Добавлен полифил `drupal.array.find` для поддержки `Array.find()`.
 - [#3112670](https://www.drupal.org/node/3112670) Popper.js обновлён до версии 2.0.6.
+- [#3116334](https://www.drupal.org/node/3116334) Обновлён шаблон `update-version.html.twig` для поддержки `core_compatibility_details`.
 
 ## Тестирование
 
@@ -59,3 +60,5 @@ metatags:
 - [#3096454](https://www.drupal.org/node/3096454) Функция `twig_without()` — удалена.
 - [#3111612](https://www.drupal.org/node/3111612) Параметр `Connection` для Select query builder теперь находится на первой позиции. Было: `public function __construct($table, $alias, Connection $connection, $options = []) {}`, стало: `public function __construct(Connection $connection, $table, $alias = NULL, $options = []) {}`.
 - [#3113653](https://www.drupal.org/node/3113653) PHPUnit обновлён до 8 версии. Изменения в тестах пока не требуются, но в планах стоит обновление до PHPUnit 9 которое повлечёт за собой изменения.
+- [#3116384](https://www.drupal.org/node/3116384) В Drupal 8 можно было добавлять дополнительные загрузчики, для того чтобы включить поддержку APCu. Эта возможность была удалена в пользу загрузчика Composer.
+- [#3116297](https://www.drupal.org/node/3116297) Symfony 4 больше не поставляет WinCache, таким образом в Drupal 9 он также будет отсутствовать. Рекомендуется использовать APCu как замену.
