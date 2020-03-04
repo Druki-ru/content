@@ -15,9 +15,9 @@ metatags:
 
 ## Drupal 9
 
-**Дата релиза**: 3 августа 2020 г.\
+**Дата релиза**: 3 августа 2020 г.
 
-- [Список изменений Drupal 9](../../9/releases/releases.md)
+- [Список релизов Drupal 9](../../9/releases/releases.md)
 
 ## 8.9.x LTS
 
