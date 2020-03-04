@@ -24,7 +24,7 @@ metatags:
 - Модули (пакеты типа `drupal-module`) будут установлены в `web/modules/contrib`.
 - Темы оформления (пакеты типа `drupal-theme`) будут установлены в `web/themes/contrib`.
 - [Установочные профили](../8/distributions/distributions.md) (пакеты типа `drupal-profile`) будут установлены в `web/profiles/contrib`.
-- Будут созданы со всеми необходимыми правами файлы по умолчанию `settings.php` и `services.yml`.
+- Будут созданы со всеми необходимыми правами файлы по умолчанию [settings.php](../8/settings-php.md) и `services.yml`.
 - Будет создана `web/sites/default/files`.
 - Последняя версия [Drush](../drush.md) будет установлена с сайтом по пути `vendor/bin/drush`.
 - Последняя версия DrupalConsole будет установлена с сайтом по пути `vendor/bin/drupal`.

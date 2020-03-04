@@ -51,7 +51,7 @@ metatags:
 - [#3046694](https://www.drupal.org/node/3046694) Тест `BookInstallTest` перенесен в `Kernel` неймспейс.
 - [#3042882](https://www.drupal.org/node/3042882) Исправлены ошибки в README.txt.
 - [#3047757](https://www.drupal.org/node/3047757) Исправлено дублирование "a" в документации к `ViewsHandlerInterface::broken()`.
-- [#3048885](https://www.drupal.org/node/3048885) Примеры с массивами для settings.php заменены на короткий формат.
+- [#3048885](https://www.drupal.org/node/3048885) Примеры с массивами для [settings.php](../settings-php.md) заменены на короткий формат.
 - [#3027318](https://www.drupal.org/node/3027318) Улучшено покрытие тестов для Inline Form Errors.
 - [#3034885](https://www.drupal.org/node/3034885) Исправлен приоритет сервиса `paramconverter.configentity_admin`.
 - [#2981584](https://www.drupal.org/node/2981584) Исправлена проблем, при которой Big Pipe "падал" при большом количестве плейсхолдеров на странице (1000+, no_js). Логика работы с плейсхолдерами улучшена и теперь, при большом количестве они будут обрабатываться иначе (более медленный, но более надежный: вместо `preg_split()` будет использоваться `str_replace()` + `array_filter()`).

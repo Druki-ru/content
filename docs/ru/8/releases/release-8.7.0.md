@@ -148,7 +148,7 @@ $element = [
 - `\Drupal\Core\Entity\EntityStorageInterface` получил новый метод `restore(EntityInterface $entity)`.
 - Добавлен новый трейт `\Drupal\Core\Entity\Sql\SqlFieldableEntityTypeListenerTrait`.
 
-По умолчанию, перед обновлением схемы, автоматически будут созданы резервные копии изменяемых таблиц в БД, а также сохранены после успешного обновления. Вы можете изменить данное поведение в settings.php `$settings['entity_update_backup'] = FALSE;`.
+По умолчанию, перед обновлением схемы, автоматически будут созданы резервные копии изменяемых таблиц в БД, а также сохранены после успешного обновления. Вы можете изменить данное поведение в [settings.php](../settings-php.md) `$settings['entity_update_backup'] = FALSE;`.
 
 Примеры конвертации сущностей для поддержки ревизий можно наблюдать в ядре: [#2880149](https://www.drupal.org/project/drupal/issues/2880149), [#2880152](https://www.drupal.org/project/drupal/issues/2880152).
 
