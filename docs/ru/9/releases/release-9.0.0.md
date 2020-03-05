@@ -62,3 +62,5 @@ metatags:
 - [#3113653](https://www.drupal.org/node/3113653) PHPUnit обновлён до 8 версии. Изменения в тестах пока не требуются, но в планах стоит обновление до PHPUnit 9 которое повлечёт за собой изменения.
 - [#3116384](https://www.drupal.org/node/3116384) В Drupal 8 можно было добавлять дополнительные загрузчики, для того чтобы включить поддержку APCu. Эта возможность была удалена в пользу загрузчика Composer.
 - [#3116297](https://www.drupal.org/node/3116297) Symfony 4 больше не поставляет WinCache, таким образом в Drupal 9 он также будет отсутствовать. Рекомендуется использовать APCu как замену.
+- [#3104265](https://www.drupal.org/project/drupal/issues/3104265) Doctrine разделил на части пакет `doctrine/common`. Drupal не использует все данные пакеты, таким образом зависимости обновлены и были удалены из зависимостей: `doctrine/cache`, `doctrine/collections`, `doctrine/common`, `doctrine/inflector`.
+- [#3084472](https://www.drupal.org/project/drupal/issues/3084472) Трейт `DeprecatedModulesTestTrait` удалён.
