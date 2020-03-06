@@ -64,6 +64,15 @@ _Находятся в releases._
 
 ***
 
+## Отсылки на классы, методы, свойства, константы
+
+- На классы: `ClassName` или `FullyQualified\Namespace\ClassName`.
+- На константы: `ClassName::CONSTANT_NAME` или `::CONSTANT_NAME`, или `FullyQualified\Namespace\ClassName::CONSTANT_NAME`.
+- На свойства: `ClassName::$propertyName` или `::$propertyName`, или `FullyQualified\Namespace\ClassName::$propertyName`.
+- На методы: `ClassName::methodName` или `::methodName`, или `FullyQualified\Namespace\ClassName::methodName`.
+
+***
+
 Данный файл может изменяться, дополняться без предварительного уведомления. Не забывайте периодически поглядывать, если вы решитесь что-то сделать.
 
 _И не забывайте, это экспериментальный проект и все может быть заброшено, поменять свои требования к файлам, структуру, да что угодно может случиться хоть на релизе. Никто ничего не гарантирует и не обещает, всё это лишь для фана и обучения._
