@@ -123,3 +123,7 @@ metatags:
 - [#3086374](https://www.drupal.org/node/3086374) Drupal ядро теперь полностью совместимо с PHP 7.4.
 - [#3111504](https://www.drupal.org/node/3111504) `AccessResult::cacheUntilEntityChanges` теперь вызывает ошибку об устаревшем методе.
 - [#3091518](https://www.drupal.org/node/3091518) webchick убрана из MAINTAINERS.txt как координатор Admin UI.
+
+## Ссылки
+
+- [Drupal 8.8.3](https://www.drupal.org/project/drupal/releases/8.8.3)  (англ.), drupal.org, 4 марта 2020
