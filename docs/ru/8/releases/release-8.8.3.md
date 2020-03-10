@@ -92,7 +92,7 @@ metatags:
 ## Тестирование
 
 - [#3113292](https://www.drupal.org/node/3113292) Добавлены тесты для проверки поведения при обновлении модуля со статусами: `UpdateManagerInterface::NOT_SECURE`, `UpdateManagerInterface::REVOKED`, `UpdateManagerInterface::NOT_SUPPORTED`.
-- [#3104372](https://www.drupal.org/node/3104372) Сообщения об устаревшем коде в `Drupal\FunctionalTests\AssertLegacyTrait` отформатированы в соответствии с требованиями стандарта.
+- [#3104372](https://www.drupal.org/node/3104372) Сообщения об устаревшем коде в `Drupal\FunctionalTests\AssertLegacyTrait` отформатированны в соответствии с требованиями стандарта.
 - [#3113509](https://www.drupal.org/node/3113509) Аннотации `@expectedException*` заменены на соответствующие методы, для будущей совместимости с PHPUnit 9.
 - [#2871374](https://www.drupal.org/node/2871374) Улучшен тест `SelectTest::testVulnerableComment`.
 - [#3106215](https://www.drupal.org/node/3106215) Удалён приватный метод `UserBlocksTest::updateAccess` который нигде не используется.
@@ -117,7 +117,7 @@ metatags:
 - [#3110104](https://www.drupal.org/node/3110104) Исправлена документация для `RouteProvider::getRouteByName`
 - [#3112829](https://www.drupal.org/node/3112829) Использование `};` исправлено на `}` в соответствии с требованиями стандартов.
 - [#3108540](https://www.drupal.org/node/3108540) Комментарии об устаревшем коде в `database.inc` приведены в соответствии со стандартом.
-- [#2809237](https://www.drupal.org/node/2809237) Для всех методов трейта `AllowedTagsXssTrait`, который помечен как устаревший, добавлены вызовы ошибок с информацей об устаревшем коде.
+- [#2809237](https://www.drupal.org/node/2809237) Для всех методов трейта `AllowedTagsXssTrait`, который помечен как устаревший, добавлены вызовы ошибок с информацией об устаревшем коде.
 - [#3112263](https://www.drupal.org/node/3112263) Константы `REGIONS_*` больше не признаны устаревшими так как используются не только в модуле Block.
 - [#2738879](https://www.drupal.org/node/2738879) Исправлена неполадка из-за которой некоторые `hook_update_N()` функции могли быть не обнаружены и не вызывались.
 - [#3086374](https://www.drupal.org/node/3086374) Drupal ядро теперь полностью совместимо с PHP 7.4.
