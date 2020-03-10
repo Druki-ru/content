@@ -44,11 +44,22 @@ metatags:
 - [#3113446](https://www.drupal.org/node/3113446) Добавлен полифил `drupal.array.find` для поддержки `Array.find()`.
 - [#3112670](https://www.drupal.org/node/3112670) Popper.js обновлён до версии 2.0.6.
 - [#3116334](https://www.drupal.org/node/3116334) Обновлён шаблон `update-version.html.twig` для поддержки `core_compatibility_details`.
+- [#3117217](https://www.drupal.org/node/3117217) В темах ядра произведена чистка зависимостей от `stable` темы оформления.
+
+## Twig
+
+- [#3117250](https://www.drupal.org/node/3117250) `StringLoader` и `TestLoader` обновлены для поддержки Twig 3.
+
+## Workspaces
+
+- [#3108416](https://www.drupal.org/node/3108416) Удалено обновление `workspace_update_8803()`. Добавлено предупреждение, что прежде чем обновляться до Drupal 9, сначала необходимо обновиться до 8.8.2 как минимум.
 
 ## Тестирование
 
 - [#3098322](https://www.drupal.org/node/3098322) Дампы базы данных для тестирования обновлений обновлены до Drupal 8.8.x.
 - [#3112907](https://www.drupal.org/node/3112907) Модуль Simpletest удалён из ядра и перенесён в контриб.
+- [#3055197](https://www.drupal.org/node/3055197) Убрана проверка на исключение `Goutte\Client`, так как в Symfony 5 отсутствует `Symfony\Component\BrowserKit\Client`.
+- [#3116856](https://www.drupal.org/node/3116856) Теперь тесты будут фейлится при наличии предупреждений. Также исправлены предупреждения PHPUnit8 которые несовместимы с PHPUnit 9.
 
 ## Прочие изменения
 
@@ -64,3 +75,10 @@ metatags:
 - [#3116297](https://www.drupal.org/node/3116297) Symfony 4 больше не поставляет WinCache, таким образом в Drupal 9 он также будет отсутствовать. Рекомендуется использовать APCu как замену.
 - [#3104265](https://www.drupal.org/project/drupal/issues/3104265) Doctrine разделил на части пакет `doctrine/common`. Drupal не использует все данные пакеты, таким образом зависимости обновлены и были удалены из зависимостей: `doctrine/cache`, `doctrine/collections`, `doctrine/common`, `doctrine/inflector`.
 - [#3084472](https://www.drupal.org/project/drupal/issues/3084472) Трейт `DeprecatedModulesTestTrait` удалён.
+- [#3109534](https://www.drupal.org/node/3109534) Минимальная версия MySQL увеличена до 5.7.8, MariaDB до 10.2.7.
+- [#3107155](https://www.drupal.org/node/3107155) Минимальная версия SQLite увеличена до 3.26.
+- [#3074585](https://www.drupal.org/node/3074585) Сервисы `app.root` и `site.path` заменены на параметры.
+- [#3118079](https://www.drupal.org/node/3118079) `postcss-header` обновлён до 2.0.0 и убрано временное решение для корректной работы.
+- [#3114079](https://www.drupal.org/node/3114079) Минимальная версия Apache увеличена до 2.4.7.
+- [#2846994](https://www.drupal.org/node/2846994) Минимальная версия PostgreSQL увеличина до 10, также теперь требуется расширение `pg_trgm`.
+- [#3087130](https://www.drupal.org/node/3087130) Конфигурации установочных профилей теперь могут зависеть от опциональных конфигураций модулей.
