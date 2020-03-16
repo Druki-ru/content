@@ -179,6 +179,19 @@ $bag->setFlag();
 ## Оформление и темизация
 
 - [#3040758](https://www.drupal.org/node/3040758) В теме оформления Classy на поля с меткой «в строку» теперь добавляется класс `clearfix`. Если вызовет проблемы в вашей теме, вы можете переопределить данное поведение перезаписав шаблон `field.html.twig` в своей теме.
+- [#3115005](https://www.drupal.org/node/3115005) Из тем оформления удалён фикс для fieldset в Firefox, так как ошибку в браузере исправили.
+
+## Book
+
+- [#3010378](https://www.drupal.org/node/3010378) `BookManager::buildItems` теперь не загружает сущности для генерации ссылки, а генерирует роут на основе ID. Это значительно повышает производительность на материалах с большим количество «подшивок».
+
+## Database API
+
+- [#3113403](https://www.drupal.org/node/3113403) (временно откачено) Все драйверы баз данных теперь должны переопределять `Drupal\Core\Database\Query\Condition`.
+
+## Extension API
+
+- [#3066801](https://www.drupal.org/node/3066801) Добавлен новый хук `hook_removed_post_updates()` который позволяет указать какие `hook_post_update_N()` реализации были удалены и в какой версии.
 
 ## Views
 
@@ -192,6 +205,15 @@ $bag->setFlag();
 
 - [#3082742](https://www.drupal.org/node/3082742) Тип данных возвращаемый функцией `color_valid_hexadecimal_string()` был изменён. До изменения возвращаемый тип был числом (0 или 1), теперь возвращается булево значение (`TRUE`, `FALSE`).
 
+## Migrate
+
+- [#2746541](https://www.drupal.org/node/2746541) Добавлена новая миграция `d*_node_complete.yml`, которая именуется как "complete node migration". Данная миграция переносить все ноды, их ревизии, переводы и переводы ревизий.
+- [#2966856](https://www.drupal.org/node/2966856) Модуль `migrate_drupal_multilingual` удалён из зависимостей миграций и скрыт из интерфейса. Мультиязычные миграции теперь стабильны и данный модуль больше не требуется и будет удалён в Drupal 10.
+
+## Update
+
+- [#3098475](https://www.drupal.org/node/3098475) Теперь страница обновления БД будет показывать ожидающие обновления, зависимости и требования которых до сих пор не удовлетворены и они не могут быть применены.
+
 ## Views UI
 
 - [#3113556](https://www.drupal.org/node/3113556) Views UI теперь использует библиотеку `core/drupal.dialog.ajax` вместо `core/jquery.ui.dialog`.
@@ -199,6 +221,8 @@ $bag->setFlag();
 ## Тестирование
 
 - [#3105980](https://www.drupal.org/node/3105980) Метод `\Drupal\migrate_drupal\Tests\StubTestTrait::createStub` был переименован в `createEntityStub`.
+- [#3118477](https://www.drupal.org/node/3118477) Реестр темы теперь создаётся через мок, для того чтобы избежать конфликта когда он создавался в двух разных местах `RegistryTest` и `RegistryLegacyTest`.
+- [#3078671](https://www.drupal.org/node/3078671) Зависимость `behat/mink` обновлена до 1.8.0, а `behat/mink-selenium2-driver` до 1.4.0.
 
 ## Производительность
 
@@ -210,6 +234,8 @@ $bag->setFlag();
 - [#3111613](https://www.drupal.org/node/3111613) Удалены два `protected` метода у `Drupal\Core\Entity\Sql\SqlContentEntityStorageSchema`. Они не использовались ядром, а так как являются защищёнными, не относятся к публичному API.
 - [#3113062](https://www.drupal.org/node/3113062) Функция `system_user_timezone()` помечена как `@internal` и будет удалена в [Drupal 9](../../9/releases/release-9.0.0.md).
 - [#3054049](https://www.drupal.org/node/3054049) Добавлена новая [проверка доступа маршрута](../routing/route-access-control.md) `_entity_bundles`, при помощи которой можно создать [маршрут](../routing/routing.md) принимающий только конкретные бандлы сущности из аргумента. Например: `_entity_bundles: 'node:article|page'`.
+- [#3114909](https://www.drupal.org/node/3114909) Документация для `EntityTypeInterface::hasHandlerClass` и `::getHandlerClass` приведены к одному виду.
+- [#2999549](https://www.drupal.org/node/2999549) Добавлен новый служебный роут `<button>` для генерации ссылки в виде кнопки `route:<button>`.
 
 ## Смотрите также
 
