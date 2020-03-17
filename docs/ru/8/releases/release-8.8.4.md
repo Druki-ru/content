@@ -29,6 +29,7 @@ metatags:
 
 - [#3118454](https://www.drupal.org/node/3118454) Улучшен тест `SelectTest` для поддержки PostgreSQL 10.
 - [#3003401](https://www.drupal.org/node/3003401) Исправлена ошибка в тесте `UpdatePathTestBase`, где метод `::setDatabaseDumpFiles` вызывался дважды.
+- [#3094151](https://www.drupal.org/node/3094151) `ExpectDeprecationTrait` изменён для поддержки PHPUnit 8.
 
 ## Прочие изменения
 
@@ -39,7 +40,7 @@ metatags:
 - [#3056543](https://www.drupal.org/node/3056543) Ссылки меню и термины таксономии что не имеют переводов по умолчанию, автоматически исправляются прежде чем сущность становится ревизионной.
 - [#2865416](https://www.drupal.org/node/2865416) Ссылки в README.txt что ведут на документацию по Drupal 7 были исправлены на корректные.
 - [#2917600](https://www.drupal.org/node/2917600) Функция `update_fix_compatibility()` помечена устаревшей и обновления больше не будут пытаться удалить модули.
-- [#3103529](https://www.drupal.org/node/3103529) (временно откачен) Теперь таблицы кэша не создаются в момент инициализации установки.
+- [#3103529](https://www.drupal.org/node/3103529) Теперь таблицы кэша не создаются в момент инициализации установки.
 - [#3118581](https://www.drupal.org/node/3118581) Улучшена документация о длине результата `Crypt::randomBytesBase64`.
 - [#3119445](https://www.drupal.org/node/3119445) Исправлена некорректная документация `BanIpManager::__construct`.
 - [#3105925](https://www.drupal.org/node/3105925) Документация `FieldDefinition::setDisplayOptions` исправлена в соответствии с `FieldDefinitionInterface::getDisplayOptions`.
