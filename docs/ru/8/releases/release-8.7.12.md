@@ -1,10 +1,10 @@
 ---
-id: release-8.8.4
-title: 'Drupal 8.8.4'
-path: /8/releases/8.8.4
+id: release-8.7.12
+title: 'Drupal 8.7.12'
+path: /8/releases/8.7.12
 core: 8
 metatags:
-  title: 'Drupal 8.8.4: Список изменений'
+  title: 'Drupal 8.7.12: Список изменений'
   description: 'Обновление безопасности: SA-CORE-2020-001.'
 ---
 
@@ -18,4 +18,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 8.8.4](https://www.drupal.org/project/drupal/releases/8.8.4) (англ.), drupal.org, 18 марта 2020
+- [Drupal 8.7.12](https://www.drupal.org/project/drupal/releases/8.7.12) (англ.), drupal.org, 18 марта 2020
