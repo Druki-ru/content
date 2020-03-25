@@ -45,3 +45,5 @@ metatags:
 - [#3119445](https://www.drupal.org/node/3119445) Исправлена некорректная документация `BanIpManager::__construct`.
 - [#3105925](https://www.drupal.org/node/3105925) Документация `FieldDefinition::setDisplayOptions` исправлена в соответствии с `FieldDefinitionInterface::getDisplayOptions`.
 - [#3119847](https://www.drupal.org/node/3119847) Исправлены опечатки в `UpdaterTest` и `InfoParserUnitTest`.
+- [#3119373](https://www.drupal.org/node/3119373) Теперь при очистке кэша список расширений собирается заново для избежания проблем при импорте конфигураций.
+- [#3118087](https://www.drupal.org/node/3118087) В отчёте о состоянии теперь будут показываться модули с некорректными или отсутствующими версиями.
