@@ -176,10 +176,25 @@ $bag = $request->getSession()->getBag(ExampleSessionBag::BAG_NAME);
 $bag->setFlag();
 ```
 
+## Темы могут объявлять зависимости на модули
+
+- [#474684](https://www.drupal.org/node/474684)
+
+[Темы оформления](../themes/themes.md) теперь могут указывать зависимости на модули, которые необходимы для работы. Принцип указания зависимостей такойже как и у [модулей](../modules/modules.md) — при помощи свойства `dependencies`.
+
+```yaml
+name: test theme depending on nonexisting module
+type: theme
+core: 8.x
+dependencies:
+  - test_module_non_existing
+```
+
 ## Оформление и темизация
 
 - [#3040758](https://www.drupal.org/node/3040758) В теме оформления Classy на поля с меткой «в строку» теперь добавляется класс `clearfix`. Если вызовет проблемы в вашей теме, вы можете переопределить данное поведение перезаписав шаблон `field.html.twig` в своей теме.
 - [#3115005](https://www.drupal.org/node/3115005) Из тем оформления удалён фикс для fieldset в Firefox, так как ошибку в браузере исправили.
+- [#2550717](https://www.drupal.org/node/2550717) [js-cookie](https://github.com/js-cookie/js-cookie) (`core/js-cookie`) добавлен в ядро на замену `core/jquery.cookie`, которая теперь помечена устаревшей.
 
 ## Book
 
@@ -211,6 +226,11 @@ $bag->setFlag();
 - [#2746541](https://www.drupal.org/node/2746541) Добавлена новая миграция `d*_node_complete.yml`, которая именуется как "complete node migration". Данная миграция переносить все ноды, их ревизии, переводы и переводы ревизий.
 - [#2966856](https://www.drupal.org/node/2966856) Модуль `migrate_drupal_multilingual` удалён из зависимостей миграций и скрыт из интерфейса. Мультиязычные миграции теперь стабильны и данный модуль больше не требуется и будет удалён в Drupal 10.
 
+## Help Topics
+
+- [#3041926](https://www.drupal.org/node/3041926) Инструкции `hook_help()` для модулей `automated_cron`, `dblog`, `syslog`, `system`, `update` и `user` конвертированы в Help Topics.
+- [#3087562](https://www.drupal.org/node/3087562) Инструкции `hook_help()` для модулей `datetime`, `datetime_range`, `field`, `field_ui`, `link`, `options`, `telehpone`, `text` конвертированы в Help Topics.
+
 ## Update
 
 - [#3098475](https://www.drupal.org/node/3098475) Теперь страница обновления БД будет показывать ожидающие обновления, зависимости и требования которых до сих пор не удовлетворены и они не могут быть применены.
@@ -237,6 +257,9 @@ $bag->setFlag();
 - [#3054049](https://www.drupal.org/node/3054049) Добавлена новая [проверка доступа маршрута](../routing/route-access-control.md) `_entity_bundles`, при помощи которой можно создать [маршрут](../routing/routing.md) принимающий только конкретные бандлы сущности из аргумента. Например: `_entity_bundles: 'node:article|page'`.
 - [#3114909](https://www.drupal.org/node/3114909) Документация для `EntityTypeInterface::hasHandlerClass` и `::getHandlerClass` приведены к одному виду.
 - [#2999549](https://www.drupal.org/node/2999549) Добавлен новый служебный роут `<button>` для генерации ссылки в виде кнопки `route:<button>`.
+- [#3120954](https://www.drupal.org/node/3120954) Сообщение об устаревшей функции приведено в соответствии с требования для `Registry` класса.
+- [#3121229](https://www.drupal.org/node/3121229) Удалён эксперементальный модуль `config_environment`, который находился в альфа версии.
+- [#3104015](https://www.drupal.org/node/3104015) Zend Framework стал Laminas, поэтому все зависимости и код был заменён на новые.
 
 ## Смотрите также
 
