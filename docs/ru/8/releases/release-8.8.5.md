@@ -8,7 +8,7 @@ metatags:
   description: 'Минорный релиз Drupal 8.8.5, список изменений.'
 ---
 
-**Дата релиза**: 2 апреля
+**Дата релиза**: 2 апреля 2020 г.
 
 ## Composer
 
@@ -51,4 +51,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 8.8.5](https://www.drupal.org/project/drupal/releases/8.8.5) (англ.), drupal.org, 18 марта 2020
+- [Drupal 8.8.5](https://www.drupal.org/project/drupal/releases/8.8.5) (англ.), drupal.org, 2 апреля 2020
