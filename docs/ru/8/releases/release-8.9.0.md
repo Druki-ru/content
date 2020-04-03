@@ -235,15 +235,17 @@ dependencies:
 
 - [#3098475](https://www.drupal.org/node/3098475) Теперь страница обновления БД будет показывать ожидающие обновления, зависимости и требования которых до сих пор не удовлетворены и они не могут быть применены.
 
-## Views UI
+## Views
 
 - [#3113556](https://www.drupal.org/node/3113556) Views UI теперь использует библиотеку `core/drupal.dialog.ajax` вместо `core/jquery.ui.dialog`.
+- [#3123653](https://www.drupal.org/node/3123653) Исправлена опечатка в документации `BulkForm::clickSortable`.
 
 ## Тестирование
 
 - [#3105980](https://www.drupal.org/node/3105980) Метод `\Drupal\migrate_drupal\Tests\StubTestTrait::createStub` был переименован в `createEntityStub`.
 - [#3118477](https://www.drupal.org/node/3118477) Реестр темы теперь создаётся через мок, для того чтобы избежать конфликта когда он создавался в двух разных местах `RegistryTest` и `RegistryLegacyTest`.
 - [#3078671](https://www.drupal.org/node/3078671) Зависимость `behat/mink` обновлена до 1.8.0, а `behat/mink-selenium2-driver` до 1.4.0.
+- [#3121827](https://www.drupal.org/node/3121827) Исправлена докуменация в тестах `update_test_last_removed`.
 
 ## Производительность
 
