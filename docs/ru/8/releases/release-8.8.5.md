@@ -30,6 +30,7 @@ metatags:
 - [#3118454](https://www.drupal.org/node/3118454) Улучшен тест `SelectTest` для поддержки PostgreSQL 10.
 - [#3003401](https://www.drupal.org/node/3003401) Исправлена ошибка в тесте `UpdatePathTestBase`, где метод `::setDatabaseDumpFiles` вызывался дважды.
 - [#3094151](https://www.drupal.org/node/3094151) `ExpectDeprecationTrait` изменён для поддержки PHPUnit 8.
+- [#3122742](https://www.drupal.org/node/3122742) Исправлен `RequirementsPageTrait` для работы с PHP 5.
 
 ## Прочие изменения
 
@@ -47,6 +48,9 @@ metatags:
 - [#3119847](https://www.drupal.org/node/3119847) Исправлены опечатки в `UpdaterTest` и `InfoParserUnitTest`.
 - [#3119373](https://www.drupal.org/node/3119373) Теперь при очистке кэша список расширений собирается заново для избежания проблем при импорте конфигураций.
 - [#3118087](https://www.drupal.org/node/3118087) В отчёте о состоянии теперь будут показываться модули с некорректными или отсутствующими версиями.
+- [#3113992](https://www.drupal.org/node/3113992) Страница обновлений теперь учитывает несовместимые версии.
+- [#3122605](https://www.drupal.org/node/3122605) `EntityResourceTestBase` теперь использует динамический запрос, а не статический.
+- [#3120494](https://www.drupal.org/node/3120494) Минимальная версия `minimist` обновлена с 1.2.0 до 1.2.2.
 
 ## Ссылки
 
