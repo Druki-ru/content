@@ -10,9 +10,6 @@ metatags:
 
 **Дата релиза**: 2 апреля
 
-> [!WARNING]
-> Drupal 8.8.5 находится в разработке. Актуальной версией является [Drupal 8.8.4](release-8.8.4.md).
-
 ## Composer
 
 - [#3115624](https://www.drupal.org/node/3115624) [drupal/core-scaffold](../../composer/drupal-core-composer-scaffold.md) теперь генерирует `.gitingore` только с файлами относительно корня, а не для всего проекта.
