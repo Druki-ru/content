@@ -196,6 +196,10 @@ dependencies:
 - [#3115005](https://www.drupal.org/node/3115005) Из тем оформления удалён фикс для fieldset в Firefox, так как ошибку в браузере исправили.
 - [#2550717](https://www.drupal.org/node/2550717) [js-cookie](https://github.com/js-cookie/js-cookie) (`core/js-cookie`) добавлен в ядро на замену `core/jquery.cookie`, которая теперь помечена устаревшей.
 
+## Ban
+
+- [#3126784](https://www.drupal.org/node/3126784) Класс `\Drupal\ban\Plugin\migrate\destination\BlockedIP` приведён в соответствии с его названием файла `BlockedIp`.
+
 ## Book
 
 - [#3010378](https://www.drupal.org/node/3010378) `BookManager::buildItems` теперь не загружает сущности для генерации ссылки, а генерирует роут на основе ID. Это значительно повышает производительность на материалах с большим количество «подшивок».
@@ -204,10 +208,15 @@ dependencies:
 
 - [#3113403](https://www.drupal.org/node/3113403) (временно откачено) Все драйверы баз данных теперь должны переопределять `Drupal\Core\Database\Query\Condition`.
 - [#3118832](https://www.drupal.org/node/3118832) Сторонние драйвера баз данные теперь могут иметь те же самые имена что и в ядре. Также, в тестах, терминале и установщике будет использоваться драйвер указанный в `settings.php` в приоритете над стандартным.
+- [#3120096](https://www.drupal.org/node/3120096) Драйвера баз данных теперь могут располагаться в `src/Driver/Database/[DriverName]` под соответствующим неймспейсом `Drupal\[module_name]\Driver\[DriverName]`. Drupal теперь будет автоматически находить данные драйвера без необходимости их копировать в `/core/lib` или `/drivers/lib`.
 
 ## Extension API
 
 - [#3066801](https://www.drupal.org/node/3066801) Добавлен новый хук `hook_removed_post_updates()` который позволяет указать какие `hook_post_update_N()` реализации были удалены и в какой версии.
+
+## File
+
+- [#3016814](https://www.drupal.org/node/3016814) Теперь хук `hook_file_download()` не будет вызываться при отсутствии аргументов для файла. 
 
 ## Views
 
@@ -262,6 +271,9 @@ dependencies:
 - [#3120954](https://www.drupal.org/node/3120954) Сообщение об устаревшей функции приведено в соответствии с требования для `Registry` класса.
 - [#3121229](https://www.drupal.org/node/3121229) Удалён эксперементальный модуль `config_environment`, который находился в альфа версии.
 - [#3104015](https://www.drupal.org/node/3104015) Zend Framework стал Laminas, поэтому все зависимости и код был заменён на новые.
+- [#3107243](https://www.drupal.org/node/3107243) Исправлены метки для `link.schema.yml` файла. Теперь они утверждения, вместо вопросов.
+- [#3126003](https://www.drupal.org/node/3126003) Исправлена ошибка приводящая к увеличенному потреблению памяти в момент установки Drupal.
+- [#3126923](https://www.drupal.org/node/3126923) Исправлена неполадка, вызванная изменением #3120096, приводящая к ошибкам на PHP 7.0.
 
 ## Смотрите также
 
