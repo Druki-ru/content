@@ -204,15 +204,27 @@ dependencies:
 
 - [#3010378](https://www.drupal.org/node/3010378) `BookManager::buildItems` теперь не загружает сущности для генерации ссылки, а генерирует роут на основе ID. Это значительно повышает производительность на материалах с большим количество «подшивок».
 
+## Composer
+
+- [#3127013](https://www.drupal.org/node/3127013) `wikimedia/composer-merge-plugin` удалён из зависимостей ядра.
+- [#3121885](https://www.drupal.org/node/3121885) `drupal/coder` обновлён до 8.3.8.
+
+## Claro
+
+- [#3078524](https://www.drupal.org/node/3078524) Стили фокусировки WYSIWYG элементов приведены к общему стилю.
+
 ## Database API
 
 - [#3113403](https://www.drupal.org/node/3113403) (временно откачено) Все драйверы баз данных теперь должны переопределять `Drupal\Core\Database\Query\Condition`.
 - [#3118832](https://www.drupal.org/node/3118832) Сторонние драйвера баз данные теперь могут иметь те же самые имена что и в ядре. Также, в тестах, терминале и установщике будет использоваться драйвер указанный в `settings.php` в приоритете над стандартным.
 - [#3120096](https://www.drupal.org/node/3120096) Драйвера баз данных теперь могут располагаться в `src/Driver/Database/[DriverName]` под соответствующим неймспейсом `Drupal\[module_name]\Driver\[DriverName]`. Drupal теперь будет автоматически находить данные драйвера без необходимости их копировать в `/core/lib` или `/drivers/lib`.
+- [#3126940](https://www.drupal.org/node/3126940) Теперь в URI до БД нет необходимости указывать опциональный параметр `module`.
+- [#2956556](https://www.drupal.org/node/2956556) `StatementPrefetch` теперь передает также `$class_name` в `fetchOptions`.
 
 ## Extension API
 
 - [#3066801](https://www.drupal.org/node/3066801) Добавлен новый хук `hook_removed_post_updates()` который позволяет указать какие `hook_post_update_N()` реализации были удалены и в какой версии.
+- [#3039296](https://www.drupal.org/node/3039296) Примеры для `hook_install()` и `hook_uninstall()` обновлены и упрощены.
 
 ## File
 
@@ -230,10 +242,22 @@ dependencies:
 
 - [#3082742](https://www.drupal.org/node/3082742) Тип данных возвращаемый функцией `color_valid_hexadecimal_string()` был изменён. До изменения возвращаемый тип был числом (0 или 1), теперь возвращается булево значение (`TRUE`, `FALSE`).
 
+## Locale
+
+- [#3119278](https://www.drupal.org/node/3119278) Теперь сообщения при обновлении и проверки локазаций будут более информативными. Дополнительно будут выводиться и языковые коды, для которых производится проверка.
+
 ## Migrate
 
 - [#2746541](https://www.drupal.org/node/2746541) Добавлена новая миграция `d*_node_complete.yml`, которая именуется как "complete node migration". Данная миграция переносить все ноды, их ревизии, переводы и переводы ревизий.
 - [#2966856](https://www.drupal.org/node/2966856) Модуль `migrate_drupal_multilingual` удалён из зависимостей миграций и скрыт из интерфейса. Мультиязычные миграции теперь стабильны и данный модуль больше не требуется и будет удалён в Drupal 10.
+
+## Media Library
+
+- [#3127838](https://www.drupal.org/node/3127838) Кнопка "Сохранить и вставить" теперь не имеет дополнительного вложения в массиве.
+
+## Plugin API
+
+- [#3115987](https://www.drupal.org/node/3115987) Свойство `$instanceIDs` переименовано в `$instanceIds`.
 
 ## Help Topics
 
@@ -248,6 +272,7 @@ dependencies:
 
 - [#3113556](https://www.drupal.org/node/3113556) Views UI теперь использует библиотеку `core/drupal.dialog.ajax` вместо `core/jquery.ui.dialog`.
 - [#3123653](https://www.drupal.org/node/3123653) Исправлена опечатка в документации `BulkForm::clickSortable`.
+- [#2997748](https://www.drupal.org/node/2997748) Джоины теперь могут использовать `left_formula` вместо `left_field` для того чтобы применять SQL выражения для левой части джоина.
 
 ## Тестирование
 
@@ -255,6 +280,10 @@ dependencies:
 - [#3118477](https://www.drupal.org/node/3118477) Реестр темы теперь создаётся через мок, для того чтобы избежать конфликта когда он создавался в двух разных местах `RegistryTest` и `RegistryLegacyTest`.
 - [#3078671](https://www.drupal.org/node/3078671) Зависимость `behat/mink` обновлена до 1.8.0, а `behat/mink-selenium2-driver` до 1.4.0.
 - [#3121827](https://www.drupal.org/node/3121827) Исправлена докуменация в тестах `update_test_last_removed`.
+- [#3126694](https://www.drupal.org/node/3126694) В тесте `ThemeTest` заменено использование `tpl.twig` на `html.twig.`
+- [#3119922](https://www.drupal.org/node/3119922) `DeleteTruncateTest` больше не опирается на стандартную сортировку, которая может быть разной у каждой БД. Теперь сортировка явно указана.
+- [#3124769](https://www.drupal.org/node/3124769) `UiHelperTrait::drupalLogout` теперь получает путь для редиректа напрямую из маршрута `user.page` вместо захардкоженого `/user`.
+- [#3119924](https://www.drupal.org/node/3119924) `SelectPagerDefaultTest` больше не опирается на стандартную сортировку, которая может быть разной у каждой БД. Теперь сортировка явно указана.
 
 ## Производительность
 
@@ -274,6 +303,8 @@ dependencies:
 - [#3107243](https://www.drupal.org/node/3107243) Исправлены метки для `link.schema.yml` файла. Теперь они утверждения, вместо вопросов.
 - [#3126003](https://www.drupal.org/node/3126003) Исправлена ошибка приводящая к увеличенному потреблению памяти в момент установки Drupal.
 - [#3126923](https://www.drupal.org/node/3126923) Исправлена неполадка, вызванная изменением #3120096, приводящая к ошибкам на PHP 7.0.
+- [#3127960](https://www.drupal.org/node/3127960) Удалено некорректное нижнее подчёркивание в миграции Drupal 7 `Shortcut`.
+- [#2455465](https://www.drupal.org/node/2455465) Удалена поддержка PHP 5 для `.htaccess` и добавлена поддержка PHP 7.
 
 ## Смотрите также
 
