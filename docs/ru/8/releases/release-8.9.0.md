@@ -212,6 +212,7 @@ dependencies:
 ## Claro
 
 - [#3078524](https://www.drupal.org/node/3078524) Стили фокусировки WYSIWYG элементов приведены к общему стилю.
+- [#3101040](https://www.drupal.org/node/3101040) Исправлена проблема, когда стиль фокусировки обрезался.
 
 ## Database API
 
@@ -220,6 +221,7 @@ dependencies:
 - [#3120096](https://www.drupal.org/node/3120096) Драйвера баз данных теперь могут располагаться в `src/Driver/Database/[DriverName]` под соответствующим неймспейсом `Drupal\[module_name]\Driver\[DriverName]`. Drupal теперь будет автоматически находить данные драйвера без необходимости их копировать в `/core/lib` или `/drivers/lib`.
 - [#3126940](https://www.drupal.org/node/3126940) Теперь в URI до БД нет необходимости указывать опциональный параметр `module`.
 - [#2956556](https://www.drupal.org/node/2956556) `StatementPrefetch` теперь передает также `$class_name` в `fetchOptions`.
+- [#3125391](https://www.drupal.org/node/3125391) В возвращаемые типы данных методом `Connection::query()` добавлено строковое значение, а также описание, когда оно может таким стать.
 
 ## Extension API
 
@@ -228,7 +230,11 @@ dependencies:
 
 ## File
 
-- [#3016814](https://www.drupal.org/node/3016814) Теперь хук `hook_file_download()` не будет вызываться при отсутствии аргументов для файла. 
+- [#3016814](https://www.drupal.org/node/3016814) Теперь хук `hook_file_download()` не будет вызываться при отсутствии аргументов для файла.
+
+## Field UI
+
+- [#3126617](https://www.drupal.org/node/3126617) Исправлена опечатка в теге для Help Topics. `<me>` заменён на `<em>`.
 
 ## Views
 
@@ -237,10 +243,24 @@ dependencies:
 ## Composer
 
 - [#3090416](https://www.drupal.org/node/3090416) Представлен Composer плагин Core Project Message.
+- [#3103090](https://www.drupal.org/node/3103090) [drupal/core-composer-scaffold](../../composer/drupal-core-composer-scaffold.md) теперь не заменяет файлы которые не изменились, а также не выводит сообщение о файлах которые не были изменены. Это сократит выводимое сообщение данным пакетом в композере.
+- [#3126566](https://www.drupal.org/node/3126566) Плагины, предоставляемые Drupal, теперь совместимы с Composer 2.
 
 ## Color
 
 - [#3082742](https://www.drupal.org/node/3082742) Тип данных возвращаемый функцией `color_valid_hexadecimal_string()` был изменён. До изменения возвращаемый тип был числом (0 или 1), теперь возвращается булево значение (`TRUE`, `FALSE`).
+
+## Config Translation
+
+- [#3131388](https://www.drupal.org/node/3131388) Добавлен тест на страницу с листингом конфигураций. Исправлен DI приводящий к WSOD.
+
+## JSON:API
+
+- [#3115772](https://www.drupal.org/node/3115772) Вызовы `User::load` заменены на [Dependency Injection](../services/dependency-injection.md).
+
+## Language
+
+- [#3130438](https://www.drupal.org/node/3130438) Сервис `page_cache_kill_switch` в `LanguageNegotiationBrowser` теперь добавляется через [Dependency Injection](../services/dependency-injection.md).
 
 ## Locale
 
@@ -250,6 +270,7 @@ dependencies:
 
 - [#2746541](https://www.drupal.org/node/2746541) Добавлена новая миграция `d*_node_complete.yml`, которая именуется как "complete node migration". Данная миграция переносить все ноды, их ревизии, переводы и переводы ревизий.
 - [#2966856](https://www.drupal.org/node/2966856) Модуль `migrate_drupal_multilingual` удалён из зависимостей миграций и скрыт из интерфейса. Мультиязычные миграции теперь стабильны и данный модуль больше не требуется и будет удалён в Drupal 10.
+- [#3128069](https://www.drupal.org/node/3128069) Название модуля «Book» теперь пишется с заглавной буквы в `OverviewForm`.
 
 ## Media Library
 
@@ -258,6 +279,10 @@ dependencies:
 ## Plugin API
 
 - [#3115987](https://www.drupal.org/node/3115987) Свойство `$instanceIDs` переименовано в `$instanceIds`.
+
+## Seven
+
+- [#2980304](https://www.drupal.org/node/2980304) Внесены исправления в `<details>` и `<summary>` чтобы фокусировка работала во всех браузерах.
 
 ## Help Topics
 
@@ -273,6 +298,8 @@ dependencies:
 - [#3113556](https://www.drupal.org/node/3113556) Views UI теперь использует библиотеку `core/drupal.dialog.ajax` вместо `core/jquery.ui.dialog`.
 - [#3123653](https://www.drupal.org/node/3123653) Исправлена опечатка в документации `BulkForm::clickSortable`.
 - [#2997748](https://www.drupal.org/node/2997748) Джоины теперь могут использовать `left_formula` вместо `left_field` для того чтобы применять SQL выражения для левой части джоина.
+- [#3103010](https://www.drupal.org/node/3103010) В интерфейсе представлений улучшены пояснения для машинного имени.
+- [#3119279](https://www.drupal.org/node/3119279) В шаблоне `views-view-table.html.twig` сводка в `<details>` теперь подготавливается в препроцессе при помощи рендер массива. Это также подключит полифил для браузеров, в которых нет нативной поддержки данного элемента.
 
 ## Тестирование
 
@@ -284,6 +311,22 @@ dependencies:
 - [#3119922](https://www.drupal.org/node/3119922) `DeleteTruncateTest` больше не опирается на стандартную сортировку, которая может быть разной у каждой БД. Теперь сортировка явно указана.
 - [#3124769](https://www.drupal.org/node/3124769) `UiHelperTrait::drupalLogout` теперь получает путь для редиректа напрямую из маршрута `user.page` вместо захардкоженого `/user`.
 - [#3119924](https://www.drupal.org/node/3119924) `SelectPagerDefaultTest` больше не опирается на стандартную сортировку, которая может быть разной у каждой БД. Теперь сортировка явно указана.
+- [#3128575](https://www.drupal.org/node/3128575) Использование `is_null()` в сравнениях заменено на нативные методы `::assertNotNull()`, `::assertNull()`.
+- [#3130396](https://www.drupal.org/node/3130396) Использование `is_file()` в сравнениях заменено на нативные методы `::assertFileExists()`, `::assertFileNotExists()`.
+- [#3131090](https://www.drupal.org/node/3131090) Использование `is_dir()` в сравнениях заменено на нативные методы `::assertDirectoryExists()`, `::assertDirectoryNotExists()`.
+- [#3130811](https://www.drupal.org/node/3130811) Удалена передача аргумента `$message` для методов `::assertInstanceOf()` и `::assertNotInstanceOf()`.
+- [#3131088](https://www.drupal.org/node/3131088) Использование `file_exists()` в сравнениях заменено на нативные методы `::assertFileExists()`, `::assertFileNotExists()`.
+- [#3128814](https://www.drupal.org/node/3128814) Использование `:assert*` методов для сравнения количества заменено на штатный `::assertCount`.
+- [#3131223](https://www.drupal.org/node/3131223) Использование `array_key_exists()` в сравнениях заменено на нативные методы `::assertArrayHasKey()`, `::assertArrayNotHasKey()`.
+- [#3129074](https://www.drupal.org/node/3129074) Произведен рефактор сравнений, результаты которых используются в условиях.
+- [#3126787](https://www.drupal.org/node/3126787) (только Drupal 8) Добавлены методы проверки типов для обратной с PHPUnit 6 и 7 через `::assertInternalType()`.
+- [#3131258](https://www.drupal.org/node/3131258) Удалена передача аргумента `$message` для методов `::assertFileExists()`, `::assertFileNotExists()`, `::assertDirectoryExists()`, `::assertDirectoryNotExists()`.
+- [#3131821](https://www.drupal.org/node/3131821) Использование `is_callable()` в сравнениях заменено на нативные методы `::assertIsCallable()`, `::assertIsNotCallable()`.
+- [#3131821](https://www.drupal.org/node/3131821) Использование `is_numeric()` в сравнениях заменено на нативные методы `::assertIsNumeric()`, `::assertIsNotNumeric()`.
+- [#3131816](https://www.drupal.org/node/3131816) Использование `is_array()` в сравнениях заменено на нативные методы `::assertIsArray()`, `::assertIsNotArray()`.
+- [#3131818](https://www.drupal.org/node/3131818) Использование `is_object()` в сравнениях заменено на нативные методы `::assertIsObject()`, `::assertIsObject()`.
+- [#3131819](https://www.drupal.org/node/3131819) Использование `is_resource()` в сравнениях заменено на нативный метод `::assertIsResource()`.
+- [#3108006](https://www.drupal.org/node/3108006) Использование `::assertInternalType` заменено на соответствующие методы: `::assertIsArray`, `::assertIsBool` и т.д.
 
 ## Производительность
 
@@ -305,6 +348,9 @@ dependencies:
 - [#3126923](https://www.drupal.org/node/3126923) Исправлена неполадка, вызванная изменением #3120096, приводящая к ошибкам на PHP 7.0.
 - [#3127960](https://www.drupal.org/node/3127960) Удалено некорректное нижнее подчёркивание в миграции Drupal 7 `Shortcut`.
 - [#2455465](https://www.drupal.org/node/2455465) Удалена поддержка PHP 5 для `.htaccess` и добавлена поддержка PHP 7.
+- [#3084078](https://www.drupal.org/node/3084078) `AdminNegotiator::determineActiveTheme()` теперь соответствует интерфейсу и явно возвращает `NULL`.
+- [#3118726](https://www.drupal.org/node/3118726) js.cookie обновлён до 3.0.
+- [#3107472](https://www.drupal.org/node/3107472) `DbDumpCommand` теперь использует `Drupal::VERSION` вместо захардкоженного значения.
 
 ## Смотрите также
 
