@@ -88,6 +88,13 @@ regions:
 - **dependencies**: (опционально, добавлено в [Drupal 8.9.0](../releases/release-8.9.0.md)) Список модулей, от которых зависит данная тема оформления. Название зависимостей должно быть в формате `{project}:{module}`, где `{project}` название проекта на drupal.org (например drupal.org/project/views - views) и `{module}` машинное название модуля. Вы также можете указать каждой зависимости ограничения по версии, например `yandex_yml:yandex_yml (>=8.x-1.x)`.
 - **Запрещенные для использования**: Данные файлы могут также содержать `version` и `project`. Данные значения добавляются в файл автоматически drupal.org, если вы публикуете модуль как полноценный проект. Для избежания проблем, не задавайте данные значение вручную.
 
+## Изменения в релизах
+
+- [Drupal 8.7.8](../releases/release-8.7.8.md) (02.10.2019): Добавлена поддержка `core_version_requirement` в `.info.yml`.
+- [Drupal 8.8.0](../releases/release-8.8.0.md) (04.12.2019): Параметр `base theme` `.info.yml` файла теперь обязателен для заполнения.
+- [Drupal 8.8.0](../releases/release-8.8.0.md) (04.12.2019): Добавлен опциональный параметр `experimental` в `.info.yml`.
+- [Drupal 8.9.0](../releases/release-8.9.0.md) (03.06.2020): Добавлен опциональный параметр `dependencies` в `.info.yml`.
+
 ## Ссылки
 
 - [Defining a theme with an .info.yml file](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file) (англ.), drupal.org

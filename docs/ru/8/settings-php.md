@@ -685,6 +685,14 @@ ini_set('pcre.backtrack_limit', 200000);
 ini_set('pcre.recursion_limit', 200000);
 ```
 
+## Изменения в релизах
+
+- Drupal 8.2.0 (05.10.2016): Возможность указывать индивидуальные префиксы таблиц помечена устаревшей.
+- [Drupal 8.7.0](releases/release-8.7.0.md) (01.05.2019): Добавлена настройка `entity_update_backup`.
+- [Drupal 8.8.0](releases/release-8.8.0.md) (04.12.2019): Добавлена настройка `system.path_alias_schema_check`.
+- [Drupal 8.8.0](releases/release-8.8.0.md) (04.12.2019): Переменная `$config_directories` помечена устаревшей.
+- [Drupal 8.9.0](releases/release-8.9.0.md) (03.06.2020): Добавлена настройка `migrate_node_migrate_type_classic`.
+
 ## Смотрите также
 
 - [settings.local.php](settings-local-php.md) — локальные настройки окружения.
