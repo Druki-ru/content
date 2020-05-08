@@ -5,7 +5,7 @@ search-keywords:
   - Установка при помощи композера
   - composer
 metatags:
-  description: 'Рекомендуемый способ установки Drupal 8 при помощи Composer.'
+  description: 'Composer шаблон с Drupal ядром, Drush и Drupal Console.'
 ---
 
 **Composer Drupal Project** — шаблон проекта предоставляет стартовый набор для управления зависимостями сайта при помощи [Composer](composer.md).

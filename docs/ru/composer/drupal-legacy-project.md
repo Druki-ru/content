@@ -5,7 +5,7 @@ search-keywords:
   - Установка при помощи композера
   - composer
 metatags:
-  description: 'Альтернативный способ установки Drupal 8 при помощи Composer.'
+  description: 'Альтернативный способ установки Drupal при помощи Composer.'
 ---
 
 **drupal/legacy-project** — данный шаблон создает новый сайт со структурой как она была в [Drupal 8.7.0](./release-8.7.0.md) и ранее. 

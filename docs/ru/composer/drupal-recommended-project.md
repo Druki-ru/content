@@ -5,7 +5,7 @@ search-keywords:
   - Установка при помощи композера
   - composer
 metatags:
-  description: 'Рекомендуемый способ установки Drupal 8 при помощи Composer.'
+  description: 'Composer шаблон с ядром Drupal.'
 ---
 
 **drupal/recommended-project** — рекомендуемый шаблон для создания новых сайтов на Drupal, при котором корень проекта находится на уровень выше.
