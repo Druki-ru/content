@@ -208,6 +208,7 @@ dependencies:
 
 - [#3127013](https://www.drupal.org/node/3127013) `wikimedia/composer-merge-plugin` удалён из зависимостей ядра.
 - [#3121885](https://www.drupal.org/node/3121885) `drupal/coder` обновлён до 8.3.8.
+- [#3122112](https://www.drupal.org/node/3122112) Обновлены зависимости ядра.
 
 ## Claro
 
@@ -236,6 +237,10 @@ dependencies:
 
 - [#3126617](https://www.drupal.org/node/3126617) Исправлена опечатка в теге для Help Topics. `<me>` заменён на `<em>`.
 
+## HAL
+
+- [#2907402](https://www.drupal.org/node/2907402) Нормализованные данные файловых полей теперь предоставляют информацию о файле.
+
 ## Views
 
 - [#3092185](https://www.drupal.org/node/3092185) Добавлен `rel="nofollow"` для заголовков сортировки таблиц.
@@ -254,6 +259,10 @@ dependencies:
 
 - [#3131388](https://www.drupal.org/node/3131388) Добавлен тест на страницу с листингом конфигураций. Исправлен DI приводящий к WSOD.
 
+## Field
+
+- [#2988309](https://www.drupal.org/node/2988309) При сравнении полей при помощи метода `::equals()` теперь не учитываются `NULL` значения.
+
 ## JSON:API
 
 - [#3115772](https://www.drupal.org/node/3115772) Вызовы `User::load` заменены на [Dependency Injection](../services/dependency-injection.md).
@@ -261,6 +270,10 @@ dependencies:
 ## Language
 
 - [#3130438](https://www.drupal.org/node/3130438) Сервис `page_cache_kill_switch` в `LanguageNegotiationBrowser` теперь добавляется через [Dependency Injection](../services/dependency-injection.md).
+
+## Layout Builder
+
+- [#3101891](https://www.drupal.org/node/3101891) `@Layout` плагины теперь могут предоставлять ширину колонок по умолчанию при помощи `default_width`.
 
 ## Locale
 
@@ -271,18 +284,31 @@ dependencies:
 - [#2746541](https://www.drupal.org/node/2746541) Добавлена новая миграция `d*_node_complete.yml`, которая именуется как "complete node migration". Данная миграция переносить все ноды, их ревизии, переводы и переводы ревизий.
 - [#2966856](https://www.drupal.org/node/2966856) Модуль `migrate_drupal_multilingual` удалён из зависимостей миграций и скрыт из интерфейса. Мультиязычные миграции теперь стабильны и данный модуль больше не требуется и будет удалён в Drupal 10.
 - [#3128069](https://www.drupal.org/node/3128069) Название модуля «Book» теперь пишется с заглавной буквы в `OverviewForm`.
+- [#3106304](https://www.drupal.org/node/3106304) Для миграции фильтров из Drupal 7 добавлен маппинг фильтров `editor_align` и `editor_caption`.
 
 ## Media Library
 
 - [#3127838](https://www.drupal.org/node/3127838) Кнопка "Сохранить и вставить" теперь не имеет дополнительного вложения в массиве.
 
+## Node
+
+- [#2946073](https://www.drupal.org/node/2946073) Node Grants проверки прав доступа теперь указывают кэш-зависимость для результата доступа.
+
 ## Plugin API
 
 - [#3115987](https://www.drupal.org/node/3115987) Свойство `$instanceIDs` переименовано в `$instanceIds`.
 
+## PHP
+
+- [#3135250](https://www.drupal.org/node/3135250) (Только для Drupal 8.9) Рекомендуемая версия PHP увеличена до 7.3. На момент выхода Drupal 8.9 PHP 7.2 уже будет неподдерживаемой версией.
+
 ## Seven
 
 - [#2980304](https://www.drupal.org/node/2980304) Внесены исправления в `<details>` и `<summary>` чтобы фокусировка работала во всех браузерах.
+
+## System
+
+- [#3133604](https://www.drupal.org/node/3133604) `ThemeExtensionList` теперь всегда содержит информацию о версии темы оформления. Если версия у темы не указана, будет использовано значение `NULL`.
 
 ## Help Topics
 
@@ -326,6 +352,9 @@ dependencies:
 - [#3131818](https://www.drupal.org/node/3131818) Использование `is_object()` в сравнениях заменено на нативные методы `::assertIsObject()`, `::assertIsObject()`.
 - [#3131819](https://www.drupal.org/node/3131819) Использование `is_resource()` в сравнениях заменено на нативный метод `::assertIsResource()`.
 - [#3108006](https://www.drupal.org/node/3108006) Использование `::assertInternalType` заменено на соответствующие методы: `::assertIsArray`, `::assertIsBool` и т.д.
+- [#3128746](https://www.drupal.org/node/3128746) Сравнения строк теперь используют более точные методы сравнения вместо `strpos()` и прочих решений.
+- [#3133103](https://www.drupal.org/node/3133103) (Только для Drupal 8.9) Исправлены ошибки сравнения в `InstallerCustomConfigDirectoryCreateTest`.
+- [#3131343](https://www.drupal.org/node/3131343) Использование `in_array()` в сравнениях заменено на нативные методы `::assertContains()`, `::assertNotContains()`.
 
 ## Производительность
 
@@ -350,6 +379,10 @@ dependencies:
 - [#3084078](https://www.drupal.org/node/3084078) `AdminNegotiator::determineActiveTheme()` теперь соответствует интерфейсу и явно возвращает `NULL`.
 - [#3118726](https://www.drupal.org/node/3118726) js.cookie обновлён до 3.0.
 - [#3107472](https://www.drupal.org/node/3107472) `DbDumpCommand` теперь использует `Drupal::VERSION` вместо захардкоженного значения.
+- [#3134318](https://www.drupal.org/node/3134318) Для PHPCS включено правило `Drupal.Classes.ClassFileName`.
+- [#3114122](https://www.drupal.org/node/3114122) `ExceptionLoggingSubscriber` теперь также записывает в логи причину HTTP 403.
+- [#3123211](https://www.drupal.org/node/3123211) В `MenuForm` использование `\Drupal::menuTree()` заменено на использование свойства `$menuTree`.
+- [#3134676](https://www.drupal.org/node/3134676) В файле `CHANGELOG.txt` упоминание Drupal теперь производится без мажорной версии.
 
 ## Смотрите также
 
