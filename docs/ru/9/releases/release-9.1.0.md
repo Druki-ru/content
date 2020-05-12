@@ -71,7 +71,7 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 ## Устаревший API
 
-- [#2278971](https://www.drupal.org/node/2278971) `Connection::supportsTransactions` помечен устаревшим. Таким образом настройка подключения к БД `transactions` также становится устаревшей.
+- [#2278971](https://www.drupal.org/node/2278971) `Connection::supportsTransactions` помечен устаревшим. Таким образом [настройка](../settings-php.md) подключения к БД `transactions` также становится устаревшей.
 
 ## Прочие изменения
 
