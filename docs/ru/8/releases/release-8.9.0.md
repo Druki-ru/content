@@ -319,7 +319,6 @@ dependencies:
 - [#3128814](https://www.drupal.org/node/3128814) Использование `:assert*` методов для сравнения количества заменено на штатный `::assertCount`.
 - [#3131223](https://www.drupal.org/node/3131223) Использование `array_key_exists()` в сравнениях заменено на нативные методы `::assertArrayHasKey()`, `::assertArrayNotHasKey()`.
 - [#3129074](https://www.drupal.org/node/3129074) Произведен рефактор сравнений, результаты которых используются в условиях.
-- [#3126787](https://www.drupal.org/node/3126787) (только Drupal 8) Добавлены методы проверки типов для обратной с PHPUnit 6 и 7 через `::assertInternalType()`.
 - [#3131258](https://www.drupal.org/node/3131258) Удалена передача аргумента `$message` для методов `::assertFileExists()`, `::assertFileNotExists()`, `::assertDirectoryExists()`, `::assertDirectoryNotExists()`.
 - [#3131821](https://www.drupal.org/node/3131821) Использование `is_callable()` в сравнениях заменено на нативные методы `::assertIsCallable()`, `::assertIsNotCallable()`.
 - [#3131821](https://www.drupal.org/node/3131821) Использование `is_numeric()` в сравнениях заменено на нативные методы `::assertIsNumeric()`, `::assertIsNotNumeric()`.

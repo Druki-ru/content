@@ -21,6 +21,14 @@ metatags:
 
 - [#3070745](https://www.drupal.org/node/3070745) `localStorage` теперь хранит только последние версии стилей, для избежания проблем лимита хранения данного хранилища.
 
+## Field
+
+- [#3113124](https://www.drupal.org/node/3113124) Исправлена ошибка в примере `hook_field_info_alter()`.
+
+## JSON:API
+
+- [#3126906](https://www.drupal.org/node/3126906) Исправлена ошибка в коде из-за которой файл `MenuLinkContentTest` распознавался как бинарный файл.
+
 ## Media Library
 
 - [#3099528](https://www.drupal.org/node/3099528) Удалён дублирующий параграф в справке по модулю.
@@ -29,13 +37,25 @@ metatags:
 
 - [#3125763](https://www.drupal.org/node/3125763) Модуль `migrate_no_migrate_drupal_test` теперь имеет зависимость на `drupal:node`.
 
+## Place Block
+
+- [#3116399](https://www.drupal.org/node/3116399) (Только для Drupal 8) Модуль больше не будет вызывать ошибку что он устарел.
+
 ## Statistics
 
 - [#3128761](https://www.drupal.org/node/3128761) Из запроса удалено дублирование плейсхолдера `:timestamp`.
 
+## Taxonomy
+
+- [#3101635](https://www.drupal.org/node/3101635) Исправлены опечатки в комментариях `taxonomy.es6.js` где было упоминание блоков вместо таксономии.
+
 ## Views
 
 - [#2989745](https://www.drupal.org/node/2989745) Обновление конфигураций обновления `views_update_8500()` перенесены на процесс сохранения конфигурации для сохранения BC.
+
+## Views UI
+
+- [#3087465](https://www.drupal.org/node/3087465) Документация для хука `hook_views_ui_display_top_links_alter()` перенесена в `views_ui.api.php`.
 
 ## User
 
@@ -56,6 +76,12 @@ metatags:
 - [#2978398](https://www.drupal.org/node/2978398) `UserPasswordResetTest` больше не расширяет `PageCacheTagsTestBase`.
 - [#3131474](https://www.drupal.org/node/3131474) Сравнения, использующие `array_search()` заменены на `::assertContains()`, `::assertNotContains()`.
 - [#3123253](https://www.drupal.org/node/3123253) Удалено использование `AssertLegacyTrait::pass()`.
+- [#3126787](https://www.drupal.org/node/3126787) (только Drupal 8) Добавлены методы проверки типов для обратной с PHPUnit 6 и 7 через `::assertInternalType()`.
+- [#3082602](https://www.drupal.org/node/3082602) Из `disable_transitions.theme.css` удалено правило отключения `tranform`.
+- [#3121020](https://www.drupal.org/node/3121020) Фикстуры модуля `update_test` перенесены из корня модуля в `fixtures/release-history`.
+- [#3134475](https://www.drupal.org/node/3134475) В тесте `CommentIntegrationTest` сравнение строки с blob значением теперь производится после запроса, а не внутри него.
+- [#3126333](https://www.drupal.org/node/3126333) Использование параметра `$canonicalize` для `::assertEquals` заменено на `::assertEqualsCanonicalizing`.
+- [#3134333](https://www.drupal.org/node/3134333) `SearchSimplifyTest` и `SearchTokenizerTest` теперь расширяют `KernelTest`.
 
 ## Прочие изменения
 
@@ -73,3 +99,4 @@ metatags:
 - [#3074064](https://www.drupal.org/node/3074064) Исправлен референс в `LoggerChannelFactoryInterface::addLogger()` на существующий.
 - [#3063694](https://www.drupal.org/node/3063694) В документацию к классу `Url` добавлены примеры использования.
 - [#3094067](https://www.drupal.org/node/3094067) Обновлены и добавлены отсутствующие `@param` и `@return` документации для `TypedDataInterface`.
+- [#3110620](https://www.drupal.org/node/3110620) Исправлена документация `ModuleHandler::invokeAll()`.
