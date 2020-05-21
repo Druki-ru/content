@@ -1,14 +1,14 @@
 ---
-id: release-8.8.6
-title: 'Drupal 8.8.6'
-path: /8/releases/8.8.6
+id: release-8.7.14
+title: 'Drupal 8.7.14'
+path: /8/releases/8.7.14
 core: 8
 metatags:
-  title: 'Drupal 8.8.6: Список изменений'
+  title: 'Drupal 8.7.14: Список изменений'
   description: 'Обновление безопасности: SA-CORE-2020-002.'
 ---
 
-**Дата релиза**: 20 мая 2020
+**Дата релиза**: 20 мая 2020 г.
 
 Этот выпуск исправляет уязвимости безопасности. Настоятельно рекомендуется обновить сайты сразу после прочтения примечаний ниже и объявления о безопасности.
 
@@ -18,4 +18,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 8.8.6](https://www.drupal.org/project/drupal/releases/8.8.6) (англ.), drupal.org, 20 мая 2020
+- [Drupal 8.7.14](https://www.drupal.org/project/drupal/releases/8.7.14) (англ.), drupal.org, 20 мая 2020
