@@ -17,6 +17,14 @@ metatags:
 
 - [#3124281](https://www.drupal.org/node/3124281) Исправлены грамматически ошибки в документации `BasicAuth`.
 
+## Comment
+
+- [#3137713](https://www.drupal.org/node/3137713) (только для Drupal 8) Уведомления об устаревшем коде обновлены для конструктора `NodeNewComments`.
+
+## Composer
+
+- [#3078671](https://www.drupal.org/node/3078671) Зависимости Drupal `behat/mink` и `behat/mink-selenium2-driver` обновлены до стабильных релизов.
+
 ## CKEditor
 
 - [#3070745](https://www.drupal.org/node/3070745) `localStorage` теперь хранит только последние версии стилей, для избежания проблем лимита хранения данного хранилища.
@@ -82,6 +90,9 @@ metatags:
 - [#3134475](https://www.drupal.org/node/3134475) В тесте `CommentIntegrationTest` сравнение строки с blob значением теперь производится после запроса, а не внутри него.
 - [#3126333](https://www.drupal.org/node/3126333) Использование параметра `$canonicalize` для `::assertEquals` заменено на `::assertEqualsCanonicalizing`.
 - [#3134333](https://www.drupal.org/node/3134333) `SearchSimplifyTest` и `SearchTokenizerTest` теперь расширяют `KernelTest`.
+- [#3135747](https://www.drupal.org/node/3135747) Исправлены проблемы в коде для обратной совместимости `::assertStringContainsString()`.
+- [#3123933](https://www.drupal.org/node/3123933) `ComposerProjectTemplatesTest` больше не будет загружать пакеты из интернета.
+- [#3135390](https://www.drupal.org/node/3135390) Использование `is_writable()` и `is_readable()` заменены на соответствующие стандартные методы `::assertDirectoryNotIsWritable()` и `::assertFileIsReadable()`.
 
 ## Прочие изменения
 
@@ -100,3 +111,9 @@ metatags:
 - [#3063694](https://www.drupal.org/node/3063694) В документацию к классу `Url` добавлены примеры использования.
 - [#3094067](https://www.drupal.org/node/3094067) Обновлены и добавлены отсутствующие `@param` и `@return` документации для `TypedDataInterface`.
 - [#3110620](https://www.drupal.org/node/3110620) Исправлена документация `ModuleHandler::invokeAll()`.
+- [#3134472](https://www.drupal.org/node/3134472) (Только Drupal 8.8) Убрана лишняя новая строка приводящая к ошибке при проверке на стандарты.
+- [#3119733](https://www.drupal.org/node/3119733) Обновлён COPYRIGHT.txt.
+- [#3137268](https://www.drupal.org/node/3137268) benjifisher добавлен в список меинтейнеров подсистемы Migrate.
+- [#3136668](https://www.drupal.org/node/3136668) Теперь, сломанные и отсутствующие значения о модулях и обновлениях, которых больше нет, не будут приводить к фатальным ошибкам, а будут просто напоминать об этом, и пропускать обработку.
+- [#3136302](https://www.drupal.org/node/3136302) Информация из UPDATE.txt заменена на актуальные ссылки по данным темам с drupal.org.
+- [#3138731](https://www.drupal.org/node/3138731) Исправлены опечатки `inheritdoc` в ядре.
