@@ -223,6 +223,7 @@ dependencies:
 - [#3126940](https://www.drupal.org/node/3126940) Теперь в URI до БД нет необходимости указывать опциональный параметр `module`.
 - [#2956556](https://www.drupal.org/node/2956556) `StatementPrefetch` теперь передает также `$class_name` в `fetchOptions`.
 - [#3125391](https://www.drupal.org/node/3125391) В возвращаемые типы данных методом `Connection::query()` добавлено строковое значение, а также описание, когда оно может таким стать.
+- [#3131379](https://www.drupal.org/node/3131379) `CONCAT_WS()` больше не используется, когда в фильтре всего 1 аргумент.
 
 ## Extension API
 
@@ -250,6 +251,8 @@ dependencies:
 - [#3090416](https://www.drupal.org/node/3090416) Представлен Composer плагин Core Project Message.
 - [#3103090](https://www.drupal.org/node/3103090) [drupal/core-composer-scaffold](../../composer/drupal-core-composer-scaffold.md) теперь не заменяет файлы которые не изменились, а также не выводит сообщение о файлах которые не были изменены. Это сократит выводимое сообщение данным пакетом в композере.
 - [#3126566](https://www.drupal.org/node/3126566) Плагины, предоставляемые Drupal, теперь совместимы с Composer 2.
+- [#3134731](https://www.drupal.org/node/3134731) `drupal/coder` обновлён до версии 8.3.9.
+- [#3134606](https://www.drupal.org/node/3134606) Исправлена неполадка приводящая к фатальной ошибке при обновлении с 8.9.x до 9.0.x.
 
 ## Color
 
@@ -259,9 +262,17 @@ dependencies:
 
 - [#3131388](https://www.drupal.org/node/3131388) Добавлен тест на страницу с листингом конфигураций. Исправлен DI приводящий к WSOD.
 
+## Database
+
+- [#3135629](https://www.drupal.org/node/3135629) Минимальная версия MySQL теперь также будет проверяться в процессе обновлений и на странице о статусе сайта.
+
 ## Field
 
 - [#2988309](https://www.drupal.org/node/2988309) При сравнении полей при помощи метода `::equals()` теперь не учитываются `NULL` значения.
+
+## JavaScript
+
+- [#3136604](https://www.drupal.org/node/3136604) jQuery обновлён до 3.5.1.
 
 ## JSON:API
 
@@ -285,6 +296,8 @@ dependencies:
 - [#2966856](https://www.drupal.org/node/2966856) Модуль `migrate_drupal_multilingual` удалён из зависимостей миграций и скрыт из интерфейса. Мультиязычные миграции теперь стабильны и данный модуль больше не требуется и будет удалён в Drupal 10.
 - [#3128069](https://www.drupal.org/node/3128069) Название модуля «Book» теперь пишется с заглавной буквы в `OverviewForm`.
 - [#3106304](https://www.drupal.org/node/3106304) Для миграции фильтров из Drupal 7 добавлен маппинг фильтров `editor_align` и `editor_caption`.
+- [#3133305](https://www.drupal.org/node/3133305) В качестве версии назначения миграции теперь пишется актуальная версия системы сайта вместо мажорной версии.
+- [#3110669](https://www.drupal.org/node/3110669) Добавлены миграции для миграции язковых настроек меню из Drupal 7.
 
 ## Media Library
 
@@ -355,6 +368,9 @@ dependencies:
 - [#3128746](https://www.drupal.org/node/3128746) Сравнения строк теперь используют более точные методы сравнения вместо `strpos()` и прочих решений.
 - [#3133103](https://www.drupal.org/node/3133103) (Только для Drupal 8.9) Исправлены ошибки сравнения в `InstallerCustomConfigDirectoryCreateTest`.
 - [#3131343](https://www.drupal.org/node/3131343) Использование `in_array()` в сравнениях заменено на нативные методы `::assertContains()`, `::assertNotContains()`.
+- [#3137455](https://www.drupal.org/node/3137455) Изменены ссылки на ишьюсы в `@trigger_error` `AssertLegacyTrait`.
+- [#3113077](https://www.drupal.org/node/3113077) Использование `::assertContains` заменено на новые методы: `::assertStringContainsString` и `::assertStringContainsStringIgnoringCase`.
+- [#3126965](https://www.drupal.org/node/3126965) Использвоание `count()` в сравнении заменено на нативный метод `::assertCount()`.
 
 ## Производительность
 
@@ -383,6 +399,10 @@ dependencies:
 - [#3114122](https://www.drupal.org/node/3114122) `ExceptionLoggingSubscriber` теперь также записывает в логи причину HTTP 403.
 - [#3123211](https://www.drupal.org/node/3123211) В `MenuForm` использование `\Drupal::menuTree()` заменено на использование свойства `$menuTree`.
 - [#3134676](https://www.drupal.org/node/3134676) В файле `CHANGELOG.txt` упоминание Drupal теперь производится без мажорной версии.
+- [#3120731](https://www.drupal.org/node/3120731) Исправлена неполадка, из-за которой выводилось сообщение «Drupal уже установлен» при некорректных настройках подключения БД.
+- [#2055851](https://www.drupal.org/node/2055851) Сообщения об ошибках в исключениях теперь не переводимы.
+- [#2830326](https://www.drupal.org/node/2830326) Ссылка «Перевести сайт в режим обслуживания» на странице update.php теперь генерируется относительно адреса сайта.
+- [#3135310](https://www.drupal.org/node/3135310) Удалён параметр `$install_state['database_ready']` так как нигде не используется и всегда `FALSE`.
 
 ## Смотрите также
 

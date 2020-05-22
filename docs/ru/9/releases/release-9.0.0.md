@@ -96,7 +96,6 @@ Classy продолжит расширять Stable от Drupal 8. Будуще�
 - [#3133442](https://www.drupal.org/node/3133442) Обновлены зависимости ядра.
 - [#3032686](https://www.drupal.org/node/3032686) Неиспользуемые в Drupal 9 зависимости удалены: `jcalderonzumba/gastonjs`, `jcalderonzumba/mink-phantomjs-driver`, `paragonie/random_compat`, `phpunit/phpunit-mock-objects`, `brumann/polyfill-unserialize`, `doctrine/cache`, `doctrine/collections`, `doctrine/common`, `doctrine/inflector`, `paragonie/random_compat`, `phpunit/phpunit-mock-objects`.
 - [#3134648](https://www.drupal.org/node/3134648) `drupal/core-recommended` больше не запрашивает `composer/installers`.
-- [#3134606](https://www.drupal.org/node/3134606) Исправлена неполадка приводящая к фатальной ошибке при обновлении с 8.9.x до 9.0.x.
 
 ## Contact
 
@@ -133,10 +132,6 @@ Classy продолжит расширять Stable от Drupal 8. Будуще�
 - [#3137414](https://www.drupal.org/node/3137414) Логотип на странице статуса сайта заменён на новый для Drupal 9.
 - [#3138671](https://www.drupal.org/node/3138671) Исправлены опечатки в слове «incompatitable».
 
-## Migrate
-
-- [#3133305](https://www.drupal.org/node/3133305) В качестве версии назначения миграции теперь пишется актуальная версия системы сайта вместо мажорной версии.
-
 ## Twig
 
 - [#3117250](https://www.drupal.org/node/3117250) `StringLoader` и `TestLoader` обновлены для поддержки Twig 3.
@@ -156,7 +151,6 @@ Classy продолжит расширять Stable от Drupal 8. Будуще�
 - [#3114041](https://www.drupal.org/node/3114041) `::setUp` доработан для корректной работы с PHPUnit 8.
 - [#3119910](https://www.drupal.org/node/3119910) В `EntityQueryTest` использование кавычек заменено на квадратные скобки.
 - [#3122961](https://www.drupal.org/node/3122961) PHPUnit 8 ругается на расширение конструктора, поэтому тесты теперь не расширяют конструктор.
-- [#3113077](https://www.drupal.org/node/3113077) Использование `::assertContains` заменено на новые методы: `::assertStringContainsString` и `::assertStringContainsStringIgnoringCase`.
 - [#3126792](https://www.drupal.org/node/3126792) Использование `::assertAttributeSame` прекращено, так как он устарел. Вместо него используется `::assertSame`.
 - [#3126569](https://www.drupal.org/node/3126569) Использование `::assertAttributeEmpty` прекращено, так как он устарел. Вместо него используется `::assertNull`.
 - [#3126848](https://www.drupal.org/node/3126848) Использование параметра `$ignoreCase` для `::assertContains` прекращено.
@@ -179,7 +173,8 @@ Classy продолжит расширять Stable от Drupal 8. Будуще�
 - [#3112641](https://www.drupal.org/node/3112641) Удалена старая отсылка на `datetime_range_view_presave()` в `EntityTypeWithoutViewsDataTest::testEntityTypeWithoutViewsData()`.
 - [#3117421](https://www.drupal.org/node/3117421) Drupal CI больше не будет запускать SimpleTest тесты.
 - [#3131817](https://www.drupal.org/node/3131817) Использование `is_numberic()` заменено на нативные методы `::assertIsNumeric()`, `::assertIsNotNumeric()`.
-- [#3126965](https://www.drupal.org/node/3126965) Использвоание `count()` в сравнении заменено на нативный метод `::assertCount()`.
+- [#3135308](https://www.drupal.org/node/3135308) Исправлено использование устаревшего `Symfony\Component\BrowserKit\Response::getStatus()` на `getStatusCode()`.
+- [#3135302](https://www.drupal.org/node/3135302) Удалёны старые тесты для Symfony 3: `ReverseProxyMiddlewareTest::testReverseProxyEnabledLegacy()`, `ReverseProxyMiddlewareTest::reverseProxyEnabledProviderLegacy()`.
 
 ## Прочие изменения
 
