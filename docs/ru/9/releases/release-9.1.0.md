@@ -56,6 +56,14 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 - [#3033986](https://www.drupal.org/node/3033986) Удалено перезаписывание `$limit` в некоторых классах расширяющих `EntityListBuilder`. Оно было без значения.
 
+## Migrate
+
+- [#3024682](https://www.drupal.org/node/3024682) На странице со списком миграций теперь показываются человекопонятные названия, вместо машинных.
+
+## Seven
+
+- [#3054196](https://www.drupal.org/node/3054196) Исправлена проблема с белым фоном у кнопки в таблице.
+
 ## Taxonomy
 
 - [#3122511](https://www.drupal.org/node/3122511) На странице редактирования добавлен пункт удаления во вкладки.
@@ -68,6 +76,8 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 - [#3131820](https://www.drupal.org/node/3131820) Использование `is_string()` заменено на нативные методы `::assertIsString()`, `::assertIsNotString()`.
 - [#3130341](https://www.drupal.org/node/3130341) Удалён `UpdateKernel::fixSerializedExtensionObjects()`.
+- [#3114617](https://www.drupal.org/node/3114617) Методы `Drupal\FunctionalTests\AssertLegacyTrait` и `Drupal\KernelTests\AssertLegacyTrait` помечены устаревшими.
+- [#3138652](https://www.drupal.org/node/3138652) Удалён тест `StableDecoupledTest`.
 
 ## Устаревший API
 
@@ -81,3 +91,4 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#2778917](https://www.drupal.org/node/2778917) Вместо тернарного оператора при вызове `\Drupal::state()->get()` теперь используется второй параметр.
 - [#3021788](https://www.drupal.org/node/3021788) Функции `template_preprocess_menu_local_task()` и `template_preprocess_menu_local_action()` перенесены в `core/includes/theme.inc`.
 - [#3112328](https://www.drupal.org/node/3112328) Классы расширяющие `FormatterBase` больше не реализуют `ContainerFactoryPluginInterface`, так как это объявлено в `FormatterBase`.
+- [#3033734](https://www.drupal.org/node/3033734) На странице списка модулей исправлен горозонтальный скрол при больших описаниях.
