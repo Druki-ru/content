@@ -122,9 +122,17 @@ Classy продолжит расширять Stable от Drupal 8. Будуще�
 
 - [#3107918](https://www.drupal.org/node/3107918) Прекращена поддержка Node.js 8, Drupal теперь запрашивает Node.js 12.
 
+## Libraries
+
+- [#2716115](https://www.drupal.org/project/drupal/issues/2716115) Добавлена поддержка `attributes` для CSS библиотек.
+
 ## Migrate
 
 - [#3134459](https://www.drupal.org/node/3134459) Из кода удалены метки `@group legacy`.
+
+## Menu
+
+- [#3025394](https://www.drupal.org/project/drupal/issues/3025394) `MenuActiveTrail` теперь хранит Cache ID для избежания некорректного кэширования для 403 ответов.
 
 ## System
 
@@ -174,6 +182,10 @@ Classy продолжит расширять Stable от Drupal 8. Будуще�
 - [#3131817](https://www.drupal.org/node/3131817) Использование `is_numberic()` заменено на нативные методы `::assertIsNumeric()`, `::assertIsNotNumeric()`.
 - [#3135308](https://www.drupal.org/node/3135308) Исправлено использование устаревшего `Symfony\Component\BrowserKit\Response::getStatus()` на `getStatusCode()`.
 - [#3135302](https://www.drupal.org/node/3135302) Удалёны старые тесты для Symfony 3: `ReverseProxyMiddlewareTest::testReverseProxyEnabledLegacy()`, `ReverseProxyMiddlewareTest::reverseProxyEnabledProviderLegacy()`.
+- [#3136389](https://www.drupal.org/project/drupal/issues/3136389) Тестам что не вызывают устаревший код, удалена группа `@group legacy`.
+- [#3143235](https://www.drupal.org/project/drupal/issues/3143235) Использование `::expectExceptionMessageRegExp()` заменено на `::expectExceptionMessageMatches()`.
+- [#3139402](https://www.drupal.org/project/drupal/issues/3139402) Использование `::assertIdenticalObject()` заменено на `$this->assertEquals()`.
+- [#3139421](https://www.drupal.org/project/drupal/issues/3139421) Использование `::assertOption()` и `::assertNoOption()` заменены на `$this->assertSession()->optionExists()`.
 
 ## Прочие изменения
 
@@ -220,3 +232,4 @@ Classy продолжит расширять Stable от Drupal 8. Будуще�
 - [#3123537](https://www.drupal.org/node/3123537) Страница о статусе сайта не будет показывать WSOD если оно нашло расширение без `core_version_requirement`, вместо этого будет показано сообщение о проблеме.
 - [#2821499](https://www.drupal.org/node/2821499) Включена проверка `DrupalPractice.InfoFiles.NamespacedDependency`. Расширения должны указывать свои зависимости в формате `{project}:{module}`.
 - [#2937513](https://www.drupal.org/node/2937513) Исправлены несоответствия стандарту кодирования `Drupal.Commenting.DocComment.TagGroupSpacing` в ядре.
+- [#3138721](https://www.drupal.org/project/drupal/issues/3138721) Исправлены опечатки в слове «neccessary».
