@@ -203,6 +203,7 @@ dependencies:
 ## Book
 
 - [#3010378](https://www.drupal.org/node/3010378) `BookManager::buildItems` теперь не загружает сущности для генерации ссылки, а генерирует роут на основе ID. Это значительно повышает производительность на материалах с большим количество «подшивок».
+- [#3047806](https://www.drupal.org/project/drupal/issues/3047806) Справка из `hook_help()` конвертирована в Help Topic.
 
 ## Composer
 
@@ -253,6 +254,8 @@ dependencies:
 - [#3126566](https://www.drupal.org/node/3126566) Плагины, предоставляемые Drupal, теперь совместимы с Composer 2.
 - [#3134731](https://www.drupal.org/node/3134731) `drupal/coder` обновлён до версии 8.3.9.
 - [#3134606](https://www.drupal.org/node/3134606) Исправлена неполадка приводящая к фатальной ошибке при обновлении с 8.9.x до 9.0.x.
+- [#3101210](https://www.drupal.org/project/drupal/issues/3101210) Удалён `"overwrite": true` в extra разделе по умолчанию.
+- [#3101214](https://www.drupal.org/project/drupal/issues/3101214) В документации для Drupal Scaffold плагина слегка измёнен пример.
 
 ## Color
 
@@ -262,13 +265,31 @@ dependencies:
 
 - [#3131388](https://www.drupal.org/node/3131388) Добавлен тест на страницу с листингом конфигураций. Исправлен DI приводящий к WSOD.
 
+## Contextual
+
+- [#2891603](https://www.drupal.org/project/drupal/issues/2891603) Улучшена работа с одинаковыми контекстуальными параметрами.
+
+## Claro
+
+- [#3097651](https://www.drupal.org/project/drupal/issues/3097651) Улучшено оформление вспомогательных вкладок.
+
 ## Database
 
 - [#3135629](https://www.drupal.org/node/3135629) Минимальная версия MySQL теперь также будет проверяться в процессе обновлений и на странице о статусе сайта.
+- [#3133798](https://www.drupal.org/project/drupal/issues/3133798) Точка с запятой из запросов будет удаляться из запроса, если они не разрешен в `allow_delimiter_in_query`.
+- [#2983452](https://www.drupal.org/node/2983452) SQLite теперь может использоваться в памяти при помощи URL: `sqlite://localhost/:memory:`.
+
+## Entity
+
+- [#2766135](https://www.drupal.org/project/drupal/issues/2766135) Исправлена неполадка в `EntityQuery`, при которой условие на поле ревизии приводило к некорректным результатам.
 
 ## Field
 
 - [#2988309](https://www.drupal.org/node/2988309) При сравнении полей при помощи метода `::equals()` теперь не учитываются `NULL` значения.
+
+## Form
+
+- [#1831560](https://www.drupal.org/project/drupal/issues/1831560) Удалён вызов `Html::resetSeenIds()` в процессе обработки формы.
 
 ## JavaScript
 
@@ -298,6 +319,13 @@ dependencies:
 - [#3106304](https://www.drupal.org/node/3106304) Для миграции фильтров из Drupal 7 добавлен маппинг фильтров `editor_align` и `editor_caption`.
 - [#3133305](https://www.drupal.org/node/3133305) В качестве версии назначения миграции теперь пишется актуальная версия системы сайта вместо мажорной версии.
 - [#3110669](https://www.drupal.org/node/3110669) Добавлены миграции для миграции язковых настроек меню из Drupal 7.
+- [#3076447](https://www.drupal.org/project/drupal/issues/3076447) Добавлены миграции переводов для ревизий из Drupal 7.
+- [#2969231](https://www.drupal.org/project/drupal/issues/2969231) Улучшены сообщения об ошибках в конфигурациях миграций.
+- [#3123095](https://www.drupal.org/project/drupal/issues/3123095) Исправлены ошибки при откате успешных миграций нод.
+
+## Media
+
+- [#3071682](https://www.drupal.org/project/drupal/issues/3071682) oEmbed ресурсы должны возвращать либо число больше нуля, либо `NULL` для высоты и ширины.
 
 ## Media Library
 
@@ -339,6 +367,8 @@ dependencies:
 - [#2997748](https://www.drupal.org/node/2997748) Джоины теперь могут использовать `left_formula` вместо `left_field` для того чтобы применять SQL выражения для левой части джоина.
 - [#3103010](https://www.drupal.org/node/3103010) В интерфейсе представлений улучшены пояснения для машинного имени.
 - [#3119279](https://www.drupal.org/node/3119279) В шаблоне `views-view-table.html.twig` сводка в `<details>` теперь подготавливается в препроцессе при помощи рендер массива. Это также подключит полифил для браузеров, в которых нет нативной поддержки данного элемента.
+- [#2974640](https://www.drupal.org/project/drupal/issues/2974640) Кнопка «Отправка» больше не имеет вес 10.
+- [#2710407](https://www.drupal.org/project/drupal/issues/2710407) Исправлена ошибка в формировании запроса по названию термина из URL.
 
 ## Тестирование
 
@@ -370,7 +400,10 @@ dependencies:
 - [#3131343](https://www.drupal.org/node/3131343) Использование `in_array()` в сравнениях заменено на нативные методы `::assertContains()`, `::assertNotContains()`.
 - [#3137455](https://www.drupal.org/node/3137455) Изменены ссылки на ишьюсы в `@trigger_error` `AssertLegacyTrait`.
 - [#3113077](https://www.drupal.org/node/3113077) Использование `::assertContains` заменено на новые методы: `::assertStringContainsString` и `::assertStringContainsStringIgnoringCase`.
-- [#3126965](https://www.drupal.org/node/3126965) Использвоание `count()` в сравнении заменено на нативный метод `::assertCount()`.
+- [#3126965](https://www.drupal.org/node/3126965) Использование `count()` в сравнении заменено на нативный метод `::assertCount()`.
+- [#3132964](https://www.drupal.org/project/drupal/issues/3132964) Удалена передача параметра `$message` в `::assertResponse()`, так как он его не поддерживает.
+- [#3128880](https://www.drupal.org/project/drupal/issues/3128880) `ConnectionUnitTest` теперь также запускается для PostgreSQL.
+- [#3139218](https://www.drupal.org/project/drupal/issues/3139218) Использование `::assertResponse()` заменено на `$this->assertSession()->statusCodeEquals()`.
 
 ## Производительность
 
@@ -403,6 +436,19 @@ dependencies:
 - [#2055851](https://www.drupal.org/node/2055851) Сообщения об ошибках в исключениях теперь не переводимы.
 - [#2830326](https://www.drupal.org/node/2830326) Ссылка «Перевести сайт в режим обслуживания» на странице update.php теперь генерируется относительно адреса сайта.
 - [#3135310](https://www.drupal.org/node/3135310) Удалён параметр `$install_state['database_ready']` так как нигде не используется и всегда `FALSE`.
+- [#3044059](https://www.drupal.org/project/drupal/issues/3044059) Справки модулей big_pipe, dynamic_page_cache и page_cache конвертированы в Help Topic.
+- [#3055055](https://www.drupal.org/project/drupal/issues/3055055) Справки модулей breakpoint, color, layout_builder и layout_discovery перенесены в Help Topic.
+- [#3138772](https://www.drupal.org/project/drupal/issues/3138772) Исправлены опечатки в слове «Disable».
+- [#3138783](https://www.drupal.org/project/drupal/issues/3138783) Исправлены опечатки в слове «Partially».
+- [#3138778](https://www.drupal.org/project/drupal/issues/3138778) Исправлены опечатки в слове «Nourriture».
+- [#3138789](https://www.drupal.org/project/drupal/issues/3138789) Исправлены опечатки в слове «blockquote».
+- [#3138718](https://www.drupal.org/project/drupal/issues/3138718) Британские слова заменены на их американские аналоги, так как Drupal использует American English в качестве стандарта для написания кода и комментариев.
+- [#2937552](https://www.drupal.org/project/drupal/issues/2937552) Включена проверка `Drupal.Commenting.DocComment.TagsNotGrouped` для ядра.
+- [#3123068](https://www.drupal.org/project/drupal/issues/3123068) Включена проверка `Drupal.Semantics.FunctionT.ConcatString` для ядра и исправлены ошибки.
+- [#2901745](https://www.drupal.org/project/drupal/issues/2901745) Включена проверка `PSR2.Namespaces.UseDeclaration.UseAfterNamespace` для ядра.
+- [#3143085](https://www.drupal.org/project/drupal/issues/3143085) Добавлено свойство `$aliases` для `OptimizedPhpArrayDumper`.
+- [#3138774](https://www.drupal.org/project/drupal/issues/3138774) Исправлены опечатки в слове «DoesNot».
+- [#3123065](https://www.drupal.org/project/drupal/issues/3123065) Включена проверка `Drupal.NamingConventions.ValidClassName` для ядра и исправлены ошибки.
 
 ## Смотрите также
 
