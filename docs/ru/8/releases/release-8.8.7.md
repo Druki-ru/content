@@ -24,6 +24,7 @@ metatags:
 ## Composer
 
 - [#3078671](https://www.drupal.org/node/3078671) Зависимости Drupal `behat/mink` и `behat/mink-selenium2-driver` обновлены до стабильных релизов.
+- [#3143722](https://www.drupal.org/project/drupal/issues/3143722) `symfony/http-foundation` обновлён до 3.4.35 (обновление безопасности).
 
 ## CKEditor
 
@@ -74,6 +75,7 @@ metatags:
 - [#2992631](https://www.drupal.org/node/2992631) Информация об обновлении больше не будет рекомендовать новую минорную версию при наличии обновления безопасности для текущей минорной.
 - [#3120961](https://www.drupal.org/node/3120961) Из модулей для тестирования удалены `version: VERSION`, так как версии подставляются динамически во время тестирования.
 - [#3111463](https://www.drupal.org/node/3111463) Улучшена документация кода для `Drupal\update\ProjectSecurityData`.
+- [#3002820](https://www.drupal.org/project/drupal/issues/3002820) Добавлена проверка что данные являются массивом в `template_preprocess_update_report()`.
 
 ## Тестирование
 
@@ -93,6 +95,9 @@ metatags:
 - [#3135747](https://www.drupal.org/node/3135747) Исправлены проблемы в коде для обратной совместимости `::assertStringContainsString()`.
 - [#3123933](https://www.drupal.org/node/3123933) `ComposerProjectTemplatesTest` больше не будет загружать пакеты из интернета.
 - [#3135390](https://www.drupal.org/node/3135390) Использование `is_writable()` и `is_readable()` заменены на соответствующие стандартные методы `::assertDirectoryNotIsWritable()` и `::assertFileIsReadable()`.
+- [#3139403](https://www.drupal.org/project/drupal/issues/3139403) Использование `::assertElementPresent()` и `::asertElementNotPresent()` заменены на `$this->assertSession()->elementExists()`.
+- [#3139439](https://www.drupal.org/project/drupal/issues/3139439) Использование `::assertHeader()` заменено на `$this->assertSession()->responseHeaderEquals()`.
+- [#3143339](https://www.drupal.org/project/drupal/issues/3143339) Аргументы для `WebAssert::titleEquals()` и `AssertLegacyTrait::assertTitle()` приведены к единому стилю.
 
 ## Прочие изменения
 
@@ -117,3 +122,18 @@ metatags:
 - [#3136668](https://www.drupal.org/node/3136668) Теперь, сломанные и отсутствующие значения о модулях и обновлениях, которых больше нет, не будут приводить к фатальным ошибкам, а будут просто напоминать об этом, и пропускать обработку.
 - [#3136302](https://www.drupal.org/node/3136302) Информация из UPDATE.txt заменена на актуальные ссылки по данным темам с drupal.org.
 - [#3138731](https://www.drupal.org/node/3138731) Исправлены опечатки `inheritdoc` в ядре.
+- [#3100712](https://www.drupal.org/project/drupal/issues/3100712) Добавлены дополнительные проверки на наличие обязательных значений для конфигураций при импорте.
+- [#3110200](https://www.drupal.org/project/drupal/issues/3110200) Из документации убраны упоминания функции `filter_process_format()`, которой больше не существует.
+- [#3134308](https://www.drupal.org/project/drupal/issues/3134308) В комментария к коду «is was» заменён на «is».
+- [#3143115](https://www.drupal.org/project/drupal/issues/3143115) Улучшено форматирование README.txt.
+- [#3138591](https://www.drupal.org/project/drupal/issues/3138591) (Только Drupal 8) Добавлены отсутствующие `E_USER_DEPRECATED` уведомления.
+- [#3138775](https://www.drupal.org/project/drupal/issues/3138775) Исправлены опечатки в слове «Monoceros».
+- [#3138785](https://www.drupal.org/project/drupal/issues/3138785) Исправлены опечатки в слове «Picasso».
+- [#3138786](https://www.drupal.org/project/drupal/issues/3138786) Исправлены опечатки в слове «Protected».
+- [#3138799](https://www.drupal.org/project/drupal/issues/3138799) Исправлены опечатки в слове «description».
+- [#3138803](https://www.drupal.org/project/drupal/issues/3138803) Исправлены опечатки в слове «strength».
+- [#3138802](https://www.drupal.org/project/drupal/issues/3138802) Исправлены опечатки в слове «snafus».
+- [#3138792](https://www.drupal.org/project/drupal/issues/3138792) Исправлены опечатки в слове «compatibility».
+- [#3138787](https://www.drupal.org/project/drupal/issues/3138787) Исправлены опечатки в слове «response».
+- [#3138801](https://www.drupal.org/project/drupal/issues/3138801) Исправлены опечатки в слове «readily».
+- [#3138793](https://www.drupal.org/project/drupal/issues/3138793) Исправлены опечатки в слове «configuration».
