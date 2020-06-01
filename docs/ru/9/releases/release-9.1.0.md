@@ -56,9 +56,17 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 - [#3033986](https://www.drupal.org/node/3033986) Удалено перезаписывание `$limit` в некоторых классах расширяющих `EntityListBuilder`. Оно было без значения.
 
+## Media
+
+- [#3142818](https://www.drupal.org/project/drupal/issues/3142818) Из ссылок удалён аттрибут `target=_blank`.
+
 ## Migrate
 
 - [#3024682](https://www.drupal.org/node/3024682) На странице со списком миграций теперь показываются человекопонятные названия, вместо машинных.
+
+## Search
+
+- [#3086794](https://www.drupal.org/project/drupal/issues/3086794) Плагины результатов поиска теперь могут указывать, какую тему использовать для отрисовки страниц.
 
 ## Seven
 
@@ -70,7 +78,11 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 ## User
 
-- [#3082006](https://www.drupal.org/node/3082006) Поле пароля больше нельзя использовать в Views для вывода. Ранее он не показывал ничего, сейчас отключёна возможность выбора данного значения.
+- [#3082006](https://www.drupal.org/node/3082006) Поле пароля больше нельзя использовать в Views для вывода. Ранее он не показывал ничего, сейчас отключена возможность выбора данного значения.
+
+## Views
+
+- [#3139353](https://www.drupal.org/project/drupal/issues/3139353) Добавлен новый публичный метод `Drupal\views\Plugin\views\query\Sql::getConnection()`.
 
 ## Тестирование
 
@@ -78,6 +90,7 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3130341](https://www.drupal.org/node/3130341) Удалён `UpdateKernel::fixSerializedExtensionObjects()`.
 - [#3114617](https://www.drupal.org/node/3114617) Методы `Drupal\FunctionalTests\AssertLegacyTrait` и `Drupal\KernelTests\AssertLegacyTrait` помечены устаревшими.
 - [#3138652](https://www.drupal.org/node/3138652) Удалён тест `StableDecoupledTest`.
+- [#3139412](https://www.drupal.org/project/drupal/issues/3139412) Использование `::assertTitle()` заменено на `$this->assertSession()->titleEquals()`.
 
 ## Устаревший API
 
@@ -92,3 +105,5 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3021788](https://www.drupal.org/node/3021788) Функции `template_preprocess_menu_local_task()` и `template_preprocess_menu_local_action()` перенесены в `core/includes/theme.inc`.
 - [#3112328](https://www.drupal.org/node/3112328) Классы расширяющие `FormatterBase` больше не реализуют `ContainerFactoryPluginInterface`, так как это объявлено в `FormatterBase`.
 - [#3033734](https://www.drupal.org/node/3033734) На странице списка модулей исправлен горозонтальный скрол при больших описаниях.
+- [#3112790](https://www.drupal.org/project/drupal/issues/3112790) Исправлена неполадка, из-за которой «установка» модулей User и System происходила дважды.
+- [#3143605](https://www.drupal.org/project/drupal/issues/3143605) Удалена функция `update_replace_permissions()`.
