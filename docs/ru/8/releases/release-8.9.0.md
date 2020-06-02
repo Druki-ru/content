@@ -210,6 +210,7 @@ dependencies:
 - [#3127013](https://www.drupal.org/node/3127013) `wikimedia/composer-merge-plugin` удалён из зависимостей ядра.
 - [#3121885](https://www.drupal.org/node/3121885) `drupal/coder` обновлён до 8.3.8.
 - [#3122112](https://www.drupal.org/node/3122112) Обновлены зависимости ядра.
+- [#3144204](https://www.drupal.org/project/drupal/issues/3144204) Зависимости ядра обновлены перед предстоящим релизом.
 
 ## Claro
 
@@ -225,6 +226,10 @@ dependencies:
 - [#2956556](https://www.drupal.org/node/2956556) `StatementPrefetch` теперь передает также `$class_name` в `fetchOptions`.
 - [#3125391](https://www.drupal.org/node/3125391) В возвращаемые типы данных методом `Connection::query()` добавлено строковое значение, а также описание, когда оно может таким стать.
 - [#3131379](https://www.drupal.org/node/3131379) `CONCAT_WS()` больше не используется, когда в фильтре всего 1 аргумент.
+
+## Entity API
+
+- [#3109795](https://www.drupal.org/project/drupal/issues/3109795) Исправлена неполадка, из-за которой мог отсутствовать контекс для множественного лейбла сущности.
 
 ## Extension API
 
