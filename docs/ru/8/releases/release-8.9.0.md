@@ -299,6 +299,7 @@ dependencies:
 ## JavaScript
 
 - [#3136604](https://www.drupal.org/node/3136604) jQuery обновлён до 3.5.1.
+- [#3118741](https://www.drupal.org/project/drupal/issues/3118741) Обновлены Yarn зависимости (включая обновления безопасности).
 
 ## JSON:API
 
@@ -454,6 +455,7 @@ dependencies:
 - [#3143085](https://www.drupal.org/project/drupal/issues/3143085) Добавлено свойство `$aliases` для `OptimizedPhpArrayDumper`.
 - [#3138774](https://www.drupal.org/project/drupal/issues/3138774) Исправлены опечатки в слове «DoesNot».
 - [#3123065](https://www.drupal.org/project/drupal/issues/3123065) Включена проверка `Drupal.NamingConventions.ValidClassName` для ядра и исправлены ошибки.
+- [#2824935](https://www.drupal.org/project/drupal/issues/2824935) Исправлены ошибки по стандарту `Squiz.ControlStructures.SwitchDeclaration`.
 
 ## Смотрите также
 
