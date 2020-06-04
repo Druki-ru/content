@@ -460,3 +460,7 @@ dependencies:
 ## Смотрите также
 
 - [Drupal 9](../../9/drupal-9.md)
+
+## Ссылки
+
+- [Drupal 8.9.0](https://www.drupal.org/project/drupal/releases/8.9.0) (англ.), drupal.org, 3 июня 2020

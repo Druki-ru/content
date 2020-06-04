@@ -8,10 +8,7 @@ metatags:
   description: 'Патч релиз Drupal 8.8.7, список изменений.'
 ---
 
-**Дата релиза**: В разработке
-
-> [!WARNING]
-> Данный релиз находится в разработке.
+**Дата релиза**: 3 июня 2020
 
 ## Basic Auth
 
@@ -137,3 +134,7 @@ metatags:
 - [#3138787](https://www.drupal.org/project/drupal/issues/3138787) Исправлены опечатки в слове «response».
 - [#3138801](https://www.drupal.org/project/drupal/issues/3138801) Исправлены опечатки в слове «readily».
 - [#3138793](https://www.drupal.org/project/drupal/issues/3138793) Исправлены опечатки в слове «configuration».
+
+## Ссылки
+
+- [Drupal 8.8.7](https://www.drupal.org/project/drupal/releases/8.8.7) (англ.), drupal.org, 3 июня 2020
