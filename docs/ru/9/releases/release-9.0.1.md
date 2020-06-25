@@ -18,7 +18,6 @@ metatags:
 - Drupal Core — Критическое — Произвольное выполнение PHP кода — [SA-CORE-2020-005](../../security/advisory/sa-core-2020-005.md)
 - Drupal Core — Менее критическое — Произвольное выполнение PHP кода — [SA-CORE-2020-006](../../security/advisory/sa-core-2020-006.md)
 
-
 ## Ссылки
 
 - [Drupal 9.0.1](https://www.drupal.org/project/drupal/releases/9.0.1) (англ.), drupal.org, 17 июня 2020
