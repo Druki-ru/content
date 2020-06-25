@@ -10,6 +10,8 @@ metatags:
 
 ## 2020
 
+- [SA-CORE-2020-004](advisory/sa-core-2020-004.md) - 17 июня 2020
+- [SA-CORE-2020-002](advisory/sa-core-2020-002.md) - 20 мая 2020
 - [SA-CORE-2020-001](advisory/sa-core-2020-001.md) - 18 марта 2020
 
 ## 2019
