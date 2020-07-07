@@ -39,7 +39,7 @@ metatags:
 composer -n create-project drupal/recommended-project my_new_site
 ``` 
 
-Где `my_new_site` — название директории, в которую будет загуржен проект (относительно текущей директории). Для более подробной информации и доступных опциях, обратитесь к [документации Composer](https://getcomposer.org/doc/03-cli.md#create-project).
+Где `my_new_site` — название директории, в которую будет загружен проект (относительно текущей директории). Для более подробной информации и доступных опциях, обратитесь к [документации Composer](https://getcomposer.org/doc/03-cli.md#create-project).
 
 Дождитесь окончания загрузки, и всё готово!
 
