@@ -23,11 +23,15 @@ metatags:
 
 ## Batch System
 
-- [#3028621](https://www.drupal.org/project/drupal/issues/3028621) Добавлена документация о том, что при формировании [пакетной обработки данных](../batches/batches.md) метод `::setFile()` должен вызываться до `::addOperation()`, если файл содержит код функции обратного вызова.
+- [#3028621](https://www.drupal.org/project/drupal/issues/3028621) Добавлена документация, что при формировании [пакетной обработки данных](../batches/batches.md) метод `::setFile()` должен вызываться до `::addOperation()`, если файл содержит код функции обратного вызова.
 
 ## Block Content
 
 - [#3137430](https://www.drupal.org/project/drupal/issues/3137430) Убрано повторное описание `label_collection` в аннотации сущности.
+
+## Cache System
+
+- [#3152003](https://www.drupal.org/project/drupal/issues/3152003) `EndOfTransactionQueriesTest` теперь инициализируется раньше, для того чтобы корректно подгрузились контрибные драйвера баз данных.
 
 ## Claro
 
@@ -51,16 +55,31 @@ metatags:
 ## File
 
 - [#3150661](https://www.drupal.org/project/drupal/issues/3150661) Исправлено некорректное использование XPath.
+- [#2834525](https://www.drupal.org/project/drupal/issues/2834525) `::ensureDirectory()` добавлено «тихое» создание директории для избежания состояния гонки при двух одновременных запросах вызывающие данный метод.
+
+## Menu
+
+- [#3144046](https://www.drupal.org/project/drupal/issues/3144046) Исправлен пример с кэш метаданными в `hook_menu_local_tasks_alter()`.
+- [#2914785](https://www.drupal.org/project/drupal/issues/2914785) Исправлена неполадка, при которой сущности с внешними URL в качестве связей не могли быть удалены при включенном модуле `menu_link_content`.
 
 ## Plugin System
 
 - [#2904467](https://www.drupal.org/project/drupal/issues/2904467) Теперь в качестве ключей аннотации могут быть использованы числа.
+
+## System
+
+- [#2898947](https://www.drupal.org/project/drupal/issues/2898947) Исправлены опечатки в слове «writeable».
+
+## Tracker
+
+- [#2120877](https://www.drupal.org/project/drupal/issues/2120877) Добавлено тестирование на наличие ссылки «Последнего содержимого».
 
 ## Views
 
 - [#2947588](https://www.drupal.org/project/drupal/issues/2947588) В файле `\Drupal\Tests\views\Kernel\ModuleTest` удалены неиспользуемые тесты, а те что используются приведены в актуальное состояние.
 - [#3150474](https://www.drupal.org/project/drupal/issues/3150474) Исправлена документация о возвращаемом типе данных `Drupal\views\Views::getView`.
 - [#3143316](https://www.drupal.org/project/drupal/issues/3143316) Улучшены проверки, для предотвращения появления исключения «Getting the base fields is not supported for entity type».
+- [#3149930](https://www.drupal.org/project/drupal/issues/3149930) Исправлена неполадка, из-за которой отображался раскрытый фильтр «Details», даже если он пустой.
 
 ## Update
 
@@ -69,6 +88,8 @@ metatags:
 ## User
 
 - [#3072305](https://www.drupal.org/project/drupal/issues/3072305) Исправлена неполадка, приводящая к ошибке `Notice: Undefined index: #item in user_user_view_alter()`.
+- [#3154461](https://www.drupal.org/project/drupal/issues/3154461) Удалён вызов `getFormObject()` из `UserAccountFormFieldsTest`.
+- [#3151520](https://www.drupal.org/project/drupal/issues/3151520) Запрос к БД заменён на EntityQuery.
 
 ## Тестирование
 
@@ -92,6 +113,9 @@ metatags:
 - [#3154203](https://www.drupal.org/project/drupal/issues/3154203) Исправлены опечатки в слове «appear».
 - [#3154533](https://www.drupal.org/project/drupal/issues/3154533) Исправлены опечатки в слове «Drupal».
 - [#3138796](https://www.drupal.org/project/drupal/issues/3138796) Исправлены опечатки в слове «cotrol».
+- [#3116147](https://www.drupal.org/project/drupal/issues/3116147) Удалён «@todo Use the RequestHelper…» так как он был удалён.
+- [#3144354](https://www.drupal.org/project/drupal/issues/3144354) `ModuleInstaller` теперь загружает `.module` и `.install` перед автоподгрузкой классов.
+- [#3027763](https://www.drupal.org/project/drupal/issues/3027763) Исправлена неполадка в `UnroutedUrlAssembler` которая приводила к некорректным query параметрам если ключ был типа `integer`.
 
 ## Ссылки
 
