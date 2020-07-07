@@ -57,7 +57,7 @@ description: Creates a page showing "Hello World".
 package: Custom
 
 type: module
-core: 8.x
+core_version_requirement: ^9
 
 dependencies:
   - drupal:link

@@ -53,7 +53,7 @@ category:
 name: My awesome theme
 type: theme
 description: 'A cuddly theme that offers extra fluffiness.'
-core: 8.x
+core_version_requirement: ^9
 libraries:
   - my_theme_name/global-styling
 base theme: classy
