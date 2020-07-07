@@ -32,6 +32,10 @@ metatags:
 
 - [#3016427](https://www.drupal.org/project/drupal/issues/3016427) Улучшено определение часового пояса по умолчанию при установке Drupal.
 
+## Link
+
+- [#3151047](https://www.drupal.org/project/drupal/issues/3151047) Добавлен новый тест `LinkItemUrlValidationTest` для покрытия различных вариантов ввода ссылок.
+
 ## Theme System
 
 - [#3146567](https://www.drupal.org/project/drupal/issues/3146567) Исправлено неверное название (`base_theme`) параметра в исключении. 
