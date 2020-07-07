@@ -120,9 +120,28 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 Методы `getRoutesPaged()` и `getRoutesCount()` предоставляемые `\Drupal\Core\Routing\RouteProvider` помечены устаревшими и будут удалены в Drupal 10.
 
+## Claro
+
+- [#3060697](https://www.drupal.org/project/drupal/issues/3060697) Claro теперь использует `#dropbutton_type` для вариантов `dropbutton` элемента, вместо классов.
+- [#3154425](https://www.drupal.org/project/drupal/issues/3154425) Удалён комментарий «@todo Remove this after 8.6.x is out of support.» и код для него.
+
+## Composer
+
+- [#3156558](https://www.drupal.org/project/drupal/issues/3156558) Обновлены зависимости.
+
+## Content Moderation
+
+- [#3044292](https://www.drupal.org/project/drupal/issues/3044292) Добавлен новый метод `::isModeratedEntity` для хендлеров moderation сущностей.
+
 ## Database System
 
 - [#3143618](https://www.drupal.org/project/drupal/issues/3143618) Обычные пробелы (`U+0020`) теперь заменяются на неделимые пробелы (`U+00A0`), для минимизации ложных срабатываний.
+- [#3151990](https://www.drupal.org/project/drupal/issues/3151990) Запросы к БД переписаны на EntityQuery в `NodeRevisionPermissionsTest`.
+- [#3151981](https://www.drupal.org/project/drupal/issues/3151981) Запросы к БД переписаны на EntityQuery в `NodeRevisionsAllTest`.
+- [#3152001](https://www.drupal.org/project/drupal/issues/3152001) Запросы к БД переписаны на EntityQuery в `NodeAccessBaseTableTest`.
+- [#3151959](https://www.drupal.org/project/drupal/issues/3151959) Запросы к БД переписаны на EntityQuery в `PathTaxonomyTermTest`.
+- [#3151990](https://www.drupal.org/project/drupal/issues/3151990) Запросы к БД переписаны на EntityQuery в `NodeRevisionPermissionsTest`.
+- [#3151968](https://www.drupal.org/project/drupal/issues/3151968) Запросы к БД переписаны на EntityQuery в `NodeTranslationUITest`.
 
 ## Entity System
 
@@ -133,14 +152,15 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 - [#3150726](https://www.drupal.org/project/drupal/issues/3150726) Функция `update_check_incompatibility()` помечена устаревшей.
 
-## Content Moderation
+## Image
 
-- [#3044292](https://www.drupal.org/project/drupal/issues/3044292) Добавлен новый метод `::isModeratedEntity` для хендлеров moderation сущностей.
+- [#3153009](https://www.drupal.org/project/drupal/issues/3153009) Добавлен новый стиль изображения устанавливаемый с модулем — «Wide (1090)». Он будет использоваться как Hero стиль в будущей теме Olivero.
 
 ## JavaScript
 
 - [#3145930](https://www.drupal.org/project/drupal/issues/3145930) Размер «липкого» заголовка теперь пересчитывается после сворачивания и разворачивания тулбара.
 - [#3096516](https://www.drupal.org/project/drupal/issues/3096516) В `domready` внесены улучшения, которые решают проблему с [race condition](https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5_%D0%B3%D0%BE%D0%BD%D0%BA%D0%B8).
+- [#3152473](https://www.drupal.org/project/drupal/issues/3152473) Улучшена работа обратного вызова domready.
 
 ## Media
 
@@ -155,18 +175,36 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3047723](https://www.drupal.org/project/drupal/issues/3047723) Документация модулей views, views_ui конвертирована в Help Topics.
 - [#3067614](https://www.drupal.org/project/drupal/issues/3067614) Документация модулей filter, ckeditor, editor конвертирована в Help Topics.
 
+## REST
+
+- [#3152848](https://www.drupal.org/project/drupal/issues/3152848) Код связанный с `bc_entity_resource_permissions` настройкой удалён, так как она больше не используется.
+
 ## Search
 
 - [#3086794](https://www.drupal.org/project/drupal/issues/3086794) Плагины результатов поиска теперь могут указывать, какую тему использовать для отрисовки страниц.
+- [#3086795](https://www.drupal.org/project/drupal/issues/3086795) «Search help» на странице поиска заменён на «About searching» для избежания двусмысленности.
+- [#3155221](https://www.drupal.org/project/drupal/issues/3155221) Удален устаревший «@todo».
+
+## Serialization
+
+- [#3135304](https://www.drupal.org/project/drupal/issues/3135304) Удалён слой обратной совместимости с Symfony 3 из `JsonEncoder`.
 
 ## Seven
 
 - [#3054196](https://www.drupal.org/node/3054196) Исправлена проблема с белым фоном у кнопки в таблице.
 
+## SQLite
+
+- [#3145412](https://www.drupal.org/project/drupal/issues/3145412) При удалении пустой БД, теперь происходит отключение данной БД, а только затем удаление. Это решает проблему когда файл БД невозможно удалить из-за недостаточных прав доступа так как она используется.
+
 ## Taxonomy
 
 - [#3122511](https://www.drupal.org/node/3122511) На странице редактирования добавлен пункт удаления во вкладки.
 - [#3151953](https://www.drupal.org/project/drupal/issues/3151953) В тесте `TermTranslationUITest` использование прямого запроса заменено на Entity Query.
+
+## Typed Data System
+
+- [#3142893](https://www.drupal.org/project/drupal/issues/3142893) Исправлена неполадка приводящая к утечке памяти.
 
 ## User
 
@@ -185,6 +223,10 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3114617](https://www.drupal.org/node/3114617) Методы `Drupal\FunctionalTests\AssertLegacyTrait` и `Drupal\KernelTests\AssertLegacyTrait` помечены устаревшими.
 - [#3138652](https://www.drupal.org/node/3138652) Удалён тест `StableDecoupledTest`.
 - [#3139412](https://www.drupal.org/project/drupal/issues/3139412) Использование `::assertTitle()` заменено на `$this->assertSession()->titleEquals()`.
+- [#3077785](https://www.drupal.org/project/drupal/issues/3077785) `DrupalMinkClient` удалён и весь код отрефакторен для использования Mink `Client`.
+- [#3139437](https://www.drupal.org/project/drupal/issues/3139437) Использование устаревшего `AssertLegacyTrait::assertCacheTag` заменено на `$this->assertSession()->responseHeaderContains()`.
+- [#3144732](https://www.drupal.org/project/drupal/issues/3144732) Удалены вызовы `t()` в связке с `$this->assertSession()->optionExists()`.
+- [#3135538](https://www.drupal.org/project/drupal/issues/3135538) Заменены оставшиеся `assert*` вызовы использующие `count()`. 
 
 ## Устаревший API
 
@@ -210,3 +252,4 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#2937844](https://www.drupal.org/project/drupal/issues/2937844) Внесены исправления для соответствия стандарту `Squiz.PHP.NonExecutableCode`.
 - [#3143713](https://www.drupal.org/project/drupal/issues/3143713) Функция `drupal_get_schema_versions()` теперь всегда возвращает целые числа.
 - [#3154594](https://www.drupal.org/project/drupal/issues/3154594) `composer.json` и `composer.lock` будут пропускаться CSpell.
+- [#3154665](https://www.drupal.org/project/drupal/issues/3154665) Из словаря CSpell удалены названия модулей и плагинов.
