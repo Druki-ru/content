@@ -4,7 +4,7 @@ title: Руководство по установке
 core: 9
 category:
   area: Первое знакомство
-  order: 1
+  order: 2
   title: Установка
 search-keywords:
   - Как устанавливать установить Drupal

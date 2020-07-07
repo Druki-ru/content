@@ -30,7 +30,7 @@ metatags:
 ## Создание проекта с использованием данного шаблона
 
 ```bash
-composer -n create-project drupal/recommended-project:^8.8@dev my_new_site 
+composer -n create-project drupal/recommended-project my_new_site 
 ```
 
 ## Смотрите также
