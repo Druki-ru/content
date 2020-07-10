@@ -8,10 +8,7 @@ metatags:
   description: 'Список изменений Drupal 8.9.2.'
 ---
 
-**Дата релиза**: В разработке
-
-> [!WARNING]
-> Данный релиз находится в разработке.
+**Дата релиза**: 9 июля 2020
 
 ## Aggregator
 
@@ -56,6 +53,10 @@ metatags:
 
 - [#3150661](https://www.drupal.org/project/drupal/issues/3150661) Исправлено некорректное использование XPath.
 - [#2834525](https://www.drupal.org/project/drupal/issues/2834525) `::ensureDirectory()` добавлено «тихое» создание директории для избежания состояния гонки при двух одновременных запросах вызывающие данный метод.
+
+## Layout builder
+
+- [#3089961](https://www.drupal.org/project/drupal/issues/3089961) В тест `LayoutBuilderTest::assertOffCanvasFormAfterWait()` добавлена проверка что форма действительно находится в off-canvas.
 
 ## Menu
 
@@ -119,4 +120,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 8.9.1](https://www.drupal.org/project/drupal/releases/8.9.1) (англ.), drupal.org, 17 июня 2020
+- [Drupal 8.9.2](https://www.drupal.org/project/drupal/releases/8.9.2) (англ.), drupal.org, 9 июля 2020
