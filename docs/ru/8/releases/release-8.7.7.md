@@ -31,7 +31,7 @@ metatags:
 
 ## Прочие изменения
 
-- [#3078001](https://www.drupal.org/node/3078001), [#3078001](https://www.drupal.org/node/3078001) `core` параметр в `*info.yml` файлах теперь поддерживает указание семантической версионности.
+- [#3078001](https://www.drupal.org/node/3078001), [#3078001](https://www.drupal.org/node/3078001) `core` параметр в `*info.yml` файлах теперь поддерживает указание [семантических версий](../../semver.md).
 - [#3076609](https://www.drupal.org/node/3076609), [#3076609](https://www.drupal.org/node/3076609) Улучшены тесты `CKEditorIntegrationTest` для sqlite.
 - [#3061610](https://www.drupal.org/node/3061610), [#3061610](https://www.drupal.org/node/3061610) Исправлен Typed Data's EntityDeriver, который не мог корректно обработать поведение, когда бандл сущности имел то же машинное имя, как и сама сущность.
 - [#3075661](https://www.drupal.org/node/3075661) Исправлен некорректный тайпхинтинг в phpDoc для методов `getHtml5DateFormat()` и `getHtml5TimeFormat()` объекта `Drupal\Core\Datetime\Element\Datetime`.
