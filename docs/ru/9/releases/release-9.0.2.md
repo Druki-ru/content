@@ -8,10 +8,7 @@ metatags:
   description: 'Список изменений Drupal 9.0.2.'
 ---
 
-**Дата релиза**: В разработке
-
-> [!WARNING]
-> Данный релиз находится в разработке.
+**Дата релиза**: 9 июля 2020
 
 > [!NOTE]
 > Данный релиз также содержит изменения внесенные в [Drupal 8.9.2](../../8/releases/release-8.9.2.md).
@@ -52,3 +49,7 @@ metatags:
 - [#3143173](https://www.drupal.org/project/drupal/issues/3143173) `ProxyBuilder` теперь совместим с Symfony 5.
 - [#3135305](https://www.drupal.org/project/drupal/issues/3135305) Удалён слой совместимости с Symfony 4.1 из `EmailConstraint`.
 - [#3143482](https://www.drupal.org/project/drupal/issues/3143482) Ссылки в `README.txt` файле обновлены на алисы, которые ведут на актуальную информацию по текущей актуальной версии Drupal.
+
+## Ссылки
+
+- [Drupal 9.0.2](https://www.drupal.org/project/drupal/releases/9.0.2) (англ.), drupal.org, 9 июля 2020
