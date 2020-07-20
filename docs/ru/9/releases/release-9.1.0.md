@@ -204,10 +204,6 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3122511](https://www.drupal.org/node/3122511) На странице редактирования добавлен пункт удаления во вкладки.
 - [#3151953](https://www.drupal.org/project/drupal/issues/3151953) В тесте `TermTranslationUITest` использование прямого запроса заменено на Entity Query.
 
-## Typed Data System
-
-- [#3142893](https://www.drupal.org/project/drupal/issues/3142893) Исправлена неполадка приводящая к утечке памяти.
-
 ## User
 
 - [#3082006](https://www.drupal.org/node/3082006) Поле пароля больше нельзя использовать в Views для вывода. Ранее он не показывал ничего, сейчас отключена возможность выбора данного значения.

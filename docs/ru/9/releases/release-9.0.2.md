@@ -17,10 +17,6 @@ metatags:
 
 - [#3023311](https://www.drupal.org/project/drupal/issues/3023311) Оформление модального окна приведено в соответствии с Drupal Design System.
 
-## Composer
-
-- [#3153869](https://www.drupal.org/project/drupal/issues/3153869) Удалены конфигурации удалённого `wikimedia/composer-merge-plugin`.
-
 ## Content Moderation
 
 - [#3020387](https://www.drupal.org/project/drupal/issues/3020387) Исправлена неполадка, из-за которой состояние применялось ко всем переводам материала, а не конкретному.
