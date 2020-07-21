@@ -112,6 +112,7 @@ metatags:
 
 - [#3158292](https://www.drupal.org/project/drupal/issues/3158292) Из теста `FormAjaxResponseBuilderTest` удалены неиспользуемые переменные.
 - [#3156070](https://www.drupal.org/project/drupal/issues/3156070) Из теста `ConfigSchemaTest` удалены неиспользуемые переменные.
+- [#3155796](https://www.drupal.org/project/drupal/issues/3155796) Из теста `NodeRevisionsUiBypassAccessTest` удалена неиспользуемая переменная.
 
 ## Прочие изменения
 
