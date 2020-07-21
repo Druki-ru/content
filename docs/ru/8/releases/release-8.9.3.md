@@ -23,6 +23,10 @@ metatags:
 
 - [#3153869](https://www.drupal.org/project/drupal/issues/3153869) Удалены оставшиеся настройки `wikimedia/composer-merge-plugin`.
 
+## Config
+
+- [#2728507](https://www.drupal.org/project/drupal/issues/2728507) В форму импорта одиночной конфигурации добавлена валидация что выбрана конфигурация, в дополнение к HTML5 валидации.
+
 ## Content Moderation
 
 - [#3112916](https://www.drupal.org/project/drupal/issues/3112916) Добавлен джоин по Entity ID, что сделало запросы быстрее.
@@ -83,6 +87,10 @@ metatags:
 
 - [#3155765](https://www.drupal.org/project/drupal/issues/3155765) Исправлена опечатка в методе теста `AliasManagerTest`.
 
+## Taxonomy
+
+- [#3160169](https://www.drupal.org/project/drupal/issues/3160169) Удалена неиспользуемая переменная `$a` в `Drupal\taxonomy\Plugin\Validation\Constraint\TaxonomyTermHierarchyConstraintValidator::validate()`.
+
 ## Transliteration System
 
 - [#3151364](https://www.drupal.org/project/drupal/issues/3151364) Добавлены различные вариации написания `Æ` для корректной транслитерации.
@@ -118,3 +126,4 @@ metatags:
 - [#3159531](https://www.drupal.org/project/drupal/issues/3159531) Исправлены опечатки: «attibute», «uneccesarilly», «colletion», «constucts», «worklow».
 - [#3159528](https://www.drupal.org/project/drupal/issues/3159528) Исправлены опечатки: «exeption», «gaurd», «ouptut», «withut», «defintion».
 - [#3085751](https://www.drupal.org/project/drupal/issues/3085751) Улучшена проверка, которая позволяет модулям в обновлениях описывать новые зависимости и использовать их сервисы как зависимость для своих без исключения во время обновления.
+- [#3155462](https://www.drupal.org/project/drupal/issues/3155462) Для блока «Сделано на Drupal» удален аттрибут `role="complementary"`.
