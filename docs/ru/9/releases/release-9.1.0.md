@@ -122,6 +122,46 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 Методы `getRoutesPaged()` и `getRoutesCount()` предоставляемые `\Drupal\Core\Routing\RouteProvider` помечены устаревшими и будут удалены в Drupal 10.
 
+## Изменения в системе событий Symfony
+
+- [#3055194](https://www.drupal.org/project/drupal/issues/3055194)
+- [Simpler event dispatching](https://symfony.com/blog/new-in-symfony-4-3-simpler-event-dispatching) (англ.), Symfony.
+
+Сигнатура метода `Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher::dispatch()` была обновления для соответствия `Symfony\Component\EventDispatcher\EventDispatcherInterface::dispatch()`. Это значит, что теперь для вызова события, первым аргументом передаётся объект события, а его название вторым.
+
+Это позволяет вызывать событие без передачи названия события. Например:
+
+```php
+// Было
+$dispatcher->dispatch(MyEvents::EVENT_NAME, new MyEvent());
+// Стало
+$dispatcher->dispatch(new MyEvent());
+```
+
+Из этого изменения также следует то, что теперь можно подписываться не на конкретные события, а также на объекты событий. Например:
+
+```php
+public static function getSubscribedEvents() {
+  return [
+    // Было
+    MyEvents::EVENT_NAMER => 'onMyEvent',
+    // Стало
+    MyEvents::class => 'onMyEvent',
+  ];
+} 
+```
+
+В связи с этим, класс события `Symfony\Component\EventDispatcher\Event` удалён и вместо него необходимо использовать `Symfony\Contracts\EventDispatcher\Event` при создании своих событий.
+
+Для поддержки двух вариантов, в Drupal добавлен собственный класс `Drupal\Component\EventDispatcher\Event`, который необходимо расширять при создании события, вместо старого и нового от Symfony. В таком случае, вам придётся для того чтобы обновить код, вам всеголишь потребуется заменить в `use` строке файла события `Symfony` на `Drupal`.
+
+```php
+// Было
+use Symfony\Component\EventDispatcher\Event;
+// Стало
+use Drupal\Component\EventDispatcher\Event;
+```
+
 ## Claro
 
 - [#3060697](https://www.drupal.org/project/drupal/issues/3060697) Claro теперь использует `#dropbutton_type` для вариантов `dropbutton` элемента, вместо классов.
@@ -130,6 +170,7 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 ## Composer
 
 - [#3156558](https://www.drupal.org/project/drupal/issues/3156558) Обновлены зависимости.
+- [#3133903](https://www.drupal.org/project/drupal/issues/3133903) Добавлены проверка что все пакеты из `composer.lock` файла ядра имеются и имеют конкретные версии.
 
 ## Content Moderation
 
@@ -137,6 +178,7 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 ## Database System
 
+- [#2278971](https://www.drupal.org/node/2278971) `Connection::supportsTransactions` помечен устаревшим. Таким образом [настройка](../settings-php.md) подключения к БД `transactions` также становится устаревшей.
 - [#3143618](https://www.drupal.org/project/drupal/issues/3143618) Обычные пробелы (`U+0020`) теперь заменяются на неделимые пробелы (`U+00A0`), для минимизации ложных срабатываний.
 - [#3151990](https://www.drupal.org/project/drupal/issues/3151990) Запросы к БД переписаны на EntityQuery в `NodeRevisionPermissionsTest`.
 - [#3151981](https://www.drupal.org/project/drupal/issues/3151981) Запросы к БД переписаны на EntityQuery в `NodeRevisionsAllTest`.
@@ -144,6 +186,9 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3151959](https://www.drupal.org/project/drupal/issues/3151959) Запросы к БД переписаны на EntityQuery в `PathTaxonomyTermTest`.
 - [#3151990](https://www.drupal.org/project/drupal/issues/3151990) Запросы к БД переписаны на EntityQuery в `NodeRevisionPermissionsTest`.
 - [#3151968](https://www.drupal.org/project/drupal/issues/3151968) Запросы к БД переписаны на EntityQuery в `NodeTranslationUITest`.
+- [#3128616](https://www.drupal.org/project/drupal/issues/3128616) `Drupal\Core\Database\Connection::destroy` помечен устаревшим. Вместо него используется нативный `__destruct()`.
+- [#3152415](https://www.drupal.org/project/drupal/issues/3152415) Ключевые имена в статичных запросах `core/lib/Drupal/Core` теперь обёрнуты в квадратные скобки для избежания проблем с зарезервированными именами баз данных.
+- [#3151981](https://www.drupal.org/project/drupal/issues/3151981) В `NodeRevisionsAllTest` использование статических запросов заменено на Entity Query.
 
 ## Entity System
 
@@ -153,6 +198,10 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 ## Extension System
 
 - [#3150726](https://www.drupal.org/project/drupal/issues/3150726) Функция `update_check_incompatibility()` помечена устаревшей.
+
+## File
+
+- [#3070902](https://www.drupal.org/project/drupal/issues/3070902) Для исключения вызываемого в `prepareDestination()` улучшено описание лога.
 
 ## Image
 
@@ -171,11 +220,17 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 ## Migrate
 
 - [#3024682](https://www.drupal.org/node/3024682) На странице со списком миграций теперь показываются человекопонятные названия, вместо машинных.
+- [#3143719](https://www.drupal.org/project/drupal/issues/3143719) В `MigrateUpgradeTestBase` добавлен новый метод `getCredentials()`.
+- [#2993367](https://www.drupal.org/project/drupal/issues/2993367) Добавлена миграция из Drupal 7 Picture (контрибный модуль) в Responsive Image.
 
 ## Help Topics
 
 - [#3047723](https://www.drupal.org/project/drupal/issues/3047723) Документация модулей views, views_ui конвертирована в Help Topics.
 - [#3067614](https://www.drupal.org/project/drupal/issues/3067614) Документация модулей filter, ckeditor, editor конвертирована в Help Topics.
+
+## PosgreSQL драйвер
+
+- [#3129560](https://www.drupal.org/project/drupal/issues/3129560) Удалена реализация `Upsert`.
 
 ## REST
 
@@ -209,6 +264,7 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 - [#3139353](https://www.drupal.org/project/drupal/issues/3139353) Добавлен новый публичный метод `Drupal\views\Plugin\views\query\Sql::getConnection()`.
 - [#3150490](https://www.drupal.org/project/drupal/issues/3150490) Улучшено именование переменных в `Drupal\views\ViewExecutableFactory::get`.
+- [#2838555](https://www.drupal.org/project/drupal/issues/2838555) Views больше не позволит добавлять связи на данные у которых нет базовой таблицы для джоина (например, конфигурационные сущности).
 
 ## Тестирование
 
@@ -220,11 +276,12 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3077785](https://www.drupal.org/project/drupal/issues/3077785) `DrupalMinkClient` удалён и весь код отрефакторен для использования Mink `Client`.
 - [#3139437](https://www.drupal.org/project/drupal/issues/3139437) Использование устаревшего `AssertLegacyTrait::assertCacheTag` заменено на `$this->assertSession()->responseHeaderContains()`.
 - [#3144732](https://www.drupal.org/project/drupal/issues/3144732) Удалены вызовы `t()` в связке с `$this->assertSession()->optionExists()`.
-- [#3135538](https://www.drupal.org/project/drupal/issues/3135538) Заменены оставшиеся `assert*` вызовы использующие `count()`. 
-
-## Устаревший API
-
-- [#2278971](https://www.drupal.org/node/2278971) `Connection::supportsTransactions` помечен устаревшим. Таким образом [настройка](../settings-php.md) подключения к БД `transactions` также становится устаревшей.
+- [#3135538](https://www.drupal.org/project/drupal/issues/3135538) Заменены оставшиеся `assert*` вызовы использующие `count()`.
+- [#3000762](https://www.drupal.org/project/drupal/issues/3000762) Для `WebAssert` добавлен новый метод `pageContainsNoDuplicateId()`.
+- [#3082859](https://www.drupal.org/project/drupal/issues/3082859) `AssertMailTrait::assertMailPattern()` теперь преобразует значение `$regex_found` в булевый тип.
+- [#3155761](https://www.drupal.org/project/drupal/issues/3155761) В `BlockFormMessagesTest` использование `assertTrue()` с `stristr()` заменено на `assertStringContainsString()`.
+- [#3139440](https://www.drupal.org/project/drupal/issues/3139440) Использование устаревшего `AssertLegacyTrait::buildXPathQuery()` заменено на `$this->assertSession()->buildXPathQuery()`.
+- [#3139426](https://www.drupal.org/project/drupal/issues/3139426) Использование устаревшего `AssertLegacyTrait::assertOptionSelected()` заменено на `$this->assertSession()->optionExists()`.
 
 ## Прочие изменения
 
@@ -247,3 +304,6 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3143713](https://www.drupal.org/project/drupal/issues/3143713) Функция `drupal_get_schema_versions()` теперь всегда возвращает целые числа.
 - [#3154594](https://www.drupal.org/project/drupal/issues/3154594) `composer.json` и `composer.lock` будут пропускаться CSpell.
 - [#3154665](https://www.drupal.org/project/drupal/issues/3154665) Из словаря CSpell удалены названия модулей и плагинов.
+- [#2807743](https://www.drupal.org/project/drupal/issues/2807743) Тригерры ошибок для `FormattableMarkup::placeholderFormat()` приведены к единому стилю.
+- [#2619482](https://www.drupal.org/project/drupal/issues/2619482) Использование `get_called_class()` и `get_class($this)` заменены на `static::class`.
+- [#2928960](https://www.drupal.org/project/drupal/issues/2928960) Длина слогана сайта увеличена со 128 символов до 255.
