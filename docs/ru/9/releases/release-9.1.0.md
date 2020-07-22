@@ -127,7 +127,7 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 - [#3055194](https://www.drupal.org/project/drupal/issues/3055194)
 - [Simpler event dispatching](https://symfony.com/blog/new-in-symfony-4-3-simpler-event-dispatching) (англ.), Symfony.
 
-Сигнатура метода `Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher::dispatch()` была обновления для соответствия `Symfony\Component\EventDispatcher\EventDispatcherInterface::dispatch()`. Это значит, что теперь для вызова события, первым аргументом передаётся объект события, а его название вторым.
+Сигнатура метода `Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher::dispatch()` была обновлена для соответствия `Symfony\Component\EventDispatcher\EventDispatcherInterface::dispatch()`. Это значит, что теперь для вызова события, первым аргументом передаётся объект события, а его название вторым.
 
 Это позволяет вызывать событие без передачи названия события. Например:
 
@@ -151,9 +151,9 @@ public static function getSubscribedEvents() {
 } 
 ```
 
-В связи с этим, класс события `Symfony\Component\EventDispatcher\Event` удалён и вместо него необходимо использовать `Symfony\Contracts\EventDispatcher\Event` при создании своих событий.
+В связи с этим, класс события `Symfony\Component\EventDispatcher\Event` помечен устаревшим и вместо него используется `Symfony\Contracts\EventDispatcher\Event` при создании своих событий.
 
-Для поддержки двух вариантов, в Drupal добавлен собственный класс `Drupal\Component\EventDispatcher\Event`, который необходимо расширять при создании события, вместо старого и нового от Symfony. В таком случае, вам придётся для того чтобы обновить код, вам всеголишь потребуется заменить в `use` строке файла события `Symfony` на `Drupal`.
+Для поддержки двух вариантов, в Drupal добавлен собственный класс `Drupal\Component\EventDispatcher\Event`. Его рекомендуется использовать вместо старого и нового от Symfony. В таком случае, чтобы обновить код, вам всего лишь потребуется заменить в `use` строке файла события `Symfony` на `Drupal`.
 
 ```php
 // Было
