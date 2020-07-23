@@ -132,7 +132,7 @@ metatags:
 - [#3138749](https://www.drupal.org/project/drupal/issues/3138749) Исправлены опечатки в слове «cache».
 - [#3159531](https://www.drupal.org/project/drupal/issues/3159531) Исправлены опечатки: «attibute», «uneccesarilly», «colletion», «constucts», «worklow».
 - [#3159528](https://www.drupal.org/project/drupal/issues/3159528) Исправлены опечатки: «exeption», «gaurd», «ouptut», «withut», «defintion».
-- [#3085751](https://www.drupal.org/project/drupal/issues/3085751) Улучшена проверка, которая позволяет модулям в обновлениях описывать новые зависимости и использовать их сервисы как зависимость для своих без исключения во время обновления.
+- [#3085751](https://www.drupal.org/project/drupal/issues/3085751) Улучшена проверка, которая позволяет модулям в обновлениях описывать новые зависимости и использовать их [сервисы](../services/services.md) как зависимость для своих без исключения во время обновления.
 - [#3155462](https://www.drupal.org/project/drupal/issues/3155462) Для блока «Сделано на Drupal» удален аттрибут `role="complementary"`.
 - [#3160124](https://www.drupal.org/project/drupal/issues/3160124) Исправлены опечатки: «wiget», «escapeable», «PHPunit».
 - [#3160020](https://www.drupal.org/project/drupal/issues/3160020) Исправлены опечатки: «iids», «twoa», «twob», «roota», «rootb», «parentc».

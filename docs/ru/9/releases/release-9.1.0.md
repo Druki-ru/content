@@ -124,7 +124,7 @@ $merge_tags = \Drupal\Core\Cache\Cache::mergeTags(...$args);
 
 ## Изменения в системе событий Symfony
 
-- [#3055194](https://www.drupal.org/project/drupal/issues/3055194)
+- [#3055194](https://www.drupal.org/project/drupal/issues/3055194), [#3055198](https://www.drupal.org/project/drupal/issues/3055198)
 - [Simpler event dispatching](https://symfony.com/blog/new-in-symfony-4-3-simpler-event-dispatching) (англ.), Symfony.
 
 Сигнатура метода `Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher::dispatch()` была обновлена для соответствия `Symfony\Component\EventDispatcher\EventDispatcherInterface::dispatch()`. Это значит, что теперь для вызова события, первым аргументом передаётся объект события, а его название вторым.
@@ -162,19 +162,61 @@ use Symfony\Component\EventDispatcher\Event;
 use Drupal\Component\EventDispatcher\Event;
 ```
 
+## Использование Drupal::theme() заменено на DI в ViewEditForm и HtmlRenderer
+
+- [#3123210](https://www.drupal.org/project/drupal/issues/3123210)
+
+В классах `ViewEditForm` и `HtmlRenderer` использование `\Drupal::theme()` заменено на [Dependency Injection](../services/dependency-injection.md), в связи с чем, в консторе появился новый аргумент.
+
+## Изменена сигнатура конструктора LayoutBuilder и добавено новое событие LayoutBuilderEvents::PREPARE_LAYOUT
+
+- [#3143635](https://www.drupal.org/project/drupal/issues/3143635)
+
+Класс `LayoutBuilder` теперь принимает `EventDispatcherInterface $event_dispatcher` вместо `LayoutTempstoreRepositoryInterface $layout_tempstore_repository`. Также удалено внедрение `messenger` [сервиса](../services/services.md).
+
+**Раньше:**
+
+```php
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LayoutTempstoreRepositoryInterface $layout_tempstore_repository, MessengerInterface $messenger) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $layout_tempstore_repository, $messenger);
+  }
+```
+
+**Теперь:**
+
+```php
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EventDispatcherInterface $event_dispatcher) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $event_dispatcher);
+  }
+```
+
+Также было добавлено новое событие `LayoutBuilderEvents::PREPARE_LAYOUT` которое вызываетяс в момент подготовки макета и передаёт `Drupal\layout_builder\Event\PrepareLayoutEvent` в качестве события. Это событие позволяет модулям взаимодействовать между собой в процессе `#pre_render` элемента.
+
+## Block
+
+- [#3105976](https://www.drupal.org/project/drupal/issues/3105976) В `BlockViewBuilder::buildPreRenderableBlock()` для аргумента `$entity` добавлен тайпхинт `\Drupal\block\BlockInterface`.
+- [#2151001](https://www.drupal.org/project/drupal/issues/2151001) Для административной страницы «Схема блоков» добавлен Tour.
+- [#2890758](https://www.drupal.org/project/drupal/issues/2890758) Видимость блока по типу ноды теперь работает на маршрутах с предварительным просмотром и ревизии.
+
 ## Claro
 
 - [#3060697](https://www.drupal.org/project/drupal/issues/3060697) Claro теперь использует `#dropbutton_type` для вариантов `dropbutton` элемента, вместо классов.
 - [#3154425](https://www.drupal.org/project/drupal/issues/3154425) Удалён комментарий «@todo Remove this after 8.6.x is out of support.» и код для него.
+- [#3105575](https://www.drupal.org/project/drupal/issues/3105575) HTML классы перенесены из `claro_preprocess_textarea()` в шаблон.
 
 ## Composer
 
 - [#3156558](https://www.drupal.org/project/drupal/issues/3156558) Обновлены зависимости.
 - [#3133903](https://www.drupal.org/project/drupal/issues/3133903) Добавлены проверка что все пакеты из `composer.lock` файла ядра имеются и имеют конкретные версии.
+- [#3121847](https://www.drupal.org/project/drupal/issues/3121847) В шаблоны проектов [drupal/recommended-project](drupal-recommended-project.md) и [drupal/legacy-project](drupal-legacy-project.md) теперь добавляется новый путь установки `drupal-custom-profile` (`profiles/custom/{$name}/`).
 
 ## Content Moderation
 
 - [#3044292](https://www.drupal.org/project/drupal/issues/3044292) Добавлен новый метод `::isModeratedEntity` для хендлеров moderation сущностей.
+
+## Content Translation
+
+- [#2972308](https://www.drupal.org/project/drupal/issues/2972308) Добавлено новое разрешение `translate editable entities` позволяющее переводить сущности, которые пользователь может редактировать.
 
 ## Database System
 
@@ -189,23 +231,43 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3128616](https://www.drupal.org/project/drupal/issues/3128616) `Drupal\Core\Database\Connection::destroy` помечен устаревшим. Вместо него используется нативный `__destruct()`.
 - [#3152415](https://www.drupal.org/project/drupal/issues/3152415) Ключевые имена в статичных запросах `core/lib/Drupal/Core` теперь обёрнуты в квадратные скобки для избежания проблем с зарезервированными именами баз данных.
 - [#3151981](https://www.drupal.org/project/drupal/issues/3151981) В `NodeRevisionsAllTest` использование статических запросов заменено на Entity Query.
+- [#3152398](https://www.drupal.org/project/drupal/issues/3152398) Статические запросы в `core/tests/Drupal` переписаны на динамические.
 
 ## Entity System
 
 - [#3033986](https://www.drupal.org/node/3033986) Удалено перезаписывание `$limit` в некоторых классах расширяющих `EntityListBuilder`. Оно было без значения.
 - [#2927077](https://www.drupal.org/project/drupal/issues/2927077) `Entity::toUrl` теперь передает параметр ревизии на все маршруты, чьё название начинается с `revision`. Таким образом, это автоматизирует передачу параметров для кастомных маршрутов типа `revision_revert` и `revision_delete`.
+- [#2656570](https://www.drupal.org/project/drupal/issues/2656570) `DraggableListBuilder` теперь рендерит метку через `#plain_text`.
 
 ## Extension System
 
 - [#3150726](https://www.drupal.org/project/drupal/issues/3150726) Функция `update_check_incompatibility()` помечена устаревшей.
 
+## Field System
+
+- [#2893789](https://www.drupal.org/project/drupal/issues/2893789) `WidgetBase` теперь использует свой собственный метод `::getFilteredDescription()` для получения описания.
+
 ## File
 
 - [#3070902](https://www.drupal.org/project/drupal/issues/3070902) Для исключения вызываемого в `prepareDestination()` улучшено описание лога.
 
+## Forum
+
+- [#3067622](https://www.drupal.org/project/drupal/issues/3067622) Справка из `hook_help()` конвертирована в Help Topics.
+
+## Help Topic
+
+- [#3087879](https://www.drupal.org/project/drupal/issues/3087879) Для поиска по Help Topic теперь используется административная [тема оформления](../themes/themes.md).
+- [#3095740](https://www.drupal.org/project/drupal/issues/3095740) Справка для `menu_link_content` и `menu_ui` модулей конвертирована в Help Topic.
+
 ## Image
 
 - [#3153009](https://www.drupal.org/project/drupal/issues/3153009) Добавлен новый стиль изображения устанавливаемый с модулем — «Wide (1090)». Он будет использоваться как Hero стиль в будущей теме Olivero.
+
+## Install System
+
+- [#3157895](https://www.drupal.org/project/drupal/issues/3157895) Обновление состояния `install_time` перенесено в `installed_finished()`.
+- [#3086307](https://www.drupal.org/project/drupal/issues/3086307) Производительность установки увеличена примерно на ~20%, путем сброса кэша маршрутов после установки всех модулей, а не после каждого.
 
 ## JavaScript
 
@@ -216,12 +278,20 @@ use Drupal\Component\EventDispatcher\Event;
 ## Media
 
 - [#3142818](https://www.drupal.org/project/drupal/issues/3142818) Из ссылок удалён аттрибут `target=_blank`.
+- [#3159793](https://www.drupal.org/project/drupal/issues/3159793) Исправлена опечатка в форме настройки Media Library.
+
+## Menu UI
+
+- [#3158562](https://www.drupal.org/project/drupal/issues/3158562) Теперь в интерфейсе всегда ссылка меню упоминается как «menu link», вместо «menu item».
+- [#3153394](https://www.drupal.org/project/drupal/issues/3153394) Добавлена документация что меню поддерживает маршрут типа `route:<button>`.
 
 ## Migrate
 
 - [#3024682](https://www.drupal.org/node/3024682) На странице со списком миграций теперь показываются человекопонятные названия, вместо машинных.
 - [#3143719](https://www.drupal.org/project/drupal/issues/3143719) В `MigrateUpgradeTestBase` добавлен новый метод `getCredentials()`.
 - [#2993367](https://www.drupal.org/project/drupal/issues/2993367) Добавлена миграция из Drupal 7 Picture (контрибный модуль) в Responsive Image.
+- [#3133139](https://www.drupal.org/project/drupal/issues/3133139) Удалена `is_array` проверка в `getProcessPlugins`.
+- [#3134300](https://www.drupal.org/project/drupal/issues/3134300) Упрощена разметка и код в `ReviewForm::buildForm()`.
 
 ## Help Topics
 
@@ -236,11 +306,16 @@ use Drupal\Component\EventDispatcher\Event;
 
 - [#3152848](https://www.drupal.org/project/drupal/issues/3152848) Код связанный с `bc_entity_resource_permissions` настройкой удалён, так как она больше не используется.
 
+## Routing System
+
+- [#3158708](https://www.drupal.org/project/drupal/issues/3158708) Возвращено поведение, что `RouteProvider::getAllRoutes()` возвращает `iterable` результат, которое было изменено в [#2917331](https://www.drupal.org/project/drupal/issues/2917331).
+
 ## Search
 
 - [#3086794](https://www.drupal.org/project/drupal/issues/3086794) Плагины результатов поиска теперь могут указывать, какую тему использовать для отрисовки страниц.
 - [#3086795](https://www.drupal.org/project/drupal/issues/3086795) «Search help» на странице поиска заменён на «About searching» для избежания двусмысленности.
 - [#3155221](https://www.drupal.org/project/drupal/issues/3155221) Удален устаревший «@todo».
+- [#3075703](https://www.drupal.org/project/drupal/issues/3075703) Функции для обработки поискового запроса `search_index_split()`, `search_simplify()` и `search_expand_cjk()` перенесены в [сервис](../services/services.md) `search.text_processor`.
 
 ## Serialization
 
@@ -249,6 +324,10 @@ use Drupal\Component\EventDispatcher\Event;
 ## Seven
 
 - [#3054196](https://www.drupal.org/node/3054196) Исправлена проблема с белым фоном у кнопки в таблице.
+
+## Simpletest
+
+- [#3112432](https://www.drupal.org/project/drupal/issues/3112432) Добавлена реализация `hook_requirements()` которая будет постоянно блокировать включение данного модуля на новых сайтах.
 
 ## Taxonomy
 
@@ -259,12 +338,15 @@ use Drupal\Component\EventDispatcher\Event;
 
 - [#3082006](https://www.drupal.org/node/3082006) Поле пароля больше нельзя использовать в Views для вывода. Ранее он не показывал ничего, сейчас отключена возможность выбора данного значения.
 - [#3150070](https://www.drupal.org/project/drupal/issues/3150070) Видимость свойств в новых тестах изменена с `public` на `protected`.
+- [#2847808](https://www.drupal.org/project/drupal/issues/2847808) Метка для прав доступа `administer permissions` изменена на «Administer roles and permissions».
 
 ## Views
 
 - [#3139353](https://www.drupal.org/project/drupal/issues/3139353) Добавлен новый публичный метод `Drupal\views\Plugin\views\query\Sql::getConnection()`.
 - [#3150490](https://www.drupal.org/project/drupal/issues/3150490) Улучшено именование переменных в `Drupal\views\ViewExecutableFactory::get`.
 - [#2838555](https://www.drupal.org/project/drupal/issues/2838555) Views больше не позволит добавлять связи на данные у которых нет базовой таблицы для джоина (например, конфигурационные сущности).
+- [#2780869](https://www.drupal.org/project/drupal/issues/2780869) Исправлена неполадка, при которой невозможно было сохранить представление, если в значении опции для фильтра была точка.
+- [#2625136](https://www.drupal.org/project/drupal/issues/2625136) Раскрытые фильтры для `numeric` и `date` полей теперь имеют обертку, для того чтобы поля были на одном уровне.
 
 ## Тестирование
 
@@ -282,6 +364,10 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3155761](https://www.drupal.org/project/drupal/issues/3155761) В `BlockFormMessagesTest` использование `assertTrue()` с `stristr()` заменено на `assertStringContainsString()`.
 - [#3139440](https://www.drupal.org/project/drupal/issues/3139440) Использование устаревшего `AssertLegacyTrait::buildXPathQuery()` заменено на `$this->assertSession()->buildXPathQuery()`.
 - [#3139426](https://www.drupal.org/project/drupal/issues/3139426) Использование устаревшего `AssertLegacyTrait::assertOptionSelected()` заменено на `$this->assertSession()->optionExists()`.
+- [#3123120](https://www.drupal.org/project/drupal/issues/3123120) Использование устаревшего `AssertLegacyTrait::pass()` заменено на новые решения.
+- [#3155760](https://www.drupal.org/project/drupal/issues/3155760) Использование `array_key_exists()` заменено на `assertArrayHasKey()`.
+- [#3139428](https://www.drupal.org/project/drupal/issues/3139428) Использование устаревших `AssertLegacyTrait::assertFieldChecked()` и `AssertLegacyTrait::assertNoFieldChecked()` заменено на `$this->assertSession()->checkboxChecked()`.
+- [#3158286](https://www.drupal.org/project/drupal/issues/3158286) Удалены неиспользуемые локальные переменные из `BubbleableMetadataTest`.
 
 ## Прочие изменения
 
@@ -298,7 +384,6 @@ use Drupal\Component\EventDispatcher\Event;
 - [#2256367](https://www.drupal.org/project/drupal/issues/2256367) Использование «web site» в документации и UI заменено на «website».
 - [#3143724](https://www.drupal.org/project/drupal/issues/3143724) «dont» заменён на «do_not» в якоре ссылки на документацию.
 - [#3153790](https://www.drupal.org/project/drupal/issues/3153790) Исправлена опечатка в сервисе `user.flood_subscriber`.
-- [#3085751](https://www.drupal.org/project/drupal/issues/3085751) `setter` свойство у [сервисов](../services/services.md) теперь учитывается как зависимость и не должно приводить к ошибкам в обновлениях.
 - [#3055189](https://www.drupal.org/project/drupal/issues/3055189) Маппинг ключей в несколько строк помечен устаревшим в Symfony 4.3, соответствующие изменения внесены в ядро.
 - [#2937844](https://www.drupal.org/project/drupal/issues/2937844) Внесены исправления для соответствия стандарту `Squiz.PHP.NonExecutableCode`.
 - [#3143713](https://www.drupal.org/project/drupal/issues/3143713) Функция `drupal_get_schema_versions()` теперь всегда возвращает целые числа.
@@ -307,3 +392,10 @@ use Drupal\Component\EventDispatcher\Event;
 - [#2807743](https://www.drupal.org/project/drupal/issues/2807743) Тригерры ошибок для `FormattableMarkup::placeholderFormat()` приведены к единому стилю.
 - [#2619482](https://www.drupal.org/project/drupal/issues/2619482) Использование `get_called_class()` и `get_class($this)` заменены на `static::class`.
 - [#2928960](https://www.drupal.org/project/drupal/issues/2928960) Длина слогана сайта увеличена со 128 символов до 255.
+- [#3155770](https://www.drupal.org/project/drupal/issues/3155770) Удалены избыточные указания реализации `ContainerFactoryPluginInterface` когда класс расширял уже класс реализующий интерфейс.
+- [#3154914](https://www.drupal.org/project/drupal/issues/3154914) Исправлены грамматически ошибки при употреблении множественного и единственного числа.
+- [#3157546](https://www.drupal.org/project/drupal/issues/3157546) В `MAINTAINERS.txt` добавлен mondrake в качестве мейнтейнера тест фреймворка.
+- [#3157954](https://www.drupal.org/project/drupal/issues/3157954) Из тестов удалены избыточные ребилды маршрутов.
+- [#2989262](https://www.drupal.org/project/drupal/issues/2989262) В генератор `.htaccess` файла добавлены экранирования для точек и запятых.
+- [#3116858](https://www.drupal.org/project/drupal/issues/3116858) `ExtensionDiscovery` теперь кэширует не объект расширения целиком, а только информацию о нём.
+- [#2836194](https://www.drupal.org/project/drupal/issues/2836194) Для ajax throbber увеличен паддинг, чтобы не обрезало край анимации.
