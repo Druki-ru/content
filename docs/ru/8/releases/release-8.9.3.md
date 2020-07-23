@@ -55,6 +55,7 @@ metatags:
 ## Field System
 
 - [#3159382](https://www.drupal.org/project/drupal/issues/3159382) Для представления `test_view_fieldapi` добавлена явная сортировка по `nid`, чтобы тесты проходили на всех БД.
+- [#3159739](https://www.drupal.org/project/drupal/issues/3159739) Исправлено сравнение строки с блобом в `EntityDisplayTest`.
 
 ## Locale
 
