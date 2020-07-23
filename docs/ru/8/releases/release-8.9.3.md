@@ -94,6 +94,10 @@ metatags:
 
 - [#3155765](https://www.drupal.org/project/drupal/issues/3155765) Исправлена опечатка в методе теста `AliasManagerTest`.
 
+## System
+
+- [#3084916](https://www.drupal.org/project/drupal/issues/3084916) Добавлена новая JavaScript функция `tableDragToggle()` для `Drupal.theme` которая отвечает за разметку кнопки сортировки.
+
 ## Taxonomy
 
 - [#3160169](https://www.drupal.org/project/drupal/issues/3160169) Удалена неиспользуемая переменная `$a` в `Drupal\taxonomy\Plugin\Validation\Constraint\TaxonomyTermHierarchyConstraintValidator::validate()`.
