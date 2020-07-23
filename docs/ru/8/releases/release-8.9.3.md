@@ -22,6 +22,7 @@ metatags:
 ## Composer
 
 - [#3153869](https://www.drupal.org/project/drupal/issues/3153869) Удалены оставшиеся настройки `wikimedia/composer-merge-plugin`.
+- [#3159730](https://www.drupal.org/project/drupal/issues/3159730) `composer/installers` обновлён до версии 1.9.0. Это позволит управлять зависимости при помощи Composer 2.
 
 ## Config
 
@@ -66,6 +67,11 @@ metatags:
 ## Media
 
 - [#3089745](https://www.drupal.org/project/drupal/issues/3089745) Улучшена работа фокуса виджета Media Library когда используется максимальное количество элементов (так как кнопка добавления и сопутствующие js, отсутствует).
+- [#3122051](https://www.drupal.org/project/drupal/issues/3122051) Поле `name` теперь отображается только если поддерживается oEmbed провайдером.
+
+## Menu Link Content
+
+- [#3016038](https://www.drupal.org/project/drupal/issues/3016038) `\Drupal\menu_link_content\MenuLinkContentAccessControlHandler::checkAccess` теперь всегда возвращает объект реализующий `\Drupal\Core\Access\AccessResultInterface` в качестве результата.
 
 ## Migration System
 
@@ -129,3 +135,4 @@ metatags:
 - [#3085751](https://www.drupal.org/project/drupal/issues/3085751) Улучшена проверка, которая позволяет модулям в обновлениях описывать новые зависимости и использовать их сервисы как зависимость для своих без исключения во время обновления.
 - [#3155462](https://www.drupal.org/project/drupal/issues/3155462) Для блока «Сделано на Drupal» удален аттрибут `role="complementary"`.
 - [#3160124](https://www.drupal.org/project/drupal/issues/3160124) Исправлены опечатки: «wiget», «escapeable», «PHPunit».
+- [#3160020](https://www.drupal.org/project/drupal/issues/3160020) Исправлены опечатки: «iids», «twoa», «twob», «roota», «rootb», «parentc».
