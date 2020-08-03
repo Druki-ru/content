@@ -15,6 +15,10 @@ metatags:
 
 - [#3091309](https://www.drupal.org/project/drupal/issues/3091309) `broken` плагин не объявляет контексты, поэтому он больше является context-aware чтобы не выходило исключение.
 
+## CKeditor
+
+- [#3155110](https://www.drupal.org/project/drupal/issues/3155110) CKEditor обновлён до версии 4.14.1.
+
 ## Comment
 
 - [#2855068](https://www.drupal.org/project/drupal/issues/2855068) Исправлен метод получения настроек поля для комментариев. Теперь данный тип поля может быть объявлен как базовое поле сущности.
@@ -23,6 +27,7 @@ metatags:
 
 - [#3153869](https://www.drupal.org/project/drupal/issues/3153869) Удалены оставшиеся настройки `wikimedia/composer-merge-plugin`.
 - [#3159730](https://www.drupal.org/project/drupal/issues/3159730) `composer/installers` обновлён до версии 1.9.0. Это позволит управлять зависимости при помощи Composer 2.
+- [#3162479](https://www.drupal.org/project/drupal/issues/3162479) Исправлены неправильные указания с `Drupal\Composer\VendorHardening` на `Drupal\Composer\Plugin\VendorHardening`.
 
 ## Config
 
@@ -40,6 +45,7 @@ metatags:
 ## Database System
 
 - [#3151975](https://www.drupal.org/project/drupal/issues/3151975) `NodeRevisionsTest` теперь использует EntityQuery.
+- [#3159982](https://www.drupal.org/project/drupal/issues/3159982) SQL запрос в `\Drupal\Core\Database\Driver\mysql\Schema::getComment` теперь использует `AS` вместо `as`.
 
 ## Datetime
 
@@ -56,6 +62,11 @@ metatags:
 
 - [#3159382](https://www.drupal.org/project/drupal/issues/3159382) Для представления `test_view_fieldapi` добавлена явная сортировка по `nid`, чтобы тесты проходили на всех БД.
 - [#3159739](https://www.drupal.org/project/drupal/issues/3159739) Исправлено сравнение строки с блобом в `EntityDisplayTest`.
+- [#3089495](https://www.drupal.org/project/drupal/issues/3089495) Теперь значение «No» для `BooleanCheckboxWidget` является переводимой.
+
+## Layout Builder
+
+- [#3161300](https://www.drupal.org/project/drupal/issues/3161300) Улучшено покрытие тестами для `\Drupal\Tests\layout_builder\Unit\SectionTest::testUnsetThirdPartySetting()`.
 
 ## Locale
 
@@ -81,6 +92,7 @@ metatags:
 - [#3126063](https://www.drupal.org/project/drupal/issues/3126063) Миграции форматов текста более не будут проваливаться если фильтр используется исключительно для трансформации.
 - [#3151360](https://www.drupal.org/project/drupal/issues/3151360) В форме `CredentialFrom` улучшены описания для файловых путей.
 - [#2912244](https://www.drupal.org/project/drupal/issues/2912244) Добавлена отсутствующая документация для `MigrateIdMapInterface`.
+- [#3160031](https://www.drupal.org/project/drupal/issues/3160031) `destinationproperty` заменён на `destination_property`.
 
 ## MySQL драйвер
 
@@ -89,6 +101,7 @@ metatags:
 ## Node System
 
 - [#3146016](https://www.drupal.org/project/drupal/issues/3146016) В представление `test_node_revision_uid` добавлена конкретная сортировка, так как она ожидается при сравнении, но не была задана.
+- [#2348203](https://www.drupal.org/project/drupal/issues/2348203) Право доступа на создание новых материалов теперь контролируется `hook_ENTITY_TYPE_create_access()` вместо `hook_node_access()`.
 
 ## Path
 
@@ -114,16 +127,30 @@ metatags:
 
 - [#2801929](https://www.drupal.org/project/drupal/issues/2801929) Исправлена неполадка в запросе, из-за которой при добавления поля комментария пропадала статистика по комментариям из вывода.
 - [#3157933](https://www.drupal.org/project/drupal/issues/3157933) Удалена неиспользуемая переменная `$new_block_title`.
+- [#3161199](https://www.drupal.org/project/drupal/issues/3161199) Удалено свойство `Drupal\views\Plugin\views\filter\BooleanOperator::no_operator`.
+- [#3074595](https://www.drupal.org/project/drupal/issues/3074595) `InOperator::validate()` теперь передаёт второй параметр в `var_export()`, чтобы передавался массив, а не строка.
 
 ## Views UI
 
 - [#3157462](https://www.drupal.org/project/drupal/issues/3157462) Исправлена ошибка в комментарии для конструктора.
+
+## Workspaces
+
+- [#3092551](https://www.drupal.org/project/drupal/issues/3092551) Исправлено некорректное отображение области над тулбаром, которое выглядела как активная область, но таковой не являлась.
 
 ## Тестирование
 
 - [#3158292](https://www.drupal.org/project/drupal/issues/3158292) Из теста `FormAjaxResponseBuilderTest` удалены неиспользуемые переменные.
 - [#3156070](https://www.drupal.org/project/drupal/issues/3156070) Из теста `ConfigSchemaTest` удалены неиспользуемые переменные.
 - [#3155796](https://www.drupal.org/project/drupal/issues/3155796) Из теста `NodeRevisionsUiBypassAccessTest` удалена неиспользуемая переменная.
+- [#3156345](https://www.drupal.org/project/drupal/issues/3156345) Из теста `PathProcessorTest` удалена неиспользуемая переменная.
+- [#3158281](https://www.drupal.org/project/drupal/issues/3158281) Из теста `ScaffoldTest` удалена неиспользуемая переменная.
+- [#3158276](https://www.drupal.org/project/drupal/issues/3158276) Из теста `RequestFormatRouteFilterTest` удалена неиспользуемая переменная.
+- [#3123120](https://www.drupal.org/project/drupal/issues/3123120) Метод `AssertLegacyTrait::pass` помечен устаревшим. Ядро больше не использует его.
+- [#3156040](https://www.drupal.org/project/drupal/issues/3156040) В методах `AccessManagerTest::testCheckNamedRouteWithUpcastedValues()` и `AccessManagerTest::testCheckNamedRouteWithDefaultValue()` удалена бесполезная инициализации переменной `$map`.
+- [#3158270](https://www.drupal.org/project/drupal/issues/3158270) Из теста `SelectComplexTest` удалены неиспользуемые переменные.
+- [#3153264](https://www.drupal.org/project/drupal/issues/3153264) Прекращено использование `t()` в тестах `::clickViewsOperationLink()`, `::helperButtonHasLabel()` и `::optionExists()`.
+- [#3142749](https://www.drupal.org/project/drupal/issues/3142749) Исправлены вызовы `AssertLegacyTrait::assertPattern()` где до сих пор передавался аргумента для `$message`.
 
 ## Прочие изменения
 
@@ -141,3 +168,10 @@ metatags:
 - [#3155462](https://www.drupal.org/project/drupal/issues/3155462) Для блока «Сделано на Drupal» удален аттрибут `role="complementary"`.
 - [#3160124](https://www.drupal.org/project/drupal/issues/3160124) Исправлены опечатки: «wiget», «escapeable», «PHPunit».
 - [#3160020](https://www.drupal.org/project/drupal/issues/3160020) Исправлены опечатки: «iids», «twoa», «twob», «roota», «rootb», «parentc».
+- [#3117396](https://www.drupal.org/project/drupal/issues/3117396) Предупреждение о том что Pathauto версии меньше 1.5 не совместим с ядром больше не отображается на -dev версии ядра.
+- [#2994319](https://www.drupal.org/project/drupal/issues/2994319) Для элемента формы `entity_autocomplete` добавлена более подробная документация и пример использования.
+- [#3158589](https://www.drupal.org/project/drupal/issues/3158589) Улучшена документация для настройки переопределения конфигураций для разработки в `default.settings.php`.
+- [#3161301](https://www.drupal.org/project/drupal/issues/3161301) Исправлена опеачтка «existant».
+- [#3138766](https://www.drupal.org/project/drupal/issues/3138766) Исправлены опечатки и употребление «Don't».
+- [#2875807](https://www.drupal.org/project/drupal/issues/2875807) Тайпхинт для параметра `$text` в `Drupal::l()` и `Link::fromTextAndUrl()` обновлён до актуального значения `string|array|\Drupal\Component\Render\MarkupInterface`.
+- [#3156879](https://www.drupal.org/project/drupal/issues/3156879) `\Drupal\Component\Utility\Bytes::toInt()` теперь приндутильно преобразует значение переменной `$size` в `float`.
