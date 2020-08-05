@@ -268,6 +268,10 @@ use Drupal\Component\EventDispatcher\Event;
 
 - [#3070902](https://www.drupal.org/project/drupal/issues/3070902) Для исключения вызываемого в `prepareDestination()` улучшено описание лога.
 
+## Filter
+
+- [#3151101](https://www.drupal.org/project/drupal/issues/3151101) Употребление слов «whitelist» и «blacklist» в Filter модуле заменено на более подходящие.
+
 ## Forum
 
 - [#3067622](https://www.drupal.org/project/drupal/issues/3067622) Справка из `hook_help()` конвертирована в Help Topics.
@@ -320,6 +324,7 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3134300](https://www.drupal.org/project/drupal/issues/3134300) Упрощена разметка и код в `ReviewForm::buildForm()`.
 - [#3154398](https://www.drupal.org/project/drupal/issues/3154398) Миграции теперь могут указывать требуемые плагины для своей работы при помощи нового метода `getRequirements()`.
 - [#3110669](https://www.drupal.org/project/drupal/issues/3110669) Добавлена поддержка миграции мультиязычных меню из Drupal 7.
+- [#2845485](https://www.drupal.org/project/drupal/issues/2845485) Улучшена документация для плагина `MenuLinkParent`.
 
 ## Route System
 
@@ -440,3 +445,4 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3143087](https://www.drupal.org/project/drupal/issues/3143087) В `ModulesListForm` теперь явно объявлено свойство `accessManager`.
 - [#3162045](https://www.drupal.org/project/drupal/issues/3162045) Для совместимости с Symfony 5 вместо `new Process()` используется `\Symfony\Component\Process\Process::fromShellCommandline()`.
 - [#3120222](https://www.drupal.org/project/drupal/issues/3120222) Ссылки ведущие на документацию Drupal 7 заменены на актуальные.
+- [#3151095](https://www.drupal.org/project/drupal/issues/3151095) Употребление «whitelist» и «blacklist» в `\Drupal\Core\Utility\Error` заемнено на более подходящие.
