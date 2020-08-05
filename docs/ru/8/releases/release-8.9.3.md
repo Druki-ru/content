@@ -11,6 +11,10 @@ metatags:
 > [!IMPORTANT]
 > Данный релиз находится в разработке. Актуальная версия [Drupal 8.9.2](release-8.9.2.md).
 
+## Big Pipe
+
+- [#3151098](https://www.drupal.org/project/drupal/issues/3151098) Убрано употребление слова «whitelist».
+
 ## Block
 
 - [#3091309](https://www.drupal.org/project/drupal/issues/3091309) `broken` плагин не объявляет контексты, поэтому он больше является context-aware чтобы не выходило исключение.
@@ -46,6 +50,10 @@ metatags:
 
 - [#3151975](https://www.drupal.org/project/drupal/issues/3151975) `NodeRevisionsTest` теперь использует EntityQuery.
 - [#3159982](https://www.drupal.org/project/drupal/issues/3159982) SQL запрос в `\Drupal\Core\Database\Driver\mysql\Schema::getComment` теперь использует `AS` вместо `as`.
+
+## Database Update System
+
+- [#3136762](https://www.drupal.org/project/drupal/issues/3136762) Исправлена ошибка из-за которой в `update.php` появлялась ссылка «Put site into maintenance mode» для пользователей у которых нет прав на изменение данной настройки и ссылка приводила к 403 ответу.
 
 ## Datetime
 
@@ -93,6 +101,7 @@ metatags:
 - [#3151360](https://www.drupal.org/project/drupal/issues/3151360) В форме `CredentialFrom` улучшены описания для файловых путей.
 - [#2912244](https://www.drupal.org/project/drupal/issues/2912244) Добавлена отсутствующая документация для `MigrateIdMapInterface`.
 - [#3160031](https://www.drupal.org/project/drupal/issues/3160031) `destinationproperty` заменён на `destination_property`.
+- [#3163162](https://www.drupal.org/project/drupal/issues/3163162) Исправлена опечатка в фикстуре Drupal 7 для `field_id`.
 
 ## MySQL драйвер
 
@@ -175,3 +184,4 @@ metatags:
 - [#3138766](https://www.drupal.org/project/drupal/issues/3138766) Исправлены опечатки и употребление «Don't».
 - [#2875807](https://www.drupal.org/project/drupal/issues/2875807) Тайпхинт для параметра `$text` в `Drupal::l()` и `Link::fromTextAndUrl()` обновлён до актуального значения `string|array|\Drupal\Component\Render\MarkupInterface`.
 - [#3156879](https://www.drupal.org/project/drupal/issues/3156879) `\Drupal\Component\Utility\Bytes::toInt()` теперь приндутильно преобразует значение переменной `$size` в `float`.
+- [#3151096](https://www.drupal.org/project/drupal/issues/3151096) Употребление слов «whitelist» и «blacklist» заменены на более подходящие в `\Drupal\Core\Utility\ProjectInfo`.
