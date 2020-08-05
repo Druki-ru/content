@@ -77,7 +77,7 @@ composer update --with-dependencies -o
 composer update drupal/paragraphs
 ```
 
-Приме обновления конкретной зависимости, а также зависимостей указанных для него.
+Пример обновления конкретной зависимости, а также зависимостей указанных для него.
 
 ```bash
 composer update drupal/paragraphs --with-dependencies -o
