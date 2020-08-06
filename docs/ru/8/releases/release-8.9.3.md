@@ -8,8 +8,7 @@ metatags:
   description: 'Список изменений Drupal 8.9.3.'
 ---
 
-> [!IMPORTANT]
-> Данный релиз находится в разработке. Актуальная версия [Drupal 8.9.2](release-8.9.2.md).
+**Дата релиза**: 5 августа 2020
 
 ## Big Pipe
 
@@ -185,3 +184,7 @@ metatags:
 - [#2875807](https://www.drupal.org/project/drupal/issues/2875807) Тайпхинт для параметра `$text` в `Drupal::l()` и `Link::fromTextAndUrl()` обновлён до актуального значения `string|array|\Drupal\Component\Render\MarkupInterface`.
 - [#3156879](https://www.drupal.org/project/drupal/issues/3156879) `\Drupal\Component\Utility\Bytes::toInt()` теперь приндутильно преобразует значение переменной `$size` в `float`.
 - [#3151096](https://www.drupal.org/project/drupal/issues/3151096) Употребление слов «whitelist» и «blacklist» заменены на более подходящие в `\Drupal\Core\Utility\ProjectInfo`.
+
+## Ссылки
+
+- [Drupal 8.9.3](https://www.drupal.org/project/drupal/releases/8.9.3) (англ.), drupal.org, 5 августа 2020

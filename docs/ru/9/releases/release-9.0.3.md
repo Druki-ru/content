@@ -8,8 +8,7 @@ metatags:
   description: 'Список изменений Drupal 9.0.3.'
 ---
 
-> [!IMPORTANT]
-> Данный релиз находится в разработке. Актуальная версия [Drupal 9.0.2](release-9.0.2.md).
+**Дата релиза**: 5 августа 2020
 
 > [!NOTE]
 > Данный релиз также содержит изменения внесенные в [Drupal 8.9.3](../../8/releases/release-8.9.3.md).
@@ -76,3 +75,7 @@ metatags:
 - [#3159535](https://www.drupal.org/project/drupal/issues/3159535) Исправлены опечатки `finegrained`, `perfoming`, `fieldeset`.
 - [#3161992](https://www.drupal.org/project/drupal/issues/3161992) Использование устаревшего `ResourceResponse::create()` заменено на `new ResourceResponse()`.
 - [#3162031](https://www.drupal.org/project/drupal/issues/3162031) `Symfony\Component\HttpKernel\Event\ViewEvent` в Symfony 5.1 является `final`, поэтому не может быть замокан. Мок теперь создаётся по интерфейсу.
+
+## Ссылки
+
+- [Drupal 9.0.3](https://www.drupal.org/project/drupal/releases/9.0.3) (англ.), drupal.org, 5 августа 2020
