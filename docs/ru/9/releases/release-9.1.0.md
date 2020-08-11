@@ -198,6 +198,88 @@ use Drupal\Component\EventDispatcher\Event;
 
 Теперь, при включении отладки для сайта, будет дополнительно добавляться заголовок `X-Drupal-Cache-Max-Age` к ответу. Данный заголовок будет содержать в качестве значения минимальное значение `max-age` среди всех рендер массивов отображаемых на странице.
 
+## Настройки ядра теперь могут быть помечены как устаревшие
+
+- [#3163226](https://www.drupal.org/project/drupal/issues/3163226)
+
+Для того чтобы пометить [настройку ядро](../settings-php.md) устаревшей необходимо добавить информацию в массив `Settings::$deprecatedSettings`.
+
+В качестве ключа должно быть название устаревшей настройки, а в качестве значения массив:
+
+- `replacement`: Название новой настройки, что заменяет устаревшую.
+- `message`: Сообщение выводимое при использовании старой настройки.
+
+Пример:
+
+```php
+  private static $deprecatedSettings = [
+    'old_setting' => [
+      'replacement' => 'new_setting',
+      'message' => 'The "old_setting" setting is deprecated in drupal:9.1.0 and is removed from drupal:10.0.0. Use "new_setting" instead. See https://www.drupal.org/node/CR-NID.',
+    ],
+  ];
+```
+
+## Библиотекам теперь указывается прямой путь на файл лицензии
+
+- [#2897837](https://www.drupal.org/project/drupal/issues/2897837)
+
+Все пути до лицензий в `core.libraries.yml` заменены на прямые адреса. Таким образом, по адресу будет открываться только содержание лицензии.
+
+**Ранее:**
+
+```yaml
+url: https://github.com/jquery/jquery-ui/blob/1.12.1/LICENSE.txt
+```
+
+**Теперь:**
+
+```yaml
+url: https://raw.githubusercontent.com/jquery/jquery-ui/1.12.1/LICENSE.txt
+```
+
+Контрибным и собственым решениям рекомендуется делать подобным образом.
+
+## Создание экземпляров Drupal\Core\Database\Query\Condition через new помечено устаревшим
+
+- [#3130655](https://www.drupal.org/project/drupal/issues/3130655)
+
+Создание экземпляров `Drupal\Core\Database\Query\Condition` при помощи `new` помечено устаревшим. Экземпляр необходимо создавать через вызов метода `Drupal\Core\Database\Connection::condition()`. Это связано с тем что для различных типов БД, могут быть разные `Condition` объекты.
+
+**Ранее:**
+
+```php
+  use Drupal\Core\Database\Query\Condition;
+
+  $condition = new Condition('OR');
+```
+
+**Теперь:**
+
+```php
+  use Drupal\Core\Database\Database;
+
+  $condition = Database::getConnection()->condition('OR');
+```
+
+## Функция user_password() заменена новым сервисом password_generator
+
+- [#3153085](https://www.drupal.org/project/drupal/issues/3153085)
+
+Функция `user_password()` поемечена устаревшей, взамен добавлен новый сервис `passowrd_generator`.
+
+**Ранее:**
+
+```php
+user_password()
+```
+
+**Теперь:**
+
+```php
+\Drupal::service('password_generator')->generate()
+```
+
 ## Block
 
 - [#3105976](https://www.drupal.org/project/drupal/issues/3105976) В `BlockViewBuilder::buildPreRenderableBlock()` для аргумента `$entity` добавлен тайпхинт `\Drupal\block\BlockInterface`.
@@ -218,6 +300,7 @@ use Drupal\Component\EventDispatcher\Event;
 ## Comment
 
 - [#2984243](https://www.drupal.org/project/drupal/issues/2984243) Кнопка фильтрации в представлении для вывода комментариев теперь содержит значение «Filter» вместо «Apply».
+- [#3163685](https://www.drupal.org/project/drupal/issues/3163685) Удалена неиспользуемая переменная `$block` в `CommentBlockTest`.
 
 ## Composer
 
@@ -225,9 +308,13 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3133903](https://www.drupal.org/project/drupal/issues/3133903) Добавлены проверка что все пакеты из `composer.lock` файла ядра имеются и имеют конкретные версии.
 - [#3121847](https://www.drupal.org/project/drupal/issues/3121847) В шаблоны проектов [drupal/recommended-project](drupal-recommended-project.md) и [drupal/legacy-project](drupal-legacy-project.md) теперь добавляется новый путь установки `drupal-custom-profile` (`profiles/custom/{$name}/`).
 
+## Contact
+
+- [#3150227](https://www.drupal.org/project/drupal/issues/3150227) Удалены неиспользуемые переменные `$contact_form` и `$recipients_str`.
+
 ## Content Moderation
 
-- [#3044292](https://www.drupal.org/project/drupal/issues/3044292) Добавлен новый метод `::isModeratedEntity` для хендлеров moderation сущностей.
+- [#3044292](https://www.drupal.org/project/drupal/issues/3044292) (откачено) Добавлен новый метод `::isModeratedEntity` для хендлеров moderation сущностей.
 
 ## Content Translation
 
@@ -248,6 +335,8 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3151981](https://www.drupal.org/project/drupal/issues/3151981) В `NodeRevisionsAllTest` использование статических запросов заменено на Entity Query.
 - [#3152398](https://www.drupal.org/project/drupal/issues/3152398) Статические запросы в `core/tests/Drupal` переписаны на динамические.
 - [#3123461](https://www.drupal.org/project/drupal/issues/3123461) Возможность располагать драйвера баз данных в `DRUPAL_ROOT/drivers` помечена устаревшей и будет удалена в Drupal 10.
+- [#2999569](https://www.drupal.org/project/drupal/issues/2999569) Теперь, при попытке вставить (`INSERT`) запись в несуществующую колонку и без указания значения по умолчанию в схеме, драйвер MySQL будет выбрасывать исключение `IntegrityConstraintViolationException` в дополнение к текущему `DatabaseExceptionWrapper`.
+- [#3120892](https://www.drupal.org/project/drupal/issues/3120892) Для драйвера SQL Lite добавлена поддержа функции `LEAST()`.
 
 ## Entity System
 
@@ -267,6 +356,7 @@ use Drupal\Component\EventDispatcher\Event;
 ## File
 
 - [#3070902](https://www.drupal.org/project/drupal/issues/3070902) Для исключения вызываемого в `prepareDestination()` улучшено описание лога.
+- [#2991219](https://www.drupal.org/project/drupal/issues/2991219) `template_preprocess_file_link()` больше не добавляет `length` параметр после MIME в `type` аттрибуте.
 
 ## Filter
 
@@ -315,7 +405,7 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3158562](https://www.drupal.org/project/drupal/issues/3158562) Теперь в интерфейсе всегда ссылка меню упоминается как «menu link», вместо «menu item».
 - [#3153394](https://www.drupal.org/project/drupal/issues/3153394) Добавлена документация что меню поддерживает маршрут типа `route:<button>`.
 
-## Migrate
+## Migration System
 
 - [#3024682](https://www.drupal.org/node/3024682) На странице со списком миграций теперь показываются человекопонятные названия, вместо машинных.
 - [#3143719](https://www.drupal.org/project/drupal/issues/3143719) В `MigrateUpgradeTestBase` добавлен новый метод `getCredentials()`.
@@ -325,6 +415,13 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3154398](https://www.drupal.org/project/drupal/issues/3154398) Миграции теперь могут указывать требуемые плагины для своей работы при помощи нового метода `getRequirements()`.
 - [#3110669](https://www.drupal.org/project/drupal/issues/3110669) Добавлена поддержка миграции мультиязычных меню из Drupal 7.
 - [#2845485](https://www.drupal.org/project/drupal/issues/2845485) Улучшена документация для плагина `MenuLinkParent`.
+- [#3160323](https://www.drupal.org/project/drupal/issues/3160323) Название переменных в исключениях `Row` теперь обёрнуты в одинакрные кавычки.
+- [#3143717](https://www.drupal.org/project/drupal/issues/3143717) Добавлены новые хелперы `MigrateUpgradeTestBase::assertIdConflictForm()` и `MigrateUpgradeTestBase::assertReviewForm()`.
+- [#3164120](https://www.drupal.org/project/drupal/issues/3164120) Исправлен пример кода в документации плагина `MenuLinkParent`.
+
+## Node System
+
+- [#2830504](https://www.drupal.org/project/drupal/issues/2830504) Исправлена неполадка из-за которой `Drupal\node\Plugin\Action\AssignOwnerNode` позволяла выбрать гостя в качестве владельца ноды.
 
 ## Route System
 
@@ -371,6 +468,10 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3122511](https://www.drupal.org/node/3122511) На странице редактирования добавлен пункт удаления во вкладки.
 - [#3151953](https://www.drupal.org/project/drupal/issues/3151953) В тесте `TermTranslationUITest` использование прямого запроса заменено на Entity Query.
 
+## Update
+
+- [#2303323](https://www.drupal.org/project/drupal/issues/2303323) `update_delete_file_if_stale()` теперь возвращает булевое значение.
+
 ## User
 
 - [#3082006](https://www.drupal.org/node/3082006) Поле пароля больше нельзя использовать в Views для вывода. Ранее он не показывал ничего, сейчас отключена возможность выбора данного значения.
@@ -408,6 +509,13 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3156998](https://www.drupal.org/project/drupal/issues/3156998) `symfony/phpunit-bridge` обновлён с версии 4.4.10 до 5.1.2. Добавлены тесты для `@requires` аннотаций с использованием новой версии пакета.
 - [#3142755](https://www.drupal.org/project/drupal/issues/3142755) Прекращена передача устаревшего аргумента `$message` в `AssertLegacyTrait::assertField()` и `AssertLegacyTrait::assertNoField()`.
 - [#3158266](https://www.drupal.org/project/drupal/issues/3158266) Удалены неиспользуемые переменные в `TranslationTest`.
+- [#2664322](https://www.drupal.org/project/drupal/issues/2664322) Вызов `KernelTestBase::installSchema()` для установки таблиц `key_value` и `key_value_expire` помечен устаревшим. Данные таблицы создаются лениво.
+- [#3164161](https://www.drupal.org/project/drupal/issues/3164161) Аннотация `@runInSeparateProcess` перенесена в `SettingsTest` чтобы покрывало все тесты.
+- [#3157434](https://www.drupal.org/project/drupal/issues/3157434) Вместо `\Drupal\Tests\Traits\ExpectDeprecationTrait` теперь используется `\Symfony\Bridge\PhpUnit\ExpectDeprecationTrait`.
+- [#3139408](https://www.drupal.org/project/drupal/issues/3139408) Использование устаревших `AssertLegacyTrait::assertField()` и `AssertLegacyTrait::assertNoField()` заменено на `$this->assertSession()->fieldExists()`.
+- [#3139433](https://www.drupal.org/project/drupal/issues/3139433) Использование устаревших `AssertLegacyTrait::assertEscaped()` и `AssertLegacyTrait::assertNoEscaped()` заменено на `$this->assertSession()->assertEscaped()`.
+- [#3139436](https://www.drupal.org/project/drupal/issues/3139436) Использование устаревшего `AssertLegacyTrait::assertPattern()` заменено на `$this->assertSession()->responseMatches()`.
+- [#3133355](https://www.drupal.org/project/drupal/issues/3133355) Добавлены новые методы `WebAssert::responseHeaderExists()` и `WebAssert::responseHeaderDoesNotExist()`
 
 ## Прочие изменения
 
@@ -446,3 +554,7 @@ use Drupal\Component\EventDispatcher\Event;
 - [#3162045](https://www.drupal.org/project/drupal/issues/3162045) Для совместимости с Symfony 5 вместо `new Process()` используется `\Symfony\Component\Process\Process::fromShellCommandline()`.
 - [#3120222](https://www.drupal.org/project/drupal/issues/3120222) Ссылки ведущие на документацию Drupal 7 заменены на актуальные.
 - [#3151095](https://www.drupal.org/project/drupal/issues/3151095) Употребление «whitelist» и «blacklist» в `\Drupal\Core\Utility\Error` заемнено на более подходящие.
+- [#3008140](https://www.drupal.org/project/drupal/issues/3008140) Добавлен новый тест `ShutdownFunctionsTest` для тестирования функции отключения Drupal.
+- [#3151094](https://www.drupal.org/project/drupal/issues/3151094) Слова «whitelist» и «blacklist» в классах `\Drupal\Core\Template` и их тестах заменены на более подходящие.
+- [#3142934](https://www.drupal.org/project/drupal/issues/3142934) Метод `\Drupal\Component\Utility\Bytes::toInt()` помечен устаревшим в пользу `\Drupal\Component\Utility\Bytes::toNumber()`.
+- [#3164211](https://www.drupal.org/project/drupal/issues/3164211) Удалены 8 исправленных опечаток из `misc/cspell/dictionary.txt`.
