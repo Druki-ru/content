@@ -33,6 +33,10 @@ metatags:
 
 - [#3151101](https://www.drupal.org/project/drupal/issues/3151101) Употребление «whitelist» и «blacklist» в Filter модуле заменено на более подходящие.
 
+## JSON:API
+
+- [#3025372](https://www.drupal.org/project/drupal/issues/3025372) Исправлена неполадка из-за которой при фильтрации мог быть пустой объект для связи.
+
 ## Migration System
 
 - [#3116841](https://www.drupal.org/project/drupal/issues/3116841) Исправлена фикстура для drupal6 миграций Node 1.
