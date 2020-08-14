@@ -301,6 +301,8 @@ user_password()
 
 - [#2984243](https://www.drupal.org/project/drupal/issues/2984243) Кнопка фильтрации в представлении для вывода комментариев теперь содержит значение «Filter» вместо «Apply».
 - [#3163685](https://www.drupal.org/project/drupal/issues/3163685) Удалена неиспользуемая переменная `$block` в `CommentBlockTest`.
+- [#3163686](https://www.drupal.org/project/drupal/issues/3163686) Удалена неиспользуемая переменная `$comment` в `CommentLinksAlterTest`.
+- [#3163425](https://www.drupal.org/project/drupal/issues/3163425) Удалена неиспользуемая переменная `$fields` в `CommentViewsData`.
 
 ## Composer
 
@@ -315,6 +317,7 @@ user_password()
 ## Content Moderation
 
 - [#3044292](https://www.drupal.org/project/drupal/issues/3044292) (откачено) Добавлен новый метод `::isModeratedEntity` для хендлеров moderation сущностей.
+- [#3164498](https://www.drupal.org/project/drupal/issues/3164498) Удалена неиспользуемая переменная `$entity_type_ids` в `content_moderation.module`.
 
 ## Content Translation
 
@@ -399,6 +402,7 @@ user_password()
 
 - [#3142818](https://www.drupal.org/project/drupal/issues/3142818) Из ссылок удалён аттрибут `target=_blank`.
 - [#3159793](https://www.drupal.org/project/drupal/issues/3159793) Исправлена опечатка в форме настройки Media Library.
+- [#3146492](https://www.drupal.org/project/drupal/issues/3146492) Удалены неиспользуемые переменные в модуле.
 
 ## Menu UI
 
@@ -515,7 +519,10 @@ user_password()
 - [#3139408](https://www.drupal.org/project/drupal/issues/3139408) Использование устаревших `AssertLegacyTrait::assertField()` и `AssertLegacyTrait::assertNoField()` заменено на `$this->assertSession()->fieldExists()`.
 - [#3139433](https://www.drupal.org/project/drupal/issues/3139433) Использование устаревших `AssertLegacyTrait::assertEscaped()` и `AssertLegacyTrait::assertNoEscaped()` заменено на `$this->assertSession()->assertEscaped()`.
 - [#3139436](https://www.drupal.org/project/drupal/issues/3139436) Использование устаревшего `AssertLegacyTrait::assertPattern()` заменено на `$this->assertSession()->responseMatches()`.
-- [#3133355](https://www.drupal.org/project/drupal/issues/3133355) Добавлены новые методы `WebAssert::responseHeaderExists()` и `WebAssert::responseHeaderDoesNotExist()`
+- [#3133355](https://www.drupal.org/project/drupal/issues/3133355) Добавлены новые методы `WebAssert::responseHeaderExists()` и `WebAssert::responseHeaderDoesNotExist()`.
+- [#3164589](https://www.drupal.org/project/drupal/issues/3164589) Использование `assertSame()` для заголовков ответов заменено на `$this->assertSession()->responseHeaderEquals()`.
+- [#3158280](https://www.drupal.org/project/drupal/issues/3158280) Удалена неиспользуемая переменная в `DefaultLazyPluginCollectionTest`.
+- [#3158291](https://www.drupal.org/project/drupal/issues/3158291) Удалены неиспользуемые переменные из `ContainerTest`.
 
 ## Прочие изменения
 
