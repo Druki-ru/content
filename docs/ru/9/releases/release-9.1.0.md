@@ -280,6 +280,38 @@ user_password()
 \Drupal::service('password_generator')->generate()
 ```
 
+## Добавлен новый класс Drupal\jsonapi\CacheableResourceResponse
+
+- [#3072076](https://www.drupal.org/project/drupal/issues/3072076)
+
+В предыдущих версиях JSON:API возвращал объекты `ResourceResponce` на все запросы, при этом он реализует `CacheableResponseInterface`, даже для ответов которые не должны кэшироваться. Это могло приводить к фатальным ошибкам при определённых условиях.
+
+Сейчас JSON:API конкретизирует ответы что кэшируются и не кэшируются, в связи с этим представлен новый класс `CacheableResourceResponse`. Данный класс реализует `CacheableResponseInterface`. Таким образом `ResourceResponce` более не реализует `CacheableResponseInterface`.
+
+`ResourceResponce` помечен для внутреннего использования и у вас не должно быть кода который может задеть данное изменение. Тем не менее, если по каким-то причинам ваш код полагается на данные классы, пожалуйста, произведите рефактор кода с использованием нового `CacheableResourceResponse` (это касается ответов `HEAD`, `OPTIONS` и `GET`).
+
+## Добавлено новое исключение \Drupal\Core\Queue\DelayedRequeueException
+
+- [#3116478](https://www.drupal.org/project/drupal/issues/3116478)
+
+Новое исключение `DelayedRequeueException` позволяет обработчику очереди откладывать дальнейшую обработку элементов до следующего цикла или на определенный период пока не истечёт время блокировки элемента. Очереди, поддерживающие данную возможность должны реализовывать интерфейс `DelayableQueueInterface`.
+
+Ранее было невозможно отложить обработку конкретного элемента очереди без выбрасывания исключения с последующие логированием или приостановкой всей очереди. Новый обработчик исключений работает «тихо» по умолчанию и позволяет отложить конкретный элемнет для последующей обработки.
+
+Для этого достаточно выбросить исключение `\Drupal\Core\Queue\DelayedRequeueException` в обработчике очереди.
+
+```php
+// Delay processing of this item until the next queue worker cycle.
+throw new DelayedRequeueException();
+
+// Delay processing of this item for 10 seconds (if supported by the queue).
+throw new DelayedRequeueException(10);
+```
+
+Если очередь не поддерживает данную особенность, то исключение будет проигнорирвоано и элемент останется заблокированным на стандартный пероид.
+
+`\Drupal\Core\Queue\DatabaseQueue` теперь реализует `DelayableQueueInterface`.
+
 ## Block
 
 - [#3105976](https://www.drupal.org/project/drupal/issues/3105976) В `BlockViewBuilder::buildPreRenderableBlock()` для аргумента `$entity` добавлен тайпхинт `\Drupal\block\BlockInterface`.
@@ -309,6 +341,7 @@ user_password()
 - [#3156558](https://www.drupal.org/project/drupal/issues/3156558) Обновлены зависимости.
 - [#3133903](https://www.drupal.org/project/drupal/issues/3133903) Добавлены проверка что все пакеты из `composer.lock` файла ядра имеются и имеют конкретные версии.
 - [#3121847](https://www.drupal.org/project/drupal/issues/3121847) В шаблоны проектов [drupal/recommended-project](drupal-recommended-project.md) и [drupal/legacy-project](drupal-legacy-project.md) теперь добавляется новый путь установки `drupal-custom-profile` (`profiles/custom/{$name}/`).
+- [#3164349](https://www.drupal.org/project/drupal/issues/3164349) `symfony/var-dumper` теперь указан как dev зависимость в корневом composer.json Drupal.
 
 ## Contact
 
@@ -318,6 +351,7 @@ user_password()
 
 - [#3044292](https://www.drupal.org/project/drupal/issues/3044292) (откачено) Добавлен новый метод `::isModeratedEntity` для хендлеров moderation сущностей.
 - [#3164498](https://www.drupal.org/project/drupal/issues/3164498) Удалена неиспользуемая переменная `$entity_type_ids` в `content_moderation.module`.
+- [#3155022](https://www.drupal.org/project/drupal/issues/3155022) Изменена сигнатура `EntityModerationForm::__construct()`. Параметр `$time` теперь имеет более слабые требования и вместо `Time` объекта ожидает экземпляр `TimeInterface`.
 
 ## Content Translation
 
@@ -355,6 +389,8 @@ user_password()
 ## Field System
 
 - [#2893789](https://www.drupal.org/project/drupal/issues/2893789) `WidgetBase` теперь использует свой собственный метод `::getFilteredDescription()` для получения описания.
+- [#3165188](https://www.drupal.org/project/drupal/issues/3165188) Удалена неиспользуемая переменная `$i` из `FieldOptionTranslation`.
+- [#3165191](https://www.drupal.org/project/drupal/issues/3165191) Удалена неиспользуемая переменная `$field_ids` из `FieldAttachStorageTest`.
 
 ## File
 
@@ -369,15 +405,24 @@ user_password()
 
 - [#3067622](https://www.drupal.org/project/drupal/issues/3067622) Справка из `hook_help()` конвертирована в Help Topics.
 
+## JSON:API
+
+- [#3165794](https://www.drupal.org/project/drupal/issues/3165794) Удалена неиспользуемая переменная `$account_bundle` в `ResourceTestBase`.
+- [#3093757](https://www.drupal.org/project/drupal/issues/3093757) Убраны вызовы `testRelated()` из тестов так как ишьюсы решены.
+
 ## Help Topic
 
 - [#3087879](https://www.drupal.org/project/drupal/issues/3087879) Для поиска по Help Topic теперь используется административная [тема оформления](../themes/themes.md).
 - [#3095740](https://www.drupal.org/project/drupal/issues/3095740) Справка для `menu_link_content` и `menu_ui` модулей конвертирована в Help Topic.
+- [#3164965](https://www.drupal.org/project/drupal/issues/3164965) Удалена неиспользуемая переменная `$source` в `HelpTopicTwigLoaderTest`.
+- [#3166763](https://www.drupal.org/project/drupal/issues/3166763) Исправлены двойные пробелы в `help.help_topic_search.html.twig`.
+- [#3047703](https://www.drupal.org/project/drupal/issues/3047703) Справки модулей `basic_auth`, `hal`, `jsonapi`, `rdf`, `rest` и `serialization` конвертированы в Help Topic.
 
 ## Image
 
 - [#3153009](https://www.drupal.org/project/drupal/issues/3153009) Добавлен новый стиль изображения устанавливаемый с модулем — «Wide (1090)». Он будет использоваться как Hero стиль в будущей теме Olivero.
 - [#3097797](https://www.drupal.org/project/drupal/issues/3097797) Улучшена документация для функции `image_filter_keyword()`.
+- [#3165350](https://www.drupal.org/project/drupal/issues/3165350) Удалена неиспользуемая переменная `$key` в `MigrateImageCacheTest`.
 
 ## Install System
 
@@ -394,9 +439,15 @@ user_password()
 
 - [#2691389](https://www.drupal.org/project/drupal/issues/2691389) Строка «Save and continue» в `InstallerTestBase::setUpLanguage` больше не является переводимой так как на данном этапе только английский язык.
 
+## Layout Builder
+
+- [#3053887](https://www.drupal.org/project/drupal/issues/3053887) В код добавлена документация почему блоки требуют создание новой ревизии при изменении.
+
 ## Locale
 
 - [#2925318](https://www.drupal.org/project/drupal/issues/2925318) Для таблицы `locales_location` удалён индекс `sid` так как он покрыт в `string_type`.
+- [#3167600](https://www.drupal.org/project/drupal/issues/3167600) Удалена неиспользуемая переменная `$config` в `locale.bulk.inc`.
+- [#3167599](https://www.drupal.org/project/drupal/issues/3167599) Удалена неиспользуемая переменная `$frequency` в `locale.module`.
 
 ## Media
 
@@ -422,10 +473,15 @@ user_password()
 - [#3160323](https://www.drupal.org/project/drupal/issues/3160323) Название переменных в исключениях `Row` теперь обёрнуты в одинакрные кавычки.
 - [#3143717](https://www.drupal.org/project/drupal/issues/3143717) Добавлены новые хелперы `MigrateUpgradeTestBase::assertIdConflictForm()` и `MigrateUpgradeTestBase::assertReviewForm()`.
 - [#3164120](https://www.drupal.org/project/drupal/issues/3164120) Исправлен пример кода в документации плагина `MenuLinkParent`.
+- [#2447727](https://www.drupal.org/project/drupal/issues/2447727) Добавлен абстрактный `ReferenceBase` для миграции связующих полей.
+- [#3112249](https://www.drupal.org/project/drupal/issues/3112249) Добавлена новая миграция `d7_menu_translation` для миграции переводов меню из Drupal 7.
+- [#3164652](https://www.drupal.org/project/drupal/issues/3164652) Для плагина обработчика `Substr` включено исключение cspell для игнорирования `skÅ‚odowska`.
+- [#3158277](https://www.drupal.org/project/drupal/issues/3158277) Удалена неиспользуемая переменная `EntityLinkTest`.
 
 ## Node System
 
 - [#2830504](https://www.drupal.org/project/drupal/issues/2830504) Исправлена неполадка из-за которой `Drupal\node\Plugin\Action\AssignOwnerNode` позволяла выбрать гостя в качестве владельца ноды.
+- [#3165950](https://www.drupal.org/project/drupal/issues/3165950) Из `NodeTypeForm` удалено упоминание что нижние подчёркивания будут конвертированы в дифисы, так как для путей форм сущностей уже используются нижине подчёркивания.
 
 ## Route System
 
@@ -467,6 +523,10 @@ user_password()
 
 - [#3112432](https://www.drupal.org/project/drupal/issues/3112432) Добавлена реализация `hook_requirements()` которая будет постоянно блокировать включение данного модуля на новых сайтах.
 
+## System
+
+- [#3077938](https://www.drupal.org/project/drupal/issues/3077938) Добавлена функция `tableDragHandle` для `Drupal.theme`. Теперь темы могут менять разметку управления сортировкой таблицы.
+
 ## Taxonomy
 
 - [#3122511](https://www.drupal.org/node/3122511) На странице редактирования добавлен пункт удаления во вкладки.
@@ -481,6 +541,7 @@ user_password()
 - [#3082006](https://www.drupal.org/node/3082006) Поле пароля больше нельзя использовать в Views для вывода. Ранее он не показывал ничего, сейчас отключена возможность выбора данного значения.
 - [#3150070](https://www.drupal.org/project/drupal/issues/3150070) Видимость свойств в новых тестах изменена с `public` на `protected`.
 - [#2847808](https://www.drupal.org/project/drupal/issues/2847808) Метка для прав доступа `administer permissions` изменена на «Administer roles and permissions».
+- [#2193803](https://www.drupal.org/project/drupal/issues/2193803) Переход по невалидной ссылке выхода из аккаунта больше не выдаёт 403, а редиректит на главную страницу сайта.
 
 ## Views
 
@@ -523,6 +584,16 @@ user_password()
 - [#3164589](https://www.drupal.org/project/drupal/issues/3164589) Использование `assertSame()` для заголовков ответов заменено на `$this->assertSession()->responseHeaderEquals()`.
 - [#3158280](https://www.drupal.org/project/drupal/issues/3158280) Удалена неиспользуемая переменная в `DefaultLazyPluginCollectionTest`.
 - [#3158291](https://www.drupal.org/project/drupal/issues/3158291) Удалены неиспользуемые переменные из `ContainerTest`.
+- [#3164686](https://www.drupal.org/project/drupal/issues/3164686) `WebAssert::addressEquals()` и `AssertLegacyTrait::assertUrl()` теперь учитывают query строку.
+- [#3163924](https://www.drupal.org/project/drupal/issues/3163924) Изменена сигнатура `EntityViewTrait::buildEntityView()`. Больше он не принимает параметр `$reset`.
+- [#3158278](https://www.drupal.org/project/drupal/issues/3158278) Удалены неиспользуемые переменные из `LocalTaskManagerTest`.
+- [#3143870](https://www.drupal.org/project/drupal/issues/3143870) Исправлены некорректные вызовы `AssertLegacyTrait::assertUrl()`.
+- [#3160405](https://www.drupal.org/project/drupal/issues/3160405) Удалена перегрузка аргументами при вызове методов `WebAssert` в тестах, которые были конвертированы из Simpletest.
+- [#3153150](https://www.drupal.org/project/drupal/issues/3153150) Удалено использование `t()` в вызовах `::assertTrue()` и `::assertFalse()`.
+- [#3153143](https://www.drupal.org/project/drupal/issues/3153143) Удалено использование `t()` в вызовах `::linkExists()` и `::linkNotExists()`.
+- [#3166349](https://www.drupal.org/project/drupal/issues/3166349) Удалено использование `t()` в вызовах `::assertNoText()`.
+- [#3131186](https://www.drupal.org/project/drupal/issues/3131186) Сравнения с использованием `::drupalGetHeader()` заменены на `$this->assertSession()->responseHeaderEquals()`.
+- [#3158290](https://www.drupal.org/project/drupal/issues/3158290) Удалены неиспользуемые переменные в `ActiveLinkResponseFilterTest`.
 
 ## Прочие изменения
 
@@ -560,8 +631,14 @@ user_password()
 - [#3143087](https://www.drupal.org/project/drupal/issues/3143087) В `ModulesListForm` теперь явно объявлено свойство `accessManager`.
 - [#3162045](https://www.drupal.org/project/drupal/issues/3162045) Для совместимости с Symfony 5 вместо `new Process()` используется `\Symfony\Component\Process\Process::fromShellCommandline()`.
 - [#3120222](https://www.drupal.org/project/drupal/issues/3120222) Ссылки ведущие на документацию Drupal 7 заменены на актуальные.
-- [#3151095](https://www.drupal.org/project/drupal/issues/3151095) Употребление «whitelist» и «blacklist» в `\Drupal\Core\Utility\Error` заемнено на более подходящие.
+- [#3151095](https://www.drupal.org/project/drupal/issues/3151095) Употребление «whitelist» и «blacklist» в `\Drupal\Core\Utility\Error` заменены на более подходящие.
 - [#3008140](https://www.drupal.org/project/drupal/issues/3008140) Добавлен новый тест `ShutdownFunctionsTest` для тестирования функции отключения Drupal.
 - [#3151094](https://www.drupal.org/project/drupal/issues/3151094) Слова «whitelist» и «blacklist» в классах `\Drupal\Core\Template` и их тестах заменены на более подходящие.
 - [#3142934](https://www.drupal.org/project/drupal/issues/3142934) Метод `\Drupal\Component\Utility\Bytes::toInt()` помечен устаревшим в пользу `\Drupal\Component\Utility\Bytes::toNumber()`.
 - [#3164211](https://www.drupal.org/project/drupal/issues/3164211) Удалены 8 исправленных опечаток из `misc/cspell/dictionary.txt`.
+- [#3084441](https://www.drupal.org/project/drupal/issues/3084441) У ссылки на главную страницу сайта в блоке брендирования удалён тег `title`.
+- [#3085245](https://www.drupal.org/project/drupal/issues/3085245) Добавлен PostCSS плагин [postcss-url](https://github.com/postcss/postcss-url) который автоматически делает все использования SVG в качестве фона инлайн строкой с оптимизацией.
+- [#3123285](https://www.drupal.org/project/drupal/issues/3123285) В `robots.txt` исправлены некорректные правила для страниц регистрации, авторизации, выхода и восстановления пароля.
+- [#3151093](https://www.drupal.org/project/drupal/issues/3151093) Употребление «whitelist» и «blacklist» в `\Drupal\Core\Security\RequestSanitizer` и его тесте заменены на более подходящие.
+- [#3166317](https://www.drupal.org/project/drupal/issues/3166317) Удалены оставшиеся отсылки к XCache.
+- [#2819245](https://www.drupal.org/project/drupal/issues/2819245) «Javascript» теперь упоминается в коде как «JavaScript».
