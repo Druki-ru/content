@@ -20,10 +20,6 @@ metatags:
 
 - [#3071760](https://www.drupal.org/project/drupal/issues/3071760) oEmbed система больше не добавляет query параметры для `thumbnail_url`.
 
-## RDF
-
-- [#1929420](https://www.drupal.org/project/drupal/issues/1929420) Модуль теперь использует `$account->getDisplayName()` для вывода имени пользователя пользователя.
-
 ## Тестирование
 
 - [#3164721](https://www.drupal.org/project/drupal/issues/3164721) `CommentBaseFieldTest::$modules` теперь `protected`.

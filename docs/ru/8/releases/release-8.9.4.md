@@ -13,6 +13,10 @@ metatags:
 > [!WARNING]
 > Данная версия находится в разработке. Актуальная версия [Drupal 8.9.3](release-8.9.3.md).
 
+## Asset Library System
+
+- [#3167036](https://www.drupal.org/project/drupal/issues/3167036) Исправлена неполадка из-за которой пустой файл `*.libraries.yml` приводил к фатальной ошибке.
+
 ## Claro
 
 - [#3127466](https://www.drupal.org/project/drupal/issues/3127466) Исправлено отображение «обязательного поля» для IE 11.
@@ -53,6 +57,7 @@ metatags:
 ## RDF
 
 - [#2978320](https://www.drupal.org/project/drupal/issues/2978320) `rdf_comment_storage_load()` больше не будет пытаться загружать `NULL` комментарии.
+- [#1929420](https://www.drupal.org/project/drupal/issues/1929420) Модуль теперь использует `$account->getDisplayName()` для вывода имени пользователя пользователя.
 
 ## Render System
 
@@ -68,7 +73,7 @@ metatags:
 
 ## Views
 
-- [#3101738](https://www.drupal.org/project/drupal/issues/3101738) (откачено) Раскрытые фильтры для терминов таксономии больше не будут показывать пользователю те, доступа к которым он не имеет (например неопубликованные).
+- [#3101738](https://www.drupal.org/project/drupal/issues/3101738) Раскрытые фильтры для терминов таксономии больше не будут показывать пользователю те, доступа к которым он не имеет (например неопубликованные).
 
 ## Views UI
 
