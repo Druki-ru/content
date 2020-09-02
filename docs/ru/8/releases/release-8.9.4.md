@@ -8,10 +8,7 @@ metatags:
   description: 'Список изменений Drupal 8.9.4.'
 ---
 
-**Дата релиза**: ожидается 2 сентября 2020
-
-> [!WARNING]
-> Данная версия находится в разработке. Актуальная версия [Drupal 8.9.3](release-8.9.3.md).
+**Дата релиза**: 2 сентября 2020
 
 ## Asset Library System
 
@@ -85,3 +82,7 @@ metatags:
 - [#3166645](https://www.drupal.org/project/drupal/issues/3166645) Удалена отсылка к функции `image_scale()` для документации `Image::scaleDimensions()`.
 - [#3164678](https://www.drupal.org/project/drupal/issues/3164678) Исправлена ссылка на RFC5242.
 - [#3167390](https://www.drupal.org/project/drupal/issues/3167390) `ExceptionLoggingSubscriber` больше не записывает в лог стэк обратного вызова для исключений связанных с отсутствие прав доступа (403).
+
+## Ссылки
+
+- [Drupal 8.9.4](https://www.drupal.org/project/drupal/releases/8.9.4) (англ.), drupal.org, 2 сентября 2020
