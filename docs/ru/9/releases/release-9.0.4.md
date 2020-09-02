@@ -23,3 +23,7 @@ metatags:
 ## Тестирование
 
 - [#3164721](https://www.drupal.org/project/drupal/issues/3164721) `CommentBaseFieldTest::$modules` теперь `protected`.
+
+## Ссылки
+
+- [Drupal 9.0.4](https://www.drupal.org/project/drupal/releases/9.0.4) (англ.), drupal.org, 2 сентября 2020
