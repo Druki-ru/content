@@ -312,6 +312,25 @@ throw new DelayedRequeueException(10);
 
 `\Drupal\Core\Queue\DatabaseQueue` теперь реализует `DelayableQueueInterface`.
 
+## Добавлена возможность помечать конфигурационные схемы устаревшими
+
+- [#3129881](https://www.drupal.org/node/3129881)
+
+Для конфигурационных схем добавлена поддержка объявления схемы устаревшей при помощи ключи `deprecated`. Для этого в структуру добавляется новый ключ `deprecated`, а в качестве значения — его описание.
+
+Пример как пометить схему `complex_structure` устаревшей:
+
+```yaml
+complex_structure:
+  type: mapping
+  label: Complex
+  deprecated: "The 'complex_structure' config schema is deprecated in drupal:9.1.0 and and is removed from drupal:10.0.0. Use the 'complex' config schema instead. See http://drupal.org/node/the-change-notice-nid."
+  mapping:
+    key:
+      type: ...
+    ...
+```
+
 ## Block
 
 - [#3105976](https://www.drupal.org/project/drupal/issues/3105976) В `BlockViewBuilder::buildPreRenderableBlock()` для аргумента `$entity` добавлен тайпхинт `\Drupal\block\BlockInterface`.
@@ -328,6 +347,7 @@ throw new DelayedRequeueException(10);
 - [#3060697](https://www.drupal.org/project/drupal/issues/3060697) Claro теперь использует `#dropbutton_type` для вариантов `dropbutton` элемента, вместо классов.
 - [#3154425](https://www.drupal.org/project/drupal/issues/3154425) Удалён комментарий «@todo Remove this after 8.6.x is out of support.» и код для него.
 - [#3105575](https://www.drupal.org/project/drupal/issues/3105575) HTML классы перенесены из `claro_preprocess_textarea()` в шаблон.
+- [#3164871](https://www.drupal.org/project/drupal/issues/3164871) Исправлены отстутпы у радиокнопок.
 
 ## Comment
 
@@ -342,6 +362,8 @@ throw new DelayedRequeueException(10);
 - [#3133903](https://www.drupal.org/project/drupal/issues/3133903) Добавлены проверка что все пакеты из `composer.lock` файла ядра имеются и имеют конкретные версии.
 - [#3121847](https://www.drupal.org/project/drupal/issues/3121847) В шаблоны проектов [drupal/recommended-project](drupal-recommended-project.md) и [drupal/legacy-project](drupal-legacy-project.md) теперь добавляется новый путь установки `drupal-custom-profile` (`profiles/custom/{$name}/`).
 - [#3164349](https://www.drupal.org/project/drupal/issues/3164349) `symfony/var-dumper` теперь указан как dev зависимость в корневом composer.json Drupal.
+- [#3157296](https://www.drupal.org/project/drupal/issues/3157296) Обновлены зависимости.
+- [#3168514](https://www.drupal.org/project/drupal/issues/3168514) Удалены неиспользуемые полифилы.
 
 ## Contact
 
@@ -352,6 +374,7 @@ throw new DelayedRequeueException(10);
 - [#3044292](https://www.drupal.org/project/drupal/issues/3044292) (откачено) Добавлен новый метод `::isModeratedEntity` для хендлеров moderation сущностей.
 - [#3164498](https://www.drupal.org/project/drupal/issues/3164498) Удалена неиспользуемая переменная `$entity_type_ids` в `content_moderation.module`.
 - [#3155022](https://www.drupal.org/project/drupal/issues/3155022) Изменена сигнатура `EntityModerationForm::__construct()`. Параметр `$time` теперь имеет более слабые требования и вместо `Time` объекта ожидает экземпляр `TimeInterface`.
+- [#3167811](https://www.drupal.org/project/drupal/issues/3167811) Улучшена документация для конструктора `EntityModerationForm`.
 
 ## Content Translation
 
@@ -455,6 +478,10 @@ throw new DelayedRequeueException(10);
 - [#3159793](https://www.drupal.org/project/drupal/issues/3159793) Исправлена опечатка в форме настройки Media Library.
 - [#3146492](https://www.drupal.org/project/drupal/issues/3146492) Удалены неиспользуемые переменные в модуле.
 
+## Mail System
+
+- [#2822334](https://www.drupal.org/project/drupal/issues/2822334) Улучшена обработка значений в нижнем регистре в `Unicode::mimeHeaderDecode()`.
+
 ## Menu UI
 
 - [#3158562](https://www.drupal.org/project/drupal/issues/3158562) Теперь в интерфейсе всегда ссылка меню упоминается как «menu link», вместо «menu item».
@@ -495,6 +522,7 @@ throw new DelayedRequeueException(10);
 ## PosgreSQL драйвер
 
 - [#3129560](https://www.drupal.org/project/drupal/issues/3129560) Удалена реализация `Upsert`.
+- [#3154669](https://www.drupal.org/project/drupal/issues/3154669) Испралены ошибки и опечатки для комментариев.
 
 ## REST
 
@@ -594,6 +622,12 @@ throw new DelayedRequeueException(10);
 - [#3166349](https://www.drupal.org/project/drupal/issues/3166349) Удалено использование `t()` в вызовах `::assertNoText()`.
 - [#3131186](https://www.drupal.org/project/drupal/issues/3131186) Сравнения с использованием `::drupalGetHeader()` заменены на `$this->assertSession()->responseHeaderEquals()`.
 - [#3158290](https://www.drupal.org/project/drupal/issues/3158290) Удалены неиспользуемые переменные в `ActiveLinkResponseFilterTest`.
+- [#3139442](https://www.drupal.org/project/drupal/issues/3139442) Использование устаревшего `AssertLegacyTrait::constructFieldXpath()` заменено на `$this->getSession()->getPage()->findField()`.
+- [#3101247](https://www.drupal.org/project/drupal/issues/3101247) Использование устаревшего `AssertHelperTrait::castSafeStrings()` заменено на `$this->assertEquals()`.
+- [#3129002](https://www.drupal.org/project/drupal/issues/3129002) Использование устаревшего `AssertLegacyTrait::assert()` заменено на `$this->assertTrue()`.
+- [#3168107](https://www.drupal.org/project/drupal/issues/3168107) Зависимость `symfony/phpunit-bridge` обновлена до версии `^5.1.4`.
+- [#3165588](https://www.drupal.org/project/drupal/issues/3165588) Добавлена проверка что свойство `$module` является `protected.
+- [#3139405](https://www.drupal.org/project/drupal/issues/3139405) Использование устаревших `AssertLegacyTrait::assertUniqueText()` и `AssertLegacyTrait::assertNoUniqueText()` заменено на `$this->getSession()->getPage()->getText()`.
 
 ## Прочие изменения
 
@@ -642,3 +676,7 @@ throw new DelayedRequeueException(10);
 - [#3151093](https://www.drupal.org/project/drupal/issues/3151093) Употребление «whitelist» и «blacklist» в `\Drupal\Core\Security\RequestSanitizer` и его тесте заменены на более подходящие.
 - [#3166317](https://www.drupal.org/project/drupal/issues/3166317) Удалены оставшиеся отсылки к XCache.
 - [#2819245](https://www.drupal.org/project/drupal/issues/2819245) «Javascript» теперь упоминается в коде как «JavaScript».
+- [#3083044](https://www.drupal.org/project/drupal/issues/3083044) Первая колонка для таблиц с сортировкой теперь имеет стиль `display: flex;`.
+- [#3168074](https://www.drupal.org/project/drupal/issues/3168074) Исправлены комментарии для `FeedStorage` и `ItemStorage`.
+- [#3154909](https://www.drupal.org/project/drupal/issues/3154909) Употребление «not existing» заменено на «non-existent».
+- [#3162972](https://www.drupal.org/project/drupal/issues/3162972) Исправлены опечатки в 32 словах для XSS тестов.
