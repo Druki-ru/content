@@ -365,6 +365,10 @@ complex_structure:
 - [#3157296](https://www.drupal.org/project/drupal/issues/3157296) Обновлены зависимости.
 - [#3168514](https://www.drupal.org/project/drupal/issues/3168514) Удалены неиспользуемые полифилы.
 
+## Configuration system
+
+- [#3152320](https://www.drupal.org/project/drupal/issues/3152320) Добавлены недостающие аргументы DI для `ExtensionInstallStorage::createCollection()`.
+
 ## Contact
 
 - [#3150227](https://www.drupal.org/project/drupal/issues/3150227) Удалены неиспользуемые переменные `$contact_form` и `$recipients_str`.
@@ -481,6 +485,7 @@ complex_structure:
 ## Mail System
 
 - [#2822334](https://www.drupal.org/project/drupal/issues/2822334) Улучшена обработка значений в нижнем регистре в `Unicode::mimeHeaderDecode()`.
+- [#3094783](https://www.drupal.org/project/drupal/issues/3094783) Для AJAX запросов отключение рефокусировки перенесено из `data-disable-refocus` кнопки отправки, непосредственно в `#ajax` опцию `disable-refocus`.
 
 ## Menu UI
 
@@ -504,11 +509,17 @@ complex_structure:
 - [#3112249](https://www.drupal.org/project/drupal/issues/3112249) Добавлена новая миграция `d7_menu_translation` для миграции переводов меню из Drupal 7.
 - [#3164652](https://www.drupal.org/project/drupal/issues/3164652) Для плагина обработчика `Substr` включено исключение cspell для игнорирования `skÅ‚odowska`.
 - [#3158277](https://www.drupal.org/project/drupal/issues/3158277) Удалена неиспользуемая переменная `EntityLinkTest`.
+- [#3119254](https://www.drupal.org/project/drupal/issues/3119254) Добавленны маппинги для фоматтеров референсов на термины таксономии `taxonomy_term_reference_plain` и `taxonomy_term_reference_rss_category` из Drupal 7.
+- [#3159101](https://www.drupal.org/project/drupal/issues/3159101) `\Drupal\migrate\Plugin\migrate\source\SqlBase` теперь позволяет делать корректные миграции с SQLite в качестве источника и любым назначением.
+- [#3101045](https://www.drupal.org/project/drupal/issues/3101045) Плагин источника `LanguageContentSettingsTaxonomyVocabulary` теперь делает выборку по `language` только при её наличии.
+- [#2969551](https://www.drupal.org/project/drupal/issues/2969551) Теперь при исключении миграции указывают файл и строку с проблемой.
+- [#3110839](https://www.drupal.org/project/drupal/issues/3110839) У формы настроек подключения в Drupal Migrate UI убрано описание для префикса таблиц, которое вводило в заблуждение и находилось там по ошибке.
 
 ## Node System
 
 - [#2830504](https://www.drupal.org/project/drupal/issues/2830504) Исправлена неполадка из-за которой `Drupal\node\Plugin\Action\AssignOwnerNode` позволяла выбрать гостя в качестве владельца ноды.
 - [#3165950](https://www.drupal.org/project/drupal/issues/3165950) Из `NodeTypeForm` удалено упоминание что нижние подчёркивания будут конвертированы в дифисы, так как для путей форм сущностей уже используются нижине подчёркивания.
+- [#2586013](https://www.drupal.org/project/drupal/issues/2586013) Функция `node_views_analyze()` перенесена из файла `node.views.inc` в `node.views_execution.inc`.
 
 ## Route System
 
@@ -628,6 +639,7 @@ complex_structure:
 - [#3168107](https://www.drupal.org/project/drupal/issues/3168107) Зависимость `symfony/phpunit-bridge` обновлена до версии `^5.1.4`.
 - [#3165588](https://www.drupal.org/project/drupal/issues/3165588) Добавлена проверка что свойство `$module` является `protected.
 - [#3139405](https://www.drupal.org/project/drupal/issues/3139405) Использование устаревших `AssertLegacyTrait::assertUniqueText()` и `AssertLegacyTrait::assertNoUniqueText()` заменено на `$this->getSession()->getPage()->getText()`.
+- [#3139419](https://www.drupal.org/project/drupal/issues/3139419) Использование устаревшего `AssertLegacyTrait::assertUrl()` заменено на `$this->assertSession()->addressEquals()`.
 
 ## Прочие изменения
 
