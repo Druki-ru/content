@@ -62,7 +62,7 @@ metatags:
 
 ## Settings tray
 
-- [#3070375](https://www.drupal.org/project/drupal/issues/3070375) Исправлены стили из-за которых отображались скрытые кнопки в off-canvas диалоге.
+- [#3070375](https://www.drupal.org/project/drupal/issues/3070375) (откачено в [Drupal 8.9.5](release-8.9.5.md) и [Drupal 9.0.5](../../9/releases/release-9.0.5.md)) Исправлены стили из-за которых отображались скрытые кнопки в off-canvas диалоге.
 
 ## User
 
