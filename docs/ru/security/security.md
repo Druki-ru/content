@@ -10,6 +10,13 @@ metatags:
 
 ## 2020
 
+- [SA-CORE-2020-011](advisory/sa-core-2020-011.md) - 16 сентября 2020
+- [SA-CORE-2020-010](advisory/sa-core-2020-010.md) - 16 сентября 2020
+- [SA-CORE-2020-009](advisory/sa-core-2020-009.md) - 16 сентября 2020
+- [SA-CORE-2020-008](advisory/sa-core-2020-008.md) - 16 сентября 2020
+- [SA-CORE-2020-007](advisory/sa-core-2020-007.md) - 16 сентября 2020
+- [SA-CORE-2020-006](advisory/sa-core-2020-006.md) - 17 июня 2020
+- [SA-CORE-2020-005](advisory/sa-core-2020-005.md) - 17 июня 2020
 - [SA-CORE-2020-004](advisory/sa-core-2020-004.md) - 17 июня 2020
 - [SA-CORE-2020-002](advisory/sa-core-2020-002.md) - 20 мая 2020
 - [SA-CORE-2020-001](advisory/sa-core-2020-001.md) - 18 марта 2020
