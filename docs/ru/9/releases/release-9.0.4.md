@@ -13,10 +13,6 @@ metatags:
 > [!NOTE]
 > Данный релиз также содержит изменения внесенные в [Drupal 8.9.4](../../8/releases/release-8.9.4.md).
 
-## Media System
-
-- [#3071760](https://www.drupal.org/project/drupal/issues/3071760) oEmbed система больше не добавляет query параметры для `thumbnail_url`.
-
 ## Тестирование
 
 - [#3164721](https://www.drupal.org/project/drupal/issues/3164721) `CommentBaseFieldTest::$modules` теперь `protected`.

@@ -35,7 +35,6 @@ metatags:
 
 ## Media System
 
-- [#3124302](https://www.drupal.org/project/drupal/issues/3124302) Media Library теперь производит проверку на наличие прав для ревизии которая редактируется.
 - [#3102402](https://www.drupal.org/project/drupal/issues/3102402) Виджет Media Library больше не добавляет поле «weight» если можно выбрать всего одно значение.
 
 ## Migrate Drupal

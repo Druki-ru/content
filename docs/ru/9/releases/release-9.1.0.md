@@ -484,7 +484,6 @@ complex_structure:
 
 ## Mail System
 
-- [#2822334](https://www.drupal.org/project/drupal/issues/2822334) Улучшена обработка значений в нижнем регистре в `Unicode::mimeHeaderDecode()`.
 - [#3094783](https://www.drupal.org/project/drupal/issues/3094783) Для AJAX запросов отключение рефокусировки перенесено из `data-disable-refocus` кнопки отправки, непосредственно в `#ajax` опцию `disable-refocus`.
 
 ## Menu UI
@@ -510,10 +509,6 @@ complex_structure:
 - [#3164652](https://www.drupal.org/project/drupal/issues/3164652) Для плагина обработчика `Substr` включено исключение cspell для игнорирования `skÅ‚odowska`.
 - [#3158277](https://www.drupal.org/project/drupal/issues/3158277) Удалена неиспользуемая переменная `EntityLinkTest`.
 - [#3119254](https://www.drupal.org/project/drupal/issues/3119254) Добавленны маппинги для фоматтеров референсов на термины таксономии `taxonomy_term_reference_plain` и `taxonomy_term_reference_rss_category` из Drupal 7.
-- [#3159101](https://www.drupal.org/project/drupal/issues/3159101) `\Drupal\migrate\Plugin\migrate\source\SqlBase` теперь позволяет делать корректные миграции с SQLite в качестве источника и любым назначением.
-- [#3101045](https://www.drupal.org/project/drupal/issues/3101045) Плагин источника `LanguageContentSettingsTaxonomyVocabulary` теперь делает выборку по `language` только при её наличии.
-- [#2969551](https://www.drupal.org/project/drupal/issues/2969551) Теперь при исключении миграции указывают файл и строку с проблемой.
-- [#3110839](https://www.drupal.org/project/drupal/issues/3110839) У формы настроек подключения в Drupal Migrate UI убрано описание для префикса таблиц, которое вводило в заблуждение и находилось там по ошибке.
 
 ## Node System
 
