@@ -16,6 +16,10 @@ metatags:
 > [!NOTE]
 > Данный релиз также содержит изменения внесенные в [Drupal 8.9.7](../../8/releases/release-8.9.7.md).
 
+## Node System
+
+- [#3170246](https://www.drupal.org/project/drupal/issues/3170246) `NodeLoadMultipleTest` теперь `Kernel` тест, а `Functional`.
+
 ## Прочие изменения
 
 - [#3156885](https://www.drupal.org/project/drupal/issues/3156885) `\Drupal\error_test\Controller\ErrorTestController::generateWarnings` теперь выбрасывает `E_NOTICE` ошибки для соответствия PHP 8.
