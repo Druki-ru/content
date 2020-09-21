@@ -331,6 +331,28 @@ complex_structure:
     ...
 ```
 
+## Хук media_oembed_iframe() теперь получает объект Resource
+
+- [#3009003](https://www.drupal.org/project/drupal/issues/3009003)
+
+Когда за рендер медиа отвечает источник oEmbed (например YouTube ролики), в целях безопасности медиа модуль ренедрит данное содержимое внутри iframe.
+
+Содержимое iframe генерируется на основе шаблона `media-oembed-iframe.html.twig` и соответствующего тем хука `media_oembed_iframe`. Начиная с Drupal 9.1 данный тем хук также получает связанный объект с oEmbed Resource, который может быть полезен для препроцесс функций и шаблонов, которые хотят внести изменения для iframe на основе данного ресурса.
+
+Пример добавления `rel=0` параметра к пути до YouTube ролика в iframe:
+
+```php
+function mytheme_preprocess_media_oembed_iframe(array &$variables) {
+  /** @var \Drupal\media\OEmbed\Resource $resource */
+  $resource = $variables['resource'];
+  if ($resource->getProvider()->getName() === 'YouTube') {
+    // We are rendering a YouTube video, so modify the URL of the video so that it only shows related videos from the same channel.
+    // The video's markup is only available as a string, so we need to use str_replace() to modify the URL.
+    $variables['media'] = str_replace('?feature=oembed', '?feature=oembed&rel=0', (string) $variables['media']);
+  }
+}
+```
+
 ## Block
 
 - [#3105976](https://www.drupal.org/project/drupal/issues/3105976) В `BlockViewBuilder::buildPreRenderableBlock()` для аргумента `$entity` добавлен тайпхинт `\Drupal\block\BlockInterface`.
@@ -383,6 +405,7 @@ complex_structure:
 ## Content Translation
 
 - [#2972308](https://www.drupal.org/project/drupal/issues/2972308) Добавлено новое разрешение `translate editable entities` позволяющее переводить сущности, которые пользователь может редактировать.
+- [#2796399](https://www.drupal.org/project/drupal/issues/2796399) Улучшены hreflang метатеги для сущности что используется в качестве главной страницы.
 
 ## Database System
 
@@ -461,6 +484,8 @@ complex_structure:
 - [#3145930](https://www.drupal.org/project/drupal/issues/3145930) Размер «липкого» заголовка теперь пересчитывается после сворачивания и разворачивания тулбара.
 - [#3096516](https://www.drupal.org/project/drupal/issues/3096516) В `domready` внесены улучшения, которые решают проблему с [race condition](https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5_%D0%B3%D0%BE%D0%BD%D0%BA%D0%B8).
 - [#3152473](https://www.drupal.org/project/drupal/issues/3152473) Улучшена работа обратного вызова domready.
+- [#3078501](https://www.drupal.org/project/drupal/issues/3078501) Функция `Drupal.AjaxCommands.prototype.alert` теперь вызывает `window.alert` с одним параметром, так как второй ни на что не влияет.
+- [#1936708](https://www.drupal.org/project/drupal/issues/1936708) Улучшено отображение вертикальных вкладок. Теперь они корректно отображают и обновляют сводку по выбранным значениям.
 
 ## Install system
 
@@ -475,6 +500,7 @@ complex_structure:
 - [#2925318](https://www.drupal.org/project/drupal/issues/2925318) Для таблицы `locales_location` удалён индекс `sid` так как он покрыт в `string_type`.
 - [#3167600](https://www.drupal.org/project/drupal/issues/3167600) Удалена неиспользуемая переменная `$config` в `locale.bulk.inc`.
 - [#3167599](https://www.drupal.org/project/drupal/issues/3167599) Удалена неиспользуемая переменная `$frequency` в `locale.module`.
+- [#3168261](https://www.drupal.org/project/drupal/issues/3168261) Удалена неиспользуемая переменная `$language_list` в `locale.module`.
 
 ## Media
 
@@ -533,6 +559,7 @@ complex_structure:
 ## REST
 
 - [#3152848](https://www.drupal.org/project/drupal/issues/3152848) Код связанный с `bc_entity_resource_permissions` настройкой удалён, так как она больше не используется.
+- [#3169578](https://www.drupal.org/project/drupal/issues/3169578) Удалён неиспользуемый код.
 
 ## Routing System
 
@@ -635,6 +662,8 @@ complex_structure:
 - [#3165588](https://www.drupal.org/project/drupal/issues/3165588) Добавлена проверка что свойство `$module` является `protected.
 - [#3139405](https://www.drupal.org/project/drupal/issues/3139405) Использование устаревших `AssertLegacyTrait::assertUniqueText()` и `AssertLegacyTrait::assertNoUniqueText()` заменено на `$this->getSession()->getPage()->getText()`.
 - [#3139419](https://www.drupal.org/project/drupal/issues/3139419) Использование устаревшего `AssertLegacyTrait::assertUrl()` заменено на `$this->assertSession()->addressEquals()`.
+- [#3139418](https://www.drupal.org/project/drupal/issues/3139418) Использование устаревших `AssertLegacyTrait::assertLinkByHref` и `AssertLegacyTrait::assertNoLinkByHref` заменено на `$this->assertSession()->linkByHrefExists()`.
+- [#3159230](https://www.drupal.org/project/drupal/issues/3159230) Исправлены оставшиеся вызовы с передачай `$message` в `AssertLegacyTrait::assertRaw` и `AssertLegacyTrait::assertNoRaw`.
 
 ## Прочие изменения
 
@@ -687,3 +716,8 @@ complex_structure:
 - [#3168074](https://www.drupal.org/project/drupal/issues/3168074) Исправлены комментарии для `FeedStorage` и `ItemStorage`.
 - [#3154909](https://www.drupal.org/project/drupal/issues/3154909) Употребление «not existing» заменено на «non-existent».
 - [#3162972](https://www.drupal.org/project/drupal/issues/3162972) Исправлены опечатки в 32 словах для XSS тестов.
+- [#3169306](https://www.drupal.org/project/drupal/issues/3169306) Исправлены дубли «the» в документации.
+- [#3169286](https://www.drupal.org/project/drupal/issues/3169286) Исправлены дубли «more» в документации.
+- [#3169543](https://www.drupal.org/project/drupal/issues/3169543) Из cspell словаря удалены исправленные опечатки.
+- [#3040274](https://www.drupal.org/project/drupal/issues/3040274) Исправлена грамматика, орфография и стиль комментариев к коду `FormBuilder::prepareForm`.
+- [#3170675](https://www.drupal.org/project/drupal/issues/3170675) Адрес `http://cgit.drupalcode.org` заменён на `https://git.drupalcode.org/project/drupal`.
