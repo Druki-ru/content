@@ -19,7 +19,7 @@ Drupal предоставляет обширный API для разработч
 
 - [Drupal 8](8/drupal-8.md)
 - [Drupal 9](9/drupal-9.md)
-- [Drupal 10](9/drupal-10.md)
+- [Drupal 10](10/drupal-10.md)
 - [Философия Drupal](the-drupal-way.md)
 - [Нормы поведения](code-of-conduct.md)
 - [Часто задаваемые вопросы](faq.md)
