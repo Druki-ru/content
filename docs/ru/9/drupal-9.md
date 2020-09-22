@@ -26,6 +26,7 @@ Drupal [Drupal 8.9](../8/releases/release-8.9.0.md) будет получать 
 ## Смотрите также
 
 - [Drupal 8](../8/drupal-8.md)
+- [Drupal 10](../10/drupal-10.md)
 - [Список изменений Drupal 9](releases/releases.md)
 
 ## Ссылки
