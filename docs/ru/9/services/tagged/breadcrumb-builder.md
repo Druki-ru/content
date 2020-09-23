@@ -1,6 +1,6 @@
 ---
 id: breadcrumb-builder
-title: Сервисы с меткой breadcrumb_builder
+title: Сервис с меткой breadcrumb_builder
 core: 9
 search-keywords:
   - хлебные крошки
