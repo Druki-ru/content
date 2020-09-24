@@ -1,6 +1,6 @@
 ---
 id: breadcrumb-builder
-title: Сервис с меткой breadcrumb_builder
+title: Строитель хлебных крошек
 core: 9
 search-keywords:
   - хлебные крошки
@@ -10,7 +10,7 @@ search-keywords:
   - breadcrumb_builder
   - breadcrumbs
 metatags:
-  title: 'Drupal 9: Сервис с меткой breadcrumb_builder'
+  title: 'Drupal 9:  Строитель хлебных крошек'
   description: 'Сервисы с меткой breadcrumb_builder позволяют программно устанавливать хлебные крошки.'
 ---
 
