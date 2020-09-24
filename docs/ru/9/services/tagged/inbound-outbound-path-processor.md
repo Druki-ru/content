@@ -124,7 +124,7 @@ final class ExampleInboundProcessor implements InboundPathProcessorInterface {
 
 ## Модуль Path Alias
 
-Drupal предоставляет стандартный модуль Path Alias (`path_alias`), который реализует систему алиасов и ЧПУ используя средсвом сервиса `path_alias.path_processor`.
+Drupal предоставляет стандартный модуль Path Alias (`path_alias`), который реализует систему алиасов и ЧПУ (сервис `path_alias.path_processor`).
 
 Данный модуль создаёт специальную [сущность](../../entities.md) в которой хранит соответствия системного пути и алиаса для него. Затем, при входящих и исходящих запросах он, на основе данных соответствий конвертирует пути в обе стороны.
 
