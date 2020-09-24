@@ -184,4 +184,4 @@ Drupal предоставляет стандартный модуль Path Alias
 ## Ссылки
 
 - [Drupal 8: Inbound и Outbound Processor](https://niklan.net/blog/183), Niklan, 2018.
-- [Программная реализация ЧПУ](http://xandeadx.ru/blog/drupal/965), Niklan, 2020.
+- [Программная реализация ЧПУ](http://xandeadx.ru/blog/drupal/965), xandeadx, 2020.
