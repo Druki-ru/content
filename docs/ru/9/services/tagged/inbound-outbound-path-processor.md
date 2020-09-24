@@ -13,57 +13,6 @@ metatags:
 
 [Сервисы](../services.md) с меткой `path_processor_inbound` и `path_processor_outbound` позволяют программно обрабатывать входящие и исходящие пути сайта.
 
-## Введение
-
-**Inbound** обработчик позволяет конвертировать входящие адреса во внутренний формат, **Outbound** наоборот, позволяет конвертировать системные пути в более понятные для пользователей. Данные обработчики позволяют создавать систему ЧПУ и влиять на неё.
-
-Допустим мы имеем страницу в Drupal с путём `/node/123`, которая содержит информацию «О нас». Такой путь не очень понятен и информативен, мы хотим сделать чтобы данная страница отвечала по адресу `/about`. В этом нам и помогут данные сервисы с метками:
-
-- **Outbound**: исходящий обработчик, он отвечает за то, чтобы преобразовать исходщий системный URL (`/node/123`) в тот, что мы хотим отдавать пользователям (`/about`).
-- **Inbound**: входящий обработчик, он отвечает за то, чтобы преобразовать входящий URL (`/about`) в системный (`/node/123`).
-
-Таким образом, бэкенд всегда работает со своими внутренними системными путями, а пользователям мы можем отдавать что угодно.
-
-Пример реализации подобных обработчиков:
-
-```php
-<?php
-
-namespace Drupal\example\PathProcessor;
-
-use Drupal\Core\PathProcessor\InboundPathProcessorInterface;
-use Drupal\Core\PathProcessor\OutboundPathProcessorInterface;
-use Drupal\Core\Render\BubbleableMetadata;
-use Symfony\Component\HttpFoundation\Request;
-
-/**
- * Processes the inbound\outbound path.
- */
-class MyPathProcessor implements InboundPathProcessorInterface, OutboundPathProcessorInterface {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function processInbound($path, Request $request) {
-    if ($path == '/about') {
-      $path = '/node/123';
-    }
-    return $path;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function processOutbound($path, &$options = [], Request $request = NULL, BubbleableMetadata $bubbleable_metadata = NULL) {
-    if ($path == '/node/123') {
-      $path = '/about';
-    }
-    return $path;
-  }
-
-}
-```
-
 ## Outbound Processor
 
 **Outbound Processor** (`path_processor_outbound`) — обработчик исходящих путей сайта. Задача данного обработчика, конвертировать системный путь в более человекопонятный. Например путь `/node/123` превратить в `/about`. Таким образом, все ссылки ведущие на `/node/123` будут автоматически конвертироваться в `/about`.
