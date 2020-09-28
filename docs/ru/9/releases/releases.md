@@ -40,4 +40,3 @@ metatags:
 ## Ссылки
 
 - [Change records for Drupal core](https://www.drupal.org/list-changes/drupal) (англ.), drupal.org
-- [Изменения Drupal (@drupal_changes_ru)](https://t.me/drupal_changes_ru) Telegram канал со списком изменений на русском.
