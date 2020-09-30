@@ -13,7 +13,7 @@ metatags:
 Данный способ установки Drupal является альтернативой установки Drupal из архива, скаченного на drupal.org.
 
 > [!NOTE]
-> Начиная с [Drupal 8.8.0](../8/releases/release-8.8.0.md) предоставляются официальные шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](drupal-recommended-project.md) в качестве замены или альтернативы.
+> Начиная с [Drupal 8.8.0](../drupal/8/releases/release-8.8.0.md) предоставляются официальные шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](drupal-recommended-project.md) в качестве замены или альтернативы.
 
 ## Что предоставляет данный шаблон
 
@@ -23,8 +23,8 @@ metatags:
 - Будет использоваться сгенерированный [Composer'ом](composer.md) `vendor/autoload.php` (автолоадер зависимостей), вместо поставляемого Drupal `/web/vendor/autoload.php`.
 - Модули (пакеты типа `drupal-module`) будут установлены в `web/modules/contrib`.
 - Темы оформления (пакеты типа `drupal-theme`) будут установлены в `web/themes/contrib`.
-- [Установочные профили](../8/distributions/distributions.md) (пакеты типа `drupal-profile`) будут установлены в `web/profiles/contrib`.
-- Будут созданы со всеми необходимыми правами файлы по умолчанию [settings.php](../8/settings-php.md) и `services.yml`.
+- [Установочные профили](../drupal/8/distributions/distributions.md) (пакеты типа `drupal-profile`) будут установлены в `web/profiles/contrib`.
+- Будут созданы со всеми необходимыми правами файлы по умолчанию [settings.php](../drupal/8/settings-php.md) и `services.yml`.
 - Будет создана `web/sites/default/files`.
 - Последняя версия [Drush](../drush.md) будет установлена с сайтом по пути `vendor/bin/drush`.
 - Последняя версия DrupalConsole будет установлена с сайтом по пути `vendor/bin/drupal`.
@@ -86,9 +86,9 @@ metatags:
 
 ## Смотрите также
 
-- [Руководство по установке Drupal](../8/installation.md)
+- [Руководство по установке Drupal](../drupal/8/installation.md)
 - [drupal/recommended-project](drupal-recommended-project.md) — рекомендуемый шаблон для всех сайтов.
-- [drupal/legacy-project](drupal-legacy-project.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](../8/releases/release-8.8.0.md).
+- [drupal/legacy-project](drupal-legacy-project.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](../drupal/8/releases/release-8.8.0.md).
 - [Composer](composer.md)
 
 ## Ссылки
