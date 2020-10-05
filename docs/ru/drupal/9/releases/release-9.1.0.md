@@ -387,10 +387,6 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3157296](https://www.drupal.org/project/drupal/issues/3157296) Обновлены зависимости.
 - [#3168514](https://www.drupal.org/project/drupal/issues/3168514) Удалены неиспользуемые полифилы.
 
-## Configuration system
-
-- [#3152320](https://www.drupal.org/project/drupal/issues/3152320) Добавлены недостающие аргументы DI для `ExtensionInstallStorage::createCollection()`.
-
 ## Contact
 
 - [#3150227](https://www.drupal.org/project/drupal/issues/3150227) Удалены неиспользуемые переменные `$contact_form` и `$recipients_str`.
