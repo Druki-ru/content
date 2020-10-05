@@ -18,10 +18,6 @@ metatags:
 
 - [#3127466](https://www.drupal.org/project/drupal/issues/3127466) Исправлено отображение «обязательного поля» для IE 11.
 
-## Comment
-
-- [#2614720](https://www.drupal.org/project/drupal/issues/2614720) (откачено) Исправлена неполадка привяодащая к фатальной ошибке при попытке загрузить/отрендерить «битые» (например, если комментарии по какой-то причине остались, а материал, к которому они принадлежат уже удалён) комментарии.
-
 ## Composer
 
 - [#3130685](https://www.drupal.org/project/drupal/issues/3130685) Исправлена ошибка стандартов кодирования для генерируемого [drupal/core-composer-scaffold](../../../composer/drupal-core-composer-scaffold.md) `autoload.php` файла.

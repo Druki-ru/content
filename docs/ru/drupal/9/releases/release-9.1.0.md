@@ -534,7 +534,6 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3112249](https://www.drupal.org/project/drupal/issues/3112249) Добавлена новая миграция `d7_menu_translation` для миграции переводов меню из Drupal 7.
 - [#3164652](https://www.drupal.org/project/drupal/issues/3164652) Для плагина обработчика `Substr` включено исключение cspell для игнорирования `skÅ‚odowska`.
 - [#3158277](https://www.drupal.org/project/drupal/issues/3158277) Удалена неиспользуемая переменная `EntityLinkTest`.
-- [#3119254](https://www.drupal.org/project/drupal/issues/3119254) Добавленны маппинги для фоматтеров референсов на термины таксономии `taxonomy_term_reference_plain` и `taxonomy_term_reference_rss_category` из Drupal 7.
 
 ## Node System
 
