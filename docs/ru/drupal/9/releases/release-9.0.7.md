@@ -20,6 +20,10 @@ metatags:
 
 - [#3152320](https://www.drupal.org/project/drupal/issues/3152320) Добавлены недостающие аргументы DI для `ExtensionInstallStorage::createCollection()`.
 
+## Media System
+
+- [#3168301](https://www.drupal.org/project/drupal/issues/3168301) Для построения URL oEmbed ресурса теперь используется `media.oembed.url_resolver`.
+
 ## Migration System
 
 - [#3098282](https://www.drupal.org/project/drupal/issues/3098282) Улучшено поведение если в запросе ID полей превышают VARCHAR(255).
