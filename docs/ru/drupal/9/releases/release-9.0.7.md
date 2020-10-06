@@ -23,7 +23,6 @@ metatags:
 ## Migration System
 
 - [#3098282](https://www.drupal.org/project/drupal/issues/3098282) Улучшено поведение если в запросе ID полей превышают VARCHAR(255).
-- [#2904546](https://www.drupal.org/project/drupal/issues/2904546) Редирект для `admin/reports/upgrade` теперь передает аргументы корректно, вместо использования `$_SESSION`.
 
 ## Node System
 

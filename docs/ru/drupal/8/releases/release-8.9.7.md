@@ -30,6 +30,10 @@ metatags:
 
 - [#2614720](https://www.drupal.org/project/drupal/issues/2614720) Исправлена неполадка привяодащая к фатальной ошибке при попытке загрузить/отрендерить «битые» (например, если комментарии по какой-то причине остались, а материал, к которому они принадлежат уже удалён) комментарии.
 
+## Database System
+
+- [#3174569](https://www.drupal.org/project/drupal/issues/3174569) Исправлена ошибка в документации к `Connection`.
+
 ## Field
 
 - [#2821352](https://www.drupal.org/project/drupal/issues/2821352) `EntityReferenceAutocompleteWidget` теперь не требует обязательно указывать настройку `target_bundles` для того чтобы работала настройка `auto_create`.
@@ -70,6 +74,7 @@ metatags:
 - [#2949400](https://www.drupal.org/project/drupal/issues/2949400) Из `MigrateProcessInterface` часть документации перенесена в `ProcessPluginBase` так как не является его частью.
 - [#3119254](https://www.drupal.org/project/drupal/issues/3119254) Добавленны маппинги для фоматтеров референсов на термины таксономии `taxonomy_term_reference_plain` и `taxonomy_term_reference_rss_category` из Drupal 7.
 - [#3110064](https://www.drupal.org/project/drupal/issues/3110064) Добавлена поддержка миграций специальных маршрутов: `<nolink>`, `<none>`.
+- [#2904546](https://www.drupal.org/project/drupal/issues/2904546) Редирект для `admin/reports/upgrade` теперь передает аргументы корректно, вместо использования `$_SESSION`.
 
 ## Node
 
