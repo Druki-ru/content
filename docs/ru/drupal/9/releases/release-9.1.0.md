@@ -353,11 +353,75 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 }
 ```
 
+## Множественные изменения в виджет подтверждения пароля
+
+- [#3067523](https://www.drupal.org/project/drupal/issues/3067523)
+
+В JavaScript виджет подтверждения пароля внесены множественны изменения.
+
+### Drupal.evaluatePasswordStrength теперь возвращает объект
+
+`Drupal.evaluatePasswordStrength` теперь возвращает объект содержащий в себе `messageTips` как замену для `message`. В нём содержатся все сообщения с проблемами вместо готовой HTML разметки.
+
+### Новые JavaScript theme функции для оформления виджета
+
+Добавлены три новые функции темизации:
+
+- `Drupal.theme.passwordConfirmMessage`
+- `Drupal.theme.passwordStrength`
+- `Drupal.theme.passwordSuggestions`
+
+При помощи них вы можете переопределить внешний вид виджета.
+
+### Селекторы по CSS классу заменены на data-drupal-selector аттрибуты
+
+Некоторые классы с префиксом `js-*` заменены на `data-drupal-selector` аттрибуты.
+
+- `js-password-strength__indicator` заменён на `password-strength-indicator`.
+- `js-password-strength__text` заменён на `password-strength-text`.
+- `js-password-confirm-message` заменён на `password-confirm-message`.
+
+Для вывода статуса об идентичности паролей раньше использовался пустой `<span>`, теперь данный элемент ищется по `data-drupal-selector="password-match-status-text"`.
+
+**Было:**
+
+```javascript
+  Drupal.theme.passwordConfirmMessage = passwordSettings => {
+    const confirmTextWrapper =
+      '<span></span>';
+    return `<div aria-live="polite" aria-atomic="true" class="password-confirm-message js-password-confirm-message" data-drupal-selector="password-confirm-message">${passwordSettings.confirmTitle} ${confirmTextWrapper}</div>`;
+  };
+```
+
+**Стало:**
+
+```javascript
+  Drupal.theme.passwordConfirmMessage = passwordSettings => {
+    const confirmTextWrapper =
+      '<span data-drupal-selector="password-match-status-text"></span>';
+    return `<div aria-live="polite" aria-atomic="true" class="password-confirm-message js-password-confirm-message" data-drupal-selector="password-confirm-message">${passwordSettings.confirmTitle} ${confirmTextWrapper}</div>`;
+  };
+```
+
+## Включена ленивая загрузка картинок по умолчанию
+
+- [#3167034](https://www.drupal.org/node/3167034)
+
+Для изображений выводимых Drupal и которых заданы `width` и `height` аттрибуты включена ленивая загрузка. Требования наличия ширины и высоты обусловлено тем, что без данных аттрибутов ленивая загрузка приводит к проблемам [CLS](https://web.dev/cls/).
+
+## Asset Library System
+
+- [#3163500](https://www.drupal.org/project/drupal/issues/3163500) Сообщение об устаревшей библиотеке теперь также выводится при переопределении или расширении данной библиотеки темой.
+
 ## Block
 
 - [#3105976](https://www.drupal.org/project/drupal/issues/3105976) В `BlockViewBuilder::buildPreRenderableBlock()` для аргумента `$entity` добавлен тайпхинт `\Drupal\block\BlockInterface`.
 - [#2151001](https://www.drupal.org/project/drupal/issues/2151001) Для административной страницы «Схема блоков» добавлен Tour.
 - [#2890758](https://www.drupal.org/project/drupal/issues/2890758) Видимость блока по типу ноды теперь работает на маршрутах с предварительным просмотром и ревизии.
+
+## Book
+
+- [#26552](https://www.drupal.org/project/drupal/issues/26552) Теперь редакторы могут редактировать или создавать неопубликованные страницы и подшивки.
 
 ## CKeditor
 
@@ -372,6 +436,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3105575](https://www.drupal.org/project/drupal/issues/3105575) HTML классы перенесены из `claro_preprocess_textarea()` в шаблон.
 - [#3164871](https://www.drupal.org/project/drupal/issues/3164871) Исправлены отстутпы у радиокнопок.
 - [#3057772](https://www.drupal.org/project/drupal/issues/3057772) Улучшены иконки для элемента `details`.
+- [#3171727](https://www.drupal.org/project/drupal/issues/3171727) Разделитель для хлебных крошек теперь более контрастный.
 
 ## Comment
 
@@ -405,6 +470,10 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 - [#2972308](https://www.drupal.org/project/drupal/issues/2972308) Добавлено новое разрешение `translate editable entities` позволяющее переводить сущности, которые пользователь может редактировать.
 - [#2796399](https://www.drupal.org/project/drupal/issues/2796399) Улучшены hreflang метатеги для сущности что используется в качестве главной страницы.
+
+## CSS
+
+- [#3170864](https://www.drupal.org/project/drupal/issues/3170864) `postcss-custom-properties` заменён `postcss-preset-env`.
 
 ## Database System
 
@@ -473,6 +542,8 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3153009](https://www.drupal.org/project/drupal/issues/3153009) Добавлен новый стиль изображения устанавливаемый с модулем — «Wide (1090)». Он будет использоваться как Hero стиль в будущей теме Olivero.
 - [#3097797](https://www.drupal.org/project/drupal/issues/3097797) Улучшена документация для функции `image_filter_keyword()`.
 - [#3165350](https://www.drupal.org/project/drupal/issues/3165350) Удалена неиспользуемая переменная `$key` в `MigrateImageCacheTest`.
+- [#2630230](https://www.drupal.org/project/drupal/issues/2630230) Исправлена неполадка из-за которой мог не генерироваться стиль изображения из корня публичной файловой директории при конвертации типов.
+- [#3172537](https://www.drupal.org/project/drupal/issues/3172537)
 
 ## Install System
 
@@ -494,6 +565,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 ## Layout Builder
 
 - [#3053887](https://www.drupal.org/project/drupal/issues/3053887) В код добавлена документация почему блоки требуют создание новой ревизии при изменении.
+- [#3126746](https://www.drupal.org/project/drupal/issues/3126746) `LayoutBuilderHtmlEntityFormController` теперь расширяет `FormController`.
 
 ## Locale
 
@@ -542,6 +614,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#2960170](https://www.drupal.org/project/drupal/issues/2960170) Для плагина обработчика `Flatter` добавлена валидация входных данных.
 - [#3152789](https://www.drupal.org/project/drupal/issues/3152789) Для плагина источника `variable` добавлена новая настройка `variables_required`.
 - [#3171755](https://www.drupal.org/project/drupal/issues/3171755) Удалена неиспользуемая переменная `$row` в `RowTest`.
+- [#3160015](https://www.drupal.org/project/drupal/issues/3160015) `str_replace()` больше не вызывается если путь состоит из одних слешей.
 
 ## Node System
 
@@ -575,6 +648,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 ## Routing System
 
 - [#3158708](https://www.drupal.org/project/drupal/issues/3158708) Возвращено поведение, что `RouteProvider::getAllRoutes()` возвращает `iterable` результат, которое было изменено в [#2917331](https://www.drupal.org/project/drupal/issues/2917331).
+- [#3173958](https://www.drupal.org/project/drupal/issues/3173958) В `EntityResolverManager::getControllerClass` добавлена проверка что `$controller` не `NULL`.
 
 ## Search
 
@@ -684,6 +758,14 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3166543](https://www.drupal.org/project/drupal/issues/3166543) `UiHelperTrait::drupalPostForm` теперь помечен устаревшим по всем стандартам.
 - [#3168788](https://www.drupal.org/project/drupal/issues/3168788) Использование xpath заменено на WebAssert.
 - [#2802401](https://www.drupal.org/project/drupal/issues/2802401) Передача `NULL` в качестве параметра для `$edit` в `::drupalPostForm` помечена устаревшей.
+- [#3171920](https://www.drupal.org/project/drupal/issues/3171920) В `AssertLegacyTrait` поправлено сообщение об устаревшем коде.
+- [#3162403](https://www.drupal.org/project/drupal/issues/3162403) `symfony/phpunit-bridge` обновлён до 5.1.6 чтобы решить проблему с некоорректным сообщением об устаревшем коде.
+- [#3142267](https://www.drupal.org/project/drupal/issues/3142267) Использование трейта `PHPUnit8Warnings` заменено `PhpUnitWarnings`.
+- [#3173888](https://www.drupal.org/project/drupal/issues/3173888) У функции `_drupal_error_handler_real()` удалён параметр `$context` и код обновлён в соответствии с данным изменением.
+- [#3135027](https://www.drupal.org/project/drupal/issues/3135027) Использование `UnitTestCase::assertArrayEquals` заменено на `$this->assertEquals()`.
+- [#3174038](https://www.drupal.org/project/drupal/issues/3174038) `DrupalSelenium2Driver` теперь открывает архив с флагом `\ZipArchive::CREATE` вместо `\ZipArchive::OVERWRITE`.
+- [#3162008](https://www.drupal.org/project/drupal/issues/3162008) `SectionComponentTest::testToRenderArray` теперь возвращает объект события чтобы соответствовать возвращаемому типу `EventDispatcherInterface::dispatch` из Symfony 5.
+- [#3174158](https://www.drupal.org/project/drupal/issues/3174158) Тест предупрждений обновлён для соответствия PHP 8, так как используемый вариант «деления на ноль» теперь не предупреждение а фатальная ошибка.
 
 ## Прочие изменения
 
@@ -748,3 +830,6 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3170629](https://www.drupal.org/project/drupal/issues/3170629) Удалено дублирование «from» в комментариях к коду.
 - [#3171872](https://www.drupal.org/project/drupal/issues/3171872) Удалено дублирование «for» в комментариях к коду.
 - [#3156880](https://www.drupal.org/project/drupal/issues/3156880) `CsrfTokenGenerator::validate` теперь проверяет, является ли `$token` строкой перед вызовом `hash_equals()`.
+- [#3173991](https://www.drupal.org/project/drupal/issues/3173991) Передача аргументов в анонимные функции при использовании `array_*` функций теперь производится без ссылки.
+- [#3173440](https://www.drupal.org/project/drupal/issues/3173440) Удалено дублирование «will» в комментариях к коду.
+- [#3172537](https://www.drupal.org/project/drupal/issues/3172537) Создание экземпляра `Symfony\Component\Process\Process` теперь происходит через метод `::fromShellCommandline`.
