@@ -363,6 +363,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 - [#3099662](https://www.drupal.org/project/drupal/issues/3099662) `ckeditor_stylesheets` теперь могут указывать путь относительно корня Drupal.
 - [#2911527](https://www.drupal.org/project/drupal/issues/2911527) Добавлена возможность использовать `/` при добавлении собственных вариантов стилей.
+- [#3171952](https://www.drupal.org/project/drupal/issues/3171952) CKEditor обновлён до 4.15.0.
 
 ## Claro
 
@@ -370,6 +371,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3154425](https://www.drupal.org/project/drupal/issues/3154425) Удалён комментарий «@todo Remove this after 8.6.x is out of support.» и код для него.
 - [#3105575](https://www.drupal.org/project/drupal/issues/3105575) HTML классы перенесены из `claro_preprocess_textarea()` в шаблон.
 - [#3164871](https://www.drupal.org/project/drupal/issues/3164871) Исправлены отстутпы у радиокнопок.
+- [#3057772](https://www.drupal.org/project/drupal/issues/3057772) Улучшены иконки для элемента `details`.
 
 ## Comment
 
@@ -377,6 +379,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3163685](https://www.drupal.org/project/drupal/issues/3163685) Удалена неиспользуемая переменная `$block` в `CommentBlockTest`.
 - [#3163686](https://www.drupal.org/project/drupal/issues/3163686) Удалена неиспользуемая переменная `$comment` в `CommentLinksAlterTest`.
 - [#3163425](https://www.drupal.org/project/drupal/issues/3163425) Удалена неиспользуемая переменная `$fields` в `CommentViewsData`.
+- [#3059719](https://www.drupal.org/project/drupal/issues/3059719) Использование `#markup` заменено на `#context`.
 
 ## Composer
 
@@ -437,6 +440,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#2893789](https://www.drupal.org/project/drupal/issues/2893789) `WidgetBase` теперь использует свой собственный метод `::getFilteredDescription()` для получения описания.
 - [#3165188](https://www.drupal.org/project/drupal/issues/3165188) Удалена неиспользуемая переменная `$i` из `FieldOptionTranslation`.
 - [#3165191](https://www.drupal.org/project/drupal/issues/3165191) Удалена неиспользуемая переменная `$field_ids` из `FieldAttachStorageTest`.
+- [#2918290](https://www.drupal.org/project/drupal/issues/2918290) Исправлен некорректно указанный возвращаемый типа для `FieldStorageConfig::loadByName`.
 
 ## File
 
@@ -503,6 +507,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3142818](https://www.drupal.org/project/drupal/issues/3142818) Из ссылок удалён аттрибут `target=_blank`.
 - [#3159793](https://www.drupal.org/project/drupal/issues/3159793) Исправлена опечатка в форме настройки Media Library.
 - [#3146492](https://www.drupal.org/project/drupal/issues/3146492) Удалены неиспользуемые переменные в модуле.
+- [#3169866](https://www.drupal.org/project/drupal/issues/3169866) Удалены неиспользуемые переменные `$target` и `$button` в `CKEditorIntegrationTest`.
 
 ## Mail System
 
@@ -529,7 +534,14 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#2447727](https://www.drupal.org/project/drupal/issues/2447727) Добавлен абстрактный `ReferenceBase` для миграции связующих полей.
 - [#3112249](https://www.drupal.org/project/drupal/issues/3112249) Добавлена новая миграция `d7_menu_translation` для миграции переводов меню из Drupal 7.
 - [#3164652](https://www.drupal.org/project/drupal/issues/3164652) Для плагина обработчика `Substr` включено исключение cspell для игнорирования `skÅ‚odowska`.
-- [#3158277](https://www.drupal.org/project/drupal/issues/3158277) Удалена неиспользуемая переменная `EntityLinkTest`.
+- [#3158277](https://www.drupal.org/project/drupal/issues/3158277) Удалена неиспользуемая переменная в `EntityLinkTest`.
+- [#3172592](https://www.drupal.org/project/drupal/issues/3172592) Удалена неиспользуемая переменная `$field_type` в `EntityContentBase`.
+- [#3172332](https://www.drupal.org/project/drupal/issues/3172332) Удалена неиспользуемая переменная `$process_plugin_manager` в `MigrationLookupTest`.
+- [#3170972](https://www.drupal.org/project/drupal/issues/3170972) Удалена неиспользуемая переменная `$iterator` в `MigrateExecutableTest`.
+- [#3010951](https://www.drupal.org/project/drupal/issues/3010951) Исправлена неполадка из-за которой метод `::createInstancesByTag` менеджера миграций создавал экземпляры для всех найденных плагинов если нет плагинов с метками.
+- [#2960170](https://www.drupal.org/project/drupal/issues/2960170) Для плагина обработчика `Flatter` добавлена валидация входных данных.
+- [#3152789](https://www.drupal.org/project/drupal/issues/3152789) Для плагина источника `variable` добавлена новая настройка `variables_required`.
+- [#3171755](https://www.drupal.org/project/drupal/issues/3171755) Удалена неиспользуемая переменная `$row` в `RowTest`.
 
 ## Node System
 
@@ -550,6 +562,10 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 - [#3129560](https://www.drupal.org/project/drupal/issues/3129560) Удалена реализация `Upsert`.
 - [#3154669](https://www.drupal.org/project/drupal/issues/3154669) Испралены ошибки и опечатки для комментариев.
+
+## Render System
+
+- [#3172410](https://www.drupal.org/project/drupal/issues/3172410) Класс `HtmlResponse` подкорректирован для совместимости с Symfony 5.
 
 ## REST
 
@@ -606,6 +622,9 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#2838555](https://www.drupal.org/project/drupal/issues/2838555) Views больше не позволит добавлять связи на данные у которых нет базовой таблицы для джоина (например, конфигурационные сущности).
 - [#2780869](https://www.drupal.org/project/drupal/issues/2780869) Исправлена неполадка, при которой невозможно было сохранить представление, если в значении опции для фильтра была точка.
 - [#2625136](https://www.drupal.org/project/drupal/issues/2625136) Раскрытые фильтры для `numeric` и `date` полей теперь имеют обертку, для того чтобы поля были на одном уровне.
+- [#2846485](https://www.drupal.org/project/drupal/issues/2846485) Улучшена производительность при рендере множественного поля, где каждый элемент поля создаёт свою строку с выводом.
+- [#3013216](https://www.drupal.org/project/drupal/issues/3013216) Упрощены селекторы в `views-admin.es6.js`.
+- [#2336569](https://www.drupal.org/project/drupal/issues/2336569) Улучшено добавление `<span>` в `#field_prefix` и `#field_suffix`.
 
 ## Тестирование
 
@@ -659,6 +678,12 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3139419](https://www.drupal.org/project/drupal/issues/3139419) Использование устаревшего `AssertLegacyTrait::assertUrl()` заменено на `$this->assertSession()->addressEquals()`.
 - [#3139418](https://www.drupal.org/project/drupal/issues/3139418) Использование устаревших `AssertLegacyTrait::assertLinkByHref` и `AssertLegacyTrait::assertNoLinkByHref` заменено на `$this->assertSession()->linkByHrefExists()`.
 - [#3159230](https://www.drupal.org/project/drupal/issues/3159230) Исправлены оставшиеся вызовы с передачай `$message` в `AssertLegacyTrait::assertRaw` и `AssertLegacyTrait::assertNoRaw`.
+- [#3168946](https://www.drupal.org/project/drupal/issues/3168946) Использование устаревшего `AssertLegacyTrait::assertTextHelper` заменено на `$this->assertSession()->pageTextContains()` и `$this->assertSession()->pageTextNotContains()`.
+- [#3139407](https://www.drupal.org/project/drupal/issues/3139407) Использование устаревших `AssertLegacyTrait::assertFieldById` и `AssertLegacyTrait::assertNoFieldById` заменено на `$this->assertSession()->fieldExists()`, `$this->assertSession()->buttonExists()` и `$this->assertSession()->fieldValueEquals()`.
+- [#3139406](https://www.drupal.org/project/drupal/issues/3139406) Использование устаревших `AssertLegacyTrait::assertFieldByName` и `AssertLegacyTrait::assertNoFieldByName`.
+- [#3166543](https://www.drupal.org/project/drupal/issues/3166543) `UiHelperTrait::drupalPostForm` теперь помечен устаревшим по всем стандартам.
+- [#3168788](https://www.drupal.org/project/drupal/issues/3168788) Использование xpath заменено на WebAssert.
+- [#2802401](https://www.drupal.org/project/drupal/issues/2802401) Передача `NULL` в качестве параметра для `$edit` в `::drupalPostForm` помечена устаревшей.
 
 ## Прочие изменения
 
@@ -707,7 +732,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3151093](https://www.drupal.org/project/drupal/issues/3151093) Употребление «whitelist» и «blacklist» в `\Drupal\Core\Security\RequestSanitizer` и его тесте заменены на более подходящие.
 - [#3166317](https://www.drupal.org/project/drupal/issues/3166317) Удалены оставшиеся отсылки к XCache.
 - [#2819245](https://www.drupal.org/project/drupal/issues/2819245) «Javascript» теперь упоминается в коде как «JavaScript».
-- [#3083044](https://www.drupal.org/project/drupal/issues/3083044) Первая колонка для таблиц с сортировкой теперь имеет стиль `display: flex;`.
+- [#3083044](https://www.drupal.org/project/drupal/issues/3083044) (откачено) Первая колонка для таблиц с сортировкой теперь имеет стиль `display: flex;`.
 - [#3168074](https://www.drupal.org/project/drupal/issues/3168074) Исправлены комментарии для `FeedStorage` и `ItemStorage`.
 - [#3154909](https://www.drupal.org/project/drupal/issues/3154909) Употребление «not existing» заменено на «non-existent».
 - [#3162972](https://www.drupal.org/project/drupal/issues/3162972) Исправлены опечатки в 32 словах для XSS тестов.
@@ -716,3 +741,10 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3169543](https://www.drupal.org/project/drupal/issues/3169543) Из cspell словаря удалены исправленные опечатки.
 - [#3040274](https://www.drupal.org/project/drupal/issues/3040274) Исправлена грамматика, орфография и стиль комментариев к коду `FormBuilder::prepareForm`.
 - [#3170675](https://www.drupal.org/project/drupal/issues/3170675) Адрес `http://cgit.drupalcode.org` заменён на `https://git.drupalcode.org/project/drupal`.
+- [#3055193](https://www.drupal.org/project/drupal/issues/3055193) Использование `Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesser` заменено на `Symfony\Component\Mime\MimeTypes`.
+- [#3156944](https://www.drupal.org/project/drupal/issues/3156944) Добавлена поддержка `nullable` тайпхинта в `ProxyBuilder`.
+- [#3170626](https://www.drupal.org/project/drupal/issues/3170626) Удалено дублирование «on» в `SystemTestController`.
+- [#3170627](https://www.drupal.org/project/drupal/issues/3170627) Удалено дублирование «list» в `InstallHelper`.
+- [#3170629](https://www.drupal.org/project/drupal/issues/3170629) Удалено дублирование «from» в комментариях к коду.
+- [#3171872](https://www.drupal.org/project/drupal/issues/3171872) Удалено дублирование «for» в комментариях к коду.
+- [#3156880](https://www.drupal.org/project/drupal/issues/3156880) `CsrfTokenGenerator::validate` теперь проверяет, является ли `$token` строкой перед вызовом `hash_equals()`.

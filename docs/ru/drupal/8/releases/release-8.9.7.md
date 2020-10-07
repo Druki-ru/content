@@ -59,6 +59,7 @@ metatags:
 - [#3124302](https://www.drupal.org/project/drupal/issues/3124302) Media Library теперь проверяет права доступа к ревизии сущности, которая редактируется.
 - [#3071760](https://www.drupal.org/project/drupal/issues/3071760) oEmbed система больше не добавляет query параметры для `thumbnail_url`.
 - [#3171743](https://www.drupal.org/project/drupal/issues/3171743) Media Library теперь позволяет переопределять формы загрузок для источников.
+- [#3168301](https://www.drupal.org/project/drupal/issues/3168301) Для построения URL oEmbed ресурса теперь используется `media.oembed.url_resolver`.
 
 ## Migration System
 
