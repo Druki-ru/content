@@ -100,3 +100,7 @@ metatags:
 - [#3156878](https://www.drupal.org/project/drupal/issues/3156878) `DateTimePlus` теперь вызывает `checkdate()` только если значение не пустое (`!empty()`).
 - [#3173435](https://www.drupal.org/project/drupal/issues/3173435) Исправлено повторение «not» в `PharExtensionInterceptor`.
 - [#3173437](https://www.drupal.org/project/drupal/issues/3173437) Исправлено повторение «or» в `FieldOptionTranslation`.
+
+## Ссылки
+
+- [Drupal 8.9.7](https://www.drupal.org/project/drupal/releases/8.9.7) (англ.), drupal.org, 8 октября 2020
