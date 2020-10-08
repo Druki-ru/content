@@ -71,6 +71,7 @@ class NewsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     $breadcrumb->addCacheContexts(['url.path']);
     return $breadcrumb->setLinks($links);
   }
+
 }
 ```
 
