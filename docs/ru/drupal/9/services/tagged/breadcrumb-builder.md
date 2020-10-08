@@ -52,7 +52,7 @@ class NewsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
   public function applies(RouteMatchInterface $route_match) {
     $node = $route_match->getParameter('node');
     // Only for "news" content types.
-    return $node instanceof NodeInterface && $node->getType() == 'news';
+    return $node instanceof NodeInterface && $node->bundle() == 'news';
   }
 
   /**
