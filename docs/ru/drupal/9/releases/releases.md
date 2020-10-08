@@ -35,6 +35,7 @@ metatags:
 
 ## Смотрите также
 
+- [Объявления безопасности](../../security/security.md)
 - [Список релизов Drupal 8](../../8/releases/releases.md)
 
 ## Ссылки
