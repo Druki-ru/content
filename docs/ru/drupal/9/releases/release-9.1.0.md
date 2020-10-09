@@ -833,7 +833,3 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3173991](https://www.drupal.org/project/drupal/issues/3173991) Передача аргументов в анонимные функции при использовании `array_*` функций теперь производится без ссылки.
 - [#3173440](https://www.drupal.org/project/drupal/issues/3173440) Удалено дублирование «will» в комментариях к коду.
 - [#3172537](https://www.drupal.org/project/drupal/issues/3172537) Создание экземпляра `Symfony\Component\Process\Process` теперь происходит через метод `::fromShellCommandline`.
-
-## Ссылки
-
-- [Drupal 9.0.7](https://www.drupal.org/project/drupal/releases/9.0.7) (англ.), drupal.org, 8 октября 2020
