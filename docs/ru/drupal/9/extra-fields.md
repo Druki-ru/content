@@ -132,6 +132,10 @@ function example_foo_bar_validation(&$form, FormStateInterface $form_state) {
 
 - [Extra Field](https://www.drupal.org/project/extra_field) — добавляет возможность объявлять псевдо-поля типа `display` при помощи [плагинов](plugins/plugins.md). Рекомендуется к использованию вместо хуков, так как позволяет поддерживать код в чистоте и более организованно.
 
+## Изменения в релизах
+
+- **[Drupal 9.1.0](releases/release-9.1.0.md) (04.11.2020):** Исправлена неполадка, из-за которой псевдо-поля не рендерились при выводе содержимого через Layout Builder.
+
 ## Ссылки
 
 - [Drupal 8: Создание псевдо-полей (Extra Fields)](https://niklan.net/blog/177), Niklan, 2018
