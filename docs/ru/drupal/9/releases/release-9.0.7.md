@@ -23,7 +23,7 @@ metatags:
 
 ## Node System
 
-- [#3170246](https://www.drupal.org/project/drupal/issues/3170246) `NodeLoadMultipleTest` теперь `Kernel` тест, а `Functional`.
+- [#3170246](https://www.drupal.org/project/drupal/issues/3170246) `NodeLoadMultipleTest` теперь `Kernel` тест, а не `Functional`.
 
 ## Прочие изменения
 
