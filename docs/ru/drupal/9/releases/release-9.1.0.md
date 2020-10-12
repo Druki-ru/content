@@ -409,6 +409,10 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 Для изображений выводимых Drupal и которых заданы `width` и `height` аттрибуты включена ленивая загрузка. Требования наличия ширины и высоты обусловлено тем, что без данных аттрибутов ленивая загрузка приводит к проблемам [CLS](https://web.dev/cls/).
 
+## Action
+
+- [#3174573](https://www.drupal.org/project/drupal/issues/3174573) Исправлена грамматическа ошибка в документации `ActionUninstallTest`.
+
 ## Asset Library System
 
 - [#3163500](https://www.drupal.org/project/drupal/issues/3163500) Сообщение об устаревшей библиотеке теперь также выводится при переопределении или расширении данной библиотеки темой.
@@ -492,6 +496,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3123461](https://www.drupal.org/project/drupal/issues/3123461) Возможность располагать драйвера баз данных в `DRUPAL_ROOT/drivers` помечена устаревшей и будет удалена в Drupal 10.
 - [#2999569](https://www.drupal.org/project/drupal/issues/2999569) Теперь, при попытке вставить (`INSERT`) запись в несуществующую колонку и без указания значения по умолчанию в схеме, драйвер MySQL будет выбрасывать исключение `IntegrityConstraintViolationException` в дополнение к текущему `DatabaseExceptionWrapper`.
 - [#3120892](https://www.drupal.org/project/drupal/issues/3120892) Для драйвера SQL Lite добавлена поддержа функции `LEAST()`.
+- [#3174848](https://www.drupal.org/project/drupal/issues/3174848) Исправлена опечатка в сообщении о [депрекации](../../../deprecation.md) метода `Connection::prepare`.
 
 ## Entity System
 
@@ -543,7 +548,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3097797](https://www.drupal.org/project/drupal/issues/3097797) Улучшена документация для функции `image_filter_keyword()`.
 - [#3165350](https://www.drupal.org/project/drupal/issues/3165350) Удалена неиспользуемая переменная `$key` в `MigrateImageCacheTest`.
 - [#2630230](https://www.drupal.org/project/drupal/issues/2630230) Исправлена неполадка из-за которой мог не генерироваться стиль изображения из корня публичной файловой директории при конвертации типов.
-- [#3172537](https://www.drupal.org/project/drupal/issues/3172537)
+- [#3174913](https://www.drupal.org/project/drupal/issues/3174913) Исправлена ошибка в конструкторе `ImageStyleDownloadController` для соответствия `StreamWrapperManagerInterface`.
 
 ## Install System
 
@@ -566,6 +571,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 - [#3053887](https://www.drupal.org/project/drupal/issues/3053887) В код добавлена документация почему блоки требуют создание новой ревизии при изменении.
 - [#3126746](https://www.drupal.org/project/drupal/issues/3126746) `LayoutBuilderHtmlEntityFormController` теперь расширяет `FormController`.
+- [#3069578](https://www.drupal.org/project/drupal/issues/3069578) Исправлена неполадка из-за которой псевдо-поля не рендерились.
 
 ## Locale
 
@@ -615,12 +621,18 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3152789](https://www.drupal.org/project/drupal/issues/3152789) Для плагина источника `variable` добавлена новая настройка `variables_required`.
 - [#3171755](https://www.drupal.org/project/drupal/issues/3171755) Удалена неиспользуемая переменная `$row` в `RowTest`.
 - [#3160015](https://www.drupal.org/project/drupal/issues/3160015) `str_replace()` больше не вызывается если путь состоит из одних слешей.
+- [#3143676](https://www.drupal.org/project/drupal/issues/3143676) Исправлена неполадка в миграции `d7_term_localized_translation` из-за недостаточного количества проверок.
+- [#3143720](https://www.drupal.org/project/drupal/issues/3143720) Добавлен новый тест `CredentialFormTest`.
 
 ## Node System
 
 - [#2830504](https://www.drupal.org/project/drupal/issues/2830504) Исправлена неполадка из-за которой `Drupal\node\Plugin\Action\AssignOwnerNode` позволяла выбрать гостя в качестве владельца ноды.
 - [#3165950](https://www.drupal.org/project/drupal/issues/3165950) Из `NodeTypeForm` удалено упоминание что нижние подчёркивания будут конвертированы в дифисы, так как для путей форм сущностей уже используются нижине подчёркивания.
 - [#2586013](https://www.drupal.org/project/drupal/issues/2586013) Функция `node_views_analyze()` перенесена из файла `node.views.inc` в `node.views_execution.inc`.
+
+## QuickEdit
+
+- [#3174574](https://www.drupal.org/project/drupal/issues/3174574) Исправлена опечатка в документации к `QuickEditLoadingTest`. 
 
 ## Route System
 
@@ -644,6 +656,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 - [#3152848](https://www.drupal.org/project/drupal/issues/3152848) Код связанный с `bc_entity_resource_permissions` настройкой удалён, так как она больше не используется.
 - [#3169578](https://www.drupal.org/project/drupal/issues/3169578) Удалён неиспользуемый код.
+- [#3173076](https://www.drupal.org/project/drupal/issues/3173076) Удалена неиспользуемая переменная `$parseable_valid_request_body_2` в `EntityResourceTestBase`.
 
 ## Routing System
 
@@ -672,6 +685,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 ## System
 
 - [#3077938](https://www.drupal.org/project/drupal/issues/3077938) Добавлена функция `tableDragHandle` для `Drupal.theme`. Теперь темы могут менять разметку управления сортировкой таблицы.
+- [#3174378](https://www.drupal.org/project/drupal/issues/3174378) Удалена неиспользуемая переменная `$filesystem_config` в `system.install` и `UpdateScriptTest`.
 
 ## Taxonomy
 
@@ -699,6 +713,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#2846485](https://www.drupal.org/project/drupal/issues/2846485) Улучшена производительность при рендере множественного поля, где каждый элемент поля создаёт свою строку с выводом.
 - [#3013216](https://www.drupal.org/project/drupal/issues/3013216) Упрощены селекторы в `views-admin.es6.js`.
 - [#2336569](https://www.drupal.org/project/drupal/issues/2336569) Улучшено добавление `<span>` в `#field_prefix` и `#field_suffix`.
+- [#3175081](https://www.drupal.org/project/drupal/issues/3175081) Удалена неиспользуемая переменная `$exposed` в `Equality`.
 
 ## Тестирование
 
@@ -833,3 +848,4 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3173991](https://www.drupal.org/project/drupal/issues/3173991) Передача аргументов в анонимные функции при использовании `array_*` функций теперь производится без ссылки.
 - [#3173440](https://www.drupal.org/project/drupal/issues/3173440) Удалено дублирование «will» в комментариях к коду.
 - [#3172537](https://www.drupal.org/project/drupal/issues/3172537) Создание экземпляра `Symfony\Component\Process\Process` теперь происходит через метод `::fromShellCommandline`.
+- [#3174022](https://www.drupal.org/project/drupal/issues/3174022) Теперь при вызове `call_user_func_array()`, там где это возможно, значения аргументов передаются используя `array_values()`.
