@@ -790,7 +790,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#2778917](https://www.drupal.org/node/2778917) Вместо тернарного оператора при вызове `\Drupal::state()->get()` теперь используется второй параметр.
 - [#3021788](https://www.drupal.org/node/3021788) Функции `template_preprocess_menu_local_task()` и `template_preprocess_menu_local_action()` перенесены в `core/includes/theme.inc`.
 - [#3112328](https://www.drupal.org/node/3112328) Классы расширяющие `FormatterBase` больше не реализуют `ContainerFactoryPluginInterface`, так как это объявлено в `FormatterBase`.
-- [#3033734](https://www.drupal.org/node/3033734) На странице списка модулей исправлен горозонтальный скрол при больших описаниях.
+- [#3033734](https://www.drupal.org/node/3033734) На странице списка модулей исправлен горизонтальный скрол при больших описаниях.
 - [#3112790](https://www.drupal.org/project/drupal/issues/3112790) Исправлена неполадка, из-за которой «установка» модулей User и System происходила дважды.
 - [#3143605](https://www.drupal.org/project/drupal/issues/3143605) Удалена функция `update_replace_permissions()`.
 - [#2972224](https://www.drupal.org/project/drupal/issues/2972224) В ядро добавлен `.cspell.json` для автоматической проверки правописания в ядре Drupal.
