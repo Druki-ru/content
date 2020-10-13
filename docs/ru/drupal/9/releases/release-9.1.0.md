@@ -571,7 +571,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 - [#3053887](https://www.drupal.org/project/drupal/issues/3053887) В код добавлена документация почему блоки требуют создание новой ревизии при изменении.
 - [#3126746](https://www.drupal.org/project/drupal/issues/3126746) `LayoutBuilderHtmlEntityFormController` теперь расширяет `FormController`.
-- [#3069578](https://www.drupal.org/project/drupal/issues/3069578) Исправлена неполадка из-за которой [псевдо-поля](../extra-fields.md) не рендерились.
+- [#3069578](https://www.drupal.org/project/drupal/issues/3069578) Исправлена неполадка из-за которой [псевдо-поля](../hooks/extra-fields.md) не рендерились.
 
 ## Locale
 
