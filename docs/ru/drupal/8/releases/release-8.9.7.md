@@ -10,6 +10,10 @@ metatags:
 
 **Дата релиза**: 8 октября 2020
 
+## Book
+
+- [#3040181](https://www.drupal.org/project/drupal/issues/3040181) Неопубликованные подшивки больше не отображаются пользователям без соответствующих прав доступов на странице /book.
+
 ## CSS
 
 - [#3166360](https://www.drupal.org/project/drupal/issues/3166360) CSSLint тестирование отключено для Drupal CI, так как его задачу покрывают тесты Stylelint. 
@@ -100,6 +104,7 @@ metatags:
 - [#3156878](https://www.drupal.org/project/drupal/issues/3156878) `DateTimePlus` теперь вызывает `checkdate()` только если значение не пустое (`!empty()`).
 - [#3173435](https://www.drupal.org/project/drupal/issues/3173435) Исправлено повторение «not» в `PharExtensionInterceptor`.
 - [#3173437](https://www.drupal.org/project/drupal/issues/3173437) Исправлено повторение «or» в `FieldOptionTranslation`.
+- [#3174190](https://www.drupal.org/project/drupal/issues/3174190) Исправлено повторение «using» в `DbImportCommand`.
 
 ## Ссылки
 
