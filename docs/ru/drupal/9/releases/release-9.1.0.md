@@ -409,6 +409,61 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 Для изображений выводимых Drupal и которых заданы `width` и `height` аттрибуты включена ленивая загрузка. Требования наличия ширины и высоты обусловлено тем, что без данных аттрибутов ленивая загрузка приводит к проблемам [CLS](https://web.dev/cls/).
 
+## Добавлен новый компонент — FrontMatter
+
+- [#3064854](https://www.drupal.org/project/drupal/issues/3064854)
+
+В ядро добавлен новый компонент `Drupal\Component\FrontMatter\FrontMatter`.
+
+Данный компонент позволяет вам парсить [Front Matter](https://jekyllrb.com/docs/front-matter/) разметку из различных файлов.
+
+Front Matter используется для того чтобы добавить в исходный файл дополнительную статическую информацию.
+
+Front Matter разметка должны быть самой первой в исходном файле, также она должна быть валидным YAML. Содержимое Front Matter задаётся между открывающей и закрывающей конструкцией, которая состоит из трёх тире вподряд `---`.
+
+### Пример
+
+**source.md**
+
+```markdown
+---
+important: true
+---
+My content
+```
+
+**example.php**
+
+```php
+use Drupal\Component\FrontMatter\FrontMatter;
+
+$frontMatter = FrontMatter::create(file_get_contents('source.md'));
+$data = $frontMatter->getData(); // ['important' => TRUE]
+$content = $frontMatter->getContent(); // 'My content'
+$line => $frontMatter->getLine(); // 4, line where content actually starts.
+```
+
+### Twig
+
+[Сервис](../services/services.md) `twig` был расширен для поддержки данной возможности в Twig шаблонах.
+
+**Пример:**
+
+```php
+$metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.html.twig');
+```
+
+## PHPUnit обновлён до версии 9.
+
+- [#3127141](https://www.drupal.org/project/drupal/issues/3127141)
+
+Друпал ядро обновлено для использования PHPUnit 9. Установки на PHP 7.3 продолжат использовать PHPUnit 8.4 в целях [обратной совместимости](../../../backward-compatibility.md).
+
+Большинство тестов не должно задеть данное изменение, тем не менее, разработчикам модулей следует обратить внимание на следующее:
+
+- `::assertContains()` теперь производит строгое сравнение (`===`) что может привести к ошибкам. PHPUnit предоставляет более мягкий вариант данной проверки `::assertContainsEquals()`, благодря которому, тесты продолжат работать на PHP 7.3.
+- В ядро добавлен новый трейт `Drupal\Tests\PhpUnitCompatibilityTrait` для всех базовых классов. Тесты контрибных модулей всегда должны расширять базовые классы тестов из ядра вместо прямого подключения трейта.
+
 ## Action
 
 - [#3174573](https://www.drupal.org/project/drupal/issues/3174573) Исправлена грамматическа ошибка в документации `ActionUninstallTest`.
@@ -441,6 +496,10 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3164871](https://www.drupal.org/project/drupal/issues/3164871) Исправлены отстутпы у радиокнопок.
 - [#3057772](https://www.drupal.org/project/drupal/issues/3057772) Улучшены иконки для элемента `details`.
 - [#3171727](https://www.drupal.org/project/drupal/issues/3171727) Разделитель для хлебных крошек теперь более контрастный.
+- [#3066006](https://www.drupal.org/project/drupal/issues/3066006) Оформление Views UI приведено в соответствие дизайну.
+- [#3085212](https://www.drupal.org/project/drupal/issues/3085212) Новое оформление страницы «Сайт находится в режиме обслуживания».
+- [#3072772](https://www.drupal.org/project/drupal/issues/3072772) Новое оформление страницы расширений.
+- [#3166068](https://www.drupal.org/project/drupal/issues/3166068) Исправлен AJAX индикатор загрузки значений для автодополнения в инлайн формах.
 
 ## Comment
 
@@ -456,8 +515,9 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3133903](https://www.drupal.org/project/drupal/issues/3133903) Добавлены проверка что все пакеты из `composer.lock` файла ядра имеются и имеют конкретные версии.
 - [#3121847](https://www.drupal.org/project/drupal/issues/3121847) В шаблоны проектов [drupal/recommended-project](drupal-recommended-project.md) и [drupal/legacy-project](drupal-legacy-project.md) теперь добавляется новый путь установки `drupal-custom-profile` (`profiles/custom/{$name}/`).
 - [#3164349](https://www.drupal.org/project/drupal/issues/3164349) `symfony/var-dumper` теперь указан как dev зависимость в корневом composer.json Drupal.
-- [#3157296](https://www.drupal.org/project/drupal/issues/3157296) Обновлены зависимости.
+- [#3157296](https://www.drupal.org/project/drupal/issues/3157296) Обновлены зависимости ядра.
 - [#3168514](https://www.drupal.org/project/drupal/issues/3168514) Удалены неиспользуемые полифилы.
+- [#3176504](https://www.drupal.org/project/drupal/issues/3176504) Обновлены зависимости ядра.
 
 ## Contact
 
@@ -541,6 +601,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3164965](https://www.drupal.org/project/drupal/issues/3164965) Удалена неиспользуемая переменная `$source` в `HelpTopicTwigLoaderTest`.
 - [#3166763](https://www.drupal.org/project/drupal/issues/3166763) Исправлены двойные пробелы в `help.help_topic_search.html.twig`.
 - [#3047703](https://www.drupal.org/project/drupal/issues/3047703) Справки модулей `basic_auth`, `hal`, `jsonapi`, `rdf`, `rest` и `serialization` конвертированы в Help Topic.
+- [#3085972](https://www.drupal.org/project/drupal/issues/3085972) `Drupal\help_topics\FrontMatter` заменён на `Drupal\Component\Utility\FrontMatter`.
 
 ## Image
 
@@ -562,6 +623,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3152473](https://www.drupal.org/project/drupal/issues/3152473) Улучшена работа обратного вызова domready.
 - [#3078501](https://www.drupal.org/project/drupal/issues/3078501) Функция `Drupal.AjaxCommands.prototype.alert` теперь вызывает `window.alert` с одним параметром, так как второй ни на что не влияет.
 - [#1936708](https://www.drupal.org/project/drupal/issues/1936708) Улучшено отображение вертикальных вкладок. Теперь они корректно отображают и обновляют сводку по выбранным значениям.
+- [#3143465](https://www.drupal.org/project/drupal/issues/3143465) 😑 Добавлен полифил `NodeList.forEach` для совместимости с IE11. 
 
 ## Install system
 
@@ -623,6 +685,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3160015](https://www.drupal.org/project/drupal/issues/3160015) `str_replace()` больше не вызывается если путь состоит из одних слешей.
 - [#3143676](https://www.drupal.org/project/drupal/issues/3143676) Исправлена неполадка в миграции `d7_term_localized_translation` из-за недостаточного количества проверок.
 - [#3143720](https://www.drupal.org/project/drupal/issues/3143720) Добавлен новый тест `CredentialFormTest`.
+- [#3008028](https://www.drupal.org/project/drupal/issues/3008028) Добавлены миграции ссылок меню i18n из Drupal 7.
 
 ## Node System
 
@@ -648,6 +711,10 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3129560](https://www.drupal.org/project/drupal/issues/3129560) Удалена реализация `Upsert`.
 - [#3154669](https://www.drupal.org/project/drupal/issues/3154669) Испралены ошибки и опечатки для комментариев.
 
+## RDF
+
+- [#3110972](https://www.drupal.org/project/drupal/issues/3110972) Библиотека `easyrdf/easyrdf` обновлена до версии 1.0.0.
+
 ## Render System
 
 - [#3172410](https://www.drupal.org/project/drupal/issues/3172410) Класс `HtmlResponse` подкорректирован для совместимости с Symfony 5.
@@ -657,11 +724,12 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3152848](https://www.drupal.org/project/drupal/issues/3152848) Код связанный с `bc_entity_resource_permissions` настройкой удалён, так как она больше не используется.
 - [#3169578](https://www.drupal.org/project/drupal/issues/3169578) Удалён неиспользуемый код.
 - [#3173076](https://www.drupal.org/project/drupal/issues/3173076) Удалена неиспользуемая переменная `$parseable_valid_request_body_2` в `EntityResourceTestBase`.
+- [#3172846](https://www.drupal.org/project/drupal/issues/3172846) Удалена неиспользуемая переменная `$supported_formats` в `ResourceRoutes`.
 
 ## Routing System
 
 - [#3158708](https://www.drupal.org/project/drupal/issues/3158708) Возвращено поведение, что `RouteProvider::getAllRoutes()` возвращает `iterable` результат, которое было изменено в [#2917331](https://www.drupal.org/project/drupal/issues/2917331).
-- [#3173958](https://www.drupal.org/project/drupal/issues/3173958) В `EntityResolverManager::getControllerClass` добавлена проверка что `$controller` не `NULL`.
+- [#3173958](https://www.drupal.org/project/drupal/issues/3173958) В `EntityResolverManager::getContro#llerClass` добавлена проверка что `$controller` не `NULL`.
 
 ## Search
 
@@ -714,6 +782,13 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3013216](https://www.drupal.org/project/drupal/issues/3013216) Упрощены селекторы в `views-admin.es6.js`.
 - [#2336569](https://www.drupal.org/project/drupal/issues/2336569) Улучшено добавление `<span>` в `#field_prefix` и `#field_suffix`.
 - [#3175081](https://www.drupal.org/project/drupal/issues/3175081) Удалена неиспользуемая переменная `$exposed` в `Equality`.
+- [#3175564](https://www.drupal.org/project/drupal/issues/3175564) Удалена неиспользуемая переменная `$renderer` в `AreaOrderTest`.
+- [#3175571](https://www.drupal.org/project/drupal/issues/3175571) Удалена неиспользуемая переменная `$nodes` в `SortTranslationTest`.
+- [#3175665](https://www.drupal.org/project/drupal/issues/3175665) Удалена неиспользуемая переменная `$view` в `FilterTest`.
+
+## Workspaces
+
+- [#3174418](https://www.drupal.org/project/drupal/issues/3174418) Удалены неиспользуемые переменные `$revision_metadata_keys` и `$active_workspace_id`.
 
 ## Тестирование
 
@@ -781,6 +856,8 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3174038](https://www.drupal.org/project/drupal/issues/3174038) `DrupalSelenium2Driver` теперь открывает архив с флагом `\ZipArchive::CREATE` вместо `\ZipArchive::OVERWRITE`.
 - [#3162008](https://www.drupal.org/project/drupal/issues/3162008) `SectionComponentTest::testToRenderArray` теперь возвращает объект события чтобы соответствовать возвращаемому типу `EventDispatcherInterface::dispatch` из Symfony 5.
 - [#3174158](https://www.drupal.org/project/drupal/issues/3174158) Тест предупрждений обновлён для соответствия PHP 8, так как используемый вариант «деления на ноль» теперь не предупреждение а фатальная ошибка.
+- [#3172438](https://www.drupal.org/project/drupal/issues/3172438) Использование аннотации `@expectedDeprecation` заменено на `ExpectDeprecationTrait::expectDeprecation()`.
+- [#2858646](https://www.drupal.org/project/drupal/issues/2858646) Исправлены вызовы метода `::setUp()` с некорректным регистром.
 
 ## Прочие изменения
 
@@ -849,3 +926,5 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - [#3173440](https://www.drupal.org/project/drupal/issues/3173440) Удалено дублирование «will» в комментариях к коду.
 - [#3172537](https://www.drupal.org/project/drupal/issues/3172537) Создание экземпляра `Symfony\Component\Process\Process` теперь происходит через метод `::fromShellCommandline`.
 - [#3174022](https://www.drupal.org/project/drupal/issues/3174022) Теперь при вызове `call_user_func_array()`, там где это возможно, значения аргументов передаются используя `array_values()`.
+- [#3176990](https://www.drupal.org/project/drupal/issues/3176990) cspell теперь также проверяет файлы начинающиеся с точки.
+- [#3172582](https://www.drupal.org/project/drupal/issues/3172582) Ссылка на форматы дат в PHP обновлена на новую.
