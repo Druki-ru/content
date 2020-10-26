@@ -34,3 +34,5 @@ metatags:
 
 - [#3177477](https://www.drupal.org/project/drupal/issues/3177477) Pamela Barone ([@pameeela](https://www.drupal.org/u/pameeela)) теперь полноценный коммитер-помощник.
 - [#3157963](https://www.drupal.org/project/drupal/issues/3157963) Исправлены некорректные референсы в документации к `FormStateInterface::getResponse()`.
+- [#3040274](https://www.drupal.org/project/drupal/issues/3040274) Исправлены грамматические ошибки, написание и стиль кода и комментариев для `FormBuilder::prepareForm()`.
+- [#2937844](https://www.drupal.org/project/drupal/issues/2937844) Внесены исправления для соответствия стандарту кода `Squiz.PHP.NonExecutableCode`.

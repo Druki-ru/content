@@ -19,3 +19,15 @@ metatags:
 ## Contact
 
 - [#2223967](https://www.drupal.org/project/drupal/issues/2223967) Исправлено двойное декодирование сообщения.
+
+## Install
+
+- [#3176652](https://www.drupal.org/project/drupal/issues/3176652) В документации к `install_drupal()` исправлена отсылка на удалённую функцию.
+
+## Quickedit
+
+- [#3037436](https://www.drupal.org/project/drupal/issues/3037436) Внесены множественные улучшения в тест `QuickEditImageTest`.
+
+## Прочие изменения
+
+- [#3069026](https://www.drupal.org/project/drupal/issues/3069026) Удалён вызов `::addAutowiringType()` из `YamlFileLoader`.
