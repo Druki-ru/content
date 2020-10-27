@@ -464,6 +464,53 @@ $metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.htm
 - `::assertContains()` теперь производит строгое сравнение (`===`) что может привести к ошибкам. PHPUnit предоставляет более мягкий вариант данной проверки `::assertContainsEquals()`, благодря которому, тесты продолжат работать на PHP 7.3.
 - В ядро добавлен новый трейт `Drupal\Tests\PhpUnitCompatibilityTrait` для всех базовых классов. Тесты контрибных модулей всегда должны расширять базовые классы тестов из ядра вместо прямого подключения трейта.
 
+## Новая тема оформления Drupal — Olivero — добавлена в ядро
+
+- [#3111409](https://www.drupal.org/project/drupal/issues/3111409)
+
+Текущая тема оформления — Bartik, была частью релиза Drupal 7, который состоялся в январе 2011 года. Спустя 9 лет, данная тема успела попасть в релизы [Drupal 8](../../8/drupal-8.md) и [Drupal 9](../drupal-9.md). Веб двигается вперёд, это было отлично для 2011 года, но негодиться сейчас.
+
+Начиная с данной версии, в ядро добавлена новая тема — Olivero. На данный момент она находится в эксперемаентальном статусе и будет выключена по умолчанию, но со временем, она заменит Bartik.
+
+Вы можете посмотреть как выглядит данная тема вживую на демо сайте: http://lb.cm/olivero
+
+![Olivero demo](https://i.imgur.com/ehypMHV.png)
+
+## Composer шаблоны Drupal больше не задают значение minimum-stability равным dev
+
+- [#3135247](https://www.drupal.org/project/drupal/issues/3135247)
+
+Начиная с [Drupal 8.8](../../8/releases/release-8.8.0.md) и до [Drupal 9.0](release-9.0.0.md), включительно, Composer шаблоны для Drupal ([drupal/recommended-project
+](../../../composer/drupal-recommended-project.md) и [drupal/legacy-project](../../../composer/drupal-legacy-project.md)) указывали минимальную стабильную версию следующим образом:
+
+```json
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+```
+
+Это позволяет устанавливать пакеты в разработке вместе с шаблоном. Иногда данное поведение приводит к непредсказуемым результатам, напирмер, обновление на новый нестабильный релиз, вместо того чтобы обновляться в пределах текущего стабильного релиза. Настройка Composer `prefer stable` должна рассматриваться как рекомендация и не гарантирует что будет вбран стабильный релиз.
+
+Начиная с Drupal 9.1.0-alpha1, Composer шаблоны с Drupal будут указывать соответствующие уровни стабильности:
+
+- Drupal 9.1.0-alpha1 будет указывать минимальную стабильность как "alpha"
+- Drupal 9.1.0-beta1 будет указывать минимальную стабильность как "beta"
+- Drupal 9.1.0-rc1 будет указывать минимальную стабильность как "RC"
+- Drupal 9.1.0 будет указывать минимальную стабильность как "stable"
+
+Данные изменения не окажут влияния на уже созданные ранее проекты управляемые Composer. Пользователи сайтов должны сами скорректировать это значение в `composer.json` файле, если это необходимо.
+
+Используя минимальную стабильность в значении `stable` вы по прежнему сможете загружать и устанавливать нестабильные зависимости, для этого достаточно запрашивать необходимые версии с «[флагом стабильности](https://getcomposer.org/doc/04-schema.md#package-links)», например:
+
+```
+composer require drupal/contrib:^1.0@beta
+```
+
+Данная команда позволит проекту `contrib` быть загруженым в бета версии и выше. Тем не менее, если другой модуль имеет зависимость на него, то приведенный пример выше приведёт к ошибке. Данная ситуация также может быть р ешена похожим способом, запросив оба проекта с нужными метками:
+
+```
+composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
+```
+
 ## Action
 
 - [#3174573](https://www.drupal.org/project/drupal/issues/3174573) Исправлена грамматическа ошибка в документации `ActionUninstallTest`.
@@ -706,6 +753,10 @@ $metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.htm
 - [#3047723](https://www.drupal.org/project/drupal/issues/3047723) Документация модулей views, views_ui конвертирована в Help Topics.
 - [#3067614](https://www.drupal.org/project/drupal/issues/3067614) Документация модулей filter, ckeditor, editor конвертирована в Help Topics.
 
+## Plugin System
+
+- [#2273381](https://www.drupal.org/project/drupal/issues/2273381) `ContextAwarePluginBase` заменён трейтом `ContextAwarePluginTrait` и помечен устаревшим.
+
 ## PosgreSQL драйвер
 
 - [#3129560](https://www.drupal.org/project/drupal/issues/3129560) Удалена реализация `Upsert`.
@@ -926,3 +977,4 @@ $metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.htm
 - [#3174022](https://www.drupal.org/project/drupal/issues/3174022) Теперь при вызове `call_user_func_array()`, там где это возможно, значения аргументов передаются используя `array_values()`.
 - [#3176990](https://www.drupal.org/project/drupal/issues/3176990) cspell теперь также проверяет файлы начинающиеся с точки.
 - [#3172582](https://www.drupal.org/project/drupal/issues/3172582) Ссылка на форматы дат в PHP обновлена на новую.
+- [#3171267](https://www.drupal.org/project/drupal/issues/3171267) bnjmnm добавлен в список мейнтенеров в качестве временного мейнтенера a11y.
