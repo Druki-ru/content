@@ -129,10 +129,6 @@ Classy продолжит расширять Stable от Drupal 8. Будуще�
 - [#3107918](https://www.drupal.org/node/3107918) Прекращена поддержка Node.js 8, Drupal теперь запрашивает Node.js 12.
 - [#3107926](https://www.drupal.org/project/drupal/issues/3107926) `stylelint` обновлён до `^13.0.0`.
 
-## Libraries
-
-- [#2716115](https://www.drupal.org/project/drupal/issues/2716115) Добавлена поддержка `attributes` для CSS библиотек.
-
 ## Migrate
 
 - [#3134459](https://www.drupal.org/node/3134459) Из кода удалены метки `@group legacy`.

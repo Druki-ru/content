@@ -875,7 +875,6 @@ $metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.htm
 - [#3143724](https://www.drupal.org/project/drupal/issues/3143724) «dont» заменён на «do_not» в якоре ссылки на документацию.
 - [#3153790](https://www.drupal.org/project/drupal/issues/3153790) Исправлена опечатка в сервисе `user.flood_subscriber`.
 - [#3055189](https://www.drupal.org/project/drupal/issues/3055189) Маппинг ключей в несколько строк помечен устаревшим в Symfony 4.3, соответствующие изменения внесены в ядро.
-- [#2937844](https://www.drupal.org/project/drupal/issues/2937844) Внесены исправления для соответствия стандарту `Squiz.PHP.NonExecutableCode`.
 - [#3143713](https://www.drupal.org/project/drupal/issues/3143713) Функция `drupal_get_schema_versions()` теперь всегда возвращает целые числа.
 - [#3154594](https://www.drupal.org/project/drupal/issues/3154594) `composer.json` и `composer.lock` будут пропускаться CSpell.
 - [#3154665](https://www.drupal.org/project/drupal/issues/3154665) Из словаря CSpell удалены названия модулей и плагинов.
@@ -913,7 +912,6 @@ $metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.htm
 - [#3169306](https://www.drupal.org/project/drupal/issues/3169306) Исправлены дубли «the» в документации.
 - [#3169286](https://www.drupal.org/project/drupal/issues/3169286) Исправлены дубли «more» в документации.
 - [#3169543](https://www.drupal.org/project/drupal/issues/3169543) Из cspell словаря удалены исправленные опечатки.
-- [#3040274](https://www.drupal.org/project/drupal/issues/3040274) Исправлена грамматика, орфография и стиль комментариев к коду `FormBuilder::prepareForm`.
 - [#3170675](https://www.drupal.org/project/drupal/issues/3170675) Адрес `http://cgit.drupalcode.org` заменён на `https://git.drupalcode.org/project/drupal`.
 - [#3055193](https://www.drupal.org/project/drupal/issues/3055193) Использование `Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesser` заменено на `Symfony\Component\Mime\MimeTypes`.
 - [#3156944](https://www.drupal.org/project/drupal/issues/3156944) Добавлена поддержка `nullable` тайпхинта в `ProxyBuilder`.
