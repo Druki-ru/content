@@ -511,6 +511,87 @@ composer require drupal/contrib:^1.0@beta
 composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 ```
 
+## Добавлен новый класс StatementWrapper, Drupal\Core\Database\Connection::$statementClass помечен устаревшим
+
+- [#3174662](https://www.drupal.org/project/drupal/issues/3174662)
+
+В ядро добавлен новый класс `StatementWrapper`, который является обёрткой для встроенного в PHP класса `\PDOStatement`. `\PDOStatement` изменён в PHP 8, в связи с чем `\Drupal\Core\Database\StatementInterface` становится несовместимым с ним. Данная обертка позволит использовать `\Drupal\Core\Database\Statement` с PHP 8.
+
+Драйвера БД из ядра для MySQL и Postgres теперь используют `\Drupal\Core\Database\StatementWrapper`.
+
+Если вы не используете сторонние драйвера баз данных, никаких действий не требуется.
+
+Сторонние и собственные драйвера баз данных должны установить значение `\Drupal\Core\Database\StatementWrapper` для свойства `\Drupal\Core\Database\Connection::$statementWrapperClass`, а также установить значение `NULL` для `\Drupal\Core\Database\Connection::$statementClass`.
+
+Пример:
+
+```php
+  /**
+   * {@inheritdoc}
+   */
+  protected $statementClass = NULL;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $statementWrapperClass = StatementWrapper::class;
+```
+
+Свойство `\Drupal\Core\Database\Connection::$statementClass` помечено устаревшим.
+
+## Добавлен новый компонент — Reflection
+
+- [#3156542](https://www.drupal.org/project/drupal/issues/3156542)
+
+В PHP 8 был удалён `\ReflectionParameter::getClass()`, для того чтобы сохранить обратную совместимость добавлен новый утилитарный компонент `Reflection` и соответствующий метод `::getParameterClassName()`.
+
+Для того чтобы ваш код был совместимо с PHP 8, обновите код с использованием нового компонента.
+
+**Ранее:**
+
+```php
+function foo(Exception $a) { }
+
+$functionReflection = new ReflectionFunction('foo');
+$parameters = $functionReflection->getParameters();
+$aParameter = $parameters[0];
+
+echo $aParameter->getClass()->name;
+```
+
+**Теперь:**
+
+```php
+function foo(Exception $a) { }
+
+$functionReflection = new ReflectionFunction('foo');
+$parameters = $functionReflection->getParameters();
+$aParameter = $parameters[0];
+
+$param_class = \Drupal\Component\Utility\Reflection::getParameterClassName($aParameter);
+echo $param_class;
+
+// If you need the reflection class object.
+$reflection = new \ReflectionClass($param_class);
+echo $reflection->name;
+```
+
+## Drupal ядро теперь использует composer/semver 3 версии
+
+- [#3128631](https://www.drupal.org/project/drupal/issues/3128631)
+
+Drupal ядро теперь использует `composer/semver` 3 версии и все тесты используют Composer 2 для совместимости с PHP 8. Это не значит что Drupal теперь требует Composer 2 для управления зависимостями, релизы 8.8, 8.9, 9.0 и 9.1 могут по прежнему управляться Composer 1.
+
+Если вы обновляетесь на Drupal 9.1+ при помощи Composer и видите следующее сообщение:
+
+```
+  Problem 1
+    - Root composer.json requires my_project/my_package * -> satisfiable by my_project/my_package[...].
+    - my_project/my_package dev-master requires composer/composer ^1 -> satisfiable by composer/composer[1.0.0-alpha1, ..., 1.10.x-dev].
+```
+
+Это означает что проблема с `my_project/my_package`, а не с Drupal ядром. Для решения проблемы, попробуйте обновить данные зависимости до актуальных версий. Если это не помогает, рекомендуется сообщить о проблеме разработчикам модуля (а не ядра).
+
 ## Action
 
 - [#3174573](https://www.drupal.org/project/drupal/issues/3174573) Исправлена грамматическа ошибка в документации `ActionUninstallTest`.
@@ -518,12 +599,14 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 ## Asset Library System
 
 - [#3163500](https://www.drupal.org/project/drupal/issues/3163500) Сообщение об устаревшей библиотеке теперь также выводится при переопределении или расширении данной библиотеки темой.
+- [#3095113](https://www.drupal.org/project/drupal/issues/3095113) Свойства `IE` и `!IE` для библиотек помечены устаревшими, так как его поддержка в IE была удалена в 2016 году для версий IE10+.
 
 ## Block
 
 - [#3105976](https://www.drupal.org/project/drupal/issues/3105976) В `BlockViewBuilder::buildPreRenderableBlock()` для аргумента `$entity` добавлен тайпхинт `\Drupal\block\BlockInterface`.
 - [#2151001](https://www.drupal.org/project/drupal/issues/2151001) Для административной страницы «Схема блоков» добавлен Tour.
 - [#2890758](https://www.drupal.org/project/drupal/issues/2890758) Видимость блока по типу ноды теперь работает на маршрутах с предварительным просмотром и ревизии.
+- [#2918149](https://www.drupal.org/project/drupal/issues/2918149) Теперь сообщение «This block is broken or missing…» будет отображаться только пользователям, у которых есть права на действия свазынные с блоком.
 
 ## Book
 
@@ -547,6 +630,8 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 - [#3085212](https://www.drupal.org/project/drupal/issues/3085212) Новое оформление страницы «Сайт находится в режиме обслуживания».
 - [#3072772](https://www.drupal.org/project/drupal/issues/3072772) Новое оформление страницы расширений.
 - [#3166068](https://www.drupal.org/project/drupal/issues/3166068) Исправлен AJAX индикатор загрузки значений для автодополнения в инлайн формах.
+- [#3158854](https://www.drupal.org/project/drupal/issues/3158854) Для форм создания и редактирования нод, основные элементы теперь центруются если ширина превышает 1200px.
+- [#3070493](https://www.drupal.org/project/drupal/issues/3070493) Предоставлен механизм и начальная реализация оформления тулбара под стиль Claro.
 
 ## Comment
 
@@ -565,6 +650,8 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 - [#3157296](https://www.drupal.org/project/drupal/issues/3157296) Обновлены зависимости ядра.
 - [#3168514](https://www.drupal.org/project/drupal/issues/3168514) Удалены неиспользуемые полифилы.
 - [#3176504](https://www.drupal.org/project/drupal/issues/3176504) Обновлены зависимости ядра.
+- [#3178046](https://www.drupal.org/project/drupal/issues/3178046) Обновлены зависимости ядра.
+- [#3179284](https://www.drupal.org/project/drupal/issues/3179284) Обновлены зависимости ядра.
 
 ## Contact
 
@@ -581,6 +668,7 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 
 - [#2972308](https://www.drupal.org/project/drupal/issues/2972308) Добавлено новое разрешение `translate editable entities` позволяющее переводить сущности, которые пользователь может редактировать.
 - [#2796399](https://www.drupal.org/project/drupal/issues/2796399) Улучшены hreflang метатеги для сущности что используется в качестве главной страницы.
+- [#3178338](https://www.drupal.org/project/drupal/issues/3178338) Исправлены стандарты кодирования для `d7_menu_links_localized.yml`.
 
 ## CSS
 
@@ -622,6 +710,7 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 - [#3165188](https://www.drupal.org/project/drupal/issues/3165188) Удалена неиспользуемая переменная `$i` из `FieldOptionTranslation`.
 - [#3165191](https://www.drupal.org/project/drupal/issues/3165191) Удалена неиспользуемая переменная `$field_ids` из `FieldAttachStorageTest`.
 - [#2918290](https://www.drupal.org/project/drupal/issues/2918290) Исправлен некорректно указанный возвращаемый типа для `FieldStorageConfig::loadByName`.
+- [#3177545](https://www.drupal.org/project/drupal/issues/3177545) Внесены улучшения в `\Drupal\field\Entity\FieldStorageConfig::getCardinality()` для своместимости с PHP 8.
 
 ## File
 
@@ -671,6 +760,7 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 - [#3078501](https://www.drupal.org/project/drupal/issues/3078501) Функция `Drupal.AjaxCommands.prototype.alert` теперь вызывает `window.alert` с одним параметром, так как второй ни на что не влияет.
 - [#1936708](https://www.drupal.org/project/drupal/issues/1936708) Улучшено отображение вертикальных вкладок. Теперь они корректно отображают и обновляют сводку по выбранным значениям.
 - [#3143465](https://www.drupal.org/project/drupal/issues/3143465) 😑 Добавлен полифил `NodeList.forEach` для совместимости с IE11. 
+- [#3174884](https://www.drupal.org/project/drupal/issues/3174884) Обновлены зависимости Yarn.
 
 ## Install system
 
@@ -744,14 +834,18 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 
 - [#3174574](https://www.drupal.org/project/drupal/issues/3174574) Исправлена опечатка в документации к `QuickEditLoadingTest`. 
 
-## Route System
-
-- [#3074201](https://www.drupal.org/project/drupal/issues/3074201) Методы `RouteCompiler::getDefaults()`, `RouteCompiler::getRequirements()` и `RouteCompiler::getRequirements()` признаны устаревшими.
-
 ## Help Topics
 
 - [#3047723](https://www.drupal.org/project/drupal/issues/3047723) Документация модулей views, views_ui конвертирована в Help Topics.
 - [#3067614](https://www.drupal.org/project/drupal/issues/3067614) Документация модулей filter, ckeditor, editor конвертирована в Help Topics.
+
+## Olivero
+
+- [#3177345](https://www.drupal.org/project/drupal/issues/3177345) Улучшен контраст текста для блока «Powered by Drupal».
+- [#3161010](https://www.drupal.org/project/drupal/issues/3161010) Исправлена синтаксическая ошибка в `layout-builder-twocol-section.css`.
+- [#3173905](https://www.drupal.org/project/drupal/issues/3173905) Исправлены ошибки в JavaScript связанные с некорректным использованием `classList.remove()`.
+- [#3157308](https://www.drupal.org/project/drupal/issues/3157308) Стили неопубликованного материала теперь объявлены непосредственно в теме и больше не подключается библиотека `classy/node`.
+- [#3176908](https://www.drupal.org/project/drupal/issues/3176908) Улучшена документация для `fieldset.html.twig`.
 
 ## Plugin System
 
@@ -781,6 +875,7 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 
 - [#3158708](https://www.drupal.org/project/drupal/issues/3158708) Возвращено поведение, что `RouteProvider::getAllRoutes()` возвращает `iterable` результат, которое было изменено в [#2917331](https://www.drupal.org/project/drupal/issues/2917331).
 - [#3173958](https://www.drupal.org/project/drupal/issues/3173958) В `EntityResolverManager::getContro#llerClass` добавлена проверка что `$controller` не `NULL`.
+- [#3074201](https://www.drupal.org/project/drupal/issues/3074201) Методы `RouteCompiler::getDefaults()`, `RouteCompiler::getRequirements()` и `RouteCompiler::getRequirements()` признаны устаревшими.
 
 ## Search
 
@@ -788,6 +883,8 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 - [#3086795](https://www.drupal.org/project/drupal/issues/3086795) «Search help» на странице поиска заменён на «About searching» для избежания двусмысленности.
 - [#3155221](https://www.drupal.org/project/drupal/issues/3155221) Удален устаревший «@todo».
 - [#3075703](https://www.drupal.org/project/drupal/issues/3075703) Функции для обработки поискового запроса `search_index_split()`, `search_simplify()` и `search_expand_cjk()` перенесены в [сервис](../services/services.md) `search.text_processor`.
+- [#3173595](https://www.drupal.org/project/drupal/issues/3173595) Удалена неиспользуемая переменная `$email` в `SearchBlockTest`.
+- [#3177377](https://www.drupal.org/project/drupal/issues/3177377) Удалены неиспользуемые переменные `$charcodes` и `$node2`.
 
 ## Serialization
 
@@ -800,6 +897,7 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 ## Simpletest
 
 - [#3112432](https://www.drupal.org/project/drupal/issues/3112432) Добавлена реализация `hook_requirements()` которая будет постоянно блокировать включение данного модуля на новых сайтах.
+- [#3178037](https://www.drupal.org/project/drupal/issues/3178037) Исправлена опечатка «is has» в `SimpleTest`.
 
 ## System
 
@@ -836,6 +934,8 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 - [#3175564](https://www.drupal.org/project/drupal/issues/3175564) Удалена неиспользуемая переменная `$renderer` в `AreaOrderTest`.
 - [#3175571](https://www.drupal.org/project/drupal/issues/3175571) Удалена неиспользуемая переменная `$nodes` в `SortTranslationTest`.
 - [#3175665](https://www.drupal.org/project/drupal/issues/3175665) Удалена неиспользуемая переменная `$view` в `FilterTest`.
+- [#3177546](https://www.drupal.org/project/drupal/issues/3177546) Исправлено неправильное использование `in_array()` в `\Drupal\views\Plugin\views\PluginBase::listLanguages()` что приводило к выводу дополнительных языков.
+- [#3177590](https://www.drupal.org/project/drupal/issues/3177590) Внесены улучшения для `ViewsFormBase::getForm()` для совместимости с PHP 8.
 
 ## Workspaces
 
@@ -978,3 +1078,8 @@ composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
 - [#3176990](https://www.drupal.org/project/drupal/issues/3176990) cspell теперь также проверяет файлы начинающиеся с точки.
 - [#3172582](https://www.drupal.org/project/drupal/issues/3172582) Ссылка на форматы дат в PHP обновлена на новую.
 - [#3171267](https://www.drupal.org/project/drupal/issues/3171267) bnjmnm добавлен в список мейнтенеров в качестве временного мейнтенера a11y.
+- [#2607116](https://www.drupal.org/project/drupal/issues/2607116) Удалена неиспользуемая переменная `$language` в `hook_tokens_alter()`.
+- [#3177557](https://www.drupal.org/project/drupal/issues/3177557) Внесены улучшения в `\Drupal\error_test\Controller\ErrorTestController::generateWarnings()` для совместимости с PHP 8.
+- [#3179013](https://www.drupal.org/project/drupal/issues/3179013) Из теста `EntityRouteEnhancerTest` удалено ненужное сравнение, которое также приводило к ошибке на PHP 8.
+- [#3178998](https://www.drupal.org/project/drupal/issues/3178998) Внесены улучшения в типы ошибок и сообщений об ошибках для поддержки PHP 8.
+- [#3177541](https://www.drupal.org/project/drupal/issues/3177541) Внесены улучшения в `LocalStream` для совместимости с PHP 8.
