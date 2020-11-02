@@ -17,6 +17,10 @@ metatags:
 
 - [#3175395](https://www.drupal.org/project/drupal/issues/3175395) Удалено неиспользуемое свойство `#html` из `DateTimeFormatterBase::buildDateWithIsoAttribute`.
 
+## Language System
+
+- [#3179318](https://www.drupal.org/project/drupal/issues/3179318) Для загрузки переводов теперь принудительно используется HTTPS протокол.
+
 ## Libraries
 
 - [#2716115](https://www.drupal.org/project/drupal/issues/2716115) Добавлена поддержка `attributes` для CSS библиотек.
@@ -24,6 +28,10 @@ metatags:
 ## Typed Data System
 
 - [#3177765](https://www.drupal.org/project/drupal/issues/3177765) Исправлена документация о возвращаемом типе для `ListInterface::first()`. 
+
+## Update
+
+- [#3132426](https://www.drupal.org/project/drupal/issues/3132426) Теперь при запросе обновлений, информация в кэше, полученная ранее, очищается принудительно.
 
 ## User
 
