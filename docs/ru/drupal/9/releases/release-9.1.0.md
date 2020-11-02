@@ -632,6 +632,9 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3166068](https://www.drupal.org/project/drupal/issues/3166068) Исправлен AJAX индикатор загрузки значений для автодополнения в инлайн формах.
 - [#3158854](https://www.drupal.org/project/drupal/issues/3158854) Для форм создания и редактирования нод, основные элементы теперь центруются если ширина превышает 1200px.
 - [#3070493](https://www.drupal.org/project/drupal/issues/3070493) Предоставлен механизм и начальная реализация оформления тулбара под стиль Claro.
+- [#3061042](https://www.drupal.org/project/drupal/issues/3061042) Улучшено оформление страницы состояния системы.
+- [#3062751](https://www.drupal.org/project/drupal/issues/3062751) Улучшено оформления для Media и Media Library элементов.
+- [#3179768](https://www.drupal.org/project/drupal/issues/3179768) Улучшено оформление каретки для `<details>` элемента.
 
 ## Comment
 
@@ -652,6 +655,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3176504](https://www.drupal.org/project/drupal/issues/3176504) Обновлены зависимости ядра.
 - [#3178046](https://www.drupal.org/project/drupal/issues/3178046) Обновлены зависимости ядра.
 - [#3179284](https://www.drupal.org/project/drupal/issues/3179284) Обновлены зависимости ядра.
+- [#3180092](https://www.drupal.org/project/drupal/issues/3180092) Зависимость `fabpot/goutte` обновлена до версии 3.3.1.
 
 ## Contact
 
@@ -846,6 +850,11 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3173905](https://www.drupal.org/project/drupal/issues/3173905) Исправлены ошибки в JavaScript связанные с некорректным использованием `classList.remove()`.
 - [#3157308](https://www.drupal.org/project/drupal/issues/3157308) Стили неопубликованного материала теперь объявлены непосредственно в теме и больше не подключается библиотека `classy/node`.
 - [#3176908](https://www.drupal.org/project/drupal/issues/3176908) Улучшена документация для `fieldset.html.twig`.
+- [#3179157](https://www.drupal.org/project/drupal/issues/3179157) Исправлено отображение уменьшенных элементов форм в RTL формате.
+- [#3178806](https://www.drupal.org/project/drupal/issues/3178806) Класс `text-content` удалён из `node--teaser.html.twig`.
+- [#3173018](https://www.drupal.org/project/drupal/issues/3173018) Классы для форм элементов скоректированны для соответствия БЭМ.
+- [#3177318](https://www.drupal.org/project/drupal/issues/3177318) В `MAINTAINERS.txt` добавлена информация о мейнтейнерах Olivero.
+- [#3176910](https://www.drupal.org/project/drupal/issues/3176910) Для `preload.twig` добавлена документация.
 
 ## Plugin System
 
@@ -903,6 +912,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 
 - [#3077938](https://www.drupal.org/project/drupal/issues/3077938) Добавлена функция `tableDragHandle` для `Drupal.theme`. Теперь темы могут менять разметку управления сортировкой таблицы.
 - [#3174378](https://www.drupal.org/project/drupal/issues/3174378) Удалена неиспользуемая переменная `$filesystem_config` в `system.install` и `UpdateScriptTest`.
+- [#3156887](https://www.drupal.org/project/drupal/issues/3156887) Для совместимости с PHP 8 `\Drupal\system\Plugin\ImageToolkit\GDToolkit` теперь поддерживает объекты `\GdImage`.
 
 ## Taxonomy
 
@@ -1009,6 +1019,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3174158](https://www.drupal.org/project/drupal/issues/3174158) Тест предупрждений обновлён для соответствия PHP 8, так как используемый вариант «деления на ноль» теперь не предупреждение а фатальная ошибка.
 - [#3172438](https://www.drupal.org/project/drupal/issues/3172438) Использование аннотации `@expectedDeprecation` заменено на `ExpectDeprecationTrait::expectDeprecation()`.
 - [#2858646](https://www.drupal.org/project/drupal/issues/2858646) Исправлены вызовы метода `::setUp()` с некорректным регистром.
+- [#3174928](https://www.drupal.org/project/drupal/issues/3174928) Внесены улучшения в JS тесты ядра.
 
 ## Прочие изменения
 
@@ -1083,3 +1094,4 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3179013](https://www.drupal.org/project/drupal/issues/3179013) Из теста `EntityRouteEnhancerTest` удалено ненужное сравнение, которое также приводило к ошибке на PHP 8.
 - [#3178998](https://www.drupal.org/project/drupal/issues/3178998) Внесены улучшения в типы ошибок и сообщений об ошибках для поддержки PHP 8.
 - [#3177541](https://www.drupal.org/project/drupal/issues/3177541) Внесены улучшения в `LocalStream` для совместимости с PHP 8.
+- [#3156260](https://www.drupal.org/project/drupal/issues/3156260) Добавлена документация о `title` переменной во всех шаблонах `feed-icon.html.twig`.
