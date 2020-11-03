@@ -696,6 +696,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#2999569](https://www.drupal.org/project/drupal/issues/2999569) Теперь, при попытке вставить (`INSERT`) запись в несуществующую колонку и без указания значения по умолчанию в схеме, драйвер MySQL будет выбрасывать исключение `IntegrityConstraintViolationException` в дополнение к текущему `DatabaseExceptionWrapper`.
 - [#3120892](https://www.drupal.org/project/drupal/issues/3120892) Для драйвера SQL Lite добавлена поддержа функции `LEAST()`.
 - [#3174848](https://www.drupal.org/project/drupal/issues/3174848) Исправлена опечатка в сообщении о [депрекации](../../../deprecation.md) метода `Connection::prepare`.
+- [#2736777](https://www.drupal.org/project/drupal/issues/2736777) Теперь при работе с транзакциями на PHP 8 не будет вызываться исключение.
 
 ## Entity System
 
