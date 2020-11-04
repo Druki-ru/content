@@ -50,3 +50,4 @@ metatags:
 - [#2937844](https://www.drupal.org/project/drupal/issues/2937844) Внесены исправления для соответствия стандарту кода `Squiz.PHP.NonExecutableCode`.
 - [#3178039](https://www.drupal.org/project/drupal/issues/3178039) Исправлены опечатки «is has» в комментариях.
 - [#3173004](https://www.drupal.org/project/drupal/issues/3173004) Внесены исправления в документацию для `FieldItemInterface::view()`.
+- [#3014969](https://www.drupal.org/project/drupal/issues/3014969) Улучшен синтаксис документации для `ContextProviderInterface`, что позволяет корректно парсить её.
