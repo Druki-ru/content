@@ -8,10 +8,7 @@ metatags:
   description: 'Список изменений Drupal 8.9.8.'
 ---
 
-**Дата релиза**: ожидается 4 ноября 2020
-
-> [!WARNING]
-> Данная версия находится в разработке, актуальная [Drupal 8.9.7](release-8.9.7.md).
+**Дата релиза**: 4 ноября 2020
 
 ## DateTime
 
@@ -51,3 +48,7 @@ metatags:
 - [#3178039](https://www.drupal.org/project/drupal/issues/3178039) Исправлены опечатки «is has» в комментариях.
 - [#3173004](https://www.drupal.org/project/drupal/issues/3173004) Внесены исправления в документацию для `FieldItemInterface::view()`.
 - [#3014969](https://www.drupal.org/project/drupal/issues/3014969) Улучшен синтаксис документации для `ContextProviderInterface`, что позволяет корректно парсить её.
+
+## Ссылки
+
+- [Drupal 8.9.8](https://www.drupal.org/project/drupal/releases/8.9.8) (англ.), drupal.org, 4 ноября 2020

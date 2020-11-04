@@ -134,7 +134,7 @@ function example_foo_bar_validation(&$form, FormStateInterface $form_state) {
 
 ## Изменения в релизах
 
-- **[Drupal 9.1.0](../releases/release-9.1.0.md) (04.11.2020):** Исправлена неполадка, из-за которой псевдо-поля не рендерились при выводе содержимого через Layout Builder.
+- **[Drupal 9.1.0](../releases/release-9.1.0.md) (02.12.2020):** Исправлена неполадка, из-за которой псевдо-поля не рендерились при выводе содержимого через Layout Builder.
 
 ## Ссылки
 

@@ -653,7 +653,7 @@ ini_set('pcre.recursion_limit', 200000);
 
 ## Изменения в релизах
 
-- **[Drupal 9.1.0](releases/release-9.1.0.md) (TBA):** Настройка для базы данных `$databases[$database][$target]['transactions']` помечена устаревшей и будет удалена в Drupal 10.
+- **[Drupal 9.1.0](releases/release-9.1.0.md) (02.12.20):** Настройка для базы данных `$databases[$database][$target]['transactions']` помечена устаревшей и будет удалена в Drupal 10.
 
 ## Смотрите также
 
