@@ -656,6 +656,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3178046](https://www.drupal.org/project/drupal/issues/3178046) Обновлены зависимости ядра.
 - [#3179284](https://www.drupal.org/project/drupal/issues/3179284) Обновлены зависимости ядра.
 - [#3180092](https://www.drupal.org/project/drupal/issues/3180092) Зависимость `fabpot/goutte` обновлена до версии 3.3.1.
+- [#3151118](https://www.drupal.org/project/drupal/issues/3151118) Файл `bootstrap.inc` добавлен в автозагрузчик Composer. Это поволит использовать функции,  например `t()`, в тестах без проблем. 
 
 ## Contact
 
@@ -947,6 +948,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3175665](https://www.drupal.org/project/drupal/issues/3175665) Удалена неиспользуемая переменная `$view` в `FilterTest`.
 - [#3177546](https://www.drupal.org/project/drupal/issues/3177546) Исправлено неправильное использование `in_array()` в `\Drupal\views\Plugin\views\PluginBase::listLanguages()` что приводило к выводу дополнительных языков.
 - [#3177590](https://www.drupal.org/project/drupal/issues/3177590) Внесены улучшения для `ViewsFormBase::getForm()` для совместимости с PHP 8.
+- [#3175666](https://www.drupal.org/project/drupal/issues/3175666) Удалена неиспользуемая переменная `$admin_user` в `FieldEntityOperationsTest`.
 
 ## Workspaces
 
