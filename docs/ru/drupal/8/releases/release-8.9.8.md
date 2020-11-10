@@ -8,7 +8,7 @@ metatags:
   description: 'Список изменений Drupal 8.9.8.'
 ---
 
-**Дата релиза**: 4 ноября 2020
+**Дата релиза**: 5 ноября 2020
 
 ## DateTime
 
@@ -51,4 +51,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 8.9.8](https://www.drupal.org/project/drupal/releases/8.9.8) (англ.), drupal.org, 4 ноября 2020
+- [Drupal 8.9.8](https://www.drupal.org/project/drupal/releases/8.9.8) (англ.), drupal.org, 5 ноября 2020
