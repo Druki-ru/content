@@ -5,6 +5,9 @@ core: 9
 search-keywords:
   - authentication_provider
   - authentication provider
+  - идентификация
+  - авторизация
+  - аутентификация
 metatags:
   title: 'Drupal 9: Authentication Provider (Провайдер аутентификации)'
   description: 'Сервисы с меткой authentication_provider позволяют идентифицировать пользователей сайта.'
