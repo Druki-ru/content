@@ -6,7 +6,10 @@ search-keywords:
   - theme_negotiator
   - theme negotiator
   - программное переключение темы
-  - программное смена темы
+  - программная смена темы
+  - поменять тему
+  - сменить тему
+  - переключить тему
 metatags:
   title: 'Drupal 9: Theme Negotiator'
   description: 'Сервисы с меткой theme_negotiator позволяют программно переключать темы оформления.'
