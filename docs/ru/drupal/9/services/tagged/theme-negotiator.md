@@ -12,7 +12,7 @@ metatags:
   description: 'Сервисы с меткой theme_negotiator позволяют программно переключать темы оформления.'
 ---
 
-**Theme Negotiator** — [сервис](../services.md) с меткой `theme_negotiator` позволяющий программно переключать [тему оформления](../../themes/themes.md).
+**Theme Negotiator** — [сервисы](../services.md) с меткой `theme_negotiator` позволяющие программно переключать [тему оформления](../../themes/themes.md).
 
 ## Введение
 
@@ -82,7 +82,7 @@ final class SpecialTheme implements ThemeNegotiatorInterface {
    * {@inheritdoc}
    */
   public function applies(RouteMatchInterface $routeMatch) {
-    return $this->requestStack->getCurrentRequest()->cookies->has('us_special_theme');
+    return $this->requestStack->getCurrentRequest()->cookies->has('use_special_theme');
   }
 
   /**
