@@ -923,7 +923,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 
 ## Update
 
-- [#2303323](https://www.drupal.org/project/drupal/issues/2303323) `update_delete_file_if_stale()` теперь возвращает булевое значение.
+- [#2303323](https://www.drupal.org/project/drupal/issues/2303323) `update_delete_file_if_stale()` теперь возвращает логическое значение.
 
 ## User
 
@@ -966,7 +966,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3144732](https://www.drupal.org/project/drupal/issues/3144732) Удалены вызовы `t()` в связке с `$this->assertSession()->optionExists()`.
 - [#3135538](https://www.drupal.org/project/drupal/issues/3135538) Заменены оставшиеся `assert*` вызовы использующие `count()`.
 - [#3000762](https://www.drupal.org/project/drupal/issues/3000762) Для `WebAssert` добавлен новый метод `pageContainsNoDuplicateId()`.
-- [#3082859](https://www.drupal.org/project/drupal/issues/3082859) `AssertMailTrait::assertMailPattern()` теперь преобразует значение `$regex_found` в булевый тип.
+- [#3082859](https://www.drupal.org/project/drupal/issues/3082859) `AssertMailTrait::assertMailPattern()` теперь преобразует значение `$regex_found` в логический тип.
 - [#3155761](https://www.drupal.org/project/drupal/issues/3155761) В `BlockFormMessagesTest` использование `assertTrue()` с `stristr()` заменено на `assertStringContainsString()`.
 - [#3139440](https://www.drupal.org/project/drupal/issues/3139440) Использование устаревшего `AssertLegacyTrait::buildXPathQuery()` заменено на `$this->assertSession()->buildXPathQuery()`.
 - [#3139426](https://www.drupal.org/project/drupal/issues/3139426) Использование устаревшего `AssertLegacyTrait::assertOptionSelected()` заменено на `$this->assertSession()->optionExists()`.

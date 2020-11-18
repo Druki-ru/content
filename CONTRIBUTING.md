@@ -71,6 +71,10 @@ _Находятся в releases._
 - На свойства: `ClassName::$propertyName` или `::$propertyName`, или `FullyQualified\Namespace\ClassName::$propertyName`.
 - На методы: `ClassName::methodName` или `::methodName`, или `FullyQualified\Namespace\ClassName::methodName`.
 
+## Глоссарий
+
+- boolean - логическое значение.
+
 ***
 
 Данный файл может изменяться, дополняться без предварительного уведомления. Не забывайте периодически поглядывать, если вы решитесь что-то сделать.
