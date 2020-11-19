@@ -13,7 +13,7 @@ metatags:
   description: 'Сервисы с меткой authentication_provider позволяют идентифицировать пользователей сайта.'
 ---
 
-**Authentication Provider** — [сервисы](../services.md) с меткой `authentication_provider` позволяют идентифицировать пользователей сайта.
+**Authentication Provider** — [сервисы](../services.md) с меткой `authentication_provider` позволяющие идентифицировать пользователей сайта.
 
 ## Введение
 
