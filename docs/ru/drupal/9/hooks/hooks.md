@@ -100,7 +100,7 @@ function example_preprocess_page__front(array &$variables): void {
 
 Пример реализации хука `hook_form_FORM_ID_alter()`, который вызывается при подготовке формы `FORM_ID`:
 
-```
+```php
 /**
  * Implements hook_form_FORM_ID_alter() for 'user_login'.
  */
