@@ -2,7 +2,7 @@
 id: release-9.0.8
 title: 'Drupal 9.0.8'
 path: /8/releases/9.0.8
-core: 8
+core: 9
 metatags:
   title: 'Drupal 9.0.8: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2020-012.'
