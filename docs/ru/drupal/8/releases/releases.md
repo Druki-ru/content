@@ -1,6 +1,6 @@
 ---
 id: releases
-title: 'Список релизов'
+title: 'Drupal 8: Список релизов'
 core: 8
 metatags:
   title: 'Drupal 8: Список релизов'
