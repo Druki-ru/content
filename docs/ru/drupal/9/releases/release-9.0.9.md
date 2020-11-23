@@ -16,10 +16,6 @@ metatags:
 > [!NOTE]
 > Данный релиз также содержит изменения внесенные в [Drupal 8.9.8](../../8/releases/release-8.9.8.md).
 
-## Contact
-
-- [#2223967](https://www.drupal.org/project/drupal/issues/2223967) Исправлено двойное декодирование сообщения.
-
 ## Install
 
 - [#3176652](https://www.drupal.org/project/drupal/issues/3176652) В документации к `install_drupal()` исправлена отсылка на удалённую функцию.
