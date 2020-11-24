@@ -4,8 +4,8 @@ title: 'Drupal 8.9.10'
 path: /8/releases/8.9.10
 core: 8
 metatags:
-title: 'Drupal 8.9.10: Список изменений'
-description: 'Список изменений Drupal 8.9.10.'
+  title: 'Drupal 8.9.10: Список изменений'
+  description: 'Список изменений Drupal 8.9.10.'
 ---
 
 **Дата релиза**: 2 декабря 2020
