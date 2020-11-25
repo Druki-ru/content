@@ -874,7 +874,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 
 - [#2273381](https://www.drupal.org/project/drupal/issues/2273381) `ContextAwarePluginBase` заменён трейтом `ContextAwarePluginTrait` и помечен устаревшим.
 
-## PosgreSQL драйвер
+## PostgreSQL драйвер
 
 - [#3129560](https://www.drupal.org/project/drupal/issues/3129560) Удалена реализация `Upsert`.
 - [#3154669](https://www.drupal.org/project/drupal/issues/3154669) Испралены ошибки и опечатки для комментариев.
