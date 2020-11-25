@@ -592,9 +592,19 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 
 Это означает что проблема с `my_project/my_package`, а не с Drupal ядром. Для решения проблемы, попробуйте обновить данные зависимости до актуальных версий. Если это не помогает, рекомендуется сообщить о проблеме разработчикам модуля (а не ядра).
 
+## Для проверки наличия обновлений теперь требуется OpenSSL или дополнительная конфигурация
+
+- [#1538118](https://www.drupal.org/project/drupal/issues/1538118)
+
+Начиная с данного релиза, проверка обновлений для Drupal ядра и модулей будет производиться HTTPS протоколу. Для корректной проверки сертификата теперь потребуется [OpenSSL расширение для PHP](https://www.php.net/manual/en/openssl.installation.php). Если данное расширение отсутствует, то проверка обновления будет недоступна, а на странице статуса системы будет выводиться соответствующая ошибка и как её решить.
+
+Для проверки обновлений по HTTP добавлена новая [настройка](../settings-php.md) `update_fetch_with_http_fallback`. Это позволит работать в прежнем режиме и получать информацию об обновлениях. Включение данной настройки может привести к возможности для MITM атак на сайт.
+
+В связи с введением новой настройки, классы `\Drupal\update\UpdateFetcher` и `\Drupal\update\Controller\UpdateController` ожидают в качестве аргумента конструктора сервис `settings`. Данный аргумент является опциональным для Drupal 9, но станет обязательным в [Drupal 10](../../10/drupal-10.md).
+
 ## Action
 
-- [#3174573](https://www.drupal.org/project/drupal/issues/3174573) Исправлена грамматическа ошибка в документации `ActionUninstallTest`.
+- [#3174573](https://www.drupal.org/project/drupal/issues/3174573) Исправлена грамматическая ошибка в документации `ActionUninstallTest`.
 
 ## Asset Library System
 
@@ -623,7 +633,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3060697](https://www.drupal.org/project/drupal/issues/3060697) Claro теперь использует `#dropbutton_type` для вариантов `dropbutton` элемента, вместо классов.
 - [#3154425](https://www.drupal.org/project/drupal/issues/3154425) Удалён комментарий «@todo Remove this after 8.6.x is out of support.» и код для него.
 - [#3105575](https://www.drupal.org/project/drupal/issues/3105575) HTML классы перенесены из `claro_preprocess_textarea()` в шаблон.
-- [#3164871](https://www.drupal.org/project/drupal/issues/3164871) Исправлены отстутпы у радиокнопок.
+- [#3164871](https://www.drupal.org/project/drupal/issues/3164871) Исправлены отступы у радио кнопок.
 - [#3057772](https://www.drupal.org/project/drupal/issues/3057772) Улучшены иконки для элемента `details`.
 - [#3171727](https://www.drupal.org/project/drupal/issues/3171727) Разделитель для хлебных крошек теперь более контрастный.
 - [#3066006](https://www.drupal.org/project/drupal/issues/3066006) Оформление Views UI приведено в соответствие дизайну.
@@ -647,7 +657,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 ## Composer
 
 - [#3156558](https://www.drupal.org/project/drupal/issues/3156558) Обновлены зависимости.
-- [#3133903](https://www.drupal.org/project/drupal/issues/3133903) Добавлены проверка что все пакеты из `composer.lock` файла ядра имеются и имеют конкретные версии.
+- [#3133903](https://www.drupal.org/project/drupal/issues/3133903) Добавлены проверка, что все пакеты из `composer.lock` файла ядра имеются и имеют конкретные версии.
 - [#3121847](https://www.drupal.org/project/drupal/issues/3121847) В шаблоны проектов [drupal/recommended-project](drupal-recommended-project.md) и [drupal/legacy-project](drupal-legacy-project.md) теперь добавляется новый путь установки `drupal-custom-profile` (`profiles/custom/{$name}/`).
 - [#3164349](https://www.drupal.org/project/drupal/issues/3164349) `symfony/var-dumper` теперь указан как dev зависимость в корневом composer.json Drupal.
 - [#3157296](https://www.drupal.org/project/drupal/issues/3157296) Обновлены зависимости ядра.
@@ -656,7 +666,8 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3178046](https://www.drupal.org/project/drupal/issues/3178046) Обновлены зависимости ядра.
 - [#3179284](https://www.drupal.org/project/drupal/issues/3179284) Обновлены зависимости ядра.
 - [#3180092](https://www.drupal.org/project/drupal/issues/3180092) Зависимость `fabpot/goutte` обновлена до версии 3.3.1.
-- [#3151118](https://www.drupal.org/project/drupal/issues/3151118) Файл `bootstrap.inc` добавлен в автозагрузчик Composer. Это поволит использовать функции,  например `t()`, в тестах без проблем. 
+- [#3151118](https://www.drupal.org/project/drupal/issues/3151118) Файл `bootstrap.inc` добавлен в автозагрузчик Composer. Это поволит использовать функции,  например `t()`, в тестах без проблем.
+- [#3181240](https://www.drupal.org/project/drupal/issues/3181240) Зависимость `typo3/phar-stream-wrapper` обновлена до версии 3.1.6.
 
 ## Contact
 
@@ -716,7 +727,8 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3165188](https://www.drupal.org/project/drupal/issues/3165188) Удалена неиспользуемая переменная `$i` из `FieldOptionTranslation`.
 - [#3165191](https://www.drupal.org/project/drupal/issues/3165191) Удалена неиспользуемая переменная `$field_ids` из `FieldAttachStorageTest`.
 - [#2918290](https://www.drupal.org/project/drupal/issues/2918290) Исправлен некорректно указанный возвращаемый типа для `FieldStorageConfig::loadByName`.
-- [#3177545](https://www.drupal.org/project/drupal/issues/3177545) Внесены улучшения в `\Drupal\field\Entity\FieldStorageConfig::getCardinality()` для своместимости с PHP 8.
+- [#3177545](https://www.drupal.org/project/drupal/issues/3177545) Внесены улучшения в `\Drupal\field\Entity\FieldStorageConfig::getCardinality()` для совместимости с PHP 8.
+- [#3158651](https://www.drupal.org/project/drupal/issues/3158651) Настройка сортировки теперь видна только если выбрано хотя бы одно поле для сортировки.
 
 ## File
 
@@ -735,6 +747,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 
 - [#3165794](https://www.drupal.org/project/drupal/issues/3165794) Удалена неиспользуемая переменная `$account_bundle` в `ResourceTestBase`.
 - [#3093757](https://www.drupal.org/project/drupal/issues/3093757) Убраны вызовы `testRelated()` из тестов так как ишьюсы решены.
+- [#3112229](https://www.drupal.org/project/drupal/issues/3112229) JSON:API больше не упрощает результаты для типов полей, которые возвращают `NULL` или имя основного свойства не соответствует тому что возвращает значение. 
 
 ## Help Topic
 
@@ -855,6 +868,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3173018](https://www.drupal.org/project/drupal/issues/3173018) Классы для форм элементов скоректированны для соответствия БЭМ.
 - [#3177318](https://www.drupal.org/project/drupal/issues/3177318) В `MAINTAINERS.txt` добавлена информация о мейнтейнерах Olivero.
 - [#3176910](https://www.drupal.org/project/drupal/issues/3176910) Для `preload.twig` добавлена документация.
+- [#3176919](https://www.drupal.org/project/drupal/issues/3176919) Добавлена документация для шаблона `node--article--full.html.twig`.
 
 ## Plugin System
 
@@ -1021,6 +1035,9 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3172438](https://www.drupal.org/project/drupal/issues/3172438) Использование аннотации `@expectedDeprecation` заменено на `ExpectDeprecationTrait::expectDeprecation()`.
 - [#2858646](https://www.drupal.org/project/drupal/issues/2858646) Исправлены вызовы метода `::setUp()` с некорректным регистром.
 - [#3174928](https://www.drupal.org/project/drupal/issues/3174928) Внесены улучшения в JS тесты ядра.
+- [#3166450](https://www.drupal.org/project/drupal/issues/3166450) Использование условий с `&&` в аргументе для `::assertTrue()` разбито на несколько вызовов.
+- [#3139429](https://www.drupal.org/project/drupal/issues/3139429) Использование `AssertLegacyTrait::assertFieldByXPath` и `AssertLegacyTrait::assertNoFieldByXPath` заменено на `$this->xpath()`.
+- [#3145418](https://www.drupal.org/project/drupal/issues/3145418) Удалены вызовы `t()` в аргументах для `::assertText()`.
 
 ## Прочие изменения
 
@@ -1096,3 +1113,6 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#3178998](https://www.drupal.org/project/drupal/issues/3178998) Внесены улучшения в типы ошибок и сообщений об ошибках для поддержки PHP 8.
 - [#3177541](https://www.drupal.org/project/drupal/issues/3177541) Внесены улучшения в `LocalStream` для совместимости с PHP 8.
 - [#3156260](https://www.drupal.org/project/drupal/issues/3156260) Добавлена документация о `title` переменной во всех шаблонах `feed-icon.html.twig`.
+- [#3138746](https://www.drupal.org/project/drupal/issues/3138746) Множественные улучшения в коде где должен быть CamelCase.
+- [#2987980](https://www.drupal.org/project/drupal/issues/2987980) Произведён рефакторинг `UncaughtExceptionTest`.
+- [#3178581](https://www.drupal.org/project/drupal/issues/3178581) Из словаря проекта удалены слова с ошибками.

@@ -71,7 +71,7 @@ Drupal разрабатывается так, что везде, где возм
 
 **Рекомендуемые расширения:**
 
-- [OpenSSL](https://www.php.net/manual/ru/book.openssl.php) рекомендуется для того чтобы Drupal мог отправлять исходящие HTTPS запросы. В будущем данное расширение может стать обязательным: [#1538118](https://www.drupal.org/project/drupal/issues/1538118).
+- [OpenSSL](https://www.php.net/manual/ru/book.openssl.php) рекомендуется для того чтобы Drupal мог отправлять исходящие HTTPS запросы. Данное расширение является обязательным для проверки обновлений начиная с [Drupal 9.1.0](releases/release-9.1.0.md) ([#1538118](https://www.drupal.org/project/drupal/issues/1538118)). .
 
 ### Настройки PHP
 
