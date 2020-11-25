@@ -775,7 +775,6 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 ## Layout Builder
 
 - [#3053887](https://www.drupal.org/project/drupal/issues/3053887) В код добавлена документация почему блоки требуют создание новой ревизии при изменении.
-- [#3126746](https://www.drupal.org/project/drupal/issues/3126746) `LayoutBuilderHtmlEntityFormController` теперь расширяет `FormController`.
 - [#3069578](https://www.drupal.org/project/drupal/issues/3069578) Исправлена неполадка из-за которой [псевдо-поля](../hooks/extra-fields.md) не рендерились.
 
 ## Locale
@@ -825,7 +824,6 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 - [#2960170](https://www.drupal.org/project/drupal/issues/2960170) Для плагина обработчика `Flatter` добавлена валидация входных данных.
 - [#3152789](https://www.drupal.org/project/drupal/issues/3152789) Для плагина источника `variable` добавлена новая настройка `variables_required`.
 - [#3171755](https://www.drupal.org/project/drupal/issues/3171755) Удалена неиспользуемая переменная `$row` в `RowTest`.
-- [#3160015](https://www.drupal.org/project/drupal/issues/3160015) `str_replace()` больше не вызывается если путь состоит из одних слешей.
 - [#3143676](https://www.drupal.org/project/drupal/issues/3143676) Исправлена неполадка в миграции `d7_term_localized_translation` из-за недостаточного количества проверок.
 - [#3143720](https://www.drupal.org/project/drupal/issues/3143720) Добавлен новый тест `CredentialFormTest`.
 - [#3008028](https://www.drupal.org/project/drupal/issues/3008028) Добавлены миграции ссылок меню i18n из Drupal 7.

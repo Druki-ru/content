@@ -24,6 +24,14 @@ metatags:
 
 - [#3173891](https://www.drupal.org/project/drupal/issues/3173891) Удалена неиспользуемая переменная `$assert_session` в `UpdateScriptTest`.
 
+## Layout Builder
+
+- [#3126746](https://www.drupal.org/project/drupal/issues/3126746) `LayoutBuilderHtmlEntityFormController` теперь расширяет `FormController`.
+
+## Migration System
+
+- [#3160015](https://www.drupal.org/project/drupal/issues/3160015) `str_replace()` больше не вызывается если путь состоит из одних слешей.
+
 ## Quickedit
 
 - [#3037436](https://www.drupal.org/project/drupal/issues/3037436) Внесены множественные улучшения в тест `QuickEditImageTest`.
