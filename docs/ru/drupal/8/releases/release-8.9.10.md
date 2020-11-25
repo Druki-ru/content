@@ -27,6 +27,10 @@ metatags:
 
 - [#3118591](https://www.drupal.org/project/drupal/issues/3118591) Улучшена работа с date field.
 
+## Editor
+
+- [#3136406](https://www.drupal.org/project/drupal/issues/3136406) Исправлена неполадка приводящая к ошибке при выборе редактора "none".
+
 ## Path
 
 - [#268909](https://www.drupal.org/project/drupal/issues/268909) Улучшена проверка на допустимые синонимы. Теперь есть возможность указать в качестве синонима `0`.
