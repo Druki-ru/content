@@ -5,39 +5,17 @@ path: /9/releases/9.0.9
 core: 9
 metatags:
   title: 'Drupal 9.0.9: Список изменений'
-  description: 'Список изменений Drupal 9.0.9.'
+  description: 'Обновления безопасности исправляющее SA-CORE-2020-013.'
 ---
 
-**Дата релиза**: 2 декабря 2020
+**Дата релиза**: 25 ноября 2020
 
-> [!WARNING]
-> Данный релиз находится в разработке. Актуальная версия [Drupal 9.0.8](release-9.0.8.md).
+Этот выпуск исправляет уязвимости безопасности. Настоятельно рекомендуется обновить сайты сразу после прочтения примечаний ниже и объявления о безопасности.
 
-> [!NOTE]
-> Данный релиз также содержит изменения внесенные в [Drupal 8.9.8](../../8/releases/release-8.9.8.md) и [Drupal 8.9.10](../../8/releases/release-8.9.10.md).
+Исправлены следующие уязвимости:
 
-## Install
+- Drupal Core — Критическое — Произвольное выполнение PHP-кода — [SA-CORE-2020-013](../../security/advisory/sa-core-2020-013.md)
 
-- [#3176652](https://www.drupal.org/project/drupal/issues/3176652) В документации к `install_drupal()` исправлена отсылка на удалённую функцию.
+## Ссылки
 
-## System
-
-- [#3173891](https://www.drupal.org/project/drupal/issues/3173891) Удалена неиспользуемая переменная `$assert_session` в `UpdateScriptTest`.
-
-## Layout Builder
-
-- [#3126746](https://www.drupal.org/project/drupal/issues/3126746) `LayoutBuilderHtmlEntityFormController` теперь расширяет `FormController`.
-
-## Migration System
-
-- [#3160015](https://www.drupal.org/project/drupal/issues/3160015) `str_replace()` больше не вызывается если путь состоит из одних слешей.
-
-## Quickedit
-
-- [#3037436](https://www.drupal.org/project/drupal/issues/3037436) Внесены множественные улучшения в тест `QuickEditImageTest`.
-
-## Прочие изменения
-
-- [#3069026](https://www.drupal.org/project/drupal/issues/3069026) Удалён вызов `::addAutowiringType()` из `YamlFileLoader`.
-- [#3177557](https://www.drupal.org/project/drupal/issues/3177557) Внесены улучшения в `\Drupal\error_test\Controller\ErrorTestController::generateWarnings()` для избежания ошибки в PHP 8.
-
+- [Drupal 9.0.9](https://www.drupal.org/project/drupal/releases/9.0.9) (англ.), drupal.org, 25 ноября 2020
