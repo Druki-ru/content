@@ -22,7 +22,3 @@ metatags:
 ## Book
 
 - [#2575827](https://www.drupal.org/project/drupal/issues/2575827) `BookNavigationBlock` и `BookNavigationCacheContext` теперь получают информацию из `route_match` [сервиса](../services/services.md), вместо получения из аттрибутов запроса.
-
-## Locale
-
-- [#3179258](https://www.drupal.org/project/drupal/issues/3179258) Теперь, при поиски строки для перевода в интерфейсе, удаляются начальные и конечные пробелы в поисковой фразе.
