@@ -168,7 +168,7 @@ use Drupal\Component\EventDispatcher\Event;
 
 В классах `ViewEditForm` и `HtmlRenderer` использование `\Drupal::theme()` заменено на [Dependency Injection](../services/dependency-injection.md), в связи с чем, в консторе появился новый аргумент.
 
-## Изменена сигнатура конструктора LayoutBuilder и добавено новое событие LayoutBuilderEvents::PREPARE_LAYOUT
+## Изменена сигнатура конструктора LayoutBuilder и добавлено новое событие LayoutBuilderEvents::PREPARE_LAYOUT
 
 - [#3143635](https://www.drupal.org/project/drupal/issues/3143635)
 
@@ -296,7 +296,7 @@ user_password()
 
 Новое исключение `DelayedRequeueException` позволяет обработчику очереди откладывать дальнейшую обработку элементов до следующего цикла или на определенный период пока не истечёт время блокировки элемента. Очереди, поддерживающие данную возможность должны реализовывать интерфейс `DelayableQueueInterface`.
 
-Ранее было невозможно отложить обработку конкретного элемента очереди без выбрасывания исключения с последующие логированием или приостановкой всей очереди. Новый обработчик исключений работает «тихо» по умолчанию и позволяет отложить конкретный элемнет для последующей обработки.
+Ранее было невозможно отложить обработку конкретного элемента очереди без выбрасывания исключения с последующим логированием или приостановкой всей очереди. Новый обработчик исключений работает «тихо» по умолчанию и позволяет отложить конкретный элемент для последующей обработки.
 
 Для этого достаточно выбросить исключение `\Drupal\Core\Queue\DelayedRequeueException` в обработчике очереди.
 
@@ -419,7 +419,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 Front Matter используется для того чтобы добавить в исходный файл дополнительную статическую информацию.
 
-Front Matter разметка должны быть самой первой в исходном файле, также она должна быть валидным YAML. Содержимое Front Matter задаётся между открывающей и закрывающей конструкцией, которая состоит из трёх тире вподряд `---`.
+Front Matter разметка должны быть самой первой в исходном файле, также она должна быть валидным YAML. Содержимое Front Matter задаётся между открывающей и закрывающей конструкцией, которая состоит из трёх тире подряд `---`.
 
 ### Пример
 
@@ -777,6 +777,7 @@ source:
 - [#3120892](https://www.drupal.org/project/drupal/issues/3120892) Для драйвера SQL Lite добавлена поддержа функции `LEAST()`.
 - [#3174848](https://www.drupal.org/project/drupal/issues/3174848) Исправлена опечатка в сообщении о [депрекации](../../../deprecation.md) метода `Connection::prepare`.
 - [#2736777](https://www.drupal.org/project/drupal/issues/2736777) Теперь при работе с транзакциями на PHP 8 не будет вызываться исключение.
+- [#3089902](https://www.drupal.org/project/drupal/issues/3089902) При создании БД Drupal больше не задаёт `NO_AUTO_CREATE_USER`.
 
 ## Entity System
 
@@ -802,6 +803,7 @@ source:
 
 - [#3070902](https://www.drupal.org/project/drupal/issues/3070902) Для исключения вызываемого в `prepareDestination()` улучшено описание лога.
 - [#2991219](https://www.drupal.org/project/drupal/issues/2991219) `template_preprocess_file_link()` больше не добавляет `length` параметр после MIME в `type` аттрибуте.
+- [#3157370](https://www.drupal.org/project/drupal/issues/3157370) Исправлен комментарий ссылающийся на `file_directory_temp()`.
 
 ## Filter
 
@@ -810,6 +812,7 @@ source:
 ## Forum
 
 - [#3067622](https://www.drupal.org/project/drupal/issues/3067622) Справка из `hook_help()` конвертирована в Help Topics.
+- [#2828680](https://www.drupal.org/project/drupal/issues/2828680) Добавлена отсутствующая обёртка `<ul>` для действий на форуме. 
 
 ## JSON:API
 
@@ -913,6 +916,7 @@ source:
 - [#3143676](https://www.drupal.org/project/drupal/issues/3143676) Исправлена неполадка в миграции `d7_term_localized_translation` из-за недостаточного количества проверок.
 - [#3143720](https://www.drupal.org/project/drupal/issues/3143720) Добавлен новый тест `CredentialFormTest`.
 - [#3008028](https://www.drupal.org/project/drupal/issues/3008028) Добавлены миграции ссылок меню i18n из Drupal 7.
+- [#3172116](https://www.drupal.org/project/drupal/issues/3172116) Удалена неиспользуемая переменная `$parent_link_path`.
 
 ## Node System
 
@@ -945,6 +949,13 @@ source:
 - [#3179150](https://www.drupal.org/project/drupal/issues/3179150) Теперь используется шрифт Metropolis `h1` внутри контента.
 - [#3176913](https://www.drupal.org/project/drupal/issues/3176913) Добавлена документация для шаблона `block--system-powered-by-block.html.twig`.
 - [#3177231](https://www.drupal.org/project/drupal/issues/3177231) Улучшена проверка на наличие заголовка страницы.
+- [#3174088](https://www.drupal.org/project/drupal/issues/3174088) Удалён комментарий с `@todo` для scripts.es6.js.
+- [#3176912](https://www.drupal.org/project/drupal/issues/3176912) Добавлена недостающая документация в шаблоне `block--secondary-menu--plugin-id--search-form-block.html.twig`.
+- [#3176914](https://www.drupal.org/project/drupal/issues/3176914) Добавлен класс для «неопубликованных» мультимедиа сущностей в `media.html.twig`.
+- [#3180726](https://www.drupal.org/project/drupal/issues/3180726) Добавлен отсутствующий знак точки в документации к `html.html.twig`.
+- [#3176906](https://www.drupal.org/project/drupal/issues/3176906) Исправлена документация во множестве различных шаблонов.
+- [#3176911](https://www.drupal.org/project/drupal/issues/3176911) Добавлена документация для переменной `noscript_styles` в `html.html.twig`.
+- [#3180280](https://www.drupal.org/project/drupal/issues/3180280) Уменьшен трекинг для навигационного меню.
 
 ## Plugin System
 
@@ -1200,3 +1211,4 @@ source:
 - [#3178581](https://www.drupal.org/project/drupal/issues/3178581) Из словаря проекта удалены слова с ошибками.
 - [#2851394](https://www.drupal.org/project/drupal/issues/2851394) Некорректные употребления «a» заменены на «an».
 - [#3183712](https://www.drupal.org/project/drupal/issues/3183712) Добавлена документация параметра `$operation` для `hook_entity_access()`.
+- [#3165065](https://www.drupal.org/project/drupal/issues/3165065) Улучшена документация для методов `PluginWithFormsTrait`.
