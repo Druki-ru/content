@@ -709,6 +709,7 @@ source:
 - [#3061042](https://www.drupal.org/project/drupal/issues/3061042) Улучшено оформление страницы состояния системы.
 - [#3062751](https://www.drupal.org/project/drupal/issues/3062751) Улучшено оформления для Media и Media Library элементов.
 - [#3179768](https://www.drupal.org/project/drupal/issues/3179768) Улучшено оформление каретки для `<details>` элемента.
+- [#3183425](https://www.drupal.org/project/drupal/issues/3183425) Добавлено решение для бага Google Chrome 87 при котором fieldset отрисовывался с артефактами.
 
 ## Comment
 
