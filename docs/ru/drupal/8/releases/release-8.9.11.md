@@ -31,6 +31,10 @@ metatags:
 
 - [#3136406](https://www.drupal.org/project/drupal/issues/3136406) Исправлена неполадка приводящая к ошибке при выборе редактора "none".
 
+## Migration system
+
+- [#3138795](https://www.drupal.org/project/drupal/issues/3138795) В миграции `d6_term_node_revision` исправлена отсылка к несуществующей миграции.
+
 ## Path
 
 - [#268909](https://www.drupal.org/project/drupal/issues/268909) Улучшена проверка на допустимые синонимы. Теперь есть возможность указать в качестве синонима `0`.
