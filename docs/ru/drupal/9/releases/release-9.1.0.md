@@ -956,6 +956,7 @@ source:
 - [#3176906](https://www.drupal.org/project/drupal/issues/3176906) Исправлена документация во множестве различных шаблонов.
 - [#3176911](https://www.drupal.org/project/drupal/issues/3176911) Добавлена документация для переменной `noscript_styles` в `html.html.twig`.
 - [#3180280](https://www.drupal.org/project/drupal/issues/3180280) Уменьшен трекинг для навигационного меню.
+- [#3180756](https://www.drupal.org/project/drupal/issues/3180756) Исправлена высота для встроенных аудио мультимедиа.
 
 ## Plugin System
 
@@ -1212,3 +1213,5 @@ source:
 - [#2851394](https://www.drupal.org/project/drupal/issues/2851394) Некорректные употребления «a» заменены на «an».
 - [#3183712](https://www.drupal.org/project/drupal/issues/3183712) Добавлена документация параметра `$operation` для `hook_entity_access()`.
 - [#3165065](https://www.drupal.org/project/drupal/issues/3165065) Улучшена документация для методов `PluginWithFormsTrait`.
+- [#3053897](https://www.drupal.org/project/drupal/issues/3053897) Модулям `jsonapi` и `migrate_drupal_multilingual` добавлен параметр `version` в *.info.yml.
+- [#3183673](https://www.drupal.org/project/drupal/issues/3183673) Применены автофиксы для стандарта `Drupal.Commenting.DocComment.ShortFullStop`.
