@@ -42,3 +42,7 @@ metatags:
 ## Прочие изменения
 
 - [#3156651](https://www.drupal.org/project/drupal/issues/3156651) Drupal 8.9 и Drupal 9.0 помечены как несовместимые с PHP 8.
+
+## Ссылки
+
+- [Drupal 8.9.11](https://www.drupal.org/project/drupal/releases/8.9.11) (англ.), drupal.org, 2 декабря 2020

@@ -10,9 +10,6 @@ metatags:
 
 **Дата релиза**: 2 декабря 2020
 
-> [!WARNING]
-> Данный релиз находится в разработке. Актуальная версия [Drupal 9.0.8](release-9.0.8.md).
-
 > [!NOTE]
 > Данный релиз также содержит изменения внесенные в [Drupal 8.9.8](../../8/releases/release-8.9.8.md) и [Drupal 8.9.11](../../8/releases/release-8.9.11.md).
 
@@ -41,3 +38,6 @@ metatags:
 - [#3069026](https://www.drupal.org/project/drupal/issues/3069026) Удалён вызов `::addAutowiringType()` из `YamlFileLoader`.
 - [#3177557](https://www.drupal.org/project/drupal/issues/3177557) Внесены улучшения в `\Drupal\error_test\Controller\ErrorTestController::generateWarnings()` для избежания ошибки в PHP 8.
 
+## Ссылки
+
+- [Drupal 9.0.10](https://www.drupal.org/project/drupal/releases/9.0.10) (англ.), drupal.org, 2 декабря 2020

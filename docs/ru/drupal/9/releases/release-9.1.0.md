@@ -12,9 +12,6 @@ metatags:
 **Прекращение исправления ошибок**: 2 июня 2021\
 **Прекращение поддержки безопасности**: ноябрь 2021
 
-> [!WARNING]
-> Drupal 9.1.0 находится в разработке.
-
 ## Cache::merge* методы теперь принимают неограниченное кол-во аргументов
 
 - [#3125032](https://www.drupal.org/node/3125032)
@@ -1216,3 +1213,7 @@ source:
 - [#3165065](https://www.drupal.org/project/drupal/issues/3165065) Улучшена документация для методов `PluginWithFormsTrait`.
 - [#3053897](https://www.drupal.org/project/drupal/issues/3053897) Модулям `jsonapi` и `migrate_drupal_multilingual` добавлен параметр `version` в *.info.yml.
 - [#3183673](https://www.drupal.org/project/drupal/issues/3183673) Применены автофиксы для стандарта `Drupal.Commenting.DocComment.ShortFullStop`.
+
+## Ссылки
+
+- [Drupal 9.1.0](https://www.drupal.org/project/drupal/releases/9.1.0) (англ.), drupal.org, 2 декабря 2020
