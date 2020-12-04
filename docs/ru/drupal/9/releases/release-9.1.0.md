@@ -163,7 +163,7 @@ use Drupal\Component\EventDispatcher\Event;
 
 - [#3123210](https://www.drupal.org/project/drupal/issues/3123210)
 
-В классах `ViewEditForm` и `HtmlRenderer` использование `\Drupal::theme()` заменено на [Dependency Injection](../services/dependency-injection.md), в связи с чем, в консторе появился новый аргумент.
+В классах `ViewEditForm` и `HtmlRenderer` использование `\Drupal::theme()` заменено на [Dependency Injection](../services/dependency-injection.md), в связи с чем, в конструкторе появился новый аргумент.
 
 ## Изменена сигнатура конструктора LayoutBuilder и добавлено новое событие LayoutBuilderEvents::PREPARE_LAYOUT
 
@@ -187,7 +187,7 @@ use Drupal\Component\EventDispatcher\Event;
   }
 ```
 
-Также было добавлено новое событие `LayoutBuilderEvents::PREPARE_LAYOUT` которое вызываетяс в момент подготовки макета и передаёт `Drupal\layout_builder\Event\PrepareLayoutEvent` в качестве события. Это событие позволяет модулям взаимодействовать между собой в процессе `#pre_render` элемента.
+Также было добавлено новое событие `LayoutBuilderEvents::PREPARE_LAYOUT` которое вызывается в момент подготовки макета и передаёт `Drupal\layout_builder\Event\PrepareLayoutEvent` в качестве события. Это событие позволяет модулям взаимодействовать между собой в процессе `#pre_render` элемента.
 
 ## Заголовок ответа теперь содержит X-Drupal-Cache-Max-Age
 
@@ -235,7 +235,7 @@ url: https://github.com/jquery/jquery-ui/blob/1.12.1/LICENSE.txt
 url: https://raw.githubusercontent.com/jquery/jquery-ui/1.12.1/LICENSE.txt
 ```
 
-Контрибным и собственым решениям рекомендуется делать подобным образом.
+Контрибным и собственным решениям рекомендуется делать подобным образом.
 
 ## Создание экземпляров Drupal\Core\Database\Query\Condition через new помечено устаревшим
 
@@ -263,7 +263,7 @@ url: https://raw.githubusercontent.com/jquery/jquery-ui/1.12.1/LICENSE.txt
 
 - [#3153085](https://www.drupal.org/project/drupal/issues/3153085)
 
-Функция `user_password()` поемечена устаревшей, взамен добавлен новый сервис `passowrd_generator`.
+Функция `user_password()` помечена устаревшей, взамен добавлен новый сервис `passowrd_generator`.
 
 **Ранее:**
 
@@ -285,7 +285,7 @@ user_password()
 
 Сейчас JSON:API конкретизирует ответы что кэшируются и не кэшируются, в связи с этим представлен новый класс `CacheableResourceResponse`. Данный класс реализует `CacheableResponseInterface`. Таким образом `ResourceResponce` более не реализует `CacheableResponseInterface`.
 
-`ResourceResponce` помечен для внутреннего использования и у вас не должно быть кода который может задеть данное изменение. Тем не менее, если по каким-то причинам ваш код полагается на данные классы, пожалуйста, произведите рефактор кода с использованием нового `CacheableResourceResponse` (это касается ответов `HEAD`, `OPTIONS` и `GET`).
+`ResourceResponce` помечен для внутреннего использования и у вас не должно быть кода который может задеть данное изменение. Тем не менее, если по каким-то причинам ваш код полагается на данные классы, пожалуйста, произведите рефакторинг кода с использованием нового `CacheableResourceResponse` (это касается ответов `HEAD`, `OPTIONS` и `GET`).
 
 ## Добавлено новое исключение \Drupal\Core\Queue\DelayedRequeueException
 
@@ -305,7 +305,7 @@ throw new DelayedRequeueException();
 throw new DelayedRequeueException(10);
 ```
 
-Если очередь не поддерживает данную особенность, то исключение будет проигнорирвоано и элемент останется заблокированным на стандартный пероид.
+Если очередь не поддерживает данную особенность, то исключение будет проигнорировано и элемент останется заблокированным на стандартный период.
 
 `\Drupal\Core\Queue\DatabaseQueue` теперь реализует `DelayableQueueInterface`.
 
@@ -332,7 +332,7 @@ complex_structure:
 
 - [#3009003](https://www.drupal.org/project/drupal/issues/3009003)
 
-Когда за рендер медиа отвечает источник oEmbed (например YouTube ролики), в целях безопасности медиа модуль ренедрит данное содержимое внутри iframe.
+Когда за рендер медиа отвечает источник oEmbed (например YouTube ролики), в целях безопасности медиа модуль рендерит данное содержимое внутри iframe.
 
 Содержимое iframe генерируется на основе шаблона `media-oembed-iframe.html.twig` и соответствующего тем хука `media_oembed_iframe`. Начиная с Drupal 9.1 данный тем хук также получает связанный объект с oEmbed Resource, который может быть полезен для препроцесс функций и шаблонов, которые хотят внести изменения для iframe на основе данного ресурса.
 
@@ -368,7 +368,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 - `Drupal.theme.passwordStrength`
 - `Drupal.theme.passwordSuggestions`
 
-При помощи них вы можете переопределить внешний вид виджета.
+При их помощи вы можете переопределить внешний вид виджета.
 
 ### Селекторы по CSS классу заменены на data-drupal-selector аттрибуты
 
@@ -414,7 +414,7 @@ function mytheme_preprocess_media_oembed_iframe(array &$variables) {
 
 Данный компонент позволяет вам парсить [Front Matter](https://jekyllrb.com/docs/front-matter/) разметку из различных файлов.
 
-Front Matter используется для того чтобы добавить в исходный файл дополнительную статическую информацию.
+Front Matter используется для того, чтобы добавить в исходный файл дополнительную статическую информацию.
 
 Front Matter разметка должны быть самой первой в исходном файле, также она должна быть валидным YAML. Содержимое Front Matter задаётся между открывающей и закрывающей конструкцией, которая состоит из трёх тире подряд `---`.
 
@@ -458,18 +458,18 @@ $metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.htm
 
 Большинство тестов не должно задеть данное изменение, тем не менее, разработчикам модулей следует обратить внимание на следующее:
 
-- `::assertContains()` теперь производит строгое сравнение (`===`) что может привести к ошибкам. PHPUnit предоставляет более мягкий вариант данной проверки `::assertContainsEquals()`, благодря которому, тесты продолжат работать на PHP 7.3.
-- В ядро добавлен новый трейт `Drupal\Tests\PhpUnitCompatibilityTrait` для всех базовых классов. Тесты контрибных модулей всегда должны расширять базовые классы тестов из ядра вместо прямого подключения трейта.
+- `::assertContains()` теперь производит строгое сравнение (`===`) что может привести к ошибкам. PHPUnit предоставляет более мягкий вариант данной проверки `::assertContainsEquals()`, благодаря которому, тесты продолжат работать на PHP 7.3.
+- В ядро добавлен новый трейт `Drupal\Tests\PhpUnitCompatibilityTrait` для всех базовых классов. Тесты contrib модулей всегда должны расширять базовые классы тестов из ядра вместо прямого подключения трейта.
 
 ## Новая тема оформления Drupal — Olivero — добавлена в ядро
 
 - [#3111409](https://www.drupal.org/project/drupal/issues/3111409)
 
-Текущая тема оформления — Bartik, была частью релиза Drupal 7, который состоялся в январе 2011 года. Спустя 9 лет, данная тема успела попасть в релизы [Drupal 8](../../8/drupal-8.md) и [Drupal 9](../drupal-9.md). Веб двигается вперёд, это было отлично для 2011 года, но негодиться сейчас.
+Текущая тема оформления — Bartik, была частью релиза Drupal 7, который состоялся в январе 2011 года. Спустя 9 лет, данная тема успела попасть в релизы [Drupal 8](../../8/drupal-8.md) и [Drupal 9](../drupal-9.md). Веб двигается вперёд, это было отлично для 2011 года, но не годится сейчас.
 
-Начиная с данной версии, в ядро добавлена новая тема — [Olivero](../../olivero.md). На данный момент она находится в эксперемаентальном статусе и будет выключена по умолчанию, но со временем, она заменит Bartik.
+Начиная с данной версии, в ядро добавлена новая тема — [Olivero](../../olivero.md). На данный момент она находится в экспериментальном статусе и будет выключена по умолчанию, но со временем, она заменит Bartik.
 
-Вы можете посмотреть как выглядит данная тема вживую на демо сайте: <http://lb.cm/olivero>
+Вы можете посмотреть как выглядит данная тема в живую на демо сайте: <http://lb.cm/olivero>
 
 ![Olivero demo](https://i.imgur.com/ehypMHV.png)
 
@@ -485,7 +485,7 @@ $metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.htm
     "prefer-stable": true,
 ```
 
-Это позволяет устанавливать пакеты в разработке вместе с шаблоном. Иногда данное поведение приводит к непредсказуемым результатам, напирмер, обновление на новый нестабильный релиз, вместо того чтобы обновляться в пределах текущего стабильного релиза. Настройка Composer `prefer stable` должна рассматриваться как рекомендация и не гарантирует что будет вбран стабильный релиз.
+Это позволяет устанавливать пакеты в разработке вместе с шаблоном. Иногда данное поведение приводит к непредсказуемым результатам, например, обновление на новый нестабильный релиз, вместо того чтобы обновляться в пределах текущего стабильного релиза. Настройка Composer `prefer stable` должна рассматриваться как рекомендация, и не гарантирует, что будет выбран стабильный релиз.
 
 Начиная с Drupal 9.1.0-alpha1, Composer шаблоны с Drupal будут указывать соответствующие уровни стабильности:
 
@@ -496,13 +496,13 @@ $metadata = \Drupal::service('twig')->getTemplateMetadata('/path/to/template.htm
 
 Данные изменения не окажут влияния на уже созданные ранее проекты управляемые Composer. Пользователи сайтов должны сами скорректировать это значение в `composer.json` файле, если это необходимо.
 
-Используя минимальную стабильность в значении `stable` вы по прежнему сможете загружать и устанавливать нестабильные зависимости, для этого достаточно запрашивать необходимые версии с «[флагом стабильности](https://getcomposer.org/doc/04-schema.md#package-links)», например:
+Используя минимальную стабильность в значении `stable` вы по-прежнему сможете загружать и устанавливать нестабильные зависимости, для этого достаточно запрашивать необходимые версии с «[флагом стабильности](https://getcomposer.org/doc/04-schema.md#package-links)», например:
 
 ```
 composer require drupal/contrib:^1.0@beta
 ```
 
-Данная команда позволит проекту `contrib` быть загруженым в бета версии и выше. Тем не менее, если другой модуль имеет зависимость на него, то приведенный пример выше приведёт к ошибке. Данная ситуация также может быть р ешена похожим способом, запросив оба проекта с нужными метками:
+Данная команда позволит проекту `contrib` быть загруженным в бета-версии и выше. Тем не менее, если другой модуль имеет зависимость на него, то приведенный пример выше приведёт к ошибке. Данная ситуация также может быть решена похожим способом, запросив оба проекта с нужными метками:
 
 ```
 composer require drupal/contrib:^1.0-beta1 outside/library:@alpha
@@ -603,7 +603,7 @@ Drupal ядро теперь использует `composer/semver` 3 верси
 
 - [#3182891](https://www.drupal.org/project/drupal/issues/3182891)
 
-Плагин источника данных Variable (`variable`) получли новую настройку `variables_no_row_if_missing`. Данная настройка позволяет перечислить все обязательные значения для данного плагина. Если хотя бы одного из значений отсутствует, то плагин не вернёт никаких значений.
+Плагин источника данных Variable (`variable`) получил новую настройку `variables_no_row_if_missing`. Данная настройка позволяет перечислить все обязательные значения для данного плагина. Если хотя бы одного из значений отсутствует, то плагин не вернёт никаких значений.
 
 ### Примеры
 
@@ -772,7 +772,7 @@ source:
 - [#3152398](https://www.drupal.org/project/drupal/issues/3152398) Статические запросы в `core/tests/Drupal` переписаны на динамические.
 - [#3123461](https://www.drupal.org/project/drupal/issues/3123461) Возможность располагать драйвера баз данных в `DRUPAL_ROOT/drivers` помечена устаревшей и будет удалена в Drupal 10.
 - [#2999569](https://www.drupal.org/project/drupal/issues/2999569) Теперь, при попытке вставить (`INSERT`) запись в несуществующую колонку и без указания значения по умолчанию в схеме, драйвер MySQL будет выбрасывать исключение `IntegrityConstraintViolationException` в дополнение к текущему `DatabaseExceptionWrapper`.
-- [#3120892](https://www.drupal.org/project/drupal/issues/3120892) Для драйвера SQL Lite добавлена поддержа функции `LEAST()`.
+- [#3120892](https://www.drupal.org/project/drupal/issues/3120892) Для драйвера SQL Lite добавлена поддержка функции `LEAST()`.
 - [#3174848](https://www.drupal.org/project/drupal/issues/3174848) Исправлена опечатка в сообщении о [депрекации](../../../deprecation.md) метода `Connection::prepare`.
 - [#2736777](https://www.drupal.org/project/drupal/issues/2736777) Теперь при работе с транзакциями на PHP 8 не будет вызываться исключение.
 - [#3089902](https://www.drupal.org/project/drupal/issues/3089902) При создании БД Drupal больше не задаёт `NO_AUTO_CREATE_USER`.
@@ -815,8 +815,8 @@ source:
 ## JSON:API
 
 - [#3165794](https://www.drupal.org/project/drupal/issues/3165794) Удалена неиспользуемая переменная `$account_bundle` в `ResourceTestBase`.
-- [#3093757](https://www.drupal.org/project/drupal/issues/3093757) Убраны вызовы `testRelated()` из тестов так как ишьюсы решены.
-- [#3112229](https://www.drupal.org/project/drupal/issues/3112229) JSON:API больше не упрощает результаты для типов полей, которые возвращают `NULL` или имя основного свойства не соответствует тому что возвращает значение.
+- [#3093757](https://www.drupal.org/project/drupal/issues/3093757) Убраны вызовы `testRelated()` из тестов так как проблемы (issues) решены.
+- [#3112229](https://www.drupal.org/project/drupal/issues/3112229) JSON:API больше не упрощает результаты для типов полей, которые возвращают `NULL` или имя основного свойства не соответствует тому, что возвращает значение.
 - [#2996114](https://www.drupal.org/project/drupal/issues/2996114) Улучшено сообщение об ошибке если ресурс был изменён.
 - [#3175884](https://www.drupal.org/project/drupal/issues/3175884) Исправлена теоретическая ошибка которая могла привести к одинаковым ссылкам в ответе при разных метаданных для этих самых ссылок.
 
@@ -869,7 +869,7 @@ source:
 - [#3167600](https://www.drupal.org/project/drupal/issues/3167600) Удалена неиспользуемая переменная `$config` в `locale.bulk.inc`.
 - [#3167599](https://www.drupal.org/project/drupal/issues/3167599) Удалена неиспользуемая переменная `$frequency` в `locale.module`.
 - [#3168261](https://www.drupal.org/project/drupal/issues/3168261) Удалена неиспользуемая переменная `$language_list` в `locale.module`.
-- [#3179258](https://www.drupal.org/project/drupal/issues/3179258) Теперь, при поиски строки для перевода в интерфейсе, удаляются начальные и конечные пробелы в поисковой фразе.
+- [#3179258](https://www.drupal.org/project/drupal/issues/3179258) Теперь, при поиске строки для перевода в интерфейсе, удаляются начальные и конечные пробелы в поисковой фразе.
 
 ## Media
 
@@ -889,15 +889,15 @@ source:
 
 ## Migration System
 
-- [#3024682](https://www.drupal.org/node/3024682) На странице со списком миграций теперь показываются человекопонятные названия, вместо машинных.
+- [#3024682](https://www.drupal.org/node/3024682) На странице со списком миграций теперь показываются человеко-понятные названия, вместо машинных.
 - [#3143719](https://www.drupal.org/project/drupal/issues/3143719) В `MigrateUpgradeTestBase` добавлен новый метод `getCredentials()`.
-- [#2993367](https://www.drupal.org/project/drupal/issues/2993367) Добавлена миграция из Drupal 7 Picture (контрибный модуль) в Responsive Image.
+- [#2993367](https://www.drupal.org/project/drupal/issues/2993367) Добавлена миграция из Drupal 7 Picture (contrib модуль) в Responsive Image.
 - [#3133139](https://www.drupal.org/project/drupal/issues/3133139) Удалена `is_array` проверка в `getProcessPlugins`.
 - [#3134300](https://www.drupal.org/project/drupal/issues/3134300) Упрощена разметка и код в `ReviewForm::buildForm()`.
-- [#3154398](https://www.drupal.org/project/drupal/issues/3154398) Миграции теперь могут указывать требуемые плагины для своей работы при помощи нового метода `getRequirements()`.
+- [#3154398](https://www.drupal.org/project/drupal/issues/3154398) Миграции теперь могут указывать требуемые плагины для своей работы: при помощи нового метода `getRequirements()`.
 - [#3110669](https://www.drupal.org/project/drupal/issues/3110669) Добавлена поддержка миграции мультиязычных меню из Drupal 7.
 - [#2845485](https://www.drupal.org/project/drupal/issues/2845485) Улучшена документация для плагина `MenuLinkParent`.
-- [#3160323](https://www.drupal.org/project/drupal/issues/3160323) Название переменных в исключениях `Row` теперь обёрнуты в одинакрные кавычки.
+- [#3160323](https://www.drupal.org/project/drupal/issues/3160323) Название переменных в исключениях `Row` теперь обёрнуты в одинарные кавычки.
 - [#3143717](https://www.drupal.org/project/drupal/issues/3143717) Добавлены новые хелперы `MigrateUpgradeTestBase::assertIdConflictForm()` и `MigrateUpgradeTestBase::assertReviewForm()`.
 - [#3164120](https://www.drupal.org/project/drupal/issues/3164120) Исправлен пример кода в документации плагина `MenuLinkParent`.
 - [#2447727](https://www.drupal.org/project/drupal/issues/2447727) Добавлен абстрактный `ReferenceBase` для миграции связующих полей.
@@ -919,7 +919,7 @@ source:
 ## Node System
 
 - [#2830504](https://www.drupal.org/project/drupal/issues/2830504) Исправлена неполадка из-за которой `Drupal\node\Plugin\Action\AssignOwnerNode` позволяла выбрать гостя в качестве владельца ноды.
-- [#3165950](https://www.drupal.org/project/drupal/issues/3165950) Из `NodeTypeForm` удалено упоминание что нижние подчёркивания будут конвертированы в дефисы, так как для путей форм сущностей уже используются нижине подчёркивания.
+- [#3165950](https://www.drupal.org/project/drupal/issues/3165950) Из `NodeTypeForm` удалено упоминание что нижние подчёркивания будут конвертированы в дефисы, так как для путей форм сущностей уже используются нижние подчёркивания.
 - [#2586013](https://www.drupal.org/project/drupal/issues/2586013) Функция `node_views_analyze()` перенесена из файла `node.views.inc` в `node.views_execution.inc`.
 
 ## QuickEdit
@@ -949,7 +949,7 @@ source:
 - [#3177231](https://www.drupal.org/project/drupal/issues/3177231) Улучшена проверка на наличие заголовка страницы.
 - [#3174088](https://www.drupal.org/project/drupal/issues/3174088) Удалён комментарий с `@todo` для scripts.es6.js.
 - [#3176912](https://www.drupal.org/project/drupal/issues/3176912) Добавлена недостающая документация в шаблоне `block--secondary-menu--plugin-id--search-form-block.html.twig`.
-- [#3176914](https://www.drupal.org/project/drupal/issues/3176914) Добавлен класс для «неопубликованных» мультимедиа сущностей в `media.html.twig`.
+- [#3176914](https://www.drupal.org/project/drupal/issues/3176914) Добавлен класс для «неопубликованных» мультимедиа-сущностей в `media.html.twig`.
 - [#3180726](https://www.drupal.org/project/drupal/issues/3180726) Добавлен отсутствующий знак точки в документации к `html.html.twig`.
 - [#3176906](https://www.drupal.org/project/drupal/issues/3176906) Исправлена документация во множестве различных шаблонов.
 - [#3176911](https://www.drupal.org/project/drupal/issues/3176911) Добавлена документация для переменной `noscript_styles` в `html.html.twig`.
@@ -963,7 +963,7 @@ source:
 ## PostgreSQL драйвер
 
 - [#3129560](https://www.drupal.org/project/drupal/issues/3129560) Удалена реализация `Upsert`.
-- [#3154669](https://www.drupal.org/project/drupal/issues/3154669) Испралены ошибки и опечатки для комментариев.
+- [#3154669](https://www.drupal.org/project/drupal/issues/3154669) Исправлены ошибки и опечатки для комментариев.
 
 ## RDF
 
@@ -1034,7 +1034,7 @@ source:
 
 - [#3139353](https://www.drupal.org/project/drupal/issues/3139353) Добавлен новый публичный метод `Drupal\views\Plugin\views\query\Sql::getConnection()`.
 - [#3150490](https://www.drupal.org/project/drupal/issues/3150490) Улучшено именование переменных в `Drupal\views\ViewExecutableFactory::get`.
-- [#2838555](https://www.drupal.org/project/drupal/issues/2838555) Views больше не позволит добавлять связи на данные у которых нет базовой таблицы для джоина (например, конфигурационные сущности).
+- [#2838555](https://www.drupal.org/project/drupal/issues/2838555) Views больше не позволит добавлять связи на данные у которых нет базовой таблицы для join (например, конфигурационные сущности).
 - [#2780869](https://www.drupal.org/project/drupal/issues/2780869) Исправлена неполадка, при которой невозможно было сохранить представление, если в значении опции для фильтра была точка.
 - [#2625136](https://www.drupal.org/project/drupal/issues/2625136) Раскрытые фильтры для `numeric` и `date` полей теперь имеют обертку, для того чтобы поля были на одном уровне.
 - [#2846485](https://www.drupal.org/project/drupal/issues/2846485) Улучшена производительность при рендере множественного поля, где каждый элемент поля создаёт свою строку с выводом.
@@ -1103,7 +1103,7 @@ source:
 - [#3139405](https://www.drupal.org/project/drupal/issues/3139405) Использование устаревших `AssertLegacyTrait::assertUniqueText()` и `AssertLegacyTrait::assertNoUniqueText()` заменено на `$this->getSession()->getPage()->getText()`.
 - [#3139419](https://www.drupal.org/project/drupal/issues/3139419) Использование устаревшего `AssertLegacyTrait::assertUrl()` заменено на `$this->assertSession()->addressEquals()`.
 - [#3139418](https://www.drupal.org/project/drupal/issues/3139418) Использование устаревших `AssertLegacyTrait::assertLinkByHref` и `AssertLegacyTrait::assertNoLinkByHref` заменено на `$this->assertSession()->linkByHrefExists()`.
-- [#3159230](https://www.drupal.org/project/drupal/issues/3159230) Исправлены оставшиеся вызовы с передачай `$message` в `AssertLegacyTrait::assertRaw` и `AssertLegacyTrait::assertNoRaw`.
+- [#3159230](https://www.drupal.org/project/drupal/issues/3159230) Исправлены оставшиеся вызовы с передачей `$message` в `AssertLegacyTrait::assertRaw` и `AssertLegacyTrait::assertNoRaw`.
 - [#3168946](https://www.drupal.org/project/drupal/issues/3168946) Использование устаревшего `AssertLegacyTrait::assertTextHelper` заменено на `$this->assertSession()->pageTextContains()` и `$this->assertSession()->pageTextNotContains()`.
 - [#3139407](https://www.drupal.org/project/drupal/issues/3139407) Использование устаревших `AssertLegacyTrait::assertFieldById` и `AssertLegacyTrait::assertNoFieldById` заменено на `$this->assertSession()->fieldExists()`, `$this->assertSession()->buttonExists()` и `$this->assertSession()->fieldValueEquals()`.
 - [#3139406](https://www.drupal.org/project/drupal/issues/3139406) Использование устаревших `AssertLegacyTrait::assertFieldByName` и `AssertLegacyTrait::assertNoFieldByName`.
@@ -1111,13 +1111,13 @@ source:
 - [#3168788](https://www.drupal.org/project/drupal/issues/3168788) Использование xpath заменено на WebAssert.
 - [#2802401](https://www.drupal.org/project/drupal/issues/2802401) Передача `NULL` в качестве параметра для `$edit` в `::drupalPostForm` помечена устаревшей.
 - [#3171920](https://www.drupal.org/project/drupal/issues/3171920) В `AssertLegacyTrait` поправлено сообщение об устаревшем коде.
-- [#3162403](https://www.drupal.org/project/drupal/issues/3162403) `symfony/phpunit-bridge` обновлён до 5.1.6 чтобы решить проблему с некоорректным сообщением об устаревшем коде.
+- [#3162403](https://www.drupal.org/project/drupal/issues/3162403) `symfony/phpunit-bridge` обновлён до 5.1.6, чтобы решить проблему с некорректным сообщением об устаревшем коде.
 - [#3142267](https://www.drupal.org/project/drupal/issues/3142267) Использование трейта `PHPUnit8Warnings` заменено `PhpUnitWarnings`.
 - [#3173888](https://www.drupal.org/project/drupal/issues/3173888) У функции `_drupal_error_handler_real()` удалён параметр `$context` и код обновлён в соответствии с данным изменением.
 - [#3135027](https://www.drupal.org/project/drupal/issues/3135027) Использование `UnitTestCase::assertArrayEquals` заменено на `$this->assertEquals()`.
 - [#3174038](https://www.drupal.org/project/drupal/issues/3174038) `DrupalSelenium2Driver` теперь открывает архив с флагом `\ZipArchive::CREATE` вместо `\ZipArchive::OVERWRITE`.
-- [#3162008](https://www.drupal.org/project/drupal/issues/3162008) `SectionComponentTest::testToRenderArray` теперь возвращает объект события чтобы соответствовать возвращаемому типу `EventDispatcherInterface::dispatch` из Symfony 5.
-- [#3174158](https://www.drupal.org/project/drupal/issues/3174158) Тест предупрждений обновлён для соответствия PHP 8, так как используемый вариант «деления на ноль» теперь не предупреждение а фатальная ошибка.
+- [#3162008](https://www.drupal.org/project/drupal/issues/3162008) `SectionComponentTest::testToRenderArray` теперь возвращает объект события, чтобы соответствовать возвращаемому типу `EventDispatcherInterface::dispatch` из Symfony 5.
+- [#3174158](https://www.drupal.org/project/drupal/issues/3174158) Тест предупреждений обновлён для соответствия PHP 8, так как используемый вариант «деления на ноль» теперь не предупреждение, а фатальная ошибка.
 - [#3172438](https://www.drupal.org/project/drupal/issues/3172438) Использование аннотации `@expectedDeprecation` заменено на `ExpectDeprecationTrait::expectDeprecation()`.
 - [#2858646](https://www.drupal.org/project/drupal/issues/2858646) Исправлены вызовы метода `::setUp()` с некорректным регистром.
 - [#3174928](https://www.drupal.org/project/drupal/issues/3174928) Внесены улучшения в JS тесты ядра.
@@ -1129,7 +1129,7 @@ source:
 - [#3168375](https://www.drupal.org/project/drupal/issues/3168375) Некоторые вызовы `::drupalPostForm()` заменены на `::submitForm()`.
 - [#3176200](https://www.drupal.org/project/drupal/issues/3176200) Удалены вызовы `t()` в аргументах для `::assertNoText()`.
 - [#3184324](https://www.drupal.org/project/drupal/issues/3184324) Вызовы `::drupalPostForm()`, которые записывают результат в переменную, заменены на `::submitForm()`.
-- [#3128815](https://www.drupal.org/project/drupal/issues/3128815) Вызывы `::assert*()` методов, которые содержали операторы сравнения больше/меньше, заменены на `::assert(Greater|Less)Than(OrEqual)()`.
+- [#3128815](https://www.drupal.org/project/drupal/issues/3128815) Вызовы `::assert*()` методов, которые содержали операторы сравнения больше/меньше, заменены на `::assert(Greater|Less)Than(OrEqual)()`.
 
 ## Прочие изменения
 
@@ -1139,7 +1139,7 @@ source:
 - [#2778917](https://www.drupal.org/node/2778917) Вместо тернарного оператора при вызове `\Drupal::state()->get()` теперь используется второй параметр.
 - [#3021788](https://www.drupal.org/node/3021788) Функции `template_preprocess_menu_local_task()` и `template_preprocess_menu_local_action()` перенесены в `core/includes/theme.inc`.
 - [#3112328](https://www.drupal.org/node/3112328) Классы расширяющие `FormatterBase` больше не реализуют `ContainerFactoryPluginInterface`, так как это объявлено в `FormatterBase`.
-- [#3033734](https://www.drupal.org/node/3033734) На странице списка модулей исправлен горизонтальный скрол при больших описаниях.
+- [#3033734](https://www.drupal.org/node/3033734) На странице списка модулей исправлена горизонтальная прокрутка при больших описаниях.
 - [#3112790](https://www.drupal.org/project/drupal/issues/3112790) Исправлена неполадка, из-за которой «установка» модулей User и System происходила дважды.
 - [#3143605](https://www.drupal.org/project/drupal/issues/3143605) Удалена функция `update_replace_permissions()`.
 - [#2972224](https://www.drupal.org/project/drupal/issues/2972224) В ядро добавлен `.cspell.json` для автоматической проверки правописания в ядре Drupal.
@@ -1150,7 +1150,7 @@ source:
 - [#3143713](https://www.drupal.org/project/drupal/issues/3143713) Функция `drupal_get_schema_versions()` теперь всегда возвращает целые числа.
 - [#3154594](https://www.drupal.org/project/drupal/issues/3154594) `composer.json` и `composer.lock` будут пропускаться CSpell.
 - [#3154665](https://www.drupal.org/project/drupal/issues/3154665) Из словаря CSpell удалены названия модулей и плагинов.
-- [#2807743](https://www.drupal.org/project/drupal/issues/2807743) Тригерры ошибок для `FormattableMarkup::placeholderFormat()` приведены к единому стилю.
+- [#2807743](https://www.drupal.org/project/drupal/issues/2807743) Триггеры ошибок для `FormattableMarkup::placeholderFormat()` приведены к единому стилю.
 - [#2619482](https://www.drupal.org/project/drupal/issues/2619482) Использование `get_called_class()` и `get_class($this)` заменены на `static::class`.
 - [#2928960](https://www.drupal.org/project/drupal/issues/2928960) Длина слогана сайта увеличена со 128 символов до 255.
 - [#3155770](https://www.drupal.org/project/drupal/issues/3155770) Удалены избыточные указания реализации `ContainerFactoryPluginInterface` когда класс расширял уже класс реализующий интерфейс.
@@ -1198,7 +1198,7 @@ source:
 - [#3174022](https://www.drupal.org/project/drupal/issues/3174022) Теперь при вызове `call_user_func_array()`, там где это возможно, значения аргументов передаются используя `array_values()`.
 - [#3176990](https://www.drupal.org/project/drupal/issues/3176990) cspell теперь также проверяет файлы начинающиеся с точки.
 - [#3172582](https://www.drupal.org/project/drupal/issues/3172582) Ссылка на форматы дат в PHP обновлена на новую.
-- [#3171267](https://www.drupal.org/project/drupal/issues/3171267) bnjmnm добавлен в список мейнтенеров в качестве временного мейнтенера a11y.
+- [#3171267](https://www.drupal.org/project/drupal/issues/3171267) bnjmnm добавлен в список мейнтейнеров в качестве временного мейнтейнера a11y.
 - [#2607116](https://www.drupal.org/project/drupal/issues/2607116) Удалена неиспользуемая переменная `$language` в `hook_tokens_alter()`.
 - [#3177557](https://www.drupal.org/project/drupal/issues/3177557) Внесены улучшения в `\Drupal\error_test\Controller\ErrorTestController::generateWarnings()` для совместимости с PHP 8.
 - [#3179013](https://www.drupal.org/project/drupal/issues/3179013) Из теста `EntityRouteEnhancerTest` удалено ненужное сравнение, которое также приводило к ошибке на PHP 8.
