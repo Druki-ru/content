@@ -8,7 +8,7 @@ metatags:
   description: 'Список изменений Drupal 9.0.10.'
 ---
 
-**Дата релиза**: 2 декабря 2020
+**Дата релиза**: 4 декабря 2020
 
 > [!NOTE]
 > Данный релиз также содержит изменения внесенные в [Drupal 8.9.8](../../8/releases/release-8.9.8.md) и [Drupal 8.9.11](../../8/releases/release-8.9.11.md).
@@ -40,4 +40,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 9.0.10](https://www.drupal.org/project/drupal/releases/9.0.10) (англ.), drupal.org, 2 декабря 2020
+- [Drupal 9.0.10](https://www.drupal.org/project/drupal/releases/9.0.10) (англ.), drupal.org, 4 декабря 2020
