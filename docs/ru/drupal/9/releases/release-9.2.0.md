@@ -101,8 +101,6 @@ metatags:
 ## Views
 
 - [#2628130](https://www.drupal.org/project/drupal/issues/2628130) Параметр `$database` для `\Drupal\node\Plugin\views\argument\Vid` помечен устаревшим.
-- [#3161207](https://www.drupal.org/project/drupal/issues/3161207) Метки для фильтров теперь перерисовываются при удалении одного из них.
-- [#2754985](https://www.drupal.org/project/drupal/issues/2754985) Добавлены тесты проверяющие работоспособность добавления раскрытых фильтров Views.
 - [#2925612](https://www.drupal.org/project/drupal/issues/2925612) Метод `StylePluginBase::wizardForm()` помечен устаревшим, так как нигде не используется.
 
 ## Тестирование
