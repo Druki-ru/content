@@ -99,3 +99,7 @@ foo.content:
     // $custom_arg == 17.
   }
 ```
+
+## Изменения в релизах
+
+- **[Drupal 9.2.0](../releases/release-9.2.0.md) (02.06.2021):** Параметр `_entity_bundles` помечен устаревшим.
