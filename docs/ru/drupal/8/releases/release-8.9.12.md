@@ -8,7 +8,7 @@ metatags:
   description: 'Список изменений Drupal 8.9.12.'
 ---
 
-**Дата релиза**: 6 января 2020
+**Дата релиза**: 6 января 2021
 
 ## Configuration System
 
@@ -17,6 +17,10 @@ metatags:
 ## Database
 
 - [#3162603](https://www.drupal.org/project/drupal/issues/3162603) Исправлена неполадка при которой некорректно работал `EntityStorageBase::loadByProperties()` для чувствительных к регистру свойств на PostgreSQL.
+
+## Entity System
+
+- [#3133386](https://www.drupal.org/project/drupal/issues/3133386) Исправлен текст сообщения о депрекации для конструктора `EntityViewBuilder`.
 
 ## File System
 
@@ -39,3 +43,5 @@ metatags:
 - [#3180167](https://www.drupal.org/project/drupal/issues/3180167) Из списка мейнтенеров удалён «valthebald».
 - [#3178066](https://www.drupal.org/project/drupal/issues/3178066) Улучшена документация для `ThirdPartySettingsInterface`.
 - [#3188816](https://www.drupal.org/project/drupal/issues/3188816) Исправлены ссылки на документацию в файле `core.api.php`.
+- [#3189101](https://www.drupal.org/project/drupal/issues/3189101) Исправлены ссылки на документацию в файле `form.api.php`.
+- [#3178845](https://www.drupal.org/project/drupal/issues/3178845) Тесты на DrupalCI теперь также вызывают `core/scripts/dev/commit-code-check.sh`. Теперь патчи, содержащие ошибки [стандартов кодирования](../../standards/standards.md) или опечатки, будут проваливать тестирование.

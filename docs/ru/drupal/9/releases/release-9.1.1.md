@@ -111,7 +111,6 @@ metatags:
 - [#3187730](https://www.drupal.org/project/drupal/issues/3187730) Добавлена пометка, что аргументы `--class` и `--file` скрипта `run-tests.sh` должны быть последние.
 - [#2409657](https://www.drupal.org/project/drupal/issues/2409657) Форма восстановления пароля теперь перенаправляет на главную страницу вместо страницы пользователя, которая недоступна для анонимов и поэтому открывает страницу авторизации.
 - [#3014121](https://www.drupal.org/project/drupal/issues/3014121) Улучшено форматирование примера для `core/lib/Drupal/Core/Template/Attribute.php`.
-- [#3178845](https://www.drupal.org/project/drupal/issues/3178845) Тесты на DrupalCI теперь также вызывают `core/scripts/dev/commit-code-check.sh`. Теперь патчи, содержащие ошибки [стандартов кодирования](../../standards/standards.md) или опечатки, будут проваливать тестирование.
 - [#3187239](https://www.drupal.org/project/drupal/issues/3187239) Chris Darke добавлен в список мейнтенеров
 - [#3187240](https://www.drupal.org/project/drupal/issues/3187240) AmyJune Hineline (volkswagenchick) добавлена в список мейнтейнеров.
 - [#3038234](https://www.drupal.org/project/drupal/issues/3038234) Из MAINTAINERS.txt удалён раздел с PHPUnit инициативой, так как теперь она считается завершённой.
