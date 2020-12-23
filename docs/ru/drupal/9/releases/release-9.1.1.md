@@ -41,9 +41,17 @@ metatags:
 
 - [#3065632](https://www.drupal.org/project/drupal/issues/3065632) Добавлена общая документация о том, как пользоваться Help Topics.
 
+## Install System
+
+- [#2625820](https://www.drupal.org/project/drupal/issues/2625820) Исправлена неполадка из-за которой функция `install_check_translations()` иногда возвращала `NULL` вместо массива.
+
 ## Layout Builder
 
 - [#3103812](https://www.drupal.org/project/drupal/issues/3103812) Формы `ConfigureSectionForm` теперь корректно отображаются ошибки валидации.
+
+## Menu System
+
+- [#3018912](https://www.drupal.org/project/drupal/issues/3018912) Исправлен тип возвращаемых данных в документации `DefaultMenuLinkTreeManipulators::collectNodeLinks()`.
 
 ## Migration system
 
