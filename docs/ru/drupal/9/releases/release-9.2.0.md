@@ -125,6 +125,7 @@ example.route:
 
 - [#3073476](https://www.drupal.org/project/drupal/issues/3073476) Документация для модулей migrate, migrate_drupal, migrate_drupal_multilingual и migrate_drupal_ui переделана в Help Topics.
 - [#3047711](https://www.drupal.org/project/drupal/issues/3047711) Документация для модулей file, image, media, media_library и responsive_image переделана в Help Topics.
+- [#3090257](https://www.drupal.org/project/drupal/issues/3090257) Добавлено больше тестов проверки синтаксиса.
 
 ## Layout Builder
 
@@ -144,6 +145,11 @@ example.route:
 - [#3047328](https://www.drupal.org/project/drupal/issues/3047328) Обработчик `Log` теперь может логгировать различные типы данных, а не только строки.
 - [#3148959](https://www.drupal.org/project/drupal/issues/3148959) Обработчик `Extract` теперь отображает при обработке какого значение произошла ошибка.
 - [#3187477](https://www.drupal.org/project/drupal/issues/3187477) Их источника `TermTranslation` удалено подключение трейта I18nQueryTrait.
+- [#2937989](https://www.drupal.org/project/drupal/issues/2937989) Источник данных `Node` для Drupal 6 и Drupal 7 теперь может принимать сразу несколько типов содержимого в качестве источника.
+
+## Node System
+
+- [#3187435](https://www.drupal.org/project/drupal/issues/3187435) Для Views плагина `Vid`, аргумент `$database` помечен устаревшим.
 
 ## Olivero
 
@@ -156,6 +162,7 @@ example.route:
 ## System
 
 - [#2409413](https://www.drupal.org/project/drupal/issues/2409413) Удалены неиспользуемые RSS настройки и описания.
+- [#3002983](https://www.drupal.org/project/drupal/issues/3002983) Протокол в ссылках заменён на HTTPS.
 
 ## Taxonomy
 
@@ -169,6 +176,8 @@ example.route:
 
 - [#3051465](https://www.drupal.org/project/drupal/issues/3051465) Поле тегов для материалов теперь не переводимое и не создаёт автоматически несуществующие теги.
 - [#3066570](https://www.drupal.org/project/drupal/issues/3066570) Роль редактора теперь имеет больше прав, в связи с чем может: управлять переводами, изучать страницы "помощи", просматривать таксономию, управлять ярлыками.
+- [#3061267](https://www.drupal.org/project/drupal/issues/3061267) Машинные имена блоков теперь имеют префикс равный машинному имени темы оформления.
+- [#3108503](https://www.drupal.org/project/drupal/issues/3108503) Теперь Layout Builder по умолчанию включен для всех типов содержимого.
 
 ## Update
 
@@ -182,6 +191,7 @@ example.route:
 
 - [#2628130](https://www.drupal.org/project/drupal/issues/2628130) Параметр `$database` для `\Drupal\node\Plugin\views\argument\Vid` помечен устаревшим.
 - [#2925612](https://www.drupal.org/project/drupal/issues/2925612) Метод `StylePluginBase::wizardForm()` помечен устаревшим, так как нигде не используется.
+- [#3186582](https://www.drupal.org/project/drupal/issues/3186582) Отображение по умолчанию во Views теперь именуется как «Default».
 
 ## Тестирование
 
