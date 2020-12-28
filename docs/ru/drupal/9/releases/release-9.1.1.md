@@ -40,6 +40,7 @@ metatags:
 ## Help Topics
 
 - [#3065632](https://www.drupal.org/project/drupal/issues/3065632) Добавлена общая документация о том, как пользоваться Help Topics.
+- [#3095734](https://www.drupal.org/project/drupal/issues/3095734) Добавлена документация по конфигурациям.
 
 ## Install System
 
@@ -72,6 +73,7 @@ metatags:
 - [#3183112](https://www.drupal.org/project/drupal/issues/3183112) Исправлено значение высоты с «px» на «em».
 - [#3176901](https://www.drupal.org/project/drupal/issues/3176901) Изменены метки для регионов `content_below`, `footer_top`.
 - [#3142857](https://www.drupal.org/project/drupal/issues/3142857) Переменная `layout` для `node--article--full.html.twig` теперь подготавливается в препроцессоре.
+- [#3177918](https://www.drupal.org/project/drupal/issues/3177918) Для целостности с ядром, значения `z-index` приведены к общим значениям.
 
 ## Queue
 
@@ -110,6 +112,7 @@ metatags:
 - [#3186443](https://www.drupal.org/project/drupal/issues/3186443) Исправлена ошибка «Call to undefined method ::getAnnotations()» при использовании PHPUnit 9.5.
 - [#3184493](https://www.drupal.org/project/drupal/issues/3184493) Исправлены вызовы `t()` при конкатенации строк.
 - [#3184632](https://www.drupal.org/project/drupal/issues/3184632) Сравнения с xpath для отправленных данных с форм заменены на WebAssert.
+- [#3177120](https://www.drupal.org/project/drupal/issues/3177120) Удалены отсылки к `WebTestBase` которого больше нет в Drupal 9.
 
 ## Прочие изменения
 
