@@ -90,6 +90,12 @@ example.route:
 
 Благодаря данному изменения, при несоответствии типов, маршрут теперь будет отвечать HTTP 404 вместо HTTP 403.
 
+## Расширения больше не могут объявлять мажорную версию
+
+- [#3105353](https://www.drupal.org/project/drupal/issues/3105353)
+
+Расширения ([модули](../modules/modules.md), [темы оформления](../themes/themes.md)) больше не могут указывать свойство `major` в ***.info.yml** файлах.
+
 ## AJAX
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
