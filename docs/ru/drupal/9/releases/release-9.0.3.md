@@ -25,10 +25,6 @@ metatags:
 
 - [#3152390](https://www.drupal.org/project/drupal/issues/3152390) В тестах, для прямых запросов поля заключены в квадратный скобки.
 
-## Entity System
-
-- [#3145076](https://www.drupal.org/project/drupal/issues/3145076) Базовые поля типа `map` теперь могут быть корректно удалены.
-
 ## Locale
 
 - [#3128389](https://www.drupal.org/project/drupal/issues/3128389) Для `LocaleTranslation` добавлен `DependencySerializationTrait` чтобы он корректно сериализовался.

@@ -21,6 +21,7 @@ metatags:
 ## Entity System
 
 - [#3133386](https://www.drupal.org/project/drupal/issues/3133386) Исправлен текст сообщения о депрекации для конструктора `EntityViewBuilder`.
+- [#3145076](https://www.drupal.org/project/drupal/issues/3145076) Базовые поля типа `map` теперь могут быть корректно удалены.
 
 ## File System
 
