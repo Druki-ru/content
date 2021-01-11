@@ -129,8 +129,6 @@ example.route:
 
 ## Help Topics
 
-- [#3073476](https://www.drupal.org/project/drupal/issues/3073476) Документация для модулей migrate, migrate_drupal, migrate_drupal_multilingual и migrate_drupal_ui переделана в Help Topics.
-- [#3047711](https://www.drupal.org/project/drupal/issues/3047711) Документация для модулей file, image, media, media_library и responsive_image переделана в Help Topics.
 - [#3090257](https://www.drupal.org/project/drupal/issues/3090257) Добавлено больше тестов проверки синтаксиса.
 
 ## Layout Builder
