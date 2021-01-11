@@ -46,3 +46,9 @@ metatags:
 - [#3188816](https://www.drupal.org/project/drupal/issues/3188816) Исправлены ссылки на документацию в файле `core.api.php`.
 - [#3189101](https://www.drupal.org/project/drupal/issues/3189101) Исправлены ссылки на документацию в файле `form.api.php`.
 - [#3178845](https://www.drupal.org/project/drupal/issues/3178845) Тесты на DrupalCI теперь также вызывают `core/scripts/dev/commit-code-check.sh`. Теперь патчи, содержащие ошибки [стандартов кодирования](../../standards/standards.md) или опечатки, будут проваливать тестирование.
+- [#3181644](https://www.drupal.org/project/drupal/issues/3181644) Улучшено регулярное выражение для валидации языковых кодов.
+- [#3189547](https://www.drupal.org/project/drupal/issues/3189547) Убран вызов `indent` из `commit-code-check.sh`.
+
+## Ссылки
+
+- [Drupal 8.9.12](https://www.drupal.org/project/drupal/releases/8.9.12) (англ.), drupal.org, 6 января 2021
