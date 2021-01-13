@@ -51,4 +51,4 @@ metatags:
 
 ## Тестирование
 
-- [#3159788](https://www.drupal.org/project/drupal/issues/3159788) (откачено для 9.1.x) Удалены оставшиеся вызовы `AssertLegacyTrait::assertText()` и `AssertLegacyTrait::assertNoText()` с передачей `message` параметра.
+- [#3159788](https://www.drupal.org/project/drupal/issues/3159788) Удалены оставшиеся вызовы `AssertLegacyTrait::assertText()` и `AssertLegacyTrait::assertNoText()` с передачей `message` параметра.
