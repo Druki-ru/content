@@ -96,6 +96,16 @@ example.route:
 
 Расширения ([модули](../modules/modules.md), [темы оформления](../themes/themes.md)) больше не могут указывать свойство `major` в ***.info.yml** файлах.
 
+## Изменены сигнатуры конструкторов EntityFieldManager и EntityLastInstalledSchemaRepository
+
+- [#3131585](https://www.drupal.org/project/drupal/issues/3131585)
+
+Конструктор класса `Drupal\Core\Entity\EntityFieldManager` теперь принимает новый параметр типа `\Drupal\Core\Entity\EntityLastInstalledSchemaRepositoryInterface`. Для сохранения [обратной совместимости](../../../backward-compatibility.md) параметр является опциональным, тем не менее, он станет обязательным в [Drupal 10](../../10/drupal-10.md).
+
+Конструктор класса `Drupal\Core\Entity\EntityLastInstalledSchemaRepository` теперь принимает новый параметр типа `\Drupal\Core\Cache\CacheBackendInterface`. Для сохранения [обратной совместимости](../../../backward-compatibility.md) параметр является опциональным, тем не менее, он станет обязательным в [Drupal 10](../../10/drupal-10.md).
+
+Данное изменение также немного улучшает производительность сущностей, снижая количество запросов к БД.
+
 ## AJAX
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
@@ -121,7 +131,7 @@ example.route:
 
 ## Entity System
 
-- [#3138631](https://www.drupal.org/project/drupal/issues/3138631) Если поле содержит некорректную связь, сообщение об ошибке теперь будет более точно сообщать с чем связана проблема. 
+- [#3138631](https://www.drupal.org/project/drupal/issues/3138631) Если поле содержит некорректную связь, сообщение об ошибке теперь будет более точно сообщать с чем связана проблема.
 
 ## Form API
 
@@ -150,6 +160,7 @@ example.route:
 - [#3148959](https://www.drupal.org/project/drupal/issues/3148959) Обработчик `Extract` теперь отображает при обработке какого значение произошла ошибка.
 - [#3187477](https://www.drupal.org/project/drupal/issues/3187477) Их источника `TermTranslation` удалено подключение трейта I18nQueryTrait.
 - [#2937989](https://www.drupal.org/project/drupal/issues/2937989) Источник данных `Node` для Drupal 6 и Drupal 7 теперь может принимать сразу несколько типов содержимого в качестве источника.
+- [#3189878](https://www.drupal.org/project/drupal/issues/3189878) Из плагина источника данных Drupal 7 File удалено свойство `temporaryPath`.
 
 ## Node System
 
@@ -224,3 +235,5 @@ example.route:
 - [#3170260](https://www.drupal.org/project/ideas/issues/3170260) В `MAINTAINERS.txt` добавлен раздел для инициативы Decoupled Menus.
 - [#3188920](https://www.drupal.org/project/drupal/issues/3188920) Guzzle исключения обновления для совместимости с Guzzle 7.
 - [#3147135](https://www.drupal.org/project/drupal/issues/3147135) Исправлены множественные ошибки для соответствия стандарту `Drupal.Classes.UseGlobalClass`.
+- [#3189466](https://www.drupal.org/project/drupal/issues/3189466) Francesco Placella (plach) снял с себя полномочия мейнтейнера ядра.
+- [#3162827](https://www.drupal.org/project/drupal/issues/3162827) В модулях ядра, где использование хранилища сущности является опциональным, данные хранилища запрашиваются только в данной ситуации. Следовательно, в классах теперь хранится `entityStorage`, вместо хранилища конкретной сущности.
