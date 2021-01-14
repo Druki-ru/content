@@ -23,7 +23,7 @@ metatags:
 
 ## Migration System
 
-- [#3151732](https://www.drupal.org/project/drupal/issues/3151732) Плагины источников данных расширяющие `DrupalSqlBase` теперь могут указать в аннотации `minimum_version` значение с минимальной версией схемы БД.
+- [#3151732](https://www.drupal.org/project/drupal/issues/3151732) [Плагины](../plugins/plugins.md) источников данных расширяющие `DrupalSqlBase` теперь могут указать в аннотации `minimum_version` значение с минимальной версией схемы БД.
 - [#2565931](https://www.drupal.org/project/drupal/issues/2565931) Длинные названия для бандлов комментариев из Drupal 7 теперь корректно обрабатываются.
 - [#3077322](https://www.drupal.org/project/drupal/issues/3077322) Добавлены тесты на `NULL` значения источников.
 
@@ -44,6 +44,7 @@ metatags:
 
 - [#3181508](https://www.drupal.org/project/drupal/issues/3181508) Исправлена неполадка из-за которой было невозможно удалить "Workspace" содержащий содержимое.
 - [#3191821](https://www.drupal.org/project/drupal/issues/3191821) Улучшена документация для `WorkspaceAssociationInterface::deleteAssociations()`.
+- [#3192292](https://www.drupal.org/project/drupal/issues/3192292) Исправлена неполадка из-за которой пользователь с пермишеном `'administer workspaces'` не мог создавать новые воркспейсы.
 
 ## Umami Demo
 
@@ -52,3 +53,8 @@ metatags:
 ## Тестирование
 
 - [#3159788](https://www.drupal.org/project/drupal/issues/3159788) Удалены оставшиеся вызовы `AssertLegacyTrait::assertText()` и `AssertLegacyTrait::assertNoText()` с передачей `message` параметра.
+
+## Прочие изменения
+
+- [#2635440](https://www.drupal.org/project/drupal/issues/2635440) Добавлено дополнительное описание о том, что на самом деле очищает метод `ContentEntityStorageBase::resetCache()`.
+- [#2717541](https://www.drupal.org/project/drupal/issues/2717541) Добавлена отсутствующая документация для `hook_block_alter()`.
