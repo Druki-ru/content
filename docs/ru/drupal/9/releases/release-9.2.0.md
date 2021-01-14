@@ -106,6 +106,94 @@ example.route:
 
 Данное изменение также немного улучшает производительность сущностей, снижая количество запросов к БД.
 
+## Drupal теперь использует возможности PHP для генерации ID сессии
+
+- [#2238561](https://www.drupal.org/project/drupal/issues/2238561)
+
+Drupal теперь использует встроенный в PHP механизм генерации ID сессии. Это означает что `session_id()` и `\Drupal::service('session')->getId()` не гарантируют что вернут одни и те же результаты, даже если сессия в Drupal инициализирована. Это вызвано тем что Drupal использует "ленивые сессии" - сессия будет инициализирована только в случае попытки записать туда значение.
+
+Это также означает что Drupal теперь поддерживает следующие настройки PHP:
+
+- [session.sid_length](http://php.net/manual/en/session.configuration.php#ini.session.sid-length)
+- [session.sid_bits_per_character](http://php.net/manual/en/session.configuration.php#ini.session.sid-bits-per-character)
+
+### Идентификаторы сессии для анонимных пользователей
+
+Drupal старается избегать создания сессии для анонимных пользователей на столько, на сколько это возможно. Некоторые модули, например Flag, для своей работы требуют открытия сессии для всех пользователей.
+
+Подобные модули использовали ID сессии как идентификатор анонимного пользователя, что сейчас является устаревшим способом. Вместо этого, модули должны хранить уникальные идентификаторы в самой сессии, например:
+
+```php
+ if (!$session->has('core.tempstore.private.owner')) {
+    // This generates a unique identifier for the user
+    $session->set('core.tempstore.private.owner', Crypt::randomBytesBase64());
+ }
+```
+
+### SharedTempStore и SharedTempStoreFactory получили новые зависимости
+
+В `SharedTempStore` теперь [инжектится](../services/dependency-injection.md) [сервис](../services/services.md) `current_user`. 
+
+В `SharedTempStoreFactory` теперь инжектятся сервисы `current_user` и `session`.
+
+`ShareTempStoreFactory` больше не использует ID сессии в качестве идентификатора анонимного пользователя. Он генерирует свой уникальный ID когда это требуется. Данное значение хранится в сессии под ключом `core.tempstore.shared.owner`.
+
+### Drupal\Core\Session\SessionManager::migrateStoredSession() удалён
+
+Для того чтобы использовать встроенный в PHP генератор ID сессии был удалён метод `Drupal\Core\Session\SessionManager::migrateStoredSession()`. Замена не предоставляется, так как данный метод не был частью публичного API.
+
+Собственные реализации `SessionManagerInterface` которые расширяют `SessionManager` должны быть обновлены чтобы не вызывать данный метод. Генерация сессии теперь производится при помощи вызова `session_regenerate_id()` который производится в `\Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage::regenerate()`.
+
+Если имеются собственные реализации которые переопределяют метод `::migrateStoredSession()`, то данный код может быть удалён после того, как минимальное требование модуля будет Drupal 9.2.0.
+
+Код, использующий данный метод будет удалён, поэтому это не вызовет проблем. Если вам требуется мигрировать старую сессию в новую, вы по прежнему можете использовать `\Drupal::service('session')->migrate();`.
+
+## Все идентификаторы в запросах теперь должны быть обёрнуты в кавычки
+
+- [#3189880](https://www.drupal.org/project/drupal/issues/3189880)
+
+Имена столбцов и синонимы таблиц должны быть обёрнуты квадратными кавычками (`[]`) при использовании `Connection::query()`, `db_query()`, `ConditionInterface::where()` или `SelectInterface::addExpression()`. Это позволит слою баз данных корректно оборачивать данные идентификаторы.
+
+Например:
+
+```php
+$connection->query('SELECT [nid] FROM {node} WHERE [nid] = :id', [':id' => '1']);
+```
+
+Данное изменение позволит нам использовать различные типы баз данных без необходимости заводить список слов, которые не могут быть использованы в качестве названия таблиц или полей.
+
+Запросы построенные при помощи `Connection::select()`, `Connection::insert()`, `Connection::delete()`, `Connection::update()`, `Connection::upsert()`, `Connection::merge()` не требуют добавлять квадратные скобки при вызовах `::fields()` или `::condition()`. Новый способ записи должен быть использовать при добавлении "сырого" SQL значения в объект при помощи `::addExpression()`, `::where()` или `::having()`.
+
+Например:
+
+```php
+// Обратите внимание, что это плохой пример, так как использование ::condition() было бы лучше.
+$connection->select('node')->where('[nid] = :id', [':id' => '1']);
+```
+
+В крайне редких случаях запросам требуются квадратные скобки, например, при создании SQL функции. В таких ситуациях задайте параметр `$option['allow_square_brackets']` равным `TRUE`.
+
+Например:
+
+```php
+$connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, integer) RETURNS text AS
+  \'SELECT array_to_string((string_to_array($1, $2)) [1:$3], $2);\'
+  LANGUAGE \'sql\'',
+  [],
+  ['allow_delimiter_in_query' => TRUE, 'allow_square_brackets' => TRUE]
+);
+```
+
+### Изменения в драйверах БД
+
+Если вы являетесь автором или имеет свой собственный драйвер БД, вам необходимо задать значение свойству `\Drupal\Core\Database\Connection::$identifierQuotes`. Значение должно быть массивом из двух строк. Первое значение массива отвечает за символ начала цитаты, второе, его закрытие.
+
+В [Drupal 10](../../10/drupal-10.md) данное свойство станет обязательным. В [Drupal 9](../drupal-9.md), когда значение не задано, будут использованы пустые строки.
+
+Проверьте все переопределения `\Drupal\Core\Database\Connection::escapeDatabase()`, `\Drupal\Core\Database\Connection::escapeTable()`, `\Drupal\Core\Database\Connection::escapeField()` и `\Drupal\Core\Database\Connection::escapeAlias()`. Скорее всего, они больше не потребуются.
+
+Если драйвер использует `\Drupal\Core\Database\Connection::$escapedNames`, код должен быть обновлён с использованием либо `\Drupal\Core\Database\Connection::$escapedTables`, либо `\Drupal\Core\Database\Connection::$escapedFields`.
+
 ## AJAX
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
@@ -124,6 +212,10 @@ example.route:
 
 - [#3096781](https://www.drupal.org/project/drupal/issues/3096781) Зависимости `symfony/mime`, `symfony/var-dumper` и `symfony/phpunit-bridge` обновлены до версии 5.2. Добавлена новая зависимость `symfony/deprecation-contracts`.
 - [#3187025](https://www.drupal.org/project/drupal/issues/3187025) Зависимости ядра обновлены на 8.12.2020.
+
+## Cron System
+
+- [#2863464](https://www.drupal.org/project/drupal/issues/2863464) Логи [крона](../hooks/cron.md) теперь используют тип `info` вместо `notice`, для большего соответствия [RFC 5424](https://tools.ietf.org/html/rfc5424).
 
 ## Editor
 
