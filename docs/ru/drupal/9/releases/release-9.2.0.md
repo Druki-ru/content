@@ -213,9 +213,17 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3096781](https://www.drupal.org/project/drupal/issues/3096781) Зависимости `symfony/mime`, `symfony/var-dumper` и `symfony/phpunit-bridge` обновлены до версии 5.2. Добавлена новая зависимость `symfony/deprecation-contracts`.
 - [#3187025](https://www.drupal.org/project/drupal/issues/3187025) Зависимости ядра обновлены на 8.12.2020.
 
+## Contact
+
+- [#3173756](https://www.drupal.org/project/drupal/issues/3173756) Добавлена административная вкладка "Просмотр" для контактных форм.
+
 ## Cron System
 
 - [#2863464](https://www.drupal.org/project/drupal/issues/2863464) Логи [крона](../hooks/cron.md) теперь используют тип `info` вместо `notice`, для большего соответствия [RFC 5424](https://tools.ietf.org/html/rfc5424).
+
+## Database System
+
+- [#3129563](https://www.drupal.org/project/drupal/issues/3129563) Сторонние драйвера БД теперь могут переопределять стандартные реализации расширителей запросов: `Drupal\Core\Database\Query\PagerSelectExtender`, `Drupal\Core\Database\Query\TableSortExtender` и `Drupal\search\SearchQuery`.
 
 ## Editor
 
@@ -253,6 +261,9 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3187477](https://www.drupal.org/project/drupal/issues/3187477) Их источника `TermTranslation` удалено подключение трейта I18nQueryTrait.
 - [#2937989](https://www.drupal.org/project/drupal/issues/2937989) Источник данных `Node` для Drupal 6 и Drupal 7 теперь может принимать сразу несколько типов содержимого в качестве источника.
 - [#3189878](https://www.drupal.org/project/drupal/issues/3189878) Из плагина источника данных Drupal 7 File удалено свойство `temporaryPath`.
+- [#3189064](https://www.drupal.org/project/drupal/issues/3189064) Для плагинов источников данных расширяющих `SqlBase` зависимость `database` больше не сериализуется.
+- [#3187263](https://www.drupal.org/project/drupal/issues/3187263) Миграции для конфигурационных блоков `d6_block_translation` и `d7_block_translation` теперь запрашивают `config_translation` вместо `content_translation`.
+- [#3175729](https://www.drupal.org/project/drupal/issues/3175729) Завершена работа над мультиязычными миграцими (i18n). Все известные проблемы и задачи были закрыты.
 
 ## Node System
 
@@ -261,6 +272,7 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 ## Olivero
 
 - [#3187884](https://www.drupal.org/project/drupal/issues/3187884) Удален лишний условный оператор из `block--system-branding-block.html.twig`.
+- [#3180281](https://www.drupal.org/project/drupal/issues/3180281) Максимальная длина описания для элементов форм задана в 60 символов.
 
 ## PostgreSQL DB Driver
 
@@ -308,6 +320,7 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3184632](https://www.drupal.org/project/drupal/issues/3184632) Сравнения для submit инпутов с использованием xpath заменены на WebAssert.
 - [#3139431](https://www.drupal.org/project/drupal/issues/3139431) Вызовы устаревшего `AssertLegacyTrait::assertFieldsByValue()` заменены на современные аналоги.
 - [#3132919](https://www.drupal.org/project/drupal/issues/3132919) Вызовы `::assert*()` со сравнением в качестве ожидаемого значения заменены на `::assertNot*()`.
+- [#3191986](https://www.drupal.org/project/drupal/issues/3191986) Вызовы устаревшего `AssertLegacyTrait::assertNotIdentical()` заменены на современные аналоги.
 
 ## Symfony 5
 
@@ -329,3 +342,4 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3147135](https://www.drupal.org/project/drupal/issues/3147135) Исправлены множественные ошибки для соответствия стандарту `Drupal.Classes.UseGlobalClass`.
 - [#3189466](https://www.drupal.org/project/drupal/issues/3189466) Francesco Placella (plach) снял с себя полномочия мейнтейнера ядра.
 - [#3162827](https://www.drupal.org/project/drupal/issues/3162827) В модулях ядра, где использование хранилища сущности является опциональным, данные хранилища запрашиваются только в данной ситуации. Следовательно, в классах теперь хранится `entityStorage`, вместо хранилища конкретной сущности.
+- [#3162822](https://www.drupal.org/project/drupal/issues/3162822) Исправлены проблемы со словами включающие "reference" и CSPell.
