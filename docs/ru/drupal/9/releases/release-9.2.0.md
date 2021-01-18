@@ -194,6 +194,57 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 
 Если драйвер использует `\Drupal\Core\Database\Connection::$escapedNames`, код должен быть обновлён с использованием либо `\Drupal\Core\Database\Connection::$escapedTables`, либо `\Drupal\Core\Database\Connection::$escapedFields`.
 
+## Изменения связанные с восстановлением пароля
+
+- [#1521996](https://www.drupal.org/project/drupal/issues/1521996)
+
+В процесс восстановления пароля внесены некоторые изменения.
+
+### Восстановление пароля больше не раскрывает имя пользователя или что указанный email используется на сайте
+
+Форма восстановления пароля больше не отображения сообщение, указывающее, что введенное имя пользователя или email не существуют.
+
+#### Ранее
+
+Если указанное имя пользователя или email не использовалось на сайте, выводилось следующее сообщение:
+
+> unknown@example.com is not recognized as a username or an email address.
+
+Данное сообщение раскрывает информацию о том, что пользователь с указанными данными не зарегистрирован.
+
+Когда пользователь зарегистрирован и предоставлены корректные данные, выводилось следующее сообщение:
+
+> Further instructions have been sent to your email address.
+
+Данное сообщение можно использовать как подтверждение что указанные данные используются на сайте.
+
+#### После изменений
+
+Сообщения были изменены таким образом, чтобы из них было невозможно получить не подтверждающую, не опровергающую информацию.
+
+Если предоставлены некорректные имя пользователя (валидация на длину, допустимые символы и т.д.) или email, будет показано следующее сообщение:
+
+> The username or email address is invalid.
+
+Если валидация на имя пользователя или email прошла успешно, будет показано следующее сообщение:
+
+> If [username or email] is a valid account, an email will be sent with instructions to reset your password.
+
+### Изменена сигнатура UserPasswordForm
+
+Класс `\Drupal\user\Form\UserPasswordForm` теперь принимает два новых аргумента в конструкторе:
+
+```php
+   * @param \Drupal\Core\TypedData\TypedDataManagerInterface $typed_data_manager
+   *   The typed data manager.
+   * @param \Drupal\Component\Utility\EmailValidatorInterface $email_validator
+   *   The email validator service.
+```
+
+Если ваш код инициализирует данный класс самостоятельно без использования метода `::create()`, обновите свой код.
+
+Данные параметры опциональны в [Drupal 9](../drupal-9.md) но станут обязательными в [Drupal 10](../../10/drupal-10.md).
+
 ## AJAX
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
@@ -240,6 +291,10 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 ## Help Topics
 
 - [#3090257](https://www.drupal.org/project/drupal/issues/3090257) Добавлено больше тестов проверки синтаксиса.
+
+## JavaScript
+
+- [#3191497](https://www.drupal.org/project/drupal/issues/3191497) `cpre/jquery.ui.dialog` добавлена зависимость `core/jquery`.
 
 ## Layout Builder
 
