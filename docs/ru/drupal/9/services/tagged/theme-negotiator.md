@@ -72,7 +72,7 @@ final class SpecialTheme implements ThemeNegotiatorInterface {
   protected $requestStack;
 
   /**
-   * Constructs the TwigTweakExtension object.
+   * Constructs the RequestStack object.
    * 
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The request stack.
