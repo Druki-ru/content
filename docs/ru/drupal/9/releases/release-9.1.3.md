@@ -17,6 +17,10 @@ metatags:
 
 - [#2960353](https://www.drupal.org/project/drupal/issues/2960353) Кнопка "Предпросмотр" теперь учитывает настройки "Управления отображением формы".
 
+## Entity System
+
+- [#3190285](https://www.drupal.org/project/drupal/issues/3190285) Исправлена неполадка из-за которой `QueryAggregate` не преобразовывал поле являющимся аргументом функции агрегации.
+
 ## Layout Builder
 
 - [#3167901](https://www.drupal.org/project/drupal/issues/3167901) Если для секции не задана метка, будет указана дельта этой секции.
