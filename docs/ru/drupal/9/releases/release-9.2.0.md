@@ -216,7 +216,7 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 
 > Further instructions have been sent to your email address.
 
-Данное сообщение можно использовать как подтверждение что указанные данные используются на сайте.
+Данное сообщение можно использовать как подтверждение, что указанные данные используются на сайте.
 
 #### После изменений
 
@@ -244,6 +244,14 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 Если ваш код инициализирует данный класс самостоятельно без использования метода `::create()`, обновите свой код.
 
 Данные параметры опциональны в [Drupal 9](../drupal-9.md) но станут обязательными в [Drupal 10](../../10/drupal-10.md).
+
+## Добавлены хуки для изменения форм виджетов полей
+
+- [#2872162](https://www.drupal.org/project/drupal/issues/2872162)
+
+Представлено два новых [хука](../hooks/hooks.md) для редактирования форм используемые для настроек виджетов полей: `hook_field_widget_complete_form_alter()`, `hook_field_widget_complete_WIDGET_TYPE_form_alter()`, `hook_field_widget_single_element_form_alter()` и `hook_field_widget_single_element_WIDGET_TYPE_form_alter()`.
+
+Из-за введения новых хуков, следующие хуки помечены устаревшими: `hook_field_widget_multiple_form_alter()`, `hook_field_widget_multiple_WIDGET_TYPE_form_alter()`, `hook_field_widget_form_alter()` и `hook_field_widget_WIDGET_TYPE_form_alter()`.
 
 ## AJAX
 
@@ -275,6 +283,7 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 ## Database System
 
 - [#3129563](https://www.drupal.org/project/drupal/issues/3129563) Сторонние драйвера БД теперь могут переопределять стандартные реализации расширителей запросов: `Drupal\Core\Database\Query\PagerSelectExtender`, `Drupal\Core\Database\Query\TableSortExtender` и `Drupal\search\SearchQuery`.
+- [#3129534](https://www.drupal.org/project/drupal/issues/3129534) Добавлены новые методы `Drupal\Core\Database\Connection::getProvider()` и `Connection::enableModuleProvidingDatabaseDriver()`.
 
 ## Editor
 
@@ -375,6 +384,8 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3139431](https://www.drupal.org/project/drupal/issues/3139431) Вызовы устаревшего `AssertLegacyTrait::assertFieldsByValue()` заменены на современные аналоги.
 - [#3132919](https://www.drupal.org/project/drupal/issues/3132919) Вызовы `::assert*()` со сравнением в качестве ожидаемого значения заменены на `::assertNot*()`.
 - [#3191986](https://www.drupal.org/project/drupal/issues/3191986) Вызовы устаревшего `AssertLegacyTrait::assertNotIdentical()` заменены на современные аналоги.
+- [#3169171](https://www.drupal.org/project/drupal/issues/3169171) Исправлены сообщения о [депрекации](../../../deprecation.md).
+- [#3192221](https://www.drupal.org/project/drupal/issues/3192221) Изменён порядок передачи аргументов в вызовах `::assertIdentical()` для последующей замены на `::assertSame()`.
 
 ## Symfony 5
 
