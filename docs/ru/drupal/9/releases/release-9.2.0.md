@@ -318,7 +318,6 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3189878](https://www.drupal.org/project/drupal/issues/3189878) Из плагина источника данных Drupal 7 File удалено свойство `temporaryPath`.
 - [#3189064](https://www.drupal.org/project/drupal/issues/3189064) Для плагинов источников данных расширяющих `SqlBase` зависимость `database` больше не сериализуется.
 - [#3187263](https://www.drupal.org/project/drupal/issues/3187263) Миграции для конфигурационных блоков `d6_block_translation` и `d7_block_translation` теперь запрашивают `config_translation` вместо `content_translation`.
-- [#3175729](https://www.drupal.org/project/drupal/issues/3175729) Завершена работа над мультиязычными миграцими (i18n). Все известные проблемы и задачи были закрыты.
 
 ## Node System
 

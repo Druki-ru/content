@@ -25,11 +25,20 @@ metatags:
 
 - [#3167901](https://www.drupal.org/project/drupal/issues/3167901) Если для секции не задана метка, будет указана дельта этой секции.
 
+## Media System
+
+- [#3192059](https://www.drupal.org/project/drupal/issues/3192059) Теперь для определения, изменился ли источник, используется основное свойство поля источника, вместо всех значений, которые могут быть динамическими.
+
 ## Migration System
 
 - [#3151732](https://www.drupal.org/project/drupal/issues/3151732) [Плагины](../plugins/plugins.md) источников данных расширяющие `DrupalSqlBase` теперь могут указать в аннотации `minimum_version` значение с минимальной версией схемы БД.
 - [#2565931](https://www.drupal.org/project/drupal/issues/2565931) Длинные названия для бандлов комментариев из Drupal 7 теперь корректно обрабатываются.
 - [#3077322](https://www.drupal.org/project/drupal/issues/3077322) Добавлены тесты на `NULL` значения источников.
+- [#3175729](https://www.drupal.org/project/drupal/issues/3175729) Завершена работа над мультиязычными миграцими (i18n). Все известные проблемы и задачи были закрыты.
+
+## Node
+
+- [#3127250](https://www.drupal.org/project/drupal/issues/3127250) Предпросмотр материалов больше не кэшируется Dynamic Page Cache.
 
 ## Olivero
 
@@ -58,6 +67,7 @@ metatags:
 
 - [#3159788](https://www.drupal.org/project/drupal/issues/3159788) Удалены оставшиеся вызовы `AssertLegacyTrait::assertText()` и `AssertLegacyTrait::assertNoText()` с передачей `message` параметра.
 - [#3192553](https://www.drupal.org/project/drupal/issues/3192553) Вызовы `::assertIdentical(NULL)` заменены на `::assertNull()`.
+- [#3192427](https://www.drupal.org/project/drupal/issues/3192427) Вызовы `AssertLegacyTrait::assertNotEqual()` заменены на современные аналоги.
 
 ## Прочие изменения
 
