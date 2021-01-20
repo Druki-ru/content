@@ -13,6 +13,10 @@ metatags:
 > [!WARNING]
 > Данный релиз находится в разработке, актуальная версия [Drupal 9.1.2](release-9.1.2.md).
 
+## Claro
+
+- [#3192763](https://www.drupal.org/project/drupal/issues/3192763) Добавлен список мейнтенеров для темы.
+
 ## Contact
 
 - [#2960353](https://www.drupal.org/project/drupal/issues/2960353) Кнопка "Предпросмотр" теперь учитывает настройки "Управления отображением формы".
