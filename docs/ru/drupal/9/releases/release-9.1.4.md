@@ -77,3 +77,4 @@ metatags:
 
 - [#2635440](https://www.drupal.org/project/drupal/issues/2635440) Добавлено дополнительное описание о том, что на самом деле очищает метод `ContentEntityStorageBase::resetCache()`.
 - [#2717541](https://www.drupal.org/project/drupal/issues/2717541) Добавлена отсутствующая документация для `hook_block_alter()`.
+- [#3186009](https://www.drupal.org/project/drupal/issues/3186009) Исправлена неполадка приводящая к неопределёнными переменным.
