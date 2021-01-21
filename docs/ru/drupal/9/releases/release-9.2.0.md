@@ -386,6 +386,8 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3191986](https://www.drupal.org/project/drupal/issues/3191986) Вызовы устаревшего `AssertLegacyTrait::assertNotIdentical()` заменены на современные аналоги.
 - [#3169171](https://www.drupal.org/project/drupal/issues/3169171) Исправлены сообщения о [депрекации](../../../deprecation.md).
 - [#3192221](https://www.drupal.org/project/drupal/issues/3192221) Изменён порядок передачи аргументов в вызовах `::assertIdentical()` для последующей замены на `::assertSame()`.
+- [#3193600](https://www.drupal.org/project/drupal/issues/3193600) Вызовы `::assertEquals()` с использованием `NULL`, `TRUE` и `FALSE` заменены на более подходящие сравнения.
+- [#2867959](https://www.drupal.org/project/drupal/issues/2867959) Вызовы устаревшего `AssertLegacyTrait::assertIdentical()` заменены на современные аналоги.
 
 ## Symfony 5
 
@@ -408,3 +410,4 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3189466](https://www.drupal.org/project/drupal/issues/3189466) Francesco Placella (plach) снял с себя полномочия мейнтейнера ядра.
 - [#3162827](https://www.drupal.org/project/drupal/issues/3162827) В модулях ядра, где использование хранилища сущности является опциональным, данные хранилища запрашиваются только в данной ситуации. Следовательно, в классах теперь хранится `entityStorage`, вместо хранилища конкретной сущности.
 - [#3162822](https://www.drupal.org/project/drupal/issues/3162822) Исправлены проблемы со словами включающие "reference" и CSPell.
+- [#3193381](https://www.drupal.org/project/drupal/issues/3193381) Удалена информация о Workspace инициативе. Инициатива теперь является часть "[инициатив сообщества](https://www.drupal.org/community-initiatives/workflow-in-core-initiative)".
