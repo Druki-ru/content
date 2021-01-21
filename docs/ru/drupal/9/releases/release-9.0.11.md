@@ -1,10 +1,10 @@
 ---
-id: release-9.1.3
-title: 'Drupal 9.1.3'
-path: /9/releases/9.1.3
+id: release-9.0.11
+title: 'Drupal 9.0.11'
+path: /9/releases/9.0.11
 core: 9
 metatags:
-  title: 'Drupal 9.1.3: Список изменений'
+  title: 'Drupal 9.0.11: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2021-001.'
 ---
 
@@ -18,4 +18,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 9.1.3](https://www.drupal.org/project/drupal/releases/9.1.3) (англ.), drupal.org, 20 января 2020
+- [Drupal 9.0.11](https://www.drupal.org/project/drupal/releases/9.0.11) (англ.), drupal.org, 20 января 2020
