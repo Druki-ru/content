@@ -253,6 +253,23 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 
 Из-за введения новых хуков, следующие хуки помечены устаревшими: `hook_field_widget_multiple_form_alter()`, `hook_field_widget_multiple_WIDGET_TYPE_form_alter()`, `hook_field_widget_form_alter()` и `hook_field_widget_WIDGET_TYPE_form_alter()`.
 
+## Добавлен новый хук hook_entity_form_mode_alter()
+
+- [#2899847](https://www.drupal.org/project/drupal/issues/2899847)
+
+Представлен новый хук `hook_entity_form_mode_alter()` позволяющий модулям переопределять режим формы сущности.
+
+Например, разные режимы формы сущности могут быть применены основываясь на роли пользователя:
+
+```php
+function hook_entity_form_mode_alter(string &$form_mode, Drupal\Core\Entity\EntityInterface $entity): void {
+  // Change the form mode for users with Administrator role.
+  if ($entity->getEntityTypeId() == 'user' && $entity->hasRole('administrator')) {
+    $form_mode = 'my_custom_form_mode';
+  }
+}
+```
+
 ## AJAX
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
@@ -296,6 +313,10 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 ## Form API
 
 - [#2702233](https://www.drupal.org/project/drupal/issues/2702233) Добавлены JavaScript тесты для Form API `#states` состояний: `required`, `visible`, `invisible`, `expanded`, `checked`, `unchecked`.
+
+## Form System
+
+- [#3122912](https://www.drupal.org/project/drupal/issues/3122912) Вызовы `t()` заменены на `$this->t()`.
 
 ## Help Topics
 
