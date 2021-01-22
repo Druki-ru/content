@@ -386,7 +386,6 @@ $connection->query('CREATE OR REPLACE FUNCTION "substring_index"(text, text, int
 - [#3191986](https://www.drupal.org/project/drupal/issues/3191986) Вызовы устаревшего `AssertLegacyTrait::assertNotIdentical()` заменены на современные аналоги.
 - [#3169171](https://www.drupal.org/project/drupal/issues/3169171) Исправлены сообщения о [депрекации](../../../deprecation.md).
 - [#3192221](https://www.drupal.org/project/drupal/issues/3192221) Изменён порядок передачи аргументов в вызовах `::assertIdentical()` для последующей замены на `::assertSame()`.
-- [#3193600](https://www.drupal.org/project/drupal/issues/3193600) Вызовы `::assertEquals()` с использованием `NULL`, `TRUE` и `FALSE` заменены на более подходящие сравнения.
 - [#2867959](https://www.drupal.org/project/drupal/issues/2867959) Вызовы устаревшего `AssertLegacyTrait::assertIdentical()` заменены на современные аналоги.
 
 ## Symfony 5

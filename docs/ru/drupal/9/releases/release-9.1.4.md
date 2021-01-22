@@ -56,6 +56,7 @@ metatags:
 
 - [#2784739](https://www.drupal.org/project/drupal/issues/2784739) Views теперь использует корректные операторы для PostgreSQL. Для нечувствительных к регистру фильтрация будет использован `ILIKE` вместо `LIKE` и `NOT ILIKE` вместо `NOT LIKE`.
 - [#3012704](https://www.drupal.org/project/drupal/issues/3012704) Исправлена неполадка из-за которой настройка "Элементов на страницу" не сохранялась корректно при создании отображения типа "Блок".
+- [#3000383](https://www.drupal.org/project/drupal/issues/3000383) Улучшены тесты для Views AJAX запросов с двойным слэшем в начале пути.
 
 ## Workspaces
 
@@ -72,6 +73,7 @@ metatags:
 - [#3159788](https://www.drupal.org/project/drupal/issues/3159788) Удалены оставшиеся вызовы `AssertLegacyTrait::assertText()` и `AssertLegacyTrait::assertNoText()` с передачей `message` параметра.
 - [#3192553](https://www.drupal.org/project/drupal/issues/3192553) Вызовы `::assertIdentical(NULL)` заменены на `::assertNull()`.
 - [#3192427](https://www.drupal.org/project/drupal/issues/3192427) Вызовы `AssertLegacyTrait::assertNotEqual()` заменены на современные аналоги.
+- [#3193600](https://www.drupal.org/project/drupal/issues/3193600) Вызовы `::assertEquals()` с использованием `NULL`, `TRUE` и `FALSE` заменены на более подходящие сравнения.
 
 ## Прочие изменения
 
