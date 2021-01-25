@@ -17,6 +17,10 @@ metatags:
 
 - [#3192763](https://www.drupal.org/project/drupal/issues/3192763) Добавлен список мейнтенеров для темы.
 
+## Comment
+
+- [#3193771](https://www.drupal.org/project/drupal/issues/3193771) Исправлена неполадка приводящая к исключению `PluginNotFoundException`.
+
 ## Contact
 
 - [#2960353](https://www.drupal.org/project/drupal/issues/2960353) Кнопка "Предпросмотр" теперь учитывает настройки "Управления отображением формы".
@@ -24,6 +28,10 @@ metatags:
 ## Entity System
 
 - [#3190285](https://www.drupal.org/project/drupal/issues/3190285) Исправлена неполадка из-за которой `QueryAggregate` не преобразовывал поле являющимся аргументом функции агрегации.
+
+## Form API
+
+- [#2702233](https://www.drupal.org/project/drupal/issues/2702233) Добавлены JavaScript тесты для Form API `#states` состояний: `required`, `visible`, `invisible`, `expanded`, `checked`, `unchecked`.
 
 ## Layout Builder
 
@@ -47,6 +55,10 @@ metatags:
 ## Olivero
 
 - [#3180086](https://www.drupal.org/project/drupal/issues/3180086) Меню теперь отображает только один выпадающий список. Если до этого был открыт другой, он будет скрыт.
+
+## Options
+
+- [#3190231](https://www.drupal.org/project/drupal/issues/3190231) Исправлена ошибка в примере для хука `hook_options_list_alter()`.
 
 ## SQLite драйвер БД
 

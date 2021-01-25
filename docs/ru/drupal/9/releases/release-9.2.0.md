@@ -310,10 +310,6 @@ function hook_entity_form_mode_alter(string &$form_mode, Drupal\Core\Entity\Enti
 
 - [#3138631](https://www.drupal.org/project/drupal/issues/3138631) Если поле содержит некорректную связь, сообщение об ошибке теперь будет более точно сообщать с чем связана проблема.
 
-## Form API
-
-- [#2702233](https://www.drupal.org/project/drupal/issues/2702233) Добавлены JavaScript тесты для Form API `#states` состояний: `required`, `visible`, `invisible`, `expanded`, `checked`, `unchecked`.
-
 ## Form System
 
 - [#3122912](https://www.drupal.org/project/drupal/issues/3122912) Вызовы `t()` заменены на `$this->t()`.
