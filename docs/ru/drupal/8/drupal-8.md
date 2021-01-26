@@ -26,6 +26,7 @@ metatags:
 - [Drupal 9](../9/drupal-9.md)
 - [Установка Drupal 8](installation.md)
 - [Административный интерфейс](admin/admin.md)
+- [Список релизов Drupal 8](releases/releases.md)
 
 ## Ссылки
 
