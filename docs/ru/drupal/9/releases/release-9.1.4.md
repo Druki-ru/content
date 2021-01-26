@@ -13,6 +13,17 @@ metatags:
 > [!WARNING]
 > Данный релиз находится в разработке, актуальная версия [Drupal 9.1.2](release-9.1.2.md).
 
+## Теперь можно задавать сервисам синонимы
+
+- [#2828099](https://www.drupal.org/project/drupal/issues/2828099)
+
+Исправлена неполадка, которая присутствовала с первых релизов [Drupal 8](../../8/drupal-8.md) и не позволяла создавать [сервисы](../services/services.md) в качестве алиасов для других. Данная ошибка исправлена и теперь вы можете создавать сервисы-синонимы:
+
+```yaml
+services:
+  service1: '@service2'
+```
+
 ## Claro
 
 - [#3192763](https://www.drupal.org/project/drupal/issues/3192763) Добавлен список мейнтенеров для темы.
@@ -46,7 +57,8 @@ metatags:
 - [#3151732](https://www.drupal.org/project/drupal/issues/3151732) [Плагины](../plugins/plugins.md) источников данных расширяющие `DrupalSqlBase` теперь могут указать в аннотации `minimum_version` значение с минимальной версией схемы БД.
 - [#2565931](https://www.drupal.org/project/drupal/issues/2565931) Длинные названия для бандлов комментариев из Drupal 7 теперь корректно обрабатываются.
 - [#3077322](https://www.drupal.org/project/drupal/issues/3077322) Добавлены тесты на `NULL` значения источников.
-- [#3175729](https://www.drupal.org/project/drupal/issues/3175729) Завершена работа над мультиязычными миграцими (i18n). Все известные проблемы и задачи были закрыты.
+- [#3175729](https://www.drupal.org/project/drupal/issues/3175729) Завершена работа над мультиязычными миграциями (i18n). Все известные проблемы и задачи были закрыты.
+- [#3191490](https://www.drupal.org/project/drupal/issues/3191490) Улучшена миграция заголовков блоков со значением `<none>`. При миграции данное значение будет заменяться на настройку блока `label_display` равным `0`.
 
 ## Node
 
@@ -60,6 +72,10 @@ metatags:
 
 - [#3190231](https://www.drupal.org/project/drupal/issues/3190231) Исправлена ошибка в примере для хука `hook_options_list_alter()`.
 
+## Serialization
+
+- [#3054510](https://www.drupal.org/project/drupal/issues/3054510) Исправлена документация для `NormalizerBase::supportsDenormalization()`.
+
 ## SQLite драйвер БД
 
 - [#3159073](https://www.drupal.org/project/drupal/issues/3159073) Драйвер теперь использует нативные возможности БД для `UPSERT` операций.
@@ -69,6 +85,7 @@ metatags:
 - [#2784739](https://www.drupal.org/project/drupal/issues/2784739) Views теперь использует корректные операторы для PostgreSQL. Для нечувствительных к регистру фильтрация будет использован `ILIKE` вместо `LIKE` и `NOT ILIKE` вместо `NOT LIKE`.
 - [#3012704](https://www.drupal.org/project/drupal/issues/3012704) Исправлена неполадка из-за которой настройка "Элементов на страницу" не сохранялась корректно при создании отображения типа "Блок".
 - [#3000383](https://www.drupal.org/project/drupal/issues/3000383) Улучшены тесты для Views AJAX запросов с двойным слэшем в начале пути.
+- [#3167733](https://www.drupal.org/project/drupal/issues/3167733) Улучшена проверка на виджет поля которая могла приводить к нотисам на PHP 7.4.
 
 ## Workspaces
 
@@ -86,6 +103,8 @@ metatags:
 - [#3192553](https://www.drupal.org/project/drupal/issues/3192553) Вызовы `::assertIdentical(NULL)` заменены на `::assertNull()`.
 - [#3192427](https://www.drupal.org/project/drupal/issues/3192427) Вызовы `AssertLegacyTrait::assertNotEqual()` заменены на современные аналоги.
 - [#3193600](https://www.drupal.org/project/drupal/issues/3193600) Вызовы `::assertEquals()` с использованием `NULL`, `TRUE` и `FALSE` заменены на более подходящие сравнения.
+- [#3192221](https://www.drupal.org/project/drupal/issues/3192221) Изменён порядок передачи аргументов в вызовах `::assertIdentical()` для последующей замены на `::assertSame()`.
+- [#2867959](https://www.drupal.org/project/drupal/issues/2867959) Вызовы устаревшего `AssertLegacyTrait::assertIdentical()` заменены на современные аналоги.
 
 ## Прочие изменения
 
