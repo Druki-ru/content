@@ -347,6 +347,7 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 
 - [#3129563](https://www.drupal.org/project/drupal/issues/3129563) Сторонние драйвера БД теперь могут переопределять стандартные реализации расширителей запросов: `Drupal\Core\Database\Query\PagerSelectExtender`, `Drupal\Core\Database\Query\TableSortExtender` и `Drupal\search\SearchQuery`.
 - [#3129534](https://www.drupal.org/project/drupal/issues/3129534) Добавлены новые методы `Drupal\Core\Database\Connection::getProvider()` и `Connection::enableModuleProvidingDatabaseDriver()`.
+- [#3192951](https://www.drupal.org/project/drupal/issues/3192951) Вызовы методов с передачей FQN класса (`'Drupal\Core\Database\Query\PagerSelectExtender'`) заменены на константу (`PagerSelectExtender::class`).
 
 ## Editor
 
@@ -390,6 +391,7 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 - [#3189878](https://www.drupal.org/project/drupal/issues/3189878) Из плагина источника данных Drupal 7 File удалено свойство `temporaryPath`.
 - [#3189064](https://www.drupal.org/project/drupal/issues/3189064) Для плагинов источников данных расширяющих `SqlBase` зависимость `database` больше не сериализуется.
 - [#3187263](https://www.drupal.org/project/drupal/issues/3187263) Миграции для конфигурационных блоков `d6_block_translation` и `d7_block_translation` теперь запрашивают `config_translation` вместо `content_translation`.
+- [#3194385](https://www.drupal.org/project/drupal/issues/3194385) Тест для d6 миграций `MigrateUserPictureFileTest` объединён в `MigrateUserPictureD6FileTest`
 
 ## Node System
 
@@ -452,6 +454,7 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 ## Symfony 5
 
 - [#3188056](https://www.drupal.org/project/drupal/issues/3188056) Обновлён код, который вызывал сериалайзер Symfony с `NULL` в качестве формата.
+- [#3185603](https://www.drupal.org/project/drupal/issues/3185603) Добавлен `ConstraintFactory` для инициализации констрейн плагинов Drupal.
 
 ## Прочие изменения
 
