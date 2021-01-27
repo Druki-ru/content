@@ -316,6 +316,17 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 
 Если вы хотите в дальнейшем использовать старое поведение, в поле настройки приватной директории укажите то же значение, что и для публичной.
 
+## Добавлен метод для чистки информации о БД в бэктрейсах
+
+- [#2999962](https://www.drupal.org/project/drupal/issues/2999962)
+
+Добавлен новый статический метод `Drupal\Core\Database\Log::removeDatabaseEntries()` который принимает следующие аргументы:
+
+- `$backtrace`: Результат вызова `debug_backtrace()`.
+- `$driver_namespace`: Пространство имён драйвера БД.
+
+Данный метод удалит из бэктрейса всю информацию связанную с обращением к БД с использованием указанного драйвера.
+
 ## AJAX
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
@@ -391,7 +402,8 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 - [#3189878](https://www.drupal.org/project/drupal/issues/3189878) Из плагина источника данных Drupal 7 File удалено свойство `temporaryPath`.
 - [#3189064](https://www.drupal.org/project/drupal/issues/3189064) Для плагинов источников данных расширяющих `SqlBase` зависимость `database` больше не сериализуется.
 - [#3187263](https://www.drupal.org/project/drupal/issues/3187263) Миграции для конфигурационных блоков `d6_block_translation` и `d7_block_translation` теперь запрашивают `config_translation` вместо `content_translation`.
-- [#3194385](https://www.drupal.org/project/drupal/issues/3194385) Тест для d6 миграций `MigrateUserPictureFileTest` объединён в `MigrateUserPictureD6FileTest`
+- [#3194385](https://www.drupal.org/project/drupal/issues/3194385) Тест для d6 миграций `MigrateUserPictureFileTest` объединён в `MigrateUserPictureD6FileTest`ю
+- [#3190504](https://www.drupal.org/project/drupal/issues/3190504) Исправлена документация к плагинам источников нод.
 
 ## Node System
 
