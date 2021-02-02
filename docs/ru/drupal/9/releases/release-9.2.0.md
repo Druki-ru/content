@@ -327,6 +327,67 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 
 Данный метод удалит из бэктрейса всю информацию связанную с обращением к БД с использованием указанного драйвера.
 
+## Плагин Composer drupal/core-vendor-hardening теперь позволяет чистить пакеты за пределами vendor директории 
+
+- [#3108262](https://www.drupal.org/project/drupal/issues/3108262)
+
+Ранее, [Composer](../../../composer) плагин `drupal/core-vendor-hardening` подразумевал что все пакеты установленные через Composer находятся в `vendor` директории. Это поведение приводило к тому, что пакеты, установленные при помощи `composer/installers` не могли быть очищены данным плагином. 
+
+Начиная с данной версии, все пакеты установленные за пределами `vendor` директории с использованием `composer/installers` также могут быть очищены.
+
+## Расширения файлов теперь могут содержать нижнее подчёркивание
+
+- [#3166044](https://www.drupal.org/project/drupal/issues/3166044)
+
+Добавлена возможность указывать расширения файлов содержащие нижнее подчёркивание (`_`).
+
+**Ранее:**
+
+- Недопустимый формат:
+  - example.x_t
+  - example.x.t
+  - example.x_y_t
+  
+**Сейчас:**
+
+- Допустимый формат:
+  - example.x_t
+  - example.x.t
+  - example.x_y_t
+- Недопустимый формат:
+  - example.x_.t
+  - example.x._t
+  - example.xt_
+  - example.x__t
+  - example._xt-
+
+## Сервисы созданные программно должны указывать публичные они или приватные
+
+- [#3187074](https://www.drupal.org/project/drupal/issues/3187074)
+
+[Создание сервисов](../services/create-service.md) без указания области видимости помечено устаревшим и не будет поддерживаться в [Drupal 10](../../10/drupal-10.md).
+
+В Symfony 5 все сервисы по умолчанию являются приватными, тогда как Drupal ожидает что сервисы по умолчанию публичные. Drupal 9 использует Symfony ^4.4, тогда как Drupal 10 будет использовать Symfony ^5.4.
+
+Таким образом, все сервисы объявляемые в `MODULE.services.yml` становятся публичными по умолчанию (`public: true`), если не указано обратного.
+
+Сервисы созданные программно, будут приватными по умолчанию:
+
+```php
+$container = \Drupal::getContainer();
+$definition = new Definition(RouteProvider::class);
+$container->setDefinition($id, $definition);
+```
+
+Если вы хотите сохранить текущее поведение, обновите код и явно укажите что сервис публичный:
+
+```php
+$container = \Drupal::getContainer();
+$definition = new Definition(RouteProvider::class);
+$definition->setPublic(TRUE);
+$container->setDefinition($id, $definition);
+```
+
 ## AJAX
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
@@ -404,6 +465,7 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 - [#3187263](https://www.drupal.org/project/drupal/issues/3187263) Миграции для конфигурационных блоков `d6_block_translation` и `d7_block_translation` теперь запрашивают `config_translation` вместо `content_translation`.
 - [#3194385](https://www.drupal.org/project/drupal/issues/3194385) Тест для d6 миграций `MigrateUserPictureFileTest` объединён в `MigrateUserPictureD6FileTest`ю
 - [#3190504](https://www.drupal.org/project/drupal/issues/3190504) Исправлена документация к плагинам источников нод.
+- [#2814953](https://www.drupal.org/project/drupal/issues/2814953) Добавлены миграции для полей связи с `node` и `user` из Drupal 7.
 
 ## Node System
 
@@ -486,3 +548,4 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 - [#3162827](https://www.drupal.org/project/drupal/issues/3162827) В модулях ядра, где использование хранилища сущности является опциональным, данные хранилища запрашиваются только в данной ситуации. Следовательно, в классах теперь хранится `entityStorage`, вместо хранилища конкретной сущности.
 - [#3162822](https://www.drupal.org/project/drupal/issues/3162822) Исправлены проблемы со словами включающие "reference" и CSPell.
 - [#3193381](https://www.drupal.org/project/drupal/issues/3193381) Удалена информация о Workspace инициативе. Инициатива теперь является часть "[инициатив сообщества](https://www.drupal.org/community-initiatives/workflow-in-core-initiative)".
+- [#3195571](https://www.drupal.org/project/drupal/issues/3195571) Константа `Drupal\Core\Routing\RouteCompiler::REGEX_DELIMITER` помечена устаревшей.
