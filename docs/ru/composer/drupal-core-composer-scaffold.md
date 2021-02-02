@@ -270,6 +270,7 @@ Scaffold файлы хранятся в тех проектах, которые 
 - [drupal/recommended-project](drupal-recommended-project.md)
 - [drupal/legacy-project](drupal-legacy-project.md)
 - [drupal/core-recommended](drupal-core-recommended.md)
+- [drupal/core-vendor-hardening](drupal-core-vendor-hardening.md)
 
 ## Ссылки
 

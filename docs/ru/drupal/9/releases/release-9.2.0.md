@@ -331,7 +331,7 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 
 - [#3108262](https://www.drupal.org/project/drupal/issues/3108262)
 
-Ранее, [Composer](../../../composer) плагин `drupal/core-vendor-hardening` подразумевал что все пакеты установленные через Composer находятся в `vendor` директории. Это поведение приводило к тому, что пакеты, установленные при помощи `composer/installers` не могли быть очищены данным плагином. 
+Ранее, [Composer](../../../composer) плагин [drupal/core-vendor-hardening](../../../composer/drupal-core-vendor-hardening.md) подразумевал что все пакеты установленные через Composer находятся в `vendor` директории. Это поведение приводило к тому, что пакеты, установленные при помощи `composer/installers` не могли быть очищены данным плагином. 
 
 Начиная с данной версии, все пакеты установленные за пределами `vendor` директории с использованием `composer/installers` также могут быть очищены.
 
