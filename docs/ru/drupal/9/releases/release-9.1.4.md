@@ -116,3 +116,5 @@ services:
 - [#3186009](https://www.drupal.org/project/drupal/issues/3186009) Исправлена неполадка приводящая к неопределённым переменным.
 - [#3170260](https://www.drupal.org/project/ideas/issues/3170260) Добавлена информация об инициативе "Decoupled Menus".
 - [#3191468](https://www.drupal.org/project/drupal/issues/3191468) Упразднена инициатива "Admin UI and JavaScript Modernisation" в пользу инициативы "Decoupled Menus".
+- [#3194562](https://www.drupal.org/project/drupal/issues/3194562) Добавлены фикстуры с дампами базы данных для [Drupal 9.0.0](../releases/release-9.0.0.md).
+- [#3187241](https://www.drupal.org/project/drupal/issues/3187241) Brian Gilbert (realityloop) добавлен в качестве временного координатора Drupal Core.
