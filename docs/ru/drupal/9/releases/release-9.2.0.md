@@ -388,6 +388,10 @@ $definition->setPublic(TRUE);
 $container->setDefinition($id, $definition);
 ```
 
+## Aggregator
+
+- [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
+
 ## AJAX
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
@@ -428,6 +432,7 @@ $container->setDefinition($id, $definition);
 ## Entity System
 
 - [#3138631](https://www.drupal.org/project/drupal/issues/3138631) Если поле содержит некорректную связь, сообщение об ошибке теперь будет более точно сообщать с чем связана проблема.
+- [#3195628](https://www.drupal.org/project/drupal/issues/3195628) `CreateSampleEntityTest` больше не устанавливает схему `file` сущности дважды.
 
 ## Form System
 
@@ -524,11 +529,16 @@ $container->setDefinition($id, $definition);
 - [#3132919](https://www.drupal.org/project/drupal/issues/3132919) Вызовы `::assert*()` со сравнением в качестве ожидаемого значения заменены на `::assertNot*()`.
 - [#3191986](https://www.drupal.org/project/drupal/issues/3191986) Вызовы устаревшего `AssertLegacyTrait::assertNotIdentical()` заменены на современные аналоги.
 - [#3169171](https://www.drupal.org/project/drupal/issues/3169171) Исправлены сообщения о [депрекации](../../../deprecation.md).
+- [#3178248](https://www.drupal.org/project/drupal/issues/3178248) Удалён метод `StandardInstallerTest::curlExec()`, так как нигде не используется.
 
 ## Symfony 5
 
 - [#3188056](https://www.drupal.org/project/drupal/issues/3188056) Обновлён код, который вызывал сериалайзер Symfony с `NULL` в качестве формата.
 - [#3185603](https://www.drupal.org/project/drupal/issues/3185603) Добавлен `ConstraintFactory` для инициализации констрейн плагинов Drupal.
+
+## Symfony 6
+
+- [#3195533](https://www.drupal.org/project/drupal/issues/3195533) Константа `Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL` помечена устаревшей. Используйте либо `HEADER_X_FORWARDED_FOR | HEADER_X_FORWARDED_HOST | HEADER_X_FORWARDED_PORT | HEADER_X_FORWARDED_PROTO`, либо `HEADER_X_FORWARDED_AWS_ELB`, либо `HEADER_X_FORWARDED_TRAEFIK`.
 
 ## Прочие изменения
 
@@ -549,3 +559,4 @@ $container->setDefinition($id, $definition);
 - [#3162822](https://www.drupal.org/project/drupal/issues/3162822) Исправлены проблемы со словами включающие "reference" и CSPell.
 - [#3193381](https://www.drupal.org/project/drupal/issues/3193381) Удалена информация о Workspace инициативе. Инициатива теперь является часть "[инициатив сообщества](https://www.drupal.org/community-initiatives/workflow-in-core-initiative)".
 - [#3195571](https://www.drupal.org/project/drupal/issues/3195571) Константа `Drupal\Core\Routing\RouteCompiler::REGEX_DELIMITER` помечена устаревшей.
+- [#3192231](https://www.drupal.org/project/drupal/issues/3192231) Исправлена работа теста `UnroutedUrlTest` на dev версиях PHP.
