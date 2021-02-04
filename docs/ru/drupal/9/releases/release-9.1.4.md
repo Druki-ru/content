@@ -8,10 +8,7 @@ metatags:
   description: 'Список изменений Drupal 9.1.4.'
 ---
 
-**Дата релиза**: 3 февраля 2021
-
-> [!WARNING]
-> Данный релиз находится в разработке, актуальная версия [Drupal 9.1.2](release-9.1.2.md).
+**Дата релиза**: 4 февраля 2021
 
 ## Теперь можно задавать сервисам синонимы
 
@@ -118,3 +115,7 @@ services:
 - [#3191468](https://www.drupal.org/project/drupal/issues/3191468) Упразднена инициатива "Admin UI and JavaScript Modernisation" в пользу инициативы "Decoupled Menus".
 - [#3194562](https://www.drupal.org/project/drupal/issues/3194562) Добавлены фикстуры с дампами базы данных для [Drupal 9.0.0](../releases/release-9.0.0.md).
 - [#3187241](https://www.drupal.org/project/drupal/issues/3187241) Brian Gilbert (realityloop) добавлен в качестве временного координатора Drupal Core.
+
+## Ссылки
+
+- [Drupal 9.1.4](https://www.drupal.org/project/drupal/releases/9.1.4) (англ.), drupal.org, 4 февраля 2020
