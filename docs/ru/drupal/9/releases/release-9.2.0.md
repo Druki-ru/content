@@ -388,6 +388,35 @@ $definition->setPublic(TRUE);
 $container->setDefinition($id, $definition);
 ```
 
+## Плагин обработчик MachineName теперь позволяет указывать регулярное выражение
+
+- [#3157004](https://www.drupal.org/project/drupal/issues/3157004) 
+
+Регулярное выражение используемое в плагине обработчике миграций `MachineName` теперь может быть настроено используя свойство `replace_pattern`.
+
+**Ранее** использовалось конкретное регулярное выражение `/[^a-z0-9_]+/`.
+
+```yaml
+process:
+  foo:
+    plugin: machine_name
+    source: foo
+```
+
+Пример выше трансформировал бы значение `the.bar` в `the_bar`.
+
+**Теперь** вы можете указать собственное регулярное выражение:
+
+```yaml
+process:
+  foo:
+    plugin: machine_name
+    source: foo
+    replace_pattern: '/[^a-z0-9_.]+/'
+```
+
+Пример выше позволит получить в качестве результата `the.bar`.
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -450,6 +479,7 @@ $container->setDefinition($id, $definition);
 ## Layout Builder
 
 - [#3180674](https://www.drupal.org/project/drupal/issues/3180674) Удалён неиспользуемый модуль `layout_builder_overrides_test`.
+- [#3115503](https://www.drupal.org/project/drupal/issues/3115503) `\Drupal\Core\Layout\LayoutInterface` теперь расширяет `\Drupal\Core\Plugin\ContextAwarePluginInterface`. Это означает что Layout [плагины](../plugins/plugins.md) теперь контекстнозависимые.
 
 ## MySQL DB Driver
 
@@ -481,6 +511,9 @@ $container->setDefinition($id, $definition);
 
 - [#3187884](https://www.drupal.org/project/drupal/issues/3187884) Удален лишний условный оператор из `block--system-branding-block.html.twig`.
 - [#3180281](https://www.drupal.org/project/drupal/issues/3180281) Максимальная длина описания для элементов форм задана в 60 символов.
+- [#3173007](https://www.drupal.org/project/drupal/issues/3173007) Внесены изменения в разметку и `comments.pcss.css` для соответствия БЭМ методологии.
+- [#3176893](https://www.drupal.org/project/drupal/issues/3176893) Внесены изменения в разметку и `book.pcss.css` для соответствия БЭМ методологии.
+- [#3173014](https://www.drupal.org/project/drupal/issues/3173014) Внесены изменения в разметку и стили элементов навигации для соответствия БЭМ методологии.
 
 ## PostgreSQL DB Driver
 
