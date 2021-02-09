@@ -13,6 +13,31 @@ metatags:
 > [!WARNING]
 > Данная версия находится в разработке, актуальная версия [Drupal 9.1.4](release-9.1.4.md).
 
+## Добавлен опциональный параметр для StatementInterface::fetchObject()
+
+- [#3128548](https://www.drupal.org/project/drupal/issues/3128548)
+
+Метод `Drupal\Core\Database\StatementPrefetch::fetchObject()` и его интерфейс `Drupal\Core\Database\StatementInterface::fetchObject()` мимикируют под реализацию `fertchObject()` [в PDO](https://www.php.net/manual/en/pdostatement.fetchobject.php). Для того чтобы они были идентичны добавлен второй параметр:
+
+```php
+  /**
+   * Fetches the next row and returns it as an object.
+   *
+   * The object will be of the class specified by StatementInterface::setFetchMode()
+   * or stdClass if not specified.
+   *
+   * @param string|null $class_name
+   *   Name of the created class.
+   * @param array $constructor_args
+   *   Elements of this array are passed to the constructor.
+   *
+   * @return mixed
+   *   The object of specified class or \stdClass if not specified. Returns
+   *   FALSE or NULL if there is no next row.
+   */
+  public function fetchObject($class_name = NULL, $constructor_args = []);
+```
+
 ## Configuration System
 
 - [#3196050](https://www.drupal.org/project/drupal/issues/3196050) Исправлена документация для `StorageConfigBase::validateValue()`.
@@ -25,12 +50,22 @@ metatags:
 
 - [#2693485](https://www.drupal.org/project/drupal/issues/2693485) Пункты добавления материалов (`/node/add`) теперь сортируются по метке, а не по машинному имени.
 
+## Form System
+
+- [#997826](https://www.drupal.org/project/drupal/issues/997826) Исправлена работа свойства `#state` для элемента формы `text_format`.
+
 ## Migration System
 
 - [#2558857](https://www.drupal.org/project/drupal/issues/2558857) Оптимизирована очистка памяти после загрузки сущностей.
 - [#3165944](https://www.drupal.org/project/drupal/issues/3165944) Миграция `d7_shortcut` больше не указывает в качестве зависимости миграцию `d7_menu_links`.
 - [#3189476](https://www.drupal.org/project/drupal/issues/3189476) Миграция `node_translation_menu_links` теперь имеет опциональные зависимости `d6_menu` и `d7_menu`.
 - [#3196177](https://www.drupal.org/project/drupal/issues/3196177) Добавлена документация для плагинов источников `VariableMultiRow`, `Variable`, `d6/VariableTranslation` и `d7/VariableTranslation`.
+- [#3187415](https://www.drupal.org/project/drupal/issues/3187415) Миграции переводов для системных настроек теперь зависят от базовых миграций этих настроек.
+- [#3176394](https://www.drupal.org/project/drupal/issues/3176394) Типы комментариев больше не мигрируют если в источнике отключен модуль `comment`.
+
+## Olivero
+
+- [#3182711](https://www.drupal.org/project/drupal/issues/3182711) Блок "помощи" теперь располагается в регионе `content_above` вместо несуществующего `help`.
 
 ## Тестирование
 
