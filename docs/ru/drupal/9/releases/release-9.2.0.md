@@ -417,6 +417,17 @@ process:
 
 Пример выше позволит получить в качестве результата `the.bar`.
 
+## GDToolkit теперь поддерживает WebP
+
+- [#2340699](https://www.drupal.org/project/drupal/issues/2340699)
+
+PHP расширение GD поддерживает формат WebP начиная с версии [7.0.10](https://www.php.net/manual/en/function.imagetypes.php#refsect1-function.imagetypes-changelog).
+
+Drupal ядро теперь может создавать изображения в данном формате.
+
+> [!NOTE]
+> Для корректной работы, расширение GD должно быть скомпилировано с поддержкой WebP. Чтобы убедиться, что ваш сервер поддерживает данную возможность, обратитесь к странице информации о состоянии (`admin/reports/status/php#module_gd`).
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -453,6 +464,7 @@ process:
 - [#3129563](https://www.drupal.org/project/drupal/issues/3129563) Сторонние драйвера БД теперь могут переопределять стандартные реализации расширителей запросов: `Drupal\Core\Database\Query\PagerSelectExtender`, `Drupal\Core\Database\Query\TableSortExtender` и `Drupal\search\SearchQuery`.
 - [#3129534](https://www.drupal.org/project/drupal/issues/3129534) Добавлены новые методы `Drupal\Core\Database\Connection::getProvider()` и `Connection::enableModuleProvidingDatabaseDriver()`.
 - [#3192951](https://www.drupal.org/project/drupal/issues/3192951) Вызовы методов с передачей FQN класса (`'Drupal\Core\Database\Query\PagerSelectExtender'`) заменены на константу (`PagerSelectExtender::class`).
+- [#3089326](https://www.drupal.org/project/drupal/issues/3089326) Методу `Drupal\Core\Database\Log::log()` добавлен новый опциональный параметр `start`.
 
 ## Editor
 
@@ -563,6 +575,7 @@ process:
 - [#3191986](https://www.drupal.org/project/drupal/issues/3191986) Вызовы устаревшего `AssertLegacyTrait::assertNotIdentical()` заменены на современные аналоги.
 - [#3169171](https://www.drupal.org/project/drupal/issues/3169171) Исправлены сообщения о [депрекации](../../../deprecation.md).
 - [#3178248](https://www.drupal.org/project/drupal/issues/3178248) Удалён метод `StandardInstallerTest::curlExec()`, так как нигде не используется.
+- [#2795567](https://www.drupal.org/project/drupal/issues/2795567) Для тестов `Unit*`, `Kernel*` и `BrowserTests` добавлена глобальная функция `dump()` которая использует Symfony VarDumper.
 
 ## Symfony 5
 
