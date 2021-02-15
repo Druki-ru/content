@@ -73,6 +73,7 @@ metatags:
 
 - [#2571475](https://www.drupal.org/project/drupal/issues/2571475) `KernelTestBase` теперь могу производить внешние HTTP запросы.
 - [#3187309](https://www.drupal.org/project/drupal/issues/3187309) Сравнения с использованием XPath для `<select>` и `<option>` заменены на современные методы.
+- [#3189607](https://www.drupal.org/project/drupal/issues/3189607) Сравнения с использованием XPath для `<input type="checkbox">` заменены на современные методы.
 
 ## Прочие изменения
 
