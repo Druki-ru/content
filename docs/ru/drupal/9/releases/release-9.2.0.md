@@ -491,7 +491,7 @@ Drupal ядро теперь может создавать изображени�
 ## Layout Builder
 
 - [#3180674](https://www.drupal.org/project/drupal/issues/3180674) Удалён неиспользуемый модуль `layout_builder_overrides_test`.
-- [#3115503](https://www.drupal.org/project/drupal/issues/3115503) `\Drupal\Core\Layout\LayoutInterface` теперь расширяет `\Drupal\Core\Plugin\ContextAwarePluginInterface`. Это означает что Layout [плагины](../plugins/plugins.md) теперь контекстнозависимые.
+- [#3115503](https://www.drupal.org/project/drupal/issues/3115503) `\Drupal\Core\Layout\LayoutInterface` теперь расширяет `\Drupal\Core\Plugin\ContextAwarePluginInterface`. Это означает что Layout [плагины](../plugins/plugins.md) теперь контекстно-зависимые.
 
 ## MySQL DB Driver
 

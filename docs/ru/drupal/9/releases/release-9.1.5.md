@@ -62,6 +62,8 @@ metatags:
 - [#3196177](https://www.drupal.org/project/drupal/issues/3196177) Добавлена документация для плагинов источников `VariableMultiRow`, `Variable`, `d6/VariableTranslation` и `d7/VariableTranslation`.
 - [#3187415](https://www.drupal.org/project/drupal/issues/3187415) Миграции переводов для системных настроек теперь зависят от базовых миграций этих настроек.
 - [#3176394](https://www.drupal.org/project/drupal/issues/3176394) Типы комментариев больше не мигрируют если в источнике отключен модуль `comment`.
+- [#2954982](https://www.drupal.org/project/drupal/issues/2954982) Исправлена неполадка в `EntityContentBase::processStubRow()` приводящая к ошибкам в некоторых ситуациях.
+- [#3178966](https://www.drupal.org/project/drupal/issues/3178966) Миграции Drupal 2 Drupal теперь будут выдавать ошибки при попытке мигрировать комментарии если на сайте-источнике они отключены. 
 
 ## Olivero
 
@@ -70,10 +72,12 @@ metatags:
 ## Тестирование
 
 - [#2571475](https://www.drupal.org/project/drupal/issues/2571475) `KernelTestBase` теперь могу производить внешние HTTP запросы.
+- [#3187309](https://www.drupal.org/project/drupal/issues/3187309) Сравнения с использованием XPath для `<select>` и `<option>` заменены на современные методы.
 
 ## Прочие изменения
 
 - [#3195951](https://www.drupal.org/project/drupal/issues/3195951) Из `MAINTAINERS.txt` удалён пустой раздел "Provisional membership".
 - [#3195277](https://www.drupal.org/project/drupal/issues/3195277) Из `MAINTAINERS.txt` удалены упоминания Drupal 8.
 - [#3196391](https://www.drupal.org/project/drupal/issues/3196391) Упоминание "Drupal Core" в `MAINTAINERS.txt` приведено к единому стилю.
-- [#3196433](https://www.drupal.org/project/drupal/issues/3196433) Исправлена ссылка ведущая на документацию форматов времени PHP.net
+- [#3196433](https://www.drupal.org/project/drupal/issues/3196433) Исправлена ссылка ведущая на документацию форматов времени PHP.net.
+- [#3197135](https://www.drupal.org/project/drupal/issues/3197135) Исправлена ошибка в примере `hook_validation_constraint_alter()`.
