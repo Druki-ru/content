@@ -153,7 +153,7 @@ cuddly-slider:
 
 ### minified
 
-- **Применимо**: CSS и JS
+- **Применимо**: JS
 - **По умолчанию**: `false`
 
 Позволяет указать, что данный ассет уже минифицирован и его не следует обрабатывать.
@@ -165,7 +165,7 @@ cuddly-slider:
   version: 1.x
   css:
     layout:
-      css/cuddly-slider-layout.css: {
+      css/cuddly-slider-layout.js: {
         minified: true
       }
 ```
