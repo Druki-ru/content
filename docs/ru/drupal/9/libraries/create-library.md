@@ -163,11 +163,10 @@ cuddly-slider:
 ```yaml
 cuddly-slider:
   version: 1.x
-  css:
-    layout:
-      css/cuddly-slider-layout.js: {
-        minified: true
-      }
+  js:
+    js/cuddly-slider.js: {
+      minified: true
+    }
 ```
 
 ### preprocess
