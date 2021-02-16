@@ -71,7 +71,7 @@ $form = \Drupal::formBuilder()->getForm('Drupal\foo\Form\FooForm', 'foo', 'bar')
 $form_state = new FormState();
 $form_state->set('some_value', 'Hello World');
 
-$form = \Drupal::formBuilder()->getForm('Drupal\foo\Form\FooForm', $form_state);
+$form = \Drupal::formBuilder()->buildForm('Drupal\foo\Form\FooForm', $form_state);
 ```
 
 ## Ссылки
