@@ -59,11 +59,18 @@ metatags:
 - [#3187415](https://www.drupal.org/project/drupal/issues/3187415) Миграции переводов для системных настроек теперь зависят от базовых миграций этих настроек.
 - [#3176394](https://www.drupal.org/project/drupal/issues/3176394) Типы комментариев больше не мигрируют если в источнике отключен модуль `comment`.
 - [#2954982](https://www.drupal.org/project/drupal/issues/2954982) Исправлена неполадка в `EntityContentBase::processStubRow()` приводящая к ошибкам в некоторых ситуациях.
-- [#3178966](https://www.drupal.org/project/drupal/issues/3178966) Миграции Drupal 2 Drupal теперь будут выдавать ошибки при попытке мигрировать комментарии если на сайте-источнике они отключены. 
+- [#3178966](https://www.drupal.org/project/drupal/issues/3178966) Миграции Drupal 2 Drupal теперь будут выдавать ошибки при попытке мигрировать комментарии если на сайте-источнике они отключены.
+- [#3189587](https://www.drupal.org/project/drupal/issues/3189587) Добавлена документация для плагинов источников связанных с таксономией.
+- [#3084477](https://www.drupal.org/project/drupal/issues/3084477) Исправлены неполадки в тестах для `migrate_drupal_ui`.
 
 ## Olivero
 
 - [#3182711](https://www.drupal.org/project/drupal/issues/3182711) Блок "помощи" теперь располагается в регионе `content_above` вместо несуществующего `help`.
+- [#3182134](https://www.drupal.org/project/drupal/issues/3182134) Обновлены установочные конфигурации для темы.
+
+## Views
+
+- [#2470753](https://www.drupal.org/project/drupal/issues/2470753) Улучшена документация для `hook_views_analyze()`.
 
 ## Тестирование
 
