@@ -42,10 +42,6 @@ metatags:
 
 - [#3196050](https://www.drupal.org/project/drupal/issues/3196050) Исправлена документация для `StorageConfigBase::validateValue()`.
 
-## Editor
-
-- [#2857444](https://www.drupal.org/project/drupal/issues/2857444) Улучшено отслеживание файлов в полях отличных от `text`, `text_long` и `text_with_summary`. Теперь данные файлы отслеживаются для всех полей что расширяют `TextItemBase`.
-
 ## Entity System
 
 - [#2693485](https://www.drupal.org/project/drupal/issues/2693485) Пункты добавления материалов (`/node/add`) теперь сортируются по метке, а не по машинному имени.

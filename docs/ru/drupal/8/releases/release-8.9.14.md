@@ -10,6 +10,10 @@ metatags:
 
 **Дата релиза**: 3 марта 2021
 
+## Editor
+
+- [#2857444](https://www.drupal.org/project/drupal/issues/2857444) Улучшено отслеживание файлов в полях отличных от `text`, `text_long` и `text_with_summary`. Теперь данные файлы отслеживаются для всех полей что расширяют `TextItemBase`.
+
 ## Serialization
 
 - [#3054510](https://www.drupal.org/project/drupal/issues/3054510) Исправлена документация для `NormalizerBase::supportsDenormalization()`.
