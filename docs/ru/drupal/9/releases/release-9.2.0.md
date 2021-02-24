@@ -466,6 +466,10 @@ Drupal ядро теперь может создавать изображени�
 
 - [#3179939](https://www.drupal.org/project/drupal/issues/3179939) Удалён неиспользуемый `AjaxTestBase`.
 
+## Bartik
+
+- [#2031447](https://www.drupal.org/project/drupal/issues/2031447) Улучшена вёрстка для вывода «сеткой» при помощи Views.
+
 ## Book
 
 - [#2575827](https://www.drupal.org/project/drupal/issues/2575827) `BookNavigationBlock` и `BookNavigationCacheContext` теперь получают информацию из `route_match` [сервиса](../services/services.md), вместо получения из аттрибутов запроса.
@@ -475,6 +479,10 @@ Drupal ядро теперь может создавать изображени�
 ## CKEditor
 
 - [#3150364](https://www.drupal.org/project/drupal/issues/3150364) Улучшена документация (`/admin/help/ckeditor`) для CKEditor.
+
+## Claro
+
+- [#3083051](https://www.drupal.org/project/drupal/issues/3083051) Произведён рефакторинг tabledrag для соответствия изменениям в ядре.
 
 ## Composer
 
@@ -509,6 +517,10 @@ Drupal ядро теперь может создавать изображени�
 ## Form System
 
 - [#3122912](https://www.drupal.org/project/drupal/issues/3122912) Вызовы `t()` заменены на `$this->t()`.
+
+## Help
+
+- [#3090659](https://www.drupal.org/project/drupal/issues/3090659) Добавлены Twig функции для установки ссылок на Help Topics: `help_route_link()` и `help_topic_link()`.
 
 ## Help Topics
 
@@ -610,6 +622,7 @@ Drupal ядро теперь может создавать изображени�
 - [#3178248](https://www.drupal.org/project/drupal/issues/3178248) Удалён метод `StandardInstallerTest::curlExec()`, так как нигде не используется.
 - [#2795567](https://www.drupal.org/project/drupal/issues/2795567) Для тестов `Unit*`, `Kernel*` и `BrowserTests` добавлена глобальная функция `dump()` которая использует Symfony VarDumper.
 - [#3193163](https://www.drupal.org/project/drupal/issues/3193163) Использование `AssertLegacyTrait::verbose()` помечено устаревшим.
+- [#3187949](https://www.drupal.org/project/drupal/issues/3187949) Метод `::cssSelectToXpath()` перенесён из `BrowserTestBase` в `UiHelperTrait`.
 
 ## Symfony 5
 
@@ -643,3 +656,5 @@ Drupal ядро теперь может создавать изображени�
 - [#3195571](https://www.drupal.org/project/drupal/issues/3195571) Константа `Drupal\Core\Routing\RouteCompiler::REGEX_DELIMITER` помечена устаревшей.
 - [#2002514](https://www.drupal.org/project/drupal/issues/2002514) Функция `debug()` помечена устаревшей. Удалены все упоминания для `_drupal_debug_message()`. Используйте `dump()`.
 - [#3191487](https://www.drupal.org/project/drupal/issues/3191487) Из `MAINTAINERS.txt` удалён раздел с "Layout Initiative", так как она считается завершённое. Все последющие изменения связанные с макетами будут классифицироваться под инициативой "Easy out of the box".
+- [#2723621](https://www.drupal.org/project/drupal/issues/2723621) Исправлены ошибки для соответствия стандартам `Drupal.Commenting.FunctionComment.IncorrectTypeHint` и `Drupal.Commenting.FunctionComment.InvalidTypeHint`.
+- [#3188957](https://www.drupal.org/project/drupal/issues/3188957) В `DrupalTestBrowser` теперь используется `RequestException::hasResponse()`.
