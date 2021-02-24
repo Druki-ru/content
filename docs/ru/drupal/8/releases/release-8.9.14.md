@@ -25,3 +25,4 @@ metatags:
 ## Прочие изменения
 
 - [#3192231](https://www.drupal.org/project/drupal/issues/3192231) Исправлена работа теста `UnroutedUrlTest` на dev версиях PHP.
+- [#3199205](https://www.drupal.org/project/drupal/issues/3199205) `Archive_Tar` обновлён до 1.4.13.
