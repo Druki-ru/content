@@ -74,7 +74,7 @@ metatags:
 - [#3182134](https://www.drupal.org/project/drupal/issues/3182134) Обновлены установочные конфигурации для темы.
 - [#3196425](https://www.drupal.org/project/drupal/issues/3196425) Удалены стили для `::selection`.
 - [#3197721](https://www.drupal.org/project/drupal/issues/3197721) Добавлен прелоад Metropolis-Regular.
-- [#3190140](https://www.drupal.org/project/drupal/issues/3190140) Описание для элемента раскрытия меню теперь указывает содержит заголовок раскрываемого пункта.
+- [#3190140](https://www.drupal.org/project/drupal/issues/3190140) Описание для элемента раскрытия меню теперь содержит заголовок раскрываемого пункта.
 
 ## Views
 
