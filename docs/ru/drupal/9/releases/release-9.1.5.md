@@ -38,6 +38,10 @@ metatags:
   public function fetchObject($class_name = NULL, $constructor_args = []);
 ```
 
+## Claro
+
+- [#3116377](https://www.drupal.org/project/drupal/issues/3116377) Улучшено отображение элемента с автодополнением в раскрытых фильтрах Views.
+
 ## Configuration System
 
 - [#3196050](https://www.drupal.org/project/drupal/issues/3196050) Исправлена документация для `StorageConfigBase::validateValue()`.
@@ -62,11 +66,15 @@ metatags:
 - [#3178966](https://www.drupal.org/project/drupal/issues/3178966) Миграции Drupal 2 Drupal теперь будут выдавать ошибки при попытке мигрировать комментарии если на сайте-источнике они отключены.
 - [#3189587](https://www.drupal.org/project/drupal/issues/3189587) Добавлена документация для плагинов источников связанных с таксономией.
 - [#3084477](https://www.drupal.org/project/drupal/issues/3084477) Исправлены неполадки в тестах для `migrate_drupal_ui`.
+- [#3197749](https://www.drupal.org/project/drupal/issues/3197749) Улучшена документация и добавлен пример для плагина источника `empty`.
 
 ## Olivero
 
 - [#3182711](https://www.drupal.org/project/drupal/issues/3182711) Блок "помощи" теперь располагается в регионе `content_above` вместо несуществующего `help`.
 - [#3182134](https://www.drupal.org/project/drupal/issues/3182134) Обновлены установочные конфигурации для темы.
+- [#3196425](https://www.drupal.org/project/drupal/issues/3196425) Удалены стили для `::selection`.
+- [#3197721](https://www.drupal.org/project/drupal/issues/3197721) Добавлен прелоад Metropolis-Regular.
+- [#3190140](https://www.drupal.org/project/drupal/issues/3190140) Описание для элемента раскрытия меню теперь указывает содержит заголовок раскрываемого пункта.
 
 ## Views
 
@@ -85,3 +93,6 @@ metatags:
 - [#3196391](https://www.drupal.org/project/drupal/issues/3196391) Упоминание "Drupal Core" в `MAINTAINERS.txt` приведено к единому стилю.
 - [#3196433](https://www.drupal.org/project/drupal/issues/3196433) Исправлена ссылка ведущая на документацию форматов времени PHP.net.
 - [#3197135](https://www.drupal.org/project/drupal/issues/3197135) Исправлена ошибка в примере `hook_validation_constraint_alter()`.
+- [#2623718](https://www.drupal.org/project/drupal/issues/2623718) Исправлен код не соответствующий стандарту `Drupal.Commenting.HookComment`.
+- [#3196392](https://www.drupal.org/project/drupal/issues/3196392) В `MAINTAINERS.txt` добавлено описание об инициативе «Topic» (Help Topics).
+- [#3196430](https://www.drupal.org/project/drupal/issues/3196430) Удалены стили для `::selection` элемента `#drupal-off-canvas`.
