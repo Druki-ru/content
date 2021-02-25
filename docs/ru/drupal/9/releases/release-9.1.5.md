@@ -54,6 +54,10 @@ metatags:
 
 - [#997826](https://www.drupal.org/project/drupal/issues/997826) Исправлена работа свойства `#state` для элемента формы `text_format`.
 
+## Layout Builder
+
+- [#3144010](https://www.drupal.org/project/drupal/issues/3144010) Исправлена неполадка из-за которой было невозможно удалять [псевдо-поля](../hooks/extra-fields.md).
+
 ## Migration System
 
 - [#2558857](https://www.drupal.org/project/drupal/issues/2558857) Оптимизирована очистка памяти после загрузки сущностей.
