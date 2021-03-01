@@ -50,9 +50,17 @@ metatags:
 
 - [#2693485](https://www.drupal.org/project/drupal/issues/2693485) Пункты добавления материалов (`/node/add`) теперь сортируются по метке, а не по машинному имени.
 
+## File
+
+- [#3174349](https://www.drupal.org/project/drupal/issues/3174349) `file_url_transform_relative()` теперь поддерживает порты отличные от 80 и 443.
+
 ## Form System
 
 - [#997826](https://www.drupal.org/project/drupal/issues/997826) Исправлена работа свойства `#state` для элемента формы `text_format`.
+
+## Forum
+
+- [#3197754](https://www.drupal.org/project/drupal/issues/3197754) Кнопка «Add new Form topic» больше не показывается на разделах форума.
 
 ## Layout Builder
 
@@ -71,6 +79,7 @@ metatags:
 - [#3189587](https://www.drupal.org/project/drupal/issues/3189587) Добавлена документация для плагинов источников связанных с таксономией.
 - [#3084477](https://www.drupal.org/project/drupal/issues/3084477) Исправлены неполадки в тестах для `migrate_drupal_ui`.
 - [#3197749](https://www.drupal.org/project/drupal/issues/3197749) Улучшена документация и добавлен пример для плагина источника `empty`.
+- [#3097312](https://www.drupal.org/project/drupal/issues/3097312) Миграции созданные при помощи деритив и имеющие плагин `migration_lookup`, больше не указываются в качестве опциональных зависимостей. Ранее, подобные миграции имели зависимости друг на друга, хотя могли быть не связаны между собой.
 
 ## Olivero
 
@@ -100,3 +109,5 @@ metatags:
 - [#2623718](https://www.drupal.org/project/drupal/issues/2623718) Исправлен код не соответствующий стандарту `Drupal.Commenting.HookComment`.
 - [#3196392](https://www.drupal.org/project/drupal/issues/3196392) В `MAINTAINERS.txt` добавлено описание об инициативе «Topic» (Help Topics).
 - [#3196430](https://www.drupal.org/project/drupal/issues/3196430) Удалены стили для `::selection` элемента `#drupal-off-canvas`.
+- [#2533254](https://www.drupal.org/project/drupal/issues/2533254) `LanguageInterface` добавлен в группу документаций `i18n`.
+- [#3199582](https://www.drupal.org/project/drupal/issues/3199582) Исправлен пример реализации `hook_field_storage_config_update_forbid()`.
