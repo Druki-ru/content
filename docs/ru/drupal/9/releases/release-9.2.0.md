@@ -569,6 +569,10 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 
 - [#3191497](https://www.drupal.org/project/drupal/issues/3191497) `cpre/jquery.ui.dialog` добавлена зависимость `core/jquery`.
 
+## JSON:API
+
+- [#3163853](https://www.drupal.org/project/drupal/issues/3163853) `ResourceTestBase` теперь использует `::assertEquals()` вместо `::assertSame()` для сравнения данных.
+
 ## Layout Builder
 
 - [#3180674](https://www.drupal.org/project/drupal/issues/3180674) Удалён неиспользуемый модуль `layout_builder_overrides_test`.
@@ -596,6 +600,7 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#2814953](https://www.drupal.org/project/drupal/issues/2814953) Добавлены миграции для полей связи с `node` и `user` из Drupal 7.
 - [#3192900](https://www.drupal.org/project/drupal/issues/3192900) Некоторые `Kernel` тесты были объединены.
 - [#3005969](https://www.drupal.org/project/drupal/issues/3005969) Добавлена поддержка миграций типа поля `telephone` из Drupal 7.
+- [#3189054](https://www.drupal.org/project/drupal/issues/3189054) Удалена пометка, что `MigrateException` может быть вызвано конструктором `MigrateExecutable`, так как оно там не вызывается.
 
 ## Node System
 
@@ -608,6 +613,11 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#3173007](https://www.drupal.org/project/drupal/issues/3173007) Внесены изменения в разметку и `comments.pcss.css` для соответствия БЭМ методологии.
 - [#3176893](https://www.drupal.org/project/drupal/issues/3176893) Внесены изменения в разметку и `book.pcss.css` для соответствия БЭМ методологии.
 - [#3173014](https://www.drupal.org/project/drupal/issues/3173014) Внесены изменения в разметку и стили элементов навигации для соответствия БЭМ методологии.
+- [#3153260](https://www.drupal.org/project/drupal/issues/3153260) Стандартизовано оформление `:focus` псевдо-элемента среди различных элементов.
+
+## Plugin System
+
+- [#3046342](https://www.drupal.org/project/drupal/issues/3046342) Для `ContextAwarePluginInterface` исправлена документация связанная с `@throws`. 
 
 ## PostgreSQL DB Driver
 
@@ -621,6 +631,10 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 ## Taxonomy
 
 - [#3170185](https://www.drupal.org/project/drupal/issues/3170185) `Drupal\taxonomy\Form\OverviewTerms` теперь использует `pager.manager` для получения текущей страницы вместо `Request`.
+
+## Theme System
+
+- [#3181367](https://www.drupal.org/project/drupal/issues/3181367) Аргумент `LoaderInterface $loader` для `TwigEnvironment::__construct()` теперь всегда должен иметь значение.
 
 ## Toolbar
 
@@ -647,6 +661,11 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#2925612](https://www.drupal.org/project/drupal/issues/2925612) Метод `StylePluginBase::wizardForm()` помечен устаревшим, так как нигде не используется.
 - [#3186582](https://www.drupal.org/project/drupal/issues/3186582) Отображение по умолчанию во Views теперь именуется как «Default».
 - [#3197886](https://www.drupal.org/project/drupal/issues/3197886) Класс `ViewsPluginAnnotationBase` больше не реализуется `AnnotationInterface`.
+- [#2342807](https://www.drupal.org/project/drupal/issues/2342807) `DisplayPathTest` больше не пытается включить модуль `menu_ui`, который уже включен к тому моменту.
+
+## Workspaces
+
+- [#3128536](https://www.drupal.org/project/drupal/issues/3128536) Свойство `WorkspaceManager::$blacklist` переименовано в `$supported`.
 
 ## Тестирование
 
@@ -699,3 +718,4 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#2723621](https://www.drupal.org/project/drupal/issues/2723621) Исправлены ошибки для соответствия стандартам `Drupal.Commenting.FunctionComment.IncorrectTypeHint` и `Drupal.Commenting.FunctionComment.InvalidTypeHint`.
 - [#3188957](https://www.drupal.org/project/drupal/issues/3188957) В `DrupalTestBrowser` теперь используется `RequestException::hasResponse()`.
 - [#2510438](https://www.drupal.org/project/drupal/issues/2510438) Удалён индекс `all` для таблицы `key_value_expire`.
+- [#3185653](https://www.drupal.org/project/drupal/issues/3185653) Удалены упоминания `::drupalPostAjaxForm()`, который был удалён в [Drupal 9](../drupal-9.md).
