@@ -595,7 +595,7 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#3189878](https://www.drupal.org/project/drupal/issues/3189878) Из плагина источника данных Drupal 7 File удалено свойство `temporaryPath`.
 - [#3189064](https://www.drupal.org/project/drupal/issues/3189064) Для плагинов источников данных расширяющих `SqlBase` зависимость `database` больше не сериализуется.
 - [#3187263](https://www.drupal.org/project/drupal/issues/3187263) Миграции для конфигурационных блоков `d6_block_translation` и `d7_block_translation` теперь запрашивают `config_translation` вместо `content_translation`.
-- [#3194385](https://www.drupal.org/project/drupal/issues/3194385) Тест для d6 миграций `MigrateUserPictureFileTest` объединён в `MigrateUserPictureD6FileTest`ю
+- [#3194385](https://www.drupal.org/project/drupal/issues/3194385) Тест для d6 миграций `MigrateUserPictureFileTest` объединён в `MigrateUserPictureD6FileTest`.
 - [#3190504](https://www.drupal.org/project/drupal/issues/3190504) Исправлена документация к плагинам источников нод.
 - [#2814953](https://www.drupal.org/project/drupal/issues/2814953) Добавлены миграции для полей связи с `node` и `user` из Drupal 7.
 - [#3192900](https://www.drupal.org/project/drupal/issues/3192900) Некоторые `Kernel` тесты были объединены.
@@ -614,6 +614,7 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#3176893](https://www.drupal.org/project/drupal/issues/3176893) Внесены изменения в разметку и `book.pcss.css` для соответствия БЭМ методологии.
 - [#3173014](https://www.drupal.org/project/drupal/issues/3173014) Внесены изменения в разметку и стили элементов навигации для соответствия БЭМ методологии.
 - [#3153260](https://www.drupal.org/project/drupal/issues/3153260) Стандартизовано оформление `:focus` псевдо-элемента среди различных элементов.
+- [#3194350](https://www.drupal.org/project/drupal/issues/3194350) Реализовано новое оформление для элементов форм.
 
 ## Plugin System
 
@@ -666,6 +667,7 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 ## Workspaces
 
 - [#3128536](https://www.drupal.org/project/drupal/issues/3128536) Свойство `WorkspaceManager::$blacklist` переименовано в `$supported`.
+- [#2998454](https://www.drupal.org/project/drupal/issues/2998454) Употребление терминов «deploy» и «publish» приведено в порядок для избежания путаницы.
 
 ## Тестирование
 
