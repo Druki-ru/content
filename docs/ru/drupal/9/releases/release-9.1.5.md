@@ -38,6 +38,48 @@ metatags:
   public function fetchObject($class_name = NULL, $constructor_args = []);
 ```
 
+## В миграцию ContentEntity добавлена возможность указывать ключ источника в котором хранится ID ревизии
+
+- [#3184650](https://www.drupal.org/project/drupal/issues/3184650) 
+
+Ранее, миграция `content_entity` (`Drupal\migrate_drupal\Plugin\migrate\source\ContentEntity`) использовалась в ситуациях, когда сайт источник был идентичен сайту назначения.
+
+В [Drupal](../../drupal.md) [8.9](../../8/releases/release-8.9.0.md), [9.0](release-9.0.0.md) и [9.1](release-9.1.0.md), плагин источника данных `content_entity` всегда включал ключ для ID ревизии, так, как если бы сущность источника поддерживала ревизии. (Пример: node, media, taxonomy_term, но не user, file).
+
+В версиях [Drupal 8.8](../../8/releases/release-8.8.0.md) и ранее, ключ ID ревизии никогда не добавлялся.
+
+Начиная с текущей версии вы можете указать, включать ли ID ревизии в миграцию или нет, используя настройку `revisions`. Допустимые значения `none` и `add key`.
+
+Новая настройка опциональна, а значение по умолчанию `revisions: add key` - что равносильно поведение до текущего изменения.
+
+> [!IMPORTANT]
+> Значение по умолчанию может измениться в будущем. Рекомендуется указать данное значение своим миграциям даже если оно соответствует текущему.
+
+**Ранее:**
+
+```yaml
+source:
+  plugin: content_entity:node
+```
+
+**Начиная с данного релиза:**
+
+Для того чтобы ID ревизии не использовался (поведение Drupal 8.8-):
+
+```yaml
+source:
+  plugin: content_entity:node
+  revisions: none
+```
+
+Для того чтобы ID ревизии добавлялся (поведение Drupal 8.9, 9.0, 9.1):
+
+```yaml
+source:
+  plugin: content_entity:node
+  revisions: add key
+```
+
 ## Claro
 
 - [#3116377](https://www.drupal.org/project/drupal/issues/3116377) Улучшено отображение элемента с автодополнением в раскрытых фильтрах Views.
@@ -80,6 +122,7 @@ metatags:
 - [#3084477](https://www.drupal.org/project/drupal/issues/3084477) Исправлены неполадки в тестах для `migrate_drupal_ui`.
 - [#3197749](https://www.drupal.org/project/drupal/issues/3197749) Улучшена документация и добавлен пример для плагина источника `empty`.
 - [#3097312](https://www.drupal.org/project/drupal/issues/3097312) Миграции созданные при помощи деритив и имеющие плагин `migration_lookup`, больше не указываются в качестве опциональных зависимостей. Ранее, подобные миграции имели зависимости друг на друга, хотя могли быть не связаны между собой.
+- [#2579361](https://www.drupal.org/project/drupal/issues/2579361) Улучшена документация для `Row::setSourceProperty()`.
 
 ## Olivero
 
@@ -98,6 +141,7 @@ metatags:
 - [#2571475](https://www.drupal.org/project/drupal/issues/2571475) `KernelTestBase` теперь могу производить внешние HTTP запросы.
 - [#3187309](https://www.drupal.org/project/drupal/issues/3187309) Сравнения с использованием XPath для `<select>` и `<option>` заменены на современные методы.
 - [#3189607](https://www.drupal.org/project/drupal/issues/3189607) Сравнения с использованием XPath для `<input type="checkbox">` заменены на современные методы.
+- [#3201113](https://www.drupal.org/project/drupal/issues/3201113) Исправлена опечатка в `PhpUnitVersionDependentTestCompatibilityTrait`.
 
 ## Прочие изменения
 
