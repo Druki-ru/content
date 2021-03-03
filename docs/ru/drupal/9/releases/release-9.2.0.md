@@ -497,6 +497,44 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - Добавлен новый метод `\Drupal\Core\Pager\PagerManagerInterface::reservePagerElementId()` для резервации необходимого Pager ID. 
 - Добавлен новый метод `\Drupal\Core\Database\Connection::getPagerManager()` для быстрого доступа к `pager.manager` из подключения к БД.
 
+## В Database API представлен новый класс - ExceptionHandler, Connection::handleQueryException - помечен устаревшим
+
+- [#3186934](https://www.drupal.org/project/drupal/issues/3186934)
+
+`Connection::handleQueryException` — является `protected` методом и его невозможно вызывать, например, из классов отвечающих за конкретную операцию с БД.
+
+В [#3177660](https://www.drupal.org/project/drupal/issues/3177660) было решено отказаться от использования `Connection::query()` для любых целей. В качестве замены было предложено подготавливать и вызывать `Statement` объекты в драйверах БД, а также обрабатывать исключения более последовательно.
+
+Для это был создан класс `ExceptionHandler`, который необходимо использовать для обработки исключений связанных с драйвером БД.
+
+В связи с данным изменением, `Connection::handleQueryException` помечен устаревшим.
+
+**Ранее:**
+
+```php
+    ...
+    catch (\PDOException $e) {
+      // Most database drivers will return NULL here, but some of them
+      // (e.g. the SQLite driver) may need to re-run the query, so the return
+      // value will be the same as for static::query().
+      return $this->handleQueryException($e, $query, $args, $options);
+    }
+```
+
+**Сейчас:**
+
+```php
+    ...
+    catch (\Exception $e) {
+      // Most database drivers will return NULL here, but some of them
+      // (e.g. the SQLite driver) may need to re-run the query, so the return
+      // value will be the same as for static::query().
+      ...
+        return $this->exceptionHandler($e)->handleExecutionException($stmt, $args, $options);
+      ...
+    }
+```
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
