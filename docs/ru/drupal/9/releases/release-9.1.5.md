@@ -8,10 +8,7 @@ metatags:
   description: 'Список изменений Drupal 9.1.5.'
 ---
 
-**Дата релиза**: 3 марта 2021
-
-> [!WARNING]
-> Данная версия находится в разработке, актуальная версия [Drupal 9.1.4](release-9.1.4.md).
+**Дата релиза**: 4 марта 2021
 
 ## Добавлен опциональный параметр для StatementInterface::fetchObject()
 
@@ -155,3 +152,7 @@ source:
 - [#3196430](https://www.drupal.org/project/drupal/issues/3196430) Удалены стили для `::selection` элемента `#drupal-off-canvas`.
 - [#2533254](https://www.drupal.org/project/drupal/issues/2533254) `LanguageInterface` добавлен в группу документаций `i18n`.
 - [#3199582](https://www.drupal.org/project/drupal/issues/3199582) Исправлен пример реализации `hook_field_storage_config_update_forbid()`.
+
+## Ссылки
+
+- [Drupal 9.1.5](https://www.drupal.org/project/drupal/releases/9.1.5) (англ.), drupal.org, 4 марта 2021 г.
