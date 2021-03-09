@@ -8,11 +8,23 @@ metatags:
   description: 'Список изменений Drupal 8.9.14.'
 ---
 
-**Дата релиза**: 3 марта 2021
+**Дата релиза**: 7 апреля 2021
+
+## Cron System
+
+- [#3201470](https://www.drupal.org/project/drupal/issues/3201470) Реализации `hook_cron()` с использованием `EntityQuery` теперь явно указывают что права доступа проверять не нужно.
 
 ## Editor
 
 - [#2857444](https://www.drupal.org/project/drupal/issues/2857444) Улучшено отслеживание файлов в полях отличных от `text`, `text_long` и `text_with_summary`. Теперь данные файлы отслеживаются для всех полей что расширяют `TextItemBase`.
+
+## Media System
+
+- [#3192260](https://www.drupal.org/project/drupal/issues/3192260) Исправлена настройка DrupalCI для `CKEditorIntegrationTest` который мог случайно проваливаться.
+
+## Migration System
+
+[#3184650](https://www.drupal.org/project/drupal/issues/3184650) В миграцию ContentEntity добавлена возможность указывать ключ источника в котором хранится ID ревизии. Для более подробного описания изменения смотрите [список изменений Drupal 9.1.5](../../9/releases/release-9.1.5.md).
 
 ## Serialization
 
