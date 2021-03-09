@@ -4,8 +4,8 @@ title: 'Drupal 9.1.6'
 path: /9/releases/9.1.6
 core: 9
 metatags:
-title: 'Drupal 9.1.6: Список изменений'
-description: 'Список изменений Drupal 9.1.6.'
+  title: 'Drupal 9.1.6: Список изменений'
+  description: 'Список изменений Drupal 9.1.6.'
 ---
 
 **Дата релиза**: 7 апреля 2021
