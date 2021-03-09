@@ -535,6 +535,100 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
     }
 ```
 
+## Добавлена JavaScript библиотека tabbable на замену jQuery UI tabbable
+
+- [#3113649](https://www.drupal.org/project/drupal/issues/3113649)
+
+Drupal ядро находится на стадии удаления jQuery UI зависимостей. Ядро использовало одну из возможностей jQuery UI - возможность выборки элементов, которые доступны при помощи Tab в текущем контексте при помощи `:tabbable` селектора.
+
+В ядро была добавлена JavaScript библиотека [tabbable](https://github.com/focus-trap/tabbable) (`core/tabbable`), которая позволяет добиться того же результат без зависимости на jQuery UI.
+
+**Ранее:**
+
+```javascript
+const tabbableElements = $(context).find(':tabbable');  // returns a jQuery object with every tabbable element found in context.
+```
+
+**Сейчас:**
+
+```javascript
+const tabbableElements = tabbable.tabbable(context);  // returns an array of DOM nodes of every tabbable element found in context.
+```
+
+Данная библиотека также имеет и другие возможности которые описаны в её [документации](https://github.com/focus-trap/tabbable#api).
+
+Так как библиотека использует `CSS.escape`, а IE11 не поддерживает данную возможность, в ядро также был добавлен полифил библиотека [CSS.escape](https://github.com/mathiasbynens/CSS.escape) (`css.escape`).
+
+## В ядро добавлена замена jQuery Once
+
+- [#2402103](https://www.drupal.org/project/drupal/issues/2402103)
+
+Для того чтобы позволить JavaScript скриптам удалить зависимости на jQuery, возможность `jQuery.once()` была реализована на нативном JavaScript. Данная реализация дополнительно опубликована как npm пакет [@drupal/once](https://www.npmjs.com/package/@drupal/once).
+
+### Новое в API
+
+- Объявлена новая библиотека `core/once`
+- Библиотека `core/jquery.once` помечена устаревшей
+- В новой библиотеке 4 функции:
+  - `once` - эквивалент `jQuery.fn.once`
+  - `once.filter` - эквивалент `jQuery.fn.findOnce`
+  - `once.remove` - эквивалент `jQuery.fn.removeOnce`
+  - `once.find` - новая функция, не имеющая аналога в jQuery
+
+### Изменения в коде
+
+**Ранее:**
+
+```yaml
+# mymodule.libraries.yml
+myfeature:
+  js: 
+    js/myfeature.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+```
+
+```javascript 
+# js/myfeature.js
+(function ($, Drupal) {
+  Drupal.behaviors.myfeature = {
+    attach(context) {
+      const $elements = $(context).find('.myfeature').once('myfeature');
+    }
+  };
+}(jQuery, Drupal));
+```
+---
+
+**Сейчас:**
+
+```yaml
+# mymodule.libraries.yml
+myfeature:
+  js: 
+    js/myfeature.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+```
+
+```javascript
+# js/myfeature.js
+(function (Drupal, once) {
+  Drupal.behaviors.myfeature = {
+    attach(context) {
+      const elements = once('myfeature', '.myfeature', context);
+    }
+  };
+}(Drupal, once));
+```
+
+Для более подробной документации новой библиотеки смотрите [@drupal/once](../../../javascript/drupal/once/index.md).
+
+Так как IE11 не поддерживает `Element.prototype.matches`, был добавлен полифил `core/drupal.element.matches`.
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -590,6 +684,9 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#3138631](https://www.drupal.org/project/drupal/issues/3138631) Если поле содержит некорректную связь, сообщение об ошибке теперь будет более точно сообщать с чем связана проблема.
 - [#3195628](https://www.drupal.org/project/drupal/issues/3195628) `CreateSampleEntityTest` больше не устанавливает схему `file` сущности дважды.
 - [#3196168](https://www.drupal.org/project/drupal/issues/3196168) `\Drupal\Core\Entity\EntityDeleteForm` больше не помечен `@internal`.
+- [#3159744](https://www.drupal.org/project/drupal/issues/3159744) Из теста `EntitySchemaTest` удалены фиксированные ID.
+- [#3201956](https://www.drupal.org/project/drupal/issues/3201956) Удалена передача бесполезного аргумента в `ConfigEntityStorage` при вызове `$this->mapFromStorageRecords()`.
+- [#3201957](https://www.drupal.org/project/drupal/issues/3201957) Удалено неиспользуемое свойство `COnfigEntityStorage::$entities`.
 
 ## Form System
 
@@ -602,6 +699,7 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 ## Help Topics
 
 - [#3090257](https://www.drupal.org/project/drupal/issues/3090257) Добавлено больше тестов проверки синтаксиса.
+- [#3095737](https://www.drupal.org/project/drupal/issues/3095737) Справка для модулей `config_translation`, `content_translation`, `locale` и `language` конвертирована в Help Topics.
 
 ## JavaScript
 
@@ -639,6 +737,8 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#3192900](https://www.drupal.org/project/drupal/issues/3192900) Некоторые `Kernel` тесты были объединены.
 - [#3005969](https://www.drupal.org/project/drupal/issues/3005969) Добавлена поддержка миграций типа поля `telephone` из Drupal 7.
 - [#3189054](https://www.drupal.org/project/drupal/issues/3189054) Удалена пометка, что `MigrateException` может быть вызвано конструктором `MigrateExecutable`, так как оно там не вызывается.
+- [#3200735](https://www.drupal.org/project/drupal/issues/3200735) Добавлена документация для плагинов источников Drupal 6 и Drupal 7 `user`, `profile` и `roles`.
+- [#3175953](https://www.drupal.org/project/drupal/issues/3175953) Произведена чистка в функциональных тестах.
 
 ## Node System
 
@@ -653,6 +753,10 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#3173014](https://www.drupal.org/project/drupal/issues/3173014) Внесены изменения в разметку и стили элементов навигации для соответствия БЭМ методологии.
 - [#3153260](https://www.drupal.org/project/drupal/issues/3153260) Стандартизовано оформление `:focus` псевдо-элемента среди различных элементов.
 - [#3194350](https://www.drupal.org/project/drupal/issues/3194350) Реализовано новое оформление для элементов форм.
+- [#3200595](https://www.drupal.org/project/drupal/issues/3200595) Исправлено `outline` оформление для кнопки мобильного меню.
+- [#3200631](https://www.drupal.org/project/drupal/issues/3200631) Исправлено отображения `<select>` элемента в jQuery UI dialog на Safari.
+- [#3191716](https://www.drupal.org/project/drupal/issues/3191716) Открытие вложенных пунктов меню на мобильной версии теперь требует всего 1 тап для открытия, а не 2 как было ранее.
+- [#3192656](https://www.drupal.org/project/drupal/issues/3192656) Исправлена неполадка с текстовыми элементами формы приводящая к появлению горизонтальной прокрутки.
 
 ## Plugin System
 
@@ -666,6 +770,7 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 
 - [#2409413](https://www.drupal.org/project/drupal/issues/2409413) Удалены неиспользуемые RSS настройки и описания.
 - [#3002983](https://www.drupal.org/project/drupal/issues/3002983) Протокол в ссылках заменён на HTTPS.
+- [#3174832](https://www.drupal.org/project/drupal/issues/3174832) Исправлена документация для `admin-block-content.html.twig`.
 
 ## Taxonomy
 
@@ -759,3 +864,5 @@ Drupal ядро добавляет свой подписчик (`Drupal\system\E
 - [#3188957](https://www.drupal.org/project/drupal/issues/3188957) В `DrupalTestBrowser` теперь используется `RequestException::hasResponse()`.
 - [#2510438](https://www.drupal.org/project/drupal/issues/2510438) Удалён индекс `all` для таблицы `key_value_expire`.
 - [#3185653](https://www.drupal.org/project/drupal/issues/3185653) Удалены упоминания `::drupalPostAjaxForm()`, который был удалён в [Drupal 9](../drupal-9.md).
+- [#3200213](https://www.drupal.org/project/drupal/issues/3200213) Добавлена документация для сервиса `session_bag`.
+- [#3202014](https://www.drupal.org/project/drupal/issues/3202014) `pager_test_preprocess_pager()` теперь использует early return если пейджер не найден.
