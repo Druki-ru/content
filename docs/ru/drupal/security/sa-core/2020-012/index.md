@@ -1,7 +1,6 @@
 ---
-id: sa-core-2020-012
 title: SA-CORE-2020-012
-path: /security/sa-core-2020-012
+slug: security/sa-core-2020-012
 metatags:
   title: 'Drupal: SA-CORE-2020-012'
   description: 'Критическое. Исправлено в версиях: 8.8.11, 8.9.9, 9.0.8.'

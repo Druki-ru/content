@@ -1,7 +1,7 @@
 ---
-id: cron
-core: 9
 title: Регулярные операции
+slug: 9/cron
+core: 9
 search-keywords:
   - крон
   - регулярные операции

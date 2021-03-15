@@ -1,8 +1,7 @@
 ---
-id: admin-help
 title: Справка
+slug: 9/admin/help
 core: 9
-path: /9/admin/help
 metatags:
   title: 'Drupal 9: Справка'
   description: 'Административная страница содержащая справку по различным активным модулям.'

@@ -1,6 +1,6 @@
 ---
-id: drupal-core-composer-scaffold
 title: drupal/core-composer-scaffold
+slug: drupal-core-composer-scaffold
 search-keywords:
   - composer
 metatags:

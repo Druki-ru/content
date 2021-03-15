@@ -1,8 +1,7 @@
 ---
-id: admin-people
 title: Пользователи
+slug: 9/admin/people
 core: 9
-path: /9/admin/people
 metatags:
   title: 'Drupal 9: Пользователи'
   description: 'Административная страница управления пользователями сайта.'

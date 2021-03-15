@@ -1,6 +1,6 @@
 ---
-id: plugins
 title: Плагины
+slug: 9/plugins
 core: 9
 metatags:
   title: 'Drupal 9: Плагины (Plugins)'

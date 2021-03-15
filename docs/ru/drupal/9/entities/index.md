@@ -1,6 +1,6 @@
 ---
-id: entities
 title: Сущности
+slug: 9/entities
 core: 9
 metatags:
   title: 'Drupal 9: Entity'

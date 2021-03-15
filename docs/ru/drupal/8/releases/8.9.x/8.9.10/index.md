@@ -1,7 +1,6 @@
 ---
-id: release-8.9.10
 title: 'Drupal 8.9.10'
-path: /8/releases/8.9.10
+slug: 8/releases/8.9.10
 core: 8
 metatags:
   title: 'Drupal 8.9.10: Список изменений'

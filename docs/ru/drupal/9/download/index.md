@@ -1,6 +1,6 @@
 ---
-id: download
 title: Руководство по загрузке
+slug: 9/download
 core: 9
 category:
   area: Первое знакомство

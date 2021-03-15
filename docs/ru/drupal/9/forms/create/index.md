@@ -1,7 +1,6 @@
 ---
-id: form-create
 title: Создание формы
-path: /9/forms/create
+slug: 9/forms/create
 core: 9
 metatags:
   title: 'Drupal 9: Создание формы'

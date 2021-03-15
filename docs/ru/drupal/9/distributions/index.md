@@ -1,6 +1,6 @@
 ---
-id: distributions
 title: Дистрибутивы
+slug: 9/distributions
 core: 9
 search-keywords:
   - Установочные профили

@@ -1,6 +1,6 @@
 ---
-id: drupal-core-recommended
 title: drupal/core-recommended
+slug: drupal-core-recommended
 search-keywords:
   - composer
 metatags:

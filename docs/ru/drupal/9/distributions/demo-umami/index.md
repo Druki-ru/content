@@ -1,8 +1,7 @@
 ---
-id: profile-demo-umami
 title: Демонстрационный установочный профиль Umami
+slug: 9/distributions/demo-umami
 core: 9
-path: /9/distributions/demo-umami
 search-keywords:
   - Установочные профили
   - umami профиль

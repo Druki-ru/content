@@ -1,8 +1,7 @@
 ---
-id: admin-modules
 title: Расширения
+slug: 8/admin/modules
 core: 8
-path: /8/admin/modules
 metatags:
   title: 'Drupal 8: Расширения'
   description: 'Административная страница управления модулями сайта.'

@@ -1,6 +1,6 @@
 ---
-id: batches
 title: Пакетная обработка данных
+slug: 9/batches
 core: 9
 metatags:
   title: 'Drupal 9: Пакетная обработка данных'

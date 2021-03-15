@@ -1,6 +1,6 @@
 ---
-id: queues
 title: Очереди
+slug: 8/queues
 core: 8
 metatags:
   title: 'Drupal 8: Очереди'

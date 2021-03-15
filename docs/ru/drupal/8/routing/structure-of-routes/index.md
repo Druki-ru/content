@@ -1,7 +1,6 @@
 ---
-id: structure-of-routes
 title: Структура маршрутов
-path: /8/routing/structure-of-routes
+slug: 8/routing/structure-of-routes
 core: 8
 category:
   area: Маршрутизация

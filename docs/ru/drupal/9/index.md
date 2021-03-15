@@ -1,8 +1,7 @@
 ---
-id: drupal
-core: 9
 title: Drupal 9
-path: /9
+slug: 9
+core: 9
 metatags:
   description: 'Drupal 9 — девятая мажорная версия Drupal, релиз которой состоялся 4 июня 2020.'
 ---

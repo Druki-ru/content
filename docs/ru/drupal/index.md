@@ -1,6 +1,6 @@
 ---
-id: drupal
 title: Drupal
+slug: drupal
 metatags:
   description: 'Drupal — Web Application Framework для создания веб-сайтов, а также различных сетевых ресурсов.'
 ---

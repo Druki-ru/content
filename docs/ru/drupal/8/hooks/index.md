@@ -1,6 +1,6 @@
 ---
-id: hooks
 title: Хуки
+slug: 8/hooks
 core: 8
 search-keywords:
  - hooks

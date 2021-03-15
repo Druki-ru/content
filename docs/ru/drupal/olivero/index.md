@@ -1,6 +1,6 @@
 ---
-id: olivero
 title: Olivero
+slug: olivero
 metatags:
   description: 'Тема оформления Drupal — Olivero.'
 ---

@@ -1,8 +1,7 @@
 ---
-id: profile-standard
 title: Стандартный установочный профиль
+slug: 8/distributions/standard
 core: 8
-path: /8/distributions/standard
 search-keywords:
   - Установочные профили
   - стандартный профиль

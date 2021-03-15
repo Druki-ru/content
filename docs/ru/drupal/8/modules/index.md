@@ -1,6 +1,6 @@
 ---
-id: modules
 title: Модули
+slug: 8/modules
 core: 8
 search-keywords:
   - где куда писать вставлять код

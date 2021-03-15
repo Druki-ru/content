@@ -1,6 +1,6 @@
 ---
-id: theme-negotiator
 title: Theme Negotiator
+slug: 9/theme-negotiator
 core: 9
 search-keywords:
   - theme_negotiator

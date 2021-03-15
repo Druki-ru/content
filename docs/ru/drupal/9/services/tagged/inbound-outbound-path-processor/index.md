@@ -1,6 +1,6 @@
 ---
-id: inbound-outbound-path-processor
 title: Inbound и Outbound обработчики
+slug: 9/inbound-outbound-path-processor
 core: 9
 search-keywords:
   - чпу

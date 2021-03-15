@@ -1,7 +1,6 @@
 ---
-id: drupalcamp-list
-path: /events/drupalcamp-list
 title: Список мероприятий DrupalCamp
+slug: events/drupalcamp-list
 metatags:
   description: 'Будущие и прошедшие мероприятия DrupalCamp. Информация, отчеты, доклады и докладчики.'
 ---

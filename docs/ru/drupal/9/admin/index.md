@@ -1,6 +1,6 @@
 ---
-id: admin
 title: Административный интерфейс
+slug: 9/admin
 core: 9
 metatags:
   title: 'Drupal 9: Административный интерфейс'

@@ -1,7 +1,6 @@
 ---
-id: drupalgovcon-2019
-path: /events/drupalgovcon-2019
 title: Drupal GovCon 2019
+slug: events/drupalgovcon-2019
 metatags:
   description: 'Drupal GovCon 2019, Бетесда, Мэриленд, США. Описание, доклады.'
 ---

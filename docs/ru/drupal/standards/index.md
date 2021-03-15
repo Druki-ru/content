@@ -1,6 +1,6 @@
 ---
-id: standards
 title: Стандарты кодирования Drupal
+slug: standards
 category:
   area: Стандарты кодирования
   order: 1

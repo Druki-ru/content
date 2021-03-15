@@ -1,6 +1,6 @@
 ---
-id: settings-local-php
 title: settings.local.php — локальные настройки окружения сайта
+slug: 9/settings-local-php
 core: 9
 metatags:
   title: 'Drupal 9: settings.local.php — локальные настройки окружения сайта'

@@ -1,6 +1,6 @@
 ---
-id: libraries
 title: Библиотеки
+slug: 9/libraries
 core: 9
 search-keywords:
  - где как подключать JS JavaScript CSS добавить на страницу

@@ -1,6 +1,6 @@
 ---
-id: system-requirements
 title: Системные требования
+slug: 9/system-requirements
 core: 9
 search-keywords:
   - Системные требования Drupal

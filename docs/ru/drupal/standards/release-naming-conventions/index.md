@@ -1,6 +1,6 @@
 ---
-id: release-naming-conventions
 title: Соглашение об именовании релизов
+slug: release-naming-conventions
 metatags:
   title: 'Drupal: Соглашение об именовании релизов'
   description: 'Требования к именованию версий проектов для Drupal.'

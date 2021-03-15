@@ -1,8 +1,7 @@
 ---
-id: create-module
-core: 8
 title: Создание модуля
-path: /8/modules/create
+slug: 8/modules/create
+core: 8
 metatags:
   title: 'Drupal 8: Создание модуля'
   description: 'Создание собственного модуля в Drupal 8.'

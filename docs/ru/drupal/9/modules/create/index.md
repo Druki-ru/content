@@ -1,8 +1,7 @@
 ---
-id: create-module
-core: 9
 title: Создание модуля
-path: /9/modules/create
+slug: 9/modules/create
+core: 9
 metatags:
   title: 'Drupal 9: Создание модуля'
   description: 'Создание собственного модуля в Drupal 9.'

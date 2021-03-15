@@ -1,6 +1,6 @@
 ---
-id: breadcrumb-builder
 title: Breadcrumb Builder
+slug: 9/breadcrumb-builder
 core: 9
 search-keywords:
   - хлебные крошки

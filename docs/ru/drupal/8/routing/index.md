@@ -1,6 +1,6 @@
 ---
-id: routing
 title: Маршрутизация
+slug: 8/routing
 core: 8
 search-keywords:
   - роуты контроллеры маршруты роутинг

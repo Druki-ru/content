@@ -1,6 +1,6 @@
 ---
-id: releases
 title: 'Drupal 9: Список релизов'
+slug: 9/releases
 core: 9
 metatags:
   title: 'Drupal 9: Список релизов'
