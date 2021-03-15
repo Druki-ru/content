@@ -1,7 +1,6 @@
 ---
-id: event-subscriber
 title: Подписка на событие
-path: /9/events/subscribe
+slug: 9/events/subscribe
 core: 9
 metatags:
   title: 'Drupal 9: Подписка на событие'

@@ -1,7 +1,6 @@
 ---
-id: sa-contrib-2019-058
 title: 'SA-CONTRIB-2019-058'
-path: /security/sa-contrib-2019-058
+slug: security/sa-contrib-2019-058
 metatags:
   title: 'Metatag: SA-CONTRIB-2019-058'
   description: 'Умеренно критическая уязвимость модуля Metatag. Устранена в версии 8.x-1.9'

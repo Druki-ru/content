@@ -1,6 +1,6 @@
 ---
-id: code-of-conduct
 title: Нормы поведения
+slug: code-of-conduct
 metatags:
   title: 'Drupal: Нормы поведения'
   description: 'Набор идей сообщества, направленных на хорошее поведение в Drupal сообществе.'

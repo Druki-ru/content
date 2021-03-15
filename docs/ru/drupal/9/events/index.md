@@ -1,6 +1,6 @@
 ---
-id: events
 title: События
+slug: 9/events
 core: 9
 metatags:
   title: 'Drupal 9: События'

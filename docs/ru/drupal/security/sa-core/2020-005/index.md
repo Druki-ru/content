@@ -1,7 +1,6 @@
 ---
-id: sa-core-2020-005
 title: 'SA-CORE-2020-005'
-path: /security/sa-core-2020-005
+slug: security/sa-core-2020-005
 metatags:
   title: 'Drupal: SA-CORE-2020-005'
   description: 'Критическое. Исправлено в версиях: 8.8.8, 8.9.1, 9.0.1.'

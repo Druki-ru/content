@@ -1,8 +1,7 @@
 ---
-id: drupal
-core: 10
 title: Drupal 10
-path: /10
+slug: 10
+core: 10
 metatags:
   description: 'Drupal 10 — десятая мажорная версия Drupal, релиз которой состоится в июне 2022.'
 ---

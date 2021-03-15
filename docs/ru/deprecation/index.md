@@ -1,6 +1,6 @@
 ---
-id: deprecation
 title: Депрекация
+slug: deprecation
 search-keywords:
   - депрекация
   - deprecated

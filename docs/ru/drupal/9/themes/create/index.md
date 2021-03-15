@@ -1,8 +1,7 @@
 ---
-id: create-theme
-core: 9
 title: Создание темы оформления
-path: /9/themes/create
+slug: 9/themes/create
+core: 9
 metatags:
   title: 'Drupal 9: Создание темы оформления'
   description: 'Создание собственной темы оформления. Структура её *.info.yml файла, минимальный состав, требования и прочие нюансы.'

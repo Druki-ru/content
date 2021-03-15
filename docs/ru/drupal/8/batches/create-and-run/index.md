@@ -1,7 +1,6 @@
 ---
-id: create-and-run-batch
-path: /8/batches/create-and-run
 title: Создание и запуск пакетной обработки
+slug: 8/batches/create-and-run
 core: 8
 metatags:
   title: 'Drupal 8: Создание и запуск пакетной обработки'

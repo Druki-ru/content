@@ -1,6 +1,6 @@
 ---
-id: semver
 title: Семантическое Версионирование
+slug: semver
 search-keywords:
   - semver
   - semantic versioning

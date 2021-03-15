@@ -1,6 +1,6 @@
 ---
-id: simplytest
 title: Simplytest
+slug: simplytest
 search-keywords:
   - как где попробовать друпал drupal
 metatags:

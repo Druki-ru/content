@@ -1,8 +1,7 @@
 ---
-id: admin-reports
 title: Отчёты
+slug: 8/admin/reports
 core: 8
-path: /8/admin/reports
 metatags:
   title: 'Drupal 8: Отчёты'
   description: 'Административная страница с отчетами и системной информацией о сайте.'

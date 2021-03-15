@@ -1,8 +1,7 @@
 ---
-id: create-library
-core: 9
 title: Объявление библиотеки
-path: /9/libraries/create
+slug: 9/libraries/create
+core: 9
 metatags:
   title: 'Drupal 9: Объявление библиотеки'
   description: 'Объявление собственной библиотеки в Drupal 9.'

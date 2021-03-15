@@ -1,8 +1,7 @@
 ---
-id: admin-appearance
 title: Оформление
+slug: 9/admin/appearance
 core: 9
-path: /9/admin/appearance
 metatags:
   title: 'Drupal 9: Оформление'
   description: 'Административная страница управления темами оформления сайта.'

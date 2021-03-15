@@ -1,6 +1,6 @@
 ---
-id: create-hook
 title: Создание хуков
+slug: 8/create-hook
 core: 8
 search-keywords:
  - hooks

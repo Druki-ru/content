@@ -1,7 +1,6 @@
 ---
-id: standards-php
 title: Стандарты кодирования PHP
-path: /standards/php
+slug: standards/php
 category:
   area: Стандарты кодирования
   order: 2

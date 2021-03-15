@@ -1,7 +1,6 @@
 ---
-id: create-event
 title: Создание события
-path: /9/events/create
+slug: 9/events/create
 core: 9
 metatags:
   title: 'Drupal 9: Создание события'

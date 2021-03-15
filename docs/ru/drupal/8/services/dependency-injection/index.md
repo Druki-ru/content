@@ -1,7 +1,6 @@
 ---
-id: dependency-injection
 title: Dependency Injection
-path: /8/services/dependency-injection
+slug: 8/services/dependency-injection
 core: 8
 search-keywords:
   - dependency injection

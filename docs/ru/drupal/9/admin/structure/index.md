@@ -1,8 +1,7 @@
 ---
-id: admin-structure
 title: Структура
+slug: 9/admin/structure
 core: 9
-path: /9/admin/structure
 metatags:
   title: 'Drupal 9: Структура'
   description: 'Административная страница содержащая ссылки на настройки структуры сайта.'

@@ -1,6 +1,6 @@
 ---
-id: community
 title: Сообщество
+slug: community
 category:
   area: Drupal сообщество
   order: 1

@@ -1,6 +1,6 @@
 ---
-id: security
 title: 'Объявления о безопасности'
+slug: security
 metatags:
   title: 'Объявления о безопасности'
   description: 'Список анонсов безопасности Drupal.'

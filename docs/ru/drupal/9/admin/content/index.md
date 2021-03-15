@@ -1,8 +1,7 @@
 ---
-id: admin-content
 title: Содержимое
+slug: 9/admin/content
 core: 9
-path: /9/admin/content
 metatags:
   title: 'Drupal 9: Содержимое'
   description: 'Административная страница обзора содержимого сайта.'

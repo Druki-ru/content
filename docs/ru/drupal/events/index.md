@@ -1,6 +1,6 @@
 ---
-id: events
 title: Drupal мероприятия
+slug: events
 metatags:
   description: 'Узнайте больше о проводимых Drupal сообществом мероприятиях, их типах, датах и отчетах.'
 ---

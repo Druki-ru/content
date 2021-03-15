@@ -1,8 +1,7 @@
 ---
-id: attach-library
-core: 9
 title: Подключение библиотеки
-path: /9/libraries/attach
+slug: 9/libraries/attach
+core: 9
 metatags:
   title: 'Drupal 9: Подключение библиотеки'
   description: 'Подключение необходимых библиотек на страницах в Drupal 9.'

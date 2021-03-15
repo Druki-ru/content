@@ -1,7 +1,6 @@
 ---
-id: drupalcon-2019-amsterdam
-path: /events/drupalcon-2019-amsterdam
 title: DrupalCon Amsterdam 2019
+slug: events/drupalcon-2019-amsterdam
 metatags:
   description: 'DrupalCon Amsterdam 2019, Амстердам, Нидерланды. Даты проведения, докладчики, доклады.'
 ---

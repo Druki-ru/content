@@ -1,6 +1,6 @@
 ---
-id: access-check
 title: Access Check
+slug: 9/access-check
 core: 9
 search-keywords:
   - access_check

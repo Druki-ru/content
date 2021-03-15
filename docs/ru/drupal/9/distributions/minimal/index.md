@@ -1,8 +1,7 @@
 ---
-id: profile-minimal
 title: Минимальный установочный профиль
+slug: 9/distributions/minimal
 core: 9
-path: /9/distributions/minimal
 search-keywords:
   - Установочные профили
   - минимальный профиль

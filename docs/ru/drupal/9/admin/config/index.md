@@ -1,8 +1,7 @@
 ---
-id: admin-config
 title: Конфигурация
+slug: 9/admin/config
 core: 9
-path: /9/admin/config
 metatags:
   title: 'Drupal 9: Конфигурация'
   description: 'Административная страница управления конфигурациями сайта.'

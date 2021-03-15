@@ -1,8 +1,7 @@
 ---
-id: theme-structure
-core: 8
 title: Структура темы
-path: /8/themes/structure
+slug: 8/themes/structure
+core: 8
 metatags:
   title: 'Drupal 8: Структура темы оформления'
   description: 'Из каких папок может состоять тема оформления и что в них должно находиться.'

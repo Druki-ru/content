@@ -1,6 +1,6 @@
 ---
-id: services
 title: Сервисы
+slug: 8/services
 core: 8
 search-keywords:
   - работа с объектами

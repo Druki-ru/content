@@ -1,9 +1,8 @@
 ---
-id: js-drupal-once
-title: 'JavaScript Once API'
-path: /drupal-once
+title: 'Drupal JavaScript Once API'
+slug: drupal-once
 metatags:
-  title: 'JavaScript Once API (@drupal/once)'
+  title: 'Drupal JavaScript Once API (@drupal/once)'
   description: '@drupal/once — JavaScript библиотека отмечающая DOM элементы как обработанные для предотвращения многократных инициализаций.'
 ---
 

@@ -1,6 +1,6 @@
 ---
-id: drupal-recommended-project
 title: drupal/recommended-project
+slug: drupal-recommended-project
 search-keywords:
   - Установка при помощи композера
   - composer

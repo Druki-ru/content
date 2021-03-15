@@ -1,6 +1,6 @@
 ---
-id: api
 title: Drupal API
+slug: 8/api
 core: 8
 metatags:
   title: 'Drupal 8 API'

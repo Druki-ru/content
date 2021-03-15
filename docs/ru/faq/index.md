@@ -1,6 +1,6 @@
 ---
-id: faq
 title: Часто задаваемые вопросы
+slug: faq
 search-keywords:
   - С чего начать
   - Я ничего не знаю

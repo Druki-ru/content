@@ -1,7 +1,6 @@
 ---
-id: route-access-control
 title: Контроль доступа
-path: /9/routing/access-control
+slug: 9/routing/access-control
 core: 9
 category:
   area: Маршрутизация

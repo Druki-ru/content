@@ -1,8 +1,7 @@
 ---
-id: drupal
-core: 8
 title: Drupal 8
-path: /8
+slug: 8
+core: 8
 metatags:
   description: 'Что такое Drupal 8?'
 ---

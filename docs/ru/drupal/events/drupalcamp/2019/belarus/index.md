@@ -1,7 +1,6 @@
 ---
-id: drupalcamp-2019-belarus
-path: /events/drupalcamp-2019-belarus
 title: Drupal Camp Belarus, 2019
+slug: events/drupalcamp-2019-belarus
 metatags:
   description: 'Drupal Camp 2019 в Минске, Беларусь. Даты проведения, докладчики, доклады.'
 ---

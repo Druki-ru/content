@@ -1,7 +1,6 @@
 ---
-id: form-use
 title: Использование форм
-path: /9/forms/use
+slug: 9/forms/use
 core: 9
 metatags:
   title: 'Drupal 9: Использование форм'

@@ -1,7 +1,6 @@
 ---
-id: drupalcon-list
-path: /events/drupalcon-list
 title: Список мероприятий DrupalCon
+slug: events/drupalcon-list
 metatags:
   description: 'Будущие и прошедшие мероприятия DrupalCon. Информация, отчеты, доклады и докладчики.'
 ---

@@ -1,7 +1,6 @@
 ---
-id: sa-core-2019-008
 title: 'SA-CORE-2019-008'
-path: /security/sa-core-2019-008
+slug: security/sa-core-2019-008
 metatags:
   title: 'Drupal: SA-CORE-2019-008'
   description: 'Критический. Исправлено в версии: 8.7.5.'

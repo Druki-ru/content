@@ -1,7 +1,6 @@
 ---
-id: batch-operation
-path: /8/batches/operation
 title: Обработка операции
+slug: 8/batches/operation
 core: 8
 metatags:
   title: 'Drupal 8: Обработка операции'
