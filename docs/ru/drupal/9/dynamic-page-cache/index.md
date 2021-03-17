@@ -2,7 +2,7 @@
 title: Internal Dynamic Page Cache
 slug: 9/dynamic-page-cache
 metatags:
-  title: Drupal 9: Internal Dynamic Page Cache
+  title: 'Drupal 9: Internal Dynamic Page Cache'
   description: Internal Dynamic Page Cache — кеширует страницы, в том числе с динамическим контентом, для всех пользователей.
 ---
 
