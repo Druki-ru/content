@@ -25,7 +25,7 @@ metatags:
 
 - [#3059934](https://www.drupal.org/node/3059934) [cilefen](https://www.drupal.org/u/cilefen) удалён из списка мейнтейнеров ядра Drupal по собственному желанию из-за нехватки времени для выполнения своих обязательств.
 - [#3108025](https://www.drupal.org/node/3108025) SQL запрос для теста `testNumericExpressionSubstitution` переработан на более корректный синтаксис.
-- [#3087606](https://www.drupal.org/node/3087606) Исправлена неполадка в `Datetime::getInfo()` которая кэшировала временную зону пользователя, что в итоге приводило к непредсказуемым timestamp.
+- [#3087606](https://www.drupal.org/node/3087606) Исправлена неполадка в `Datetime::getInfo()` которая кешировала временную зону пользователя, что в итоге приводило к непредсказуемым timestamp.
 - [#3108287](https://www.drupal.org/node/3108287) Тест `UpdateTest::testPrimaryKeyUpdate()` был удалён по причине того что уже имеется более проработанный вариант `testMultiUpdate()`.
 - [#3108021](https://www.drupal.org/node/3108021) Улучшен процесс определения [темы оформления](../../../themes/index.md) по умолчанию для [установочных профилей](../../../distributions/index.md), теперь он корректно определяет тему при установке из `config/sync`.
 - [#3109433](https://www.drupal.org/node/3109433) Исправлены дампы БД с фикстурами `core/modules/system/tests/fixtures/update/drupal-8.8.0.bare.standard.php.gz` и `core/modules/system/tests/fixtures/update/drupal-8.8.0.filled.standard.php.gz` которые содержали некорректный тип профиля `NULL`.

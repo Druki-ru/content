@@ -35,7 +35,7 @@ metatags:
 
 ## Entity API
 
-- [#3068733](https://www.drupal.org/node/3068733) Исправлена ошибка в `Drupal\workspaces\EntityOperations::entityPreload` приводящая к загрузке ненужных сущностей из статического кэша.
+- [#3068733](https://www.drupal.org/node/3068733) Исправлена ошибка в `Drupal\workspaces\EntityOperations::entityPreload` приводящая к загрузке ненужных сущностей из статического кеша.
 - [#3074949](https://www.drupal.org/node/3074949) Добавлена очистка ранее загруженных сущностей из памяти при обновлении схем БД.
 
 ## Media API

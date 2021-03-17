@@ -59,7 +59,7 @@ services:
 
 ## Node
 
-- [#3127250](https://www.drupal.org/project/drupal/issues/3127250) Предпросмотр материалов больше не кэшируется Dynamic Page Cache.
+- [#3127250](https://www.drupal.org/project/drupal/issues/3127250) Предпросмотр материалов больше не кешируется Dynamic Page Cache.
 
 ## Olivero
 

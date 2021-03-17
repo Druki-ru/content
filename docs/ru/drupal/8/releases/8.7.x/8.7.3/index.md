@@ -31,7 +31,7 @@ metatags:
 - [#3045211](https://www.drupal.org/node/3045211) Исправлена проблема, при которой миграции ссылок создавали некорректные атрибуты.
 - [#3055474](https://www.drupal.org/node/3055474) `template_preprocess_file_link` теперь не пытается загрузить файл из `stdClass` объекта и всегда ожидает сущность файла.
 - [#3055918](https://www.drupal.org/node/3055918) Исправлена опечатка в `LibraryDiscoveryParser::parseLibraryInfo()`.
-- [#3053827](https://www.drupal.org/node/3053827) Исправлена ошибка утечки метаданных кэша при использовании JSON:API для получения комментария с родителем.
+- [#3053827](https://www.drupal.org/node/3053827) Исправлена ошибка утечки метаданных кеша при использовании JSON:API для получения комментария с родителем.
 - [#3035980](https://www.drupal.org/node/3035980) Улучшено сообщение об ошибке при передаче `NULL` в `EntityStorageBase::load()`.
 - [#3048434](https://www.drupal.org/node/3048434) Тест `FileManagedAccessTest` перенесен в пространство имен `Kernel`.
 - [#2892440](https://www.drupal.org/node/2892440) Добавлен новый хелпер для тестов `JSWebAssert::assertNoElementAfterWait()`, который проверяет наличие элемента на странице спустя определенный тайм-аут, например, когда элемент должен был удалиться со страницы.

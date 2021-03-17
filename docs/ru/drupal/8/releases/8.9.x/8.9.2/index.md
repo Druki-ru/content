@@ -59,7 +59,7 @@ metatags:
 
 ## Menu
 
-- [#3144046](https://www.drupal.org/project/drupal/issues/3144046) Исправлен пример с кэш метаданными в `hook_menu_local_tasks_alter()`.
+- [#3144046](https://www.drupal.org/project/drupal/issues/3144046) Исправлен пример с кеш метаданными в `hook_menu_local_tasks_alter()`.
 - [#2914785](https://www.drupal.org/project/drupal/issues/2914785) Исправлена неполадка, при которой сущности с внешними URL в качестве связей не могли быть удалены при включенном модуле `menu_link_content`.
 
 ## Plugin System

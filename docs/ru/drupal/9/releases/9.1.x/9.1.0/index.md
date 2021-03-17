@@ -23,7 +23,7 @@ metatags:
 
 ### Пример
 
-Имеем следующие кэш-теги:
+Имеем следующие кеш-теги:
 
 ```php
 $cache_tags_foo = ['foo'];
@@ -280,9 +280,9 @@ user_password()
 
 - [#3072076](https://www.drupal.org/project/drupal/issues/3072076)
 
-В предыдущих версиях JSON:API возвращал объекты `ResourceResponce` на все запросы, при этом он реализует `CacheableResponseInterface`, даже для ответов которые не должны кэшироваться. Это могло приводить к фатальным ошибкам при определённых условиях.
+В предыдущих версиях JSON:API возвращал объекты `ResourceResponce` на все запросы, при этом он реализует `CacheableResponseInterface`, даже для ответов которые не должны кешироваться. Это могло приводить к фатальным ошибкам при определённых условиях.
 
-Сейчас JSON:API конкретизирует ответы что кэшируются и не кэшируются, в связи с этим представлен новый класс `CacheableResourceResponse`. Данный класс реализует `CacheableResponseInterface`. Таким образом `ResourceResponce` более не реализует `CacheableResponseInterface`.
+Сейчас JSON:API конкретизирует ответы что кешируются и не кешируются, в связи с этим представлен новый класс `CacheableResourceResponse`. Данный класс реализует `CacheableResponseInterface`. Таким образом `ResourceResponce` более не реализует `CacheableResponseInterface`.
 
 `ResourceResponce` помечен для внутреннего использования и у вас не должно быть кода который может задеть данное изменение. Тем не менее, если по каким-то причинам ваш код полагается на данные классы, пожалуйста, произведите рефакторинг кода с использованием нового `CacheableResourceResponse` (это касается ответов `HEAD`, `OPTIONS` и `GET`).
 
@@ -839,7 +839,7 @@ source:
 ## Install System
 
 - [#3157895](https://www.drupal.org/project/drupal/issues/3157895) Обновление состояния `install_time` перенесено в `installed_finished()`.
-- [#3086307](https://www.drupal.org/project/drupal/issues/3086307) Производительность установки увеличена примерно на ~20%, путем сброса кэша маршрутов после установки всех модулей, а не после каждого.
+- [#3086307](https://www.drupal.org/project/drupal/issues/3086307) Производительность установки увеличена примерно на ~20%, путем сброса кеша маршрутов после установки всех модулей, а не после каждого.
 
 ## JavaScript
 
@@ -1133,7 +1133,7 @@ source:
 ## Прочие изменения
 
 - [#3123472](https://www.drupal.org/node/3123472) Последовательный вызов методов `StorageComparer` больше не используется в условиях.
-- [#2488350](https://www.drupal.org/node/2488350) При установке Drupal теперь используется кэш-бэкенд в памяти. Это позволяет ускорить установку.
+- [#2488350](https://www.drupal.org/node/2488350) При установке Drupal теперь используется кеш-бэкенд в памяти. Это позволяет ускорить установку.
 - [#3127255](https://www.drupal.org/node/3127255) Из проверки системных требований удалены проверки `mbstring.http_input` и `mbstring.http_output`. Данные параметры, начиная с PHP 5.6 являются устаревшими и ничего не возвращают.
 - [#2778917](https://www.drupal.org/node/2778917) Вместо тернарного оператора при вызове `\Drupal::state()->get()` теперь используется второй параметр.
 - [#3021788](https://www.drupal.org/node/3021788) Функции `template_preprocess_menu_local_task()` и `template_preprocess_menu_local_action()` перенесены в `core/includes/theme.inc`.
@@ -1157,7 +1157,7 @@ source:
 - [#3157546](https://www.drupal.org/project/drupal/issues/3157546) В `MAINTAINERS.txt` добавлен mondrake в качестве мейнтейнера тест фреймворка.
 - [#3157954](https://www.drupal.org/project/drupal/issues/3157954) Из тестов удалены избыточные ребилды маршрутов.
 - [#2989262](https://www.drupal.org/project/drupal/issues/2989262) В генератор `.htaccess` файла добавлены экранирования для точек и запятых.
-- [#3116858](https://www.drupal.org/project/drupal/issues/3116858) `ExtensionDiscovery` теперь кэширует не объект расширения целиком, а только информацию о нём.
+- [#3116858](https://www.drupal.org/project/drupal/issues/3116858) `ExtensionDiscovery` теперь кеширует не объект расширения целиком, а только информацию о нём.
 - [#2836194](https://www.drupal.org/project/drupal/issues/2836194) Для ajax throbber увеличен паддинг, чтобы не обрезало край анимации.
 - [#3138781](https://www.drupal.org/project/drupal/issues/3138781) Стандартизовано употребление слов «ORed» и «ANDed» в ядре.
 - [#3022551](https://www.drupal.org/project/drupal/issues/3022551) Исправлен артикль в документации после притяжательного местоимения.
