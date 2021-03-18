@@ -6,10 +6,13 @@ metatags:
   description: Internal Dynamic Page Cache — кеширует страницы, в том числе с динамическим содержимым.
 ---
 
-**Internal Dynamic Page Cache** (машинное имя `dynamic_page_cache`) — модуль кеширования страниц с динамическим содержимым.
+**Internal Dynamic Page Cache** (машинное имя `dynamic_page_cache`) — стандартный модуль кеширования страниц с динамическим содержимым.
 
 > [!TIP]
 > Данный модуль включён по умолчанию в [стандартном профиле](../distributions/standard/index.md).
+
+> [!NOTE]
+> Не путайте данный модуль с [Internal Page Cache](../page-cache/index.md)
 
 ## Введение
 
@@ -94,7 +97,7 @@ final class UtmQueryRequestPolicy implements RequestPolicyInterface {
       'utm_medium',
       'utm_campaign',
       'utm_term',
-      'utm_content'
+      'utm_content',
     ];
     if (\array_intersect($utm_params, $request->query->keys())) {
       return RequestPolicyInterface::DENY;
@@ -131,7 +134,7 @@ services:
 * `RequestPolicyInterface::DENY`: Сохранение текущего ответа в кеш запрещен.
 * `NULL`: Текущая политика не имеет никаких предпочтений и её результат стоит пропустить.
 
-Пример класса `src/PageCache/ResponsePolicy/`:
+Пример класса `src/PageCache/ResponsePolicy/UtmQueryResponsePolicy.php`:
 
 ```php
 <?php
@@ -185,9 +188,9 @@ services:
 
 Когда данный модуль включен, он всегда добавляет к ответам заголовок `X-Drupal-Dynamic-Cache`. Данный заголовок может принимать следующие значения:
 
-- `HIT`: Ответ сформирован из кеша.
-- `UNCACHEABLE`: Если ответ на запрос не является кешируемым.
-- `MISS`: Ответ сформирован без участия кеша, но он успешно сохранён для будущих запросов — холодный кеш.
+* `HIT`: Ответ сформирован из кеша.
+* `UNCACHEABLE`: Если ответ на запрос не является кешируемым.
+* `MISS`: Ответ сформирован без участия кеша, но он успешно сохранён для будущих запросов — холодный кеш.
 
 ### Не кешируемые ответы
 
@@ -203,3 +206,7 @@ services:
 > Данный файл и параметры могут быть изменены и быть разными для разных окружений.
 
 Если одна из проверок сработает, заголовок `X-Drupal-Dynamic-Cache` будет равен `UNCACHEABLE`.
+
+## Смотрите также
+
+* [Internal Page Cache](../page-cache/index.md) — статическое кеширование ответов для анонимных пользователей.
