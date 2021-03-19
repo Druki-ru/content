@@ -207,3 +207,4 @@ $build = [
 ## Ссылки
 
 - [Drupal 8: #lazy_builder — ленивый билдер](https://niklan.net/blog/154), Niklan, 2017
+- [Плагин блока, генерящий динамический контент с помощью #lazy_builder](http://xandeadx.ru/blog/drupal/992), xandeadx, 2021
