@@ -48,7 +48,7 @@ metatags:
 
 ## Statistics
 
-- [#3128761](https://www.drupal.org/node/3128761) Из запроса удалено дублирование плейсхолдера `:timestamp`.
+- [#3128761](https://www.drupal.org/node/3128761) Из запроса удалено дублирование заполнителя `:timestamp`.
 
 ## Taxonomy
 
