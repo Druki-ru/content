@@ -830,7 +830,7 @@ source:
 
 ## Image
 
-- [#3153009](https://www.drupal.org/project/drupal/issues/3153009) Добавлен новый стиль изображения устанавливаемый с модулем — «Wide (1090)». Он будет использоваться как Hero стиль в будущей теме Olivero.
+- [#3153009](https://www.drupal.org/project/drupal/issues/3153009) Добавлен новый [стиль изображения](../../../image/image-styles/index.md) устанавливаемый с модулем — «Wide (1090)». Он будет использоваться как Hero стиль в будущей теме Olivero.
 - [#3097797](https://www.drupal.org/project/drupal/issues/3097797) Улучшена документация для функции `image_filter_keyword()`.
 - [#3165350](https://www.drupal.org/project/drupal/issues/3165350) Удалена неиспользуемая переменная `$key` в `MigrateImageCacheTest`.
 - [#2630230](https://www.drupal.org/project/drupal/issues/2630230) Исправлена неполадка из-за которой мог не генерироваться стиль изображения из корня публичной файловой директории при конвертации типов.
