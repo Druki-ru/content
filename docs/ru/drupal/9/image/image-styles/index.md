@@ -90,7 +90,7 @@ Drupal предоставляет несколько стандартных эф
 $image = [
   '#type' => 'image_style',
   '#image_style' => 'thumbnail',
-  '#uri' => $file->getFileUri(),
+  '#uri' => 'public://cat.jpg',
 ];
 ```
 
@@ -103,15 +103,19 @@ $image = [
 ```php
 $image_style_storage = \Drupal::entityTypeManager()->getStorage('image_style');
 $image_style = $image_style_storage->load('thumbnail');
-// URI e.g.: public://styles/thumbnail/path/to/img.jpg.
-$uri = $image_style->buildUri($file->getFileUri());
-// URL e.g.: https://example.com/sites/default/files/styles/thumbnail/path/to/img.jpg.
-$url = $image_style->buildUrl($file->getFileUri())
+// URI e.g.: public://styles/thumbnail/public/cat.jpg.
+$uri = $image_style->buildUri('public://cat.jpg');
+// URL e.g.: https://example.com/sites/default/files/styles/thumbnail/public/cat.jpg.
+$url = $image_style->buildUrl('public://cat.jpg')
 ```
 
 ## Расширения
 
 * [Image Effects](https://www.drupal.org/project/image_effects) — добавляет новые эффекты изображений, например: добавление водяных знаков, текста, управление холстом, маска, прозрачность и т.д.
+
+## Смотрите также
+
+* [Адаптивные стили изображений](../../responsive-images)
 
 ## Изменения в релизах
 
