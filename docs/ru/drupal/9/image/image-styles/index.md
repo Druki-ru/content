@@ -115,7 +115,7 @@ $url = $image_style->buildUrl('public://cat.jpg')
 
 ## Смотрите также
 
-* [Адаптивные стили изображений](../../responsive-images)
+* [Адаптивные стили изображений](../../responsive-images/index.md)
 
 ## Изменения в релизах
 
