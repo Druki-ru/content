@@ -29,9 +29,14 @@ metatags:
 
 - [#3054510](https://www.drupal.org/project/drupal/issues/3054510) Исправлена документация для `NormalizerBase::supportsDenormalization()`.
 
+## Transliteration System
+
+- [#3169212](https://www.drupal.org/project/drupal/issues/3169212) Улучшена транслитерация Украинских символов.
+
 ## Views
 
 - [#2969107](https://www.drupal.org/project/drupal/issues/2969107) Аргументы для даты больше не возвращают HTTP 500 при некорректном формате.
+- [#3201393](https://www.drupal.org/project/drupal/issues/3201393) Стандартное представления глоссария больше не показывает неопубликованные материалы.
 
 ## Прочие изменения
 
