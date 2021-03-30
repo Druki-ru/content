@@ -17,6 +17,10 @@ metatags:
 
 - [#2857444](https://www.drupal.org/project/drupal/issues/2857444) Улучшено отслеживание файлов в полях отличных от `text`, `text_long` и `text_with_summary`. Теперь данные файлы отслеживаются для всех полей что расширяют `TextItemBase`.
 
+## Form System
+
+- [#3183301](https://www.drupal.org/project/drupal/issues/3183301) Добавлены тесты покрывающий [SA-CORE-2020-009](../../../../security/sa-core/2020-009/index.md).
+
 ## Media System
 
 - [#3192260](https://www.drupal.org/project/drupal/issues/3192260) Исправлена настройка DrupalCI для `CKEditorIntegrationTest` который мог случайно проваливаться.
