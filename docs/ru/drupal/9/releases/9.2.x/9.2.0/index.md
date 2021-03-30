@@ -659,9 +659,17 @@ myfeature:
 - [#3096781](https://www.drupal.org/project/drupal/issues/3096781) Зависимости `symfony/mime`, `symfony/var-dumper` и `symfony/phpunit-bridge` обновлены до версии 5.2. Добавлена новая зависимость `symfony/deprecation-contracts`.
 - [#3187025](https://www.drupal.org/project/drupal/issues/3187025) Зависимости ядра обновлены на 8.12.2020.
 
+## Configuration System
+
+* [#3196756](https://www.drupal.org/project/drupal/issues/3196756) Исправлена некорректное упоминание файла в документации `ConfigInstallerInterface`.
+
 ## Contact
 
 - [#3173756](https://www.drupal.org/project/drupal/issues/3173756) Добавлена административная вкладка "Просмотр" для контактных форм.
+
+## Content Moderation
+
+* [#3203809](https://www.drupal.org/project/drupal/issues/3203809) Вызовы Entity Query в модуле больше не учитывают права доступа.
 
 ## Cron System
 
@@ -686,6 +694,16 @@ myfeature:
 - [#3159744](https://www.drupal.org/project/drupal/issues/3159744) Из теста `EntitySchemaTest` удалены фиксированные ID.
 - [#3201956](https://www.drupal.org/project/drupal/issues/3201956) Удалена передача бесполезного аргумента в `ConfigEntityStorage` при вызове `$this->mapFromStorageRecords()`.
 - [#3201957](https://www.drupal.org/project/drupal/issues/3201957) Удалено неиспользуемое свойство `COnfigEntityStorage::$entities`.
+* [#3202963](https://www.drupal.org/project/drupal/issues/3202963) Формы удаления bundle сущностей теперь показывают количество материалов, которые основаны на нём.
+* [#3203147](https://www.drupal.org/project/drupal/issues/3203147) Удалён решённый `@todo` из `EntityBundleListenerInterface .
+
+## Field System
+
+* [#3203611](https://www.drupal.org/project/drupal/issues/3203611) Исправлен тайпхинт для `\Drupal\field\Entity\FieldConfig::loadByName`.
+
+## File
+
+* [#2479607](https://www.drupal.org/project/drupal/issues/2479607) Удалены устаревшие схемы из `file.file.views.schema.yml`.
 
 ## Form System
 
@@ -699,6 +717,10 @@ myfeature:
 
 - [#3090257](https://www.drupal.org/project/drupal/issues/3090257) Добавлено больше тестов проверки синтаксиса.
 - [#3095737](https://www.drupal.org/project/drupal/issues/3095737) Справка для модулей `config_translation`, `content_translation`, `locale` и `language` конвертирована в Help Topics.
+
+## Install system
+
+* [#3188654](https://www.drupal.org/project/drupal/issues/3188654) Исправлены ссылка на загрузку переводов.
 
 ## JavaScript
 
@@ -738,6 +760,8 @@ myfeature:
 - [#3189054](https://www.drupal.org/project/drupal/issues/3189054) Удалена пометка, что `MigrateException` может быть вызвано конструктором `MigrateExecutable`, так как оно там не вызывается.
 - [#3200735](https://www.drupal.org/project/drupal/issues/3200735) Добавлена документация для плагинов источников Drupal 6 и Drupal 7 `user`, `profile` и `roles`.
 - [#3175953](https://www.drupal.org/project/drupal/issues/3175953) Произведена чистка в функциональных тестах.
+* [#3191990](https://www.drupal.org/project/drupal/issues/3191990) Произведён небольшой рефакторинг кода в `DrupalSqlBaseTest`.
+* [#3205029](https://www.drupal.org/project/drupal/issues/3205029) Из `DestinationCategoryTest` удалены референсы на несуществующие классы.
 
 ## Node System
 
@@ -756,6 +780,8 @@ myfeature:
 - [#3200631](https://www.drupal.org/project/drupal/issues/3200631) Исправлено отображения `<select>` элемента в jQuery UI dialog на Safari.
 - [#3191716](https://www.drupal.org/project/drupal/issues/3191716) Открытие вложенных пунктов меню на мобильной версии теперь требует всего 1 тап для открытия, а не 2 как было ранее.
 - [#3192656](https://www.drupal.org/project/drupal/issues/3192656) Исправлена неполадка с текстовыми элементами формы приводящая к появлению горизонтальной прокрутки.
+* [#3190268](https://www.drupal.org/project/drupal/issues/3190268) Полифилы поставляемые с темой, заменены на библиотеки с аналогичными полифилами из ядра.
+* [#3192903](https://www.drupal.org/project/drupal/issues/3192903) Mouseout событие при наличии активного фокуса на вложенном меню, больше не закрывает его.
 
 ## Plugin System
 
@@ -770,6 +796,7 @@ myfeature:
 - [#2409413](https://www.drupal.org/project/drupal/issues/2409413) Удалены неиспользуемые RSS настройки и описания.
 - [#3002983](https://www.drupal.org/project/drupal/issues/3002983) Протокол в ссылках заменён на HTTPS.
 - [#3174832](https://www.drupal.org/project/drupal/issues/3174832) Исправлена документация для `admin-block-content.html.twig`.
+* [#3204220](https://www.drupal.org/project/drupal/issues/3204220) `Drupal\system\ModuleDependencyMessageTrait` теперь `Drupal\Core\Extension\ModuleDependencyMessageTrait`.
 
 ## Taxonomy
 
@@ -826,6 +853,7 @@ myfeature:
 - [#3193163](https://www.drupal.org/project/drupal/issues/3193163) Использование `AssertLegacyTrait::verbose()` помечено устаревшим.
 - [#3187949](https://www.drupal.org/project/drupal/issues/3187949) Метод `::cssSelectToXpath()` перенесён из `BrowserTestBase` в `UiHelperTrait`.
 - [#3187113](https://www.drupal.org/project/drupal/issues/3187113) Удалены вызовы `t()` в `::submitForm()`.
+* [#3205139](https://www.drupal.org/project/drupal/issues/3205139) Удалён `ModuleTestBase::assertTableCount()`.
 
 ## Symfony 5
 
@@ -865,3 +893,10 @@ myfeature:
 - [#3185653](https://www.drupal.org/project/drupal/issues/3185653) Удалены упоминания `::drupalPostAjaxForm()`, который был удалён в [Drupal 9](../../../index.md).
 - [#3200213](https://www.drupal.org/project/drupal/issues/3200213) Добавлена документация для сервиса `session_bag`.
 - [#3202014](https://www.drupal.org/project/drupal/issues/3202014) `pager_test_preprocess_pager()` теперь использует early return если пейджер не найден.
+* [#3202787](https://www.drupal.org/project/drupal/issues/3202787) Исправлены ссылка в документации к `FunctionalTestSetupTrait::setContainerParameter()`.
+* [#2508071](https://www.drupal.org/project/drupal/issues/2508071) Добавлено объявление свойства `KeyValueFactory::$options`.
+* [#2711739](https://www.drupal.org/project/drupal/issues/2711739) Добавлена отсутствующая документация для методов `QueryInterface`.
+* [#1923816](https://www.drupal.org/project/drupal/issues/1923816) Исправлены примеры для `QueryAggregateInterface`.
+* [#3186626](https://www.drupal.org/project/drupal/issues/3186626) Удалена поддержка параметра `$proxy_class_name` для метода `ProxyBuilder::build()`, так как он не используется.
+* [#3198594](https://www.drupal.org/project/drupal/issues/3198594) Добавлен класс `Drupal\Core\Http\InputBag` для предоставления моста между Symfony 4 и 5, только для внутреннего пользования.
+* [#2903911](https://www.drupal.org/project/drupal/issues/2903911) Исправлены ошибки стандарта кодирования `Drupal.Commenting.FunctionComment.ParamMissingDefinition`.
