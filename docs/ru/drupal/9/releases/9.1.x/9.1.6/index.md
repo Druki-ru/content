@@ -85,6 +85,10 @@ metatags:
 
 * [#3202808](https://www.drupal.org/project/drupal/issues/3202808) Исправлен некорректный синтаксис в `book-tree.html.twig`.
 
+## Search
+
+* [#2992894](https://www.drupal.org/project/drupal/issues/2992894) Результаты поиска теперь имеют корректный `lang` аттрибут.
+
 ## System
 
 * [#3106455](https://www.drupal.org/project/drupal/issues/3106455) Исправлено использование несуществующей переменной в `TestFileTransfer`.
