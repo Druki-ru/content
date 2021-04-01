@@ -23,6 +23,7 @@ metatags:
 ## Block
 
 * [#3199730](https://www.drupal.org/project/drupal/issues/3199730) (откачено) Исправлена неполадка, из-за которой описание блока, созданного Views, санитизировалось дважды.
+* [#3160629](https://www.drupal.org/project/drupal/issues/3160629) Добавлен синоним `BlockPluginTrait::traitBuildConfigurationForm` для `BlockPluginTrait::buildConfigurationForm` в `BlockBase`.
 
 ## Block Content
 
@@ -41,6 +42,7 @@ metatags:
 
 * [#2917606](https://www.drupal.org/project/drupal/issues/2917606) Исправлена неполадка, из-за которой вызов `FieldStorageConfigStorage::loadByProperties()` с передачей `entity_type` и `field_name` возвращал пустой результат.
 * [#3094366](https://www.drupal.org/project/drupal/issues/3094366) Строковый форматтер больше не позволяет делать значение ссылкой на содержимое, если у содержимого нет `canonical` маршрута.
+* [#3202125](https://www.drupal.org/project/drupal/issues/3202125) Констрейнт `UniqueFieldValueValidator` больше не учитывает права доступа.
 
 ## Field UI
 
