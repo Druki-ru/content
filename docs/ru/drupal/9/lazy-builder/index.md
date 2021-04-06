@@ -63,9 +63,9 @@ function foo_b(): array {
   ];
 }
 
-function foo_b_lazy(): void {
+function foo_b_lazy(): string {
   sleep(1000);
-  echo '<p>Foo</p>';
+  return '<p>Foo</p>';
 }
 
 function foo_c(): void {
@@ -81,7 +81,7 @@ foo_c();
 
 ```php
 <p>Hello World!</p>
-<drupal-render-placeholder callback="foo_b" arguments="" token="TOKEN"></drupal-render-placeholder>
+<drupal-render-placeholder callback="foo_b_lazy" arguments="" token="TOKEN"></drupal-render-placeholder>
 <p>Bar</p>
 ```
 
