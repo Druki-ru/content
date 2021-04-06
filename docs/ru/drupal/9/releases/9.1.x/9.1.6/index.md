@@ -44,10 +44,6 @@ metatags:
 * [#3094366](https://www.drupal.org/project/drupal/issues/3094366) Строковый форматтер больше не позволяет делать значение ссылкой на содержимое, если у содержимого нет `canonical` маршрута.
 * [#3202125](https://www.drupal.org/project/drupal/issues/3202125) Констрейнт `UniqueFieldValueValidator` больше не учитывает права доступа.
 
-## Field UI
-
-* [#3202440](https://www.drupal.org/project/drupal/issues/3202440) `FieldStorageConfigEditForm::validateCardinality()` больше не учитывает права доступа.
-
 ## Help Topics
 
 * [#3047722](https://www.drupal.org/project/drupal/issues/3047722) Справка для модулей `content_moderations` и `workflows` конвертирована в Help Topics.

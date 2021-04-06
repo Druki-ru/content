@@ -17,6 +17,10 @@ metatags:
 
 - [#2857444](https://www.drupal.org/project/drupal/issues/2857444) Улучшено отслеживание файлов в полях отличных от `text`, `text_long` и `text_with_summary`. Теперь данные файлы отслеживаются для всех полей что расширяют `TextItemBase`.
 
+## Field UI
+
+* [#3202440](https://www.drupal.org/project/drupal/issues/3202440) `FieldStorageConfigEditForm::validateCardinality()` больше не учитывает права доступа.
+
 ## Form System
 
 - [#3183301](https://www.drupal.org/project/drupal/issues/3183301) Добавлены тесты покрывающий [SA-CORE-2020-009](../../../../security/sa-core/2020-009/index.md).
@@ -37,10 +41,18 @@ metatags:
 
 - [#3169212](https://www.drupal.org/project/drupal/issues/3169212) Улучшена транслитерация Украинских символов.
 
+## User
+
+* [#3206540](https://www.drupal.org/project/drupal/issues/3206540) `user_is_blocked()` больше не учитывает права доступа.
+
 ## Views
 
 - [#2969107](https://www.drupal.org/project/drupal/issues/2969107) Аргументы для даты больше не возвращают HTTP 500 при некорректном формате.
 - [#3201393](https://www.drupal.org/project/drupal/issues/3201393) Стандартное представления глоссария больше не показывает неопубликованные материалы.
+
+## Тестирование
+
+* [#3207086](https://www.drupal.org/project/drupal/issues/3207086) Исправлены проблемы с тестом `MonthDatePluginTest`.
 
 ## Прочие изменения
 
