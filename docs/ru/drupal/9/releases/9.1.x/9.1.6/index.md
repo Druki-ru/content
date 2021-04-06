@@ -37,6 +37,8 @@ metatags:
 
 * [#3202040](https://www.drupal.org/project/drupal/issues/3202040) Формы массового удаления сущностей (`block_content`, `comment`, `media`, `node`) больше не учитывают права доступа.
 * [#3201714](https://www.drupal.org/project/drupal/issues/3201714) Чистка «мусора» за удалённой сущностью больше не учитывает права доступа.
+* [#3204419](https://www.drupal.org/project/drupal/issues/3204419) Вызовы EntityQuery теперь явно указывают значение для `::accessCheck()` игнорируя поведение по умолчанию.
+* [#3204163](https://www.drupal.org/project/drupal/issues/3204163) Вызовы EntityQuery в тестах теперь не учитывают права доступа, если это не требуется тестом.
 
 ## Field System
 
@@ -74,6 +76,8 @@ metatags:
 * [#3199999](https://www.drupal.org/project/drupal/issues/3199999) Добавлена документация для плагинов-источников языков сайта.
 * [#3203265](https://www.drupal.org/project/drupal/issues/3203265) Улучшен тайпхинт в документации для свойства `MigrateProcessTestCase::$row`.
 * [#3204986](https://www.drupal.org/project/drupal/issues/3204986) Добавлена документация для плагинов-источников полей.
+* [#3199742](https://www.drupal.org/project/drupal/issues/3199742) Добавлена документация для плагинов-источников блоков.
+* [#3200809](https://www.drupal.org/project/drupal/issues/3200809) Добавлена документация для плагинов-источников полей Drupal 6.
 
 ## MySQL DB Driver
 

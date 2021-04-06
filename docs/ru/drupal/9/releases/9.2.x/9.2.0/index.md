@@ -657,11 +657,13 @@ myfeature:
 ## Composer
 
 - [#3096781](https://www.drupal.org/project/drupal/issues/3096781) Зависимости `symfony/mime`, `symfony/var-dumper` и `symfony/phpunit-bridge` обновлены до версии 5.2. Добавлена новая зависимость `symfony/deprecation-contracts`.
-- [#3187025](https://www.drupal.org/project/drupal/issues/3187025) Зависимости ядра обновлены на 8.12.2020.
+- [#3187025](https://www.drupal.org/project/drupal/issues/3187025) Зависимости ядра обновлены на 08.12.2020.
+- [#3206301](https://www.drupal.org/project/drupal/issues/3206301) Зависимости ядра обновлены на 30.03.2021.
 
 ## Configuration System
 
 * [#3196756](https://www.drupal.org/project/drupal/issues/3196756) Исправлена некорректное упоминание файла в документации `ConfigInstallerInterface`.
+* [#2844452](https://www.drupal.org/project/drupal/issues/2844452) Многострочные строки в YAML файлах теперь экспортируются без использования `\r\n`.
 
 ## Contact
 
@@ -670,6 +672,7 @@ myfeature:
 ## Content Moderation
 
 * [#3203809](https://www.drupal.org/project/drupal/issues/3203809) Вызовы Entity Query в модуле больше не учитывают права доступа.
+* [#3204883](https://www.drupal.org/project/drupal/issues/3204883) Сущность `taxonomy_term` теперь корректно запрещена на использование в Content Moderation.
 
 ## Cron System
 
@@ -721,6 +724,7 @@ myfeature:
 ## Install system
 
 * [#3188654](https://www.drupal.org/project/drupal/issues/3188654) Исправлены ссылка на загрузку переводов.
+* [#3206168](https://www.drupal.org/project/drupal/issues/3206168) Исправлен вызов `install_display_output()` с третьим аргументом.
 
 ## JavaScript
 
@@ -824,6 +828,7 @@ myfeature:
 ## User
 
 - [#3186752](https://www.drupal.org/project/drupal/issues/3186752) Аргумент `$langcode` для функции `_user_mail_notify()` помечен устаревшим.
+* [#3206358](https://www.drupal.org/project/drupal/issues/3206358) Удалена инициализации `$bag` в `SessionManager`.
 
 ## Views
 
@@ -865,6 +870,7 @@ myfeature:
 - [#3195533](https://www.drupal.org/project/drupal/issues/3195533) Константа `Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL` помечена устаревшей. Используйте либо `HEADER_X_FORWARDED_FOR | HEADER_X_FORWARDED_HOST | HEADER_X_FORWARDED_PORT | HEADER_X_FORWARDED_PROTO`, либо `HEADER_X_FORWARDED_AWS_ELB`, либо `HEADER_X_FORWARDED_TRAEFIK`.
 - [#3161983](https://www.drupal.org/project/drupal/issues/3161983) Код ядра обновлён для соответствия новому EventDispatcher. Смотрите [Drupal 9.1.0](../../9.1.x/9.1.0/index.md) для более подробных изменений.
 - [#3187857](https://www.drupal.org/project/drupal/issues/3187857) Сообщения об устаревшем коде больше не будут приводить к предупреждению об изменении сигнатуры методов `::setDeprecated()`.
+* [#3199691](https://www.drupal.org/project/drupal/issues/3199691) Временно отключено тестирование `octal` типа в YAML файлах, так как в спецификации YAML 1.2, который используется Symfony начиная с версии 5.1, поменялся его формат с `0777` на `0o777`.
 
 ## Прочие изменения
 
@@ -900,3 +906,7 @@ myfeature:
 * [#3186626](https://www.drupal.org/project/drupal/issues/3186626) Удалена поддержка параметра `$proxy_class_name` для метода `ProxyBuilder::build()`, так как он не используется.
 * [#3198594](https://www.drupal.org/project/drupal/issues/3198594) Добавлен класс `Drupal\Core\Http\InputBag` для предоставления моста между Symfony 4 и 5, только для внутреннего пользования.
 * [#2903911](https://www.drupal.org/project/drupal/issues/2903911) Исправлены ошибки стандарта кодирования `Drupal.Commenting.FunctionComment.ParamMissingDefinition`.
+* [#2160091](https://www.drupal.org/project/drupal/issues/2160091) `drupal_flush_all_caches()` больше не сбрасывает контейнер дважды. Данная функция теперь получает параметр `$kernel`, если он не передан, или не является экземпляром `DrupalKernel`, то будет сброшен кеш контейнера. При наличии данного аргумента, ответственность за сброс кеша контейнера ложится на того, кто вызвал данную функцию.
+* [#2937858](https://www.drupal.org/project/drupal/issues/2937858) Исправлены ошибки для соответствия стандарту `Drupal.Commenting.DocCommentAlignment`.
+* [#3207119](https://www.drupal.org/project/drupal/issues/3207119) Исправлены ошибки для соответствия стандарту `Squiz.WhiteSpace.ScopeKeywordSpacing`.
+* [#2829453](https://www.drupal.org/project/drupal/issues/2829453) Из `\Drupal` удалён docblock c `@file`.
