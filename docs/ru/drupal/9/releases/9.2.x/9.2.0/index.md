@@ -786,6 +786,7 @@ myfeature:
 - [#3192656](https://www.drupal.org/project/drupal/issues/3192656) Исправлена неполадка с текстовыми элементами формы приводящая к появлению горизонтальной прокрутки.
 * [#3190268](https://www.drupal.org/project/drupal/issues/3190268) Полифилы поставляемые с темой, заменены на библиотеки с аналогичными полифилами из ядра.
 * [#3192903](https://www.drupal.org/project/drupal/issues/3192903) Mouseout событие при наличии активного фокуса на вложенном меню, больше не закрывает его.
+* [#3205434](https://www.drupal.org/project/drupal/issues/3205434) Добавлены Nigthwatch тесты.
 
 ## Plugin System
 
