@@ -50,6 +50,10 @@ metatags:
 
 * [#3047722](https://www.drupal.org/project/drupal/issues/3047722) Справка для модулей `content_moderations` и `workflows` конвертирована в Help Topics.
 
+## JSON:API
+
+* [#3171827](https://www.drupal.org/project/drupal/issues/3171827) `RouteNotFoundException` теперь указывает публичное название поля, а не внутреннее.
+
 ## Layout Builder
 
 * [#3203401](https://www.drupal.org/project/drupal/issues/3203401) `LayoutBuilderEntityViewDisplayForm::hasOverrides()` больше не учитывает права доступа.
