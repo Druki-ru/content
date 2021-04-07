@@ -9,9 +9,6 @@ metatags:
 
 **Дата релиза**: 7 апреля 2021
 
-> [!WARNING]
-> Данный релиз находится в разработке. Актуальная версия [Drupal 9.1.6](index.md).
-
 ## Aggregator
 
 * [#3203369](https://www.drupal.org/project/drupal/issues/3203369) Вызовы Entity Query в модуле больше не учитывают права доступа.
@@ -131,3 +128,7 @@ metatags:
 * [#3196699](https://www.drupal.org/project/drupal/issues/3196699) Названия хендлеров в `EntityTypeInterface` исправлены на корректные.
 * [#3204353](https://www.drupal.org/project/drupal/issues/3204353) Исправлен пример для `hook_link_alter()`.
 * [#2850057](https://www.drupal.org/project/drupal/issues/2850057) В интерфейс `SelectionInterface` добавлена отсутствующая документация параметров.
+
+## Ссылки
+
+- [Drupal 9.1.6](https://www.drupal.org/project/drupal/releases/9.1.6) (англ.), drupal.org, 7 апреля 2021 г.
