@@ -1,13 +1,13 @@
 ---
-title: 'Drupal 8.9.14'
-slug: 8/releases/8.9.14
-core: 8
+title: 'Drupal 9.1.7'
+slug: 9/releases/9.1.7
+core: 9
 metatags:
-  title: 'Drupal 8.9.14: Список изменений'
+  title: 'Drupal 9.1.7: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2021-002.'
 ---
 
-**Дата релиза**: 21 апреля 2021
+**Дата релиза**: 21 апреля 2020
 
 Этот выпуск исправляет уязвимости безопасности. Настоятельно рекомендуется обновить сайты сразу после прочтения примечаний ниже и объявления о безопасности.
 
@@ -17,4 +17,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 8.9.14](https://www.drupal.org/project/drupal/releases/8.9.14) (англ.), drupal.org, 21 апреля 2021
+- [Drupal 9.1.7](https://www.drupal.org/project/drupal/releases/9.1.7) (англ.), drupal.org, 21 апреля 2021
