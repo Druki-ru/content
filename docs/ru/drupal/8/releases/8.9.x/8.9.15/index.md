@@ -16,6 +16,10 @@ metatags:
 
 - [#3201470](https://www.drupal.org/project/drupal/issues/3201470) Реализации `hook_cron()` с использованием `EntityQuery` теперь явно указывают что права доступа проверять не нужно.
 
+## CSS
+
+* [#2958588](https://www.drupal.org/project/drupal/issues/2958588) Исправлены неполадки в стилях для «Off canvas» элемента приводящие к некорректному отображению.
+
 ## Editor
 
 - [#2857444](https://www.drupal.org/project/drupal/issues/2857444) Улучшено отслеживание файлов в полях отличных от `text`, `text_long` и `text_with_summary`. Теперь данные файлы отслеживаются для всех полей что расширяют `TextItemBase`.
@@ -28,6 +32,10 @@ metatags:
 
 - [#3183301](https://www.drupal.org/project/drupal/issues/3183301) Добавлены тесты покрывающий [SA-CORE-2020-009](../../../../security/sa-core/2020-009/index.md).
 
+## Locale
+
+- [#3128389](https://www.drupal.org/project/drupal/issues/3128389) Для `LocaleTranslation` добавлен `DependencySerializationTrait` чтобы он корректно сериализовался.
+
 ## Media System
 
 - [#3192260](https://www.drupal.org/project/drupal/issues/3192260) Исправлена настройка DrupalCI для `CKEditorIntegrationTest` который мог случайно проваливаться.
@@ -35,6 +43,10 @@ metatags:
 ## Migration System
 
 [#3184650](https://www.drupal.org/project/drupal/issues/3184650) В миграцию ContentEntity добавлена возможность указывать ключ источника в котором хранится ID ревизии. Для более подробного описания изменения смотрите [список изменений Drupal 9.1.5](../../../../9/releases/9.1.x/9.1.5/index.md).
+
+## Routing System
+
+* [#3120301](https://www.drupal.org/project/drupal/issues/3120301) Маршруты созданные JSON:API более не предзагружаются.
 
 ## Serialization
 
@@ -56,6 +68,7 @@ metatags:
 ## Тестирование
 
 * [#3207086](https://www.drupal.org/project/drupal/issues/3207086) Исправлены проблемы с тестом `MonthDatePluginTest`.
+- [#2571475](https://www.drupal.org/project/drupal/issues/2571475) `KernelTestBase` теперь могу производить внешние HTTP запросы.
 
 ## Прочие изменения
 
