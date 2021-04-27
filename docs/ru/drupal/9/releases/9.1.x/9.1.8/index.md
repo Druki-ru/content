@@ -1,0 +1,67 @@
+---
+title: 'Drupal 9.1.8'
+slug: 9/releases/9.1.8
+core: 9
+metatags:
+  title: 'Drupal 9.1.8: Список изменений'
+  description: 'Список изменений Drupal 9.1.8.'
+---
+
+> [!IMPORTANT]
+> Данная версия находится в разработке.
+
+## Aggregator
+
+* [#3207654](https://www.drupal.org/project/drupal/issues/3207654) Добавлен вызов `::accessCheck()` для упущенных EntityQuery.
+
+## Comment
+
+* [#3208265](https://www.drupal.org/project/drupal/issues/3208265) `comment_user_predelete()` больше не проверяет права доступа.
+* [#2496913](https://www.drupal.org/project/drupal/issues/2496913) При добавлении нового типа комментариев, теперь нельзя выбрать сущности у которых нет возможности подключать поля или ID не является числом.
+
+## Entity System
+
+* [#2927500](https://www.drupal.org/project/drupal/issues/2927500) `EntityFieldManager::buildFieldStorageDefinitions()` теперь также передаёт название поля и id типа сущности.
+* [#3208222](https://www.drupal.org/project/drupal/issues/3208222) `Tables::addNextBaseTable()` теперь использует квадратные скобки для SQL.
+
+## Layout Builder
+
+* [#3208267](https://www.drupal.org/project/drupal/issues/3208267) `InlineBlockEntityOperations` больше не проверяет права доступа.
+
+## Locale
+
+* [#3199428](https://www.drupal.org/project/drupal/issues/3199428) Из `LocaleTranslationTest` удалены тесты внутреннего поведения `DependencySerializationTrait`.
+
+## Mail System
+
+* [#2414019](https://www.drupal.org/project/drupal/issues/2414019) `mb_strtoupper()` больше не используется для заголовков, так как приводит к проблемам со спам фильтрами.
+
+## Menu
+
+* [#2488302](https://www.drupal.org/project/drupal/issues/2488302) Улучшено сообщение об успешном сохранении перевода без изменений.
+
+## Migration System
+
+* [#3206939](https://www.drupal.org/project/drupal/issues/3206939) Добавлена отсутствующая документация для некоторых плагинов источников миграций из Drupal.
+* [#2944846](https://www.drupal.org/project/drupal/issues/2944846) Улучшено описание ключевых концепций в `migrate.api.php`.
+
+## Render System
+
+* [#3186821](https://www.drupal.org/project/drupal/issues/3186821) Добавлены тесты, что HTML элементы `span` и `button` не имеют аттрибута `hreflang`.
+
+## User
+
+* [#3182970](https://www.drupal.org/project/drupal/issues/3182970) `user.logout` теперь доступен только авторизованным пользователям.
+
+## Views UI
+
+* [#3136107](https://www.drupal.org/project/drupal/issues/3136107) Исправлена неполадка приводящая к удалению обёртки разметки при переопределении полей.
+
+## Тестирование
+
+* [#3208225](https://www.drupal.org/project/drupal/issues/3208225) Из `FieldHelpTest` удален бесполезный код.
+
+## Прочие изменения
+
+* [#3207308](https://www.drupal.org/project/drupal/issues/3207308) Исправлены ошибки стандартов кодирования `Generic.Formatting.DisallowMultipleStatements`.
+* [#3123058](https://www.drupal.org/project/drupal/issues/3123058) Исправлены ошибки стандартов кодирования `Drupal.Commenting.DocComment.ParamGroup`.
