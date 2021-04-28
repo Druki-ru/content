@@ -19,10 +19,18 @@ metatags:
 * [#3208265](https://www.drupal.org/project/drupal/issues/3208265) `comment_user_predelete()` больше не проверяет права доступа.
 * [#2496913](https://www.drupal.org/project/drupal/issues/2496913) При добавлении нового типа комментариев, теперь нельзя выбрать сущности у которых нет возможности подключать поля или ID не является числом.
 
+## Database Update System
+
+* [#1624278](https://www.drupal.org/project/drupal/issues/1624278) Улучшена очистка комментариев в `update_get_update_list()`.
+
 ## Entity System
 
 * [#2927500](https://www.drupal.org/project/drupal/issues/2927500) `EntityFieldManager::buildFieldStorageDefinitions()` теперь также передаёт название поля и id типа сущности.
 * [#3208222](https://www.drupal.org/project/drupal/issues/3208222) `Tables::addNextBaseTable()` теперь использует квадратные скобки для SQL.
+
+## Install System
+
+* [#3207893](https://www.drupal.org/project/drupal/issues/3207893) В процессе установки теперь генерируется значение `system.css_js_query_string`.
 
 ## Layout Builder
 
@@ -49,9 +57,21 @@ metatags:
 
 * [#3186821](https://www.drupal.org/project/drupal/issues/3186821) Добавлены тесты, что HTML элементы `span` и `button` не имеют аттрибута `hreflang`.
 
+## System
+
+* [#3202434](https://www.drupal.org/project/drupal/issues/3202434) Исправлено описание для плагина условия `request_path`.
+
+## Umami
+
+* [#3199284](https://www.drupal.org/project/drupal/issues/3199284) Из `umami.libraries.yml` удалено подключение несуществующего `css/components/regions/page-title/page-title.css`.
+
 ## User
 
 * [#3182970](https://www.drupal.org/project/drupal/issues/3182970) `user.logout` теперь доступен только авторизованным пользователям.
+
+## Views
+
+* [#2823914](https://www.drupal.org/project/drupal/issues/2823914) Views теперь сам добавляет кеш ключи на основе аргументов.
 
 ## Views UI
 
@@ -60,8 +80,11 @@ metatags:
 ## Тестирование
 
 * [#3208225](https://www.drupal.org/project/drupal/issues/3208225) Из `FieldHelpTest` удален бесполезный код.
+* [#3209048](https://www.drupal.org/project/drupal/issues/3209048) Темы из ядра теперь добавляются в автозагрузчик для тестирования.
 
 ## Прочие изменения
 
 * [#3207308](https://www.drupal.org/project/drupal/issues/3207308) Исправлены ошибки стандартов кодирования `Generic.Formatting.DisallowMultipleStatements`.
 * [#3123058](https://www.drupal.org/project/drupal/issues/3123058) Исправлены ошибки стандартов кодирования `Drupal.Commenting.DocComment.ParamGroup`.
+* [#3205026](https://www.drupal.org/project/drupal/issues/3205026) В файле `core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php` добавлен недостающий `use`.
+* [#3204763](https://www.drupal.org/project/drupal/issues/3204763) Исправлены некорректные вызовы `sprintf()`.
