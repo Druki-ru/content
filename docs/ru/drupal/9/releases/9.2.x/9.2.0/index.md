@@ -787,6 +787,12 @@ myfeature:
 * [#3190268](https://www.drupal.org/project/drupal/issues/3190268) Полифилы поставляемые с темой, заменены на библиотеки с аналогичными полифилами из ядра.
 * [#3192903](https://www.drupal.org/project/drupal/issues/3192903) Mouseout событие при наличии активного фокуса на вложенном меню, больше не закрывает его.
 * [#3205434](https://www.drupal.org/project/drupal/issues/3205434) Добавлены Nigthwatch тесты.
+* [#3206948](https://www.drupal.org/project/drupal/issues/3206948) Для элемента `input[type="color"]` убраны отступы и увеличена ширина для корректного отображения.
+* [#3207032](https://www.drupal.org/project/drupal/issues/3207032) Исправлено отображение кнопки «Назад» в IE11.
+* [#3173900](https://www.drupal.org/project/drupal/issues/3173900) JavaScript темы теперь использует новый [Drupal JavaScript Once API](../../../../../javascript/drupal/once/index.md)
+* [#3186349](https://www.drupal.org/project/drupal/issues/3186349) Исправлены множественные проблемы доступности для функционала показа \ скрытия шапки.
+* [#3191077](https://www.drupal.org/project/drupal/issues/3191077) Исправлена неполадка с мобильным меню, которое позволяло производить навигацию при помощи «TAB» только в одну сторону.
+* [#3208286](https://www.drupal.org/project/drupal/issues/3208286) Исправлено название переменной с `topLevelMenuITem` на `topLevelMenuItem` в файле `second-level-navigation.es6.js`.
 
 ## Plugin System
 
@@ -806,6 +812,7 @@ myfeature:
 ## Taxonomy
 
 - [#3170185](https://www.drupal.org/project/drupal/issues/3170185) `Drupal\taxonomy\Form\OverviewTerms` теперь использует `pager.manager` для получения текущей страницы вместо `Request`.
+- [#3207477](https://www.drupal.org/project/drupal/issues/3207477) Хранилище Taxonomy Term теперь явно вызывает `::accessCheck()` для `EntityQuery`.
 
 ## Theme System
 
@@ -830,6 +837,7 @@ myfeature:
 
 - [#3186752](https://www.drupal.org/project/drupal/issues/3186752) Аргумент `$langcode` для функции `_user_mail_notify()` помечен устаревшим.
 * [#3206358](https://www.drupal.org/project/drupal/issues/3206358) Удалена инициализации `$bag` в `SessionManager`.
+* [#2799049](https://www.drupal.org/project/drupal/issues/2799049) Добавлено новое разрешение `view user email addresses` позволяющее пользователям с данным доступом просматривать email адреса пользователей. На данный момент email адреса могут просматривать исключительно администраторы.
 
 ## Views
 
@@ -838,6 +846,7 @@ myfeature:
 - [#3186582](https://www.drupal.org/project/drupal/issues/3186582) Отображение по умолчанию во Views теперь именуется как «Default».
 - [#3197886](https://www.drupal.org/project/drupal/issues/3197886) Класс `ViewsPluginAnnotationBase` больше не реализуется `AnnotationInterface`.
 - [#2342807](https://www.drupal.org/project/drupal/issues/2342807) `DisplayPathTest` больше не пытается включить модуль `menu_ui`, который уже включен к тому моменту.
+* [#3202052](https://www.drupal.org/project/drupal/issues/3202052) Плагин аргументов Views теперь явно вызывает `::accessCheck()` в `::titleQuery()`.
 
 ## Workspaces
 
@@ -911,3 +920,4 @@ myfeature:
 * [#2937858](https://www.drupal.org/project/drupal/issues/2937858) Исправлены ошибки для соответствия стандарту `Drupal.Commenting.DocCommentAlignment`.
 * [#3207119](https://www.drupal.org/project/drupal/issues/3207119) Исправлены ошибки для соответствия стандарту `Squiz.WhiteSpace.ScopeKeywordSpacing`.
 * [#2829453](https://www.drupal.org/project/drupal/issues/2829453) Из `\Drupal` удалён docblock c `@file`.
+* [#3208266](https://www.drupal.org/project/drupal/issues/3208266) Запросы в функциях `workspaces_install()` и `demo_umami_set_users_passwords()` больше не учитывают права доступа.
