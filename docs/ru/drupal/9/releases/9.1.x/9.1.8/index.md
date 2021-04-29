@@ -22,6 +22,7 @@ metatags:
 ## Database Update System
 
 * [#1624278](https://www.drupal.org/project/drupal/issues/1624278) Улучшена очистка комментариев в `update_get_update_list()`.
+* [#3210502](https://www.drupal.org/project/drupal/issues/3210502) `UpdateDescriptionTest` конвертирован в Kernel Test.
 
 ## Entity System
 
@@ -81,6 +82,7 @@ metatags:
 
 * [#3208225](https://www.drupal.org/project/drupal/issues/3208225) Из `FieldHelpTest` удален бесполезный код.
 * [#3209048](https://www.drupal.org/project/drupal/issues/3209048) Темы из ядра теперь добавляются в автозагрузчик для тестирования.
+* [#3203476](https://www.drupal.org/project/drupal/issues/3203476) Сравнения с использованием xpath на `div` конвертированы в WebAssert формат.
 
 ## Прочие изменения
 
@@ -88,3 +90,5 @@ metatags:
 * [#3123058](https://www.drupal.org/project/drupal/issues/3123058) Исправлены ошибки стандартов кодирования `Drupal.Commenting.DocComment.ParamGroup`.
 * [#3205026](https://www.drupal.org/project/drupal/issues/3205026) В файле `core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php` добавлен недостающий `use`.
 * [#3204763](https://www.drupal.org/project/drupal/issues/3204763) Исправлены некорректные вызовы `sprintf()`.
+* [#3210694](https://www.drupal.org/project/drupal/issues/3210694) Слова с интернационализированными префиксами теперь игнорируется проверкой правописания.
+* [#3205037](https://www.drupal.org/project/drupal/issues/3205037) Из теста `Drupal\Tests\Component\Annotation\PluginIdTest` удалено тестирование несуществующего конструктора.
