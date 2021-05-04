@@ -12,6 +12,10 @@ metatags:
 > [!WARNING]
 > Данный релиз находится в разработке. Актуальная версия [Drupal 8.9.14](../8.9.14/index.md).
 
+## Composer
+
+* [#3211805](https://www.drupal.org/project/drupal/issues/3211805) Обновлены метапакеты для `composer/composer`. 
+
 ## Cron System
 
 - [#3201470](https://www.drupal.org/project/drupal/issues/3201470) Реализации `hook_cron()` с использованием `EntityQuery` теперь явно указывают что права доступа проверять не нужно.
@@ -69,6 +73,7 @@ metatags:
 
 * [#3207086](https://www.drupal.org/project/drupal/issues/3207086) Исправлены проблемы с тестом `MonthDatePluginTest`.
 - [#2571475](https://www.drupal.org/project/drupal/issues/2571475) `KernelTestBase` теперь могу производить внешние HTTP запросы.
+* [#3211164](https://www.drupal.org/project/drupal/issues/3211164) Внесены улучшения в `WebDriverTestBase`.
 
 ## Прочие изменения
 
