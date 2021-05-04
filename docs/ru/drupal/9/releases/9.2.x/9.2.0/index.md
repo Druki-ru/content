@@ -832,6 +832,7 @@ myfeature:
 ## Update
 
 - [#2577407](https://www.drupal.org/project/drupal/issues/2577407) Установка нового модуля через интерфейс теперь имеет постоянный лейбл «Add».
+* [#3113798](https://www.drupal.org/project/drupal/issues/3113798) Из XML фикстур для модуля удалены теги `<tag>`.
 
 ## User
 
