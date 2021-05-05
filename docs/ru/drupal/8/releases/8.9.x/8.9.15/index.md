@@ -7,8 +7,6 @@ metatags:
   description: 'Список изменений Drupal 8.9.15.'
 ---
 
-**Дата релиза**: 5 мая 2021
-
 > [!WARNING]
 > Данный релиз находится в разработке. Актуальная версия [Drupal 8.9.14](../8.9.14/index.md).
 
@@ -35,6 +33,12 @@ metatags:
 ## Form System
 
 - [#3183301](https://www.drupal.org/project/drupal/issues/3183301) Добавлены тесты покрывающий [SA-CORE-2020-009](../../../../security/sa-core/2020-009/index.md).
+
+## JavaScript
+
+* [#3212177](https://www.drupal.org/project/drupal/issues/3212177) `caniuse-lite` обновлён до актуальной версии.
+* [#3211810](https://www.drupal.org/project/drupal/issues/3211810) Обновлена зависимость `nightwatch`, а также зависимости с обновлениями безопасности.
+* [#3209456](https://www.drupal.org/project/drupal/issues/3209456) Underscore.js обновлён до версии 1.13.1.
 
 ## Locale
 
