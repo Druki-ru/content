@@ -7,8 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.1.8.'
 ---
 
-> [!IMPORTANT]
-> Данная версия находится в разработке.
+**Дата релиза:** 5 мая 2021
 
 ## Aggregator
 
@@ -83,6 +82,7 @@ metatags:
 * [#3208225](https://www.drupal.org/project/drupal/issues/3208225) Из `FieldHelpTest` удален бесполезный код.
 * [#3209048](https://www.drupal.org/project/drupal/issues/3209048) Темы из ядра теперь добавляются в автозагрузчик для тестирования.
 * [#3203476](https://www.drupal.org/project/drupal/issues/3203476) Сравнения с использованием xpath на `div` конвертированы в WebAssert формат.
+* [#3211164](https://www.drupal.org/project/drupal/issues/3211164) Внесены улучшения в `WebDriverTestBase`.
 
 ## Прочие изменения
 
