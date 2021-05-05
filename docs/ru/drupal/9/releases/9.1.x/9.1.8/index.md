@@ -92,3 +92,7 @@ metatags:
 * [#3204763](https://www.drupal.org/project/drupal/issues/3204763) Исправлены некорректные вызовы `sprintf()`.
 * [#3210694](https://www.drupal.org/project/drupal/issues/3210694) Слова с интернационализированными префиксами теперь игнорируется проверкой правописания.
 * [#3205037](https://www.drupal.org/project/drupal/issues/3205037) Из теста `Drupal\Tests\Component\Annotation\PluginIdTest` удалено тестирование несуществующего конструктора.
+
+## Ссылки
+
+- [Drupal 9.1.8](https://www.drupal.org/project/drupal/releases/9.1.8) (англ.), drupal.org, 5 мая 2021
