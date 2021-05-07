@@ -719,7 +719,8 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 - [#3201956](https://www.drupal.org/project/drupal/issues/3201956) Удалена передача бесполезного аргумента в `ConfigEntityStorage` при вызове `$this->mapFromStorageRecords()`.
 - [#3201957](https://www.drupal.org/project/drupal/issues/3201957) Удалено неиспользуемое свойство `COnfigEntityStorage::$entities`.
 * [#3202963](https://www.drupal.org/project/drupal/issues/3202963) Формы удаления bundle сущностей теперь показывают количество материалов, которые основаны на нём.
-* [#3203147](https://www.drupal.org/project/drupal/issues/3203147) Удалён решённый `@todo` из `EntityBundleListenerInterface .
+* [#3203147](https://www.drupal.org/project/drupal/issues/3203147) Удалён решённый `@todo` из `EntityBundleListenerInterface.
+* [#3207961](https://www.drupal.org/project/drupal/issues/3207961) Добавлено явно указание проверки прав доступа при использовании EntityQuery в пропущенных местах.
 
 ## Field System
 
@@ -728,6 +729,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 ## File
 
 * [#2479607](https://www.drupal.org/project/drupal/issues/2479607) Удалены устаревшие схемы из `file.file.views.schema.yml`.
+* [#3207476](https://www.drupal.org/project/drupal/issues/3207476) `file_get_content_headers()` больше не кодирует заголовок `Content-Type`.
 
 ## Form System
 
@@ -736,6 +738,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 ## Help
 
 - [#3090659](https://www.drupal.org/project/drupal/issues/3090659) Добавлены Twig функции для установки ссылок на Help Topics: `help_route_link()` и `help_topic_link()`.
+- [#3087218](https://www.drupal.org/project/drupal/issues/3087218) Улучшена скорость индексации справки.
 
 ## Help Topics
 
@@ -759,6 +762,10 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 
 - [#3180674](https://www.drupal.org/project/drupal/issues/3180674) Удалён неиспользуемый модуль `layout_builder_overrides_test`.
 - [#3115503](https://www.drupal.org/project/drupal/issues/3115503) `\Drupal\Core\Layout\LayoutInterface` теперь расширяет `\Drupal\Core\Plugin\ContextAwarePluginInterface`. Это означает что Layout [плагины](../../../plugins/index.md) теперь контекстно-зависимые.
+
+## Media
+
+* [#3085264](https://www.drupal.org/project/drupal/issues/3085264) Объединены тесты `media_test_filter` и `media_test_ckeditor`.
 
 ## MySQL DB Driver
 
@@ -787,6 +794,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 - [#3175953](https://www.drupal.org/project/drupal/issues/3175953) Произведена чистка в функциональных тестах.
 * [#3191990](https://www.drupal.org/project/drupal/issues/3191990) Произведён небольшой рефакторинг кода в `DrupalSqlBaseTest`.
 * [#3205029](https://www.drupal.org/project/drupal/issues/3205029) Из `DestinationCategoryTest` удалены референсы на несуществующие классы.
+* [#3051252](https://www.drupal.org/project/drupal/issues/3051252) Добавлены миграции для модулей `multiupload_filefield_widget` и `multiupload_imagefield_widget'.
 
 ## Node System
 
@@ -814,6 +822,8 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 * [#3186349](https://www.drupal.org/project/drupal/issues/3186349) Исправлены множественные проблемы доступности для функционала показа \ скрытия шапки.
 * [#3191077](https://www.drupal.org/project/drupal/issues/3191077) Исправлена неполадка с мобильным меню, которое позволяло производить навигацию при помощи «TAB» только в одну сторону.
 * [#3208286](https://www.drupal.org/project/drupal/issues/3208286) Исправлено название переменной с `topLevelMenuITem` на `topLevelMenuItem` в файле `second-level-navigation.es6.js`.
+* [#3208116](https://www.drupal.org/project/drupal/issues/3208116) Исправлено «мерцание» мобильного меню на Safari.
+* [#3206290](https://www.drupal.org/project/drupal/issues/3206290) Исправлено отображение иконки поиска в режиме повышенной контрастности Windows.
 
 ## Plugin System
 
@@ -869,6 +879,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 - [#3197886](https://www.drupal.org/project/drupal/issues/3197886) Класс `ViewsPluginAnnotationBase` больше не реализуется `AnnotationInterface`.
 - [#2342807](https://www.drupal.org/project/drupal/issues/2342807) `DisplayPathTest` больше не пытается включить модуль `menu_ui`, который уже включен к тому моменту.
 * [#3202052](https://www.drupal.org/project/drupal/issues/3202052) Плагин аргументов Views теперь явно вызывает `::accessCheck()` в `::titleQuery()`.
+* [#3109110](https://www.drupal.org/project/drupal/issues/3109110) Плагин кеширования `\Drupal\views\Plugin\views\cache\Time` и все расширяющие его плагины теперь должны использовать `$this->view->getRequest()`. Объект запроса больше не передаётся в качестве аргумента.
 
 ## Workspaces
 
@@ -896,6 +907,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 
 - [#3188056](https://www.drupal.org/project/drupal/issues/3188056) Обновлён код, который вызывал сериалайзер Symfony с `NULL` в качестве формата.
 - [#3185603](https://www.drupal.org/project/drupal/issues/3185603) Добавлен `ConstraintFactory` для инициализации констрейн плагинов Drupal.
+* [#3209239](https://www.drupal.org/project/drupal/issues/3209239) `FileUploadSanitizeNameEvent::stopPropagation()` добавлен тайпхинт возвращаемому значению (`void`).
 
 ## Symfony 6
 
@@ -903,6 +915,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 - [#3161983](https://www.drupal.org/project/drupal/issues/3161983) Код ядра обновлён для соответствия новому EventDispatcher. Смотрите [Drupal 9.1.0](../../9.1.x/9.1.0/index.md) для более подробных изменений.
 - [#3187857](https://www.drupal.org/project/drupal/issues/3187857) Сообщения об устаревшем коде больше не будут приводить к предупреждению об изменении сигнатуры методов `::setDeprecated()`.
 * [#3199691](https://www.drupal.org/project/drupal/issues/3199691) Временно отключено тестирование `octal` типа в YAML файлах, так как в спецификации YAML 1.2, который используется Symfony начиная с версии 5.1, поменялся его формат с `0777` на `0o777`.
+* [#3209482](https://www.drupal.org/project/drupal/issues/3209482) Тайпхинты `EventDispatcherInterface` обновлены для `FileUploadResource`.
 
 ## Прочие изменения
 
@@ -943,3 +956,4 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 * [#3207119](https://www.drupal.org/project/drupal/issues/3207119) Исправлены ошибки для соответствия стандарту `Squiz.WhiteSpace.ScopeKeywordSpacing`.
 * [#2829453](https://www.drupal.org/project/drupal/issues/2829453) Из `\Drupal` удалён docblock c `@file`.
 * [#3208266](https://www.drupal.org/project/drupal/issues/3208266) Запросы в функциях `workspaces_install()` и `demo_umami_set_users_passwords()` больше не учитывают права доступа.
+* [#3165364](https://www.drupal.org/project/drupal/issues/3165364) Проверка правописания отключена для файла `LICENSE.txt`.
