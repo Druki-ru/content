@@ -649,6 +649,111 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 
 Ранее, для того чтобы сделать то же самое, необходимо было вызывать `InvokeCommand` с использованием `:tabbable` псевдо-селектора в качестве аргумента. Это работало благодаря jQuery UI. Так как он выводится из оборота, была представлена эта замена. Теперь эта команда не требует зависимости jQuery.
 
+## Добавлен генератор стартовой темы
+
+* [#3206389](https://www.drupal.org/node/3206389)
+
+В ядро добавлена экспериментальная команда для генерации стартовой темы. Генератор стартовой темы позволяет разработчикам сгенерировать стартовую точку для вашей будущей темы. Разметка и общие CSS классы сгенерированной темы будет соответствовать базовой теме Classy. Вместо того чтобы наследовать разметку и CSS от базовой темы, стартовая тема генерирует копии стандартных файлов в новую тему.
+
+Данная команда предоставляется CLI инструментом Drupal поставляемой с ядром:
+
+```bash
+php core/scripts/drupal generate-theme mutheme
+```
+
+Это изменение повлечёт за собой множественные и более регулярные изменения стандартной разметки и CSS поставляемые с Drupal ядром.
+
+Все доступные опции можно изучить вызвав команду:
+
+```bash
+php core/scripts/drupal generate-theme --help
+```
+
+## Для EntityQuery теперь нужно явно указывать проверку доступов
+
+* [#3201242](https://www.drupal.org/node/3201242)
+
+Метод `\Drupal\Core\Entity\Query\QueryInterface::accessCheck()` позволяет разработчикам указать, должны ли сущности из запроса проверяться на возможность просмотра текущим пользователям. Данное значение всегда должно быть указано при запросе. Тем не менее, все запросы поддерживают данный метод, но ядро реализует его только для контент-сущностей с SQL-хранилищем.
+
+До Drupal 9.2, если `::accessCheck()` не вызывался явно на запрос, то он принимал значение по умолчанию `TRUE` (проверять права доступа). Данное поведение приводит к множеству ошибок у разработчиков, так как об этом поведение легко забыть или вовсе не знать.
+
+Таким образом, построение запроса при помощи EntityQuery без явного вызова `::accessCheck()` помечено устаревшим. Все запросы данного типа должны явно указывать требование проверки прав доступа под свои нужды.
+
+**Ранее:**
+
+```php
+// This gets all articles the current user can view.
+$ids = \Drupal::entityQuery('node')
+  ->condition('type', 'article')
+  ->execute();
+
+// This also gets all articles the current user can view.
+$ids = \Drupal::entityQuery('node')
+  ->accessCheck(TRUE)
+  ->condition('type', 'article')
+  ->execute();
+
+// This gets all articles that exist regardless of access.
+$ids = \Drupal::entityQuery('node')
+  ->accessCheck(FALSE)
+  ->condition('type', 'article')
+  ->execute();
+```
+
+**Сейчас:**
+
+```php
+// This will trigger a deprecation error.
+$ids = \Drupal::entityQuery('node')
+  ->condition('type', 'article')
+  ->execute();
+
+// Unchanged: This gets all articles the current user can view.
+$ids = \Drupal::entityQuery('node')
+  ->accessCheck(TRUE)
+  ->condition('type', 'article')
+  ->execute();
+
+// Unchanged: This gets all articles that exist regardless of access.
+$ids = \Drupal::entityQuery('node')
+  ->accessCheck(FALSE)
+  ->condition('type', 'article')
+  ->execute();
+```
+
+## Функции управления схемами предоставляемые schema.inc помечены устаревшими
+
+* [#2908886](https://www.drupal.org/project/drupal/issues/2908886)
+
+Следующие функции из `schema.inc` помечены устаревшими:
+
+* `drupal_install_schema()`
+* `drupal_uninstall_schema()`
+* `_drupal_schema_initialize()`
+* `drupal_get_module_schema()`
+
+Замены данным функцим не предоставляются, так какд данные функции были предназначены для внутреннего использования сервисом «установки».
+
+Если ваши тесты используют `drupal_get_module_schema()` для получения информации о схемах теперь должны использовать статический хелпер:
+
+```php
+use Drupal\TestTools\Extension\SchemaInspector;
+
+$module_handler = $this->container->get('module_handler');
+$specification = SchemaInspector::getTablesSpecification($module_handler, $module);
+$schema = $specification[$table];
+```
+
+## behat/mink-browserkit-driver заменён на friends-of-behat/mink-browserkit-driver
+
+* [#3209701](https://www.drupal.org/node/3209701)
+
+Зависимость `behat/mink-browserkit-driver` используется для функционального тестирования, но у неё нет поддержки PHP 8 и Symfony 5+, а также, отсутствует активность в более года.
+
+Данный пакет был форкнут в `friends-of-behat/mink-browserkit-driver` где разработка была продолжена, была добавлена поддержка PHP 8 и Symfony 5+.
+
+Для того чтобы получить данные улучшения, старый пакет был заменён новым.
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -666,6 +771,10 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 - [#2575827](https://www.drupal.org/project/drupal/issues/2575827) `BookNavigationBlock` и `BookNavigationCacheContext` теперь получают информацию из `route_match` [сервиса](../../../services/index.md), вместо получения из аттрибутов запроса.
 - [#2470896](https://www.drupal.org/project/drupal/issues/2470896) Подшивки книг теперь переводимы. В связи с чем классы `Drupal\book\BookExport`, `Drupal\book\BookBreadcrumbBuilder` и `Drupal\book\BookManager` имеют новые зависимости.
 - [#3188519](https://www.drupal.org/project/drupal/issues/3188519) В конструкторе `BookBreadcrumbBuilder` исправлена ошибка в названии сервиса.
+
+## Cache System
+
+* [#3209931](https://www.drupal.org/project/drupal/issues/3209931) Сервисы `cache_tags.invalidator.checksum` и `cache.backend.database` теперь `backend_overridable`.
 
 ## CKEditor
 
@@ -699,12 +808,17 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 
 - [#2863464](https://www.drupal.org/project/drupal/issues/2863464) Логи [крона](../../../hooks/cron/index.md) теперь используют тип `info` вместо `notice`, для большего соответствия [RFC 5424](https://tools.ietf.org/html/rfc5424).
 
+## CSS
+
+* [#3207680](https://www.drupal.org/project/drupal/issues/3207680) Улучшено оформление списков для off-canvas модального окна.
+
 ## Database System
 
 - [#3129563](https://www.drupal.org/project/drupal/issues/3129563) Сторонние драйвера БД теперь могут переопределять стандартные реализации расширителей запросов: `Drupal\Core\Database\Query\PagerSelectExtender`, `Drupal\Core\Database\Query\TableSortExtender` и `Drupal\search\SearchQuery`.
 - [#3129534](https://www.drupal.org/project/drupal/issues/3129534) Добавлены новые методы `Drupal\Core\Database\Connection::getProvider()` и `Connection::enableModuleProvidingDatabaseDriver()`.
 - [#3192951](https://www.drupal.org/project/drupal/issues/3192951) Вызовы методов с передачей FQN класса (`'Drupal\Core\Database\Query\PagerSelectExtender'`) заменены на константу (`PagerSelectExtender::class`).
 - [#3089326](https://www.drupal.org/project/drupal/issues/3089326) Методу `Drupal\Core\Database\Log::log()` добавлен новый опциональный параметр `start`.
+* [#3186795](https://www.drupal.org/project/drupal/issues/3186795) `Drupal\Core\Database\StatementEmpty` помечен устаревшим.
 
 ## Editor
 
@@ -734,6 +848,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 ## Form System
 
 - [#3122912](https://www.drupal.org/project/drupal/issues/3122912) Вызовы `t()` заменены на `$this->t()`.
+* [#3205031](https://www.drupal.org/project/drupal/issues/3205031) В `Drupal\form_test\Form\FormTestVerticalTabsForm` добавлен отсутствующий `use`.
 
 ## Help
 
@@ -832,6 +947,10 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 ## PostgreSQL DB Driver
 
 - [#3185399](https://www.drupal.org/project/drupal/issues/3185399) Для определения предыдущего ID теперь используется `RETURNING`.
+
+## Search
+
+* [#3209453](https://www.drupal.org/project/drupal/issues/3209453) Сервис `search.index` теперь `backend_overridable`.
 
 ## System
 
@@ -957,3 +1076,4 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 * [#2829453](https://www.drupal.org/project/drupal/issues/2829453) Из `\Drupal` удалён docblock c `@file`.
 * [#3208266](https://www.drupal.org/project/drupal/issues/3208266) Запросы в функциях `workspaces_install()` и `demo_umami_set_users_passwords()` больше не учитывают права доступа.
 * [#3165364](https://www.drupal.org/project/drupal/issues/3165364) Проверка правописания отключена для файла `LICENSE.txt`.
+* [#2732113](https://www.drupal.org/project/drupal/issues/2732113) Улучшена документация в `dblog_help()`.
