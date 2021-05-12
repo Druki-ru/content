@@ -754,6 +754,14 @@ $schema = $specification[$table];
 
 Для того чтобы получить данные улучшения, старый пакет был заменён новым.
 
+## Ядро больше не использует jQuery UI position-min.js
+
+* [#3203837](https://www.drupal.org/node/3203837)
+
+Все библиотеки ядра, которые загружали `assets/vendor/jquery.ui/ui/position-min.js`, больше не используют его как зависимость. Вместо данного файла добавлена новая библиотека `core/drupal.jquery.position`. Данная библиотека использует `misc/position.js`. Файл является изменённой версией jQuery UI Position и имеет тот же функционал, отформатирован в формате Drupal Coding Styles и расширяет jQuery напрямую в обход jQuery UI.
+
+Если вы используете или расширяете старый файл `assets/vendor/jquery.ui/ui/position-min.js`, вам необходимо теперь расширять или переопределять `core/drupal.jquery.position`.
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -819,6 +827,7 @@ $schema = $specification[$table];
 - [#3192951](https://www.drupal.org/project/drupal/issues/3192951) Вызовы методов с передачей FQN класса (`'Drupal\Core\Database\Query\PagerSelectExtender'`) заменены на константу (`PagerSelectExtender::class`).
 - [#3089326](https://www.drupal.org/project/drupal/issues/3089326) Методу `Drupal\Core\Database\Log::log()` добавлен новый опциональный параметр `start`.
 * [#3186795](https://www.drupal.org/project/drupal/issues/3186795) `Drupal\Core\Database\StatementEmpty` помечен устаревшим.
+* [#3201266](https://www.drupal.org/project/drupal/issues/3201266) Код, защищающий от множественных утверждений, который был частью `Connection::query()`, перенесён в защищённый метод `::preprocessStatement()`.
 
 ## Editor
 
@@ -835,6 +844,10 @@ $schema = $specification[$table];
 * [#3202963](https://www.drupal.org/project/drupal/issues/3202963) Формы удаления bundle сущностей теперь показывают количество материалов, которые основаны на нём.
 * [#3203147](https://www.drupal.org/project/drupal/issues/3203147) Удалён решённый `@todo` из `EntityBundleListenerInterface.
 * [#3207961](https://www.drupal.org/project/drupal/issues/3207961) Добавлено явно указание проверки прав доступа при использовании EntityQuery в пропущенных местах.
+
+## Extension System
+
+* [#3210900](https://www.drupal.org/project/drupal/issues/3210900) Функция `update_set_schema()` помечена устаревшей.
 
 ## Field System
 
@@ -854,6 +867,7 @@ $schema = $specification[$table];
 
 - [#3090659](https://www.drupal.org/project/drupal/issues/3090659) Добавлены Twig функции для установки ссылок на Help Topics: `help_route_link()` и `help_topic_link()`.
 - [#3087218](https://www.drupal.org/project/drupal/issues/3087218) Улучшена скорость индексации справки.
+* [#3209139](https://www.drupal.org/project/drupal/issues/3209139) Добавлена функция-хелпер `_help_topics_search_update()`.
 
 ## Help Topics
 
@@ -939,6 +953,13 @@ $schema = $specification[$table];
 * [#3208286](https://www.drupal.org/project/drupal/issues/3208286) Исправлено название переменной с `topLevelMenuITem` на `topLevelMenuItem` в файле `second-level-navigation.es6.js`.
 * [#3208116](https://www.drupal.org/project/drupal/issues/3208116) Исправлено «мерцание» мобильного меню на Safari.
 * [#3206290](https://www.drupal.org/project/drupal/issues/3206290) Исправлено отображение иконки поиска в режиме повышенной контрастности Windows.
+* [#3207996](https://www.drupal.org/project/drupal/issues/3207996) Из `text-content.pcss.css` удалено свойство `text-decoration-width`.
+* [#3200599](https://www.drupal.org/project/drupal/issues/3200599) Улучшены стили для подвала и удалены не используемые.
+* [#3210130](https://www.drupal.org/project/drupal/issues/3210130) Форма комментариев теперь растягивается на всю ширину для мобильных устройств.
+* [#3191692](https://www.drupal.org/project/drupal/issues/3191692) Второстепенные меню теперь закрывают при потере фокуса.
+* [#3210329](https://www.drupal.org/project/drupal/issues/3210329) Исправлено значение для `aria-checked` для `sticky-header-toggle` в момент загрузки страницы.
+* [#3173016](https://www.drupal.org/project/drupal/issues/3173016) Улучшены стили и разметка для `node.html.twig` для их универсальности.
+* [#3209125](https://www.drupal.org/project/drupal/issues/3209125) Форма поиска теперь закрывается при нажатии Esc.
 
 ## Plugin System
 
@@ -963,6 +984,7 @@ $schema = $specification[$table];
 
 - [#3170185](https://www.drupal.org/project/drupal/issues/3170185) `Drupal\taxonomy\Form\OverviewTerms` теперь использует `pager.manager` для получения текущей страницы вместо `Request`.
 - [#3207477](https://www.drupal.org/project/drupal/issues/3207477) Хранилище Taxonomy Term теперь явно вызывает `::accessCheck()` для `EntityQuery`.
+* [#2998826](https://www.drupal.org/project/drupal/issues/2998826) Добавлен контекст для предоставления сущности Taxonomy Term из маршрута `taxonomy_term.taxonomy_term_route_context`.
 
 ## Theme System
 
@@ -1021,6 +1043,8 @@ $schema = $specification[$table];
 - [#3187949](https://www.drupal.org/project/drupal/issues/3187949) Метод `::cssSelectToXpath()` перенесён из `BrowserTestBase` в `UiHelperTrait`.
 - [#3187113](https://www.drupal.org/project/drupal/issues/3187113) Удалены вызовы `t()` в `::submitForm()`.
 * [#3205139](https://www.drupal.org/project/drupal/issues/3205139) Удалён `ModuleTestBase::assertTableCount()`.
+* [#2189411](https://www.drupal.org/project/drupal/issues/2189411) Из `FunctionalTestSetupTrait` удалена пересборка контейнера.
+* [#3204002](https://www.drupal.org/project/drupal/issues/3204002) Из `TestServiceProvider` удалён мёртвый код связанный с SimpleTest.
 
 ## Symfony 5
 
@@ -1077,3 +1101,4 @@ $schema = $specification[$table];
 * [#3208266](https://www.drupal.org/project/drupal/issues/3208266) Запросы в функциях `workspaces_install()` и `demo_umami_set_users_passwords()` больше не учитывают права доступа.
 * [#3165364](https://www.drupal.org/project/drupal/issues/3165364) Проверка правописания отключена для файла `LICENSE.txt`.
 * [#2732113](https://www.drupal.org/project/drupal/issues/2732113) Улучшена документация в `dblog_help()`.
+* [#2937882](https://www.drupal.org/project/drupal/issues/2937882) Исправлены ошибки для соответствия стандарту `Drupal.Classes.PropertyDeclaration`.
