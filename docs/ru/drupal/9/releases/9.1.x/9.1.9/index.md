@@ -29,3 +29,8 @@ metatags:
 ## Views
 
 * [#3212521](https://www.drupal.org/project/drupal/issues/3212521) Исправлены опечатки в `core/modules/views/src/Plugin/views/filter/FilterPluginBase.php`.
+* [#2868258](https://www.drupal.org/project/drupal/issues/2868258) `View::preRenderViewElement()` теперь выбрасывает исключение если представление не найдено.
+
+## Прочие изменения
+
+* [#3211936](https://www.drupal.org/project/drupal/issues/3211936) Исправлено «состояние гонки» при создании директорий для [стилей изображений](../../../image/image-styles/index.md).
