@@ -762,6 +762,47 @@ $schema = $specification[$table];
 
 Если вы используете или расширяете старый файл `assets/vendor/jquery.ui/ui/position-min.js`, вам необходимо теперь расширять или переопределять `core/drupal.jquery.position`.
 
+## Плагин обработчик миграций «Callback» теперь поддерживает множественные аргументы
+
+* [#2882276](https://www.drupal.org/project/drupal/issues/2882276)
+
+Плагин `callback` является частью Migrate API, который позволяет применить PHP функцию или метод класса на этапе подготовки данных в процессе миграции. До 9.2.0 данный плагин был ограничен функцией и методами с одним аргументом.
+
+Начиная с Drupal 9.2.0, плагин принимает необязательную настройку `unpack_source`.Когда данный параметр задан, значение для обработки должно быть массивом и будет интерпретировано как список аргументов.
+
+### До Drupal 9.2.0
+
+```yaml
+process:
+  destination_field:
+    plugin: callback
+    callable: mb_strtolower
+    source: source_field
+```
+
+Функция `mb_strtolower()` принимает один аргумент.
+
+### Начиная с Drupal 9.2.0
+
+Пример выше будет работать, как и ранее. С новой опцией `unpack_source`, плагин `callback` теперь может использовать функции с двумя и более аргументами, например как `rtrim()`:
+
+```yaml
+source:
+  # plugin ...
+  constants:
+    slash: /
+process:
+  field_link_url:
+    - plugin: callback
+      callable: rtrim
+      unpack_source: true
+      source:
+        - url
+        - constants/slash
+```
+
+Функция `rtrim()` принимает два аргумента. В примере выше будут удаляться `/` в конце строки если такие имеются в URL.
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -828,6 +869,8 @@ $schema = $specification[$table];
 - [#3089326](https://www.drupal.org/project/drupal/issues/3089326) Методу `Drupal\Core\Database\Log::log()` добавлен новый опциональный параметр `start`.
 * [#3186795](https://www.drupal.org/project/drupal/issues/3186795) `Drupal\Core\Database\StatementEmpty` помечен устаревшим.
 * [#3201266](https://www.drupal.org/project/drupal/issues/3201266) Код, защищающий от множественных утверждений, который был частью `Connection::query()`, перенесён в защищённый метод `::preprocessStatement()`.
+* [#3189680](https://www.drupal.org/project/drupal/issues/3189680) Опция `throw_exception` помечена устаревшей.
+* [#3211866](https://www.drupal.org/project/drupal/issues/3211866) `Upsert::execute()` теперь всегда возвращает число.
 
 ## Editor
 
@@ -857,6 +900,7 @@ $schema = $specification[$table];
 
 * [#2479607](https://www.drupal.org/project/drupal/issues/2479607) Удалены устаревшие схемы из `file.file.views.schema.yml`.
 * [#3207476](https://www.drupal.org/project/drupal/issues/3207476) `file_get_content_headers()` больше не кодирует заголовок `Content-Type`.
+* [#3048423](https://www.drupal.org/project/drupal/issues/3048423) Тест `RelationshipUserFileDataTest` конвертирован в Kernel тест.
 
 ## Form System
 
@@ -882,6 +926,11 @@ $schema = $specification[$table];
 ## JavaScript
 
 - [#3191497](https://www.drupal.org/project/drupal/issues/3191497) `cpre/jquery.ui.dialog` добавлена зависимость `core/jquery`.
+* [#3211605](https://www.drupal.org/project/drupal/issues/3211605) Библиотека Popper.js обновлена до версии 2.9.2.
+* [#3211606](https://www.drupal.org/project/drupal/issues/3211606) Библиотека Tabbable обновлена до версии 5.2.0.
+* [#3211602](https://www.drupal.org/project/drupal/issues/3211602) Библиотека jQuery Form обновлена до версии 4.3.0.
+* [#3185165](https://www.drupal.org/project/drupal/issues/3185165) Библиотека Modernizr обновлена до версии 3.11.7.
+* [#3179734](https://www.drupal.org/project/drupal/issues/3179734) jQuery селектор `:tabbable` помечен устаревшим.
 
 ## JSON:API
 
@@ -924,6 +973,7 @@ $schema = $specification[$table];
 * [#3191990](https://www.drupal.org/project/drupal/issues/3191990) Произведён небольшой рефакторинг кода в `DrupalSqlBaseTest`.
 * [#3205029](https://www.drupal.org/project/drupal/issues/3205029) Из `DestinationCategoryTest` удалены референсы на несуществующие классы.
 * [#3051252](https://www.drupal.org/project/drupal/issues/3051252) Добавлены миграции для модулей `multiupload_filefield_widget` и `multiupload_imagefield_widget'.
+* [#3206932](https://www.drupal.org/project/drupal/issues/3206932) Константа `targetEntityType` из `d6/ViewMode` плагина переименована в `entity_type`.
 
 ## Node System
 
@@ -960,6 +1010,11 @@ $schema = $specification[$table];
 * [#3210329](https://www.drupal.org/project/drupal/issues/3210329) Исправлено значение для `aria-checked` для `sticky-header-toggle` в момент загрузки страницы.
 * [#3173016](https://www.drupal.org/project/drupal/issues/3173016) Улучшены стили и разметка для `node.html.twig` для их универсальности.
 * [#3209125](https://www.drupal.org/project/drupal/issues/3209125) Форма поиска теперь закрывается при нажатии Esc.
+* [#3208114](https://www.drupal.org/project/drupal/issues/3208114) Исправлена неполадка для Safari из-за которой надпись «Menu» становилась белой.
+* [#3196874](https://www.drupal.org/project/drupal/issues/3196874) Разметка для пагинации книг «БЭМифицирована».
+* [#3182200](https://www.drupal.org/project/drupal/issues/3182200) Разметка второстепенного меню теперь соответствует БЭМ.
+* [#3200644](https://www.drupal.org/project/drupal/issues/3200644) Для элемента автодополнения добавлено оформление отключенного состояния.
+* [#3211888](https://www.drupal.org/project/drupal/issues/3211888) Исправлены отображение сетки 33/34/33 на IE 11.
 
 ## Plugin System
 
@@ -968,6 +1023,10 @@ $schema = $specification[$table];
 ## PostgreSQL DB Driver
 
 - [#3185399](https://www.drupal.org/project/drupal/issues/3185399) Для определения предыдущего ID теперь используется `RETURNING`.
+
+## Render System
+
+* [#3143096](https://www.drupal.org/project/drupal/issues/3143096) Теперь, если [ленивый строитель](../../../lazy-builder/index.md) возвращает что-то отличное от рендер массива, будет выброшено исключение.
 
 ## Search
 
@@ -1005,6 +1064,7 @@ $schema = $specification[$table];
 
 - [#2577407](https://www.drupal.org/project/drupal/issues/2577407) Установка нового модуля через интерфейс теперь имеет постоянный лейбл «Add».
 * [#3113798](https://www.drupal.org/project/drupal/issues/3113798) Из XML фикстур для модуля удалены теги `<tag>`.
+* [#3100386](https://www.drupal.org/project/drupal/issues/3100386) Добавлены тесты покрывающие обновление модулей с [семантическим версионированием](../../../../../semver/index.md).
 
 ## User
 
@@ -1102,3 +1162,4 @@ $schema = $specification[$table];
 * [#3165364](https://www.drupal.org/project/drupal/issues/3165364) Проверка правописания отключена для файла `LICENSE.txt`.
 * [#2732113](https://www.drupal.org/project/drupal/issues/2732113) Улучшена документация в `dblog_help()`.
 * [#2937882](https://www.drupal.org/project/drupal/issues/2937882) Исправлены ошибки для соответствия стандарту `Drupal.Classes.PropertyDeclaration`.
+* [#2902548](https://www.drupal.org/project/drupal/issues/2902548) Исправлены ошибки для соответствия стандарту `Drupal.Semantics.RemoteAddress`.
