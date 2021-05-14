@@ -803,6 +803,46 @@ process:
 
 Функция `rtrim()` принимает два аргумента. В примере выше будут удаляться `/` в конце строки если такие имеются в URL.
 
+## Критические предупреждения безопасности теперь отображаются администраторам
+
+* [#3041885](https://www.drupal.org/project/drupal/issues/3041885)
+
+Некоторые критические предупреждения безопасности (SA-*) и публичные объявления (PSA-*) будут отображаться на странице отчёта состояния сайта для пользователей с правом доступа `administer site configuration`.
+
+Рекомендуется оставить данное поведение включённым по умолчанию, но если вы хотите отключить запросы для данных предупреждений в окружении, вы можете переопределить конфигурацию в [settings.php](../../../settings-php/index.md):
+
+```php
+$config['system.advisories']['enabled'] = FALSE;
+```
+
+### Новое API
+
+Добавлен новый сервис `system.sa_fetcher` который и будет отвечать за получение информации. Вы можете получить предупреждения следующим способом:
+
+```php
+\Drupal::service('system.sa_fetcher')->getSecurityAdvisories();
+```
+
+Также добавлена новая конфигурация `system.advisories` с двумя настройками:
+
+* `enabled`: Логическое значение, определяющее, будет ли запрашиваться данная информация в процессе выполнения [регулярных операций](../../../hooks/cron/index.md).
+* `interval_hours`: Значение в часах, как часто будет обновляться информация.
+
+### Тестирование
+
+Получение данной информации отключено для функциональных тестов. Если тесту необходима данная информация, в таком случае необходимо убрать данную настройку путём переопределения `\Drupal\Core\Test\FunctionalTestSetupTrait::writeSettings()`. Например:
+
+```php
+protected function writeSettings(array $settings): void {
+  // Unset 'system.advisories' to allow testing enabling and disabling this
+  // setting.
+  unset($settings['config']['system.advisories']);
+  parent::writeSettings($settings);
+}
+```
+
+Тесты, которые включают данное поведение, отвечают за мокинг JSON ответа drupal.org с информацией о безопасности, для того чтобы избежать внешних HTTP запросов в процессе тестирования. Вы можете изучить тестовый модуль `advisory_feed_test` для того чтобы посмотреть, как делать подобные тесты.
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -814,6 +854,10 @@ process:
 ## Bartik
 
 - [#2031447](https://www.drupal.org/project/drupal/issues/2031447) Улучшена вёрстка для вывода «сеткой» при помощи Views.
+
+## Block Content
+
+* [#3207405](https://www.drupal.org/project/drupal/issues/3207405) На странице блоков содержимого добавлена кнопка сброса фильтрации.
 
 ## Book
 
@@ -828,10 +872,16 @@ process:
 ## CKEditor
 
 - [#3150364](https://www.drupal.org/project/drupal/issues/3150364) Улучшена документация (`/admin/help/ckeditor`) для CKEditor.
+* [#3211474](https://www.drupal.org/project/drupal/issues/3211474) `CKEditorLoadingTest::testExternalStylesheets()` конвертирован в Kernel тест.
+* [#3211599](https://www.drupal.org/project/drupal/issues/3211599) CKeditor обновлён до версии 4.16.0.
 
 ## Claro
 
 - [#3083051](https://www.drupal.org/project/drupal/issues/3083051) Произведён рефакторинг tabledrag для соответствия изменениям в ядре.
+
+## Comment
+
+* [#2742997](https://www.drupal.org/project/drupal/issues/2742997) `CommentActionsTest` конвертирован в Kernel тест.
 
 ## Composer
 
@@ -887,6 +937,7 @@ process:
 * [#3202963](https://www.drupal.org/project/drupal/issues/3202963) Формы удаления bundle сущностей теперь показывают количество материалов, которые основаны на нём.
 * [#3203147](https://www.drupal.org/project/drupal/issues/3203147) Удалён решённый `@todo` из `EntityBundleListenerInterface.
 * [#3207961](https://www.drupal.org/project/drupal/issues/3207961) Добавлено явно указание проверки прав доступа при использовании EntityQuery в пропущенных местах.
+* [#3210372](https://www.drupal.org/project/drupal/issues/3210372) `EntityConverter` теперь дополнительно проверяет что переданный `bundle` существует.
 
 ## Extension System
 
@@ -906,6 +957,7 @@ process:
 
 - [#3122912](https://www.drupal.org/project/drupal/issues/3122912) Вызовы `t()` заменены на `$this->t()`.
 * [#3205031](https://www.drupal.org/project/drupal/issues/3205031) В `Drupal\form_test\Form\FormTestVerticalTabsForm` добавлен отсутствующий `use`.
+* [#588438](https://www.drupal.org/project/drupal/issues/588438) Исправлена неполадка в тесте `FormTest::testRequiredFields()` которая приводила к ошибке при вызове `drupal_render()` с элементом `radios`.
 
 ## Help
 
@@ -931,6 +983,8 @@ process:
 * [#3211602](https://www.drupal.org/project/drupal/issues/3211602) Библиотека jQuery Form обновлена до версии 4.3.0.
 * [#3185165](https://www.drupal.org/project/drupal/issues/3185165) Библиотека Modernizr обновлена до версии 3.11.7.
 * [#3179734](https://www.drupal.org/project/drupal/issues/3179734) jQuery селектор `:tabbable` помечен устаревшим.
+* [#3191649](https://www.drupal.org/project/drupal/issues/3191649) Библиотека Sortable обновлена до версии 1.13.0.
+* [#3211601](https://www.drupal.org/project/drupal/issues/3211601) Библиотека jQuery обновлена до версии 3.6.0.
 
 ## JSON:API
 
@@ -948,6 +1002,7 @@ process:
 ## MySQL DB Driver
 
 - [#3185231](https://www.drupal.org/project/drupal/issues/3185231) Режим SQL при инициализации теперь задаётся через `ANSI,TRADITIONAL` вместо перечисления всех возможных значений.
+* [#3210888](https://www.drupal.org/project/drupal/issues/3210888) Удалён метод `Drupal\Core\Database\Connection::serialize()`.
 
 ## Migration System
 
@@ -974,6 +1029,9 @@ process:
 * [#3205029](https://www.drupal.org/project/drupal/issues/3205029) Из `DestinationCategoryTest` удалены референсы на несуществующие классы.
 * [#3051252](https://www.drupal.org/project/drupal/issues/3051252) Добавлены миграции для модулей `multiupload_filefield_widget` и `multiupload_imagefield_widget'.
 * [#3206932](https://www.drupal.org/project/drupal/issues/3206932) Константа `targetEntityType` из `d6/ViewMode` плагина переименована в `entity_type`.
+* [#2974128](https://www.drupal.org/project/drupal/issues/2974128) Добавлен отсутствующий параметр `no_stub: false` для плагина обработчика `DefaultValue`.
+* [#3213638](https://www.drupal.org/project/drupal/issues/3213638) Исправлено некорректное описание для `Drupal\Plugin\Migration`.
+* [#3193189](https://www.drupal.org/project/drupal/issues/3193189) Плагин источник `d6_taxonomy_term_localized_migration` теперь загружает только те термины, что используют словарь с переводами.
 
 ## Node System
 
@@ -1015,6 +1073,14 @@ process:
 * [#3182200](https://www.drupal.org/project/drupal/issues/3182200) Разметка второстепенного меню теперь соответствует БЭМ.
 * [#3200644](https://www.drupal.org/project/drupal/issues/3200644) Для элемента автодополнения добавлено оформление отключенного состояния.
 * [#3211888](https://www.drupal.org/project/drupal/issues/3211888) Исправлены отображение сетки 33/34/33 на IE 11.
+* [#3212281](https://www.drupal.org/project/drupal/issues/3212281) Удален лишний отступ в списках для CKEditor.
+* [#3153265](https://www.drupal.org/project/drupal/issues/3153265) Исправлена неполадка из-за которой ссылка «Перейти к содержимому» при фокусе приводила к смещению макета.
+* [#3211897](https://www.drupal.org/project/drupal/issues/3211897) Исправлена неполадка из-за которой меню в мобильной версии могло закрываться при скроле.
+* [#3191725](https://www.drupal.org/project/drupal/issues/3191725) Улучшены стили для таблиц с сортировкой.
+* [#3190120](https://www.drupal.org/project/drupal/issues/3190120) Второстепенное меню теперь всегда в фокусе при навигации с использованием клавиатуры.
+* [#3212998](https://www.drupal.org/project/drupal/issues/3212998) Улучшены селекторы для элементов JavaScript.
+* [#3212704](https://www.drupal.org/project/drupal/issues/3212704) Исправлено отображение содержимого под макетом 33/33/33 в IE 11.
+* [#3208000](https://www.drupal.org/project/drupal/issues/3208000) Удалён временный шаблон `toolbar.html.twig`.
 
 ## Plugin System
 
@@ -1028,6 +1094,14 @@ process:
 
 * [#3143096](https://www.drupal.org/project/drupal/issues/3143096) Теперь, если [ленивый строитель](../../../lazy-builder/index.md) возвращает что-то отличное от рендер массива, будет выброшено исключение.
 
+## Responsive Image
+
+* [#3107130](https://www.drupal.org/project/drupal/issues/3107130) Список [адаптивных стилей изображения](../../../responsive-images/index.md) теперь сортируется в форматтерах по метке, а не по машинному имени.
+
+## Routing system
+
+* [#3191061](https://www.drupal.org/project/drupal/issues/3191061) Из `\Drupal\Core\Routing\RequestContext` удалён `@todo`.
+
 ## Search
 
 * [#3209453](https://www.drupal.org/project/drupal/issues/3209453) Сервис `search.index` теперь `backend_overridable`.
@@ -1038,6 +1112,8 @@ process:
 - [#3002983](https://www.drupal.org/project/drupal/issues/3002983) Протокол в ссылках заменён на HTTPS.
 - [#3174832](https://www.drupal.org/project/drupal/issues/3174832) Исправлена документация для `admin-block-content.html.twig`.
 * [#3204220](https://www.drupal.org/project/drupal/issues/3204220) `Drupal\system\ModuleDependencyMessageTrait` теперь `Drupal\Core\Extension\ModuleDependencyMessageTrait`.
+* [#3211480](https://www.drupal.org/project/drupal/issues/3211480) `Drupal\Tests\system\Functional\Common\UrlTest` конвертирован в Kernel тест.
+* [#3163487](https://www.drupal.org/project/drupal/issues/3163487) Улучшена документация для свойств `\Drupal\Core\Link`.
 
 ## Taxonomy
 
@@ -1053,24 +1129,31 @@ process:
 
 - [#3174422](https://www.drupal.org/project/drupal/issues/3174422) Для тулбара добавлен класс `clearfix`.
 
+## Transliteration System
+
+* [#3025727](https://www.drupal.org/project/drupal/issues/3025727) В данным для тестирования `PhpTransliterationTest` добавлены описания что именно за данные тестируются.
+
 ## Umami Demo
 
 - [#3051465](https://www.drupal.org/project/drupal/issues/3051465) Поле тегов для материалов теперь не переводимое и не создаёт автоматически несуществующие теги.
 - [#3066570](https://www.drupal.org/project/drupal/issues/3066570) Роль редактора теперь имеет больше прав, в связи с чем может: управлять переводами, изучать страницы "помощи", просматривать таксономию, управлять ярлыками.
 - [#3061267](https://www.drupal.org/project/drupal/issues/3061267) Машинные имена блоков теперь имеют префикс равный машинному имени темы оформления.
 - [#3108503](https://www.drupal.org/project/drupal/issues/3108503) Теперь Layout Builder по умолчанию включен для всех типов содержимого.
+* [#2938803](https://www.drupal.org/project/drupal/issues/2938803) Убрано предупреждение о том что Umami демонстрационный профиль при выборе установочного профиля, так как это указано в его названии и описании.
 
 ## Update
 
 - [#2577407](https://www.drupal.org/project/drupal/issues/2577407) Установка нового модуля через интерфейс теперь имеет постоянный лейбл «Add».
 * [#3113798](https://www.drupal.org/project/drupal/issues/3113798) Из XML фикстур для модуля удалены теги `<tag>`.
 * [#3100386](https://www.drupal.org/project/drupal/issues/3100386) Добавлены тесты покрывающие обновление модулей с [семантическим версионированием](../../../../../semver/index.md).
+* [#3212005](https://www.drupal.org/project/drupal/issues/3212005) В `\Drupal\update\ModuleVersion` добавлены `@throws` описания для методов с исключениями.
 
 ## User
 
 - [#3186752](https://www.drupal.org/project/drupal/issues/3186752) Аргумент `$langcode` для функции `_user_mail_notify()` помечен устаревшим.
 * [#3206358](https://www.drupal.org/project/drupal/issues/3206358) Удалена инициализации `$bag` в `SessionManager`.
 * [#2799049](https://www.drupal.org/project/drupal/issues/2799049) Добавлено новое разрешение `view user email addresses` позволяющее пользователям с данным доступом просматривать email адреса пользователей. На данный момент email адреса могут просматривать исключительно администраторы.
+* [#3212034](https://www.drupal.org/project/drupal/issues/3212034) Добавлены переносы на новые строки в email письмах для пользователей.
 
 ## Views
 
@@ -1105,6 +1188,8 @@ process:
 * [#3205139](https://www.drupal.org/project/drupal/issues/3205139) Удалён `ModuleTestBase::assertTableCount()`.
 * [#2189411](https://www.drupal.org/project/drupal/issues/2189411) Из `FunctionalTestSetupTrait` удалена пересборка контейнера.
 * [#3204002](https://www.drupal.org/project/drupal/issues/3204002) Из `TestServiceProvider` удалён мёртвый код связанный с SimpleTest.
+* [#3132778](https://www.drupal.org/project/drupal/issues/3132778) Использование `strstr()` заменено на `::assertStringContainsString()` и `::assertStringNotCOntainsString()`.
+* [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
 
 ## Symfony 5
 
@@ -1163,3 +1248,7 @@ process:
 * [#2732113](https://www.drupal.org/project/drupal/issues/2732113) Улучшена документация в `dblog_help()`.
 * [#2937882](https://www.drupal.org/project/drupal/issues/2937882) Исправлены ошибки для соответствия стандарту `Drupal.Classes.PropertyDeclaration`.
 * [#2902548](https://www.drupal.org/project/drupal/issues/2902548) Исправлены ошибки для соответствия стандарту `Drupal.Semantics.RemoteAddress`.
+* [#3207456](https://www.drupal.org/project/drupal/issues/3207456) Добавлена явная зависимость на `symfony/mime`.
+* [#3212547](https://www.drupal.org/project/drupal/issues/3212547) Удалены исправленные слова из словаря CSPell.
+* [#2909369](https://www.drupal.org/project/drupal/issues/2909369) Исправлены ошибки для соответствия стандарту `Drupal.VariableComment.WrongStyle`.
+* [#3123070](https://www.drupal.org/project/drupal/issues/3123070) Исправлены ошибки для соответствия стандарту `PSR2.Classes.PropertyDelcaration.Underscore`.
