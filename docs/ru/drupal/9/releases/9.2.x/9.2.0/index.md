@@ -843,6 +843,18 @@ protected function writeSettings(array $settings): void {
 
 Тесты, которые включают данное поведение, отвечают за мокинг JSON ответа drupal.org с информацией о безопасности, для того чтобы избежать внешних HTTP запросов в процессе тестирования. Вы можете изучить тестовый модуль `advisory_feed_test` для того чтобы посмотреть, как делать подобные тесты.
 
+## Добавлен заголовок Permission-Policy для блокировки Google FLoC
+
+* [#3209628](https://www.drupal.org/project/drupal/issues/3209628)
+
+Начиная с 9.2.0 к ответам будет добавляться новый заголовок `Permissions-Policy: interest-cohort=()`. Данный заголовок добавлен в связи с созданием [Federated Learning of Cohorts (FLoC)](https://en.wikipedia.org/wiki/Federated_Learning_of_Cohorts), что позволяет собирать информацию о пользователе без использования cookies, независимо от того, используются ли на сайте любые аналитические сервисы Google.
+
+Для того управления данным заголовком добавлена новая настройка в [settings.php](../../../settings-php/index.md) `block_interest_cohort`. Если вы желаете отключить данный заголовок, задайте значение `FALSE`:
+
+```php
+$settings['block_interest_cohort'] = FALSE;
+```
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -888,6 +900,7 @@ protected function writeSettings(array $settings): void {
 - [#3096781](https://www.drupal.org/project/drupal/issues/3096781) Зависимости `symfony/mime`, `symfony/var-dumper` и `symfony/phpunit-bridge` обновлены до версии 5.2. Добавлена новая зависимость `symfony/deprecation-contracts`.
 - [#3187025](https://www.drupal.org/project/drupal/issues/3187025) Зависимости ядра обновлены на 08.12.2020.
 - [#3206301](https://www.drupal.org/project/drupal/issues/3206301) Зависимости ядра обновлены на 30.03.2021.
+* [#3210632](https://www.drupal.org/project/drupal/issues/3210632) Зависимости ядра обновлена на 17.05.2021.
 
 ## Configuration System
 
@@ -964,6 +977,7 @@ protected function writeSettings(array $settings): void {
 - [#3090659](https://www.drupal.org/project/drupal/issues/3090659) Добавлены Twig функции для установки ссылок на Help Topics: `help_route_link()` и `help_topic_link()`.
 - [#3087218](https://www.drupal.org/project/drupal/issues/3087218) Улучшена скорость индексации справки.
 * [#3209139](https://www.drupal.org/project/drupal/issues/3209139) Добавлена функция-хелпер `_help_topics_search_update()`.
+* [#3213022](https://www.drupal.org/project/drupal/issues/3213022) Теперь ссылка на несуществующий Help Topic указывает его ID.
 
 ## Help Topics
 
@@ -985,6 +999,7 @@ protected function writeSettings(array $settings): void {
 * [#3179734](https://www.drupal.org/project/drupal/issues/3179734) jQuery селектор `:tabbable` помечен устаревшим.
 * [#3191649](https://www.drupal.org/project/drupal/issues/3191649) Библиотека Sortable обновлена до версии 1.13.0.
 * [#3211601](https://www.drupal.org/project/drupal/issues/3211601) Библиотека jQuery обновлена до версии 3.6.0.
+* [#3210633](https://www.drupal.org/project/drupal/issues/3210633) JavaScript зависимости ядра обновлены на 17.05.2021.
 
 ## JSON:API
 
@@ -994,6 +1009,10 @@ protected function writeSettings(array $settings): void {
 
 - [#3180674](https://www.drupal.org/project/drupal/issues/3180674) Удалён неиспользуемый модуль `layout_builder_overrides_test`.
 - [#3115503](https://www.drupal.org/project/drupal/issues/3115503) `\Drupal\Core\Layout\LayoutInterface` теперь расширяет `\Drupal\Core\Plugin\ContextAwarePluginInterface`. Это означает что Layout [плагины](../../../plugins/index.md) теперь контекстно-зависимые.
+
+## Locale
+
+* [#3184527](https://www.drupal.org/project/drupal/issues/3184527) `\Drupal\locale\LocaleLookup::getCid()` больше не учитывает пользовательские роли.
 
 ## Media
 
@@ -1204,6 +1223,7 @@ protected function writeSettings(array $settings): void {
 - [#3187857](https://www.drupal.org/project/drupal/issues/3187857) Сообщения об устаревшем коде больше не будут приводить к предупреждению об изменении сигнатуры методов `::setDeprecated()`.
 * [#3199691](https://www.drupal.org/project/drupal/issues/3199691) Временно отключено тестирование `octal` типа в YAML файлах, так как в спецификации YAML 1.2, который используется Symfony начиная с версии 5.1, поменялся его формат с `0777` на `0o777`.
 * [#3209482](https://www.drupal.org/project/drupal/issues/3209482) Тайпхинты `EventDispatcherInterface` обновлены для `FileUploadResource`.
+* [#3209618](https://www.drupal.org/project/drupal/issues/3209618) Метод `Symfony\Component\HttpKernel\Event\KernelEvent::isMasterRequest()` помечен устаревшим. Так как в [Drupal 10](../../../../10/index.md) планируется использовать Symfony 6, данный метод заранее помечен устаревшим. В качестве замены используйте `Symfony\Component\HttpKernel\Event\KernelEvent::isMainRequest()`.
 
 ## Прочие изменения
 
@@ -1252,3 +1272,5 @@ protected function writeSettings(array $settings): void {
 * [#3212547](https://www.drupal.org/project/drupal/issues/3212547) Удалены исправленные слова из словаря CSPell.
 * [#2909369](https://www.drupal.org/project/drupal/issues/2909369) Исправлены ошибки для соответствия стандарту `Drupal.VariableComment.WrongStyle`.
 * [#3123070](https://www.drupal.org/project/drupal/issues/3123070) Исправлены ошибки для соответствия стандарту `PSR2.Classes.PropertyDelcaration.Underscore`.
+* [#3214234](https://www.drupal.org/project/drupal/issues/3214234) Добавлен новый файл `core/class_aliases.php`. Данный файл также добавлен в автозагрузчик Composer.
+* [#2969190](https://www.drupal.org/project/drupal/issues/2969190) Улучшена документация метода `ModuleInstallerInterface::uninstall()`.

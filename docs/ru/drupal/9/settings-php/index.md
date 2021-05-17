@@ -608,6 +608,16 @@ $settings['migrate_node_migrate_type_classic'] = TRUE;
 $settings['update_fetch_with_http_fallback'] = TRUE;
 ```
 
+#### Управление заголовком для ответов Permissions-Policy
+
+По умолчанию, Drupal устанавливает на все ответы заголовок `Permissions-Policy: interest-cohort=()` для того чтобы отключить [Google Federated Learning of Cohorts (FLoC)](https://en.wikipedia.org/wiki/Federated_Learning_of_Cohorts) которая доступна начиная с Chrome 89.
+
+Если вы не хотите отключить данную возможность, вы можете установить данное значение в `FALSE` и заголовок не будет добавляться:
+
+```php
+$settings['block_interest_cohort'] = FALSE;
+```
+
 ### $config
 
 При помощи переменной `$config` вы можете переопределить значения конфигураций на глобальном уровне. Как правило, это не требуется. Эта возможность полезна для переопределения адреса сайта или путей для локального окружения.
@@ -667,6 +677,7 @@ ini_set('pcre.recursion_limit', 200000);
 
 - **[Drupal 9.1.0](../releases/9.1.x/9.1.0/index.md) (02.12.20):** Настройка для базы данных `$databases[$database][$target]['transactions']` помечена устаревшей и будет удалена в Drupal 10.
 - **[Drupal 9.1.0](../releases/9.1.x/9.1.0/index.md) (02.12.20):** Добавлена новая настройка `update_fetch_with_http_fallback`.
+- **[Drupal 9.2.0](../releases/9.2.x/9.2.0/index.md) (02.06.21):** Добавлена новая настройка `block_interest_cohort`.
 
 ## Смотрите также
 
