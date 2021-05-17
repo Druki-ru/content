@@ -19,6 +19,10 @@ metatags:
 * [#3212177](https://www.drupal.org/project/drupal/issues/3212177) `caniuse-lite` обновлён до актуальной версии.
 * [#3211810](https://www.drupal.org/project/drupal/issues/3211810) Обновлена зависимость `nightwatch`, а также зависимости с обновлениями безопасности.
 
+## Migration System
+
+* [#3190815](https://www.drupal.org/project/drupal/issues/3190815) Улучшено кеширование счётчиков для плагинов источников основанных на `SqlBase`.
+
 ## Ссылки
 
 - [Drupal 9.0.13](https://www.drupal.org/project/drupal/releases/9.0.13) (англ.), drupal.org, 5 мая 2021
