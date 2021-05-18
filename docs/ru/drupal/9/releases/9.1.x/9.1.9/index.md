@@ -30,6 +30,10 @@ metatags:
 
 * [#3212539](https://www.drupal.org/project/drupal/issues/3212539) Добавлены соответствия для форматтеров ссылок из D7.
 
+## Plugin System
+
+* [#3126747](https://www.drupal.org/project/drupal/issues/3126747) `ContextDefinition` при обнаружении типа данных начинающегося с `entity:*` теперь передаёт его `EntityContextDefinition`.
+
 ## Statistics
 
 * [#3190820](https://www.drupal.org/project/drupal/issues/3190820) Улучшена подготовка токенов в `statistics_tokens()` которая ранее могла приводить к предупреждениям.
