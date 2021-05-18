@@ -1,10 +1,10 @@
 ---
-title: 'Drupal 9.1.8'
-slug: 9/releases/9.1.8
+title: 'Drupal 9.1.9'
+slug: 9/releases/9.1.9
 core: 9
 metatags:
-  title: 'Drupal 9.1.8: Список изменений'
-  description: 'Список изменений Drupal 9.1.8.'
+  title: 'Drupal 9.1.9: Список изменений'
+  description: 'Список изменений Drupal 9.1.9.'
 ---
 
 > [!WARNING]
