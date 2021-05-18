@@ -1000,6 +1000,7 @@ $settings['block_interest_cohort'] = FALSE;
 * [#3191649](https://www.drupal.org/project/drupal/issues/3191649) Библиотека Sortable обновлена до версии 1.13.0.
 * [#3211601](https://www.drupal.org/project/drupal/issues/3211601) Библиотека jQuery обновлена до версии 3.6.0.
 * [#3210633](https://www.drupal.org/project/drupal/issues/3210633) JavaScript зависимости ядра обновлены на 17.05.2021.
+* [#3214412](https://www.drupal.org/project/drupal/issues/3214412) Сборка и Prettier теперь запускаются после обновления при помощи Yarn.
 
 ## JSON:API
 
@@ -1209,6 +1210,7 @@ $settings['block_interest_cohort'] = FALSE;
 * [#3204002](https://www.drupal.org/project/drupal/issues/3204002) Из `TestServiceProvider` удалён мёртвый код связанный с SimpleTest.
 * [#3132778](https://www.drupal.org/project/drupal/issues/3132778) Использование `strstr()` заменено на `::assertStringContainsString()` и `::assertStringNotCOntainsString()`.
 * [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
+* [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
 
 ## Symfony 5
 
@@ -1273,4 +1275,6 @@ $settings['block_interest_cohort'] = FALSE;
 * [#2909369](https://www.drupal.org/project/drupal/issues/2909369) Исправлены ошибки для соответствия стандарту `Drupal.VariableComment.WrongStyle`.
 * [#3123070](https://www.drupal.org/project/drupal/issues/3123070) Исправлены ошибки для соответствия стандарту `PSR2.Classes.PropertyDelcaration.Underscore`.
 * [#3214234](https://www.drupal.org/project/drupal/issues/3214234) Добавлен новый файл `core/class_aliases.php`. Данный файл также добавлен в автозагрузчик Composer.
+* [#3214308](https://www.drupal.org/project/drupal/issues/3214308) Удалён файл `core/class_aliases.php`, а его содержимое перенесено в `bootstrap.inc`. 🤭
 * [#2969190](https://www.drupal.org/project/drupal/issues/2969190) Улучшена документация метода `ModuleInstallerInterface::uninstall()`.
+* [#3207968](https://www.drupal.org/project/drupal/issues/3207968) Комментарии с использованием `@codingStandardsIgnoreFile` заменены на `phpcs:ignoreFile`.
