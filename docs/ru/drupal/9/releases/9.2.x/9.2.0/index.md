@@ -855,6 +855,99 @@ protected function writeSettings(array $settings): void {
 $settings['block_interest_cohort'] = FALSE;
 ```
 
+## jQuery Joyride заменён на ShepherdJS
+
+* [#3051766](https://www.drupal.org/project/drupal/issues/3051766)
+
+### Библиотека Joyride помечена устаревшей
+
+Библиотека `core/jquery.joyride` помечена устаревшей, так как библиотека jQuery Joyride имеет слабую поддержку, не имеет релизов уже несколько лет и зависит от jQuery 3 что вносит неопределённости в будущую поддержку jQuery 4.
+
+Tour модуль теперь использует новую библиотеку `core/shepherd`, которая подключает [ShepherdJS](https://github.com/shipshapecode/shepherd).
+
+#### Последствия замены библиотеки
+
+##### Изменена разметка для подсказки
+
+> [!NOTE]
+> Данные изменения не касаются тем расширяющих Stable или Stable 9. Данные темы предоставляют обратную совместимость.
+
+Shepherd и jQuery Joyride рендерят подсказки по-разному. Для тем что не расширяют Stable или Stable 9, CSS стили были изменены, но не должны оказать серьезного влияния. Если одно из следующих верно для вашего проекта, вы можете заметить изменения:
+
+* Сайт предоставляет свои собственные стили для подсказок Tour модуля отличных от тех что предоставляет ядро.
+* Сайт использует Tip плагины отличные от тех что предоставляются ядром.
+
+Если одно из вышеперечисленных утверждений утвердительно, визуальное представление подсказки может отличаться после обновления. Если данные изменения нежеланны, вы можете решить их следующими способами:
+
+* Произвести рефакторинг своих стилей для того чтобы они учитывали новую разметку.
+* Сделать так, чтобы тема сайта расширяла Stable или Stable 9, или скопируйте из них `tour.js` файл и загружайте его параллельно с библиотекой Tour. Если данный файл будет загружен на странице, то подсказки будут рендериться с разметкой идентичной jQuery Joyride.
+
+##### Конфигурация Tour изменена
+
+> [!NOTE]
+> Данное изменение не должно сказаться на «турах» хранимых в конфигурациях. Они будут обновлены в процессе обновления сайта.
+
+Конфигурационные свойства туров `location` и `attributes` помечены устаревшими. Они были заменены на `position` и `selector`.
+
+* Использование свойства `location` должно быть заменено на `position`.
+* Использование `data-class` и `data-id` должны быть перенесены в `selector`. Например:
+
+```yaml
+attributes:
+  data-class: 'some-class'
+```
+
+необходимо заменить на
+
+```yaml
+selector: '.some-class'
+```
+
+```yaml
+attributes:
+  data-id: 'an-id'
+```
+
+необходимо заменить на
+
+```yaml
+selector: '#an-id'
+```
+
+* Все прочие использования `attribute` должны рассматриваться индивидуально и конкретные случаи.
+
+### Методы ::getOutput() и ::getAttributes() помечены устаревшими
+
+Методы `::getOutput()` и `::getAttributes()` интерфейса `\Drupal\tour\TipPluginInterface` помечены устаревшими.
+
+Для обновления собственных плагинов, вам необходимо реализовывать `\Drupal\tour\TourTipPluginInterface`. Существующий базовый класс `\Drupal\tour\TipPluginBase` предоставлет реализации для 2 из 3 новых методов. Третий новый метод — `::getBody()` является заменой `::getOutput()`.
+
+**Ранее:**
+
+```php
+public function getOutput() {
+  $output = '<h2 class="tour-tip-label" id="tour-tip-' . $this->getAriaId() . '-label">' . Html::escape($this->getLabel()) . '</h2>';
+  $output .= '<p class="tour-tip-body" id="tour-tip-' . $this->getAriaId() . '-contents">' . $this->token->replace($this->getBody()) . '</p>';
+  return ['#markup' => $output];
+}
+```
+
+**Сейчас:**
+
+```php
+public function getBody() {
+  // The label is now handled by calling code.
+  return [
+    '#type' => 'html_tag',
+    '#tag' => 'p',
+    '#value' => $this->token->replace($this->get('body')),
+    '#attributes' => [
+      'class' => ['tour-tip-body'],
+    ],
+  ];
+}
+```
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
