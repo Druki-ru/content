@@ -994,6 +994,7 @@ public function getBody() {
 - [#3187025](https://www.drupal.org/project/drupal/issues/3187025) Зависимости ядра обновлены на 08.12.2020.
 - [#3206301](https://www.drupal.org/project/drupal/issues/3206301) Зависимости ядра обновлены на 30.03.2021.
 * [#3210632](https://www.drupal.org/project/drupal/issues/3210632) Зависимости ядра обновлена на 17.05.2021.
+* [#3215039](https://www.drupal.org/project/drupal/issues/3215039) Зависимости ядра обновлена на 21.05.2021.
 
 ## Configuration System
 
@@ -1094,6 +1095,7 @@ public function getBody() {
 * [#3211601](https://www.drupal.org/project/drupal/issues/3211601) Библиотека jQuery обновлена до версии 3.6.0.
 * [#3210633](https://www.drupal.org/project/drupal/issues/3210633) JavaScript зависимости ядра обновлены на 17.05.2021.
 * [#3214412](https://www.drupal.org/project/drupal/issues/3214412) Сборка и Prettier теперь запускаются после обновления при помощи Yarn.
+* [#3144854](https://www.drupal.org/project/drupal/issues/3144854) Удалена зависимость `stylelint-no-browser-hacks`.
 
 ## JSON:API
 
@@ -1194,6 +1196,7 @@ public function getBody() {
 * [#3212998](https://www.drupal.org/project/drupal/issues/3212998) Улучшены селекторы для элементов JavaScript.
 * [#3212704](https://www.drupal.org/project/drupal/issues/3212704) Исправлено отображение содержимого под макетом 33/33/33 в IE 11.
 * [#3208000](https://www.drupal.org/project/drupal/issues/3208000) Удалён временный шаблон `toolbar.html.twig`.
+* [#3210443](https://www.drupal.org/project/drupal/issues/3210443) Теперь после закрытия выпадающего меню при помощи «Esc» фокус возвращается на переключатель данного меню.
 
 ## Plugin System
 
@@ -1304,6 +1307,7 @@ public function getBody() {
 * [#3132778](https://www.drupal.org/project/drupal/issues/3132778) Использование `strstr()` заменено на `::assertStringContainsString()` и `::assertStringNotCOntainsString()`.
 * [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
 * [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
+* [#3139404](https://www.drupal.org/project/drupal/issues/3139404) Использование устаревшего `AssertLegacyTrait::assertText()` заменено на современные аналоги.
 
 ## Symfony 5
 
