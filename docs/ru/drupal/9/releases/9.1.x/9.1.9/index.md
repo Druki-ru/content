@@ -43,6 +43,11 @@ metatags:
 * [#3212521](https://www.drupal.org/project/drupal/issues/3212521) Исправлены опечатки в `core/modules/views/src/Plugin/views/filter/FilterPluginBase.php`.
 * [#2868258](https://www.drupal.org/project/drupal/issues/2868258) `View::preRenderViewElement()` теперь выбрасывает исключение если представление не найдено.
 
+## Тестирование
+
+* [#3131281](https://www.drupal.org/project/drupal/issues/3131281) Использование `::assertEqual()` заменено на `::assertEquals()`.
+
 ## Прочие изменения
 
 * [#3211936](https://www.drupal.org/project/drupal/issues/3211936) Исправлено «состояние гонки» при создании директорий для [стилей изображений](../../../image/image-styles/index.md).
+* [#3207734](https://www.drupal.org/project/drupal/issues/3207734) Исправлены ошибки стандартов кодирования `Drupal.Commenting.InlineVariableComment`.
