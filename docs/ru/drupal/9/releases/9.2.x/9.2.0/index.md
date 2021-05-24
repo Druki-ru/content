@@ -983,6 +983,7 @@ public function getBody() {
 ## Claro
 
 - [#3083051](https://www.drupal.org/project/drupal/issues/3083051) Произведён рефакторинг tabledrag для соответствия изменениям в ядре.
+* [#3213557](https://www.drupal.org/project/drupal/issues/3213557) Исправлено отображение чекбоксов в Layout Builder.
 
 ## Comment
 
