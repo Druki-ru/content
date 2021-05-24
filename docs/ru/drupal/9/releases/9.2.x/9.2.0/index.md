@@ -1307,7 +1307,6 @@ public function getBody() {
 * [#3132778](https://www.drupal.org/project/drupal/issues/3132778) Использование `strstr()` заменено на `::assertStringContainsString()` и `::assertStringNotCOntainsString()`.
 * [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
 * [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
-* [#3139404](https://www.drupal.org/project/drupal/issues/3139404) Использование устаревшего `AssertLegacyTrait::assertText()` заменено на современные аналоги.
 
 ## Symfony 5
 

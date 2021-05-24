@@ -46,6 +46,7 @@ metatags:
 ## Тестирование
 
 * [#3131281](https://www.drupal.org/project/drupal/issues/3131281) Использование `::assertEqual()` заменено на `::assertEquals()`.
+* [#3139404](https://www.drupal.org/project/drupal/issues/3139404) Использование устаревшего `AssertLegacyTrait::assertText()` заменено на современные аналоги.
 
 ## Прочие изменения
 
