@@ -1096,6 +1096,7 @@ public function getBody() {
 * [#3210633](https://www.drupal.org/project/drupal/issues/3210633) JavaScript зависимости ядра обновлены на 17.05.2021.
 * [#3214412](https://www.drupal.org/project/drupal/issues/3214412) Сборка и Prettier теперь запускаются после обновления при помощи Yarn.
 * [#3144854](https://www.drupal.org/project/drupal/issues/3144854) Удалена зависимость `stylelint-no-browser-hacks`.
+* [#1870006](https://www.drupal.org/project/drupal/issues/1870006) Улучшено отображение HTML5 ошибок валидации при наличии тулбара.
 
 ## JSON:API
 
@@ -1147,6 +1148,9 @@ public function getBody() {
 * [#2974128](https://www.drupal.org/project/drupal/issues/2974128) Добавлен отсутствующий параметр `no_stub: false` для плагина обработчика `DefaultValue`.
 * [#3213638](https://www.drupal.org/project/drupal/issues/3213638) Исправлено некорректное описание для `Drupal\Plugin\Migration`.
 * [#3193189](https://www.drupal.org/project/drupal/issues/3193189) Плагин источник `d6_taxonomy_term_localized_migration` теперь загружает только те термины, что используют словарь с переводами.
+* [#3191782](https://www.drupal.org/project/drupal/issues/3191782) Исправлены зависимости для миграций переводов профилей из Drupal 6.
+* [#3204461](https://www.drupal.org/project/drupal/issues/3204461) Исправлена ошибка связанная с `sort()` в `ValidateMigrationStateTestTrait`.
+* [#3189463](https://www.drupal.org/project/drupal/issues/3189463) Все миграция связанные с переводами и локализацией теперь зависят от миграции `language`.
 
 ## Node System
 
@@ -1197,6 +1201,8 @@ public function getBody() {
 * [#3212704](https://www.drupal.org/project/drupal/issues/3212704) Исправлено отображение содержимого под макетом 33/33/33 в IE 11.
 * [#3208000](https://www.drupal.org/project/drupal/issues/3208000) Удалён временный шаблон `toolbar.html.twig`.
 * [#3210443](https://www.drupal.org/project/drupal/issues/3210443) Теперь после закрытия выпадающего меню при помощи «Esc» фокус возвращается на переключатель данного меню.
+* [#3173012](https://www.drupal.org/project/drupal/issues/3173012) Внесены корректировки в `header-search-side.pcss.css` и `header-search-narrow.pcss.css`.
+* [#3200628](https://www.drupal.org/project/drupal/issues/3200628) Исправлено выравнивание текста лдя маленьких кнопок.
 
 ## Plugin System
 
@@ -1374,3 +1380,6 @@ public function getBody() {
 * [#3214308](https://www.drupal.org/project/drupal/issues/3214308) Удалён файл `core/class_aliases.php`, а его содержимое перенесено в `bootstrap.inc`. 🤭
 * [#2969190](https://www.drupal.org/project/drupal/issues/2969190) Улучшена документация метода `ModuleInstallerInterface::uninstall()`.
 * [#3207968](https://www.drupal.org/project/drupal/issues/3207968) Комментарии с использованием `@codingStandardsIgnoreFile` заменены на `phpcs:ignoreFile`.
+* [#3214920](https://www.drupal.org/project/drupal/issues/3214920) Рекомендуемая версия PHP увеличена до 7.4.
+* [#3109767](https://www.drupal.org/project/drupal/issues/3109767) Улучшена генерация демонстрационных данных для типов полей `string` и `link`.
+* [#3195888](https://www.drupal.org/project/drupal/issues/3195888) Улучшена проверка зависимостей в `core/scripts/dev/commit-code-check.sh`.
