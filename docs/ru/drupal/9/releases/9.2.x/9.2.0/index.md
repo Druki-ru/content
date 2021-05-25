@@ -1204,6 +1204,7 @@ public function getBody() {
 * [#3210443](https://www.drupal.org/project/drupal/issues/3210443) Теперь после закрытия выпадающего меню при помощи «Esc» фокус возвращается на переключатель данного меню.
 * [#3173012](https://www.drupal.org/project/drupal/issues/3173012) Внесены корректировки в `header-search-side.pcss.css` и `header-search-narrow.pcss.css`.
 * [#3200628](https://www.drupal.org/project/drupal/issues/3200628) Исправлено выравнивание текста лдя маленьких кнопок.
+* [#3214140](https://www.drupal.org/project/drupal/issues/3214140) Иконка закрытия системного сообщения больше не имеет `border-radius`.
 
 ## Plugin System
 
@@ -1314,6 +1315,8 @@ public function getBody() {
 * [#3132778](https://www.drupal.org/project/drupal/issues/3132778) Использование `strstr()` заменено на `::assertStringContainsString()` и `::assertStringNotCOntainsString()`.
 * [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
 * [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
+* [#3133162](https://www.drupal.org/project/drupal/issues/3133162) Употребление глагола «Test» заменено на «Tests».
+* [#3186661](https://www.drupal.org/project/drupal/issues/3186661) Удалены вызовы `::drupalPostForm()`.
 
 ## Symfony 5
 
