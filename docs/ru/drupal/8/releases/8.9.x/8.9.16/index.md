@@ -1,7 +1,7 @@
 ---
 title: 'Drupal 8.9.16'
-slug: 9/releases/8.9.16
-core: 9
+slug: 8/releases/8.9.16
+core: 8
 metatags:
   title: 'Drupal 8.9.16: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2021-003.'
