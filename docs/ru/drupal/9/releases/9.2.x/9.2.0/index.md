@@ -979,6 +979,8 @@ public function getBody() {
 - [#3150364](https://www.drupal.org/project/drupal/issues/3150364) Улучшена документация (`/admin/help/ckeditor`) для CKEditor.
 * [#3211474](https://www.drupal.org/project/drupal/issues/3211474) `CKEditorLoadingTest::testExternalStylesheets()` конвертирован в Kernel тест.
 * [#3211599](https://www.drupal.org/project/drupal/issues/3211599) CKeditor обновлён до версии 4.16.0.
+* [#3215916](https://www.drupal.org/project/drupal/issues/3215916) CKeditor обновлён до версии 4.17.0.
+* [#3215929](https://www.drupal.org/project/drupal/issues/3215929) CKeditor откачен до версии 4.16.1, чтобы соответствать версиям обновлений для [SA-CORE-2021-003](../../../../security/sa-core/2021-003/index.md).
 
 ## Claro
 
@@ -1388,3 +1390,4 @@ public function getBody() {
 * [#3214920](https://www.drupal.org/project/drupal/issues/3214920) Рекомендуемая версия PHP увеличена до 7.4.
 * [#3109767](https://www.drupal.org/project/drupal/issues/3109767) Улучшена генерация демонстрационных данных для типов полей `string` и `link`.
 * [#3195888](https://www.drupal.org/project/drupal/issues/3195888) Улучшена проверка зависимостей в `core/scripts/dev/commit-code-check.sh`.
+* [#3186364](https://www.drupal.org/project/drupal/issues/3186364) Для предварительных релизов Drupal разрешено использовать предварительные релизы зависимостей.
