@@ -11,7 +11,9 @@ metatags:
 
 ## 2021
 
-- [SA-CORE-2021-001](sa-core/2021-001/index.md) - 20 января 2020
+- [SA-CORE-2021-003](sa-core/2021-003/index.md) - 26 мая 2021
+- [SA-CORE-2021-002](sa-core/2021-002/index.md) - 21 апреля 2021
+- [SA-CORE-2021-001](sa-core/2021-001/index.md) - 20 января 2021
 
 ## 2020
 
