@@ -948,6 +948,93 @@ public function getBody() {
 }
 ```
 
+## Уровень совместимости для Symfony InputBag
+
+* [#3162016](https://www.drupal.org/project/drupal/issues/3162016)
+
+Symfony 5.2 представил `Symfony\Component\HttpFoundation\InputBag` в качестве замены `Symfony\Component\HttpFoundation\ParameterBag` в некоторых ситуациях и возможномть метода `Symfony\Component\HttpFoundation\InputBag::get()` отдавать не строковые значения также помечена устаревшей. Следовательно, если вам требуется получить не строковые значения, используйте `Drupal\Core\Http\InputBag::all()`. `Drupal\Core\Http\InputBag` будет заменен в будущем на `Symfony\Component\HttpFoundation\InputBag`, когда Drupal перестанет поддерживать Symfony 4.
+
+Основное отличие в том, что `::all()` может принимать параметры:
+
+Ранее:
+
+```php
+$ajax_page_state = $request->request->get('ajax_page_state', []);
+```
+
+Второй параметр опциональный и отвечает за значение по умолчанию, если по ключу `ajax_page_state` нет значения.
+
+Теперь:
+
+Вариант №1:
+
+```php
+$ajax_page_state = $request->request->all('ajax_page_state');
+```
+
+* Если значения нет, метод возвращает пустой массив. 
+* Если значение есть и оно не является массивом, будет выброшено исключение `UnexpectedValueException()`.
+
+Вариант №2:
+
+```php
+$ajax_page_state = $request->request->all()['ajax_page_state'] ?? NULL;
+```
+
+* Вызов такого формата никогда не приведёт к выбрасыванию исключения `UnexpectedValueException()`.
+* При помощи данной конструкции вы можете указать значение по умолчанию.
+
+## Функции для кодирования и декодирования Mime заголовков помечены устаревшими
+
+* [#84883](https://www.drupal.org/project/drupal/issues/84883)
+
+Кодирование Mime заголовков в Drupal не соответствует RFC 2047.
+
+С годами появились другие решения, которые справляются с этим лучше, включая некоторые встроенные функции PHP.
+
+Как результат, класс `Drupal\Component\Utility\Mail` помечен устаревшим.
+
+Ранее:
+
+```php
+$headers['From'] = Mail::formatDisplayName('foo@example.com');
+```
+
+Сейчас:
+
+```php
+use Symfony\Component\Mime\Header\MailboxHeader;
+
+$mailbox = new MailboxHeader('From', new Address('foo@example.com'));
+$headers['From'] = $mailbox->getBodyAsString();
+```
+
+Ранее:
+
+```php
+$mail_subject = Unicode::mimeHeaderEncode($message['subject']);
+```
+
+Сейчас:
+
+```php
+use Symfony\Component\Mime\Header\UnstructuredHeader;
+
+$mail_subject = (new UnstructuredHeader('subject', $message['subject']))->getBodyAsString();
+```
+
+Ранее:
+
+```php
+$decoded_string = Unicode::mimeHeaderDecode($encoded_string);
+```
+
+Сейчас:
+
+```php
+$decoded_string = iconv_mime_decode($encoded_string);
+```
+
 ## Aggregator
 
 - [#3178175](https://www.drupal.org/project/drupal/issues/3178175) Модуль больше не требует наличия `curl`.
@@ -999,6 +1086,7 @@ public function getBody() {
 - [#3206301](https://www.drupal.org/project/drupal/issues/3206301) Зависимости ядра обновлены на 30.03.2021.
 * [#3210632](https://www.drupal.org/project/drupal/issues/3210632) Зависимости ядра обновлена на 17.05.2021.
 * [#3215039](https://www.drupal.org/project/drupal/issues/3215039) Зависимости ядра обновлена на 21.05.2021.
+* [#3215280](https://www.drupal.org/project/drupal/issues/3215280) Подняты минимальные версии для некоторых зависимостей ядра с которым возникали проблемы при тестировании.
 
 ## Configuration System
 
@@ -1325,6 +1413,7 @@ public function getBody() {
 - [#3188056](https://www.drupal.org/project/drupal/issues/3188056) Обновлён код, который вызывал сериалайзер Symfony с `NULL` в качестве формата.
 - [#3185603](https://www.drupal.org/project/drupal/issues/3185603) Добавлен `ConstraintFactory` для инициализации констрейн плагинов Drupal.
 * [#3209239](https://www.drupal.org/project/drupal/issues/3209239) `FileUploadSanitizeNameEvent::stopPropagation()` добавлен тайпхинт возвращаемому значению (`void`).
+* [#3213295](https://www.drupal.org/project/drupal/issues/3213295) Компоненты Symfony 5 обновлены до 5.3-rc1.
 
 ## Symfony 6
 
@@ -1334,6 +1423,7 @@ public function getBody() {
 * [#3199691](https://www.drupal.org/project/drupal/issues/3199691) Временно отключено тестирование `octal` типа в YAML файлах, так как в спецификации YAML 1.2, который используется Symfony начиная с версии 5.1, поменялся его формат с `0777` на `0o777`.
 * [#3209482](https://www.drupal.org/project/drupal/issues/3209482) Тайпхинты `EventDispatcherInterface` обновлены для `FileUploadResource`.
 * [#3209618](https://www.drupal.org/project/drupal/issues/3209618) Метод `Symfony\Component\HttpKernel\Event\KernelEvent::isMasterRequest()` помечен устаревшим. Так как в [Drupal 10](../../../../10/index.md) планируется использовать Symfony 6, данный метод заранее помечен устаревшим. В качестве замены используйте `Symfony\Component\HttpKernel\Event\KernelEvent::isMainRequest()`.
+* [#3215830](https://www.drupal.org/project/drupal/issues/3215830) `KernelEvent` теперь использует `Drupal\Component\EventDispatcher\Event` вместо `Symfony\Component\EventDispatcher\Event`.
 
 ## Прочие изменения
 
@@ -1390,3 +1480,4 @@ public function getBody() {
 * [#3109767](https://www.drupal.org/project/drupal/issues/3109767) Улучшена генерация демонстрационных данных для типов полей `string` и `link`.
 * [#3195888](https://www.drupal.org/project/drupal/issues/3195888) Улучшена проверка зависимостей в `core/scripts/dev/commit-code-check.sh`.
 * [#3186364](https://www.drupal.org/project/drupal/issues/3186364) Для предварительных релизов Drupal разрешено использовать предварительные релизы зависимостей.
+* [#3214565](https://www.drupal.org/project/drupal/issues/3214565) Улучшен код в тесте `BuildTestTest::testPortMany()` приводящий к случайным провалам.
