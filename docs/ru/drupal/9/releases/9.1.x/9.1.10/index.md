@@ -14,6 +14,10 @@ metatags:
 
 * [#3212354](https://www.drupal.org/project/drupal/issues/3212354) `AggregatorFeedBlock::build()` теперь всегда возвращает массив.
 
+## CKEditor
+
+* [#3215970](https://www.drupal.org/project/drupal/issues/3215970) CKeditor откачен до версии 4.16.1, чтобы соответствовать версиям обновлений для [SA-CORE-2021-003](../../../../security/sa-core/2021-003/index.md).
+
 ## Database System
 
 * [#3210913](https://www.drupal.org/project/drupal/issues/3210913) Исправлена ошибка в `DbDumpCommandTest`.
@@ -47,6 +51,7 @@ metatags:
 
 * [#3131281](https://www.drupal.org/project/drupal/issues/3131281) Использование `::assertEqual()` заменено на `::assertEquals()`.
 * [#3139404](https://www.drupal.org/project/drupal/issues/3139404) Использование устаревшего `AssertLegacyTrait::assertText()` заменено на современные аналоги.
+* [#3186661](https://www.drupal.org/project/drupal/issues/3186661) Удалены вызовы `::drupalPostForm()`.
 
 ## Прочие изменения
 

@@ -980,7 +980,7 @@ public function getBody() {
 * [#3211474](https://www.drupal.org/project/drupal/issues/3211474) `CKEditorLoadingTest::testExternalStylesheets()` конвертирован в Kernel тест.
 * [#3211599](https://www.drupal.org/project/drupal/issues/3211599) CKeditor обновлён до версии 4.16.0.
 * [#3215916](https://www.drupal.org/project/drupal/issues/3215916) CKeditor обновлён до версии 4.17.0.
-* [#3215929](https://www.drupal.org/project/drupal/issues/3215929) CKeditor откачен до версии 4.16.1, чтобы соответствать версиям обновлений для [SA-CORE-2021-003](../../../../security/sa-core/2021-003/index.md).
+* [#3215929](https://www.drupal.org/project/drupal/issues/3215929) CKeditor откачен до версии 4.16.1, чтобы соответствовать версиям обновлений для [SA-CORE-2021-003](../../../../security/sa-core/2021-003/index.md).
 
 ## Claro
 
@@ -1319,7 +1319,6 @@ public function getBody() {
 * [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
 * [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
 * [#3133162](https://www.drupal.org/project/drupal/issues/3133162) Употребление глагола «Test» заменено на «Tests».
-* [#3186661](https://www.drupal.org/project/drupal/issues/3186661) Удалены вызовы `::drupalPostForm()`.
 
 ## Symfony 5
 
