@@ -1417,6 +1417,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3185603](https://www.drupal.org/project/drupal/issues/3185603) Добавлен `ConstraintFactory` для инициализации констрейн плагинов Drupal.
 * [#3209239](https://www.drupal.org/project/drupal/issues/3209239) `FileUploadSanitizeNameEvent::stopPropagation()` добавлен тайпхинт возвращаемому значению (`void`).
 * [#3213295](https://www.drupal.org/project/drupal/issues/3213295) Компоненты Symfony 5 обновлены до 5.3-rc1.
+* [#3216088](https://www.drupal.org/project/drupal/issues/3216088) Компоненты Symfony 5 обновлены до 5.3.
 
 ## Symfony 6
 
