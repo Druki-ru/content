@@ -59,6 +59,7 @@ function example_entity_extra_field_info() {
   $extra['node']['news']['display']['extra_foo_bar'] = [
     'label' => new TranslatableMarkup('Foo bar field'),
     'description' => new TranslatableMarkup('Prints "foo bar" string.'),
+    'weight' => 3,
   ];
 
   return $extra;
@@ -93,6 +94,7 @@ function example_entity_extra_field_info() {
   $extra['node']['news']['form']['extra_foo_bar'] = [
     'label' => new TranslatableMarkup('Foo bar field'),
     'description' => new TranslatableMarkup('Enter "foo bar" to continue.'),
+    'weight' => 3,
   ];
 
   return $extra;
