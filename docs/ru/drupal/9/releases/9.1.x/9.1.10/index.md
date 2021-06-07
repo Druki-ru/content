@@ -7,9 +7,6 @@ metatags:
   description: 'Список изменений Drupal 9.1.10.'
 ---
 
-> [!WARNING]
-> Данный релиз находится в разработке.
-
 ## Aggregator
 
 * [#3212354](https://www.drupal.org/project/drupal/issues/3212354) `AggregatorFeedBlock::build()` теперь всегда возвращает массив.
@@ -57,3 +54,7 @@ metatags:
 
 * [#3211936](https://www.drupal.org/project/drupal/issues/3211936) Исправлено «состояние гонки» при создании директорий для [стилей изображений](../../../image/image-styles/index.md).
 * [#3207734](https://www.drupal.org/project/drupal/issues/3207734) Исправлены ошибки стандартов кодирования `Drupal.Commenting.InlineVariableComment`.
+
+## Ссылки
+
+- [Drupal 9.1.10](https://www.drupal.org/project/drupal/releases/9.1.10) (англ.), drupal.org, 4 июня 2021
