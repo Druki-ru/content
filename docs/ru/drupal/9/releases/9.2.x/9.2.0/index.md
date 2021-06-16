@@ -11,8 +11,8 @@ metatags:
 **Активная поддержка до**: 01 декабря 2021\
 **Поддержка безопасности до**: июнь 2022
 
-> [!WARNING]
-> Drupal 9.2.0 находится в разработке.
+> [!NOTE]
+> Последние 32 коммита до релиза на данный момент здесь не отражены. Но они лишь мелкие исправления. В ближайшее время они будут отражены здесь.
 
 ## Объект исключения теперь передаётся в контексте в логер
 
@@ -951,42 +951,6 @@ public function getBody() {
 }
 ```
 
-## Уровень совместимости для Symfony InputBag
-
-* [#3162016](https://www.drupal.org/project/drupal/issues/3162016)
-
-Symfony 5.2 представил `Symfony\Component\HttpFoundation\InputBag` в качестве замены `Symfony\Component\HttpFoundation\ParameterBag` в некоторых ситуациях и возможномть метода `Symfony\Component\HttpFoundation\InputBag::get()` отдавать не строковые значения также помечена устаревшей. Следовательно, если вам требуется получить не строковые значения, используйте `Drupal\Core\Http\InputBag::all()`. `Drupal\Core\Http\InputBag` будет заменен в будущем на `Symfony\Component\HttpFoundation\InputBag`, когда Drupal перестанет поддерживать Symfony 4.
-
-Основное отличие в том, что `::all()` может принимать параметры:
-
-Ранее:
-
-```php
-$ajax_page_state = $request->request->get('ajax_page_state', []);
-```
-
-Второй параметр опциональный и отвечает за значение по умолчанию, если по ключу `ajax_page_state` нет значения.
-
-Теперь:
-
-Вариант №1:
-
-```php
-$ajax_page_state = $request->request->all('ajax_page_state');
-```
-
-* Если значения нет, метод возвращает пустой массив. 
-* Если значение есть и оно не является массивом, будет выброшено исключение `UnexpectedValueException()`.
-
-Вариант №2:
-
-```php
-$ajax_page_state = $request->request->all()['ajax_page_state'] ?? NULL;
-```
-
-* Вызов такого формата никогда не приведёт к выбрасыванию исключения `UnexpectedValueException()`.
-* При помощи данной конструкции вы можете указать значение по умолчанию.
-
 ## Функции для кодирования и декодирования Mime заголовков помечены устаревшими
 
 * [#84883](https://www.drupal.org/project/drupal/issues/84883)
@@ -1081,6 +1045,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 ## Comment
 
 * [#2742997](https://www.drupal.org/project/drupal/issues/2742997) `CommentActionsTest` конвертирован в Kernel тест.
+* [#3214487](https://www.drupal.org/project/drupal/issues/3214487) Для комментариев не использующих древовидный вывод, отключён вывод ссылки «Reply».
 
 ## Composer
 
@@ -1090,6 +1055,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3210632](https://www.drupal.org/project/drupal/issues/3210632) Зависимости ядра обновлена на 17.05.2021.
 * [#3215039](https://www.drupal.org/project/drupal/issues/3215039) Зависимости ядра обновлена на 21.05.2021.
 * [#3215280](https://www.drupal.org/project/drupal/issues/3215280) Подняты минимальные версии для некоторых зависимостей ядра с которым возникали проблемы при тестировании.
+* [#3217322](https://www.drupal.org/project/drupal/issues/3217322) Зависимости ядра обновлена на 03.06.2021.
 
 ## Configuration System
 
@@ -1172,6 +1138,10 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 - [#3090257](https://www.drupal.org/project/drupal/issues/3090257) Добавлено больше тестов проверки синтаксиса.
 - [#3095737](https://www.drupal.org/project/drupal/issues/3095737) Справка для модулей `config_translation`, `content_translation`, `locale` и `language` конвертирована в Help Topics.
+
+## History
+
+* [#3122056](https://www.drupal.org/project/drupal/issues/3122056) Неопубликованные сущности более не учитываются в истории.
 
 ## Install system
 
@@ -1410,6 +1380,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
 * [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
 * [#3133162](https://www.drupal.org/project/drupal/issues/3133162) Употребление глагола «Test» заменено на «Tests».
+* [#3217709](https://www.drupal.org/project/drupal/issues/3217709) Использование `::assertRegExp()` заменено на новые методы, так как данный помечен устаревшим.
 
 ## Symfony 5
 
