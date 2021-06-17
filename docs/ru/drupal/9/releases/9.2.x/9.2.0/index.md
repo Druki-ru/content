@@ -11,9 +11,6 @@ metatags:
 **Активная поддержка до**: 01 декабря 2021\
 **Поддержка безопасности до**: июнь 2022
 
-> [!NOTE]
-> Последние 32 коммита до релиза на данный момент здесь не отражены. Но они лишь мелкие исправления. В ближайшее время они будут отражены здесь.
-
 ## Объект исключения теперь передаётся в контексте в логер
 
 - [#2949419](https://www.drupal.org/project/drupal/issues/2949419)
@@ -651,7 +648,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 
 ## Добавлен генератор стартовой темы
 
-* [#3206389](https://www.drupal.org/node/3206389)
+* [#3050384](https://www.drupal.org/project/drupal/issues/3050384)
 
 В ядро добавлена экспериментальная команда для генерации стартовой темы. Генератор стартовой темы позволяет разработчикам сгенерировать стартовую точку для вашей будущей темы. Разметка и общие CSS классы сгенерированной темы будет соответствовать базовой теме Classy. Вместо того чтобы наследовать разметку и CSS от базовой темы, стартовая тема генерирует копии стандартных файлов в новую тему, а в качестве базовой темы будет выступать stable9.
 
@@ -1041,6 +1038,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3083051](https://www.drupal.org/project/drupal/issues/3083051) Произведён рефакторинг tabledrag для соответствия изменениям в ядре.
 * [#3213557](https://www.drupal.org/project/drupal/issues/3213557) Исправлено отображение чекбоксов в Layout Builder.
 * [#3202493](https://www.drupal.org/project/drupal/issues/3202493) Добавлена библиотека со стилями для административных страниц с CKEditor.
+* [#3177415](https://www.drupal.org/project/drupal/issues/3177415) Улучшено формирование CSS классов для вертикальных табов.
 
 ## Comment
 
@@ -1061,6 +1059,8 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 * [#3196756](https://www.drupal.org/project/drupal/issues/3196756) Исправлена некорректное упоминание файла в документации `ConfigInstallerInterface`.
 * [#2844452](https://www.drupal.org/project/drupal/issues/2844452) Многострочные строки в YAML файлах теперь экспортируются без использования `\r\n`.
+* [#3084436](https://www.drupal.org/project/drupal/issues/3084436) Теперь при работе с единичной конфигурацией в административном интерфейсе, форма очищается после смены типа конфиграции чтобы не вводить в заблуждение.
+* [#3217861](https://www.drupal.org/project/drupal/issues/3217861) Улучшена документация для `ConfigEntityDependency::getDependencies()`.
 
 ## Contact
 
@@ -1070,6 +1070,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 * [#3203809](https://www.drupal.org/project/drupal/issues/3203809) Вызовы Entity Query в модуле больше не учитывают права доступа.
 * [#3204883](https://www.drupal.org/project/drupal/issues/3204883) Сущность `taxonomy_term` теперь корректно запрещена на использование в Content Moderation.
+* [#2977495](https://www.drupal.org/project/drupal/issues/2977495) Добавлены описания правам доступа модуля.
 
 ## Cron System
 
@@ -1089,6 +1090,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3201266](https://www.drupal.org/project/drupal/issues/3201266) Код, защищающий от множественных утверждений, который был частью `Connection::query()`, перенесён в защищённый метод `::preprocessStatement()`.
 * [#3189680](https://www.drupal.org/project/drupal/issues/3189680) Опция `throw_exception` помечена устаревшей.
 * [#3211866](https://www.drupal.org/project/drupal/issues/3211866) `Upsert::execute()` теперь всегда возвращает число.
+* [#3216552](https://www.drupal.org/project/drupal/issues/3216552) Исправлены некорректные вызовы `Connection::select()` в `MenuTreeStorage`.
 
 ## Editor
 
@@ -1106,6 +1108,8 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3203147](https://www.drupal.org/project/drupal/issues/3203147) Удалён решённый `@todo` из `EntityBundleListenerInterface.
 * [#3207961](https://www.drupal.org/project/drupal/issues/3207961) Добавлено явно указание проверки прав доступа при использовании EntityQuery в пропущенных местах.
 * [#3210372](https://www.drupal.org/project/drupal/issues/3210372) `EntityConverter` теперь дополнительно проверяет что переданный `bundle` существует.
+* [#3214773](https://www.drupal.org/project/drupal/issues/3214773) Исправлены тайпхинты для `EntityRepositoryInterface::getActiveMultiple()` и `EntityRepositoryInterface::getCanonicalMultiple()`.
+* [#3012172](https://www.drupal.org/project/drupal/issues/3012172) В `EntityViewBuilder::addContextualLinks()` улучшена проверка на возможность создания ссылки для сущности.
 
 ## Extension System
 
@@ -1120,12 +1124,21 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#2479607](https://www.drupal.org/project/drupal/issues/2479607) Удалены устаревшие схемы из `file.file.views.schema.yml`.
 * [#3207476](https://www.drupal.org/project/drupal/issues/3207476) `file_get_content_headers()` больше не кодирует заголовок `Content-Type`.
 * [#3048423](https://www.drupal.org/project/drupal/issues/3048423) Тест `RelationshipUserFileDataTest` конвертирован в Kernel тест.
+* [#2359675](https://www.drupal.org/project/drupal/issues/2359675) Исправлена неполадка, из-за которой проверка на максимально загружаемый размер файла всегда была положительной.
+
+## Filter
+
+* [#3217732](https://www.drupal.org/project/drupal/issues/3217732) Исправлена неполадка, из-за которой `filterStatus()` не мог найти разметку после AJAX.
 
 ## Form System
 
 - [#3122912](https://www.drupal.org/project/drupal/issues/3122912) Вызовы `t()` заменены на `$this->t()`.
 * [#3205031](https://www.drupal.org/project/drupal/issues/3205031) В `Drupal\form_test\Form\FormTestVerticalTabsForm` добавлен отсутствующий `use`.
 * [#588438](https://www.drupal.org/project/drupal/issues/588438) Исправлена неполадка в тесте `FormTest::testRequiredFields()` которая приводила к ошибке при вызове `drupal_render()` с элементом `radios`.
+
+## HAL
+
+* [#3210898](https://www.drupal.org/project/drupal/issues/3210898) Часть тестов теперь расширяет `NormalizerDenormalizeExceptionsUnitTestBase`.
 
 ## Help
 
@@ -1162,6 +1175,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3214412](https://www.drupal.org/project/drupal/issues/3214412) Сборка и Prettier теперь запускаются после обновления при помощи Yarn.
 * [#3144854](https://www.drupal.org/project/drupal/issues/3144854) Удалена зависимость `stylelint-no-browser-hacks`.
 * [#1870006](https://www.drupal.org/project/drupal/issues/1870006) Улучшено отображение HTML5 ошибок валидации при наличии тулбара.
+* [#3218658](https://www.drupal.org/project/drupal/issues/3218658) Библиотека `@drupal/once` обновлена до версии 1.0.1.
 
 ## JSON:API
 
@@ -1179,6 +1193,8 @@ $decoded_string = iconv_mime_decode($encoded_string);
 ## Media
 
 * [#3085264](https://www.drupal.org/project/drupal/issues/3085264) Объединены тесты `media_test_filter` и `media_test_ckeditor`.
+* [#3134554](https://www.drupal.org/project/drupal/issues/3134554) Исправлена неполадка при которой медиа-поля с Media library виджетом приводили к «Notice: Undefined index».
+* [#3215198](https://www.drupal.org/project/drupal/issues/3215198) Обновление информации о ширине и высоте для медиа сущностей с поддержкой данных параметров, теперь загружают информацию о файлу только когда данные параметры обновляются.
 
 ## MySQL DB Driver
 
@@ -1216,10 +1232,13 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3191782](https://www.drupal.org/project/drupal/issues/3191782) Исправлены зависимости для миграций переводов профилей из Drupal 6.
 * [#3204461](https://www.drupal.org/project/drupal/issues/3204461) Исправлена ошибка связанная с `sort()` в `ValidateMigrationStateTestTrait`.
 * [#3189463](https://www.drupal.org/project/drupal/issues/3189463) Все миграция связанные с переводами и локализацией теперь зависят от миграции `language`.
+* [#3213616](https://www.drupal.org/project/drupal/issues/3213616) Добавлены соотношения для полей модуля Datetime из D6 и D7.
+* [#3187318](https://www.drupal.org/project/drupal/issues/3187318) Миграция пользователей из прошлых версий Drupal больше не мигрирует пользователя с UID = 0.
 
 ## Node System
 
 - [#3187435](https://www.drupal.org/project/drupal/issues/3187435) Для Views плагина `Vid`, аргумент `$database` помечен устаревшим.
+* [#3218024](https://www.drupal.org/project/drupal/issues/3218024) Вызов `$node->link` заменён на `$node->toUrl()`.
 
 ## Olivero
 
@@ -1352,11 +1371,13 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#2342807](https://www.drupal.org/project/drupal/issues/2342807) `DisplayPathTest` больше не пытается включить модуль `menu_ui`, который уже включен к тому моменту.
 * [#3202052](https://www.drupal.org/project/drupal/issues/3202052) Плагин аргументов Views теперь явно вызывает `::accessCheck()` в `::titleQuery()`.
 * [#3109110](https://www.drupal.org/project/drupal/issues/3109110) Плагин кеширования `\Drupal\views\Plugin\views\cache\Time` и все расширяющие его плагины теперь должны использовать `$this->view->getRequest()`. Объект запроса больше не передаётся в качестве аргумента.
+* [#2716019](https://www.drupal.org/project/drupal/issues/2716019) для формирования заголовка представления на основе пути, теперь используется функция обратного вызова `Drupal\views\Routing\ViewPageController::getTitle()`.
 
 ## Workspaces
 
 - [#3128536](https://www.drupal.org/project/drupal/issues/3128536) Свойство `WorkspaceManager::$blacklist` переименовано в `$supported`.
 - [#2998454](https://www.drupal.org/project/drupal/issues/2998454) Употребление терминов «deploy» и «publish» приведено в порядок для избежания путаницы.
+* [#3092553](https://www.drupal.org/project/drupal/issues/3092553) В список рабочих областей добавлена возможность переключиться на «Live» версию.
 
 ## Тестирование
 
@@ -1381,6 +1402,14 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
 * [#3133162](https://www.drupal.org/project/drupal/issues/3133162) Употребление глагола «Test» заменено на «Tests».
 * [#3217709](https://www.drupal.org/project/drupal/issues/3217709) Использование `::assertRegExp()` заменено на новые методы, так как данный помечен устаревшим.
+* [#3217712](https://www.drupal.org/project/drupal/issues/3217712) Использование `::assertDirectoryNotIsWritable()` заменено на новые методы, так как данный помечен устаревшим.
+* [#3174200](https://www.drupal.org/project/drupal/issues/3174200) В ядро добавлен Symfony PHPUnit-Bridge polyfills.
+* [#3217711](https://www.drupal.org/project/drupal/issues/3217711) Использование `::assertNotRegExp()` заменено на новые методы, так как данный помечен устаревшим.
+* [#3217713](https://www.drupal.org/project/drupal/issues/3217713) Использование `::assertFileNotIsWritable()` заменено на новые методы, так как данный помечен устаревшим.
+* [#3217716](https://www.drupal.org/project/drupal/issues/3217716) Использование `::expectException(Error::class)` заменено на новые методы, так как данный помечен устаревшим.
+* [#3217714](https://www.drupal.org/project/drupal/issues/3217714) Использование `::expectException(Warning::class)` заменено на новые методы, так как данный помечен устаревшим.
+* [#3218586](https://www.drupal.org/project/drupal/issues/3218586) Улучшен тест `ConfigTest::testSetIllegalOffsetValue()` где забыли заменить `::expectException()`.
+* [#3217706](https://www.drupal.org/project/drupal/issues/3217706) Использование `::assertFileNotExists()` заменено на новые методы, так как данный помечен устаревшим.
 
 ## Symfony 5
 
@@ -1456,3 +1485,9 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3195888](https://www.drupal.org/project/drupal/issues/3195888) Улучшена проверка зависимостей в `core/scripts/dev/commit-code-check.sh`.
 * [#3186364](https://www.drupal.org/project/drupal/issues/3186364) Для предварительных релизов Drupal разрешено использовать предварительные релизы зависимостей.
 * [#3214565](https://www.drupal.org/project/drupal/issues/3214565) Улучшен код в тесте `BuildTestTest::testPortMany()` приводящий к случайным провалам.
+* [#3116804](https://www.drupal.org/project/drupal/issues/3116804) Для Update Manager добавлены мейнтейнеры tedbow и dww.
+* [#3218139](https://www.drupal.org/project/drupal/issues/3218139) Упрощена логика добавления `Permissions-Policy` заголовка в ответ.
+* [#3215611](https://www.drupal.org/project/drupal/issues/3215611) Сообщение об устаревших сервисах теперь вызывается только в процессе сборки контейнера, а не на каждый их вызов.
+* [#3217357](https://www.drupal.org/project/drupal/issues/3217357) Ссылки ведущие на материалы по Drupal 8 теперь ведут на актуальные.
+* [#3064596](https://www.drupal.org/project/drupal/issues/3064596) `DateTimePlus::createFromFormat()` больше не занимается форматированием даты так как возвращает объект `DateTime`.
+* [#3214395](https://www.drupal.org/project/drupal/issues/3214395) В документацию `hook_uninstall()` добавлена подсказка о `\Drupal\Core\Extension\ModuleUninstallValidatorInterface`.
