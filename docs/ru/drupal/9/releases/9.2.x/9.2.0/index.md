@@ -1475,3 +1475,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 * [#3217357](https://www.drupal.org/project/drupal/issues/3217357) Ссылки ведущие на материалы по Drupal 8 теперь ведут на актуальные.
 * [#3064596](https://www.drupal.org/project/drupal/issues/3064596) `DateTimePlus::createFromFormat()` больше не занимается форматированием даты так как возвращает объект `DateTime`.
 * [#3214395](https://www.drupal.org/project/drupal/issues/3214395) В документацию `hook_uninstall()` добавлена подсказка о `\Drupal\Core\Extension\ModuleUninstallValidatorInterface`.
+
+## Ссылки
+
+- [Drupal 9.2.0](https://www.drupal.org/project/drupal/releases/9.2.0) (англ.), drupal.org, 16 июня 2021
