@@ -3,8 +3,8 @@ title: 'Drupal 9.2.1'
 slug: 9/releases/9.2.1
 core: 9
 metatags:
-title: 'Drupal 9.2.1: Список изменений'
-description: 'Список изменений Drupal 9.2.1.'
+  title: 'Drupal 9.2.1: Список изменений'
+  description: 'Список изменений Drupal 9.2.1.'
 ---
 
 > [!WARNING]
