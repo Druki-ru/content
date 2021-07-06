@@ -32,6 +32,10 @@ metatags:
 
 * [#3220184](https://www.drupal.org/project/drupal/issues/3220184) [Björn Brala (bbrala)](https://www.drupal.org/u/bbrala) добавлен в список мейнтенеров JSON:API.
 
+## Layout Builder
+
+* [#3218766](https://www.drupal.org/project/drupal/issues/3218766) `SystemMainBlock` больше нельзя добавлять в регионы так как это приводит к фатальным ошибкам и не предусмотрено блоком.
+
 ## Link
 
 * [#3202166](https://www.drupal.org/project/drupal/issues/3202166) Виджет для ссылок теперь позволяет сохранять ссылки с `:route<button>`.
@@ -68,10 +72,29 @@ metatags:
 * [#3217175](https://www.drupal.org/project/drupal/issues/3217175) Добавлена поддержка закрытия вложенного меню при помощи клавиши Escape для IE 11.
 * [#3212981](https://www.drupal.org/project/drupal/issues/3212981) Произведён рефакторинг `navigation.es6.js` для соответствия на Drupal JavaScript Coding Standards.
 * [#3213074](https://www.drupal.org/project/drupal/issues/3213074) Произведён рефакторинг `second-level-navigation.es6.js` для соответствия на Drupal JavaScript Coding Standards.
+* [#3212073](https://www.drupal.org/project/drupal/issues/3212073) Кнопка открытия основного меню теперь вертикальн отцентровано на мобильных устройствах.
+* [#3211907](https://www.drupal.org/project/drupal/issues/3211907) Метка для меток материала теперь выравнена с самими метками.
+* [#3213118](https://www.drupal.org/project/drupal/issues/3213118) Убран лишний отступ в мобильной навигации между пунктами меню у которых есть вложенные пункты.
+* [#3210902](https://www.drupal.org/project/drupal/issues/3210902) Исправлена неполадка из-за которой цитаты могли "наезжать" на сайдбар.
+* [#3211889](https://www.drupal.org/project/drupal/issues/3211889) Исправлена неполадка генерации стилей с использованием CSS Grid для IE11.
+* [#3173010](https://www.drupal.org/project/drupal/issues/3173010) Добавлены два новых цвета `--color--gray-5` и `--color--gray-8`.
+* [#3212702](https://www.drupal.org/project/drupal/issues/3212702) Исправлена неполадка отображения некорректно выравненых картинки профиля и комментария на IE11.
+* [#3212700](https://www.drupal.org/project/drupal/issues/3212700) Исправлена неполадка отображения состояния фокусировки на вкладке, которое было без правой рамки на IE11.
+* [#3211613](https://www.drupal.org/project/drupal/issues/3211613) Исправлена неполадка отображения состояния фокусировки на кнопке закрытия системных сообщений, которое было несимметричным.
+* [#3173832](https://www.drupal.org/project/drupal/issues/3173832) Документация в JavaScript файлах приведена в соотствитие Drupal JavaScript Coding Standards.
+
+## Umami
+
+* [#3213957](https://www.drupal.org/project/drupal/issues/3213957) Исправлены оформление кнопок при наведении в Quick Edit.
 
 ## Update System
 
 * [#1478294](https://www.drupal.org/project/drupal/issues/1478294) Фикстуры для Update Manager теперь содержат ссылки на [релизы Drupal 8](../../../../8/releases/index.md), а не Drupal 7.
+
+## Views
+
+* [#3195178](https://www.drupal.org/project/drupal/issues/3195178) Исправлена неполадка приводящая к SQL ошибкам на некоторых движках БД при использовании сортировки с distinct по результатам.
+* [#3222009](https://www.drupal.org/project/drupal/issues/3222009) Исправлена документация для `hook_views_query_alter()` в которой тайпхинт для параметра `$query` был без указания пространства имён.
 
 ## Тестирование
 
