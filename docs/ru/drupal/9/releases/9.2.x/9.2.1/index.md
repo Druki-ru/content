@@ -10,6 +10,10 @@ metatags:
 > [!WARNING]
 > Данная версия находится в разработке.
 
+## Database System
+
+* [#3216556](https://www.drupal.org/project/drupal/issues/3216556) Добавлено уточнение для `Connection::select()` что в качестве аргумента для параметра `$table` можно передать подзапрос.
+
 ## File System
 
 * [#2228087](https://www.drupal.org/project/drupal/issues/2228087) В интерфейс `PhpStreamWrapperInterface` добавлена документация к методам, а классы, реализующие его теперь ссылаются на его документацию.
@@ -20,9 +24,26 @@ metatags:
 * [#3094482](https://www.drupal.org/project/drupal/issues/3094482) Документация для модуля `action` была конвертирована из `hook_help()` в Help Topic.
 * [#3095739](https://www.drupal.org/project/drupal/issues/3095739) Документация для модулей `contextual`, `help`, `inline_form_errors`, `quickedit`, `settings_tray`, `shortcut`, `toolbar`  и `tour` была конвертирована из `hook_help()` в Help Topic.
 
+## Help Topic
+
+* [#3218660](https://www.drupal.org/project/drupal/issues/3218660) Исправлена неполадка приводящая к ошибке на сайте после удаления модуля.
+
+## JSON:API
+
+* [#3220184](https://www.drupal.org/project/drupal/issues/3220184) [Björn Brala (bbrala)](https://www.drupal.org/u/bbrala) добавлен в список мейнтенеров JSON:API.
+
+## Link
+
+* [#3202166](https://www.drupal.org/project/drupal/issues/3202166) Виджет для ссылок теперь позволяет сохранять ссылки с `:route<button>`.
+
 ## Media System
 
 * [#3097416](https://www.drupal.org/project/drupal/issues/3097416) При встраивании медиа при помощи CKEditor, теперь пользователь может выбрать только тот режим отображения, которые включены для данного типа медиа.
+* [#3220450](https://www.drupal.org/project/drupal/issues/3220450) Исправлена неполадка в `ProviderRepositoryTest` приводящая к провалу теста.
+
+## Menu System
+
+* [#3219881](https://www.drupal.org/project/drupal/issues/3219881) Исправлена опечатка в описании для `MenuLinkContentAccessControlHandler`.
 
 ## Migration System
 
@@ -32,10 +53,25 @@ metatags:
 * [#3209353](https://www.drupal.org/project/drupal/issues/3209353) Добавлена отсутствующая документация к плагинам источникам предоставляемые модулями `node` и `taxonomy`.
 * [#3196583](https://www.drupal.org/project/drupal/issues/3196583) `MigrationLookup` теперь может сам определить ID источников в перечисленных миграциях.
 * [#3103031](https://www.drupal.org/project/drupal/issues/3103031) В плагин источник `FieldOptionTranslation` значение `bundle` используется как ID источника.
+* [#3199741](https://www.drupal.org/project/drupal/issues/3199741) Добавлена отсутствующая документация к плагинам источника предоставляемые модулями `action`, `aggregator`, `book`, `migrate_drupal`, `comment`, `field`, `filter`, `image`, `path`, `rdf`, `search`, `shortcut`, `system` и `tracker`.
 
 ## Node System
 
 * [#3048848](https://www.drupal.org/project/drupal/issues/3048848) Блок `SyndicateBlock` теперь генерирует корректный URL для `rss.xml` с использованием `Url::fromUri()`, а не хардкод значение.
+
+## Olivero
+
+* [#3210199](https://www.drupal.org/project/drupal/issues/3210199) Улучшено отображение сайдбар региона.
+* [#3173022](https://www.drupal.org/project/drupal/issues/3173022) Улучшена разметка для меню, выводимого в сайдбаре.
+* [#3173008](https://www.drupal.org/project/drupal/issues/3173008) CSS селектор для изображения статьи заменён на универсальный `.wide-image`.
+* [#3208372](https://www.drupal.org/project/drupal/issues/3208372) Произведён рефакторинг `comments.es6.js`.
+* [#3217175](https://www.drupal.org/project/drupal/issues/3217175) Добавлена поддержка закрытия вложенного меню при помощи клавиши Escape для IE 11.
+* [#3212981](https://www.drupal.org/project/drupal/issues/3212981) Произведён рефакторинг `navigation.es6.js` для соответствия на Drupal JavaScript Coding Standards.
+* [#3213074](https://www.drupal.org/project/drupal/issues/3213074) Произведён рефакторинг `second-level-navigation.es6.js` для соответствия на Drupal JavaScript Coding Standards.
+
+## Update System
+
+* [#1478294](https://www.drupal.org/project/drupal/issues/1478294) Фикстуры для Update Manager теперь содержат ссылки на [релизы Drupal 8](../../../../8/releases/index.md), а не Drupal 7.
 
 ## Тестирование
 
@@ -44,3 +80,11 @@ metatags:
 * [#3156396](https://www.drupal.org/project/drupal/issues/3156396) Для сравнений для подсчёта размера и количества теперь используется `::assertSameSize()`.
 * [#3215143](https://www.drupal.org/project/drupal/issues/3215143) Комментарии ссылающиеся на несуществующий `::assertEqual()` были обновлены.
 * [#3175718](https://www.drupal.org/project/drupal/issues/3175718) Исправлена неполадка из-за которой проверка на `theme_token` могла случайным образом проваливаться. Это связано с тем что `\Behat\Mink\Element\DocumentElement::getText()` возвращает текст очищенный от script тегов внутри `<body>` элемента, которые используются Drupal для передачи Drupal Settings.
+* [#3217374](https://www.drupal.org/project/drupal/issues/3217374) При указании неверной схемы для значения `SIMPLETEST_BASE_URL` теперь выбрасывается исключение.
+* [#3220183](https://www.drupal.org/project/drupal/issues/3220183) Использование сравнений с `xpath` заменено на методы WebAssert.
+* [#3217717](https://www.drupal.org/project/drupal/issues/3217717) Использование устаревшего `::at()` заменено на соответствующие `::once()`, `::exactly()` или `::any()`.
+
+## Прочие изменения
+
+* [#2719649](https://www.drupal.org/project/drupal/issues/2719649) Внесены исправления в код для исправления ошибок стандарта `Drupal.Commenting.InlineComment.SpacingBefore`.
+* [#3220922](https://www.drupal.org/project/drupal/issues/3220922) [Gabe Sullice (gabesullice)](https://www.drupal.org/u/gabesullice) удалён из списка мейнтенеров для Decoupled Menu.
