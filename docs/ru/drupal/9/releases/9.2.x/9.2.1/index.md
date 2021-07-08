@@ -7,8 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.2.1.'
 ---
 
-> [!WARNING]
-> Данная версия находится в разработке.
+**Дата релиза**: 7 июля 2021
 
 ## Database System
 
@@ -111,3 +110,7 @@ metatags:
 
 * [#2719649](https://www.drupal.org/project/drupal/issues/2719649) Внесены исправления в код для исправления ошибок стандарта `Drupal.Commenting.InlineComment.SpacingBefore`.
 * [#3220922](https://www.drupal.org/project/drupal/issues/3220922) [Gabe Sullice (gabesullice)](https://www.drupal.org/u/gabesullice) удалён из списка мейнтенеров для Decoupled Menu.
+
+## Ссылки
+
+- [Drupal 9.2.1](https://www.drupal.org/project/drupal/releases/9.2.1) (англ.), drupal.org, 7 июля 2021
