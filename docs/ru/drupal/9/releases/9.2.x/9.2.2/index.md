@@ -3,8 +3,8 @@ title: 'Drupal 9.2.2'
 slug: 9/releases/9.2.2
 core: 9
 metatags:
-title: 'Drupal 9.2.2: Список изменений'
-description: 'Обновления безопасности исправляющее SA-CORE-2021-004.'
+  title: 'Drupal 9.2.2: Список изменений'
+  description: 'Обновления безопасности исправляющее SA-CORE-2021-004.'
 ---
 
 **Дата релиза**: 21 июля 2021

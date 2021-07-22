@@ -8,7 +8,7 @@ metatags:
 
 **Проект:** Drupal Core\
 **Дата публикации:** 21 июля 2021\
-**Риск безопасности:** Критический. Critical 15∕25 AC:Complex/A:User/CI:All/II:All/E:Theoretical/TD:Uncommon
+**Риск безопасности:** Критический. Critical 15∕25 AC:Complex/A:User/CI:All/II:All/E:Theoretical/TD:Uncommon\
 **Уязвимость:** Сторонние библиотеки.
 
 ## Описание
