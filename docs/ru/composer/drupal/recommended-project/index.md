@@ -36,7 +36,7 @@ composer -n create-project drupal/recommended-project my_new_site
 ## Смотрите также
 
 - [Руководство по установке Drupal](../../../drupal/9/installation/index.md)
-- [drupal/legacy-project](../legacy-project/index.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](../../../drupal/8/releases/8.8.x/8.8.0/index.md).
+- [drupal/legacy-project](../legacy-project/index.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](../../../drupal/releases/8/8.8.x/8.8.0/index.md).
 - [Composer](../../index.md)
 - [drupal/core-recommended](../core-recommended/index.md)
 - [drupal/core-composer-scaffold](../core-composer-scaffold/index.md)
