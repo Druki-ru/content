@@ -13,7 +13,7 @@ metatags:
 Данный способ установки Drupal является альтернативой установки Drupal из архива, скаченного на drupal.org.
 
 > [!NOTE]
-> Начиная с [Drupal 8.8.0](../../../drupal/8/releases/8.8.x/8.8.0/index.md) предоставляются официальные шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](../../drupal/recommended-project/index.md) в качестве замены или альтернативы.
+> Начиная с [Drupal 8.8.0](../../../drupal/releases/8/8.8.x/8.8.0/index.md) предоставляются официальные шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](../../drupal/recommended-project/index.md) в качестве замены или альтернативы.
 
 ## Что предоставляет данный шаблон
 
@@ -88,7 +88,7 @@ metatags:
 
 - [Руководство по установке Drupal](../../../drupal/8/installation/index.md)
 - [drupal/recommended-project](../../drupal/recommended-project/index.md) — рекомендуемый шаблон для всех сайтов.
-- [drupal/legacy-project](../../drupal/legacy-project/index.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](../../../drupal/8/releases/8.8.x/8.8.0/index.md).
+- [drupal/legacy-project](../../drupal/legacy-project/index.md) — альтернативный шаблон проекта, структура которого использовалась до релиза [Drupal 8.8.0](../../../drupal/releases/8/8.8.x/8.8.0/index.md).
 - [Composer](../../index.md)
 
 ## Ссылки

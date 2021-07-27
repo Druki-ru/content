@@ -142,7 +142,7 @@ once.find('my-once-id', document.head);
 
 ## once в Drupal
 
-Данная [библиотека](../../../drupal/9/libraries/index.md) (`core/once`) поставляется в Drupal начиная с [версии 9.2.0](../../../drupal/9/releases/9.2.x/9.2.0/index.md).
+Данная [библиотека](../../../drupal/9/libraries/index.md) (`core/once`) поставляется в Drupal начиная с [версии 9.2.0](../../../drupal/releases/9/9.2.x/9.2.0/index.md).
 
 Для того чтобы использовать её, укажите в качестве зависимости для своей библиотеки:
 
