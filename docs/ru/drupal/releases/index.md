@@ -1,5 +1,5 @@
 ---
-title: 'Drupal: Список релизов'
+title: 'Список релизов'
 slug: drupal/releases
 core: 9
 metatags:
