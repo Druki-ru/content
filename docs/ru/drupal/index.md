@@ -33,6 +33,7 @@ Drupal предоставляет обширный API для разработч
 - [Философия Drupal](the-drupal-way/index.md)
 - [Нормы поведения](code-of-conduct/index.md)
 - [Часто задаваемые вопросы](../faq/index.md)
+- [Список релизов и изменений Drupal](releases/index.md)
 
 ## Ссылки
 
