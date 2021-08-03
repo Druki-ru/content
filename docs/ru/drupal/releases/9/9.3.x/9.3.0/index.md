@@ -197,6 +197,28 @@ lifecycle_link: 'https://www.drupal.org/about/core/policies/core-change-policies
 
 Добавлен класс с константами `\Drupal\Core\Extension\ExtensionStatus` в которых перечислены допустимые статусы.
 
+## Новый класс UpdateHookRegistry заменяет функции schema.inc
+
+* [#2124069](https://www.drupal.org/node/2124069)
+
+Константа `SCHEMA_UNINSTALLED` помечена устаревшей и была заменена `Drupal\Core\Update\UpdateHookRegistry::SCHEMA_UNINSTALLED`.
+
+Следующие функции были помечены устаревшими и заменены соответствующими методами сервиса `update.update_hook_registry`:
+
+* `drupal_get_schema_versions()` заменена `\Drupal::service('update.update_hook_registry')->getAvailableUpdates()`
+* `drupal_get_installed_schema_version()` заменена `\Drupal::service('update.update_hook_registry')->getInstalledVersion()`
+* `drupal_set_installed_schema_version()` заменена `\Drupal::service('update.update_hook_registry')->setInstalledVersion()`
+
+## Стандартный профиль теперь предоставляет новую роль «Content Editor»
+
+* [#3059984](https://www.drupal.org/node/3059984)
+
+При установке [стандартного профиля](../../../../9/distributions/standard/index.md) теперь добавляется новая роль — «Content Editor».
+
+## Block
+
+* [#2268787](https://www.drupal.org/node/2268787) Для форм плагинов блоков в `$form_state` больше не передаётся `block_theme` значение, так как оно было крайне ненадёжно и приводило только к проблемам.
+
 ## Comment
 
 * [#2927874](https://www.drupal.org/node/2927874) Исправлена неполадка из-за которой предпросмотр комментария показывался в неположенном месте.
@@ -208,6 +230,10 @@ lifecycle_link: 'https://www.drupal.org/about/core/policies/core-change-policies
 ## Database System
 
 * [#3211780](https://www.drupal.org/node/3211780) `Connection::queryTemporary()` помечен устаревшим.
+
+## Field System
+
+* [#3184542](https://www.drupal.org/node/3184542) Максимальная длина для ввода метки поля увеличена со 128 до 255 символов.
 
 ## Field UI
 
@@ -225,9 +251,25 @@ lifecycle_link: 'https://www.drupal.org/about/core/policies/core-change-policies
 
 * [#3036593](https://www.drupal.org/node/3036593) ID сущности теперь содержится в `meta.drupal_internal__target_id`. Это позволяет фильтровать значения по данному свойству и получать внутренний ID, а не только UUID.
 
+## Image
+
+* [#3216106](https://www.drupal.org/node/3216106) Улучшено описание для плагина эффекта изображения `image_convert`.
+
 ## Language System
 
 * [#3208373](https://www.drupal.org/node/3208373) Улучшено описание для `LanguageNegotiationContentEntity`. Теперь в нём говорится что за определение языка материала отвечают [сервисы](../../../../9/services/index.md) с метками `language_content_entity`. 
+
+## Layout Builder
+
+* [#3035174](https://www.drupal.org/node/3035174) Трейт `SectionStorageTrait` помечен устаревшим в пользу `SectionListTrait`.
+
+## Routing System
+
+* [#3183036](https://www.drupal.org/node/3183036) Сервисы проверки прав доступа, что не используются ни одним маршрутом, больше не инициализируются.
+
+## Taxonomy
+
+* [#3039055](https://www.drupal.org/node/3039055) Удалён вызов `drupal_static_reset('taxonomy_term_count_nodes');` так как данное значение никем не устанавливается.
 
 ## Text
 
@@ -236,3 +278,23 @@ lifecycle_link: 'https://www.drupal.org/about/core/policies/core-change-policies
 ## Symfony 6
 
 * [#3209617](https://www.drupal.org/node/3209617) `Symfony\Component\HttpFoundation\RequestStack::getMasterRequest()` помечен устаревшим, необходимо использовать `::getMainRequest()`. Добавлен прокси-класс `Drupal\Core\Http\RequestStack`, который теперь возвращается сервисом `request_stack`.
+
+## Update
+
+* [#3039074](https://www.drupal.org/node/3039074) `drupal_static()` больше не используется в функциях `_update_manager_unique_identifier()`, `_update_manager_extract_directory()` и `_update_manager_cache_directory()`.
+* [#3206293](https://www.drupal.org/node/3206293) Добавлен класс `ProjectRelease`, который является обёрткой для Update XML файла с релизами.
+
+## User
+
+* [#2819585](https://www.drupal.org/node/2819585) Исправлен дублирующий `switch case` в `core/modules/user/user.js`.
+* [#2946](https://www.drupal.org/node/2946) Теперь, при попытке авторизоваться с отключенными Cookies, будет показано соответствующее сообщение, что авторизация невозможна.
+
+## Views
+
+* [#2511892](https://www.drupal.org/node/2511892) Исправлена неполадка, приводящая к исключению `MissingMandatoryParametersException` при использовании вкладки меню и `%` в пути представления.
+* [#2681947](https://www.drupal.org/node/2681947) Представления типа «Блок» теперь поддерживают настройку «Put the exposed form in a block».
+
+## Прочие изменения
+
+* [#3218968](https://www.drupal.org/node/3218968) Drupal теперь поддерживает `NULL`-сервисы. Например: `Acme\Foo: ~`.
+* [#2902540](https://www.drupal.org/node/2902540) Исправлены ошибки стандарта кодирования `Drupal.NamingConventions.ValidGlobal`.
