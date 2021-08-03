@@ -81,3 +81,7 @@ metatags:
 * [#3224583](https://www.drupal.org/project/drupal/issues/3224583) Улучшен скрипт `commit-code-check.sh`. Теперь он проверяет все файлы при помощи PHPCS даже если `phpcs.xml.dist` был изменён.
 * [#3221062](https://www.drupal.org/project/drupal/issues/3221062) В документацию к методу `EntityDefinitionUpdateManagerInterface::getEntityType()` добавлен `NULL` тип в качестве возможного результата.
 * [#2784203](https://www.drupal.org/project/drupal/issues/2784203) В документацию к `QueryInterface::currentRevision()` добавлено объяснение, что такое «текущая версия».
+
+## Ссылки
+
+- [Drupal 9.2.3](https://www.drupal.org/project/drupal/releases/9.2.3) (англ.), drupal.org, 3 августа 2021
