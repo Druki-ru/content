@@ -213,9 +213,17 @@ lifecycle_link: 'https://www.drupal.org/about/core/policies/core-change-policies
 
 * [#2726881](https://www.drupal.org/node/2726881) Удалена пагинация со страницы `admin/reports/fields`.
 
+## Forms System
+
+* [#3219541](https://www.drupal.org/node/3219541) Удалён избыточный вызов `$this->requestStack->getCurrentRequest()` в `FormBuilder::buildForm()`.
+
 ## JavaScript
 
 * [#3212747](https://www.drupal.org/node/3212747) Удалено присвоение `BABEL_ENV` для скриптов сборки CSS и jQuery UI.
+
+## JSON:API
+
+* [#3036593](https://www.drupal.org/node/3036593) ID сущности теперь содержится в `meta.drupal_internal__target_id`. Это позволяет фильтровать значения по данному свойству и получать внутренний ID, а не только UUID.
 
 ## Language System
 
