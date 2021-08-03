@@ -10,6 +10,10 @@ metatags:
 > [!WARNING]
 > Данный релиз находится в разработке.
 
+## Тестирование
+
+* [#3225960](https://www.drupal.org/project/drupal/issues/3225960) Из тестов удалены `void` тайпхинты для совместимости с PHP 7.0, который поддерживается Drupal 8.9.x.
+
 ## Прочие изменения
 
 * [#3142943](https://www.drupal.org/project/drupal/issues/3142943) Исправлено сообщение об устаревшем методе `EntityForm::setEntityManager()`.
