@@ -215,6 +215,34 @@ lifecycle_link: 'https://www.drupal.org/about/core/policies/core-change-policies
 
 При установке [стандартного профиля](../../../../9/distributions/standard/index.md) теперь добавляется новая роль — «Content Editor».
 
+## rel="shortcut icon" теперь rel="icon"
+
+* [#3195222](https://www.drupal.org/node/3195222)
+
+Исторически, иконка сайта (favicon) внедрялась в HTML следующим образом:
+
+```html
+<link rel="shortcut icon" href="favicon.ico">
+```
+
+Данная разметка больше не соответствует HTML спецификации поэтому начиная с Drupal 9.3.0 разметка будет следующей:
+
+```html
+<link rel="icon" href="favicon.ico">
+```
+
+## Создание меню для страниц представлений больше не требует включения модуля menu_ui
+
+* [#3021804](https://www.drupal.org/node/3021804)
+
+Следующие плагины представлений больше не требуют активного модуля `menu_ui`:
+
+* `\Drupal\node\Plugin\views\wizard\Node`
+* `\Drupal\views\Plugin\views\display\Page`
+* `\Drupal\views\Plugin\views\wizard\WizardPluginBase`
+
+Конструктор данных классов теперь требует опциональный аргумент с объектом, реализующий `\Drupal\Core\Menu\MenuParentFormSelectorInterface` (сервис `menu.parent_form_selector`).
+
 ## Block
 
 * [#2268787](https://www.drupal.org/node/2268787) Для форм плагинов блоков в `$form_state` больше не передаётся `block_theme` значение, так как оно было крайне ненадёжно и приводило только к проблемам.
@@ -294,7 +322,12 @@ lifecycle_link: 'https://www.drupal.org/about/core/policies/core-change-policies
 * [#2511892](https://www.drupal.org/node/2511892) Исправлена неполадка, приводящая к исключению `MissingMandatoryParametersException` при использовании вкладки меню и `%` в пути представления.
 * [#2681947](https://www.drupal.org/node/2681947) Представления типа «Блок» теперь поддерживают настройку «Put the exposed form in a block».
 
+## Workspaces
+
+* [#3112783](https://www.drupal.org/node/3112783) Добавлены страницы для отображения изменений и их количества внесённых в рабочей области.
+
 ## Прочие изменения
 
 * [#3218968](https://www.drupal.org/node/3218968) Drupal теперь поддерживает `NULL`-сервисы. Например: `Acme\Foo: ~`.
 * [#2902540](https://www.drupal.org/node/2902540) Исправлены ошибки стандарта кодирования `Drupal.NamingConventions.ValidGlobal`.
+* [#1306624](https://www.drupal.org/node/1306624) Файл `router_installer_test.install` переименован `router_installer_test.module`.
