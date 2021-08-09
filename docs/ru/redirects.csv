@@ -78,3 +78,6 @@
 /wiki/9/releases/9.2.1,/wiki/drupal/releases/9.2.1
 /wiki/9/releases/9.2.2,/wiki/drupal/releases/9.2.2
 /wiki/9/releases/9.3.0,/wiki/drupal/releases/9.3.0
+/wiki/9/routing/access-control,/wiki/9/routing#kontrol-dostupa
+/wiki/9/routing/routes-and-controllers,/wiki/9/routing#marshruty-i-kontrollery
+/wiki/9/routing/structure-of-routes,/wiki/9/routing#struktura-marshrutov
