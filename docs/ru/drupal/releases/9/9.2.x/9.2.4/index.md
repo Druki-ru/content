@@ -1,9 +1,9 @@
 ---
-title: 'Drupal 8.9.18'
-slug: drupal/releases/8.9.18
-core: 8
+title: 'Drupal 9.2.4'
+slug: drupal/releases/9.2.4
+core: 9
 metatags:
-  title: 'Drupal 8.9.18: Список изменений'
+  title: 'Drupal 9.2.4: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2021-005.'
 ---
 
@@ -17,4 +17,4 @@ metatags:
 
 ## Ссылки
 
-- [Drupal 8.9.18](https://www.drupal.org/project/drupal/releases/8.9.18) (англ.), drupal.org, 12 августа 2021
+- [Drupal 9.2.4](https://www.drupal.org/project/drupal/releases/9.2.4) (англ.), drupal.org, 12 августа 2021
