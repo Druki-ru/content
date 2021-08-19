@@ -1,0 +1,23 @@
+name: Новый материал
+description: Не нашли что искали, хотите чтобы материал появился — предложите добавить его!
+title: "[Новый материал]: "
+labels: [new content, help wanted]
+body:
+  - type: input
+    id: content
+    attributes:
+      label: Описание
+      description: Опишите о чём должен быть данный материал
+      placeholder: "Не хватает материала в котором бы была описана маршрутизация!"
+    validations:
+      required: true
+  - type: dropdown
+    id: can-do-it
+    attributes:
+      label: Желаете написать его?
+      description: Если хотите написать материал самостоятельно, укажите это.
+      options:
+        - Да
+        - Нет
+    validations:
+      required: true

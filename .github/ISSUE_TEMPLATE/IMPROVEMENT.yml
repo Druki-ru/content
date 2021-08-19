@@ -1,7 +1,7 @@
-name: Предложить улучшение
+name: Улучшение
 description: Если вы нашли в документе ошибку, неточность или считате что можно что-то дополнить, или что-то устарело или некорректно — предложите исправление.
 title: "[Улучшение]: "
-labels: [improvement]
+labels: [improvement, 'help wanted', 'good first issue', 'typo / spelling']
 body:
   - type: markdown
     attributes:

@@ -1,0 +1,13 @@
+name: Обсуждение
+description: Не нашли подходящей таматики или просто желаете обсудить что-то связанно с контентом — создайте обсуждение.
+title: "[Обсуждение]: "
+labels: [help wanted, question]
+body:
+  - type: input
+    id: content
+    attributes:
+      label: Описание
+      description: Опишите что желаете обсудить.
+    validations:
+      required: true
+
