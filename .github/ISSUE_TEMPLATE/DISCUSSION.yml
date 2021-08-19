@@ -3,7 +3,7 @@ description: Не нашли подходящей таматики или про
 title: "[Обсуждение]: "
 labels: [help wanted, question]
 body:
-  - type: input
+  - type: textarea
     id: content
     attributes:
       label: Описание

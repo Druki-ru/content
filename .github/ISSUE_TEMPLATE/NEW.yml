@@ -3,7 +3,7 @@ description: Не нашли что искали, хотите чтобы мат
 title: "[Новый материал]: "
 labels: [new content, help wanted]
 body:
-  - type: input
+  - type: textarea
     id: content
     attributes:
       label: Описание
