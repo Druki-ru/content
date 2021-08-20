@@ -243,6 +243,26 @@ lifecycle_link: 'https://www.drupal.org/about/core/policies/core-change-policies
 
 Конструктор данных классов теперь требует опциональный аргумент с объектом, реализующий `\Drupal\Core\Menu\MenuParentFormSelectorInterface` (сервис `menu.parent_form_selector`).
 
+## Идентификатор раскрытой сортировки Views теперь может быть настроен
+
+* [#2897638](https://www.drupal.org/node/2897638)
+
+До текущего релиза, только идентификаторы раскрытых фильтров Views могли быть настроены. С текущего релиза также можно указать идентификаторы для раскрытых сортировок. Это позволяет указать более понятное значение в качестве идентификатора для `sort_by`.
+
+В связи с данным изменением, метод `\Drupal\views\Plugin\views\display\DisplayPluginBase::isIdentifierUnique()` теперь требует третий параметр `string $handler_type`.
+
+## LayoutBuilderContextTrait::getAvailableContexts() помечен устаревшим в пользу LayoutBuilderContextTrait::getPopulatedContexts()
+
+* [#3099968](https://www.drupal.org/node/3099968)
+
+`\Drupal\layout_builder\Context\LayoutBuilderContextTrait::getAvailableContexts()` помечен устаревшим и будет удалён в [Drupal 10](../../../../../drupal/10/index.md). Вместо этого метода используйте новый метод `\Drupal\layout_builder\Context\LayoutBuilderContextTrait::getPopulatedContexts()`.
+
+Это сделано потому что метод `::getAvailableContexts()` был предназначен, для того чтобы предоставить список доступных контекстов, но не предоставлял соответствующие значения для данных контекстов, так как некоторые значения вычисляются в рантайме. Это изменение позволяет Layout Builder использовать контексты, которые регистрируются в рантайме.
+
+## Batch System
+
+* [#2875279](https://www.drupal.org/node/2875279) Обновлён код в модулях Drupal-ядра который использовал `batch_set()`. Теперь для формирования [пакетной обработки](../../../../9/batches/index.md) ядро использует `BatchBuilder`.
+
 ## Block
 
 * [#2268787](https://www.drupal.org/node/2268787) Для форм плагинов блоков в `$form_state` больше не передаётся `block_theme` значение, так как оно было крайне ненадёжно и приводило только к проблемам.
