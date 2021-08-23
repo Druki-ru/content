@@ -344,13 +344,13 @@ $menu_list = array_map(static function ($menu) {
 \asort($menu_list);
 ```
 
-## Несколько процедурных функций из модуля Taxonomy были упразднены в пользу прямого использования Entity API
+## Несколько процедурных функций из модуля Taxonomy устарели в пользу прямого использования Entity API
 
 * [#3039039](https://www.drupal.org/node/3039039)
 
-Некоторые функции `taxonomy.module` были упразднены. Также, использование `drupal_static_reset()` cо значением `taxonomy_vocabulary_get_names` в качестве параметра упразднено.
+Некоторые функции `taxonomy.module` устарели. Также, использование `drupal_static_reset()` c значением `taxonomy_vocabulary_get_names` в качестве параметра устарело.
 
-Следующие функции были упразднены:
+Следующие функции устарели:
 
 * `taxonomy_vocabulary_get_names()`
 * `taxonomy_term_uri()`
