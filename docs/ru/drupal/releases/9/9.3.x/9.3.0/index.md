@@ -299,6 +299,191 @@ token:
 
 Для более детальной информации об автомонтировании сервисов [изучите документацию Symfony](https://symfony.com/doc/current/service_container/autowiring.html).
 
+## Модуль Update больше не зависит от модуля File
+
+* [#3014051](https://www.drupal.org/node/3014051)
+
+Модуль Update позволяет устанавливать модули и темы при помощи URL-адресов и загрузки файлов. Ранее, модуль File устанавливался как зависимость, хотя модуль Update может работать без него (загрузка на основе URL-адреса).
+
+Теперь модуль File не является зависимостью для модуля Update, но всё также требуется если вы хотите включить установку модулей и тем при помощи загрузки архива.
+
+## Функции menu_list_system_menus() и menu_ui_get_menus() помечены устаревшими
+
+* [#1882552](https://www.drupal.org/node/1882552)
+
+Функции `menu_list_system_menus()` и `menu_ui_get_menus()` помечены устаревшими. Вместо них используйте систему сущностей.
+
+### menu_list_system_menus()
+
+**Ранее:**
+
+```php
+$menu_list = menu_list_system_menus();
+```
+
+**Сейчас:**
+
+```php
+Menu::loadMultiple();
+```
+
+### menu_ui_get_menus()
+
+**Ранее:**
+
+```php
+$menu_list = menu_ui_get_menus();
+```
+
+**Сейчас:**
+
+```php
+$menu_list = array_map(static function ($menu) {
+  return $menu->label();
+}, \Drupal\system\Entity\Menu::loadMultiple());
+\asort($menu_list);
+```
+
+## Несколько процедурных функций из модуля Taxonomy были упразднены в пользу прямого использования Entity API
+
+* [#3039039](https://www.drupal.org/node/3039039)
+
+Некоторые функции `taxonomy.module` были упразднены. Также, использование `drupal_static_reset()` cо значением `taxonomy_vocabulary_get_names` в качестве параметра упразднено.
+
+Следующие функции были упразднены:
+
+* `taxonomy_vocabulary_get_names()`
+* `taxonomy_term_uri()`
+* `taxonomy_term_load_multiple_by_name()`
+* `taxonomy_terms_static_reset()`
+* `taxonomy_vocabulary_static_reset()`
+* `taxonomy_implode_tags()`
+* `taxonomy_term_title()`
+
+### Замены
+
+#### taxonomy_vocabulary_get_names()
+
+**Ранее:**
+
+```php
+$vids = taxonomy_vocabulary_get_names();
+```
+
+**Сейчас:**
+
+```php
+$vids = \Drupal::entityQuery('taxonomy_vocabulary')->execute();
+```
+
+#### taxonomy_term_load_multiple_by_name()
+
+**Ранее:**
+
+```php
+$terms = taxonomy_term_load_multiple_by_name(
+  'Foo',
+  'topics'
+);
+```
+
+**Сейчас:**
+
+```php
+$storage = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary');
+$terms = $storage->loadByProperties([ 
+  'name' => 'Foo',
+  'vid' => 'topics',
+]);
+```
+
+#### taxonomy_term_uri()
+
+**Ранее:**
+
+```php
+$url = taxonomy_term_uri($term);
+```
+
+**Сейчас:**
+
+```php
+$url = $term->toUrl();
+```
+
+#### taxonomy_terms_static_reset()
+
+**Ранее:**
+
+```php
+taxonomy_terms_static_reset()
+```
+
+**Сейчас:**
+
+```php
+$storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+$storage->resetCache();
+```
+
+#### taxonomy_vocabulary_static_reset()
+
+**Ранее:**
+
+```php
+taxonomy_vocabulary_static_reset($vids);
+```
+
+**Сейчас:**
+
+```php
+$storage = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary');
+$storage->resetCache($vids);
+```
+
+#### taxonomy_implode_tags()
+
+**Ранее:**
+
+```php
+taxonomy_implode_tags()
+```
+
+**Сейчас:**
+
+```php
+\Drupal\Core\Entity\Element\EntityAutocomplete::getEntityLabels();
+```
+
+#### taxonomy_term_title()
+
+**Ранее:**
+
+```php
+$name = taxonomy_term_title($term);
+```
+
+**Сейчас:**
+
+```php
+$name = $term->label();
+```
+
+#### drupal_static_reset() + taxonomy_vocabulary_get_names
+
+**Ранее:**
+
+```php
+drupal_static_reset('taxonomy_vocabulary_get_names');
+```
+
+**Сейчас:**
+
+```php
+$storage = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary');
+$storage->resetCache();
+```
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -327,6 +512,7 @@ token:
 ## Field System
 
 * [#3184542](https://www.drupal.org/node/3184542) Максимальная длина для ввода метки поля увеличена со 128 до 255 символов.
+* [#2226811](https://www.drupal.org/node/2226811) Исправлен тайпхинт для параметра `$definition` в `FieldItemBase`. Ранее он указывал что тип должен быть `DataDefinitionInterface`, но на самом деле ожидал `ComplexDataDefinitionInterface`.
 
 ## Field UI
 
@@ -359,6 +545,7 @@ token:
 ## Olivero
 
 * [#3200370](https://www.drupal.org/node/3200370) Улучшено оформление `drop-button` элемента, для того чтобы он соответствовал новому оформлению форм.
+* [#3174107](https://www.drupal.org/node/3174107) Добавлены тесты для темы Olivero.
 
 ## Routing System
 
@@ -378,6 +565,10 @@ token:
 
 * [#3209617](https://www.drupal.org/node/3209617) `Symfony\Component\HttpFoundation\RequestStack::getMasterRequest()` помечен устаревшим, необходимо использовать `::getMainRequest()`. Добавлен прокси-класс `Drupal\Core\Http\RequestStack`, который теперь возвращается сервисом `request_stack`.
 
+## Umami demo
+
+* [#3129666](https://www.drupal.org/node/3129666) В блоке брендирования для названия сайта больше не добавляется класс `visually-hidden`, который прятал заголовок даже если его необходимо показывать.
+
 ## Update
 
 * [#3039074](https://www.drupal.org/node/3039074) `drupal_static()` больше не используется в функциях `_update_manager_unique_identifier()`, `_update_manager_extract_directory()` и `_update_manager_cache_directory()`.
@@ -387,18 +578,25 @@ token:
 
 * [#2819585](https://www.drupal.org/node/2819585) Исправлен дублирующий `switch case` в `core/modules/user/user.js`.
 * [#2946](https://www.drupal.org/node/2946) Теперь, при попытке авторизоваться с отключенными Cookies, будет показано соответствующее сообщение, что авторизация невозможна.
+* [#3221258](https://www.drupal.org/node/3221258) Роль редактора присваивает только те права доступа, что доступны на момент установки.
 
 ## Views
 
 * [#2511892](https://www.drupal.org/node/2511892) Исправлена неполадка, приводящая к исключению `MissingMandatoryParametersException` при использовании вкладки меню и `%` в пути представления.
 * [#2681947](https://www.drupal.org/node/2681947) Представления типа «Блок» теперь поддерживают настройку «Put the exposed form in a block».
+* [#1551534](https://www.drupal.org/node/1551534) Views AJAX теперь поддерживают элемент `<button>` в качестве кнопки отправки, который может появиться в случае переопределения стандартного `<input type="submit">`.
 
 ## Workspaces
 
 * [#3112783](https://www.drupal.org/node/3112783) Добавлены страницы для отображения изменений и их количества внесённых в рабочей области.
+
+## Тестирование
+
+* [#3091870](https://www.drupal.org/node/3091870) Ошибки JavaScript выброшенные в `FunctionalJavascript` тестах теперь отлавливаются. Начиная с Drupal 10 они будут проваливать тесты.
 
 ## Прочие изменения
 
 * [#3218968](https://www.drupal.org/node/3218968) Drupal теперь поддерживает `NULL`-сервисы. Например: `Acme\Foo: ~`.
 * [#2902540](https://www.drupal.org/node/2902540) Исправлены ошибки стандарта кодирования `Drupal.NamingConventions.ValidGlobal`.
 * [#1306624](https://www.drupal.org/node/1306624) Файл `router_installer_test.install` переименован `router_installer_test.module`.
+* [#1884836](https://www.drupal.org/node/1884836) В `DiffEngine` вызовы `md5()` заменены на `crc32b()`.
