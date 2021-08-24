@@ -484,6 +484,90 @@ $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary');
 $storage->resetCache();
 ```
 
+## Разрешения теперь могут объявлять зависимости 
+
+* [#2571235](https://www.drupal.org/node/2571235)
+
+Разрешения могут генерироваться динамически с помощью функций обратного вызова. Например, модуль Node генерирует разрешения на основе доступных типов содержимого. Если условия, вызывающие генерацию таких разрешений, изменяются, и они больше не существуют, то разрешение будет удалено из любой роли, которой оно было назначено.
+
+Для поддержки удаления таких разрешений в массив информации о разрешении был добавлен новый ключ `dependencies`. Текущая структура этого массива такова:
+
+```php
+ * # The key is the permission machine name, and is required.
+ * administer filters:
+ *   # (required) Human readable name of the permission used in the UI.
+ *   title: 'Administer text formats and filters'
+ *   # (optional) Additional description fo the permission used in the UI.
+ *   description: 'Define how text is handled by combining filters into text formats.'
+ *   # (optional) Boolean, when set to true a warning about site security will
+ *   # be displayed on the Permissions page. Defaults to false.
+ *   restrict access: false
+ *   # (optional) Dependency array following the same structure as the return
+ *   # config entities dependencies.
+ *   dependencies:
+ *     config:
+ *       - node.type.article
+```
+
+### Добавление разрешений при помощи BundlePermissionHandlerTrait
+
+Для того чтобы помочь вам добавлять подобные разрешения добавлен новый трейт `Drupal\Core\Entity\BundlePermissionHandlerTrait` с методом `::generatePermissions()`.
+
+Например, `Drupal\node\NodePermissions` уже имеет метод `::buildPermissions()`, который возвращает массив массивов. Ключами внешнего массива являются машинные имена разрешений, а внутренние массивы имеют ключи `title` (обязательно) и `description` (необязательно).
+
+**До Drupal 9.3.0:**
+
+```php
+  public function nodeTypePermissions() {
+    $perms = [];
+    // Generate node permissions for all node types.
+    foreach (NodeType::loadMultiple() as $type) {
+      $perms += $this->buildPermissions($type);
+    }
+
+    return $perms;
+  }
+```
+
+**В Drupal 9.3.0 и далее:**
+
+```php
+use Drupal\Core\Entity\BundlePermissionHandlerTrait;
+
+class NodePermissions {
+  use BundlePermissionHandlerTrait;
+  // ...
+  public function nodeTypePermissions() {
+    return $this->generatePermissions(NodeType::loadMultiple(), [$this, 'buildPermissions']);
+  }
+  // ...
+}
+```
+
+## Функции file_create_url() и file_url_transform_relative() помечены устаревшими, добавлен новый сервис file_url_generator
+
+* [#2669074](https://www.drupal.org/node/2669074)
+
+Функции `file_crete_url()` и `file_url_transform_relative()` помечены устаревшими.
+
+В качестве замены представлен новый сервис `file_url_generator`.
+
+Ниже представлены примеры как старые вызовы заменить сервисом:
+
+* `file_create_url($uri)` → `\Drupal::service('file_url_generator')->generateAbsoluteString($uri)`
+* `file_url_transform_relative($file_url)` → `\Drupal::service('file_url_generator')->transformRelative($file_url)`
+* `file_url_transform_relative(file_create_url($uri)` → `\Drupal::service('file_url_generator')->generateString($uri)`
+* `Drupal\Core\Url::fromUri(file_create_url($uri))` → `\Drupal::service('file_url_generator')->generate($uri)`
+
+Также были представлены следующие новые методы:
+
+* Метод `::generateString()` генерирует URL относительно корня web-приложения (webroot, `index.php`).
+* Метод `::generateAbsoluteString()` генерирует абсолютный URL.
+* Метод `::generate()` URL-объект с относительным путём.
+* Метод `::transformRelative()` который преобразует абсолютный URL локального файла в относительный.
+
+Существующие сервисы `asset.css.optimizer`, `asset.js.collection_renderer` и `asset.css.collection_renderer` теперь принимают сервис `file_url_generator` в качестве аргумента.
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -504,6 +588,10 @@ $storage->resetCache();
 ## Content Moderation
 
 * [#3211072](https://www.drupal.org/node/3211072) Плагин `\Drupal\content_moderation\Plugin\Derivative\DynamicLocalTasks` теперь требует передавать `Router` в конструктор.
+
+## CKeditor
+
+* [#2556069](https://www.drupal.org/node/2556069) Исправлена неполадка приводящая к JS ошибке при использовании фильтра `filtered_html`.
 
 ## Database System
 
@@ -546,10 +634,12 @@ $storage->resetCache();
 ## Media System
 
 * [#3222486](https://www.drupal.org/node/3222486) Метки для удалённых видео (remote video) обновлены таким образом, что они теперь более последовательны и менее многословны.
+* [#3222282](https://www.drupal.org/node/3222282) Из файла `media_library.module` удалён `@todo` на ишью [#2964789](https://www.drupal.org/project/drupal/issues/2964789).
 
 ## Menu UI
 
 * [#3221493](https://www.drupal.org/node/3221493) Добавлены тесты покрывающие порядок меню в форме настроек типов материалов (`node`).
+* [#3222465](https://www.drupal.org/node/3222465) `MenuUiNodeTypeTest` теперь использует специальную тестовую конфигурацию вместо системной.
 
 ## Migration system
 
@@ -563,6 +653,10 @@ $storage->resetCache();
 
 * [#3200370](https://www.drupal.org/node/3200370) Улучшено оформление `drop-button` элемента, для того чтобы он соответствовал новому оформлению форм.
 * [#3174107](https://www.drupal.org/node/3174107) Добавлены тесты для темы Olivero.
+
+## Plugin System
+
+* [#1932810](https://www.drupal.org/node/1932810) Плагин-условия `NodeType` упразднён в пользу `\Drupal\entity\Plugin\Core\Condition\EntityBundle`, который был перенесён в ядро из модуля ctools.
 
 ## Routing System
 
@@ -605,6 +699,7 @@ $storage->resetCache();
 * [#2511892](https://www.drupal.org/node/2511892) Исправлена неполадка, приводящая к исключению `MissingMandatoryParametersException` при использовании вкладки меню и `%` в пути представления.
 * [#2681947](https://www.drupal.org/node/2681947) Представления типа «Блок» теперь поддерживают настройку «Put the exposed form in a block».
 * [#1551534](https://www.drupal.org/node/1551534) Views AJAX теперь поддерживают элемент `<button>` в качестве кнопки отправки, который может появиться в случае переопределения стандартного `<input type="submit">`.
+* [#2560447](https://www.drupal.org/node/2560447) `views_form_callback` больше не поддерживается.
 
 ## Workspaces
 
