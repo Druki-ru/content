@@ -513,6 +513,7 @@ $storage->resetCache();
 
 * [#3184542](https://www.drupal.org/node/3184542) Максимальная длина для ввода метки поля увеличена со 128 до 255 символов.
 * [#2226811](https://www.drupal.org/node/2226811) Исправлен тайпхинт для параметра `$definition` в `FieldItemBase`. Ранее он указывал что тип должен быть `DataDefinitionInterface`, но на самом деле ожидал `ComplexDataDefinitionInterface`.
+* [#3218711](https://www.drupal.org/node/3218711) Добавлен тест покрывающий максимальный размер загрузки равный '300 0'. Данное значение невалидно и должно выдавать ошибку.
 
 ## Field UI
 
@@ -542,6 +543,22 @@ $storage->resetCache();
 
 * [#3035174](https://www.drupal.org/node/3035174) Трейт `SectionStorageTrait` помечен устаревшим в пользу `SectionListTrait`.
 
+## Media System
+
+* [#3222486](https://www.drupal.org/node/3222486) Метки для удалённых видео (remote video) обновлены таким образом, что они теперь более последовательны и менее многословны.
+
+## Menu UI
+
+* [#3221493](https://www.drupal.org/node/3221493) Добавлены тесты покрывающие порядок меню в форме настроек типов материалов (`node`).
+
+## Migration system
+
+* [#3222168](https://www.drupal.org/node/3222168) Везде где в качестве сигнатуры использовался `\GuzzleHttp\Client` теперь используется `\GuzzleHttp\ClientInterface`.
+
+## Node system
+
+* [#3220956](https://www.drupal.org/node/3220956) Удалён `@todo` из шаблона `node.html.twig` напоминающий удалить `id` аттрибут, который был уже удалён.
+
 ## Olivero
 
 * [#3200370](https://www.drupal.org/node/3200370) Улучшено оформление `drop-button` элемента, для того чтобы он соответствовал новому оформлению форм.
@@ -556,6 +573,7 @@ $storage->resetCache();
 * [#3039055](https://www.drupal.org/node/3039055) Удалён вызов `drupal_static_reset('taxonomy_term_count_nodes');` так как данное значение никем не устанавливается.
 * [#3056258](https://www.drupal.org/node/3056258) В форму добавления и редактирования термина таксономии добавлено новое действие «Сохранить и перейти к списку» — которое после сохранения материала перенаправит на страницу со всеми терминами словаря.
 * [#3037157](https://www.drupal.org/node/3037157) Исправлена неполадка из-за которой переводы словаря игнорировались в заголовках страниц «entity.taxonomy_vocabulary.overview_form» и «entity.taxonomy_vocabulary.reset_form».
+* [#3221149](https://www.drupal.org/node/3221149) Валидатор аргументов Views `\Drupal\taxonomy\Plugin\views\argument_validator\Term` помечен устаревшим. Вместо него используйте `\Drupal\views\Plugin\views\argument_validator\Entity`.
 
 ## Text
 
@@ -573,6 +591,8 @@ $storage->resetCache();
 
 * [#3039074](https://www.drupal.org/node/3039074) `drupal_static()` больше не используется в функциях `_update_manager_unique_identifier()`, `_update_manager_extract_directory()` и `_update_manager_cache_directory()`.
 * [#3206293](https://www.drupal.org/node/3206293) Добавлен класс `ProjectRelease`, который является обёрткой для Update XML файла с релизами.
+* [#2715145](https://www.drupal.org/node/2715145) Удалена конфигурация `system.authorize`.
+* [#3180382](https://www.drupal.org/node/3180382) `UpdateManagerUpdate.php` больше не использует сервис `renderer` для элемента `last_check`.
 
 ## User
 
@@ -593,6 +613,7 @@ $storage->resetCache();
 ## Тестирование
 
 * [#3091870](https://www.drupal.org/node/3091870) Ошибки JavaScript выброшенные в `FunctionalJavascript` тестах теперь отлавливаются. Начиная с Drupal 10 они будут проваливать тесты.
+* [#2758357](https://www.drupal.org/node/2758357) Добавлена документация о том, что `core/phpunit.xml.dist` должен быть скопирован в `core/phpunit.xml` для последующей модификации.
 
 ## Прочие изменения
 
@@ -600,3 +621,4 @@ $storage->resetCache();
 * [#2902540](https://www.drupal.org/node/2902540) Исправлены ошибки стандарта кодирования `Drupal.NamingConventions.ValidGlobal`.
 * [#1306624](https://www.drupal.org/node/1306624) Файл `router_installer_test.install` переименован `router_installer_test.module`.
 * [#1884836](https://www.drupal.org/node/1884836) В `DiffEngine` вызовы `md5()` заменены на `crc32b()`.
+* [#2725435](https://www.drupal.org/node/2725435) Удалён устаревший `@todo` ведущий на [#2364011](https://www.drupal.org/node/2364011).
