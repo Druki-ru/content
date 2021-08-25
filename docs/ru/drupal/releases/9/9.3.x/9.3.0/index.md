@@ -166,7 +166,7 @@ $build['#cache']['contexts'][] = 'user.roles:anonymous';
 
 ## Модули и темы теперь могут указывать уровень стабильности
 
-* [#3124762](https://www.drupal.org/node/3124762)
+* [#3124762](https://www.drupal.org/node/3124762), [#3225812](https://www.drupal.org/node/3225812)
 
 Информационные файлы модулей и тем теперь поддерживают два новых параметра `lifecycle` и `lifecycle_link`.
 
@@ -568,6 +568,231 @@ class NodePermissions {
 
 Существующие сервисы `asset.css.optimizer`, `asset.js.collection_renderer` и `asset.css.collection_renderer` теперь принимают сервис `file_url_generator` в качестве аргумента.
 
+## Библиотека core/jquery.once помечена устаревшей
+
+* [#3207782](https://www.drupal.org/node/3207782)
+
+**Изменения API:**
+
+* Добавлена новая библиотека `core/once` использующая [Drupal Once JavaScript API](../../../../../javascript/drupal/once/index.md).
+* Библиотека `core/jquery.once` помечена устаревшей.
+* Добавлена новая глобальная переменная `once` в конфигурацию eslint.
+* Новая once библиотека предоставляет 4 функции:
+  * `once` = `$.once`
+  * `once.filter()` = `$.findOnce()`
+  * `once.remove()` = `$.removeOnce()`
+  * `once.find()` новая функция не имеющая аналога в jQuery.
+
+### Обратная совместимость
+
+Если текущий код использует `core/jquery.once` из ядра, добавлен слой обратной совместимости который автоматически при использовании устаревшей библиотеки. Вызовы `jQuery.once` будут учитывать предыдущие вызовы `once()`.
+
+Для более детальной документации изучите [Drupal Once JavaScript API](../../../../../javascript/drupal/once/index.md).
+
+```javascript
+// Core calls once()
+once('once-id', '[data-drupal-selector="element"]');
+
+// In a contrib or custom code, jQuery.once will work as expected: 
+$('[data-drupal-selector="element"]').once('once-id') // will return an empty set.
+```
+
+### Необходимые изменения в коде
+
+**Ранее:**
+
+```yaml
+# mymodule.libraries.yml
+myfeature:
+  js: 
+    js/myfeature.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+```
+
+```javascript
+# js/myfeature.js
+(function ($, Drupal) {
+  Drupal.behaviors.myfeature = {
+    attach(context) {
+      const $elements = $(context).find('[data-myfeature]').once('myfeature');
+      // `$elements` is always a jQuery object.
+      $elements.each(processingCallback);
+    }
+  };
+
+  function processingCallback(index, value) {}
+}(jQuery, Drupal));
+```
+
+**После (удаляем jQuery зависимость):**
+
+```yaml
+# mymodule.libraries.yml
+myfeature:
+  js: 
+    js/myfeature.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+```
+
+```javascript
+# js/myfeature.js
+(function (Drupal, once) {
+  Drupal.behaviors.myfeature = {
+    attach(context) {
+      const elements = once('myfeature', '[data-myfeature]', context);
+      // `elements` is always an Array.
+      elements.forEach(processingCallback);
+    }
+  };
+
+  // The parameters are reversed in the callback between jQuery `.each` method 
+  // and the native `.forEach` array method.
+  function processingCallback(value, index) {}
+}(Drupal, once));
+```
+
+## drupal_get_path() и drupal_get_filename() помечены устаревшими в пользу сервисов расширений
+
+* [#2347783](https://www.drupal.org/node/2347783)
+
+Функции `drupal_get_path()` и `drupal_get_filename()` [помечены устаревшими](../../../../../deprecation/index.md). Вместо данных функций используйте, где это возможно, специальные методы `\Drupal\Core\Extension\ExtensionList::getPath()` и `\Drupal\Core\Extension\ExtensionList::getPathname()`. Вы можете использовать `extension.path.resolver:getPath()` и `extension.path.resolver:getPathname()` там где поддерживается [Dependency Injection](../../../../9/services/dependency-injection/index.md).
+
+Данные методы выбрасывают следующие исключения:
+
+* `\Drupal\Core\Extension\Exception\UnknownExtensionException` если расширение не найдено.
+* `\Drupal\Core\Extension\Exception\UnknownExtensionTypeException` если тип расширения не найден.
+
+Ниже представлен список того, как необходимо обновить свой код:
+
+* `drupal_get_path()`
+  * `drupal_get_path('module', 'node')` → `\Drupal::service('extension.list.module')->getPath('node')`
+  * `drupal_get_path('module', 'node')` → `\Drupal::service('extension.path.resolver')->getPath('module', 'node')`
+  * `drupal_get_path('theme', 'seven')` → `\Drupal::service('extension.list.theme')->getPath('seven')`
+  * `drupal_get_path('profile', 'standard')` → `\Drupal::service('extension.list.profile')->getPath('standard')`
+* `drupal_get_filename()`
+  * `drupal_get_filename('module', 'node')` → `\Drupal::service('extension.list.module')->getPathname('node')`
+  * `drupal_get_filename('module', 'node')` → `\Drupal::service('extension.path.resolver')->getPathname('module', 'node')`
+  * `drupal_get_filename('theme', 'seven')` → `\Drupal::service('extension.list.theme')->getPathname('seven')`
+  * `drupal_get_filename('profile', 'standard')` → `\Drupal::service('extension.list.profile')->getPathname('standard')`
+
+## Передача компилятора GuzzleMiddlewarePass была удалена
+
+* [#3215397](https://www.drupal.org/node/3215397)
+
+`GuzzleMiddlewarePass` отвечал за сбор сервисов с метками `http_client_middleware` и передавал их сервису с `Guzzle` (`http_client`).
+
+`TaggedHandlersPass` выполняет ту же работу в общем виде - он работает для любого сервиса с меткой - поэтому теперь этот обработчик используется вместо него, а `GuzzleMiddlewarePass` был удален.
+
+Если вы использовали или расширяли `GuzzleMiddlewarePass`, вам следует перейти на `TaggedHandlersPass`.
+
+## Функция file_build_uri() помечена устаревшей
+
+* [#3223016](https://www.drupal.org/node/3223016)
+
+Функция `file_build_uri()` была помечена устаревшей. Прямой замены данной функции не предоставлено.
+
+Данная функция делает две вещи: объединяет схему по умолчанию (как правило `public://`) с предоставленным путём, а затем нормализует его.
+
+**Ранее:**
+
+```php
+$uri = file_build_uri($path);
+```
+
+**Теперь:**
+
+```php
+$uri = \Drupal::config('system.file')->get('default_scheme') . '://' . $path;
+/** @var \Drupal\Core\StreamWrapper\StreamWrapperManagerInterface $stream_wrapper_manager */
+$stream_wrapper_manager = \Drupal::service('stream_wrapper_manager');
+$uri = $stream_wrapper_manager->normalizeUri($uri);
+```
+
+Однако нормализация пути не нужна, если это жестко заданная папка модуля, например `file_build_uri('my_module')` можно заменить лишь одной строкой `\Drupal::config('system.file')->get('default_scheme') . '://my_module'`.
+
+Для настраиваемых путей рекомендуется включать обертку потока явно, либо как отдельный параметр конфигурации, подобно полям файлов, либо объединенный в текстовом поле.
+
+## Добавлена поддержка oEmbed-ресурсов которые не имеют явной высоты
+
+* [#2966043](https://www.drupal.org/node/2966043)
+
+Ранее система oEmbed требовала, чтобы все ресурсы без ссылок (т.е. фотографии, видео, текст) имели явную, ненулевую ширину и высоту, определенные в соответствии со спецификацией oEmbed.
+
+Однако некоторые поставщики oEmbed, такие как Twitter и Instagram, не следуют этому правилу, потому что ресурсы, которые они обслуживают, содержат текст и могут быть адаптивными, поэтому они не могут иметь известную, заранее определенную высоту.
+
+Для того чтобы Drupal мог работать с такими провайдерами, начиная с версии 9.3.0 высота ресурса, не являющегося ссылкой, теперь является необязательной, и если она не указана, то будет возвращаться к максимальной высоте, установленной в форматере.
+
+## oEmbed сервисы теперь запрашивают бэкенд кеша
+
+* [#3222632](https://www.drupal.org/node/3222632)
+
+Медиа система имеет три службы, которые вместе обеспечивают поддержку oEmbed:
+
+* `\Drupal\media\OEmbed\ResourceFetcher`
+* `\Drupal\media\OEmbed\ProviderRepository`
+* `\Drupal\media\OEmbed\UrlResolver`
+
+Ранее каждый из этих сервисов принимал необязательный параметр `$cache_backend`, который мог быть `NULL` или экземпляром `\Drupal\Core\Cache\CacheBackendInterface`. Они использовали `\Drupal\Core\Cache\UseCacheBackendTrait`, чтобы вызывающий код мог включать/выключать кеширование.
+
+Начиная с текущего изменения, бэкенд кеша всегда должен быть предоставлен, и сервисы больше не используют `UseCacheBackendTrait`. Чтобы отключить кеширование, передайте экземпляр `\Drupal\Core\Cache\NullBackend`. Подклассы должны напрямую вызывать `$this->cacheBackend->get()` и `$this->cacheBackend->set()` соответственно.
+
+## Типы ресурсов JSON:API теперь могут быть программно переименованы
+
+* [#3105318](https://www.drupal.org/node/3105318)
+
+Некоторые сайты могут захотеть раскрыть определенные типы ресурсов JSON:API под определенными именами.
+
+В предыдущих версиях было невозможно переименовывать типы ресурсов, так как не было публичного PHP API, однако некоторые сторонние и пользовательские модули могли задекорировать класс `Drupal\jsonapi\ResourceType\ResourceTypeRepository`. Такой подход означал перезапись методов и приводил к сложному в поддержке решению. Например, `jsonapi_extras` значительно переопределяет класс, чтобы переименовать типы ресурсов.
+
+JSON:API `ResourceTypeBuildEvent` теперь имеет новый метод: `::setResourceTypeName(string $resource_type_name)`. [Подписчики этого события](../../../../9/events/index.md) теперь могут переименовать ресурс, используя публично поддерживаемый PHP API.
+
+Смотрите `\Drupal\jsonapi_test_resource_type_building\EventSubscriber\ResourceTypeBuildEventSubscriber` для примера того, как добавить синоним имени типа ресурса.
+
+Была введена новая константа: `Drupal\jsonapi\ResourceType::TYPE_NAME_URI_PATH_SEPARATOR`. Эта константа представляет собой строку, которая используется в качестве разделителя путей в именах типов ресурсов. Функция `Drupal\jsonapi\ResourceType::getPath()` заменяет "--" на "/" в uri пути. Пример: `node--article` → `node/article`.
+
+## Media Library будет передавать свое текущее состояние в hook_ENTITY_TYPE_create_access()
+
+* [#3224530](https://www.drupal.org/node/3224530)
+
+Модуль Media Library будет передавать в `hook_ENTITY_TYPE_create_access()` объект-значение, содержащий его текущее состояние (экземпляр `Drupal\media_library\MediaLibraryState`) в параметре `$context` при определении доступа к секции "add media" медиатеки. Это позволит сторонним и пользовательским модулям реализовать сложную логику доступа, например, для формы:
+
+```php
+use Drupal\Core\Session\AccountInterface;
+
+function mymodule_media_create_access(AccountInterface $account, array $context, $entity_bundle) {
+  if (isset($context['media_library_state'])) {
+    // $context['media_library_state'] is an instance of Drupal\media_library\MediaLibraryState. Use it as needed to
+    // make an access decision.
+  }
+}
+```
+
+Для ясности, полученное решение о доступе будет применяться только к разделу медиатеки "Добавить медиа" (т.е. к той части, которая позволяет пользователю создавать новые медиа элементы), как в виджете поля, так и в CKEditor. Оно НЕ влияет на доступ к разделу медиатеки, позволяющему выбирать существующие медиафайлы, или на доступ к медиатеке в целом.
+
+## Сторонние JavaScript библиотеки теперь управляются через package.json
+
+* [#3219088](https://www.drupal.org/node/3219088)
+
+Для разработки ядра мы теперь используем `package.json` и дополнительный шаг сборки для добавления сторонних скриптов в ядро Drupal. Это сделано для того, чтобы облегчить обновление и упростить процесс обновления. В настоящее время все библиотеки управляются таким образом, кроме CKEditor и modernizr, для которых требуются пользовательские сборки, которые на данный момент не могут быть легко автоматизированы.
+
+**Ранее:**
+
+1. Проверить страницу каждой библиотеки, чтобы узнать, доступна ли новая версия.
+2. Скачать последнюю версию библиотеки с github, npm или с сайта библиотеки.
+3. Обновить ядро и создать патч.
+
+**Теперь:**
+
+1. Запустить `yarn outdated` чтобы проверить наличие обновлений.
+2. Запустить `yarn upgrade <library>` для каждой библиотеки что необходимо обновить.
+3. Запустить `yarn vendor-update` которая обновит библиотеку в `core/assets/vendor` директории, а также информацию в `core.libraries.yml`.
+4. Отправить изменения в ядро.
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -581,9 +806,22 @@ class NodePermissions {
 * [#2268787](https://www.drupal.org/node/2268787) Для форм плагинов блоков в `$form_state` больше не передаётся `block_theme` значение, так как оно было крайне ненадёжно и приводило только к проблемам.
 * [#2839558](https://www.drupal.org/node/2839558) Блокам добавлена контекстуальная ссылка «Удалить».
 
+## Book
+
+* [#2412669](https://www.drupal.org/node/2412669) `BookManager` больше не использует `drupal_static_reset()`, вместо этого используйте `\Drupal::service('book.manager')->resetCache();`.
+
 ## Comment
 
 * [#2927874](https://www.drupal.org/node/2927874) Исправлена неполадка из-за которой предпросмотр комментария показывался в неположенном месте.
+
+## Composer
+
+* [#3224000](https://www.drupal.org/node/3224000) Зависимости ядра обновлены на 27.07.2021.
+* [#3225733](https://www.drupal.org/node/3225733) Удалены следующие зависимости ядра: `fabpot/goutte` и `behat/mink-goutte-driver`.
+
+## Configuration System
+
+* [#2926729](https://www.drupal.org/node/2926729) `ConfigManagerInterface::findConfigEntityDependents()` и `ConfigManagerInterface::findConfigEntityDependentsAsEntities()` теперь `ConfigManagerInterface::findConfigEntityDependencies()` и `ConfigManagerInterface::findConfigEntityDependenciesAsEntities()` соответственно.
 
 ## Content Moderation
 
@@ -596,6 +834,11 @@ class NodePermissions {
 ## Database System
 
 * [#3211780](https://www.drupal.org/node/3211780) `Connection::queryTemporary()` помечен устаревшим.
+* [#3224199](https://www.drupal.org/node/3224199) Свойство `Connection::$temporaryNameIndex` помечено устаревшим.
+
+## Entity Reference
+
+* [#3225947](https://www.drupal.org/node/3225947) Удалён бесполезный файл `entity_reference.install` и `simpletest_install()`.
 
 ## Field System
 
@@ -607,9 +850,21 @@ class NodePermissions {
 
 * [#2726881](https://www.drupal.org/node/2726881) Удалена пагинация со страницы `admin/reports/fields`.
 
+## File System
+
+* [#3224420](https://www.drupal.org/node/3224420) `throw new FileTransferException()` теперь возвращает `0` вместо `NULL`.
+
 ## Forms System
 
 * [#3219541](https://www.drupal.org/node/3219541) Удалён избыточный вызов `$this->requestStack->getCurrentRequest()` в `FormBuilder::buildForm()`.
+
+## Image
+
+* [#3216106](https://www.drupal.org/node/3216106) Улучшено описание для плагина эффекта изображения `image_convert`.
+
+## Install system
+
+* [#3185768](https://www.drupal.org/node/3185768) Из установщика удалены `InlineServiceDefinitionsPass`, `RemoveUnusedDefinitionsPass`, `AnalyzeServiceReferencesPass` и `ReplaceAliasByActualDefinitionPass` для того чтобы избежать бесполезную работу. Это позволяет ускорить установку ([-19%](https://blackfire.io/profiles/compare/612e435c-5c03-48b3-99a3-80c1846396e1/graph?settings%5Bdimension%5D=wt&settings%5Bdisplay%5D=landscape&settings%5BtabPane%5D=nodes&selected=&callname=main())) путём снижения количества вызовов функций.
 
 ## JavaScript
 
@@ -618,10 +873,6 @@ class NodePermissions {
 ## JSON:API
 
 * [#3036593](https://www.drupal.org/node/3036593) ID сущности теперь содержится в `meta.drupal_internal__target_id`. Это позволяет фильтровать значения по данному свойству и получать внутренний ID, а не только UUID.
-
-## Image
-
-* [#3216106](https://www.drupal.org/node/3216106) Улучшено описание для плагина эффекта изображения `image_convert`.
 
 ## Language System
 
@@ -644,15 +895,27 @@ class NodePermissions {
 ## Migration system
 
 * [#3222168](https://www.drupal.org/node/3222168) Везде где в качестве сигнатуры использовался `\GuzzleHttp\Client` теперь используется `\GuzzleHttp\ClientInterface`.
+* [#3215836](https://www.drupal.org/node/3215836) Добавлена новая константа `MigrateSourceInterface::NOT_COUNTABLE` которую необходимо использовать для неисчисляемых источников.
+
+## MySQL DB driver
+
+* [#3224245](https://www.drupal.org/node/3224245) Подключение к MySQL теперь открывается с использованием `\PDO::ATTR_STRINGIFY_FETCHES`.
 
 ## Node system
 
 * [#3220956](https://www.drupal.org/node/3220956) Удалён `@todo` из шаблона `node.html.twig` напоминающий удалить `id` аттрибут, который был уже удалён.
+* [#3037202](https://www.drupal.org/node/3037202) `node_mark()` больше не использует `drupal_static()`, соответственно, вызов `drupal_static()` с аргументом `node_mark` помечен устаревшим.
+* [#3156244](https://www.drupal.org/node/3156244) `SyndicateBlock` теперь задаёт заголовок равный названию сайта.
 
 ## Olivero
 
 * [#3200370](https://www.drupal.org/node/3200370) Улучшено оформление `drop-button` элемента, для того чтобы он соответствовал новому оформлению форм.
 * [#3174107](https://www.drupal.org/node/3174107) Добавлены тесты для темы Olivero.
+* [#3223314](https://www.drupal.org/node/3223314) Библиотекам `olivero.libraries.yml` добавлены версии и отсортированы в алфавитном порядке.
+
+## Path
+
+* [#3224592](https://www.drupal.org/node/3224592) `\Drupal\path_alias\AliasManager::cacheClear()` больше не вызывает предупреждения об устаревшем коде на PHP 8.1 и не пытается очистить кеш при `NULL` значении.
 
 ## Plugin System
 
@@ -661,6 +924,10 @@ class NodePermissions {
 ## Routing System
 
 * [#3183036](https://www.drupal.org/node/3183036) Сервисы проверки прав доступа, что не используются ни одним маршрутом, больше не инициализируются.
+
+## System
+
+* [#778346](https://www.drupal.org/node/778346) Функция `system_sort_modules_by_info_name()` помечена устаревшей и заменена идентичной `system_sort_by_info_name()`. Это переименование сделано так как старое название не совсем подходящее.
 
 ## Taxonomy
 
@@ -709,6 +976,7 @@ class NodePermissions {
 
 * [#3091870](https://www.drupal.org/node/3091870) Ошибки JavaScript выброшенные в `FunctionalJavascript` тестах теперь отлавливаются. Начиная с Drupal 10 они будут проваливать тесты.
 * [#2758357](https://www.drupal.org/node/2758357) Добавлена документация о том, что `core/phpunit.xml.dist` должен быть скопирован в `core/phpunit.xml` для последующей модификации.
+* [#3191935](https://www.drupal.org/node/3191935) Использование устаревшего `AssertLegacyTrait::assertNoText()` заменено современными методами.
 
 ## Прочие изменения
 
@@ -717,3 +985,6 @@ class NodePermissions {
 * [#1306624](https://www.drupal.org/node/1306624) Файл `router_installer_test.install` переименован `router_installer_test.module`.
 * [#1884836](https://www.drupal.org/node/1884836) В `DiffEngine` вызовы `md5()` заменены на `crc32b()`.
 * [#2725435](https://www.drupal.org/node/2725435) Удалён устаревший `@todo` ведущий на [#2364011](https://www.drupal.org/node/2364011).
+* [#2830352](https://www.drupal.org/node/2830352) Обновлены ссылки ведущие на документацию Drupal 7.
+* [#3018091](https://www.drupal.org/node/3018091) Дополнена документация для `TaggedHandlersPass::process()`.
+* [#3203416](https://www.drupal.org/node/3203416) Добавлено объяснение, что параметр $form_id может обнаружить рекурсию в `FormValidator::doValidateForm()`.
