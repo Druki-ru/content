@@ -570,7 +570,7 @@ class NodePermissions {
 
 ## Библиотека core/jquery.once помечена устаревшей
 
-* [#3207782](https://www.drupal.org/node/3207782)
+* [#3207782](https://www.drupal.org/node/3207782), [#3183149](https://www.drupal.org/node/3183149)
 
 **Изменения API:**
 
@@ -938,6 +938,34 @@ if ($file->isTemporary()) {
 }
 ```
 
+## Модуль Quick Edit больше не включен по умолчанию в стандартном профиле
+
+* [#3227039](https://www.drupal.org/node/3227039)
+
+Модуль Quick Edit планируется удалить из ядра в Drupal 10, основываясь на данных, которые указывают на то, что модуль нечасто используется целевой аудиторией, а также на многочисленных технических, юзабилити и ограничениях доступности текущего модуля.
+
+В связи с этим Quick Edit был удален из [«Стандартного» профиля](../../../../9/distributions/standard/index.md) в Drupal 9.3.0. Это изменение не затрагивает существующие сайты, только новые сайты, впервые устанавливающие профиль. Сайты Drupal 9.3.x могут продолжать использовать этот модуль, а для сайтов Drupal 10 он будет доступен как сторонний (contrib) модуль, хотя в долгосрочной перспективе рекомендуется рассмотреть альтернативные варианты.
+
+Стандартный профиль будет продолжать предоставлять Contextual Links (модуль, который обеспечивает выпадающее меню с иконкой карандаша, позволяющее открыть форму редактирования фрагмента контента). Владельцы сайта могут также рассмотреть альтернативные решения для редактирования на месте, например, модуль [Geysir](https://www.drupal.org/project/geysir).
+
+## ProviderRepository теперь запрашивает сервисы keyvalue и logger.factory
+
+* [#3186184](https://www.drupal.org/node/3186184)
+
+Начиная с этого изменения класс `Drupal\media\OEmbed\ProviderRepository` инициализируется с сервисами `keyvalue` и `logger.factory`. Он больше не принимает `CacheBackendInterface` и при попытке передачи такого аргумента будет выведено сообщение об устаревшем параметре.
+
+Ранее, если вы инициализировали `ProviderRepository` передавая время истечения кеша, например 1000 секунд, вы могли сделать следующее:
+
+```php
+new ProviderRepository($http_client, $config_factory, $time, $cache_backend, 1000);
+```
+
+Чтобы сделать то же самое сейчас:
+
+```php
+new ProviderRepository($http_client, $config_factory, $time, $key_value_factory, $logger_factory, 1000);
+```
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -954,6 +982,10 @@ if ($file->isTemporary()) {
 ## Book
 
 * [#2412669](https://www.drupal.org/node/2412669) `BookManager` больше не использует `drupal_static_reset()`, вместо этого используйте `\Drupal::service('book.manager')->resetCache();`.
+
+## Bootstrap System
+
+* [#2293257](https://www.drupal.org/node/2293257) Добавлены подсказки типов для переменных в `DrupalKernel`.
 
 ## Comment
 
@@ -1005,6 +1037,7 @@ if ($file->isTemporary()) {
 ## File System
 
 * [#3224420](https://www.drupal.org/node/3224420) `throw new FileTransferException()` теперь возвращает `0` вместо `NULL`.
+* [#2032893](https://www.drupal.org/node/2032893) Функция `_views_file_status()` помечена устаревшей.
 
 ## Filter
 
@@ -1042,6 +1075,7 @@ if ($file->isTemporary()) {
 
 * [#3222486](https://www.drupal.org/node/3222486) Метки для удалённых видео (remote video) обновлены таким образом, что они теперь более последовательны и менее многословны.
 * [#3222282](https://www.drupal.org/node/3222282) Из файла `media_library.module` удалён `@todo` на ишью [#2964789](https://www.drupal.org/project/drupal/issues/2964789).
+* [#3028664](https://www.drupal.org/node/3028664) Ошибке oEmbed провайдера теперь логируются.
 
 ## Menu UI
 
@@ -1052,6 +1086,7 @@ if ($file->isTemporary()) {
 
 * [#3222168](https://www.drupal.org/node/3222168) Везде где в качестве сигнатуры использовался `\GuzzleHttp\Client` теперь используется `\GuzzleHttp\ClientInterface`.
 * [#3215836](https://www.drupal.org/node/3215836) Добавлена новая константа `MigrateSourceInterface::NOT_COUNTABLE` которую необходимо использовать для неисчисляемых источников.
+* [#3022910](https://www.drupal.org/node/3022910) Название файла (`filename`) теперь получается из `uri`.
 
 ## MySQL DB driver
 
@@ -1068,6 +1103,10 @@ if ($file->isTemporary()) {
 * [#3200370](https://www.drupal.org/node/3200370) Улучшено оформление `drop-button` элемента, для того чтобы он соответствовал новому оформлению форм.
 * [#3174107](https://www.drupal.org/node/3174107) Добавлены тесты для темы Olivero.
 * [#3223314](https://www.drupal.org/node/3223314) Библиотекам `olivero.libraries.yml` добавлены версии и отсортированы в алфавитном порядке.
+* [#3226865](https://www.drupal.org/node/3226865) В шаблоне `block--secondary-menu--plugin-id--search-form-block.html.twig` `<div>` внутри `<button>` заменён на `<span>`.
+* [#3226019](https://www.drupal.org/node/3226019) Протокол URL-адресов в `block--secondary-menu.html.twig` изменено на HTTPS.
+* [#3216489](https://www.drupal.org/node/3216489) Исправлена неполадка из-за которой предзагрузка шрифта не работала если сайту задан `base path`.
+* [#3228140](https://www.drupal.org/node/3228140) `aria-label` для кнопки мобильной навигации в `page.html.twig` изменено на «Main Menu».
 
 ## Path
 
@@ -1138,8 +1177,8 @@ if ($file->isTemporary()) {
 * [#2758357](https://www.drupal.org/node/2758357) Добавлена документация о том, что `core/phpunit.xml.dist` должен быть скопирован в `core/phpunit.xml` для последующей модификации.
 * [#3131900](https://www.drupal.org/node/3131900) Исправлены сравнения чьи результаты записываются в переменную.
 * [#3196470](https://www.drupal.org/node/3196470) Доработан пустой тест `KernelTestBaseTest::testOutboundHttpRequest()`.
-* [#3220255](https://www.drupal.org/node/3220255) Сравнения с использованием `xpath` на ссылки заменены на WebAssert.
 * [#3226106](https://www.drupal.org/node/3226106) Из `Drupal\Tests\node\Kernel\Migrate\d7\MigrateNodeTypeTest::assertEntity()` удалён `@dataProvider`.
+* [#3139409](https://www.drupal.org/node/3139409) Использование устаревшего `AssertLegacyTrait::assertRaw()` заменено на современные подходы.
 
 ## Прочие изменения
 
