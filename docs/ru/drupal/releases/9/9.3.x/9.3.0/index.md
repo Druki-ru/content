@@ -897,6 +897,47 @@ function mymodule_entity_type_build(array &$entity_types) {
 
 Разработчики тем, переопределяющие любой из этих шаблонов, должны внести соответствующие изменения. В прочих случаях, когда тема наследует эти шаблоны от одной из тем ядра, изменения не требуются.
 
+## Константа FILE_STATUS_PERMANENT помечена устаревшей
+
+* [#3021833](https://www.drupal.org/node/3021833)
+
+Константа `FILE_STATUS_PERMANENT` помечена устаревшей.
+
+* Для проверки статуса файла используйте `\Drupal\file\FileInterface::isPermanent()` или `\Drupal\file\FileInterface::isTemporary()`.
+* Чтобы сделать файл постоянным используйте `\Drupal\file\FileInterface::setPermanent()`.
+* Константа `\Drupal\file\FileInterface::STATUS_PERMANENT` является внутренней заменой и не предназначена для использования сторонними разработчиками.
+
+**Ранее:**
+
+```php
+$fids = Drupal::entityQuery('file')
+  ->condition('status', FILE_STATUS_PERMANENT, '<>')
+...
+```
+
+```php
+if ($file->status->value !== FILE_STATUS_PERMANENT) {
+  $file->status->value = FILE_STATUS_PERMANENT;
+  $file->save();
+}
+```
+
+**Теперь:**
+
+```php
+use Drupal\file\FileInterface;
+...
+$fids = Drupal::entityQuery('file')
+  ->condition('status', FileInterface::STATUS_PERMANENT, '<>')
+```
+
+```php
+if ($file->isTemporary()) {
+  $file->setPermanent();
+  $file->save();
+}
+```
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -940,16 +981,22 @@ function mymodule_entity_type_build(array &$entity_types) {
 
 * [#3211780](https://www.drupal.org/node/3211780) `Connection::queryTemporary()` помечен устаревшим.
 * [#3224199](https://www.drupal.org/node/3224199) Свойство `Connection::$temporaryNameIndex` помечено устаревшим.
+* [#838992](https://www.drupal.org/node/838992) Поле UID для таблицы пользователей изменено с целого числа на последовательное.
 
 ## Entity Reference
 
 * [#3225947](https://www.drupal.org/node/3225947) Удалён бесполезный файл `entity_reference.install` и `simpletest_install()`.
+
+## Extension System
+
+* [#3225779](https://www.drupal.org/node/3225779) Функция `system_sort_modules_by_info_name()` помечена устаревшей. В качестве замены используйте `Drupal\Core\Extension\ExtensionList::sortByName()`.
 
 ## Field System
 
 * [#3184542](https://www.drupal.org/node/3184542) Максимальная длина для ввода метки поля увеличена со 128 до 255 символов.
 * [#2226811](https://www.drupal.org/node/2226811) Исправлен тайпхинт для параметра `$definition` в `FieldItemBase`. Ранее он указывал что тип должен быть `DataDefinitionInterface`, но на самом деле ожидал `ComplexDataDefinitionInterface`.
 * [#3218711](https://www.drupal.org/node/3218711) Добавлен тест покрывающий максимальный размер загрузки равный '300 0'. Данное значение невалидно и должно выдавать ошибку.
+* [#2508866](https://www.drupal.org/node/2508866) Исправлена неполадка из-за которой описание поля не показывалось для полей с датой.
 
 ## Field UI
 
@@ -1090,6 +1137,9 @@ function mymodule_entity_type_build(array &$entity_types) {
 * [#3091870](https://www.drupal.org/node/3091870) Ошибки JavaScript выброшенные в `FunctionalJavascript` тестах теперь отлавливаются. Начиная с Drupal 10 они будут проваливать тесты.
 * [#2758357](https://www.drupal.org/node/2758357) Добавлена документация о том, что `core/phpunit.xml.dist` должен быть скопирован в `core/phpunit.xml` для последующей модификации.
 * [#3131900](https://www.drupal.org/node/3131900) Исправлены сравнения чьи результаты записываются в переменную.
+* [#3196470](https://www.drupal.org/node/3196470) Доработан пустой тест `KernelTestBaseTest::testOutboundHttpRequest()`.
+* [#3220255](https://www.drupal.org/node/3220255) Сравнения с использованием `xpath` на ссылки заменены на WebAssert.
+* [#3226106](https://www.drupal.org/node/3226106) Из `Drupal\Tests\node\Kernel\Migrate\d7\MigrateNodeTypeTest::assertEntity()` удалён `@dataProvider`.
 
 ## Прочие изменения
 

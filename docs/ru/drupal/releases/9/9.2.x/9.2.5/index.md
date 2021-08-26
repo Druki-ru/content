@@ -19,6 +19,16 @@ metatags:
 
 * [#3224414](https://www.drupal.org/node/3224414) Исправлена неполадка из-за которой модуль Syslog использовал свои настройки до того как они были записаны.
 
+## Typed Data System
+
+* [#2047119](https://www.drupal.org/node/2047119) Акутализирована документация аннотации `DataType`.
+
 ## Тестирование
 
 * [#3191935](https://www.drupal.org/node/3191935) Использование устаревшего `AssertLegacyTrait::assertNoText()` заменено современными методами.
+* [#3170396](https://www.drupal.org/node/3170396) Вызовы `t()` заменены на `::pageTextContains()` в вызовах `::assertRaw()` и `::assertNoRaw()`.
+* [#3227060](https://www.drupal.org/node/3227060) Вызов устаревшего `AssertLegacyTrait::assertNoRaw()` заменены на современные аналоги.
+
+## Прочие изменения
+
+* [#2989893](https://www.drupal.org/node/2989893) Из примера `substr` плагина-обработчика удалён лишний ключ `key`.
