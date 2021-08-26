@@ -793,6 +793,110 @@ function mymodule_media_create_access(AccountInterface $account, array $context,
 3. Запустить `yarn vendor-update` которая обновит библиотеку в `core/assets/vendor` директории, а также информацию в `core.libraries.yml`.
 4. Отправить изменения в ядро.
 
+## Drupal ядро больше не использует doctrine/reflection
+
+* [#3180351](https://www.drupal.org/node/3180351)
+
+Пакет `doctrine/reflection` больше не используется Drupal ядром потому что пакет заброшен и больше не поддерживается. Код из данного пакета на который опирается Drupal был скопирован в `Drupal\Component\Annotation\Doctrine`. Чтобы использовать этот код в сторонних и собственных модулях, вам требуется обновить пространства имён:
+
+* `Doctrine\Common\Reflection\StaticReflectionParser` → `Drupal\Component\Annotation\Doctrine\StaticReflectionParser`
+* `Doctrine\Common\Reflection\ClassFinderInterface` → `Drupal\Component\ClassFinder\ClassFinderInterface`
+
+Пакет `doctrine/reflection` останется в зависимостях до [Drupal 10](../../../../10/index.md) где и будет удалён. Однако, если вы хотите получить полную совместимость со всеми версиями PHP, код придется отрефакторить раньше, так как пакет не совместим с PHP 8.1.
+
+## Добавлен слой совместимости для InputBag Symfony
+
+* [#3162016](https://www.drupal.org/node/3162016)
+
+Symfony 5.2 представил `Symfony\Component\HttpFoundation\InputBag` для замены `Symfony\Component\HttpFoundation\ParameterBag` в некоторых случаях, и метод `Symfony\Component\HttpFoundation\InputBag::get()` был помечен устаревшим для нестроковых возвращаемых значений. Поэтому для получения нестрокового возвращаемого значения вместо него следует использовать `Drupal\Core\Http\InputBag::all()`. Класс `Drupal\Core\Http\InputBag` будет заменен классом `Symfony\Component\HttpFoundation\InputBag`, когда Symfony 4 перестанет поддерживаться Drupal.
+
+Основное отличие в том что `::all()` теперь может принимать параметр.
+
+**Ранее:**
+
+```php
+$ajax_page_state = $request->request->get('ajax_page_state', []);
+```
+
+Второй параметр опциональный и используется как значение по умолчанию если значение по ключу первого параметра отсутствует.
+
+**Сейчас:**
+
+Вариант #1:
+
+```php
+$ajax_page_state = $request->request->all('ajax_page_state');
+```
+
+* Если значение по ключу не существует, метод вернёт пустой массив.
+* Если значение по ключу существует и не является массивом, тогда будет выброшено исключение `UnexpectedValueException`.
+
+Вариант #2:
+
+```php
+$ajax_page_state = $request->request->all()['ajax_page_state'] ?? NULL;
+```
+
+* Вызывая метод таким способом, он никогда не приведёт к вызову исключения `UnexpectedValueException`.
+* Вызывая метод таким способом, у разработчика появляется возможность задать значение по умолчанию.
+
+## Шаблоны полей теперь учитывают настраиваемое отображение поля
+
+* [#3043840](https://www.drupal.org/node/3043840)
+
+Это изменение затрагивает только те сайты, которые включили настраиваемое отображение базовых полей типов материалов (`title`, `uid` и `created`) с помощью хука:
+
+```php
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function examplemodule_entity_base_field_info_alter(&$base_field_definitions, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'node') {
+    $base_field_definitions['created']->setDisplayConfigurable('view', TRUE);
+  }
+} 
+```
+
+### Ранее
+
+Для этих базовых полей использовался специальный шаблон поля, который отображал значения в строке и не отображал метку или многие атрибуты и классы обычного поля.
+
+Это поведение можно было отменить следующим образом:
+
+```php
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function mymodule_theme_registry_alter(&$theme_registry) {
+  unset($theme_registry['field__node__title']);
+  unset($theme_registry['field__node__uid']);
+  unset($theme_registry['field__node__created']);
+}
+```
+
+### Сейчас
+
+Если включено настраиваемое отображение, будет использоваться стандартный шаблон поля. Для поддержания обратной совместимости это происходит только в том случае, если было установлено дополнительное свойство типа сущности (введенное [в этом изменении](https://www.drupal.org/node/2925634)):
+
+```php
+function mymodule_entity_type_build(array &$entity_types) {
+  $entity_types['node']->set('enable_base_field_custom_preprocess_skipping', TRUE);
+}
+```
+
+### Изменения в шаблонах
+
+В стандартных темах (Stable, Classy, Bartik) шаблоны полей типов материалов `field--node--title.html.twig`, `field--node--created.html.twig`, `field--node--uid.html.twig` были изменены для проверки новой переменной `is_inline`:
+
+```php
+{% if not is_inline %}
+  {% include "field.html.twig" %}
+{% else %}
+...
+```
+
+Разработчики тем, переопределяющие любой из этих шаблонов, должны внести соответствующие изменения. В прочих случаях, когда тема наследует эти шаблоны от одной из тем ядра, изменения не требуются.
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -826,6 +930,7 @@ function mymodule_media_create_access(AccountInterface $account, array $context,
 ## Content Moderation
 
 * [#3211072](https://www.drupal.org/node/3211072) Плагин `\Drupal\content_moderation\Plugin\Derivative\DynamicLocalTasks` теперь требует передавать `Router` в конструктор.
+* [#3226516](https://www.drupal.org/node/3226516) Удалён дублирующий вызов `::drupalGet()` в `ModerationStateNodeTypeTest`.
 
 ## CKeditor
 
@@ -853,6 +958,10 @@ function mymodule_media_create_access(AccountInterface $account, array $context,
 ## File System
 
 * [#3224420](https://www.drupal.org/node/3224420) `throw new FileTransferException()` теперь возвращает `0` вместо `NULL`.
+
+## Filter
+
+* [#3224478](https://www.drupal.org/node/3224478) Ссылка в `/filter/tip` ведущая на <http://www.w3.org/TR/html/> изменена на новую — <https://html.spec.whatwg.org/>.
 
 ## Forms System
 
@@ -921,6 +1030,10 @@ function mymodule_media_create_access(AccountInterface $account, array $context,
 
 * [#1932810](https://www.drupal.org/node/1932810) Плагин-условия `NodeType` упразднён в пользу `\Drupal\entity\Plugin\Core\Condition\EntityBundle`, который был перенесён в ядро из модуля ctools.
 
+## REST
+
+* [#3002352](https://www.drupal.org/node/3002352) `CacheableHttpException` теперь передаёт `$headers` аргумент в `HttpException`.
+
 ## Routing System
 
 * [#3183036](https://www.drupal.org/node/3183036) Сервисы проверки прав доступа, что не используются ни одним маршрутом, больше не инициализируются.
@@ -976,7 +1089,7 @@ function mymodule_media_create_access(AccountInterface $account, array $context,
 
 * [#3091870](https://www.drupal.org/node/3091870) Ошибки JavaScript выброшенные в `FunctionalJavascript` тестах теперь отлавливаются. Начиная с Drupal 10 они будут проваливать тесты.
 * [#2758357](https://www.drupal.org/node/2758357) Добавлена документация о том, что `core/phpunit.xml.dist` должен быть скопирован в `core/phpunit.xml` для последующей модификации.
-* [#3191935](https://www.drupal.org/node/3191935) Использование устаревшего `AssertLegacyTrait::assertNoText()` заменено современными методами.
+* [#3131900](https://www.drupal.org/node/3131900) Исправлены сравнения чьи результаты записываются в переменную.
 
 ## Прочие изменения
 
@@ -988,3 +1101,4 @@ function mymodule_media_create_access(AccountInterface $account, array $context,
 * [#2830352](https://www.drupal.org/node/2830352) Обновлены ссылки ведущие на документацию Drupal 7.
 * [#3018091](https://www.drupal.org/node/3018091) Дополнена документация для `TaggedHandlersPass::process()`.
 * [#3203416](https://www.drupal.org/node/3203416) Добавлено объяснение, что параметр $form_id может обнаружить рекурсию в `FormValidator::doValidateForm()`.
+* [#3127716](https://www.drupal.org/node/3127716) Исправлена опечатка в документации `PathValidator`.
