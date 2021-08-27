@@ -52,6 +52,10 @@ metatags:
 * [#3226704](https://www.drupal.org/node/3226704) Улучшено отображение пункта главного меню при наведении.
 * [#3212120](https://www.drupal.org/node/3212120) Размер шрифта цитаты уменьшено если оно выводится в сайдбере.
 
+## Quick Edit
+
+* [#3228634](https://www.drupal.org/node/3228634) Все интеграционные тесты QuickEdit, включая `QuickEditImageEditorTestTrait`, были перемещены в пространство имён `quickedit`.
+
 ## Render System
 
 * [#3228656](https://www.drupal.org/node/3228656) Удалён устаревший `@todo` в `HtmlResponseAttachmentsProcessor`.
