@@ -171,7 +171,7 @@ Scaffold файлы хранятся в тех проектах, которые 
 
 ```json
 "allowed-packages": [
-  "drupal/core",
+  "upstream/project",
 ],
 ```
 

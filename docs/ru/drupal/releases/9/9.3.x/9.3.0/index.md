@@ -966,6 +966,46 @@ new ProviderRepository($http_client, $config_factory, $time, $cache_backend, 100
 new ProviderRepository($http_client, $config_factory, $time, $key_value_factory, $logger_factory, 1000);
 ```
 
+## ESLint теперь используется для валидации YAML
+
+* [#2591827](https://www.drupal.org/node/2591827)
+
+Плагин [eslint-plugin-yml](https://github.com/ota-meshi/eslint-plugin-yml) был добавлен в ESLint и скрипт прекоммита ядра, чтобы убедиться, что весь YAML в кодовой корректно отформатировано.
+
+Запуск `core/scripts/dev/commit-code-check.sh` проверит все измененные файлы YAML.
+
+Запуск `yarn lint:yaml` из каталога core проверит все YAML файлы в ядре.
+
+## Контроллеры, которые обращаются к $_SESSION, теперь принимают параметр Request
+
+* [#2473875](https://www.drupal.org/node/2473875)
+
+Контроллеры, которые ранее обращались к суперглобальному `$_SESSION`, теперь принимают параметр Symfony `Request` для своих методов контроллера. Теперь они получают доступ к сессии с помощью `$request->getSession()`.
+
+**Ранее:**
+
+```php
+\Drupal\dblog\Controller\DbLogController::overview()
+\Drupal\migrate_drupal_ui\Controller\MigrateController::showLog()
+\Drupal\user\Controller\UserController::resetPassLogin()
+```
+
+**Сейчас:**
+
+```php 
+\Drupal\dblog\Controller\DbLogController::overview(Request $request)
+\Drupal\migrate_drupal_ui\Controller\MigrateController::showLog(Request $request)
+\Drupal\user\Controller\UserController::resetPassLogin(Request $request)
+```
+
+## Настройка «Роль администратора» перемещена в новую форму «Настройки роли» по пути admin/people/role-settings
+
+* [#987978](https://www.drupal.org/node/987978)
+
+Новая форма «Настройки роли» теперь доступна по пути `admin/people/role-settings` как еще одна вкладка в разделе «Пользователи» (рядом с «Роли» и «Разрешения»), для доступа к которой требуется разрешение `'administer permissions'`.
+
+Это новый адрес для настройки «Роль администратора», которая раньше находилась по пути `admin/config/people/accounts` в форме «Настройки учетной записи». Эта настройка позволяет дать управление над правами доступа, поэтому для ее изменения пользователю теперь необходимо иметь права администратора.
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -1086,7 +1126,7 @@ new ProviderRepository($http_client, $config_factory, $time, $key_value_factory,
 
 * [#3222168](https://www.drupal.org/node/3222168) Везде где в качестве сигнатуры использовался `\GuzzleHttp\Client` теперь используется `\GuzzleHttp\ClientInterface`.
 * [#3215836](https://www.drupal.org/node/3215836) Добавлена новая константа `MigrateSourceInterface::NOT_COUNTABLE` которую необходимо использовать для неисчисляемых источников.
-* [#3022910](https://www.drupal.org/node/3022910) Название файла (`filename`) теперь получается из `uri`.
+* [#3227549](https://www.drupal.org/node/3227549) `\Drupal\migrate\Plugin\migrate\id_map\Sql::getRowByDestination()` теперь всегда возвращает массив.
 
 ## MySQL DB driver
 
@@ -1107,6 +1147,9 @@ new ProviderRepository($http_client, $config_factory, $time, $key_value_factory,
 * [#3226019](https://www.drupal.org/node/3226019) Протокол URL-адресов в `block--secondary-menu.html.twig` изменено на HTTPS.
 * [#3216489](https://www.drupal.org/node/3216489) Исправлена неполадка из-за которой предзагрузка шрифта не работала если сайту задан `base path`.
 * [#3228140](https://www.drupal.org/node/3228140) `aria-label` для кнопки мобильной навигации в `page.html.twig` изменено на «Main Menu».
+* [#3212975](https://www.drupal.org/node/3212975) Селекторы в `messages.es6.js` заменены с классов на `data-drupal-selector`.
+* [#3223332](https://www.drupal.org/node/3223332) Основная кнопка поиска теперь инициализируется с `aria-expanded="false"`.
+* [#3205597](https://www.drupal.org/node/3205597) Форме комментария добавлен заголовок.
 
 ## Path
 
@@ -1134,6 +1177,9 @@ new ProviderRepository($http_client, $config_factory, $time, $key_value_factory,
 * [#3056258](https://www.drupal.org/node/3056258) В форму добавления и редактирования термина таксономии добавлено новое действие «Сохранить и перейти к списку» — которое после сохранения материала перенаправит на страницу со всеми терминами словаря.
 * [#3037157](https://www.drupal.org/node/3037157) Исправлена неполадка из-за которой переводы словаря игнорировались в заголовках страниц «entity.taxonomy_vocabulary.overview_form» и «entity.taxonomy_vocabulary.reset_form».
 * [#3221149](https://www.drupal.org/node/3221149) Валидатор аргументов Views `\Drupal\taxonomy\Plugin\views\argument_validator\Term` помечен устаревшим. Вместо него используйте `\Drupal\views\Plugin\views\argument_validator\Entity`.
+* [#2133215](https://www.drupal.org/node/2133215) Улучшена производительность плагина аргументов `IndexTidDepth` и плагина фильтра `TaxonomyIndexTidDepth`. Это на 98% сокращает время выполнения запроса!
+* [#3229665](https://www.drupal.org/node/3229665) Исправлена неполадка в `\Drupal\Tests\taxonomy\Functional\Views\TaxonomyTermFilterDepthTest` которая могла приводить к непредсказуемым провалам тестирования.
+* [#3229686](https://www.drupal.org/node/3229686) Произведены микро-оптимизации для тестов функциональных и Kernel тестов `TaxonomyTermFilterDepthTest`.
 
 ## Text
 
@@ -1146,6 +1192,7 @@ new ProviderRepository($http_client, $config_factory, $time, $key_value_factory,
 ## Umami demo
 
 * [#3129666](https://www.drupal.org/node/3129666) В блоке брендирования для названия сайта больше не добавляется класс `visually-hidden`, который прятал заголовок даже если его необходимо показывать.
+* [#3227513](https://www.drupal.org/node/3227513) QuickEdit удалён из [установочного профиля](../../../../9/distributions/index.md) [Umami](../../../../9/distributions/demo-umami/index.md).
 
 ## Update
 
@@ -1188,6 +1235,6 @@ new ProviderRepository($http_client, $config_factory, $time, $key_value_factory,
 * [#1884836](https://www.drupal.org/node/1884836) В `DiffEngine` вызовы `md5()` заменены на `crc32b()`.
 * [#2725435](https://www.drupal.org/node/2725435) Удалён устаревший `@todo` ведущий на [#2364011](https://www.drupal.org/node/2364011).
 * [#2830352](https://www.drupal.org/node/2830352) Обновлены ссылки ведущие на документацию Drupal 7.
-* [#3018091](https://www.drupal.org/node/3018091) Дополнена документация для `TaggedHandlersPass::process()`.
-* [#3203416](https://www.drupal.org/node/3203416) Добавлено объяснение, что параметр $form_id может обнаружить рекурсию в `FormValidator::doValidateForm()`.
 * [#3127716](https://www.drupal.org/node/3127716) Исправлена опечатка в документации `PathValidator`.
+* [#3228396](https://www.drupal.org/node/3228396) Актуализирована ссылка на ChromeDriver.
+* [#3227386](https://www.drupal.org/node/3227386) Упрощен тест `BaseThemeMissingTest`.
