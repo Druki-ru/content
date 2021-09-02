@@ -7,8 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.2.5.'
 ---
 
-> [!WARNING]
-> Данная версия находится в разработке и не предназначена для использования.
+**Дата релиза:** 2 сентября 2021
 
 ## CKEditor
 
@@ -87,3 +86,7 @@ metatags:
 * [#3221715](https://www.drupal.org/node/3221715) [Brian Perry «brianperry»](https://www.drupal.org/u/brianperry) добавлен в качестве координатора инициативы decoupled меню.
 * [#3018091](https://www.drupal.org/node/3018091) Дополнена документация для `TaggedHandlersPass::process()`.
 * [#3203416](https://www.drupal.org/node/3203416) Добавлено объяснение, что параметр $form_id может обнаружить рекурсию в `FormValidator::doValidateForm()`.
+
+## Ссылки
+
+- [Drupal 9.2.5](https://www.drupal.org/project/drupal/releases/9.2.5) (англ.), drupal.org, 2 сентября 2021
