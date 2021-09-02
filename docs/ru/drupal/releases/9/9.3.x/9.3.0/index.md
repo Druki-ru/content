@@ -1055,6 +1055,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#3224000](https://www.drupal.org/node/3224000) Зависимости ядра обновлены на 27.07.2021.
 * [#3225733](https://www.drupal.org/node/3225733) Удалены следующие зависимости ядра: `fabpot/goutte` и `behat/mink-goutte-driver`.
+* [#3230562](https://www.drupal.org/node/3230562) Зависимости ядра обновлены на 31.08.2021.
 
 ## Configuration System
 
@@ -1122,6 +1123,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## JSON:API
 
 * [#3036593](https://www.drupal.org/node/3036593) ID сущности теперь содержится в `meta.drupal_internal__target_id`. Это позволяет фильтровать значения по данному свойству и получать внутренний ID, а не только UUID.
+* [#3147244](https://www.drupal.org/node/3147244) Сервис `jsonapi.field_resolver` теперь принимает аргумент `@current_user`.
 
 ## Language System
 
@@ -1186,6 +1188,10 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Routing System
 
 * [#3183036](https://www.drupal.org/node/3183036) Сервисы проверки прав доступа, что не используются ни одним маршрутом, больше не инициализируются.
+
+## Serialization
+
+* [#2997123](https://www.drupal.org/node/2997123) `PrimitiveDataNormalizer` теперь может передавать кеш-метаданные.
 
 ## System
 
@@ -1258,3 +1264,4 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3127716](https://www.drupal.org/node/3127716) Исправлена опечатка в документации `PathValidator`.
 * [#3228396](https://www.drupal.org/node/3228396) Актуализирована ссылка на ChromeDriver.
 * [#3227386](https://www.drupal.org/node/3227386) Упрощен тест `BaseThemeMissingTest`.
+* [#2639382](https://www.drupal.org/node/2639382) Исправлена неполадка из-за которой было невозможно перевести строки для некоторых относительных дат.
