@@ -948,6 +948,10 @@ if ($file->isTemporary()) {
 
 Стандартный профиль будет продолжать предоставлять Contextual Links (модуль, который обеспечивает выпадающее меню с иконкой карандаша, позволяющее открыть форму редактирования фрагмента контента). Владельцы сайта могут также рассмотреть альтернативные решения для редактирования на месте, например, модуль [Geysir](https://www.drupal.org/project/geysir).
 
+## PostgreSQL DB driver
+
+* [#3230801](https://www.drupal.org/node/3230801) Драйвер больше не записывает `NULL` в blob поля.
+
 ## ProviderRepository теперь запрашивает сервисы keyvalue и logger.factory
 
 * [#3186184](https://www.drupal.org/node/3186184)
@@ -1026,6 +1030,18 @@ $this->assertEquals($expected_top_level_contexts, $element['#cache']['contexts']
 $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache']['contexts'], 'Expected cache contexts found.');
 ```
 
+## Префиксы на уровне конкретных таблиц помечены устаревшими
+
+* [#2768219](https://www.drupal.org/node/2768219)
+
+Возможность задавать префиксы для каждой таблицы индивидуально помечена устаревшей и будет удалена в Drupal 10. После этого будет поддерживаться только один префикс для всех таблиц.
+
+Альтернативы:
+
+* **Пользователи, сессии и/или пользовательские роли общие для нескольких сайтов.** В качестве альтернативы можете использовать модули, которые позволяют организовать авторизацию в обход Drupal. Несколько примеров подобных модулей: [Lightweight Directory Access Protocol (LDAP)](https://www.drupal.org/project/ldap), [CAS](https://www.drupal.org/project/cas), [simpleSAMLphp Authentication](https://www.drupal.org/project/simplesamlphp_auth), [OpenID Connect](https://www.drupal.org/project/openid_connect) и [Bakery Single Sign-On System](https://www.drupal.org/project/bakery).
+* Для более продвинутых сценариев, где таблицы должны копироваться или мигрировать, но вы хотите использовать API ядра: добавьте настройки подключения для глобального префикса, затем заинжектите эти подключения в необходимые классы.
+* **Синхронизация содержимого и/или конфигураций.** Синхронизация конфигураций поддерживается Drupal ядром, но синхронизация содержимого чуть сложнее. На данный момент существует [инициатива для добавления синхронизации содержимого в ядро](https://www.drupal.org/project/ideas/issues/2721129). Как альтернативу, вы можете рассмотреть модуль [domain](https://www.drupal.org/project/domain) или [deploy](https://www.drupal.org/project/deploy).
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -1079,6 +1095,10 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Entity Reference
 
 * [#3225947](https://www.drupal.org/node/3225947) Удалён бесполезный файл `entity_reference.install` и `simpletest_install()`.
+
+## Entity System
+
+* [#3226487](https://www.drupal.org/node/3226487) Вкладка ревизий для материалов (`node`) теперь всегда показывается если у пользователя есть права на их просмотр и материал имеет больше одной ревизии.
 
 ## Extension System
 
@@ -1181,6 +1201,10 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#1932810](https://www.drupal.org/node/1932810) Плагин-условия `NodeType` упразднён в пользу `\Drupal\entity\Plugin\Core\Condition\EntityBundle`, который был перенесён в ядро из модуля ctools.
 
+## Render System
+
+* [#2794261](https://www.drupal.org/node/2794261) Функция `render()` помечена устаревшей. В качестве замены используйте сервис `renderer`.
+
 ## REST
 
 * [#3002352](https://www.drupal.org/node/3002352) `CacheableHttpException` теперь передаёт `$headers` аргумент в `HttpException`.
@@ -1219,6 +1243,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#3129666](https://www.drupal.org/node/3129666) В блоке брендирования для названия сайта больше не добавляется класс `visually-hidden`, который прятал заголовок даже если его необходимо показывать.
 * [#3227513](https://www.drupal.org/node/3227513) QuickEdit удалён из [установочного профиля](../../../../9/distributions/index.md) [Umami](../../../../9/distributions/demo-umami/index.md).
+* [#3230554](https://www.drupal.org/node/3230554) Установщик демо-содержимого больше не использует сервис `path_alias.manager`.
 
 ## Update
 
@@ -1252,6 +1277,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3196470](https://www.drupal.org/node/3196470) Доработан пустой тест `KernelTestBaseTest::testOutboundHttpRequest()`.
 * [#3226106](https://www.drupal.org/node/3226106) Из `Drupal\Tests\node\Kernel\Migrate\d7\MigrateNodeTypeTest::assertEntity()` удалён `@dataProvider`.
 * [#3139409](https://www.drupal.org/node/3139409) Использование устаревшего `AssertLegacyTrait::assertRaw()` заменено на современные подходы.
+* [#3227501](https://www.drupal.org/node/3227501) Удалены оставшиеся вызовы `t()`.
 
 ## Прочие изменения
 
