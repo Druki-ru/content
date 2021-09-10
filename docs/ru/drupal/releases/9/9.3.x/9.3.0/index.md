@@ -1076,6 +1076,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Configuration System
 
 * [#2926729](https://www.drupal.org/node/2926729) `ConfigManagerInterface::findConfigEntityDependents()` и `ConfigManagerInterface::findConfigEntityDependentsAsEntities()` теперь `ConfigManagerInterface::findConfigEntityDependencies()` и `ConfigManagerInterface::findConfigEntityDependenciesAsEntities()` соответственно.
+* [#2870874](https://www.drupal.org/node/2870874) `EntityBase::getTypedData()` теперь корректно возвращает данные для конфигурационных сущностей.
 
 ## Content Moderation
 
@@ -1091,6 +1092,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3211780](https://www.drupal.org/node/3211780) `Connection::queryTemporary()` помечен устаревшим.
 * [#3224199](https://www.drupal.org/node/3224199) Свойство `Connection::$temporaryNameIndex` помечено устаревшим.
 * [#838992](https://www.drupal.org/node/838992) Поле UID для таблицы пользователей изменено с целого числа на последовательное.
+* [#3230714](https://www.drupal.org/node/3230714) Тест `ConnectionUnitTest` пропускается если база данных не psql или mysql.
 
 ## Entity Reference
 
@@ -1152,6 +1154,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Layout Builder
 
 * [#3035174](https://www.drupal.org/node/3035174) Трейт `SectionStorageTrait` помечен устаревшим в пользу `SectionListTrait`.
+* [#3230928](https://www.drupal.org/node/3230928) Удалена зависимость на Quick Edit из `LayoutBuilderTest::testRemovingAllSections()`.
 
 ## Media System
 
@@ -1238,6 +1241,10 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Symfony 6
 
 * [#3209617](https://www.drupal.org/node/3209617) `Symfony\Component\HttpFoundation\RequestStack::getMasterRequest()` помечен устаревшим, необходимо использовать `::getMainRequest()`. Добавлен прокси-класс `Drupal\Core\Http\RequestStack`, который теперь возвращается сервисом `request_stack`.
+* [#3231668](https://www.drupal.org/node/3231668) Добавлен тайпхинт `Definition` для `Drupal\Core\DependencyInjection\ContainerBuilder::register()`.
+* [#3231669](https://www.drupal.org/node/3231669) Добавлен тайпхинт `Alias` для `Drupal\Core\DependencyInjection\ContainerBuilder::setAlias()`.
+* [#3231672](https://www.drupal.org/node/3231672) Добавлен тайпхинт `Definition` для `Drupal\Core\DependencyInjection\ContainerBuilder::setDefinition()`.
+* [#3231676](https://www.drupal.org/node/3231676) Добавлены тайпхинты для `Drupal\Core\TypedData\Validation\RecursiveValidator::inContext()` и `Drupal\Core\TypedData\Validation\RecursiveValidator::startContext()`.
 
 ## Umami demo
 
