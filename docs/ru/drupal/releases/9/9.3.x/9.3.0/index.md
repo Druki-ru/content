@@ -1072,6 +1072,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3224000](https://www.drupal.org/node/3224000) Зависимости ядра обновлены на 27.07.2021.
 * [#3225733](https://www.drupal.org/node/3225733) Удалены следующие зависимости ядра: `fabpot/goutte` и `behat/mink-goutte-driver`.
 * [#3230562](https://www.drupal.org/node/3230562) Зависимости ядра обновлены на 31.08.2021.
+* [#3232571](https://www.drupal.org/node/3232571) Зависимости ядра обновлены на 13.09.2021.
 
 ## Configuration System
 
@@ -1141,6 +1142,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## JavaScript
 
 * [#3212747](https://www.drupal.org/node/3212747) Удалено присвоение `BABEL_ENV` для скриптов сборки CSS и jQuery UI.
+* [#3228351](https://www.drupal.org/node/3228351) В ядро добавлена новая библиотека — [loadjs](https://github.com/muicss/loadjs). На данный момент она будет использоваться в `Drupal.ajax` чтобы убедиться что библиотеки, запрошенные с AJAX ответом, подключились.
 
 ## JSON:API
 
@@ -1195,6 +1197,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3212975](https://www.drupal.org/node/3212975) Селекторы в `messages.es6.js` заменены с классов на `data-drupal-selector`.
 * [#3223332](https://www.drupal.org/node/3223332) Основная кнопка поиска теперь инициализируется с `aria-expanded="false"`.
 * [#3205597](https://www.drupal.org/node/3205597) Форме комментария добавлен заголовок.
+* [#3224958](https://www.drupal.org/node/3224958) Раскрытые фильтры Views теперь отображаются в строке, а не в рядах.
 
 ## Path
 
@@ -1245,6 +1248,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3231669](https://www.drupal.org/node/3231669) Добавлен тайпхинт `Alias` для `Drupal\Core\DependencyInjection\ContainerBuilder::setAlias()`.
 * [#3231672](https://www.drupal.org/node/3231672) Добавлен тайпхинт `Definition` для `Drupal\Core\DependencyInjection\ContainerBuilder::setDefinition()`.
 * [#3231676](https://www.drupal.org/node/3231676) Добавлены тайпхинты для `Drupal\Core\TypedData\Validation\RecursiveValidator::inContext()` и `Drupal\Core\TypedData\Validation\RecursiveValidator::startContext()`.
+* [#3209619](https://www.drupal.org/node/3209619) Передача `NULL` в качестве аргумента для исключения, помечено устаревшим. Там где передавался такой аргумент теперь передаётся пустая строка.
 
 ## Umami demo
 
@@ -1285,6 +1289,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3226106](https://www.drupal.org/node/3226106) Из `Drupal\Tests\node\Kernel\Migrate\d7\MigrateNodeTypeTest::assertEntity()` удалён `@dataProvider`.
 * [#3139409](https://www.drupal.org/node/3139409) Использование устаревшего `AssertLegacyTrait::assertRaw()` заменено на современные подходы.
 * [#3227501](https://www.drupal.org/node/3227501) Удалены оставшиеся вызовы `t()`.
+* [#3130606](https://www.drupal.org/node/3130606) Использование `MockBuilder::setMethods()` заменено на современные аналоги, так как метод помечен устаревшим.
 
 ## Прочие изменения
 
