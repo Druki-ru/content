@@ -1,9 +1,9 @@
 ---
-title: 'Drupal 9.2.6'
-slug: drupal/releases/9.2.6
+title: 'Drupal 9.1.13'
+slug: drupal/releases/9.1.13
 core: 9
 metatags:
-title: 'Drupal 9.2.6: Список изменений'
+title: 'Drupal 9.1.13: Список изменений'
 description: 'Обновления безопасности исправляющее SA-CORE-2021-006, SA-CORE-2021-007, SA-CORE-2021-008, SA-CORE-2021-009, SA-CORE-2021-010.'
 ---
 
@@ -21,4 +21,4 @@ description: 'Обновления безопасности исправляющ
 
 ## Ссылки
 
-- [Drupal 9.2.6](https://www.drupal.org/project/drupal/releases/9.2.6) (англ.), drupal.org, 15 сентября 2021
+- [Drupal 9.1.13](https://www.drupal.org/project/drupal/releases/9.1.13) (англ.), drupal.org, 15 сентября 2021
