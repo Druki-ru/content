@@ -1063,6 +1063,10 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#2293257](https://www.drupal.org/node/2293257) Добавлены подсказки типов для переменных в `DrupalKernel`.
 
+## Claro
+
+* [#3154539](https://www.drupal.org/node/3154539) Добавлена новые градации серого.
+
 ## Comment
 
 * [#2927874](https://www.drupal.org/node/2927874) Исправлена неполадка из-за которой предпросмотр комментария показывался в неположенном месте.
@@ -1083,10 +1087,6 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#3211072](https://www.drupal.org/node/3211072) Плагин `\Drupal\content_moderation\Plugin\Derivative\DynamicLocalTasks` теперь требует передавать `Router` в конструктор.
 * [#3226516](https://www.drupal.org/node/3226516) Удалён дублирующий вызов `::drupalGet()` в `ModerationStateNodeTypeTest`.
-
-## CKeditor
-
-* [#2556069](https://www.drupal.org/node/2556069) Исправлена неполадка приводящая к JS ошибке при использовании фильтра `filtered_html`.
 
 ## Database System
 
@@ -1198,6 +1198,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3223332](https://www.drupal.org/node/3223332) Основная кнопка поиска теперь инициализируется с `aria-expanded="false"`.
 * [#3205597](https://www.drupal.org/node/3205597) Форме комментария добавлен заголовок.
 * [#3224958](https://www.drupal.org/node/3224958) Раскрытые фильтры Views теперь отображаются в строке, а не в рядах.
+* [#3226785](https://www.drupal.org/node/3226785) Поисковая форма теперь закрывается при потери фокуса.
 
 ## Path
 
@@ -1303,3 +1304,6 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3228396](https://www.drupal.org/node/3228396) Актуализирована ссылка на ChromeDriver.
 * [#3227386](https://www.drupal.org/node/3227386) Упрощен тест `BaseThemeMissingTest`.
 * [#2639382](https://www.drupal.org/node/2639382) Исправлена неполадка из-за которой было невозможно перевести строки для некоторых относительных дат.
+* [#3233015](https://www.drupal.org/node/3233015) Произведён рефакторинг `\Drupal\Component\Utility\Random::image()` чтобы не было уведомлений об устаревшем коде на PHP 8.1.
+* [#3212498](https://www.drupal.org/node/3212498) Исправлены некорректные `</br>`.
+* [#3224523](https://www.drupal.org/node/3224523) Для части методов добавлен аттрибут `#[ReturnTypeWillChange]`.
