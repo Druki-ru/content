@@ -25,10 +25,15 @@ metatags:
 ## JSON:API
 
 * [#3225034](https://www.drupal.org/node/3225034) Произведён небольшой рефакторинг кода в `ResourceTypeRepository::all()` для упрощения кода.
+* [#3214675](https://www.drupal.org/node/3214675) Исправлена неполадка приводящая к `422 Unprocessable Entity` при загрузке файлов в корень публичной директории.
 
 ## Layout Builder
 
 * [#3104980](https://www.drupal.org/node/3104980) `layout_builder_system_breadcrumb_alter()` теперь проверяет что объект маршрута существует.
+
+## Migration System
+
+* [#3085192](https://www.drupal.org/node/3085192) Добавлен индекс на `source_ids_hash` для таблиц `migrate_message_*`.
 
 ## Olivero
 
@@ -48,6 +53,7 @@ metatags:
 ## Тестирование
 
 * [#3139409](https://www.drupal.org/node/3139409) Использование устаревшего `AssertLegacyTrait::assertRaw()` заменено на современные аналоги.
+* [#3130606](https://www.drupal.org/node/3130606) Использование `MockBuilder::setMethods()` заменено на современные аналоги, так как метод помечен устаревшим.
 
 ## Прочие изменения
 

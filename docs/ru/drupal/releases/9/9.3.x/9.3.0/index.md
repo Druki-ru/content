@@ -1077,11 +1077,14 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3225733](https://www.drupal.org/node/3225733) Удалены следующие зависимости ядра: `fabpot/goutte` и `behat/mink-goutte-driver`.
 * [#3230562](https://www.drupal.org/node/3230562) Зависимости ядра обновлены на 31.08.2021.
 * [#3232571](https://www.drupal.org/node/3232571) Зависимости ядра обновлены на 13.09.2021.
+* [#3236249](https://www.drupal.org/node/3236249) Зависимости ядра обновлены на 17.09.2021.
+* [#3238201](https://www.drupal.org/node/3238201) Зависимости ядра обновлены на 21.09.2021.
 
 ## Configuration System
 
 * [#2926729](https://www.drupal.org/node/2926729) `ConfigManagerInterface::findConfigEntityDependents()` и `ConfigManagerInterface::findConfigEntityDependentsAsEntities()` теперь `ConfigManagerInterface::findConfigEntityDependencies()` и `ConfigManagerInterface::findConfigEntityDependenciesAsEntities()` соответственно.
 * [#2870874](https://www.drupal.org/node/2870874) `EntityBase::getTypedData()` теперь корректно возвращает данные для конфигурационных сущностей.
+* [#3233480](https://www.drupal.org/node/3233480) Исправлена опечатка в название класса `InstallerExistingConfigSyncDriectoryProfileMismatchTest`.
 
 ## Content Moderation
 
@@ -1094,6 +1097,11 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3224199](https://www.drupal.org/node/3224199) Свойство `Connection::$temporaryNameIndex` помечено устаревшим.
 * [#838992](https://www.drupal.org/node/838992) Поле UID для таблицы пользователей изменено с целого числа на последовательное.
 * [#3230714](https://www.drupal.org/node/3230714) Тест `ConnectionUnitTest` пропускается если база данных не psql или mysql.
+
+## Datetime
+
+* [#3236798](https://www.drupal.org/node/3236798) В методе `\Drupal\Core\Datetime\DateFormatter::formatInterval()` улучшена совместимость с PHP 8.1.
+* [#3236796](https://www.drupal.org/node/3236796) Улучшена совместимость с PHP 8.1 в классах `Drupal\Core\Datetime`.
 
 ## Entity Reference
 
@@ -1148,6 +1156,8 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#3036593](https://www.drupal.org/node/3036593) ID сущности теперь содержится в `meta.drupal_internal__target_id`. Это позволяет фильтровать значения по данному свойству и получать внутренний ID, а не только UUID.
 * [#3147244](https://www.drupal.org/node/3147244) Сервис `jsonapi.field_resolver` теперь принимает аргумент `@current_user`.
+* [#3231040](https://www.drupal.org/node/3231040) Исключения JSON:API больше не используют `DependencySerializationTrait`.
+* [#3236255](https://www.drupal.org/node/3236255) Из тестов, где возможно, удалены вызовы `::rebuildAll()`.
 
 ## Language System
 
@@ -1163,6 +1173,10 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3222486](https://www.drupal.org/node/3222486) Метки для удалённых видео (remote video) обновлены таким образом, что они теперь более последовательны и менее многословны.
 * [#3222282](https://www.drupal.org/node/3222282) Из файла `media_library.module` удалён `@todo` на ишью [#2964789](https://www.drupal.org/project/drupal/issues/2964789).
 * [#3028664](https://www.drupal.org/node/3028664) Ошибке oEmbed провайдера теперь логируются.
+
+## Menu System
+
+* [#3212021](https://www.drupal.org/node/3212021) Обновлён код `MenuTreeParameters` для поддержки PHP 8.1.
 
 ## Menu UI
 
@@ -1208,9 +1222,14 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#1932810](https://www.drupal.org/node/1932810) Плагин-условия `NodeType` упразднён в пользу `\Drupal\entity\Plugin\Core\Condition\EntityBundle`, который был перенесён в ядро из модуля ctools.
 
+## Quick Edit
+
+* [#3231071](https://www.drupal.org/node/3231071) Удалены аннотации `quickedit` из форматтеров-полей `TestTextTrimmedFormatter` и `DummyImageFormatter`.
+
 ## Render System
 
 * [#2794261](https://www.drupal.org/node/2794261) Функция `render()` помечена устаревшей. В качестве замены используйте сервис `renderer`.
+* [#3192839](https://www.drupal.org/node/3192839) Некоторые проверки в тестах для `Renderer` теперь используют `assert()`.
 
 ## REST
 
@@ -1219,6 +1238,8 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Routing System
 
 * [#3183036](https://www.drupal.org/node/3183036) Сервисы проверки прав доступа, что не используются ни одним маршрутом, больше не инициализируются.
+* [#3236789](https://www.drupal.org/node/3236789) Улучшен код в `Drupal\Core\Controller\TitleResolver::getTitle()` для совместимости с PHP 8.1.
+* [#3233047](https://www.drupal.org/node/3233047) `Drupal\Core\Routing\RequestContext::fromRequest()` теперь возвращает `$this`.
 
 ## Serialization
 
@@ -1250,6 +1271,25 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3231672](https://www.drupal.org/node/3231672) Добавлен тайпхинт `Definition` для `Drupal\Core\DependencyInjection\ContainerBuilder::setDefinition()`.
 * [#3231676](https://www.drupal.org/node/3231676) Добавлены тайпхинты для `Drupal\Core\TypedData\Validation\RecursiveValidator::inContext()` и `Drupal\Core\TypedData\Validation\RecursiveValidator::startContext()`.
 * [#3209619](https://www.drupal.org/node/3209619) Передача `NULL` в качестве аргумента для исключения, помечено устаревшим. Там где передавался такой аргумент теперь передаётся пустая строка.
+* [#3233464](https://www.drupal.org/node/3233464) Добавлен тайпхинт `ExecutionContextInterface` для методов переопределяющих `Symfony\Component\Validator\Context\ExecutionContextFactoryInterface::createContext()`.
+* [#3233481](https://www.drupal.org/node/3233481) Добавлены тайпхинты для методов переопределяющих `Symfony\Component\Validator\Mapping\Factory\MetadataFactoryInterface::getMetadataFor()` и `::hasMetadataFor()`.
+* [#3233023](https://www.drupal.org/node/3233023) Добавлен тайпхинт `RouteCollection` для методов переопределяющих `Symfony\Component\Routing\RouterInterface::getRouteCollection()`.
+* [#3231686](https://www.drupal.org/node/3231686) Добавлен тайпхинт `ConstraintViolationBuilderInterface` для метода `Drupal\Core\TypedData\Validation\ExecutionContext::buildViolation()`.
+* [#3233045](https://www.drupal.org/node/3233045) Добавлен тайпхинт `array` для методов переопределяющих `Symfony\Component\Routing\Matcher\RequestMatcherInterface::matchRequest()`.
+* [#3232888](https://www.drupal.org/node/3232888) Добавлен тайпхинт `array` для метода `Drupal\Core\Routing\UrlMatcher::getAttributes()`.
+* [#3232110](https://www.drupal.org/node/3232110) Добавлены тайпхинты для методов `Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher::getListeners()`, `::getListenerPriority()` и `::hasListeners()`.
+* [#3231688](https://www.drupal.org/node/3231688) (откачено) Добавлены тайпхинты для методов `Drupal\Core\TypedData\Validation\ExecutionContext::getViolations()`, `::getValidator()`, `::getRoot()` и `::getValue()`.
+* [#3231689](https://www.drupal.org/node/3231689) Добавлены тайпхинты для методов `Drupal\Core\TypedData\Validation\ExecutionContext::getObject()`, `::getMetadata()`, `::getGroup()`, `::getClassName()`, `::getPropertyName()` и `::getPropertyPath()`.
+* [#3231690](https://www.drupal.org/node/3231690) Добавлены тайпхинты для методов `Drupal\Core\TypedData\Validation\TypedDataMetadata::findConstraints()`, `::getConstraints()`, `::getTraversalStrategy()` и `::getCascadingStrategy()`.
+* [#3231393](https://www.drupal.org/node/3231393) Вызовы `Symfony\Component\DependencyInjection\Alias::getDeprecationMessage()` и `Symfony\Component\DependencyInjection\Definition::getDeprecationMessage()` заменены на `::getDeprecation()`.
+* [#3231390](https://www.drupal.org/node/3231390) Добавлен тайпхинт для метода `Drupal\Tests\DrupalTestBrowser::doRequest()`.
+* [#3232082](https://www.drupal.org/node/3232082) Добавлен тайпхинт`Response` для методов реализующих `Symfony\Component\HttpKernel\HttpKernelInterface::handle()`.
+* [#3233466](https://www.drupal.org/node/3233466) Добавлен тайпхинт`ConstraintValidatorInterface` для методов реализующих `Symfony\Component\Validator\ConstraintValidatorFactoryInterface::getInstance()`.
+* [#3233482](https://www.drupal.org/node/3233482) Добавлены тайпхинты для методов `Symfony\Component\Validator\Constraint::getDefaultOption()` и `::getRequiredOptions()`.
+* [#3231682](https://www.drupal.org/node/3233466) Добавлен тайпхинт`ConstraintViolationListInterface` для методов `Drupal\Core\TypedData\Validation\RecursiveValidator::validate()`, `::validateProperty()` и `::validatePropertyValue()`.
+* [#3232895](https://www.drupal.org/node/3232895) Добавлен тайпхинт`string` для методов переопределяющих `Symfony\Component\Routing\Generator\UrlGeneratorInterface::generate()`.
+* [#3233041](https://www.drupal.org/node/3233041) Добавлен тайпхинт`array` для методов переопределяющих `Symfony\Component\Routing\Matcher\UrlMatcherInterface::match()`.
+* [#3232893](https://www.drupal.org/node/3232893) Добавлен тайпхинт`ArrayIterator` для метода `Drupal\Core\Routing\LazyRouteCollection::getIterator()`.
 
 ## Umami demo
 
@@ -1290,7 +1330,6 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3226106](https://www.drupal.org/node/3226106) Из `Drupal\Tests\node\Kernel\Migrate\d7\MigrateNodeTypeTest::assertEntity()` удалён `@dataProvider`.
 * [#3139409](https://www.drupal.org/node/3139409) Использование устаревшего `AssertLegacyTrait::assertRaw()` заменено на современные подходы.
 * [#3227501](https://www.drupal.org/node/3227501) Удалены оставшиеся вызовы `t()`.
-* [#3130606](https://www.drupal.org/node/3130606) Использование `MockBuilder::setMethods()` заменено на современные аналоги, так как метод помечен устаревшим.
 
 ## Прочие изменения
 
@@ -1307,3 +1346,9 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3233015](https://www.drupal.org/node/3233015) Произведён рефакторинг `\Drupal\Component\Utility\Random::image()` чтобы не было уведомлений об устаревшем коде на PHP 8.1.
 * [#3212498](https://www.drupal.org/node/3212498) Исправлены некорректные `</br>`.
 * [#3224523](https://www.drupal.org/node/3224523) Для части методов добавлен аттрибут `#[ReturnTypeWillChange]`.
+* [#3232691](https://www.drupal.org/node/3232691) Произведён рефакторинг `\Drupal\Core\Ajax\AjaxHelperTrait` для совместимости с PHP 8.1.
+* [#3232687](https://www.drupal.org/node/3232687) Произведён рефакторинг `\Drupal\Core\Config\Entity\ConfigEntityStorage::save()` для совместимости с PHP 8.1.
+* [#3233012](https://www.drupal.org/node/3233012) Произведён рефакторинг `\Drupal\Core\Render\Element\HtmlTag` для совместимости с PHP 8.1.
+* [#3224421](https://www.drupal.org/node/3224421) Добавлена прослойка для Guzzle 6 для работы на PHP 8.1.
+* [#3238210](https://www.drupal.org/node/3238210) Метод-двойник для `Drupal\Tests\Core\Routing\LazyRouteCollectionTest` теперь возвращает `ArrayIterator`.
+* [#3236284](https://www.drupal.org/node/3236284) В качестве значения по умолчанию при обращении к значению заголовка запроса теперь используется строка.
