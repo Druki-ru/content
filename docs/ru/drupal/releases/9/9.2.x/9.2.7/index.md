@@ -31,9 +31,15 @@ metatags:
 
 * [#3104980](https://www.drupal.org/node/3104980) `layout_builder_system_breadcrumb_alter()` теперь проверяет что объект маршрута существует.
 
+## Media System
+
+* [#3230772](https://www.drupal.org/node/3230772) `OembedMediaController` теперь корректно собирает кеш-метаданные.
+
 ## Migration System
 
 * [#3085192](https://www.drupal.org/node/3085192) Добавлен индекс на `source_ids_hash` для таблиц `migrate_message_*`.
+* [#3200534](https://www.drupal.org/node/3200534) `ContentEntityTest` теперь использует `@dataprovider`.
+* [#3229734](https://www.drupal.org/node/3229734) Внесены улучшения и комментарии к тесту `ContentEntityTest`.
 
 ## Olivero
 
@@ -45,6 +51,10 @@ metatags:
 ## Render System
 
 * [#2938969](https://www.drupal.org/node/2938969) Упоминания функции `drupal_render()` в документации заменены на `RendererInterface` и соответствующие методы.
+
+## User
+
+* [#3132145](https://www.drupal.org/node/3132145) Исправлена неполадка из-за которой контекстуальный фильтр Views «allow multiple» не работал для фильтрации пользовательских ролей.
 
 ## Views
 

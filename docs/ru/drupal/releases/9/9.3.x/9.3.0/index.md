@@ -1042,6 +1042,37 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * Для более продвинутых сценариев, где таблицы должны копироваться или мигрировать, но вы хотите использовать API ядра: добавьте настройки подключения для глобального префикса, затем заинжектите эти подключения в необходимые классы.
 * **Синхронизация содержимого и/или конфигураций.** Синхронизация конфигураций поддерживается Drupal ядром, но синхронизация содержимого чуть сложнее. На данный момент существует [инициатива для добавления синхронизации содержимого в ядро](https://www.drupal.org/project/ideas/issues/2721129). Как альтернативу, вы можете рассмотреть модуль [domain](https://www.drupal.org/project/domain) или [deploy](https://www.drupal.org/project/deploy).
 
+## Информация о количестве данных в источники миграции теперь может быть закеширована
+
+* [#3190818](https://www.drupal.org/node/3190818)
+
+Плагины-источники теперь могут кешировать результат подсчёта количества элементов используя метод `::doCount()`. Это изменение повлияет на плагины расширяющие `SourcePluginBase` и переопределяющие метод `::count()`. Если вы используете данный метод, конвертируйте его в `::doCount()` чтобы получить положительный эффект от нового кеширования.
+
+> [!NOTE]
+> Технически, это изменение API. Старое поведение было задумано быть таким, как сейчас. Но в [#3190815](https://www.drupal.org/project/drupal/issues/3190815) выяснилось что все классы наследующиеся от `SqlBase` или `DrupalSqlBase` не кешировали результат, потому что `SqlBase::count()` переопределял `SourcePluginBase::count()`.
+
+**Ранее:**
+
+```php
+  /**
+   * {@inheritdoc}
+   */
+  public function count($refresh = FALSE) {
+    ...
+  }
+```
+
+**Сейчас:**
+
+```php
+  /**
+   * {@inheritdoc}
+   */
+  protected function doCount() {
+    ...
+  }
+```
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -1062,6 +1093,11 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Bootstrap System
 
 * [#2293257](https://www.drupal.org/node/2293257) Добавлены подсказки типов для переменных в `DrupalKernel`.
+
+## Big Pipe
+
+* [#3238941](https://www.drupal.org/node/3238941) Внесены улучшения в `\Drupal\big_pipe\Render\BigPipe::splitHtmlOnPlaceholders()` для совместимости с PHP 8.1.
+* [#3204273](https://www.drupal.org/node/3204273) BigPipe больше не использует jQuery.
 
 ## Claro
 
@@ -1085,6 +1121,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#2926729](https://www.drupal.org/node/2926729) `ConfigManagerInterface::findConfigEntityDependents()` и `ConfigManagerInterface::findConfigEntityDependentsAsEntities()` теперь `ConfigManagerInterface::findConfigEntityDependencies()` и `ConfigManagerInterface::findConfigEntityDependenciesAsEntities()` соответственно.
 * [#2870874](https://www.drupal.org/node/2870874) `EntityBase::getTypedData()` теперь корректно возвращает данные для конфигурационных сущностей.
 * [#3233480](https://www.drupal.org/node/3233480) Исправлена опечатка в название класса `InstallerExistingConfigSyncDriectoryProfileMismatchTest`.
+* [#3232695](https://www.drupal.org/node/3232695) `Condition` с операторами `IS NULL` и `IS NOT NULL` теперь используется только при наличии значения для сравнения.
 
 ## Content Moderation
 
@@ -1225,6 +1262,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Quick Edit
 
 * [#3231071](https://www.drupal.org/node/3231071) Удалены аннотации `quickedit` из форматтеров-полей `TestTextTrimmedFormatter` и `DummyImageFormatter`.
+* [#3227161](https://www.drupal.org/node/3227161) Тесты, что не тестируют Quick Edit больше не используют его селекторы.
 
 ## Render System
 
@@ -1240,6 +1278,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3183036](https://www.drupal.org/node/3183036) Сервисы проверки прав доступа, что не используются ни одним маршрутом, больше не инициализируются.
 * [#3236789](https://www.drupal.org/node/3236789) Улучшен код в `Drupal\Core\Controller\TitleResolver::getTitle()` для совместимости с PHP 8.1.
 * [#3233047](https://www.drupal.org/node/3233047) `Drupal\Core\Routing\RequestContext::fromRequest()` теперь возвращает `$this`.
+* [#3238942](https://www.drupal.org/node/3238942) Внесены улучшения в `\Drupal\Core\Routing\RedirectDestination::get()` для совместимости с PHP 8.1.
 
 ## Serialization
 
@@ -1248,6 +1287,10 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## System
 
 * [#778346](https://www.drupal.org/node/778346) Функция `system_sort_modules_by_info_name()` помечена устаревшей и заменена идентичной `system_sort_by_info_name()`. Это переименование сделано так как старое название не совсем подходящее.
+
+## SQLite DB driver
+
+* [#3232699](https://www.drupal.org/node/3232699) Драйвер теперь использует `NULL` там где это нужно, вместо кастинга его в строку.
 
 ## Taxonomy
 
@@ -1330,6 +1373,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3226106](https://www.drupal.org/node/3226106) Из `Drupal\Tests\node\Kernel\Migrate\d7\MigrateNodeTypeTest::assertEntity()` удалён `@dataProvider`.
 * [#3139409](https://www.drupal.org/node/3139409) Использование устаревшего `AssertLegacyTrait::assertRaw()` заменено на современные подходы.
 * [#3227501](https://www.drupal.org/node/3227501) Удалены оставшиеся вызовы `t()`.
+* [#3233010](https://www.drupal.org/node/3233010) Внесены изменения в `drupal_phpunit_contrib_extension_directory_roots()` для совместимости с PHP 8.1.
 
 ## Прочие изменения
 
@@ -1352,3 +1396,6 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3224421](https://www.drupal.org/node/3224421) Добавлена прослойка для Guzzle 6 для работы на PHP 8.1.
 * [#3238210](https://www.drupal.org/node/3238210) Метод-двойник для `Drupal\Tests\Core\Routing\LazyRouteCollectionTest` теперь возвращает `ArrayIterator`.
 * [#3236284](https://www.drupal.org/node/3236284) В качестве значения по умолчанию при обращении к значению заголовка запроса теперь используется строка.
+* [#3238452](https://www.drupal.org/node/3238452) Исключения теперь передают пустую строку по умолчанию вместо `NULL` для совместимости с PHP 8.1.
+* [#3236769](https://www.drupal.org/node/3236769) Произведён рефакторинг `\Drupal\Component\Gettext\PoItem` для совместимости с PHP 8.1.
+* [#3238457](https://www.drupal.org/node/3238457) Внесены улучшения в `\Drupal\Core\EventSubscriber\ActiveLinkResponseFilter::setLinkActiveClass()` для совместимости с PHP 8.1.
