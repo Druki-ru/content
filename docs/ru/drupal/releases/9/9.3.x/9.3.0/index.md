@@ -1073,6 +1073,26 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
   }
 ```
 
+## Drupal.tabbingManager теперь позволяет перехватывать фокус
+
+* [#3229828](https://www.drupal.org/node/3229828)
+
+До этого изменения `Drupal.tabbingManager` мог ограничить переход по определённым элементам, но не мог перехватить фокус внутри этих элементов. Например, переход к последнему элементу или предыдущему, находясь на первом элементе, приводил к тому, что фокус полностью покидал область просмотра браузера.
+
+`Drupal.tabbingManager` теперь имеет возможность перехватывать фокус, поэтому переход к последнему элементу установит фокус на первый элемент набора, а переход с первого элемента, сместит фокус на последний элемент. Это полезно для таких элементов как диалоговые окна, в которых переходы должны быть цикличны до тех пор, пока диалог не будет закрыть.
+
+Поведение по умолчанию для `Drupal.tabbingManager` остаётся неизменным. Перехват фокусировки должен быть явно настроен при вызове `Drupal.tabbingManager`. `Drupal.tabbingManager.constrain` теперь принимает второй аргумент: объект, который может включать свойство `trapFocus`. При значении `true` фокусировка будет перехвачена в пределах выбранных элементов.
+
+**Пример:**
+
+```
+Drupal.tabbingManager.constrain(element, { trapFocus: true });
+```
+
+## Aggregator
+
+* [#3239552](https://www.drupal.org/node/3239552) Внесены улучшения в вызовы `has()` для совместимости с PHP 8.1.
+
 ## Bartik
 
 * [#2725539](https://www.drupal.org/node/2725539) Улучшена контрастность различных состояний при наведении и фокусировке элементе.
@@ -1115,6 +1135,8 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3232571](https://www.drupal.org/node/3232571) Зависимости ядра обновлены на 13.09.2021.
 * [#3236249](https://www.drupal.org/node/3236249) Зависимости ядра обновлены на 17.09.2021.
 * [#3238201](https://www.drupal.org/node/3238201) Зависимости ядра обновлены на 21.09.2021.
+* [#3239270](https://www.drupal.org/node/3239270) Зависимости ядра обновлены на 26.09.2021.
+* [#3239772](https://www.drupal.org/node/3239772) Зависимости ядра обновлены на 29.09.2021.
 
 ## Configuration System
 
@@ -1147,10 +1169,12 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Entity System
 
 * [#3226487](https://www.drupal.org/node/3226487) Вкладка ревизий для материалов (`node`) теперь всегда показывается если у пользователя есть права на их просмотр и материал имеет больше одной ревизии.
+* [#3232673](https://www.drupal.org/node/3232673) `\Drupal\Core\Entity\EntityInterface::label()` может возвращать `NULL`, в связи с чем, весь код в ядре что использует это значение, теперь будет использовать ID сущности если заголовок недоступен.
 
 ## Extension System
 
 * [#3225779](https://www.drupal.org/node/3225779) Функция `system_sort_modules_by_info_name()` помечена устаревшей. В качестве замены используйте `Drupal\Core\Extension\ExtensionList::sortByName()`.
+* [#3236446](https://www.drupal.org/node/3236446) Внесены улучшения в `ModilesListConfirmForm` и `ModulesListForm` для уменьшения дублирующего кода.
 
 ## Field System
 
@@ -1158,6 +1182,8 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#2226811](https://www.drupal.org/node/2226811) Исправлен тайпхинт для параметра `$definition` в `FieldItemBase`. Ранее он указывал что тип должен быть `DataDefinitionInterface`, но на самом деле ожидал `ComplexDataDefinitionInterface`.
 * [#3218711](https://www.drupal.org/node/3218711) Добавлен тест покрывающий максимальный размер загрузки равный '300 0'. Данное значение невалидно и должно выдавать ошибку.
 * [#2508866](https://www.drupal.org/node/2508866) Исправлена неполадка из-за которой описание поля не показывалось для полей с датой.
+* [#3238227](https://www.drupal.org/node/3238227) Внесены улучшения в `\Drupal\Core\Field\Plugin\Field\FieldType\PasswordItem` для совместимости с PHP 8.1.
+* [#3239744](https://www.drupal.org/node/3239744) Внесены улучшения в `\Drupal\Core\Field\WidgetBase::getFilteredDescription()` для совместимости с PHP 8.1.
 
 ## Field UI
 
@@ -1167,6 +1193,8 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#3224420](https://www.drupal.org/node/3224420) `throw new FileTransferException()` теперь возвращает `0` вместо `NULL`.
 * [#2032893](https://www.drupal.org/node/2032893) Функция `_views_file_status()` помечена устаревшей.
+* [#3239831](https://www.drupal.org/node/3239831) Удалён устаревший `@todo` из `\Drupal\Core\StreamWrapper\LocalStream::getDirectoryPath()`.
+* [#3239761](https://www.drupal.org/node/3239761) Внесены улучшения в `\Drupal\Core\StreamWrapper\PrivateStream::basePath()` для совместимости с PHP 8.1.
 
 ## Filter
 
@@ -1188,6 +1216,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#3212747](https://www.drupal.org/node/3212747) Удалено присвоение `BABEL_ENV` для скриптов сборки CSS и jQuery UI.
 * [#3228351](https://www.drupal.org/node/3228351) В ядро добавлена новая библиотека — [loadjs](https://github.com/muicss/loadjs). На данный момент она будет использоваться в `Drupal.ajax` чтобы убедиться что библиотеки, запрошенные с AJAX ответом, подключились.
+* [#3217355](https://www.drupal.org/node/3217355) Добавлена новая конфигурация `skip_testcases_on_fail: false` в `core/tests/Drupal/Nightwatch/nightwatch.conf.js`.
 
 ## JSON:API
 
@@ -1225,6 +1254,8 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3222168](https://www.drupal.org/node/3222168) Везде где в качестве сигнатуры использовался `\GuzzleHttp\Client` теперь используется `\GuzzleHttp\ClientInterface`.
 * [#3215836](https://www.drupal.org/node/3215836) Добавлена новая константа `MigrateSourceInterface::NOT_COUNTABLE` которую необходимо использовать для неисчисляемых источников.
 * [#3227549](https://www.drupal.org/node/3227549) `\Drupal\migrate\Plugin\migrate\id_map\Sql::getRowByDestination()` теперь всегда возвращает массив.
+* [#3239556](https://www.drupal.org/node/3239556) Исправлен тип возвращаемых данных для `\Drupal\Tests\migrate\Kernel\TestFilterIterator::accept()`.
+* [#3222844](https://www.drupal.org/node/3222844) Добавлена документация о возвращаемом значение `MigrateExecutableInterface::import()`.
 
 ## MySQL DB driver
 
@@ -1250,6 +1281,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3205597](https://www.drupal.org/node/3205597) Форме комментария добавлен заголовок.
 * [#3224958](https://www.drupal.org/node/3224958) Раскрытые фильтры Views теперь отображаются в строке, а не в рядах.
 * [#3226785](https://www.drupal.org/node/3226785) Поисковая форма теперь закрывается при потери фокуса.
+* [#3194560](https://www.drupal.org/node/3194560) Добавлено оформления для страницы «Сайт на технических работах».
 
 ## Path
 
@@ -1268,6 +1300,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 
 * [#2794261](https://www.drupal.org/node/2794261) Функция `render()` помечена устаревшей. В качестве замены используйте сервис `renderer`.
 * [#3192839](https://www.drupal.org/node/3192839) Некоторые проверки в тестах для `Renderer` теперь используют `assert()`.
+* [#3239762](https://www.drupal.org/node/3239762) Внесены улучшения в `\Drupal\Core\Template\AttributeString::__toString()` для совместимости с PHP 8.1.
 
 ## REST
 
@@ -1279,6 +1312,11 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3236789](https://www.drupal.org/node/3236789) Улучшен код в `Drupal\Core\Controller\TitleResolver::getTitle()` для совместимости с PHP 8.1.
 * [#3233047](https://www.drupal.org/node/3233047) `Drupal\Core\Routing\RequestContext::fromRequest()` теперь возвращает `$this`.
 * [#3238942](https://www.drupal.org/node/3238942) Внесены улучшения в `\Drupal\Core\Routing\RedirectDestination::get()` для совместимости с PHP 8.1.
+* [#3239553](https://www.drupal.org/node/3239553) Внесены улучшения в `\Symfony\Component\Routing\Route::getRequirement()` для совместимости с PHP 8.1.
+
+## Search
+
+* [#3239558](https://www.drupal.org/node/3239558) Счётчик отправлений в `\Drupal\search_embedded_form\Form\SearchEmbeddedForm` теперь имеет значение 0 по умолчанию вместо `NULL`.
 
 ## Serialization
 
@@ -1305,6 +1343,10 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 ## Text
 
 * [#3067116](https://www.drupal.org/node/3067116) Функция `text_summary()` теперь корректно закрывает HTML теги когда используется фильтр `filter_html`.
+
+## Theme system
+
+* [#3239859](https://www.drupal.org/node/3239859) Внесены улучшения в `\Drupal\Core\Template\Loader\ThemeRegistryLoader::getCacheKey()` для совместимости с PHP 8.1.
 
 ## Symfony 6
 
@@ -1359,6 +1401,7 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#2681947](https://www.drupal.org/node/2681947) Представления типа «Блок» теперь поддерживают настройку «Put the exposed form in a block».
 * [#1551534](https://www.drupal.org/node/1551534) Views AJAX теперь поддерживают элемент `<button>` в качестве кнопки отправки, который может появиться в случае переопределения стандартного `<input type="submit">`.
 * [#2560447](https://www.drupal.org/node/2560447) `views_form_callback` больше не поддерживается.
+* [#3239313](https://www.drupal.org/node/3239313) Внесены улучшения в `\Drupal\views\Controller\ViewAjaxController` для совместимости с PHP 8.1.
 
 ## Workspaces
 
@@ -1399,3 +1442,12 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 * [#3238452](https://www.drupal.org/node/3238452) Исключения теперь передают пустую строку по умолчанию вместо `NULL` для совместимости с PHP 8.1.
 * [#3236769](https://www.drupal.org/node/3236769) Произведён рефакторинг `\Drupal\Component\Gettext\PoItem` для совместимости с PHP 8.1.
 * [#3238457](https://www.drupal.org/node/3238457) Внесены улучшения в `\Drupal\Core\EventSubscriber\ActiveLinkResponseFilter::setLinkActiveClass()` для совместимости с PHP 8.1.
+* [#3239285](https://www.drupal.org/node/3239285) Внесены улучшения в `SelectLanguageForm` для совместимости с PHP 8.1.
+* [#3239294](https://www.drupal.org/node/3239294) Улучшены вызовы `preg_split()` для совместимости с PHP 8.1.
+* [#3239295](https://www.drupal.org/node/3239295) Улучшены вызовы `str_replace()` и `preg_replace()` для совместимости с PHP 8.1.
+* [#3238936](https://www.drupal.org/node/3238936) Исправлена неполадка, из-за которой testbot не запускать ESLint на все файлы при изменении `core/.eslintrc*`.
+* [#3239442](https://www.drupal.org/node/3239442) Убраны вызовы статичных методов от трейтов для совместимости с PHP 8.1.
+* [#3239292](https://www.drupal.org/node/3239292) Внесены улучшения в кернел тесты, которые не вызывали `::installConfig()` для совместимости с PHP 8.1. 
+* [#3239746](https://www.drupal.org/node/3239746) Внесены улучшения в `\Drupal\Core\Flood\MemoryBackend` для совместимости с PHP 8.1.
+* [#3239758](https://www.drupal.org/node/3239758) Внесены исправления в тест `\Drupal\Tests\field\Functional\ReEnableModuleFieldTest` для совместимости с PHP 8.1.
+* [#3239710](https://www.drupal.org/node/3239710) Внесены улучшения в `\Drupal\Core\Menu\StaticMenuLinkOverrides::loadOverride()` для совместимости с PHP 8.1.

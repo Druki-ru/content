@@ -10,6 +10,10 @@ metatags:
 > [!WARNING]
 > Данная версия находится в разработке и не предназначена для использования.
 
+## Claro
+
+* [#3229172](https://www.drupal.org/node/3229172) Исправлена неполадка, при которой подчёркнутый текст в CKEditor не имел подчёркивания в теме.
+
 ## CKeditor
 
 * [#2556069](https://www.drupal.org/node/2556069) Исправлена неполадка приводящая к JS ошибке при использовании фильтра `filtered_html`.
@@ -34,6 +38,7 @@ metatags:
 ## Media System
 
 * [#3230772](https://www.drupal.org/node/3230772) `OembedMediaController` теперь корректно собирает кеш-метаданные.
+* [#3230547](https://www.drupal.org/node/3230547) `\Drupal\media\Controller\OEmbedIframeController::render()` теперь задаёт заголовок `Content-Type` в своём ответе.
 
 ## Migration System
 
