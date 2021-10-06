@@ -1274,12 +1274,14 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 ## Locale
 
 * [#3240201](https://www.drupal.org/node/3240201) Внесены улучшения в `\Drupal\Tests\Component\Gettext\PoStreamWriterTest::setUp()` для совместимости с PHP 8.1.
+* [#3240958](https://www.drupal.org/node/3240958) Внесены улучшения в `template_preprocess_locale_translation_last_check()` для совместимости с PHP 8.1.
 
 ## Media System
 
 * [#3222486](https://www.drupal.org/node/3222486) Метки для удалённых видео (remote video) обновлены таким образом, что они теперь более последовательны и менее многословны.
 * [#3222282](https://www.drupal.org/node/3222282) Из файла `media_library.module` удалён `@todo` на ишью [#2964789](https://www.drupal.org/project/drupal/issues/2964789).
 * [#3028664](https://www.drupal.org/node/3028664) Ошибке oEmbed провайдера теперь логируются.
+* [#3240955](https://www.drupal.org/node/3240955) Внесены улучшения в `\Drupal\media\Plugin\Filter\MediaEmbed::applyPerEmbedMediaOverrides()` для совместимости с PHP 8.1.
 
 ## Menu System
 
