@@ -1133,6 +1133,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 
 * [#2927874](https://www.drupal.org/node/2927874) Исправлена неполадка, из-за которой предпросмотр комментария показывался в неположенном месте.
 * [#3240171](https://www.drupal.org/node/3240171) Внесены улучшения в `\Drupal\comment\Entity\Comment::getSubject()` для совместимости с PHP 8.1.
+* [#3240167](https://www.drupal.org/node/3240167) Внесены улучшения в код, обращающийся к `\Drupal\comment\CommentStorage::getMaxThread()` и `\Drupal\comment\Entity\Comment::getThread()` для совместимости с PHP 8.1.
 
 ## Composer
 
@@ -1145,6 +1146,10 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3239270](https://www.drupal.org/node/3239270) Зависимости ядра обновлены на 26.09.2021.
 * [#3239772](https://www.drupal.org/node/3239772) Зависимости ядра обновлены на 29.09.2021.
 
+## Configuration Entity System
+
+* [#3240800](https://www.drupal.org/node/3240800) Создание конфигурационных сущностей через `new ConfigEntityClass()` заменено на `ConfigEntityClass::create()` для совместимости с PHP 8.1.
+
 ## Configuration System
 
 * [#2926729](https://www.drupal.org/node/2926729) `ConfigManagerInterface::findConfigEntityDependents()` и `ConfigManagerInterface::findConfigEntityDependentsAsEntities()` теперь `ConfigManagerInterface::findConfigEntityDependencies()` и `ConfigManagerInterface::findConfigEntityDependenciesAsEntities()` соответственно.
@@ -1152,6 +1157,8 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3233480](https://www.drupal.org/node/3233480) Исправлена опечатка в название класса `InstallerExistingConfigSyncDriectoryProfileMismatchTest`.
 * [#3232695](https://www.drupal.org/node/3232695) `Condition` с операторами `IS NULL` и `IS NOT NULL` теперь используется только при наличии значения для сравнения.
 * [#3240173](https://www.drupal.org/node/3240173) Внесены улучшения в `\Drupal\KernelTests\Core\Config\ConfigImporterTest::testIsInstallable()` для совместимости с PHP 8.1.
+* [#3240174](https://www.drupal.org/node/3240174) Внесены улучшения в `\Drupal\config_translation\FormElement\Textarea` для совместимости с PHP 8.1.
+* [#3240455](https://www.drupal.org/node/3240455) Внесены улучшения в `\ГDrupal\Tests\content_translation\Functional\ContentTranslationSettingsTest` для совместимости с PHP 8.1.
 
 ## Contact
 
@@ -1161,6 +1168,10 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 
 * [#3211072](https://www.drupal.org/node/3211072) Плагин `\Drupal\content_moderation\Plugin\Derivative\DynamicLocalTasks` теперь требует передавать `Router` в конструктор.
 * [#3226516](https://www.drupal.org/node/3226516) Удалён дублирующий вызов `::drupalGet()` в `ModerationStateNodeTypeTest`.
+
+## Database Logging
+
+* [#3240182](https://www.drupal.org/node/3240182) Внесены улучшения в `\Drupal\dblog\Controller\DbLogController::createLink()` для совместимости с PHP 8.1.
 
 ## Database System
 
@@ -1220,6 +1231,8 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 ## Filter
 
 * [#3224478](https://www.drupal.org/node/3224478) Ссылка в `/filter/tip` ведущая на <http://www.w3.org/TR/html/> изменена на новую — <https://html.spec.whatwg.org/>.
+* [#3240228](https://www.drupal.org/node/3240228) Внесены улучшения в `_filter_url_trim()` для совместимости с PHP 8.1.
+* [#3240247](https://www.drupal.org/node/3240247) Внесены множественные улучшения в код модуля для совместимости с PHP 8.1.
 
 ## Forms System
 
@@ -1250,11 +1263,13 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 ## Language System
 
 * [#3208373](https://www.drupal.org/node/3208373) Улучшено описание для `LanguageNegotiationContentEntity`. Теперь в нём говорится что за определение языка материала отвечают [сервисы](../../../../9/services/index.md) с метками `language_content_entity`. 
+* [#3240905](https://www.drupal.org/node/3240905) Внесены улучшения в `\Drupal\language\Plugin\LanguageNegotiation\LanguageNegotiationSession` для совместимости с PHP 8.1.
 
 ## Layout Builder
 
 * [#3035174](https://www.drupal.org/node/3035174) Трейт `SectionStorageTrait` помечен устаревшим в пользу `SectionListTrait`.
 * [#3230928](https://www.drupal.org/node/3230928) Удалена зависимость на Quick Edit из `LayoutBuilderTest::testRemovingAllSections()`.
+* [#3239436](https://www.drupal.org/node/3239436) Внесены улучшения в `\Drupal\Tests\layout_builder\FunctionalJavascript\LayoutBuilderDisableInteractionsTest` для большей совместимости с различными chromedriver.
 
 ## Locale
 
@@ -1352,6 +1367,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 ## System
 
 * [#778346](https://www.drupal.org/node/778346) Функция `system_sort_modules_by_info_name()` помечена устаревшей и заменена идентичной `system_sort_by_info_name()`. Это переименование сделано так как старое название не совсем подходящее.
+* [#3240364](https://www.drupal.org/node/3240364) Внесены улучшения в `\Drupal\Tests\system\Functional\Pager\PagerTest::testMultiplePagers()` для совместимости с PHP 8.1.
 
 ## SQLite DB driver
 
@@ -1375,6 +1391,10 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 
 * [#3239859](https://www.drupal.org/node/3239859) Внесены улучшения в `\Drupal\Core\Template\Loader\ThemeRegistryLoader::getCacheKey()` для совместимости с PHP 8.1.
 * [#3239860](https://www.drupal.org/node/3239860) Внесены улучшения в `\Drupal\Core\Template\TwigExtension::renderVar()` для совместимости с PHP 8.1.
+
+## Tour
+
+* [#3240362](https://www.drupal.org/node/3240362) Внесены улучшения в `\Drupal\tour\TipPluginBase::getLocation()` для совместимости с PHP 8.1.
 
 ## Symfony 6
 
@@ -1424,6 +1444,8 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#2946](https://www.drupal.org/node/2946) Теперь, при попытке авторизоваться с отключенными Cookies, будет показано соответствующее сообщение, что авторизация невозможна.
 * [#3221258](https://www.drupal.org/node/3221258) Роль редактора присваивает только те права доступа, что доступны на момент установки.
 * [#3240192](https://www.drupal.org/node/3240192) Внесены улучшения в `\Drupal\user\AccountForm::buildEntity()` для совместимости с PHP 8.1.
+* [#240361](https://www.drupal.org/node/240361) Внесены улучшения в `\Drupal\user\Entity\User::checkExistingPassword()` для совместимости с PHP 8.1.
+* [#3240180](https://www.drupal.org/node/3240180) Внесены улучшения в код, вызывающий `\Drupal\user\Entity\User::getEmail()`, для совместимости с PHP 8.1.
 
 ## Views
 
@@ -1481,3 +1503,5 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3239746](https://www.drupal.org/node/3239746) Внесены улучшения в `\Drupal\Core\Flood\MemoryBackend` для совместимости с PHP 8.1.
 * [#3239758](https://www.drupal.org/node/3239758) Внесены исправления в тест `\Drupal\Tests\field\Functional\ReEnableModuleFieldTest` для совместимости с PHP 8.1.
 * [#3239710](https://www.drupal.org/node/3239710) Внесены улучшения в `\Drupal\Core\Menu\StaticMenuLinkOverrides::loadOverride()` для совместимости с PHP 8.1.
+* [#3240456](https://www.drupal.org/node/3240456) `E_DEPRECATED` добавлен в список на пропуск во время выполнения тестов для совместимости с PHP 8.1.
+* [#3240888](https://www.drupal.org/node/3240888) Создание моков которые реализуют `Serializable` заменены на `__serialize()` для совместимости с PHP 8.1.
