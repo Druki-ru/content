@@ -1089,6 +1089,98 @@ $this->assertEqualsCanonicalizing($expected_top_level_contexts, $element['#cache
 Drupal.tabbingManager.constrain(element, { trapFocus: true });
 ```
 
+## Плагины-источники oEmbed теперь принимают Token
+
+* [#3026184](https://www.drupal.org/node/3026184)
+
+Данное изменение добавляет ограниченную поддержку токенов в пути для хранения превью oEmbed ресурсов, например, у внешних видео.
+
+В связи с данным изменением, класс `\Drupal\media\Plugin\media\Source\OEmbed` теперь ожидает `token` [сервис](../../../../9/services/index.md) в своём конструкторе.
+
+## \Drupal\Core\Cache\DatabaseCacheTagsChecksum::catchException() помечен устаревшим
+
+* [#3240601](https://www.drupal.org/node/3240601)
+
+Защищённый метод `\Drupal\Core\Cache\DatabaseCacheTagsChecksum::catchException()` помечен устаревшим без замены. Если у вас имеется код, который расширяет `\Drupal\Core\Cache\DatabaseCacheTagsChecksum` и вызывает `\Drupal\Core\Cache\DatabaseCacheTagsChecksum::ensureTableExists()`, в таком случае ваш код должен самостоятельно выбрасывать исключение.
+
+**Ранее:**
+
+```php
+    try {
+      foreach ($tags as $tag) {
+        $this->connection->merge('cachetags')
+          ->insertFields(['invalidations' => 1])
+          ->expression('invalidations', '[invalidations] + 1')
+          ->key('tag', $tag)
+          ->execute();
+      }
+    }
+    catch (\Exception $e) {
+      // Create the cache table, which will be empty. This fixes cases during
+      // core install where cache tags are invalidated before the table is
+      // created.
+      if (!$this->ensureTableExists()) {
+        $this->catchException($e);
+      }
+    }
+```
+
+**Сейчас:**
+
+```php
+    try {
+      foreach ($tags as $tag) {
+        $this->connection->merge('cachetags')
+          ->insertFields(['invalidations' => 1])
+          ->expression('invalidations', '[invalidations] + 1')
+          ->key('tag', $tag)
+          ->execute();
+      }
+    }
+    catch (\Exception $e) {
+      // Create the cache table, which will be empty. This fixes cases during
+      // core install where cache tags are invalidated before the table is
+      // created.
+      if (!$this->ensureTableExists()) {
+        throw $e;
+      }
+    }
+```
+
+## Миграции с переводами конфигураций должны указывать свойство `translations` равным `true`
+
+* [#3239298](https://www.drupal.org/node/3239298) 
+
+YAML файлы миграций для переводов конфигураций теперь требуют указывать свойство `translations` равным `true` в своём «назначении».
+
+Следующие миграции из ядра были обновлены должным образом:
+
+* `d6_block_translation.yml`
+* `d6_taxonomy_vocabulary_translation.yml`
+* `d7_block_translation.yml`
+* `d7_field_instance_label_description_translation.yml`
+* `d7_menu_translation.yml`
+* `d7_taxonomy_vocabulary_translation.yml`
+
+Благодаря данному изменению, данные миграции теперь поддерживают возможность отката миграций.
+
+**Ранее:**
+
+```yaml
+ destination:
+   plugin: entity:taxonomy_vocabulary
+   destination_module: config_translation
+```
+
+**Сейчас:**
+
+```yaml
+ destination:
+   plugin: entity:taxonomy_vocabulary
+   destination_module: config_translation
+   translations: true
+```
+
 ## Aggregator
 
 * [#3239552](https://www.drupal.org/node/3239552) Внесены улучшения в вызовы `has()` для совместимости с PHP 8.1.
@@ -1145,6 +1237,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3238201](https://www.drupal.org/node/3238201) Зависимости ядра обновлены на 21.09.2021.
 * [#3239270](https://www.drupal.org/node/3239270) Зависимости ядра обновлены на 26.09.2021.
 * [#3239772](https://www.drupal.org/node/3239772) Зависимости ядра обновлены на 29.09.2021.
+* [#3242889](https://www.drupal.org/node/3242889) Зависимости ядра обновлены на 13.10.2021.
 
 ## Configuration Entity System
 
@@ -1179,6 +1272,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3224199](https://www.drupal.org/node/3224199) Свойство `Connection::$temporaryNameIndex` помечено устаревшим.
 * [#838992](https://www.drupal.org/node/838992) Поле UID для таблицы пользователей изменено с целого числа на последовательное.
 * [#3230714](https://www.drupal.org/node/3230714) Тест `ConnectionUnitTest` пропускается если база данных не psql или mysql.
+* [#3241306](https://www.drupal.org/node/3241306) Внесены улучшения в `ConnectionTest` для совместимости с PHP 8.1.
 
 ## Datetime
 
@@ -1198,6 +1292,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 
 * [#3226487](https://www.drupal.org/node/3226487) Вкладка ревизий для материалов (`node`) теперь всегда показывается если у пользователя есть права на их просмотр и материал имеет больше одной ревизии.
 * [#3232673](https://www.drupal.org/node/3232673) `\Drupal\Core\Entity\EntityInterface::label()` может возвращать `NULL`, в связи с чем, весь код в ядре что использует это значение, теперь будет использовать ID сущности если заголовок недоступен.
+* [#3241308](https://www.drupal.org/node/3241308) Внесены улучшения в `DefaultTableMappingTest` для совместимости с PHP 8.1.
 
 ## Extension System
 
@@ -1241,6 +1336,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 ## Image
 
 * [#3216106](https://www.drupal.org/node/3216106) Улучшено описание для плагина эффекта изображения `image_convert`.
+* [#3240906](https://www.drupal.org/node/3240906) Внесены улучшения в `template_preprocess_image_formatter()` для совместимости с PHP 8.1.
 
 ## Install system
 
@@ -1252,6 +1348,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3228351](https://www.drupal.org/node/3228351) В ядро добавлена новая библиотека — [loadjs](https://github.com/muicss/loadjs). На данный момент она будет использоваться в `Drupal.ajax` чтобы убедиться что библиотеки, запрошенные с AJAX ответом, подключились.
 * [#3217355](https://www.drupal.org/node/3217355) Добавлена новая конфигурация `skip_testcases_on_fail: false` в `core/tests/Drupal/Nightwatch/nightwatch.conf.js`.
 * [#3238863](https://www.drupal.org/node/3238863) Произведён рефакторинг кода, который использует функцию `merger` от jQuery.
+* [#3239132](https://www.drupal.org/node/3239132) Произведён рефакторинг кода, который использует функцию `trim` от jQuery.
 
 ## JSON:API
 
@@ -1264,12 +1361,14 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 
 * [#3208373](https://www.drupal.org/node/3208373) Улучшено описание для `LanguageNegotiationContentEntity`. Теперь в нём говорится что за определение языка материала отвечают [сервисы](../../../../9/services/index.md) с метками `language_content_entity`. 
 * [#3240905](https://www.drupal.org/node/3240905) Внесены улучшения в `\Drupal\language\Plugin\LanguageNegotiation\LanguageNegotiationSession` для совместимости с PHP 8.1.
+* [#3240911](https://www.drupal.org/node/3240911) Внесены улучшения в `language_test_page_top()` для совместимости с PHP 8.1.
 
 ## Layout Builder
 
 * [#3035174](https://www.drupal.org/node/3035174) Трейт `SectionStorageTrait` помечен устаревшим в пользу `SectionListTrait`.
 * [#3230928](https://www.drupal.org/node/3230928) Удалена зависимость на Quick Edit из `LayoutBuilderTest::testRemovingAllSections()`.
 * [#3239436](https://www.drupal.org/node/3239436) Внесены улучшения в `\Drupal\Tests\layout_builder\FunctionalJavascript\LayoutBuilderDisableInteractionsTest` для большей совместимости с различными chromedriver.
+* [#3240909](https://www.drupal.org/node/3240909) Внесены улучшения в `DefaultPluginManager`, `SectionStorageManagerTest`, `LayoutPluginManagerTest` и `DefaultPluginManagerTest` для совместимости с PHP 8.1.
 
 ## Locale
 
@@ -1282,6 +1381,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3222282](https://www.drupal.org/node/3222282) Из файла `media_library.module` удалён `@todo` на ишью [#2964789](https://www.drupal.org/project/drupal/issues/2964789).
 * [#3028664](https://www.drupal.org/node/3028664) Ошибке oEmbed провайдера теперь логируются.
 * [#3240955](https://www.drupal.org/node/3240955) Внесены улучшения в `\Drupal\media\Plugin\Filter\MediaEmbed::applyPerEmbedMediaOverrides()` для совместимости с PHP 8.1.
+* [#3231731](https://www.drupal.org/node/3231731) При получении превью oEmbed содержимого, для определения типа файла теперь используется заголовок `Content-Type`.
 
 ## Menu System
 
@@ -1292,6 +1392,10 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3221493](https://www.drupal.org/node/3221493) Добавлены тесты покрывающие порядок меню в форме настроек типов материалов (`node`).
 * [#3222465](https://www.drupal.org/node/3222465) `MenuUiNodeTypeTest` теперь использует специальную тестовую конфигурацию вместо системной.
 
+## Migrate Drupal UI
+
+* [#3240959](https://www.drupal.org/node/3240959) Внесены улучшения в `\Drupal\migrate_drupal_ui\Form\ReviewForm::prepareOutput()` для совместимости с PHP 8.1.
+
 ## Migration system
 
 * [#3222168](https://www.drupal.org/node/3222168) Везде где в качестве сигнатуры использовался `\GuzzleHttp\Client` теперь используется `\GuzzleHttp\ClientInterface`.
@@ -1299,6 +1403,8 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3227549](https://www.drupal.org/node/3227549) `\Drupal\migrate\Plugin\migrate\id_map\Sql::getRowByDestination()` теперь всегда возвращает массив.
 * [#3239556](https://www.drupal.org/node/3239556) Исправлен тип возвращаемых данных для `\Drupal\Tests\migrate\Kernel\TestFilterIterator::accept()`.
 * [#3222844](https://www.drupal.org/node/3222844) Добавлена документация о возвращаемом значение `MigrateExecutableInterface::import()`.
+* [#3241130](https://www.drupal.org/node/3241130) Внесены улучшения в `MakeUniqueEntityFieldTest` и `MigrateSqlIdMapEnsureTablesTest` для совместимости с PHP 8.1.
+* [#3241275](https://www.drupal.org/node/3241275) Внесены улучшения в `\Drupal\user\Plugin\migrate\source\d6\User::prepareRow()` для совместимости с PHP 8.1.
 
 ## MySQL DB driver
 
@@ -1309,6 +1415,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3220956](https://www.drupal.org/node/3220956) Удалён `@todo` из шаблона `node.html.twig` напоминающий удалить `id` аттрибут, который был уже удалён.
 * [#3037202](https://www.drupal.org/node/3037202) `node_mark()` больше не использует `drupal_static()`, соответственно, вызов `drupal_static()` с аргументом `node_mark` помечен устаревшим.
 * [#3156244](https://www.drupal.org/node/3156244) `SyndicateBlock` теперь задаёт заголовок равный названию сайта.
+* [#3241268](https://www.drupal.org/node/3241268) Внесены улучшения в `node_test.module` для совместимости с PHP 8.1.
 
 ## Olivero
 
@@ -1325,10 +1432,13 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3224958](https://www.drupal.org/node/3224958) Раскрытые фильтры Views теперь отображаются в строке, а не в рядах.
 * [#3226785](https://www.drupal.org/node/3226785) Поисковая форма теперь закрывается при потери фокуса.
 * [#3194560](https://www.drupal.org/node/3194560) Добавлено оформления для страницы «Сайт на технических работах».
+* [#3225241](https://www.drupal.org/node/3225241) Исправлена неполадка, из-за которой переставал работать JavaScript основной навигации если вложенность достигала более двух уровней.
+* [#3214191](https://www.drupal.org/node/3214191) Исправлена неполадка, из-за которой шапка была поверх наложения (overlay) от модальных окон jQuery UI.
 
 ## Path
 
 * [#3224592](https://www.drupal.org/node/3224592) `\Drupal\path_alias\AliasManager::cacheClear()` больше не вызывает предупреждения об устаревшем коде на PHP 8.1 и не пытается очистить кеш при `NULL` значении.
+* [#3241296](https://www.drupal.org/node/3241296) Внесены улучшения в `PathValidatorTest` для совместимости с PHP 8.1.
 
 ## Plugin System
 
@@ -1344,6 +1454,11 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#2794261](https://www.drupal.org/node/2794261) Функция `render()` помечена устаревшей. В качестве замены используйте сервис `renderer`.
 * [#3192839](https://www.drupal.org/node/3192839) Некоторые проверки в тестах для `Renderer` теперь используют `assert()`.
 * [#3239762](https://www.drupal.org/node/3239762) Внесены улучшения в `\Drupal\Core\Template\AttributeString::__toString()` для совместимости с PHP 8.1.
+* [#3240960](https://www.drupal.org/node/3240960) Внесены улучшения в `\Drupal\KernelTests\Core\Render\Element\ActionsTest::getFormId()` для совместимости с PHP 8.1.
+
+## Responsive image
+
+* [#3241300](https://www.drupal.org/node/3241300) Внесены улучшения в `template_preprocess_responsive_image_formatter()` для совместимости с PHP 8.1.
 
 ## REST
 
@@ -1366,10 +1481,19 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 
 * [#2997123](https://www.drupal.org/node/2997123) `PrimitiveDataNormalizer` теперь может передавать кеш-метаданные.
 
+## Session
+
+* [#3241267](https://www.drupal.org/node/3241267) Внесены улучшения в `WriteSafeSessionHandlerTest::testOtherMethods()` для совместимости с PHP 8.1.
+
+## Shortcut
+
+* [#3241271](https://www.drupal.org/node/3241271) Внесены улучшения в `shortcut_preprocess_page_title()` для совместимости с PHP 8.1.
+
 ## System
 
 * [#778346](https://www.drupal.org/node/778346) Функция `system_sort_modules_by_info_name()` помечена устаревшей и заменена идентичной `system_sort_by_info_name()`. Это переименование сделано так как старое название не совсем подходящее.
 * [#3240364](https://www.drupal.org/node/3240364) Внесены улучшения в `\Drupal\Tests\system\Functional\Pager\PagerTest::testMultiplePagers()` для совместимости с PHP 8.1.
+* [#3241272](https://www.drupal.org/node/3241272) Внесены улучшения в `TestFileTransfer` для совместимости с PHP 8.1.
 
 ## SQLite DB driver
 
@@ -1439,6 +1563,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3206293](https://www.drupal.org/node/3206293) Добавлен класс `ProjectRelease`, который является обёрткой для Update XML файла с релизами.
 * [#2715145](https://www.drupal.org/node/2715145) Удалена конфигурация `system.authorize`.
 * [#3180382](https://www.drupal.org/node/3180382) `UpdateManagerUpdate.php` больше не использует сервис `renderer` для элемента `last_check`.
+* [#3239471](https://www.drupal.org/node/3239471) Исправлен неправильный тип `KeyValueFactoryInterface` в `UpdateProcessor`.
 
 ## User
 
@@ -1448,6 +1573,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3240192](https://www.drupal.org/node/3240192) Внесены улучшения в `\Drupal\user\AccountForm::buildEntity()` для совместимости с PHP 8.1.
 * [#240361](https://www.drupal.org/node/240361) Внесены улучшения в `\Drupal\user\Entity\User::checkExistingPassword()` для совместимости с PHP 8.1.
 * [#3240180](https://www.drupal.org/node/3240180) Внесены улучшения в код, вызывающий `\Drupal\user\Entity\User::getEmail()`, для совместимости с PHP 8.1.
+* [#3241265](https://www.drupal.org/node/3241265) Внесены улучшения в `user_user_view()` для совместимости с PHP 8.1.
 
 ## Views
 
@@ -1456,6 +1582,7 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#1551534](https://www.drupal.org/node/1551534) Views AJAX теперь поддерживают элемент `<button>` в качестве кнопки отправки, который может появиться в случае переопределения стандартного `<input type="submit">`.
 * [#2560447](https://www.drupal.org/node/2560447) `views_form_callback` больше не поддерживается.
 * [#3239313](https://www.drupal.org/node/3239313) Внесены улучшения в `\Drupal\views\Controller\ViewAjaxController` для совместимости с PHP 8.1.
+* [#3241280](https://www.drupal.org/node/3241280) Внесены улучшения в `PathPluginBase`, `NumericField`, `HandlerBase` и `QueryGroupByTest` для совместимости с PHP 8.1.
 
 ## Workspaces
 
@@ -1507,3 +1634,4 @@ Drupal.tabbingManager.constrain(element, { trapFocus: true });
 * [#3239710](https://www.drupal.org/node/3239710) Внесены улучшения в `\Drupal\Core\Menu\StaticMenuLinkOverrides::loadOverride()` для совместимости с PHP 8.1.
 * [#3240456](https://www.drupal.org/node/3240456) `E_DEPRECATED` добавлен в список на пропуск во время выполнения тестов для совместимости с PHP 8.1.
 * [#3240888](https://www.drupal.org/node/3240888) Создание моков которые реализуют `Serializable` заменены на `__serialize()` для совместимости с PHP 8.1.
+* [#3240915](https://www.drupal.org/node/3240915) Внесены улучшения в `\Drupal\Component\Utility\Unicode::truncate()` для совместимости с PHP 8.1.
