@@ -1181,6 +1181,71 @@ YAML файлы миграций для переводов конфигурац�
    translations: true
 ```
 
+## Система плагинов-контекстов теперь воспринимает `FALSE` как валидное значение
+
+* [#3194768](https://www.drupal.org/node/3194768)
+
+Ранее, система плагинов-контекстов возвращала `FALSE` при вызове метода `::hasContextValue()` на объект контекста который возвращал значение FALSE, даже если данное значение является валидным для контекста.
+
+Теперь, метод `::hasContextValue()` будет возвращать `TRUE` в таких случаях, только значение контекста `NULL` приведёт к результату `FALSE`.
+
+**Ранее:**
+
+```php
+$definition = new \Drupal\Core\Plugin\Context\ContextDefinition('boolean');
+$context = new \Drupal\Component\Plugin\Context\Context($definition, FALSE);
+$context->hasContextValue(); // Would return FALSE
+```
+
+**Теперь:**
+
+```php
+$definition = new \Drupal\Core\Plugin\Context\ContextDefinition('boolean');
+$context = new \Drupal\Component\Plugin\Context\Context($definition, FALSE);
+$context->hasContextValue(); // Now returns TRUE
+```
+
+## Функция `_file_save_upload_single()` помечена устаревшей и перенесена в сервис `file.upload_handler`
+
+* [#3232248](https://www.drupal.org/node/3232248)
+
+Функция `_file_save_upload_single()` помечена устаревшей и перенесена в сервис `file.upload_handler`.
+
+**Ранее:**
+
+```php
+$file = _file_save_upload_single($file_info, $form_field_name);
+```
+
+**Теперь:**
+
+```php
+/** @var \Drupal\file\Upload\FileUploadHandler $file_upload_handler */
+$file_upload_handler = \Drupal::service('file.upload_handler');
+$result = $file_upload_handler->handleFileUpload($uploadedFile);
+$file = $result->getFile();
+```
+
+## Плагин-источник `MenuLink` теперь имеет настройку `menu_name`
+
+* [#3064016](https://www.drupal.org/node/3064016)
+
+Плагин источник `menu_link` теперь имеет настройку `menu_name`, которая может быть использована для фильтрации ссылок источника по названию меню. Значение может быть либо строкой, либо массивом.
+
+**Примеры:**
+
+```yaml
+source:
+  plugin: menu_link
+  menu_name: main-menu
+```
+
+```yaml
+source:
+  plugin: menu_link
+  menu_name: [main-menu, navigation]
+```
+
 ## Aggregator
 
 * [#3239552](https://www.drupal.org/node/3239552) Внесены улучшения в вызовы `has()` для совместимости с PHP 8.1.
@@ -1265,6 +1330,7 @@ YAML файлы миграций для переводов конфигурац�
 ## Database Logging
 
 * [#3240182](https://www.drupal.org/node/3240182) Внесены улучшения в `\Drupal\dblog\Controller\DbLogController::createLink()` для совместимости с PHP 8.1.
+* [#2909805](https://www.drupal.org/node/2909805) Исправлена неполадка, из-за которой `LogMessageParser` ломал сообщения содержащие фигурные скобки (`{}`).
 
 ## Database System
 
@@ -1405,6 +1471,7 @@ YAML файлы миграций для переводов конфигурац�
 * [#3222844](https://www.drupal.org/node/3222844) Добавлена документация о возвращаемом значение `MigrateExecutableInterface::import()`.
 * [#3241130](https://www.drupal.org/node/3241130) Внесены улучшения в `MakeUniqueEntityFieldTest` и `MigrateSqlIdMapEnsureTablesTest` для совместимости с PHP 8.1.
 * [#3241275](https://www.drupal.org/node/3241275) Внесены улучшения в `\Drupal\user\Plugin\migrate\source\d6\User::prepareRow()` для совместимости с PHP 8.1.
+* [#2976098](https://www.drupal.org/node/2976098) Теперь `MigrateExecutable` логирует более детально информацию об ошибках связанных с обработчиками строк в `migration` и `destination`.
 
 ## MySQL DB driver
 
@@ -1472,6 +1539,7 @@ YAML файлы миграций для переводов конфигурац�
 * [#3238942](https://www.drupal.org/node/3238942) Внесены улучшения в `\Drupal\Core\Routing\RedirectDestination::get()` для совместимости с PHP 8.1.
 * [#3239553](https://www.drupal.org/node/3239553) Внесены улучшения в `\Symfony\Component\Routing\Route::getRequirement()` для совместимости с PHP 8.1.
 * [#3240194](https://www.drupal.org/node/3240194) Внесены улучшения в `\Drupal\KernelTests\Core\Routing\RouteProviderTest::testDuplicateRoutePaths()` для совместимости с PHP 8.1.
+* [#3110580](https://www.drupal.org/node/3110580) Решён `@todo - remove ::processOutbound() when we remove UrlGenerator::fromPath()`.
 
 ## Search
 
@@ -1635,3 +1703,4 @@ YAML файлы миграций для переводов конфигурац�
 * [#3240456](https://www.drupal.org/node/3240456) `E_DEPRECATED` добавлен в список на пропуск во время выполнения тестов для совместимости с PHP 8.1.
 * [#3240888](https://www.drupal.org/node/3240888) Создание моков которые реализуют `Serializable` заменены на `__serialize()` для совместимости с PHP 8.1.
 * [#3240915](https://www.drupal.org/node/3240915) Внесены улучшения в `\Drupal\Component\Utility\Unicode::truncate()` для совместимости с PHP 8.1.
+* [#3209934](https://www.drupal.org/node/3209934) Исправлены опечатки в 46 словах.
