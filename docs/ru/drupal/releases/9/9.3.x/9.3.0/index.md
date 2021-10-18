@@ -1,6 +1,9 @@
 ---
-title: 'Drupal 9.3.0' slug: drupal/releases/9.3.0 core: 9 metatags:
-title: 'Drupal 9.3.0: Список изменений' description: 'Список изменений Drupal 9.3.0.'
+title: 'Drupal 9.3.0' slug: drupal/releases/9.3.0
+core: 9
+metatags:
+  title: 'Drupal 9.3.0: Список изменений' 
+  description: 'Список изменений Drupal 9.3.0.'
 ---
 
 > [!WARNING]
