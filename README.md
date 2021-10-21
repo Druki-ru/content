@@ -16,6 +16,7 @@
 
 * Зайдите на https://github.com/Druki-ru/content и [редактируйте](https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository) документ прямо при помощи [GitHub UI](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github). Это самый простой способ для внесения простых изменений в один файл или исправления опечаток.
 * Зайдите на https://druki.ru/wiki и найдите материал, что вы хотите поправить. Внизу страницы в разделе «Помощь и обратная связь» нажмите на ссылку «Редактировать эту страницу». Данная ссылка откроет документ на редактирование в GitHub UI. Как и в предыдущем пункте, вы можете внести необходимые правки в документ или исправить опечатки.
+* Зайдите на https://github.com/Druki-ru/content или любую другую страницу со структурой или файлами репозитория и нажмите точку `.` на клавиатуре.
 * Установить и использовать [GitHub Desktop](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-desktop).
 * Установить и использовать [GitHub CLI](https://docs.github.com/en/github/getting-started-with-github/github-cli).
 * Установить `git` и использовать его любым удобным для вас способом.
