@@ -1877,6 +1877,7 @@ entity.filter_format.permission_form:
 * [#3239270](https://www.drupal.org/node/3239270) Зависимости ядра обновлены на 26.09.2021.
 * [#3239772](https://www.drupal.org/node/3239772) Зависимости ядра обновлены на 29.09.2021.
 * [#3242889](https://www.drupal.org/node/3242889) Зависимости ядра обновлены на 13.10.2021.
+* [#3245724](https://www.drupal.org/node/3245724) Зависимости ядра обновлены на 25.10.2021.
 
 ## Configuration Entity System
 
@@ -2138,6 +2139,7 @@ entity.filter_format.permission_form:
   в `\Drupal\user\Plugin\migrate\source\d6\User::prepareRow()` для совместимости с PHP 8.1.
 * [#2976098](https://www.drupal.org/node/2976098) Теперь `MigrateExecutable` логирует более детально информацию об
   ошибках связанных с обработчиками строк в `migration` и `destination`.
+* [#3095237](https://www.drupal.org/node/3095237) Добавлена поддержка миграции значений `todate` из Drupal 7 поля даты.
 
 ## MySQL DB driver
 

@@ -57,6 +57,7 @@ metatags:
 
 * [#3205866](https://www.drupal.org/node/3205866) `media_requirements()` теперь сообщаются об отсутствующих полях-источниках.
 * [#3073294](https://www.drupal.org/node/3073294) Удалён устаревший `@todo Inserting media embed should enable undo.`.
+* [#3208849](https://www.drupal.org/node/3208849) `OEmbedWidget` теперь выводит справочный текст поля.
 
 ## Menu UI
 
