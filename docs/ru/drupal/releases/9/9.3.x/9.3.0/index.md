@@ -63,7 +63,7 @@ public function getActiveTheme(RouteMatchInterface $route_match = NULL) {
 Отсутствие данного параметра было недосмотром при введении данного интерфейса в ядро. Все реализации данного интерфейса
 ядром ожидают данный аргумент.
 
-## Представлен новый метод Connection::lastInsertId(), опция запроса 'return' и константы Database::RETURN_* были помечены устаревшими
+## Добавлен новый метод Connection::lastInsertId(), опция запроса 'return' и константы Database::RETURN_* были помечены устаревшими
 
 * [#3177660](https://www.drupal.org/node/3177660)
 
@@ -615,7 +615,7 @@ class NodePermissions {
 
 Функции `file_crete_url()` и `file_url_transform_relative()` помечены устаревшими.
 
-В качестве замены представлен новый сервис `file_url_generator`.
+В качестве замены добавлен новый сервис `file_url_generator`.
 
 Ниже представлены примеры как старые вызовы заменить сервисом:
 
