@@ -1742,6 +1742,71 @@ $entity = new $entity_class($values, $this->entityTypeId);
 * `Drupal\Core\Entity\ContentEntityBase` теперь реализует `public static create()`.
 * `Drupal\Core\Entity\ContentEntityStorageBase` теперь реализует `public static create()`.
 
+## Функции `file_save_date()`, `file_copy()` и `file_move()` объявлены устаревшими
+
+* [#3223209](https://www.drupal.org/node/3223209)
+
+Функции `file_save_date()`, `file_copy()` и `file_move()` объявлены устаревшими и заменены сервисом реализующим `\Drupal\file\FileRepositoryInterface`.
+
+Вам следует заменить их вызовы новыми:
+
+* `file_save_data()` → `\Drupal::service('file.repository')->writeData()`
+* `file_move()` → `\Drupal::service('file.repository')->move()`
+* `file_copy()` → `\Drupal::service('file.repository')->copy()`
+
+Данные методы принимают аналогичные аргументы, за исключением того что `$destination` теперь является обязательным аргументом. Если `$destination` не задан, будет использовано значение по умолчанию `\Drupal::config('system.file')->get('default_scheme') . '://'`, что обычно приводит к результату `public://`.
+
+В новом сервисе также присутствует новый метод `::loadByUri()` который позволяет найти сущность File по URI.
+
+Новые методы не выводят сообщения при помощи `\Drupal::messenger()`, следовательно, код, вызывающий данные методы должен сам позаботиться о сообщениях, если это необходимо.
+
+Данные методы могут выбросить следующие исключения:
+
+* `\Drupal\Core\File\Exception\FileException`: Выбрасывается при возникновении проблем во время записи в файловую систему.
+* `\Drupal\Core\File\Exception\InvalidStreamWrapperException`: Выбрасывается, если у пути назначения невалидная схема.
+* `\Drupal\Core\Entity\EntityStorageException`: Выбрасывается при возникновении проблем во время обновления файла в хранилище.
+
+## В административный интерфейс сущностей добавлена новая вкладка «Управление правами доступа»
+
+* [#2934995](https://www.drupal.org/node/2934995)
+
+При редактировании типов материалов, словарей и т.д., администраторы сайта уже имеются следующие вкладки: Редактировать, Управление полями, Управление отображением и т.д.
+
+Начиная с текущего изменения добавлена новая вкладка «Управление правами доступа», которая позволяет настраивать права доступа связанные с текущей сущностью.
+
+### Разработчикам модулей
+
+Новая вкладка для настройки прав доступа появляется автоматически при следующих условиях:
+
+* Сущность имеет бандлы объявленные при помощи конфигурационных сущностей. Например `node` и `node_type`.
+* Тип сущности должен иметь значение `bundle_entity_type`, а бандл иметь значение `bundle_of`.
+* Тип сущности должен иметь значение `field_ui_base_route`.
+* Есть права доступа зависящие от бандлов сущности. Например, право доступа `create article content` зависящее от `article` бандла типа материала.
+
+Во всех остальных случаях вы можете объявить форму добавив новый маршрут. Например, если модуль `filter` желает добавить данную вкладку для единственного права доступа `use text format basic_html`, это может быть сделано следующим образом:
+
+```yaml
+entity.filter_format.permission_form:
+  path: '/admin/config/content/formats/manage/{bundle}/permissions'
+  defaults:
+    _title: 'Manage permissions'
+    _form: 'Drupal\user\Form\UserPermissionsBundleForm'
+    bundle_entity_type: filter_format
+  requirements:
+    _permission: 'administer permissions'
+    _custom_access: '\Drupal\user\Form\UserPermissionsBundleForm::access'
+  options:
+    parameters:
+      bundle:
+        type: 'entity:filter_format'
+        with_config_overrides: true
+```
+
+Для того чтобы пользователь получил доступ к данной форме, у пользователя должно быть право доступа `administer permissions`. Проверка прав доступа разрешит доступ к форме если удовлетворено одно из следующих условий:
+
+* Тип сущности имеет `permission_granularity = "bundle"`.
+* Имеются права доступа, зависящие от текущего бандла.
+
 ## Aggregator
 
 * [#3239552](https://www.drupal.org/node/3239552) Внесены улучшения в вызовы `has()` для совместимости с PHP 8.1.
@@ -1798,6 +1863,7 @@ $entity = new $entity_class($values, $this->entityTypeId);
 * [#3240167](https://www.drupal.org/node/3240167) Внесены улучшения в код, обращающийся
   к `\Drupal\comment\CommentStorage::getMaxThread()` и `\Drupal\comment\Entity\Comment::getThread()` для совместимости с
   PHP 8.1.
+* [#3236540](https://www.drupal.org/node/3236540) Улучшена документация для шаблона `comment.html.twig`.
 
 ## Composer
 
@@ -1835,6 +1901,7 @@ $entity = new $entity_class($values, $this->entityTypeId);
   для совместимости с PHP 8.1.
 * [#3240455](https://www.drupal.org/node/3240455) Внесены улучшения
   в `\ГDrupal\Tests\content_translation\Functional\ContentTranslationSettingsTest` для совместимости с PHP 8.1.
+* [#2852557](https://www.drupal.org/node/2852557) Сортировка ключей в конфигурациях теперь учитывает сортировку ключей в конфигурационной схеме.
 
 ## Contact
 
@@ -1894,6 +1961,7 @@ $entity = new $entity_class($values, $this->entityTypeId);
   недоступен.
 * [#3241308](https://www.drupal.org/node/3241308) Внесены улучшения в `DefaultTableMappingTest` для совместимости с PHP
   8.1.
+* [#3043321](https://www.drupal.org/node/3043321) UI для ревизий нод и медиа сущностей теперь использует общие сервисы проверки прав доступа API.
 
 ## Extension System
 
@@ -2112,6 +2180,7 @@ $entity = new $entity_class($values, $this->entityTypeId);
   основной навигации если вложенность достигала более двух уровней.
 * [#3214191](https://www.drupal.org/node/3214191) Исправлена неполадка, из-за которой шапка была поверх наложения (
   overlay) от модальных окон jQuery UI.
+* [#3231416](https://www.drupal.org/node/3231416) Библиотеки для основного и вторичного меню теперь грузятся только при наличии данных меню.
 
 ## Path
 

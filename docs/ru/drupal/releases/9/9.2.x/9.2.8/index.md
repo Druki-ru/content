@@ -13,14 +13,24 @@ metatags:
 ## Asset Library System
 
 * [#2936067](https://www.drupal.org/node/2936067) Внесены улучшения в CSS агрегатор, который теперь корректно обрабатывает больше различных вариантов использования `@import`.
+* [#2945033](https://www.drupal.org/node/2945033) Исправлена неполадка, из-за которой было невозможно указать `rel="alternate"` с одниаковыми адресами, но разными `hreflang`.
+
+## CKeditor
+
+* [#2763075](https://www.drupal.org/node/2763075) Исправлена неполадка приводящая к ошибке «Uncaught TypeError: f.format_tags.split is not a function».
 
 ## Claro
 
 * [#3219340](https://www.drupal.org/node/3219340) Исправлена неполадка с отображением вертикальных вкладок которые имеют `#parents`.
+* [#3203745](https://www.drupal.org/node/3203745) Внесены улучшения в `claro_form_system_modules_alter()` для более стабильной работы при изменении форм.
 
 ## Composer
 
 * [#3241318](https://www.drupal.org/node/3241318) Удалён скрипт `core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/scripts/disable-git-bin/git`. Теперь он генерируется на лету.
+
+## Database System
+
+* [#3244156](https://www.drupal.org/node/3244156) Внесены улучшения в `EntityQueryAggregateTest` для корректной работы на SQL серверах.
 
 ## Editor
 
