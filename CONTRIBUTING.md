@@ -81,6 +81,7 @@ _Находятся в releases._
 - deprecated — устаревший;
 - custom — пользовательский;
 - contrib — сторонний;
+- reverted - отменено;
 
 ***
 

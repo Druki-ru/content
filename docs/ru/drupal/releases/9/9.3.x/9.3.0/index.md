@@ -1966,7 +1966,7 @@ $entity = new $entity_class($values, $this->entityTypeId);
 
 ## Image System
 
-* [#3239935](https://www.drupal.org/node/3239935) (откачено) Произведён рефакторинг `ToolkitGdTest`.
+* [#3239935](https://www.drupal.org/node/3239935) (отменено) Произведён рефакторинг `ToolkitGdTest`.
 
 ## Install system
 
