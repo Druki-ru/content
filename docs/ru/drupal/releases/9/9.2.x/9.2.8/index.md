@@ -30,13 +30,27 @@ metatags:
 
 * [#3192365](https://www.drupal.org/node/3192365) Исправлена неполадка в `TestRunnerKernel`, которая приводила к состоянию гонки при попытке создать `public://simpletest`.
 
+## Form API
+
+* [#990218](https://www.drupal.org/node/990218) Внесены улучшения в элемент `machine_name` исправляющие предупреждения.
+
 ## JSON:API
 
 * [#3228000](https://www.drupal.org/node/3228000) Теперь, отправка `DELETE` на `/jsonapi/user/{UUID}` учитывает настройки того, что необходимо делать с аккаунтом при его удалении.
+* [#3083561](https://www.drupal.org/node/3083561) Добавлено покрытие тестами для фильтрации значений по datetime поле.
 
 ## Layout Builder
 
 * [#3020876](https://www.drupal.org/node/3020876) Исправлена неполадка, из-за которой контекстуальные ссылки для переиспользуемых блоков не отображались при использовании в Layout Builder.
+
+## Media System
+
+* [#3205866](https://www.drupal.org/node/3205866) `media_requirements()` теперь сообщаются об отсутствующих полях-источниках.
+* [#3073294](https://www.drupal.org/node/3073294) Удалён устаревший `@todo Inserting media embed should enable undo.`.
+
+## Menu UI
+
+* [#2957953](https://www.drupal.org/node/2957953) Теперь, после добавления или редактирования ссылки, пользователь перенаправляется на страницу конкретного меню, а не списка всех типов меню.
 
 ## Migration System
 

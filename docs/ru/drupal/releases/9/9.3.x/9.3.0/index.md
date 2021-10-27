@@ -1443,6 +1443,309 @@ source:
 Когда администратор включает один и более модулей, и как минимум один из них предоставляет разрешения, сообщение об
 успешной активации будет иметь ссылку на настройку разрешения только что включённых модулей.
 
+## Проверка доступа `_node_add_access` помечена устаревшей в пользу `_entity_create_access` и `_entity_create_any_access`
+
+* [#2744381](https://www.drupal.org/node/2744381)
+
+Проверка доступа `_node_add_access` помечена устаревшей в пользу `_entity_create_access` и `_entity_create_any_access`.
+
+Пример изменений:
+
+```diff
+@@ -13,7 +13,7 @@ node.add_page:
+   options:
+     _node_operation_route: TRUE
+   requirements:
+-    _node_add_access: 'node'
++    _entity_create_any_access: 'node'
+ 
+ node.add:
+   path: '/node/add/{node_type}'
+@@ -21,7 +21,7 @@ node.add:
+     _controller: '\Drupal\node\Controller\NodeController::add'
+     _title_callback: '\Drupal\node\Controller\NodeController::addPageTitle'
+   requirements:
+-    _node_add_access: 'node:{node_type}'
++    _entity_create_access: 'node:{node_type}'
+   options:
+     _node_operation_route: TRUE
+     parameters:
+```
+
+## `LayoutTempstoreParamConverter` был разделён на `LayoutSectionStorageParamConverter` и `LayoutTempstoreRouteEnhancer`
+
+* [#3032433](https://www.drupal.org/node/3032433)
+
+`\Drupal\layout_builder\Routing\LayoutTempstoreParamConverter` был удалён и разделён на несколько классов:
+
+* `\Drupal\layout_builder\Routing\LayoutSectionStorageParamConverter`: загружает хранилище секции для указанного маршрута, основываясь на типе и доступных контекстах.
+* `\Drupal\layout_builder\Routing\LayoutTempstoreRouteEnhancer`: загружает версию хранилища секций из временного хранилища.
+
+## Теперь для валидации в `EntityContentBase` используется другой пользователь
+
+* [#3134470](https://www.drupal.org/node/3134470)
+
+Плагины назначений для миграции сущностей позволяют разработчикам включить валидацию сущности в процессе миграции.
+
+Ранее сущность могла не пройти проверку, если пользователь, под которым выполнялась миграция, мог не иметь прав на установку значения конкретного поля, даже если пользователь, изначально создавший сущность, имел такие права. Эта проблема часто встречается при запуске миграций при помощи Drush, так как пользователь, из-под которого запускаются миграции в таком случае, является анонимным. Например, если анонимный пользователь не имеет права использовать определённый текстовый формат, но исходная сущность использует его в текстовом поле, импортированная сущность не пройдёт проверку, поскольку формат не является допустимым для анонимного пользователя.
+
+После введения этого изменения, система миграций будет временно переключать учетную запись текущего пользователя на владельца сущности перед проверкой. Это поведение будет доступно для всех сущностей что реализуют `EntityOwnerInterface`. Для подобного переключения учетных записей используется сервис `account_switcher`. Поэтому все плагины миграции, которые расширяют `Drupal\migrate\Plugin\migrate\destination\EntityContentBase` или его производные, будут требовать передачи сервиса `account_switcher` в своих конструкторах в [Drupal 10](../../../../10/index.md).
+
+## Бандлы (подтипы) сущностей теперь могут иметь свои собственные классы
+
+* [#2570593](https://www.drupal.org/node/2570593) 
+
+Бандлы (подтипы) сущностей по сути являются бизнес-объектами, и теперь они могут объявлять свой собственный класс, инкапсулируя необходимую бизнес-логику. Класс бандла должен быть подклассом базового классу сущности, например,  `\Drupal\node\Entity\Node`. Модули могут определять классы для бандлов для своих сущностей при помощи свойства `class` в `hook_entity_bundle_info()`, а также изменять существующие классы бандлов для сущностей, определённых другими модулями при помощи `hook_entity_bundle_info_alter()`. Каждый подкласс бандла должен быть уникальным. Если вы попытаетесь переиспользовать один и тот же подкласс для нескольких бандлов, будет вызвано исключение.
+
+### Возможности
+
+Инкапсуляция всей необходимой логики для каждого бандла в отдельный подкласс открывает множество возможностей для создания более понятного, простого, удобного в обслуживании и тестировании кода. Сам Drupal не имеет представления о том, как вы должны структурировать свой код, но это изменение позволяет вам использовать любой объектно-ориентированный стиль/дизайн/парадигму, которую вы предпочитаете.
+
+#### Переход от прерпроцессинга шаблонов к get*() методам
+
+Класс Drupal `TwigSandboxPolicy` позволяет шаблонам Twig напрямую вызывать любой публичный метод сущности, начинающийся со слова `get`. Таким образом, вместо того, чтобы распылять сложную бизнес-логику в различных функциях препроцессинга по всему сайту, вы можете поместить эту логику непосредственно в подкласс `bundle` и затем вызывать ее прямо из ваших шаблонов Twig.
+
+Например, если подкласс бандла определяет публичную функцию `getByline()`: метод, возвращающий строку, то шаблон Twig для режима отображения может вывести значение напрямую с помощью: `{{ node.getByline() }}`.
+
+#### Повторное использование кода
+
+Поскольку это обычные PHP-классы, существует множество способов повторного использования кода между подклассами пакета. Вы можете определить абстрактный базовый класс для вашего проекта (и расширить его из класса сущности по умолчанию), а затем определить подклассы для каждого бандла и зарегистрировать их все. Тогда общий код будет находиться в базовом классе, а код, специфичный для бандла — в дочерних классах.
+
+Вы можете активно использовать интерфейсы и трейты PHP. Каждый подкласс бандла будет иметь свой собственный интерфейс, расширяющий `\Drupal\node\NodeInterface` и любые другие пользовательские интерфейсы, подходящие для данного подтипа. Каждый пользовательский интерфейс будет сопровождаться трейтом, который содержит весь общий код для реализации интерфейса. Подклассы бандла затем расширяют базовый класс сущности и используют все трейты для всех пользовательских интерфейсов, которые они дополнительно реализуют.
+
+#### Написание автоматизированных тестов
+
+Размещение пользовательской логики в подклассах бандлов значительно упрощает написание автоматизированных тестов, поскольку код находится в классе, а не разбросан по многочисленным реализациям процедурных хуков, методов препроцесса и так далее. Теперь вы можете активно использовать тесты ядра и даже юнит-тесты, вместо того чтобы полагаться на сквозные функциональные тесты или тесты `FunctionalJavascript` (которые требуют гораздо больше ресурсов и выполняются медленнее). Теперь делать это стало намного проще.
+
+### Примеры
+
+Например, пользовательский модуль может объявить класс бандла для типа материала (`node`) следующим образом:
+
+```php
+use Drupal\mymodule\Entity\BasicPage;
+
+function mymodule_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['node']['page'])) {
+    $bundles['node']['page']['class'] = BasicPage::class;
+  }
+}
+```
+
+#### Интерфейсы и трейты
+
+Вы можете определить интерфейс для конкретной пользовательской логики, например, для поддержки поля `body`:
+
+```php
+namespace Drupal\mymodule\Entity;
+
+interface BodyInterface {
+
+  /**
+   * Returns the body.
+   *
+   * @return string
+   */
+  public function getBody(): string;
+
+}
+```
+
+Затем можно создать интерфейс для связки в пользовательском модуле, расширяющий как `NodeInterface`, так и пользовательский `BodyInterface`:
+
+```php
+namespace Drupal\mymodule\Entity;
+
+use Drupal\node\Entity\NodeInterface;
+
+interface BasicPageInterface extends NodeInterface, BodyInterface {
+
+}
+```
+
+Сами классы бандлов расширяют класс сущности, но реализуют любые дополнительные необходимые методы из других интерфейсов, которые они предоставляют.
+
+```php
+namespace Drupal\mymodule\Entity;
+
+use Drupal\node\Entity\Node;
+
+class BasicPage extends Node implements BasicPageInterface {
+
+  // Implement whatever business logic specific to basic pages.
+  public function getBody(): string {
+    return $this->get('body')->value;
+  }
+
+}
+```
+
+В качестве альтернативы, реализация `getBody()` может быть в `BodyTrait`, который был бы общим для нескольких подклассов бандлов.
+
+#### Использование абстрактного базового класса
+
+Вы можете начать вводить общую функциональность для всех типов материалов с помощью абстрактного класса. Этот подход требует определения подкласса bundle для каждого типа материала на сайте (или каждого бандла любого типа сущностей, для которых вы используете этот класс: `media` и т.д.).
+
+Ввод общего интерфейса:
+
+```php
+namespace Drupal\myproject\Entity;
+
+use Drupal\node\NodeInterface;
+
+class MyProjectNodeInterface extends NodeInterface {
+
+  public function getTags(): array;
+
+  public function hasTags(): bool;
+
+}
+```
+
+Затем вводим абстрактный базовый класс:
+
+```php
+namespace Drupal\myproject\Entity;
+
+use Drupal\node\Entity\Node;
+
+abstract class MyProjectNodeBase extends Node implements MyProjectNodeInterface {
+  public function getTags: array {
+    return [];
+  }
+  public function hasTags: bool {
+    return FALSE;
+  }
+}
+```
+
+И даже трейты:
+
+```php
+namespace Drupal\myproject\Entity;
+
+trait NodeWithTagsTrait {
+
+  public function getTags(): array {
+   // Put a real implementation here.
+    return $this->get('tags')->getValue();
+  }
+
+  public function hasTags(): bool {
+    return TRUE;
+  }
+
+}
+```
+
+После чего вы можете переписать класс для обычной страницы следующим образом:
+
+```php
+namespace Drupal\mymodule\Entity;
+
+use Drupal\node\Entity\Node;
+use Drupal\myproject\Entity\NodeWithTagsTrait;
+use Drupal\myproject\Entity\MyProjectNodeBase;
+
+class BasicPage extends MyProjectNodeBase implements BasicPageInterface {
+
+  use NodeWithTagsTrait
+
+  // Implement whatever business logic specific to basic pages.
+  public function getBody(): string {
+    return $this->get('body')->value;
+  }
+
+}
+```
+
+#### Как код может реагировать на загруженные сущности
+
+Обработчики хранения сущностей всегда будут возвращать классы бандлов, если это возможно. Поэтому на любом уровне системы после загрузки сущности, если её тип и бандл определяют подкласс, ваш загруженный объект сущности будет экземпляром определенного вами подкласса. Это будет работать во многих ситуациях:
+
+* Внутри Twig шаблона `{{ node.getWhateverYouNeed() }}`.
+* Объект, возвращаемый `\Drupal::routeMatch()->getParameter('node');` для маршрута с параметром  `{node}`.
+* Когда вы загружаете сущность `$node = $this->entityTypeManager->getStorage('node')->load($nid);`
+* и т.д.
+
+Таким образом, мы можем полагаться на типы данных, вместо вызова `$node->bundle()`. Если понадобится, мы можем проверить, реализует ли тип материала определенный интерфейс бандла:
+
+```php
+if ($node instanceof BasicPageInterface) {
+  // Do something specific to basic pages:
+  ...
+}
+```
+
+Мы также можем проверить, реализует ли данный подтип интерфейс конкретного поля:
+
+```php
+if ($node instanceof BodyInterface) {
+  // Do something since we know there's a body, regardless of what node type it is.
+  $body = $node->getBody();
+  ...
+}
+```
+
+Или же, если мы используем абстрактный класс из примеров выше, мы можем сделать следующее:
+
+```php
+if ($node->hasTags()) {
+  // Some logic which applies only to nodes with tags.
+  $tags = $node->getTags();
+}
+```
+
+### Изменения API
+
+Все эти преимущества потребовали внесения некоторых изменений в API ядра Drupal. В некоторых редких случаях пользовательскому или стороннему коду может потребоваться знать об этих изменениях. Ничего не сломается, некоторый код может вызывать предупреждения об устаревании и потребовать его обновления до релиза Drupal 10.
+
+#### Изменения в том, как вызывается `::postLoad()` в классах сущностей
+
+После того как сайт начнёт определять и использовать подклассы бандлов, при одновременной загрузке нескольких сущностей из разных бандлов изменился способ вызова `EntityInterface::postLoad()`. Раньше, поскольку существовал только один класс, в `::postLoad()` всегда передавался полный массив `$entities`, включая все сущности, загруженные в этой операции. Теперь метод `::postLoad()` для каждого подкласса бандла будет вызываться с подмассивом, включающим только сущности того же самого бандла. Метод `::postLoad()` в этом случае больше не может манипулировать всеми возможными сущностями (только сущностями своего вида) и не должен пытаться изменить порядок элементов (что и не предполагалось ранее, но некоторый код полагался на эту особенность).
+
+#### Влияние на пользовательские классы хранилищ сущностей
+
+Защищённое свойство `\Drupal\Core\Entity\EntityStorageBase::entityClass` было удалено.
+
+##### Получение класса сущности
+
+Если в хранилище потребуется узнать класс основной сущности, необходимо использовать метод `\Drupal\Core\Entity\EntityStorageBase::getEntityClass()`.
+
+**Ранее:**
+
+```php
+$entity = new $this->entityClass($values, $this->entityTypeId);
+```
+
+**Сейчас:**
+
+```php
+$entity_class = $this->getEntityClass();
+$entity = new $entity_class($values, $this->entityTypeId);
+```
+
+##### Установка класса сущности
+
+Хранилища сущностей, которым необходимо изменить класс, используемый для создания сущностей, больше не могут устанавливать свойство `$this->entityClass` напрямую. Это будет вызывать предупреждение об устаревании в Drupal 9.3.0 и выше, и не будет иметь никакого эффекта, начиная с Drupal 10.0.0. Вот поддерживаемые альтернативы:
+
+Если возможно, используйте классы бандлов, как указано выше.
+В противном случае пусть хранилище вызывает `$this->entityType->setClass()` с нужным классом.
+Или же, подменить хранилище и переопределить `::getEntityType()`.
+
+#### Новые исключения
+
+Два новых исключения теперь могут быть выброшены если вы попытаетесь использовать бандлы с подклассами неправильно:
+
+* `Drupal\Core\Entity\Exception\AmbiguousBundleClassException`: Выбрасывается когда несколько бандлов пытаются использовать один и тот же подкласс.
+* `Drupal\Core\Entity\Exception\BundleClassInheritanceException`: Выбрасывается когда подкласс бандла не расширяет класс сущности, бандлом которой он является.
+
+#### Другие изменения API
+
+* Добавлен `Drupal\Core\Entity\BundleEntityStorageInterface` который определяет метод `::getBundleFromClass()`.
+* Добавлена реализация `Drupal\Core\Entity\ContentEntityStorageBase::getBundleFromClass()`.
+* `Drupal\Core\Entity\ContentEntityBase` теперь реализует `public static create()`.
+* `Drupal\Core\Entity\ContentEntityStorageBase` теперь реализует `public static create()`.
+
 ## Aggregator
 
 * [#3239552](https://www.drupal.org/node/3239552) Внесены улучшения в вызовы `has()` для совместимости с PHP 8.1.
@@ -1566,6 +1869,7 @@ source:
 * [#3230714](https://www.drupal.org/node/3230714) Тест `ConnectionUnitTest` пропускается если база данных не psql или
   mysql.
 * [#3241306](https://www.drupal.org/node/3241306) Внесены улучшения в `ConnectionTest` для совместимости с PHP 8.1.
+* [#3124674](https://www.drupal.org/node/3124674) В драйвер SQLite внесены изменения связанные с прекращением поддержки опции подключения `extra_prefix`.
 
 ## Datetime
 
@@ -1639,6 +1943,7 @@ source:
   в `\Drupal\Core\StreamWrapper\PrivateStream::basePath()` для совместимости с PHP 8.1.
 * [#3240220](https://www.drupal.org/node/3240220) Внесены улучшения в `\Drupal\file\Entity\File::getSize()` для
   совместимости с PHP 8.1.
+* [#3245244](https://www.drupal.org/node/3245244) `FileUploadHandler` теперь может быть использован не только для обработки файлов загруженных через форму.
 
 ## Filter
 
@@ -1658,6 +1963,10 @@ source:
 * [#3216106](https://www.drupal.org/node/3216106) Улучшено описание для плагина эффекта изображения `image_convert`.
 * [#3240906](https://www.drupal.org/node/3240906) Внесены улучшения в `template_preprocess_image_formatter()` для
   совместимости с PHP 8.1.
+
+## Image System
+
+* [#3239935](https://www.drupal.org/node/3239935) (откачено) Произведён рефакторинг `ToolkitGdTest`.
 
 ## Install system
 
@@ -1679,6 +1988,7 @@ source:
   jQuery.
 * [#3239132](https://www.drupal.org/node/3239132) Произведён рефакторинг кода, который использует функцию `trim` от
   jQuery.
+* [#3239507](https://www.drupal.org/node/3239507) Добавлен полифил `CustomEvent`.
 
 ## JSON:API
 
@@ -1709,8 +2019,7 @@ source:
 * [#3239436](https://www.drupal.org/node/3239436) Внесены улучшения
   в `\Drupal\Tests\layout_builder\FunctionalJavascript\LayoutBuilderDisableInteractionsTest` для большей совместимости с
   различными chromedriver.
-* [#3240909](https://www.drupal.org/node/3240909) Внесены улучшения в `DefaultPluginManager`
-  , `SectionStorageManagerTest`, `LayoutPluginManagerTest` и `DefaultPluginManagerTest` для совместимости с PHP 8.1.
+* [#3240909](https://www.drupal.org/node/3240909) Внесены улучшения в `DefaultPluginManager`, `SectionStorageManagerTest`, `LayoutPluginManagerTest` и `DefaultPluginManagerTest` для совместимости с PHP 8.1.
 
 ## Locale
 
@@ -2033,6 +2342,7 @@ source:
 * [#3240180](https://www.drupal.org/node/3240180) Внесены улучшения в код,
   вызывающий `\Drupal\user\Entity\User::getEmail()`, для совместимости с PHP 8.1.
 * [#3241265](https://www.drupal.org/node/3241265) Внесены улучшения в `user_user_view()` для совместимости с PHP 8.1.
+* [#3199972](https://www.drupal.org/node/3199972) Внесены улучшения в опции блокировки и удалении пользователя.
 
 ## Views
 
@@ -2047,6 +2357,7 @@ source:
   совместимости с PHP 8.1.
 * [#3241280](https://www.drupal.org/node/3241280) Внесены улучшения в `PathPluginBase`, `NumericField`, `HandlerBase`
   и `QueryGroupByTest` для совместимости с PHP 8.1.
+* [#3008138](https://www.drupal.org/node/3008138) Кастомные ссылки теперь являются переводимыми.
 
 ## Workspaces
 
@@ -2129,3 +2440,7 @@ source:
 * [#3240915](https://www.drupal.org/node/3240915) Внесены улучшения в `\Drupal\Component\Utility\Unicode::truncate()`
   для совместимости с PHP 8.1.
 * [#3209934](https://www.drupal.org/node/3209934) Исправлены опечатки в 46 словах.
+* [#2909370](https://www.drupal.org/node/2909370) Внесены исправления связанные со стандартами `Drupal.Commenting.VariableComment.IncorrectVarType`.
+* [#3244533](https://www.drupal.org/node/3244533) Внесены улучшения в вызовы `usleep()` для совместимости с PHP 8.1.
+* [#3161223](https://www.drupal.org/node/3161223) Для сортировки значений, там где возможно теперь используется spaceship оператор (`<=>`).
+* [#3244592](https://www.drupal.org/node/3244592) Внесены улучшения в `run-tests.sh` для совместимости с PHP 8.1.
