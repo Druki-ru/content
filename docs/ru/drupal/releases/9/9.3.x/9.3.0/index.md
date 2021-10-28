@@ -2054,6 +2054,7 @@ entity.filter_format.permission_form:
 * [#3239132](https://www.drupal.org/node/3239132) Произведён рефакторинг кода, который использует функцию `trim` от
   jQuery.
 * [#3239507](https://www.drupal.org/node/3239507) Добавлен полифил `CustomEvent`.
+* [#3246141](https://www.drupal.org/node/3246141) JavaScript зависимости обновлены на 28.10.21.
 
 ## JSON:API
 
