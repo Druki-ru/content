@@ -1963,6 +1963,7 @@ entity.filter_format.permission_form:
 * [#3241308](https://www.drupal.org/node/3241308) Внесены улучшения в `DefaultTableMappingTest` для совместимости с PHP
   8.1.
 * [#3043321](https://www.drupal.org/node/3043321) UI для ревизий нод и медиа сущностей теперь использует общие сервисы проверки прав доступа API.
+* [#3246150](https://www.drupal.org/node/3246150) Исправлена неполадка, из-за которой некорректно работал `hook_entity_type_alter()` после введения поддержки классов для бандлов сущности.
 
 ## Extension System
 
@@ -2055,6 +2056,8 @@ entity.filter_format.permission_form:
   jQuery.
 * [#3239507](https://www.drupal.org/node/3239507) Добавлен полифил `CustomEvent`.
 * [#3246141](https://www.drupal.org/node/3246141) JavaScript зависимости обновлены на 28.10.21.
+* [#3225811](https://www.drupal.org/node/3225811) Библиотека `js-cookie` обновлена до версии 3.0.1.
+* [#3244855](https://www.drupal.org/node/3244855) Некоторым системным библиотекам добавлена зависимость на `core/jquery.once.bc`.
 
 ## JSON:API
 
@@ -2516,3 +2519,4 @@ entity.filter_format.permission_form:
 * [#3244533](https://www.drupal.org/node/3244533) Внесены улучшения в вызовы `usleep()` для совместимости с PHP 8.1.
 * [#3161223](https://www.drupal.org/node/3161223) Для сортировки значений, там где возможно теперь используется spaceship оператор (`<=>`).
 * [#3244592](https://www.drupal.org/node/3244592) Внесены улучшения в `run-tests.sh` для совместимости с PHP 8.1.
+* [#3226052](https://www.drupal.org/node/3226052) CSpell обновлён с 4 до 5 версии.
