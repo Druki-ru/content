@@ -7,8 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.2.8.'
 ---
 
-> [!WARNING]
-> Данная версия находится в разработке и не предназначена для использования.
+**Дата релиза**: 3 ноября 2021
 
 ## Asset Library System
 
@@ -90,3 +89,7 @@ metatags:
 
 * [#3231861](https://www.drupal.org/node/3231861) Исправлена неполадка, из-за которой переопределение настроек запроса приводило к исключению.
 * [#3116481](https://www.drupal.org/node/3116481) Тест `EntityViewsDataTest` конвертирован из Unit-теста в Kernel-тест.
+
+## Ссылки
+
+- [Drupal 9.2.8](https://www.drupal.org/project/drupal/releases/9.2.8) (англ.), drupal.org, 3 ноября 2021

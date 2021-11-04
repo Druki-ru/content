@@ -76,3 +76,7 @@ metatags:
 ## Прочие изменения
 
 - [#3231263](https://www.drupal.org/node/3231263) Добавлено три новых мейнтенера ядра: [Cristina Chumillas (ckrina)](https://www.drupal.org/u/ckrina), [Ben Mullins (bnjmnm)](https://www.drupal.org/u/bnjmnm), [Victoria Spagnolo (quietone)](https://www.drupal.org/u/quietone).
+
+## Ссылки
+
+- [Drupal 9.2.7](https://www.drupal.org/project/drupal/releases/9.2.7) (англ.), drupal.org, 6 октября 2021
