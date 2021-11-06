@@ -82,6 +82,7 @@ _Находятся в releases._
 - custom — пользовательский;
 - contrib — сторонний;
 - reverted - отменено;
+- derivative - дериватив
 
 ***
 

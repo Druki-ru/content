@@ -453,18 +453,18 @@ class FooForm extends FormBase {
 }
 ```
 
-## Dependency Injection в деритивах (Derivatives)
+## Dependency Injection в дериватативах (Derivatives)
 
-Деритивы являются частью системы плагинов, поэтому у них также немного отличается DI, но похож на предыдущие.
+Деривативы являются частью системы плагинов, поэтому у них также немного отличается DI, но похож на предыдущие.
 
-Деритивы, которым требуется Dependency Injection, должны реализовывать интерфейс `Drupal\Core\Plugin\Discovery\ContainerDeriverInterface`.
+Деривативы, которым требуется Dependency Injection, должны реализовывать интерфейс `Drupal\Core\Plugin\Discovery\ContainerDeriverInterface`.
 
 Он также требует создание статического метода `create()`, и принимает два аргумента:
 
 - `$container`: Service Container, как и во всех остальных случаях.
-- `$base_plugin_id`: Идентификатор плагина, для которого описывается деритивы.
+- `$base_plugin_id`: Идентификатор плагина, для которого описывается деривативы.
 
-**Пример деритивы без DI:**
+**Пример деривативы без DI:**
 
 ```php
 <?php
@@ -489,7 +489,7 @@ class FooDeriver extends DeriverBase {
 }
 ```
 
-**Пример деритивы с DI:**
+**Пример деривативы с DI:**
 
 ```php
 <?php
