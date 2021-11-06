@@ -2058,6 +2058,7 @@ entity.filter_format.permission_form:
 * [#3246141](https://www.drupal.org/node/3246141) JavaScript зависимости обновлены на 28.10.21.
 * [#3225811](https://www.drupal.org/node/3225811) Библиотека `js-cookie` обновлена до версии 3.0.1.
 * [#3244855](https://www.drupal.org/node/3244855) Некоторым системным библиотекам добавлена зависимость на `core/jquery.once.bc`.
+* [#3239509](https://www.drupal.org/node/3239509) Добавлена новая библиотека `drupal.string.includes` содержащая полифил для `String.includes.`
 
 ## JSON:API
 
