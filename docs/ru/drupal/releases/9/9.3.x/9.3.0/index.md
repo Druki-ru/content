@@ -1878,6 +1878,7 @@ entity.filter_format.permission_form:
 * [#3239772](https://www.drupal.org/node/3239772) Зависимости ядра обновлены на 29.09.2021.
 * [#3242889](https://www.drupal.org/node/3242889) Зависимости ядра обновлены на 13.10.2021.
 * [#3245724](https://www.drupal.org/node/3245724) Зависимости ядра обновлены на 25.10.2021.
+* [#3248156](https://www.drupal.org/node/3248156) Зависимости ядра обновлены на 08.11.2021.
 
 ## Configuration Entity System
 
@@ -2079,6 +2080,7 @@ entity.filter_format.permission_form:
   в `\Drupal\language\Plugin\LanguageNegotiation\LanguageNegotiationSession` для совместимости с PHP 8.1.
 * [#3240911](https://www.drupal.org/node/3240911) Внесены улучшения в `language_test_page_top()` для совместимости с PHP
   8.1.
+* [#3247901](https://www.drupal.org/node/3247901) `ContentTranslationUITestBase` теперь использует Stark тему вместо Classy.
 
 ## Layout Builder
 
@@ -2145,6 +2147,8 @@ entity.filter_format.permission_form:
 * [#2976098](https://www.drupal.org/node/2976098) Теперь `MigrateExecutable` логирует более детально информацию об
   ошибках связанных с обработчиками строк в `migration` и `destination`.
 * [#3095237](https://www.drupal.org/node/3095237) Добавлена поддержка миграции значений `todate` из Drupal 7 поля даты.
+* [#3212891](https://www.drupal.org/node/3212891) Исправлены некорректные тайпхинты в комментариях к свойствам некоторых плагинов.
+* [#2975461](https://www.drupal.org/node/2975461) Плагин `menu_link` теперь конвертирует query строки в массивы.
 
 ## MySQL DB driver
 
@@ -2203,6 +2207,7 @@ entity.filter_format.permission_form:
 ## PostgreSQL DB driver
 
 * [#3230801](https://www.drupal.org/node/3230801) Драйвер больше не записывает `NULL` в blob поля.
+* [#3214921](https://www.drupal.org/node/3214921) Теперь, при использовании PostgreSQL будет выводиться предупреждение, если расширение `pg_trgm` не создано.
 
 ## Quick Edit
 
@@ -2379,6 +2384,7 @@ entity.filter_format.permission_form:
   переопределяющих `Symfony\Component\Routing\Matcher\UrlMatcherInterface::match()`.
 * [#3232893](https://www.drupal.org/node/3232893) Добавлен тайпхинт`ArrayIterator` для
   метода `Drupal\Core\Routing\LazyRouteCollection::getIterator()`.
+* [#3231683](https://www.drupal.org/node/3231683) Следующие методы класса `Drupal\Core\TypedData\Validation\ExecutionContext` объявлены устаревшими: `::setNode()`, `::setGroup()`, `::setConstraint()`, `::markConstraintAsValidated()`, `::isConstraintValidated()`, `::markGroupAsValidated()`, `::isGroupValidated()`, `::markObjectAsInitialized()`, `::isObjectInitialized()`.
 
 ## Umami demo
 
@@ -2521,3 +2527,4 @@ entity.filter_format.permission_form:
 * [#3161223](https://www.drupal.org/node/3161223) Для сортировки значений, там где возможно теперь используется spaceship оператор (`<=>`).
 * [#3244592](https://www.drupal.org/node/3244592) Внесены улучшения в `run-tests.sh` для совместимости с PHP 8.1.
 * [#3226052](https://www.drupal.org/node/3226052) CSpell обновлён с 4 до 5 версии.
+* [#3028837](https://www.drupal.org/node/3028837) Из `views.api.php` заменены некорректные документационные комментарии.
