@@ -1879,6 +1879,7 @@ entity.filter_format.permission_form:
 * [#3242889](https://www.drupal.org/node/3242889) Зависимости ядра обновлены на 13.10.2021.
 * [#3245724](https://www.drupal.org/node/3245724) Зависимости ядра обновлены на 25.10.2021.
 * [#3248156](https://www.drupal.org/node/3248156) Зависимости ядра обновлены на 08.11.2021.
+* [#3248600](https://www.drupal.org/node/3248600) Зависимости ядра обновлены на 10.11.2021.
 
 ## Configuration Entity System
 
@@ -2192,6 +2193,7 @@ entity.filter_format.permission_form:
 * [#3214191](https://www.drupal.org/node/3214191) Исправлена неполадка, из-за которой шапка была поверх наложения (
   overlay) от модальных окон jQuery UI.
 * [#3231416](https://www.drupal.org/node/3231416) Библиотеки для основного и вторичного меню теперь грузятся только при наличии данных меню.
+* [#3244621](https://www.drupal.org/node/3244621) Исправлена JavaScript ошибка, возникающая при появлении secondary вкладок. 
 
 ## Path
 
