@@ -1807,6 +1807,18 @@ entity.filter_format.permission_form:
 * Тип сущности имеет `permission_granularity = "bundle"`.
 * Имеются права доступа, зависящие от текущего бандла.
 
+## Olivero — новая стабильная тема Drupal
+
+* [#3243041](https://www.drupal.org/node/3243041) 
+
+Тема [Olivero](../../../../olivero/index.md) помечена как стабильная и будет использоваться как тема по умолчанию начиная с Drupal 10.
+
+## CKEditor 5 — новый экспериментальный модуль
+
+* [#3231364](https://www.drupal.org/node/3231364)
+
+В ядро добавлен новый экспериментальный модуль — CKEditor 5, который добавляет поддержку новой версии редактора.
+
 ## Aggregator
 
 * [#3239552](https://www.drupal.org/node/3239552) Внесены улучшения в вызовы `has()` для совместимости с PHP 8.1.
@@ -2442,6 +2454,8 @@ entity.filter_format.permission_form:
 * [#3241280](https://www.drupal.org/node/3241280) Внесены улучшения в `PathPluginBase`, `NumericField`, `HandlerBase`
   и `QueryGroupByTest` для совместимости с PHP 8.1.
 * [#3008138](https://www.drupal.org/node/3008138) Кастомные ссылки теперь являются переводимыми.
+* [#3248649](https://www.drupal.org/node/3248649) Внесены улучшения
+  в `Drupal\views\Plugin\views\display\PathPluginBase::alterRoutes()` для увеличения производительности.
 
 ## Workspaces
 

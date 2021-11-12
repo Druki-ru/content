@@ -49,7 +49,6 @@ metatags:
 ## Views
 
 * [#2569381](https://www.drupal.org/node/2569381) Из `Drupal\views\Plugin\views\area\Result` удалён лишний вызов `XSS::adminFilter()`.
-* [#3248649](https://www.drupal.org/node/3248649) Внесены улучшения в `Drupal\views\Plugin\views\display\PathPluginBase::alterRoutes()` для увеличения производительности.
 
 ## Symfony 6
 
