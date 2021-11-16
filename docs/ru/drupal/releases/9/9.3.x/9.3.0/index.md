@@ -2250,6 +2250,7 @@ entity.filter_format.permission_form:
 
 * [#3241300](https://www.drupal.org/node/3241300) Внесены улучшения в `template_preprocess_responsive_image_formatter()`
   для совместимости с PHP 8.1.
+* [#3248816](https://www.drupal.org/node/3248816) `ResponsiveImageFieldUiTest` перемещён в директорию с тестами.
 
 ## REST
 
@@ -2405,6 +2406,10 @@ entity.filter_format.permission_form:
 * [#3232893](https://www.drupal.org/node/3232893) Добавлен тайпхинт`ArrayIterator` для
   метода `Drupal\Core\Routing\LazyRouteCollection::getIterator()`.
 * [#3231683](https://www.drupal.org/node/3231683) Следующие методы класса `Drupal\Core\TypedData\Validation\ExecutionContext` объявлены устаревшими: `::setNode()`, `::setGroup()`, `::setConstraint()`, `::markConstraintAsValidated()`, `::isConstraintValidated()`, `::markGroupAsValidated()`, `::isGroupValidated()`, `::markObjectAsInitialized()`, `::isObjectInitialized()`.
+* [#3248801](https://www.drupal.org/node/3248801) Внесены улучшения в `Drupal\Tests\jsonapi\Functional\JsonApiFunctionalTest` чтобы он не проваливался на Symfony 5+.
+* [#3248809](https://www.drupal.org/node/3248809) Внесены улучшения в `Drupal\Tests\file\Kernel\FileItemValidationTest` чтобы он не проваливался на Symfony 5+.
+* [#3248013](https://www.drupal.org/node/3248013) Внесены улучшения в `Drupal\Tests\views\Unit\Plugin\argument_default\QueryParameterTest` чтобы он не проваливался на Symfony 5+.
+* [#3248810](https://www.drupal.org/node/3248810) Внесены улучшения в `Drupal\Tests\jsonapi\Kernel\EventSubscriber\ResourceObjectNormalizerCacherTest` чтобы он не проваливался на Symfony 5+.
 
 ## Umami demo
 
