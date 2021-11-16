@@ -1858,6 +1858,11 @@ entity.filter_format.permission_form:
   в `\Drupal\big_pipe\Render\BigPipe::splitHtmlOnPlaceholders()` для совместимости с PHP 8.1.
 * [#3204273](https://www.drupal.org/node/3204273) BigPipe больше не использует jQuery.
 
+## CKeditor 5
+
+* [#3249263](https://www.drupal.org/node/3249263) Исправлен тест `ValidatorsTest`.
+* [#3249240](https://www.drupal.org/node/3249240) Внесены улучшения в `HTMLRestrictionsUtilities::providedElementsAttributes()` для совместимости с PHP 8.1.
+
 ## Claro
 
 * [#3154539](https://www.drupal.org/node/3154539) Добавлена новые градации серого.
@@ -1892,6 +1897,7 @@ entity.filter_format.permission_form:
 * [#3245724](https://www.drupal.org/node/3245724) Зависимости ядра обновлены на 25.10.2021.
 * [#3248156](https://www.drupal.org/node/3248156) Зависимости ядра обновлены на 08.11.2021.
 * [#3248600](https://www.drupal.org/node/3248600) Зависимости ядра обновлены на 10.11.2021.
+* [#3249233](https://www.drupal.org/node/3249233) Компоненты Symfony обновлены до версий 5.4.
 
 ## Configuration Entity System
 
@@ -2474,9 +2480,10 @@ entity.filter_format.permission_form:
   Из `Drupal\Tests\node\Kernel\Migrate\d7\MigrateNodeTypeTest::assertEntity()` удалён `@dataProvider`.
 * [#3139409](https://www.drupal.org/node/3139409) Использование устаревшего `AssertLegacyTrait::assertRaw()` заменено на
   современные подходы.
-* [#3227501](https://www.drupal.org/node/3227501) Удалены оставшиеся вызовы `t()`.
+* [#3227501](https://www.drupal.org/node/3227501) Удалены оставшиеся вызовы `t()` в тестах.
 * [#3233010](https://www.drupal.org/node/3233010) Внесены изменения
   в `drupal_phpunit_contrib_extension_directory_roots()` для совместимости с PHP 8.1.
+* [#3231781](https://www.drupal.org/node/3231781) Удалены оставшиеся вызовы `t()` в тестах.
 
 ## Прочие изменения
 
@@ -2544,3 +2551,6 @@ entity.filter_format.permission_form:
 * [#3244592](https://www.drupal.org/node/3244592) Внесены улучшения в `run-tests.sh` для совместимости с PHP 8.1.
 * [#3226052](https://www.drupal.org/node/3226052) CSpell обновлён с 4 до 5 версии.
 * [#3028837](https://www.drupal.org/node/3028837) Из `views.api.php` заменены некорректные документационные комментарии.
+* [#3222251](https://www.drupal.org/node/3222251) Проверки формата `isset($foo) ? $foo : $bar` заменены на оператор объединения с `NULL` (`??`).
+* [#3222769](https://www.drupal.org/node/3222769) Использование `list()` заменено на деструктурирующее присваивание (`[$foo, $bar] = $array`).
+* [#2707163](https://www.drupal.org/node/2707163) В файл `USAGE.txt` добавлены ссылки описывающие API для расширения и изменения Drupal, вместо старого описания про хуки.
