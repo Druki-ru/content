@@ -1840,8 +1840,8 @@ entity.filter_format.permission_form:
 * [#2268787](https://www.drupal.org/node/2268787) Для форм плагинов блоков в `$form_state` больше не
   передаётся `block_theme` значение, так как оно было крайне ненадёжно и приводило только к проблемам.
 * [#2839558](https://www.drupal.org/node/2839558) Блокам добавлена контекстуальная ссылка «Удалить».
-* [#3240165](https://www.drupal.org/node/3240165) Внесены улучшения в `\Drupal\block\Plugin\migrate\process\BlockTheme`
-  для совместимости с PHP 8.1.
+* [#3240165](https://www.drupal.org/node/3240165) Внесены улучшения в `\Drupal\block\Plugin\migrate\process\BlockTheme` для совместимости с PHP 8.1.
+* [#3056409](https://www.drupal.org/node/3056409) Добавлено отсутствующее свойство `BlockRepository::$contextHandler`.
 
 ## Book
 
