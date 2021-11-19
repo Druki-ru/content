@@ -1862,6 +1862,7 @@ entity.filter_format.permission_form:
 
 * [#3249263](https://www.drupal.org/node/3249263) Исправлен тест `ValidatorsTest`.
 * [#3249240](https://www.drupal.org/node/3249240) Внесены улучшения в `HTMLRestrictionsUtilities::providedElementsAttributes()` для совместимости с PHP 8.1.
+* [#3221082](https://www.drupal.org/node/3221082) Плагины для CKEditor 5 собираются со сборкой ядра (`yarn build`).
 
 ## Claro
 
@@ -2410,6 +2411,7 @@ entity.filter_format.permission_form:
 * [#3248809](https://www.drupal.org/node/3248809) Внесены улучшения в `Drupal\Tests\file\Kernel\FileItemValidationTest` чтобы он не проваливался на Symfony 5+.
 * [#3248013](https://www.drupal.org/node/3248013) Внесены улучшения в `Drupal\Tests\views\Unit\Plugin\argument_default\QueryParameterTest` чтобы он не проваливался на Symfony 5+.
 * [#3248810](https://www.drupal.org/node/3248810) Внесены улучшения в `Drupal\Tests\jsonapi\Kernel\EventSubscriber\ResourceObjectNormalizerCacherTest` чтобы он не проваливался на Symfony 5+.
+* [#3248014](https://www.drupal.org/node/3248014) Внесены изменения улучшения в `OEmbedIframeController` для совместимости с Symfony 6.
 
 ## Umami demo
 
@@ -2559,3 +2561,4 @@ entity.filter_format.permission_form:
 * [#3222251](https://www.drupal.org/node/3222251) Проверки формата `isset($foo) ? $foo : $bar` заменены на оператор объединения с `NULL` (`??`).
 * [#3222769](https://www.drupal.org/node/3222769) Использование `list()` заменено на деструктурирующее присваивание (`[$foo, $bar] = $array`).
 * [#2707163](https://www.drupal.org/node/2707163) В файл `USAGE.txt` добавлены ссылки описывающие API для расширения и изменения Drupal, вместо старого описания про хуки.
+* [#3207567](https://www.drupal.org/node/3207567) Внесены исправления в код связанные с ошибками `Drupal.Commenting.FunctionComment.MissingParamComment`.
