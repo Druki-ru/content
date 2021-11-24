@@ -1863,6 +1863,7 @@ entity.filter_format.permission_form:
 * [#3249263](https://www.drupal.org/node/3249263) Исправлен тест `ValidatorsTest`.
 * [#3249240](https://www.drupal.org/node/3249240) Внесены улучшения в `HTMLRestrictionsUtilities::providedElementsAttributes()` для совместимости с PHP 8.1.
 * [#3221082](https://www.drupal.org/node/3221082) Плагины для CKEditor 5 собираются со сборкой ядра (`yarn build`).
+* [#3250587](https://www.drupal.org/node/3250587) Исправлена неполадка из-за которой тест `\Drupal\Tests\ckeditor5\FunctionalJavascript\CKEditor5Test::testEditorFileReferenceIntegration()` проваливался на PostgreSQL.
 
 ## Claro
 
@@ -1899,6 +1900,8 @@ entity.filter_format.permission_form:
 * [#3248156](https://www.drupal.org/node/3248156) Зависимости ядра обновлены на 08.11.2021.
 * [#3248600](https://www.drupal.org/node/3248600) Зависимости ядра обновлены на 10.11.2021.
 * [#3249233](https://www.drupal.org/node/3249233) Компоненты Symfony обновлены до версий 5.4.
+* [#3061074](https://www.drupal.org/node/3061074) Пакет `egulias/email-validator` обновлён до версии 2.1. В этой версии
+  валидация email-адреса с пробелом будет провалена, до этого он считался валидным.
 
 ## Configuration Entity System
 
@@ -1955,6 +1958,7 @@ entity.filter_format.permission_form:
   mysql.
 * [#3241306](https://www.drupal.org/node/3241306) Внесены улучшения в `ConnectionTest` для совместимости с PHP 8.1.
 * [#3124674](https://www.drupal.org/node/3124674) В драйвер SQLite внесены изменения связанные с прекращением поддержки опции подключения `extra_prefix`.
+* [#3247414](https://www.drupal.org/node/3247414) Исправлены ошибки в документации для `Connection::statementClass` и `Connection::statementWrapperClass`.
 
 ## Datetime
 
@@ -1963,6 +1967,8 @@ entity.filter_format.permission_form:
 * [#3236796](https://www.drupal.org/node/3236796) Улучшена совместимость с PHP 8.1 в классах `Drupal\Core\Datetime`.
 * [#3240181](https://www.drupal.org/node/3240181) Внесены улучшения в `\Drupal\datetime\DateTimeComputed::getValue()`
   для совместимости с PHP 8.1.
+* [#3250335](https://www.drupal.org/node/3250335) Исправлена неполадка, из-за которой перестал работать `#date_date_callbacks`.
+* [#3250349](https://www.drupal.org/node/3250349) Функции обратного вызова для `#date_time_callbacks` и `$date_date_callbacks` теперь должны реализовывать `TrustedCallbackInterface`.
 
 ## Editor
 
@@ -2091,6 +2097,7 @@ entity.filter_format.permission_form:
   используют `DependencySerializationTrait`.
 * [#3236255](https://www.drupal.org/node/3236255) Из тестов, где возможно, удалены вызовы `::rebuildAll()`.
 
+
 ## Language System
 
 * [#3208373](https://www.drupal.org/node/3208373) Улучшено описание для `LanguageNegotiationContentEntity`. Теперь в нём
@@ -2212,7 +2219,8 @@ entity.filter_format.permission_form:
 * [#3214191](https://www.drupal.org/node/3214191) Исправлена неполадка, из-за которой шапка была поверх наложения (
   overlay) от модальных окон jQuery UI.
 * [#3231416](https://www.drupal.org/node/3231416) Библиотеки для основного и вторичного меню теперь грузятся только при наличии данных меню.
-* [#3244621](https://www.drupal.org/node/3244621) Исправлена JavaScript ошибка, возникающая при появлении secondary вкладок. 
+* [#3244621](https://www.drupal.org/node/3244621) Исправлена JavaScript ошибка, возникающая при появлении secondary вкладок.
+* [#3171570](https://www.drupal.org/node/3171570) Удалено захардкоженое использование стиля изображения для материала `wide`. Теперь будет использоваться стиль из форматтера.
 
 ## Path
 
@@ -2274,6 +2282,7 @@ entity.filter_format.permission_form:
   в `\Drupal\KernelTests\Core\Routing\RouteProviderTest::testDuplicateRoutePaths()` для совместимости с PHP 8.1.
 * [#3110580](https://www.drupal.org/node/3110580)
   Решён `@todo - remove ::processOutbound() when we remove UrlGenerator::fromPath()`.
+* [#3184619](https://www.drupal.org/node/3184619) Метод `UrlGenerator::getRoute()` теперь возвращает `NULL` если не получилось получить маршрут.
 
 ## Search
 
@@ -2469,6 +2478,7 @@ entity.filter_format.permission_form:
 * [#3008138](https://www.drupal.org/node/3008138) Кастомные ссылки теперь являются переводимыми.
 * [#3248649](https://www.drupal.org/node/3248649) Внесены улучшения
   в `Drupal\views\Plugin\views\display\PathPluginBase::alterRoutes()` для увеличения производительности.
+* [#3250482](https://www.drupal.org/node/3250482) Исправлена документация для `\Drupal\views\Plugin\views\cache\CachePluginBase::cacheSetMaxAge()`.
 
 ## Workspaces
 
@@ -2491,6 +2501,9 @@ entity.filter_format.permission_form:
 * [#3233010](https://www.drupal.org/node/3233010) Внесены изменения
   в `drupal_phpunit_contrib_extension_directory_roots()` для совместимости с PHP 8.1.
 * [#3231781](https://www.drupal.org/node/3231781) Удалены оставшиеся вызовы `t()` в тестах.
+* [#3138078](https://www.drupal.org/node/3138078) Переопределения методов `::assert*()` теперь должны иметь тайпхинты, включая `void` для возвращаемого типа.
+* [#3250629](https://www.drupal.org/node/3250629) Использование `MockBuilder::setMethods()` заменено на `MockBuilder::onlyMethods()`.
+* [#3032275](https://www.drupal.org/node/3032275) Для JavaScript тестов добавлены новые методы, которые лучше обрабатывают клики по ссылкам и ввод данных.
 
 ## Прочие изменения
 
@@ -2562,3 +2575,4 @@ entity.filter_format.permission_form:
 * [#3222769](https://www.drupal.org/node/3222769) Использование `list()` заменено на деструктурирующее присваивание (`[$foo, $bar] = $array`).
 * [#2707163](https://www.drupal.org/node/2707163) В файл `USAGE.txt` добавлены ссылки описывающие API для расширения и изменения Drupal, вместо старого описания про хуки.
 * [#3207567](https://www.drupal.org/node/3207567) Внесены исправления в код связанные с ошибками `Drupal.Commenting.FunctionComment.MissingParamComment`.
+* [#3250743](https://www.drupal.org/node/3250743) Внесены улучшения в `NumberFieldTest` для совместимости с PHP 8.1.
