@@ -1903,6 +1903,7 @@ entity.filter_format.permission_form:
 * [#3061074](https://www.drupal.org/node/3061074) Пакет `egulias/email-validator` обновлён до версии 2.1. В этой версии
   валидация email-адреса с пробелом будет провалена, до этого он считался валидным.
 * [#3251000](https://www.drupal.org/node/3251000) Зависимости ядра обновлены на 24.11.2021.
+* [#3238763](https://www.drupal.org/node/3238763) Пакет `egulias/email-validator` обновлён до 3 версии. Поддержка версии 2.1 сохранена до EOL 2 версии в январе 2022.
 
 ## Configuration Entity System
 
