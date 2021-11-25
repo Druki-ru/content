@@ -1902,6 +1902,7 @@ entity.filter_format.permission_form:
 * [#3249233](https://www.drupal.org/node/3249233) Компоненты Symfony обновлены до версий 5.4.
 * [#3061074](https://www.drupal.org/node/3061074) Пакет `egulias/email-validator` обновлён до версии 2.1. В этой версии
   валидация email-адреса с пробелом будет провалена, до этого он считался валидным.
+* [#3251000](https://www.drupal.org/node/3251000) Зависимости ядра обновлены на 24.11.2021.
 
 ## Configuration Entity System
 
