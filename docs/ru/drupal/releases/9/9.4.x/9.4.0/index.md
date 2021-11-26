@@ -25,6 +25,10 @@ metatags:
 * [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
   to string conversion in CacheContextsManager::convertTokensToKeys()».
 
+## CKEditor 5
+
+* [#3251034](https://www.drupal.org/node/3251034) Yarn скрипт `watch:ckeditor5` теперь собирает плагины в режиме разработки.
+
 ## Claro
 
 * [#3214170](https://www.drupal.org/node/3214170) Кнопка «Отмена» теперь отцентрована в off-canvas модальном окне.
@@ -63,6 +67,7 @@ metatags:
 ## Olivero
 
 * [#3186992](https://www.drupal.org/node/3186992) Исправлена неполадка, из-за которой навигационные пункты меню могли выходить за рамки контейнера.
+* [#3247269](https://www.drupal.org/node/3247269) Исправлена неполадка, из-за которой выравнивание индикации наведения и выпадающих меню было некорректно.
 
 ## Standard Profile
 
