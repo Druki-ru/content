@@ -2578,3 +2578,4 @@ entity.filter_format.permission_form:
 * [#2707163](https://www.drupal.org/node/2707163) В файл `USAGE.txt` добавлены ссылки описывающие API для расширения и изменения Drupal, вместо старого описания про хуки.
 * [#3207567](https://www.drupal.org/node/3207567) Внесены исправления в код связанные с ошибками `Drupal.Commenting.FunctionComment.MissingParamComment`.
 * [#3250743](https://www.drupal.org/node/3250743) Внесены улучшения в `NumberFieldTest` для совместимости с PHP 8.1.
+* [#3214924](https://www.drupal.org/node/3214924) Рекомендуемая версия PHP (`DRUPAL_RECOMMENDED_PHP`) установлена как 8.0.
