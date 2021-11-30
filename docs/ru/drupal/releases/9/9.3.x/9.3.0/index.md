@@ -1904,6 +1904,7 @@ entity.filter_format.permission_form:
   валидация email-адреса с пробелом будет провалена, до этого он считался валидным.
 * [#3251000](https://www.drupal.org/node/3251000) Зависимости ядра обновлены на 24.11.2021.
 * [#3238763](https://www.drupal.org/node/3238763) Пакет `egulias/email-validator` обновлён до 3 версии. Поддержка версии 2.1 сохранена до EOL 2 версии в январе 2022.
+* [#3251768](https://www.drupal.org/node/3251768) Компоненты Symfony обновлены до версий 5.4.
 
 ## Configuration Entity System
 
@@ -2070,6 +2071,7 @@ entity.filter_format.permission_form:
   избежать бесполезную работу. Это позволяет ускорить
   установку ([-19%](https://blackfire.io/profiles/compare/612e435c-5c03-48b3-99a3-80c1846396e1/graph?settings%5Bdimension%5D=wt&settings%5Bdisplay%5D=landscape&settings%5BtabPane%5D=nodes&selected=&callname=main()))
   путём снижения количества вызовов функций.
+* [#3251625](https://www.drupal.org/node/3251625) Исправлена неполадка, из-за которой подключение `settings.php` могло происходить повторно и приводить к ошибкам.
 
 ## JavaScript
 
