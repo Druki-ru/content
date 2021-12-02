@@ -2072,6 +2072,8 @@ entity.filter_format.permission_form:
   установку ([-19%](https://blackfire.io/profiles/compare/612e435c-5c03-48b3-99a3-80c1846396e1/graph?settings%5Bdimension%5D=wt&settings%5Bdisplay%5D=landscape&settings%5BtabPane%5D=nodes&selected=&callname=main()))
   путём снижения количества вызовов функций.
 * [#3251625](https://www.drupal.org/node/3251625) Исправлена неполадка, из-за которой подключение `settings.php` могло происходить повторно и приводить к ошибкам.
+* [#2871357](https://www.drupal.org/node/2871357) Исправлена неполадка, из-за которой множественные операции [пакетной обработки](../../../../9/batches/index.md) могли не выполняться.
+* [#2925203](https://www.drupal.org/node/2925203) Исправлена неполадка, из-за которой могла произойти потеря данных в процессе завершения переводов сайта.
 
 ## JavaScript
 
