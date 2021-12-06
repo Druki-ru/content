@@ -53,6 +53,7 @@ metatags:
 ## JavaScript
 
 * [#3238860](https://www.drupal.org/node/3238860) Использование `jQuery.map()` заменено на нативную `map()` функцию.
+* [#3239500](https://www.drupal.org/node/3239500) Добавлен полифил для `Array.includes()`.
 
 ## Media Library
 

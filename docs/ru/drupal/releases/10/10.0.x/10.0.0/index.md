@@ -17,3 +17,4 @@ metatags:
 ## Прочие изменения
 
 * [#3251936](https://www.drupal.org/node/3251936) (отменено) DrupalCI теперь поддерживает Drupal 10.
+* [#3104353](https://www.drupal.org/node/3104353) Guzzle обновлён до 7 версии.

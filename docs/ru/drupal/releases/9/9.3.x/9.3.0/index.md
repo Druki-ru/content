@@ -1883,6 +1883,7 @@ entity.filter_format.permission_form:
   к `\Drupal\comment\CommentStorage::getMaxThread()` и `\Drupal\comment\Entity\Comment::getThread()` для совместимости с
   PHP 8.1.
 * [#3236540](https://www.drupal.org/node/3236540) Улучшена документация для шаблона `comment.html.twig`.
+* [#2886615](https://www.drupal.org/node/2886615) Исправлена ошибка в реализации хука `hook_preprocess_comment()` в тестовом модуле. 
 
 ## Composer
 
@@ -2249,6 +2250,7 @@ entity.filter_format.permission_form:
 * [#3231071](https://www.drupal.org/node/3231071) Удалены аннотации `quickedit` из
   форматтеров-полей `TestTextTrimmedFormatter` и `DummyImageFormatter`.
 * [#3227161](https://www.drupal.org/node/3227161) Тесты, что не тестируют Quick Edit больше не используют его селекторы.
+* [#3252214](https://www.drupal.org/node/3252214) Интеграционные тесты для QuickEdit и CKEditor 5 перенесены в модуль QuickEdit.
 
 ## Render System
 
