@@ -1,0 +1,22 @@
+{
+  "$schema": "https://druki.ru/modules/custom/druki_author/authors.schema.json",
+  "Niklan": {
+    "name": {
+      "given": "Никита",
+      "family": "Малышев"
+    },
+    "org": {
+      "name": "Самозанятый",
+      "unit": "Drupal-разработчик"
+    },
+    "homepage": "https://niklan.net",
+    "country": "RU",
+    "descriptions": {
+      "ru": "Занимаюсь разработкой проектов и популяризацией Drupal."
+    },
+    "image": "images/Niklan.jpg",
+    "identification": {
+      "email": ['niklanrus@gmail.com']
+    }
+  }
+}

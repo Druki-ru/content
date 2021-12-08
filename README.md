@@ -8,9 +8,14 @@
 
 ## Процесс наполнения
 
-- [Быстрый старт](_handbook/ru/quick-start.md)
+* [Внесение вклада](CONTRIBUTING.md)
+* [Быстрый старт](_handbook/ru/quick-start.md)
 
 ## Руководство по содержимому
 
 * [Типы содержимого](_handbook/ru/content-types.md)
 * [Словарь](_handbook/ru/word-list.md)
+
+## Разметка
+
+* [Профиль автора](_handbook/ru/author-profile.md)
