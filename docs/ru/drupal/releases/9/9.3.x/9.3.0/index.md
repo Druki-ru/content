@@ -1864,6 +1864,7 @@ entity.filter_format.permission_form:
 * [#3249240](https://www.drupal.org/node/3249240) Внесены улучшения в `HTMLRestrictionsUtilities::providedElementsAttributes()` для совместимости с PHP 8.1.
 * [#3221082](https://www.drupal.org/node/3221082) Плагины для CKEditor 5 собираются со сборкой ядра (`yarn build`).
 * [#3250587](https://www.drupal.org/node/3250587) Исправлена неполадка из-за которой тест `\Drupal\Tests\ckeditor5\FunctionalJavascript\CKEditor5Test::testEditorFileReferenceIntegration()` проваливался на PostgreSQL.
+* [#3251034](https://www.drupal.org/node/3251034) Yarn скрипт `watch:ckeditor5` теперь собирает плагины в режиме разработки.
 
 ## Claro
 

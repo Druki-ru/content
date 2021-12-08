@@ -25,10 +25,6 @@ metatags:
 * [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
   to string conversion in CacheContextsManager::convertTokensToKeys()».
 
-## CKEditor 5
-
-* [#3251034](https://www.drupal.org/node/3251034) Yarn скрипт `watch:ckeditor5` теперь собирает плагины в режиме разработки.
-
 ## Claro
 
 * [#3214170](https://www.drupal.org/node/3214170) Кнопка «Отмена» теперь отцентрована в off-canvas модальном окне.
@@ -97,3 +93,4 @@ metatags:
 * [#3245820](https://www.drupal.org/node/3245820) Из кода удалены упоминания удалённого `\Drupal\Core\Action\Plugin\Action\PublishAction`.
 * [#3250263](https://www.drupal.org/node/3250263) Удалён неиспользуемый файл `core/scripts/test/test.script`.
 * [#3251891](https://www.drupal.org/node/3251891) Исправлены неполадки, приводящие к проблемам на ветке Drupal 10.
+* [#3251988](https://www.drupal.org/node/3251988) Обновлена документация о возвращаемых типах данных для `JSWebAssert::waitForText()`.
