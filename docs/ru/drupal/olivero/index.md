@@ -1,6 +1,6 @@
 ---
 title: Olivero
-slug: olivero
+slug: wiki/olivero
 metatags:
   description: 'Тема оформления Drupal — Olivero.'
 ---

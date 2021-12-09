@@ -1,6 +1,6 @@
 ---
 title: Объявление библиотеки
-slug: 9/libraries/create
+slug: wiki/9/libraries/create
 core: 9
 metatags:
   title: 'Drupal 9: Объявление библиотеки'

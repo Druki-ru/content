@@ -1,6 +1,6 @@
 ---
 title: drupal/core-vendor-hardening
-slug: drupal-core-vendor-hardening
+slug: wiki/drupal-core-vendor-hardening
 search-keywords:
   - composer
 metatags:

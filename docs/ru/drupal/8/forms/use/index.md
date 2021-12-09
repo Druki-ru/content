@@ -1,6 +1,6 @@
 ---
 title: Использование форм
-slug: 8/forms/use
+slug: wiki/8/forms/use
 core: 8
 metatags:
   title: 'Drupal 8: Использование форм'

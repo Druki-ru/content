@@ -1,6 +1,6 @@
 ---
 title: Руководство по установке
-slug: 8/installation
+slug: wiki/8/installation
 core: 8
 category:
   area: Первое знакомство

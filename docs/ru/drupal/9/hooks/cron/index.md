@@ -1,6 +1,6 @@
 ---
 title: Регулярные операции
-slug: 9/cron
+slug: wiki/9/cron
 core: 9
 search-keywords:
   - крон

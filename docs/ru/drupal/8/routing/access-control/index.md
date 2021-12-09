@@ -1,6 +1,6 @@
 ---
 title: Контроль доступа
-slug: 8/routing/access-control
+slug: wiki/8/routing/access-control
 core: 8
 category:
   area: Маршрутизация

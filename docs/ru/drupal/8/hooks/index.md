@@ -1,6 +1,6 @@
 ---
 title: Хуки
-slug: 8/hooks
+slug: wiki/8/hooks
 core: 8
 search-keywords:
  - hooks

@@ -1,6 +1,6 @@
 ---
 title: Simplytest
-slug: simplytest
+slug: wiki/simplytest
 search-keywords:
   - как где попробовать друпал drupal
 metatags:

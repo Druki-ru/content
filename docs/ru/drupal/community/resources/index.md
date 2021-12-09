@@ -1,6 +1,6 @@
 ---
 title: Интернет-ресурсы
-slug: community/resources
+slug: wiki/community/resources
 category:
   area: Drupal сообщество
   order: 2

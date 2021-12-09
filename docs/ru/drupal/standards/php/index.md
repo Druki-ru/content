@@ -1,6 +1,6 @@
 ---
 title: Стандарты кодирования PHP
-slug: standards/php
+slug: wiki/standards/php
 category:
   area: Стандарты кодирования
   order: 2

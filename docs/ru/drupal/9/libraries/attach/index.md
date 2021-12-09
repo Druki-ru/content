@@ -1,6 +1,6 @@
 ---
 title: Подключение библиотеки
-slug: 9/libraries/attach
+slug: wiki/9/libraries/attach
 core: 9
 metatags:
   title: 'Drupal 9: Подключение библиотеки'

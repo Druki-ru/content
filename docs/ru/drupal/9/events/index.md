@@ -1,6 +1,6 @@
 ---
 title: События
-slug: 9/events
+slug: wiki/9/events
 core: 9
 search-keywords:
   - как вызвать событие

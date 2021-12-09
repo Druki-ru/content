@@ -1,6 +1,6 @@
 ---
 title: Дистрибутивы
-slug: 8/distributions
+slug: wiki/8/distributions
 core: 8
 search-keywords:
   - Установочные профили

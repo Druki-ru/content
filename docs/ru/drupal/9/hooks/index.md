@@ -1,6 +1,6 @@
 ---
 title: Hooks (хуки)
-slug: 9/hooks
+slug: wiki/9/hooks
 core: 9
 search-keywords:
  - hooks

@@ -1,6 +1,6 @@
 ---
 title: Структура
-slug: 9/admin/structure
+slug: wiki/9/admin/structure
 core: 9
 metatags:
   title: 'Drupal 9: Структура'

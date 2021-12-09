@@ -1,6 +1,6 @@
 ---
 title: SA-CORE-2021-003
-slug: security/sa-core-2021-003
+slug: wiki/security/sa-core-2021-003
 metatags:
   title: 'Drupal: SA-CORE-2021-003'
   description: 'Критическое. Исправлено в версиях: 8.9.16, 9.0.14, 9.1.9.'

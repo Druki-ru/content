@@ -1,6 +1,6 @@
 ---
 title: Web Vitals
-slug: web-vitals
+slug: wiki/web-vitals
 metatags:
   description: Web Vitals — это набор руководств, рекомендаций и инструментов, которые позволяют произвести оценку качества и удобства конкретной страницы сайта.
 ---

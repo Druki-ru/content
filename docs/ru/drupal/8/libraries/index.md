@@ -1,6 +1,6 @@
 ---
 title: Библиотеки
-slug: 8/libraries
+slug: wiki/8/libraries
 core: 8
 search-keywords:
  - где как подключать JS JavaScript CSS добавить на страницу

@@ -1,6 +1,6 @@
 ---
 title: Стили изображения
-slug: 9/image-styles
+slug: wiki/9/image-styles
 metatags:
   title: 'Drupal 9: Стили изображения'
   description: 'Обработка изображений загруженных в Drupal.'

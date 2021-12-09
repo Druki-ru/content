@@ -1,6 +1,6 @@
 ---
 title: Создание формы
-slug: 9/forms/create
+slug: wiki/9/forms/create
 core: 9
 metatags:
   title: 'Drupal 9: Создание формы'

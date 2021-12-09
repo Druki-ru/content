@@ -1,6 +1,6 @@
 ---
 title: 'SA-CORE-2019-011'
-slug: security/sa-core-2019-011
+slug: wiki/security/sa-core-2019-011
 metatags:
   title: 'Drupal: SA-CORE-2019-011'
   description: 'Умеренно критический. Исправлено в версиях: 8.7.11 и 8.8.1.'

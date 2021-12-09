@@ -1,6 +1,6 @@
 ---
 title: settings.php — настройки окружения сайта
-slug: 8/settings-php
+slug: wiki/8/settings-php
 core: 8
 metatags:
   title: 'Drupal 8: settings.php — настройки окружения сайта'

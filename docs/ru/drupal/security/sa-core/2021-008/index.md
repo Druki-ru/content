@@ -1,6 +1,6 @@
 ---
 title: SA-CORE-2021-008
-slug: security/sa-core-2021-008
+slug: wiki/security/sa-core-2021-008
 metatags:
   title: 'Drupal: SA-CORE-2021-008'
   description: 'Умеренно критично. Исправлено в версиях: 8.9.19, 9.1.13, 9.2.6.'

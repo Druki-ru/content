@@ -1,6 +1,6 @@
 ---
 title: Оформление
-slug: 8/admin/appearance
+slug: wiki/8/admin/appearance
 core: 8
 metatags:
   title: 'Drupal 8: Оформление'

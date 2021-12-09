@@ -1,6 +1,6 @@
 ---
 title: Темы оформления
-slug: 8/themes
+slug: wiki/8/themes
 core: 8
 metatags:
   title: 'Drupal 8: Темы оформления'

@@ -1,6 +1,6 @@
 ---
 title: Список мероприятий DrupalCon
-slug: events/drupalcon-list
+slug: wiki/events/drupalcon-list
 metatags:
   description: 'Будущие и прошедшие мероприятия DrupalCon. Информация, отчеты, доклады и докладчики.'
 ---

@@ -1,6 +1,6 @@
 ---
 title: Темы оформления
-slug: 9/themes
+slug: wiki/9/themes
 core: 9
 metatags:
   title: 'Drupal 9: Темы оформления'

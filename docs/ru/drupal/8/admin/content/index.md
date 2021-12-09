@@ -1,6 +1,6 @@
 ---
 title: Содержимое
-slug: 8/admin/content
+slug: wiki/8/admin/content
 core: 8
 metatags:
   title: 'Drupal 8: Содержимое'

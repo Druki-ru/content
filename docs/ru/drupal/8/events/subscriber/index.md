@@ -1,6 +1,6 @@
 ---
 title: Подписка на событие
-slug: 8/events/subscribe
+slug: wiki/8/events/subscribe
 core: 8
 metatags:
   title: 'Drupal 8: Подписка на событие'

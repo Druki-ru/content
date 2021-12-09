@@ -1,6 +1,6 @@
 ---
 title: Стандартный установочный профиль
-slug: 8/distributions/standard
+slug: wiki/8/distributions/standard
 core: 8
 search-keywords:
   - Установочные профили

@@ -1,6 +1,6 @@
 ---
 title: Dependency Injection
-slug: 9/services/dependency-injection
+slug: wiki/9/services/dependency-injection
 core: 9
 search-keywords:
   - dependency injection

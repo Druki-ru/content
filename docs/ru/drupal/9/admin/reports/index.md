@@ -1,6 +1,6 @@
 ---
 title: Отчёты
-slug: 9/admin/reports
+slug: wiki/9/admin/reports
 core: 9
 metatags:
   title: 'Drupal 9: Отчёты'

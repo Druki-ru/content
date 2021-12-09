@@ -1,6 +1,6 @@
 ---
 title: 'SA-CORE-2020-006'
-slug: security/sa-core-2020-006
+slug: wiki/security/sa-core-2020-006
 metatags:
   title: 'Drupal: SA-CORE-2020-006'
   description: 'Менее критическое. Исправлено в версиях: 8.8.8, 8.9.1, 9.0.1.'

@@ -1,6 +1,6 @@
 ---
 title: Список мероприятий DrupalCamp
-slug: events/drupalcamp-list
+slug: wiki/events/drupalcamp-list
 metatags:
   description: 'Будущие и прошедшие мероприятия DrupalCamp. Информация, отчеты, доклады и докладчики.'
 ---

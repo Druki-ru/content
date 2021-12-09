@@ -1,6 +1,6 @@
 ---
 title: Internal Page Cache
-slug: 9/page-cache
+slug: wiki/9/page-cache
 metatags:
   title: 'Drupal 9: Internal Page Cache'
   description: Internal Page Cache — статическое кеширование страниц для анонимных пользователей.

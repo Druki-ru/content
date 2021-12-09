@@ -1,6 +1,6 @@
 ---
 title: Сервисы
-slug: 9/services
+slug: wiki/9/services
 core: 9
 search-keywords:
   - работа с объектами

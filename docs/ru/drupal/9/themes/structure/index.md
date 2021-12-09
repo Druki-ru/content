@@ -1,6 +1,6 @@
 ---
 title: Структура темы
-slug: 9/themes/structure
+slug: wiki/9/themes/structure
 core: 9
 metatags:
   title: 'Drupal 9: Структура темы оформления'

@@ -1,6 +1,6 @@
 ---
 title: Создание темы оформления
-slug: 8/themes/create
+slug: wiki/8/themes/create
 core: 8
 metatags:
   title: 'Drupal 8: Создание темы оформления'

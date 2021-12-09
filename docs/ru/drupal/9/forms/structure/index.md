@@ -1,6 +1,6 @@
 ---
 title: Структура форм
-slug: 9/forms/structure
+slug: wiki/9/forms/structure
 core: 9
 metatags:
   title: 'Drupal 9: Структура форм'

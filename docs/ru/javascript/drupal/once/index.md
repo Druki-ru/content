@@ -1,6 +1,6 @@
 ---
 title: 'Drupal JavaScript Once API'
-slug: drupal-once
+slug: wiki/drupal-once
 metatags:
   title: 'Drupal JavaScript Once API (@drupal/once)'
   description: '@drupal/once — JavaScript библиотека отмечающая DOM элементы как обработанные для предотвращения многократных инициализаций.'

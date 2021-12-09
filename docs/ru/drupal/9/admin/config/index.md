@@ -1,6 +1,6 @@
 ---
 title: Конфигурация
-slug: 9/admin/config
+slug: wiki/9/admin/config
 core: 9
 metatags:
   title: 'Drupal 9: Конфигурация'

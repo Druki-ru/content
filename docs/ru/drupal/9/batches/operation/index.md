@@ -1,6 +1,6 @@
 ---
 title: Обработка операции
-slug: 9/batches/operation
+slug: wiki/9/batches/operation
 core: 9
 metatags:
   title: 'Drupal 9: Обработка операции'

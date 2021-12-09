@@ -1,6 +1,6 @@
 ---
 title: 'SA-CONTRIB-2019-060'
-slug: security/sa-contrib-2019-060
+slug: wiki/security/sa-contrib-2019-060
 metatags:
   title: 'Existing Values Autocomplete Widget: SA-CONTRIB-2019-060'
   description: 'Критическая уязвимость модуля Existing Values Autocomplete Widget. Устранена в версии 8.x-1.2'

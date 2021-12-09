@@ -1,6 +1,6 @@
 ---
 title: Нормы поведения
-slug: code-of-conduct
+slug: wiki/code-of-conduct
 metatags:
   title: 'Drupal: Нормы поведения'
   description: 'Набор идей сообщества, направленных на хорошее поведение в Drupal сообществе.'

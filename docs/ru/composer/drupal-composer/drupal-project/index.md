@@ -1,6 +1,6 @@
 ---
 title: drupal-composer/drupal-project
-slug: drupal-composer-drupal-project
+slug: wiki/drupal-composer-drupal-project
 search-keywords:
   - Установка при помощи композера
   - composer

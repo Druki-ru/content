@@ -1,6 +1,6 @@
 ---
 title: Минимальный установочный профиль
-slug: 9/distributions/minimal
+slug: wiki/9/distributions/minimal
 core: 9
 search-keywords:
   - Установочные профили

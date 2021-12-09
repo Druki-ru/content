@@ -1,6 +1,6 @@
 ---
 title: DrupalCon Minneapolis 2020
-slug: events/drupalcon-2020-minneapolis
+slug: wiki/events/drupalcon-2020-minneapolis
 metatags:
   description: 'DrupalCon Minneapolis 2020, Миннеаполис, Миннесота, США. Даты проведения, докладчики, доклады.'
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'Drupal 8.9.9'
-slug: drupal/releases/8.9.9
+slug: wiki/drupal/releases/8.9.9
 core: 8
 metatags:
   title: 'Drupal 8.9.9: Список изменений'

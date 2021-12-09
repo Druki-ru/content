@@ -1,6 +1,6 @@
 ---
 title: Очереди
-slug: 9/queues
+slug: wiki/9/queues
 core: 9
 metatags:
   title: 'Drupal 9: Очереди'

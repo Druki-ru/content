@@ -1,6 +1,6 @@
 ---
 title: Модули
-slug: 8/modules
+slug: wiki/8/modules
 core: 8
 search-keywords:
   - где куда писать вставлять код

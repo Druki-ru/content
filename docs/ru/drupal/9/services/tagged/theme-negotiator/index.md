@@ -1,6 +1,6 @@
 ---
 title: Theme Negotiator
-slug: 9/theme-negotiator
+slug: wiki/9/theme-negotiator
 core: 9
 search-keywords:
   - theme_negotiator

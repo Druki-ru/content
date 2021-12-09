@@ -1,6 +1,6 @@
 ---
 title: Создание темы оформления
-slug: 9/themes/create
+slug: wiki/9/themes/create
 core: 9
 metatags:
   title: 'Drupal 9: Создание темы оформления'

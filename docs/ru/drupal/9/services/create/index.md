@@ -1,6 +1,6 @@
 ---
 title: Создание сервиса
-slug: 9/services/create
+slug: wiki/9/services/create
 core: 9
 metatags:
   title: 'Drupal 9: Создание сервиса'

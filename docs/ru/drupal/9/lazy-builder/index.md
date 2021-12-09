@@ -1,6 +1,6 @@
 ---
 title: Ленивый строитель
-slug: 9/lazy-builder
+slug: wiki/9/lazy-builder
 metatags:
   title: 'Drupal 9: Ленивый строитель'
   description: 'Lazy Builder — отложенная обработка медленного или персонализированного кода.'

@@ -1,6 +1,6 @@
 ---
 title: DrupalCon Amsterdam 2019
-slug: events/drupalcon-2019-amsterdam
+slug: wiki/events/drupalcon-2019-amsterdam
 metatags:
   description: 'DrupalCon Amsterdam 2019, Амстердам, Нидерланды. Даты проведения, докладчики, доклады.'
 ---

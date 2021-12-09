@@ -1,6 +1,6 @@
 ---
 title: Псевдо-поля (экстра-поля)
-slug: 9/extra-fields
+slug: wiki/9/extra-fields
 core: 9
 search-keywords:
   - псевдо поля

@@ -1,6 +1,6 @@
 ---
 title: Drupal 8
-slug: 8
+slug: wiki/8
 core: 8
 metatags:
   description: 'Что такое Drupal 8?'

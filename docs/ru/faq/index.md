@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы
-slug: faq
+slug: wiki/faq
 search-keywords:
   - С чего начать
   - Я ничего не знаю

@@ -1,6 +1,6 @@
 ---
 title: Формы
-slug: 8/forms
+slug: wiki/8/forms
 core: 8
 search-keywords:
   - как создать добавить объявить форму

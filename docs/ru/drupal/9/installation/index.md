@@ -1,6 +1,6 @@
 ---
 title: Руководство по установке
-slug: 9/installation
+slug: wiki/9/installation
 core: 9
 category:
   area: Первое знакомство

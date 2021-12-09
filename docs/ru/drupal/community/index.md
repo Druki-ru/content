@@ -1,6 +1,6 @@
 ---
 title: Сообщество
-slug: community
+slug: wiki/community
 category:
   area: Drupal сообщество
   order: 1

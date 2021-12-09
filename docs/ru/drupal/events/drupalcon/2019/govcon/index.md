@@ -1,6 +1,6 @@
 ---
 title: Drupal GovCon 2019
-slug: events/drupalgovcon-2019
+slug: wiki/events/drupalgovcon-2019
 metatags:
   description: 'Drupal GovCon 2019, Бетесда, Мэриленд, США. Описание, доклады.'
 ---

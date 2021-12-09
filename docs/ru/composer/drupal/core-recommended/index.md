@@ -1,6 +1,6 @@
 ---
 title: drupal/core-recommended
-slug: drupal-core-recommended
+slug: wiki/drupal-core-recommended
 search-keywords:
   - composer
 metatags:

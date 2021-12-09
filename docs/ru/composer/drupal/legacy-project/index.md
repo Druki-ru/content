@@ -1,6 +1,6 @@
 ---
 title: drupal/legacy-project
-slug: drupal-legacy-project
+slug: wiki/drupal-legacy-project
 search-keywords:
   - Установка при помощи композера
   - composer

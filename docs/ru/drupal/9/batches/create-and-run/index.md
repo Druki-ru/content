@@ -1,6 +1,6 @@
 ---
 title: Создание и запуск пакетной обработки
-slug: 9/batches/create-and-run
+slug: wiki/9/batches/create-and-run
 core: 9
 metatags:
   title: 'Drupal 9: Создание и запуск пакетной обработки'

@@ -1,6 +1,6 @@
 ---
 title: Структура маршрутов
-slug: 8/routing/structure-of-routes
+slug: wiki/8/routing/structure-of-routes
 core: 8
 category:
   area: Маршрутизация

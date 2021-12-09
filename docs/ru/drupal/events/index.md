@@ -1,6 +1,6 @@
 ---
 title: Drupal мероприятия
-slug: events
+slug: wiki/events
 metatags:
   description: 'Узнайте больше о проводимых Drupal сообществом мероприятиях, их типах, датах и отчетах.'
 ---

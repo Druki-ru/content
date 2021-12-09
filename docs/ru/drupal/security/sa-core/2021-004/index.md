@@ -1,6 +1,6 @@
 ---
 title: SA-CORE-2021-004
-slug: security/sa-core-2021-004
+slug: wiki/security/sa-core-2021-004
 metatags:
   title: 'Drupal: SA-CORE-2021-004'
   description: 'Критическое. Исправлено в версиях: 8.9.17, 9.1.11, 9.2.2.'

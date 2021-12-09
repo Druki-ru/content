@@ -1,6 +1,6 @@
 ---
 title: Справка
-slug: 8/admin/help
+slug: wiki/8/admin/help
 core: 8
 metatags:
   title: 'Drupal 8: Справка'

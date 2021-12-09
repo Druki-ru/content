@@ -1,6 +1,6 @@
 ---
 title: Структура темы
-slug: 8/themes/structure
+slug: wiki/8/themes/structure
 core: 8
 metatags:
   title: 'Drupal 8: Структура темы оформления'

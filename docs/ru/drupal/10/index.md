@@ -1,6 +1,6 @@
 ---
 title: Drupal 10
-slug: 10
+slug: wiki/10
 core: 10
 metatags:
   description: 'Drupal 10 — десятая мажорная версия Drupal, релиз которой состоится в июне 2022.'

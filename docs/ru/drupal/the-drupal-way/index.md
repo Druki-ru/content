@@ -1,6 +1,6 @@
 ---
 title: Философия Drupal
-slug: the-drupal-way
+slug: wiki/the-drupal-way
 metatags:
   description: 'Философия Drupal — это набор основных ценностей и принципов сообщества.'
 ---

@@ -1,6 +1,6 @@
 ---
 title: Плагины
-slug: 8/plugins
+slug: wiki/8/plugins
 core: 8
 metatags:
   title: 'Drupal 8: Плагины (Plugins)'

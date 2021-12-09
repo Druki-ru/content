@@ -1,6 +1,6 @@
 ---
 title: Пользователи
-slug: 9/admin/people
+slug: wiki/9/admin/people
 core: 9
 metatags:
   title: 'Drupal 9: Пользователи'

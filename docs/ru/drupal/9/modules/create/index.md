@@ -1,6 +1,6 @@
 ---
 title: Создание модуля
-slug: 9/modules/create
+slug: wiki/9/modules/create
 core: 9
 metatags:
   title: 'Drupal 9: Создание модуля'

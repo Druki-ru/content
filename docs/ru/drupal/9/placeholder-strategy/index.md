@@ -1,6 +1,6 @@
 ---
 title: Стратегия заполнителя
-slug: 9/placeholder-strategy
+slug: wiki/9/placeholder-strategy
 metatags:
   title: 'Drupal 9: Стратегия заполнителя'
   description: 'Placeholder Strategy определяет как будут обрабатываться заполнители созданные ленивым строителем.'

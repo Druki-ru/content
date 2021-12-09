@@ -1,6 +1,6 @@
 ---
 title: Authentication Provider
-slug: 9/authentication-provider
+slug: wiki/9/authentication-provider
 core: 9
 search-keywords:
   - authentication_provider

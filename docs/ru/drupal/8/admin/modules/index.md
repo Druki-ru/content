@@ -1,6 +1,6 @@
 ---
 title: Расширения
-slug: 8/admin/modules
+slug: wiki/8/admin/modules
 core: 8
 metatags:
   title: 'Drupal 8: Расширения'

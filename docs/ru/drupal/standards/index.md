@@ -1,6 +1,6 @@
 ---
 title: Стандарты кодирования Drupal
-slug: standards
+slug: wiki/standards
 category:
   area: Стандарты кодирования
   order: 1

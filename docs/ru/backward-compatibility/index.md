@@ -1,6 +1,6 @@
 ---
 title: Обратная совместимость (BC)
-slug: backward-compatibility
+slug: wiki/backward-compatibility
 search-keywords:
   - bc
   - обратная совместимость

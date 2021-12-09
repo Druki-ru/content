@@ -1,6 +1,6 @@
 ---
 title: Адаптивные изображения
-slug: 9/responsive-images
+slug: wiki/9/responsive-images
 metatags:
   title: 'Drupal 9: Адаптивные изображения'
   description: 'Drupal модуль для создания адаптивных изображений.'

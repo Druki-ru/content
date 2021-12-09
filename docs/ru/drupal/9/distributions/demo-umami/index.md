@@ -1,6 +1,6 @@
 ---
 title: Демонстрационный установочный профиль Umami
-slug: 9/distributions/demo-umami
+slug: wiki/9/distributions/demo-umami
 core: 9
 search-keywords:
   - Установочные профили

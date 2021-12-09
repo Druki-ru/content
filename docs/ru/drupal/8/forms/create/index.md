@@ -1,6 +1,6 @@
 ---
 title: Создание формы
-slug: 8/forms/create
+slug: wiki/8/forms/create
 core: 8
 metatags:
   title: 'Drupal 8: Создание формы'

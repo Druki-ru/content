@@ -1,6 +1,6 @@
 ---
 title: Dependency Injection
-slug: 8/services/dependency-injection
+slug: wiki/8/services/dependency-injection
 core: 8
 search-keywords:
   - dependency injection

@@ -1,6 +1,6 @@
 ---
 title: drupal/recommended-project
-slug: drupal-recommended-project
+slug: wiki/drupal-recommended-project
 search-keywords:
   - Установка Drupal при помощи композера
   - composer

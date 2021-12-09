@@ -1,6 +1,6 @@
 ---
 title: Создание события
-slug: 8/events/create
+slug: wiki/8/events/create
 core: 8
 metatags:
   title: 'Drupal 8: Создание события'

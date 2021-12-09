@@ -1,6 +1,6 @@
 ---
 title: Drush
-slug: drush
+slug: wiki/drush
 metatags:
   description: 'Drush — CLI утилита для работы с Drupal.'
 ---

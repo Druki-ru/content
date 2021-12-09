@@ -1,6 +1,6 @@
 ---
 title: 'Список релизов'
-slug: drupal/releases
+slug: wiki/drupal/releases
 core: 9
 metatags:
   title: 'Drupal: Список релизов и даты выхода версий'

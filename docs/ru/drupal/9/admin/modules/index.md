@@ -1,6 +1,6 @@
 ---
 title: Расширения
-slug: 9/admin/modules
+slug: wiki/9/admin/modules
 core: 9
 metatags:
   title: 'Drupal 9: Расширения'
