@@ -10,9 +10,7 @@ metatags:
 > [!WARNING]
 > Данная версия находится в разработке. Список изменений может меняться и дополняться, даты могут смещаться.
 
-**Дата релиза**: декабрь 2021\
-**Активная поддержка до**: июнь 2022\
-**Поддержка безопасности до**: декабрь 2022
+**Дата релиза**: 8 декабря 2021\
 
 ## Параметры `{node}` и `{node_revision}` для маршрутов ревизий теперь конвертируются в сущности
 
@@ -2586,3 +2584,7 @@ entity.filter_format.permission_form:
 * [#3207567](https://www.drupal.org/node/3207567) Внесены исправления в код связанные с ошибками `Drupal.Commenting.FunctionComment.MissingParamComment`.
 * [#3250743](https://www.drupal.org/node/3250743) Внесены улучшения в `NumberFieldTest` для совместимости с PHP 8.1.
 * [#3214924](https://www.drupal.org/node/3214924) Рекомендуемая версия PHP (`DRUPAL_RECOMMENDED_PHP`) установлена как 8.0.
+
+## Ссылки
+
+- [Drupal 9.3.0](https://www.drupal.org/project/drupal/releases/9.3.0) (англ.), drupal.org, 8 декабря 2021
