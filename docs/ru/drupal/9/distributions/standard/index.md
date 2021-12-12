@@ -42,4 +42,4 @@ metatags:
 
 ## Изменения в релизах
 
-- **[Drupal 9.3.0](../../../releases/9/9.3.x/9.3.0/index.md) (в разработке):** Добавлена роль «Content Editor».
+- **[Drupal 9.3.0](../../../releases/9/9.3.x/9.3.0/index.md) (08.12.2021):** Добавлена роль «Content Editor».
