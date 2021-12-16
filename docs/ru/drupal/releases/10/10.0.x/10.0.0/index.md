@@ -26,6 +26,7 @@ metatags:
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
+* [#3253093](https://www.drupal.org/node/3253093) Удалена зависимость `symfony-cmf/routing`.
 
 ## Symfony 6
 

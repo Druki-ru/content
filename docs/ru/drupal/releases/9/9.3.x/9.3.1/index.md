@@ -22,6 +22,10 @@ metatags:
 
 * [#3253824](https://www.drupal.org/node/3253824) Исправлена опечатка в комментарии файла `d7_field_formatter_settings.yml`.
 
+## System
+
+* [#3254403](https://www.drupal.org/node/3254403) Оптимизировано обновление `system_post_update_sort_all_config()`, которое могло приводить к проблемам нехватки памяти в процессе выполнения.
+
 ## Update
 
 * [#3252067](https://www.drupal.org/node/3252067) Уменьшено количество повторных вызовов в тестах модуля.
@@ -40,3 +44,4 @@ metatags:
 * [#3246157](https://www.drupal.org/node/3246157) [Chris Drake](https://www.drupal.org/u/chrisdarke) добавлен в качестве координатора направления наставничества.
 * [#3246158](https://www.drupal.org/node/3246158) [AmyJune Hineline](https://www.drupal.org/u/volkswagenchick) добавлена в качестве координатора направления наставничества.
 * [#3246156](https://www.drupal.org/node/3246156) [Brian Gilber](https://www.drupal.org/u/realityloop) добавлен в качестве координатора направления наставничества.
+* [#3080819](https://www.drupal.org/node/3080819) В `InfoParserInterface` добавлена документация о параметре `core_version_requirements`.
