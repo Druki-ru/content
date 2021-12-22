@@ -18,6 +18,10 @@ metatags:
 
 * [#3250648](https://www.drupal.org/node/3250648) Внесены улучшения в `SelectSubqueryTest` для избежания сравнений бинарных значений.
 
+## Field System
+
+* [#3064890](https://www.drupal.org/node/3064890) Улучшена проверка на наличие ключа  `name` в `FieldUiTable`. 
+
 ## Migration System
 
 * [#3253824](https://www.drupal.org/node/3253824) Исправлена опечатка в комментарии файла `d7_field_formatter_settings.yml`.

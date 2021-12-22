@@ -19,9 +19,11 @@ metatags:
 
 ## Минимальная версия PHP — 8.0.2
 
-* [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.drupal.org/node/3255271)  
+* [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350) 
 
 Минимальная версия PHP для Drupal 10 — 8.0.2. Drupal 10 не будет работать на PHP 7 и более ранних версиях.
+
+Весь код, который был связан с PHP 7, включая настройки для PHP в `.htaccess` файле и различные упоминания — удалены из кодовой базы.
 
 ## Прекращена поддержка Internet Explorer
 
@@ -31,6 +33,7 @@ metatags:
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
 * [#3253093](https://www.drupal.org/node/3253093) Удалена зависимость `symfony-cmf/routing`.
+* [#3220220](https://www.drupal.org/node/3220220) Зависимость `guzzlehttp/psr7` обновлена до версии 2.1.0.
 
 ## Symfony 6
 
@@ -48,7 +51,8 @@ metatags:
 * [#3238485](https://www.drupal.org/node/3238485) Методам, переопределяющие методы `Drupal\Component\DependencyInjection\Container`, добавлены тайпхинты.
 * [#3233479](https://www.drupal.org/node/3233479) Методы, переопределяющие `Symfony\Component\Validator\Violation\ConstraintViolationBuilderInterface::atPath()`, `::setParameter()`, `::setParameters()`, `::setTranslationDomain()`, `::setInvalidValue()`, `::setPlural()`, `::setCode()` и `::setCause()` добавлены тайпхинты.
 * [#3254331](https://www.drupal.org/node/3254331) Методам, переопределяющие `Normalizer::normalize()`, добавлен тайпхинт `array|string|int|float|bool|\ArrayObject|null`.
-* [#3232097](https://www.drupal.org/node/3232097) Методам, переопределяющие `Symfony\Component\EventDispatcher\EventSubscriberInterface::getSubscribedEvents()`, добавлен тайпхинт `array`. 
+* [#3232097](https://www.drupal.org/node/3232097) Методам, переопределяющие `Symfony\Component\EventDispatcher\EventSubscriberInterface::getSubscribedEvents()`, добавлен тайпхинт `array`.
+* [#3233031](https://www.drupal.org/node/3233031) Методам, переопределяющие `Symfony\Component\Routing\RequestContextAwareInterface::getContext()`, добавлен тайпхинт `RequestContext`.
 
 ## Тестирование
 
