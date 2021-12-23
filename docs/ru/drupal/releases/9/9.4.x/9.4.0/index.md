@@ -93,6 +93,7 @@ metatags:
 ## Media Library
 
 * [#3173770](https://www.drupal.org/node/3173770) `MediaLibraryFieldWidgetOpener` теперь позволяет использовать другие референс поля, расширяющее поле из ядра и использующие `EntityReferenceFieldItemList`.
+* [#3248454](https://www.drupal.org/node/3248454) Внесены улучшения в `MediaLibraryStateTest` для совместимости с Symfony 5.4.
 
 ## Migration System
 
@@ -103,7 +104,6 @@ metatags:
 ## Olivero
 
 * [#3186992](https://www.drupal.org/node/3186992) Исправлена неполадка, из-за которой навигационные пункты меню могли выходить за рамки контейнера.
-* [#3247269](https://www.drupal.org/node/3247269) Исправлена неполадка, из-за которой выравнивание индикации наведения и выпадающих меню было некорректно.
 
 ## Standard Profile
 

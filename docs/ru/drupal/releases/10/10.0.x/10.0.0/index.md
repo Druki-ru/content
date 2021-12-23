@@ -34,6 +34,12 @@ metatags:
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
 * [#3253093](https://www.drupal.org/node/3253093) Удалена зависимость `symfony-cmf/routing`.
 * [#3220220](https://www.drupal.org/node/3220220) Зависимость `guzzlehttp/psr7` обновлена до версии 2.1.0.
+* [#3253092](https://www.drupal.org/node/3253092) Удалена зависимость `doctrine/reflection`.
+
+## Olivero
+
+* [#3255119](https://www.drupal.org/node/3255119) Для переменных, используемых для сеток, теперь используются CSS-переменные.
+* [#3255180](https://www.drupal.org/node/3255180) Внесены улучшения в стили для Views-сеток. Теперь они используют CSS-переменные.
 
 ## Symfony 6
 
