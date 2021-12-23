@@ -105,7 +105,7 @@ Drupal работает на любом веб-сервере, который у
 
 NGINX популярная альтернатива Apache, в связи с чем, у сообщества также имеется большой опыт работы с данным веб-сервером и Drupal работает на нём без проблем.
 
-Официальный сайт NGINX содержит [конфигурационный файл Drupal](https://www.nginx.com/resources/wiki/start/topics/recipes/drupal/) с адаптированными настройками в соответствии с `.htacces`.
+Официальный сайт NGINX содержит [конфигурационный файл Drupal](https://www.nginx.com/resources/wiki/start/topics/recipes/drupal/) с адаптированными настройками в соответствии с `.htaccess`.
 
 ### Microsoft IIS
 
