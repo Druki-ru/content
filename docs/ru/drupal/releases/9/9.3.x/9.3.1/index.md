@@ -25,6 +25,7 @@ metatags:
 ## Migration System
 
 * [#3253824](https://www.drupal.org/node/3253824) Исправлена опечатка в комментарии файла `d7_field_formatter_settings.yml`.
+* [#3247039](https://www.drupal.org/node/3247039) Методу `MigrateDestinationInterface::import()` добавлена информацию том, что он может выбросить исключение `MigrateException`.
 
 ## Olivero
 
@@ -46,6 +47,7 @@ metatags:
 ## Views
 
 * [#3253568](https://www.drupal.org/node/3253568) Исправлена неполадка, которая приводила к ошибке при использовании шаблона поля.
+* [#2793169](https://www.drupal.org/node/2793169) Обновлена документация для `hook_views_post_render()`.
 
 ## Тестирование
 
