@@ -26,10 +26,16 @@ metatags:
 
 * [#3253824](https://www.drupal.org/node/3253824) Исправлена опечатка в комментарии файла `d7_field_formatter_settings.yml`.
 * [#3247039](https://www.drupal.org/node/3247039) Методу `MigrateDestinationInterface::import()` добавлена информацию том, что он может выбросить исключение `MigrateException`.
+* [#3092430](https://www.drupal.org/node/3092430) Исправлена неполадка, приводящая к ошибке «TypeError: Argument 1 passed to Drupal\search\Plugin\ConfigurableSearchPluginBase::setConfiguration() must be of the type array, null given».
+* [#2675006](https://www.drupal.org/node/2675006) Добавлен тест для трейта `MigrationConfigurationTrait`.
 
 ## Olivero
 
 * [#3247269](https://www.drupal.org/node/3247269) Исправлена неполадка, из-за которой выравнивание индикации наведения и выпадающих меню было некорректно.
+
+## Stable Theme
+
+* [#3212470](https://www.drupal.org/node/3212470) Исправлен некорректный селектор для псевдо-элементов `placeholder` в Off Canvas элементах.
 
 ## System
 
@@ -39,6 +45,7 @@ metatags:
 ## Update
 
 * [#3252067](https://www.drupal.org/node/3252067) Уменьшено количество повторных вызовов в тестах модуля.
+* [#3205909](https://www.drupal.org/node/3205909) Из `UpdateSemverTestBase` удалены права доступа, что не требуются всем тестам, что расширяют базовый тест. Удалённые права доступа добавлены непосредственно в те тесты, где они требуются.
 
 ## User System
 

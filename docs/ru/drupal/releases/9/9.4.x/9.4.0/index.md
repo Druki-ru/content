@@ -85,6 +85,10 @@ metatags:
 * [#3238860](https://www.drupal.org/node/3238860) Использование `jQuery.map()` заменено на нативную `map()` функцию.
 * [#3239500](https://www.drupal.org/node/3239500) Добавлен полифил для `Array.includes()`.
 
+## JSON:API
+
+* [#3199696](https://www.drupal.org/node/3199696) `ResourceObject` теперь учитывает текущий язык и корректно кеширует результаты для мультиязычных ресурсов.
+
 ## Layout Builder
 
 * [#3253666](https://www.drupal.org/node/3253666) `LayoutTempstoreRouteEnhancer` теперь использует `
