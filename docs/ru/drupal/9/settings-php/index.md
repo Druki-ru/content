@@ -268,7 +268,8 @@ $settings['http_client_config']['proxy']['no'] = ['127.0.0.1', 'localhost'];
 **Пример:**
 
 ```php
-use Symfony\Component\HttpFoundation\Request;$settings['reverse_proxy_trusted_headers'] = Request::HEADER_X_FORWARDED_ALL | Request::HEADER_FORWARDED;
+use Symfony\Component\HttpFoundation\Request;
+$settings['reverse_proxy_trusted_headers'] = Request::HEADER_X_FORWARDED_ALL | Request::HEADER_FORWARDED;
 ```
 
 #### Vary: Cookie
