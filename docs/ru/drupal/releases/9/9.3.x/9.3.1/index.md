@@ -40,7 +40,7 @@ metatags:
 ## System
 
 * [#3254403](https://www.drupal.org/node/3254403) Оптимизировано обновление `system_post_update_sort_all_config()`, которое могло приводить к проблемам нехватки памяти в процессе выполнения.
-* [#3248309](https://www.drupal.org/node/3248309) `AssertBreadcrumbTrait` теперь не опирается на разметку предоставляюмую темой Classy.
+* [#3248309](https://www.drupal.org/node/3248309) `AssertBreadcrumbTrait` теперь не опирается на разметку предоставляемую темой Classy.
 
 ## Update
 
