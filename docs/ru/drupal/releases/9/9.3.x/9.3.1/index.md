@@ -17,6 +17,7 @@ metatags:
 ## Database System
 
 * [#3250648](https://www.drupal.org/node/3250648) Внесены улучшения в `SelectSubqueryTest` для избежания сравнений бинарных значений.
+* [#3136388](https://www.drupal.org/node/3136388) Улучшена документация для `core/lib/Drupal/Core/Database/Install/Tasks.php`.
 
 ## Field System
 
@@ -27,6 +28,7 @@ metatags:
 * [#3253824](https://www.drupal.org/node/3253824) Исправлена опечатка в комментарии файла `d7_field_formatter_settings.yml`.
 * [#3247039](https://www.drupal.org/node/3247039) Методу `MigrateDestinationInterface::import()` добавлена информацию том, что он может выбросить исключение `MigrateException`.
 * [#3092430](https://www.drupal.org/node/3092430) Исправлена неполадка, приводящая к ошибке «TypeError: Argument 1 passed to Drupal\search\Plugin\ConfigurableSearchPluginBase::setConfiguration() must be of the type array, null given».
+* [#2675006](https://www.drupal.org/node/2675006) Добавлен тест для трейта `MigrationConfigurationTrait`.
 * [#2675006](https://www.drupal.org/node/2675006) Добавлен тест для трейта `MigrationConfigurationTrait`.
 
 ## Olivero

@@ -29,6 +29,34 @@ metatags:
 
 * [#3253148](https://www.drupal.org/node/3253148) Браузер Internet Explorer удалён из browserlist. Все ассеты были пересобраны без его поддержки.
 
+## Аргумент $context больше не передаётся hook_entity_view_mode_alter()
+
+* [#3194165](https://www.drupal.org/node/3194165) 
+
+Начиная с версии [Drupal 9.2.0](../../../9/9.2.x/9.2.0/index.md), `hook_entity_view_mode_alter()` стал получать пустой массив в качестве `$context` аргумента. Это было сделано для обратной совместимости.
+
+Начиная с Drupal 10, обратная совместимость удалена и аргумент не передаётся в данный хук.
+
+Ранее:
+
+```php
+function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity, $context) {
+  if ($entity->getEntityTypeId() == 'node' && $view_mode == 'teaser') {
+    $view_mode = 'my_custom_view_mode';
+  }
+}
+```
+
+После изменения:
+
+```php
+function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && $view_mode == 'teaser') {
+    $view_mode = 'my_custom_view_mode';
+  }
+}
+```
+
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
