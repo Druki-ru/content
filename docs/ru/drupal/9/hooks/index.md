@@ -116,7 +116,7 @@ function example_form_user_login_alter(array &$form, \Drupal\Core\Form\FormState
 
 ## Создание хуков
 
-**Создание хука** — процесс регистрации нового хука в системы под свои нужды.
+**Создание хука** — процесс регистрации нового хука в системе под свои нужды.
 
 У хуков нет централизованного хранилища или менеджера, поэтому производить их вызов и обработку можно из любого модуля или функции в коде Drupal.
 
@@ -200,7 +200,7 @@ $results = \Drupal::moduleHandler()->invokeAll('to_rule_them_all');
 Пример регистрации хука `hook_to_rule_them_all_alter($value)`.
 
 ```php
-$value_to_alter = 'Hello World!`;
+$value_to_alter = 'Hello World!';
 
 \Drupal::moduleHandler()->alter('to_rule_them_all', $value_to_alter);
 ```
