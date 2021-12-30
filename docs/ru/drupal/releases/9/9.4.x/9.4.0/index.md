@@ -49,6 +49,111 @@ metatags:
 
 Если вы переопределяете данные файлы или изменяете параметры PHP, для PHP 8 вам необходимо скопировать данные настройки и поправить под себя. Если вы используете стандартные настройки, файлы обновятся автоматически.
 
+## Для оптимизации определения сериализаторов и нормализаторов, `NormalizerBase` теперь реализует `CacheableSupportsMethodInterface`
+
+* [#3252872](https://www.drupal.org/node/3252872)
+
+`Drupal\serialization\Normalizer\NormalizerBase` теперь реализует `CacheableSupportsMethodInterface` и возвращает `FALSE` по умолчанию. Это означает, что классы, расширяющие абстрактные классы из ядра продолжат работать как и раньше. Все конкретные реализации теперь имеют метод `::hasCacheableSupportsMethod()`, который возвращает `TRUE`.
+
+Данный интерфейс был представлен в [Symfony 4.1](https://symfony.com/blog/new-in-symfony-4-1-faster-serializer):
+
+> Приложения могут определять множество нормализаторов и денормализаторов, Symfony вызывает `::supportsNormalization()` для каждого из них, каждый раз производя нормализацию или денормализацию объекта. В теории, результат вызова `::supportsNormalization()` зависит от моженства факторов. На практике большинство из них зависит лишь от типа и формата, а данная информация легко кешируется.
+
+Утверждение выше также подходит и для Drupal. Мы можем кешировать результат основываясь на переданном типе и формате, что позволяет сократить количество вызовов. Подобное изменение позволяет добиться увеличения производительности от 5 до 60 процентов!
+
+## Обновлены старые схемы для `uid` поля сущностей, где может использоваться устаревший метод получения ID пользователя
+
+* [#3153455](https://www.drupal.org/node/3153455) Добавлено обновление, которое исправляет
+
+Сайты, установленные на версии ранее чем Drupal 8.6.0, а теперь использующие Drupal 9, могут столкнуться с проблемой, что у некоторых сущностей из ядра поле `uid` использует устаревшее значение для `default_value_callback`. Ранее, использовался метод `{EntityTypeClass}::getCurrentUserId()`, который был объявлен устаревшим в Drupal 8.6.0 и удалён в Drupal 9.
+
+На таких проектах, подобная ситуация может приводить, как к ошибке: «The website encountered an unexpected error. Please try again later. Error: Call to a member function getAccountName() on null», так и предупреждению «call_user_func() expects parameter 1 to be a valid callback, class 'Drupal\node\Entity\Node' does not have a method 'getCurrentUserId' in Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
+
+В данном релизе добавлены обновления для всех сущностей ядра, которые проверяют, что используется современный метод, и если обнаруживается старый, он обновляется на новый.
+
+## Драйвера баз данных, предоставляемые ядром Drupal, перенесены в соответствующие одноимённые модули
+
+* [#3129043](https://www.drupal.org/node/3129043) 
+
+[Ранее](../../../8/8.9.x/8.9.0/index.md) была добавлена поддержка драйверов баз данных, как в пространстве имён модуля, так и в «src» директории ядра. Теперь эта возможность задействована для переноса драйверов баз данных предоставляемых ядром в соответствующие модули. Для каждого драйвера базы данных добавлен новый одноимённый модуль: `mysql`, `pgsql` и `sqlite`.
+
+Для драйверов баз данных в пространстве имён модуля требуется добавлять query-параметр в URL-строку подключения. Например: `pgsql://test_user:test_pass@test_host:5432/test_database?module=pgsql`. Если вы используете один из модулей ядра, добавлять данный query-параметр не обязательно, все ранее сформированные URL-адреса подключений продолжат работать.
+
+Использование `use` с пространством имён содержащим `Drupal\Core\Database\Driver` объявлено устаревшим и будет удалено _до релиза_ Drupal 11. Рекомендуется заменить их использование на новые пространства имён:
+
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Install\Tasks` → `Drupal\Core\Database\Install\Tasks`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Connection` → `Drupal\Core\Database\Connection`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Delete` → `Drupal\Core\Database\Query\Delete`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\ExceptionHandler` → `Drupal\Core\Database\ExceptionHandler`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Insert` → `Drupal\Core\Database\Query\Insert`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Schema` → `Drupal\Core\Database\Schema`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Select` → `Drupal\Core\Database\Query\Select`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Truncate` → `Drupal\Core\Database\Query\Truncate`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Update` → `Drupal\Core\Database\Query\Update`
+* `use Drupal\Core\Database\Driver\{mysql|pgsql|sqlite}\Upsert` → `Drupal\Core\Database\Query\Upsert`
+
+## JSON:API теперь корректно обрабатывает запросы в режиме обслуживания
+
+* [#3049048](https://www.drupal.org/node/3049048)
+
+В JSON:API внесены множественные улучшения для корректной обработки и поведения запросов в режиме обслуживания.
+
+> [!NOTE]
+> До данного изменения, при попытке обратиться к ресурсам JSON:API при включенном режиме обслуживания, в качестве ответа отдавалась HTML страница обслуживания.
+
+### JSON:API теперь отвечает с заголовком `Retry-After` в режиме обслуживания
+
+Начиная с данного релиза, если сайт находится в режиме обслуживания, JSON:API будет отвечать с заголовком `Retry-After`.
+
+Пример ответа в режиме обслуживания:
+
+```json
+{
+   "jsonapi":{
+      "version":"1.0",
+      "meta":{
+         "links":{
+            "self":{
+               "href":"http://jsonapi.org/format/1.0/"
+            }
+         }
+      }
+   },
+   "errors":[
+      {
+         "title":"Service Unavailable",
+         "status":"503",
+         "detail":"core workspace is currently under maintenance. We should be back shortly. Thank you for your patience.",
+         "links":{
+            "via":{
+               "href":"http://example.com/jsonapi/base_field_override/base_field_override"
+            },
+            "info":{
+               "href":"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.4"
+            }
+         }
+      }
+   ]
+}
+```
+
+Данный ответ также содержит заголовок `Retry-After` с информацией о том, сколько следует подождать до следующей попытки. По умолчанию рекомендуется время от 5 до 10 секунд. Значение из данного диапазона выбирается случайным образом на каждый запрос для предотвращения эффекта [громового стада](https://en.wikipedia.org/wiki/Thundering_herd_problem).
+
+В связи с данным изменением было добавлено две новые настройки:
+
+* `jsonapi.settings.maintenance_header_retry_seconds.min`: Минимальное значение в секундах для заголовка `Retry-After`.
+* `jsonapi.settings.maintenance_header_retry_seconds.max`: Максимальное значение в секундах для ззаголовка `Retry-After`.
+
+Это позволит владельцу приложения иметь контроль над тем, как долго клиенты должны ждать перед повторным обращением. Данные настройки рассчитаны на продвинутых пользователей, в связи с этим, они не доступны в административном интерфейсе.
+
+### Добавлено новое событие `Drupal\Core\Site\MaintenanceModeEvents::MAINTENANCE_MODE_REQUEST`
+
+В ядро было добавлено новое событие `Drupal\Core\Site\MaintenanceModeEvents::MAINTENANCE_MODE_REQUEST` которое позволяет изменить как запрос, так и ответ, который производится в режиме обслуживания.
+
+### Добавлен новый метод `MaintenanceModeInterface::getSiteMaintenanceMessage()`
+
+В интерфейс `MaintenanceModeInterface` добавлен новый метод `::getSiteMaintenanceMessage()` который позволяет получить сообщение, которое должно выводиться в режиме обслуживания сайта.
+
 ## Cache System
 
 * [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
@@ -62,6 +167,7 @@ metatags:
 ## Composer
 
 * [#3246595](https://www.drupal.org/node/3246595) Зависимости ядра обновлены на 01.11.21.
+* [#3255623](https://www.drupal.org/node/3255623) Удалены замены для пакетов `paragonie/random_compat` и `symfony/polyfill-php70`.
 
 ## Database System
 

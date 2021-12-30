@@ -57,6 +57,12 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 }
 ```
 
+## Прекращение поддержки PHPUnit 8
+
+* [#3252257](https://www.drupal.org/node/3252257) 
+
+Начиная с Drupal 10 поддерживается только PHPUnit 9. Весь код, относящийся к PHPUnit 8 был удалён.
+
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.

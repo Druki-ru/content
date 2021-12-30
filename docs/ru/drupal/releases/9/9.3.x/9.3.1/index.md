@@ -23,6 +23,10 @@ metatags:
 
 * [#3064890](https://www.drupal.org/node/3064890) Улучшена проверка на наличие ключа  `name` в `FieldUiTable`. 
 
+## JavaScript
+
+* [#3255504](https://www.drupal.org/node/3255504) Из `date.js` (библиотека `core/drupal.date`) удалена зависимость jQuery.
+
 ## Migration System
 
 * [#3253824](https://www.drupal.org/node/3253824) Исправлена опечатка в комментарии файла `d7_field_formatter_settings.yml`.
@@ -62,6 +66,7 @@ metatags:
 
 * [#3251125](https://www.drupal.org/node/3251125) `InstallerExistingConfigTestBase` теперь не будет деинсталировать модуль, который предоставлять драйвер баз данных.
 * [#3245383](https://www.drupal.org/node/3245383) Модули, что предоставляю драйвера баз данных, теперь проверяются на то что они активны в момент запуска тестов.
+* [#3131348](https://www.drupal.org/node/3131348) Вызовы с использованием `empty()` заменены на соответствующие `::assertEmpty()`, `::assertNotEmpty()` и `::assertArrayNotHasKey()`.
 
 ## Прочие изменения
 
