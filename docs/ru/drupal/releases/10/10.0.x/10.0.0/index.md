@@ -63,12 +63,24 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 
 Начиная с Drupal 10 поддерживается только PHPUnit 9. Весь код, относящийся к PHPUnit 8 был удалён.
 
+## Для совместимости с PSR-17, `lamins/diactoros` заменён `guzzlehttp/psr7`
+
+* [#3255243](https://www.drupal.org/node/3255243) 
+
+Использование библиотеки Laminas Diactoros заменено на Guzzle PSR 7. Если вы используете фабрики запросов с PSR-7 или PSR-17, вам не нужно вносить никаких изменений. Объекты запросов будут соответствовать обеим PSR стандартам.
+
+Если же вы используете классы `Laminas\Diactoros` напрямую, вам необходимо добавить данную библиотеку в свой `composer.json` как зависимость, либо обновить использовать классы `GuzzleHttp\Psr7`.
+
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
 * [#3253093](https://www.drupal.org/node/3253093) Удалена зависимость `symfony-cmf/routing`.
 * [#3220220](https://www.drupal.org/node/3220220) Зависимость `guzzlehttp/psr7` обновлена до версии 2.1.0.
 * [#3253092](https://www.drupal.org/node/3253092) Удалена зависимость `doctrine/reflection`.
+
+## Database System
+
+* [#3210310](https://www.drupal.org/node/3210310) Удалён код объявленный устаревшим в Drupal 9.
 
 ## Olivero
 

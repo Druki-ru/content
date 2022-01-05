@@ -154,6 +154,60 @@ metatags:
 
 В интерфейс `MaintenanceModeInterface` добавлен новый метод `::getSiteMaintenanceMessage()` который позволяет получить сообщение, которое должно выводиться в режиме обслуживания сайта.
 
+## Функция `drupal_js_defaults()` объявлена устаревшей
+
+* [#3197553](https://www.drupal.org/node/3197553), [#3256518](https://www.drupal.org/node/3256518) 
+
+В Drupal 7 был добавлен [хук](../../../../9/hooks/index.md) `hook_js_alter()`, для того чтобы для него всегда были данные, была введена функция `drupal_js_defaults()`. В Drupal 8 произошёл переход на [систему библиотек](../../../../9/libraries/index.md), что сделало `hook_js_alter()` очень специфичным хуком для исключительных ситуаций. В связи с этим, функция `drupal_js_defaults()` стала бесполезной и объявлена устаревшей, будет удалена в Drupal 10 без предоставления замены.
+
+## Метод `LanguageManagerInterface::getLanguageSwitchLinks()` теперь возвращает объект или `NULL`
+
+* [#2940121](https://www.drupal.org/node/2940121)
+
+В предыдущих версиях Drupal, `Drupal\Core\Language\LanguageManagerInterface::getLanguageSwitchLinks()` имел документацию, что он возвращает массив ссылок, но `
+Drupal\language\ConfigurableLanguageManager::getLanguageSwitchLinks()` возвращал объект, содержащий массив ссылок, или же `FALSE`, если ссылок нет. 
+
+Документация для `Drupal\Core\Language\LanguageManagerInterface::getLanguageSwitchLinks()` была изменена на то, что метод теперь возвращает либо объект с массивом ссылок, либо `NULL`, если ссылок нет.
+
+Если вы используете или реализуете данный метод, вам необходимо обновить свой код.
+
+## На замену опции запроса `return` добавлен новый метод `Connection::lastInsertId()`
+
+* [#3185269](https://www.drupal.org/node/3185269) 
+
+Опция запроса `return` и константы `Database::RETURN_*` объявлены устаревшими. В Drupal 11 они будут удалены и `Connection::query()` будет всегда возвращать объект `StatementInterface`.
+
+Для манипуляций данными в БД (`INSERT`, `DELETE`, `UPDATE`, `UPSET`, `MERGE`, `TRUNCATE`) не принято использовать `Connection::query()`, для этого Drupal предоставляет построители динамических запросов.
+
+В исключительных ситуациях `Connection::query()` использовался для операции вставки (`INSERT`) с целью получения ID последнего добавленного значения в БД. Для подобных случаев, начиная с данной версии, добавлен новый метод `Connection::lastInsertId()`, который возвращает ID последнего добавленного значения.
+
+Для операций обновления и прочих, больше не рекомендуется использовать `Database::RETURN_AFFECTED`, вместо этого рекомендуется включить подсчёт значений путём передачи соответствующего аргумента в конструктор.
+
+Пример, как данное изменения повлияло на `Connection::nextId()` для MySQL драйвера:
+
+**Было:**
+
+```php
+$new_id = $this->query('INSERT INTO {sequences} () VALUES ()', [], ['return' => Database::RETURN_INSERT_ID]);
+```
+
+**Стало:**
+
+```php
+$this->query('INSERT INTO {sequences} () VALUES ()');
+$new_id = $this->lastInsertId();
+```
+
+## `\Drupal\Core\Validation\DrupalTranslator:transChoice()` объявлен устаревшим
+
+* [#3255250](https://www.drupal.org/node/3255250)
+
+Symfony 4.2 объявил `\Symfony\Component\Translation\TranslatorInterface::transChoice()` устаревшим методом. Drupal реализует данный интерфейс в `\Drupal\Core\Validation\DrupalTranslator:transChoice()`. Таким образом `\Drupal\Core\Validation\DrupalTranslator:transChoice()` также объявлен устаревшим.
+
+## Aggregator
+
+* [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
+
 ## Cache System
 
 * [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
@@ -168,6 +222,14 @@ metatags:
 
 * [#3246595](https://www.drupal.org/node/3246595) Зависимости ядра обновлены на 01.11.21.
 * [#3255623](https://www.drupal.org/node/3255623) Удалены замены для пакетов `paragonie/random_compat` и `symfony/polyfill-php70`.
+
+## Configuration System
+
+* [#2343517](https://www.drupal.org/node/2343517) Удалён код и упоминания с `@todo` на задачи, которые решены.
+
+## Database Logging
+
+* [#3246471](https://www.drupal.org/node/3246471) Из класса `DbLogController` удалены свойства, которые объявлены у родительского.
 
 ## Database System
 
@@ -207,6 +269,7 @@ metatags:
 
 * [#3253666](https://www.drupal.org/node/3253666) `LayoutTempstoreRouteEnhancer` теперь использует `
   Drupal\Core\Routing\RouteObjectInterface` вместо `Symfony\Cmf\Component\Routing\RouteObjectInterface`.
+* [#3190541](https://www.drupal.org/node/3190541) Исправлена неполадка, из-за которой кеш-контекст `layout_builder_is_active` мог предоставлять некорректные значения.
 
 ## Media Library
 
@@ -218,6 +281,8 @@ metatags:
 * [#3246053](https://www.drupal.org/node/3246053) Обновлено значение `filesize` файла `ds9.txt` в `file_managed`.
 * [#3163663](https://www.drupal.org/node/3163663) Исправлена неполадка из-за которой плагин-обработчик `download` мог приводить к предупреждению «failed to open stream: Too many open file».
 * [#3087332](https://www.drupal.org/node/3087332) Плагин-обработчик `d6_url_alias_language` объявлен устаревшим.
+* [#3042533](https://www.drupal.org/node/3042533) Внесены улучшения в миграцию словарей таксономии из Drupal 6.
+* [#3240109](https://www.drupal.org/node/3240109) Возвращаемый тип данных для `MigrateProcessInterface::transform()` изменён с `string|array` на `mixed`.
 
 ## Olivero
 
@@ -255,3 +320,7 @@ metatags:
 * [#3250263](https://www.drupal.org/node/3250263) Удалён неиспользуемый файл `core/scripts/test/test.script`.
 * [#3251891](https://www.drupal.org/node/3251891) Исправлены неполадки, приводящие к проблемам на ветке Drupal 10.
 * [#3251988](https://www.drupal.org/node/3251988) Обновлена документация о возвращаемых типах данных для `JSWebAssert::waitForText()`.
+* [#3256451](https://www.drupal.org/node/3256451) Исправлен некорректный хэш в `composer.lock`.
+* [#3210129](https://www.drupal.org/node/3210129) Внесены исправления опечаток для слов, начинающихся с «a» до «d» включительно.
+* [#3175428](https://www.drupal.org/node/3175428) В документацию [настройки](../../../../9/settings-php/index.md) `trusted_host_patterns` добавлена ссылка на более детальную документацию.
+* [#3031130](https://www.drupal.org/node/3031130) Улучшено поведение для `\Drupal\Core\KeyValueStore\MemoryStorage::rename()`. Если старое название и новое идентичны, данные не будут удалены, как это было ранее.

@@ -7,8 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.3.1.'
 ---
 
-> [!WARNING]
-> Данная версия находится в разработке.
+**Дата релиза**: 5 января 2021
 
 ## Composer
 
@@ -21,11 +20,20 @@ metatags:
 
 ## Field System
 
-* [#3064890](https://www.drupal.org/node/3064890) Улучшена проверка на наличие ключа  `name` в `FieldUiTable`. 
+* [#3064890](https://www.drupal.org/node/3064890) Улучшена проверка на наличие ключа  `name` в `FieldUiTable`.
+* [#2916142](https://www.drupal.org/node/2916142) Улучшена генерация «тестовых значений» для `decimal` и `float` типов полей.
 
 ## JavaScript
 
 * [#3255504](https://www.drupal.org/node/3255504) Из `date.js` (библиотека `core/drupal.date`) удалена зависимость jQuery.
+
+## Link
+
+* [#2879293](https://www.drupal.org/node/2879293) В `LinkWidget` внесены изменения, что если для «текста ссылки» стоит обязательный параметр, то URI ссылки принудительно становится обязательным.
+
+## Media Library
+
+* [#3190261](https://www.drupal.org/node/3190261) Исправлена неполадка, из-за которой виджет Media Library мог приводить к AJAX ошибке.
 
 ## Migration System
 
@@ -33,7 +41,8 @@ metatags:
 * [#3247039](https://www.drupal.org/node/3247039) Методу `MigrateDestinationInterface::import()` добавлена информацию том, что он может выбросить исключение `MigrateException`.
 * [#3092430](https://www.drupal.org/node/3092430) Исправлена неполадка, приводящая к ошибке «TypeError: Argument 1 passed to Drupal\search\Plugin\ConfigurableSearchPluginBase::setConfiguration() must be of the type array, null given».
 * [#2675006](https://www.drupal.org/node/2675006) Добавлен тест для трейта `MigrationConfigurationTrait`.
-* [#2675006](https://www.drupal.org/node/2675006) Добавлен тест для трейта `MigrationConfigurationTrait`.
+* [#3251835](https://www.drupal.org/node/3251835) Исправлена некорректная документация для `Row::getSource()`.
+* [#3014629](https://www.drupal.org/node/3014629) Некоторым миграциям из Drupal 6 и Drupal 7 добавлены комментарии, что они могут зависеть от миграций содержимого. 
 
 ## Olivero
 
@@ -61,12 +70,14 @@ metatags:
 
 * [#3253568](https://www.drupal.org/node/3253568) Исправлена неполадка, которая приводила к ошибке при использовании шаблона поля.
 * [#2793169](https://www.drupal.org/node/2793169) Обновлена документация для `hook_views_post_render()`.
+* [#3247619](https://www.drupal.org/node/3247619) Исправлена неполадка, из-за которой не работала опция «Показывать двоеточие после метки» для сгруппированного поля.
 
 ## Тестирование
 
 * [#3251125](https://www.drupal.org/node/3251125) `InstallerExistingConfigTestBase` теперь не будет деинсталировать модуль, который предоставлять драйвер баз данных.
 * [#3245383](https://www.drupal.org/node/3245383) Модули, что предоставляю драйвера баз данных, теперь проверяются на то что они активны в момент запуска тестов.
 * [#3131348](https://www.drupal.org/node/3131348) Вызовы с использованием `empty()` заменены на соответствующие `::assertEmpty()`, `::assertNotEmpty()` и `::assertArrayNotHasKey()`.
+* [#3207907](https://www.drupal.org/node/3207907) В функциональные тесты, где не используется сборщик писем, внесены улучшения для его использования.
 
 ## Прочие изменения
 
@@ -75,3 +86,14 @@ metatags:
 * [#3246158](https://www.drupal.org/node/3246158) [AmyJune Hineline](https://www.drupal.org/u/volkswagenchick) добавлена в качестве координатора направления наставничества.
 * [#3246156](https://www.drupal.org/node/3246156) [Brian Gilber](https://www.drupal.org/u/realityloop) добавлен в качестве координатора направления наставничества.
 * [#3080819](https://www.drupal.org/node/3080819) В `InfoParserInterface` добавлена документация о параметре `core_version_requirements`.
+* [#3249859](https://www.drupal.org/node/3249859) Исправлен некорректный пример в документации для `NestedArray::unsetValue()`.
+* [#3174570](https://www.drupal.org/node/3174570) Исправлена некорректная документация для свойства `MainContentViewSubscriber::$classResolver`.
+* [#3175287](https://www.drupal.org/node/3175287) Удалено повторение слов в комментариях кода.
+* [#2853183](https://www.drupal.org/node/2853183) Улучшены отсылки на Symfony Framework.
+* [#3256581](https://www.drupal.org/node/3256581) Внесены улучшения в документацию `update.authorize.inc`.
+* [#3213928](https://www.drupal.org/node/3213928) Внесены улучшения в документацию `LoggerChannelInterface`.
+* [#3256591](https://www.drupal.org/node/3256591) Внесено исправление в документацию для `table` рендер-элемента.
+
+## Ссылки
+
+- [Drupal 9.3.1](https://www.drupal.org/project/drupal/releases/9.3.1) (англ.), drupal.org, 5 января 2022
