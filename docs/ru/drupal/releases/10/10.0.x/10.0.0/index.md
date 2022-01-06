@@ -71,6 +71,63 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
 
 Если же вы используете классы `Laminas\Diactoros` напрямую, вам необходимо добавить данную библиотеку в свой `composer.json` как зависимость, либо обновить использовать классы `GuzzleHttp\Psr7`.
 
+## Twig обновлён до 3 версии
+
+* [#3094493](https://www.drupal.org/node/3094493)
+
+Drupal 10 теперь использует Twig 3, вместо Twig 2.
+
+Если вы всё еще не обновили ваши шаблоны на Drupal 9 до синтаксиса Twig 2, рекомендуется сделать это первым делом, так как это позволит обновиться до Twig 3.
+
+Twig 3 имеет свои изменения, но их можно будет внести и на Drupal 10. Пара изменений, что ломают совместимость и требуют внимания перед обновлением до Drupal 10 представлены ниже.
+
+Например, тег `spaceless` в Twig 2 объявлен устаревшим в пользу фильтра и удалён в Twig 3.
+
+**Ранее:**
+
+```twig
+{% spaceless %}
+  …
+{% endspaceless %}
+```
+
+**Сейчас:**
+
+```twig
+{% apply spaceless %}
+  …
+{% endapply %}
+```
+
+Также, удалена поддержка логического оператора `if` внутри конструкции `for`:
+
+**Ранее:**
+
+```twig
+{% for i in 1..depth-1 if depth > 1 %}
+  …
+{% endfor %}
+```
+
+**Сейчас:**
+
+```twig
+{% if depth > 1 %}
+  {% for i in 1..depth-1 %}
+    …
+  {% endfor %}
+{% endif %}
+```
+
+**Полезные ссылки:**
+
+* [Twig 1 deprecated](https://twig.symfony.com/doc/1.x/deprecated.html) (англ.), twig.symfony.com
+* [Twig 2 deprecated](https://twig.symfony.com/doc/2.x/deprecated.html) (англ.), twig.symfony.com
+* [Twig 2 CHANGELOG](https://github.com/twigphp/Twig/blob/2.x/CHANGELOG) (англ.), github.com
+* [Twig 3 CHANGELOG](https://github.com/twigphp/Twig/blob/3.x/CHANGELOG) (англ.), github.com
+* [Preparing for use of Twig 2 in Drupal 9](https://www.drupal.org/docs/upgrading-drupal/how-to-prepare-your-drupal-7-or-8-site-for-drupal-9/preparing-for-use-of-twig) (
+  англ.), drupal.org
+
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
