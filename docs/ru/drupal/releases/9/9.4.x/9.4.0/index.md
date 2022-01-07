@@ -198,11 +198,35 @@ $this->query('INSERT INTO {sequences} () VALUES ()');
 $new_id = $this->lastInsertId();
 ```
 
-## `\Drupal\Core\Validation\DrupalTranslator:transChoice()` объявлен устаревшим
+## Метод `\Drupal\Core\Validation\DrupalTranslator:transChoice()` объявлен устаревшим
 
 * [#3255250](https://www.drupal.org/node/3255250)
 
 Symfony 4.2 объявил `\Symfony\Component\Translation\TranslatorInterface::transChoice()` устаревшим методом. Drupal реализует данный интерфейс в `\Drupal\Core\Validation\DrupalTranslator:transChoice()`. Таким образом `\Drupal\Core\Validation\DrupalTranslator:transChoice()` также объявлен устаревшим.
+
+## Функция `module_load_include()` объявлена устаревшей
+
+* [#697946](https://www.drupal.org/node/697946) 
+
+Функция `module_load_include()` объявлена устаревшей, вместо неё используйте метод `::loadInclude()` [сервиса](../../../../9/services/index.md) `module_handler`.
+
+**Ранее:**
+
+```php
+module_load_include($type, $module, $name = NULL);
+```
+
+**Сейчас:**
+
+```php
+\Drupal::moduleHandler()->loadInclude($module, $type, $name = NULL);
+```
+
+> [!NOTE]
+> Обратите внимание, что `ModuleHandler::loadInclude()` и `module_load_include()` имеют разный порядок аргументов.
+
+> [!NOTE]
+> `ModuleHandler::loadInclude()` не поддерживает подключение кода для отключенных расширений ([модулей](../../../../9/modules/index.md), [тем оформления](../../../../9/themes/index.md), [установочных профилей](../../../../9/distributions/index.md)).
 
 ## Aggregator
 
