@@ -128,12 +128,113 @@ Twig 3 имеет свои изменения, но их можно будет �
 * [Preparing for use of Twig 2 in Drupal 9](https://www.drupal.org/docs/upgrading-drupal/how-to-prepare-your-drupal-7-or-8-site-for-drupal-9/preparing-for-use-of-twig) (
   англ.), drupal.org
 
+## Функция `db_installer_object()` объявлена устаревшей
+
+* [#3256687](https://www.drupal.org/node/3256687) 
+
+Функция `db_installer_object()` объявлена устаревшей и будет удалено до релиза Drupal 11. Замены данной функции не предоставлено.
+
+В Drupal 9, расположение объекта установщика могло находиться в различных местах, в зависимости от используемого драйвера баз данных. В Drupal 10 и новее, все драйверы баз данных являются модулями, а следовательно, имеют общий паттерн для пространства имён, что позволяет без проблем иницилизировать объект установщика конкретной БД.
+
+```php
+  // Ранее.
+  $installer = db_installer_object($driver, $namespace);
+
+  // Сейчас.
+  $installer_class = $namespace . "\\Install\\Tasks";
+  $installer = new $installer_class();
+```
+
+## Подключение файла `install.inc` удалено из `KernelTest` и `UpdatePathTest`
+
+* [#3256687](https://www.drupal.org/node/3256687)
+
+До Drupal 10, следующие два базовых класса подключали файл `install.inc`:
+
+* `core/tests/Drupal/KernelTests/KernelTestBase.php`
+* `core/tests/Drupal/FunctionalTests/Update/UpdatePathTestBase.php`
+
+Это позволяло Kernel-тестам и `UpdatePath` тесту использовать процедурные функции из файла `install.inc`. Начиная с Drupal 10, эти функции больше недоступны.
+
+Если в своих тестах вы используете функции из `install.inc`, вам необходимо самостоятельно запрашивать данный файл.
+
+**Ранее:**
+
+```php
+class ExampleTest extends KernelTestBase {
+
+  public function testFunction() {
+    // Call procedure function from install.inc
+    $databases = drupal_detect_database_types();
+  }
+
+}
+```
+
+**Сейчас:**
+
+```php
+class ExampleTest extends KernelTestBase {
+
+  public function testFunction() {
+    // Перед использованием процедурной функции, запрашиваем install.inc.
+    // Убедитесь что вы указали корректный путь до файла.
+    require_once '/includes/install.inc';
+
+    // Вызываем функцию объявленную в install.inc.
+    $databases = drupal_detect_database_types();
+  }
+
+}
+```
+
+Список **функций** объявленных в данном файле:
+
+* `drupal_load_updates()`
+* `drupal_install_profile_distribution_name()`
+* `drupal_install_profile_distribution_version()`
+* `drupal_detect_database_types()`
+* `_drupal_rewrite_settings_is_simple()`
+* `_drupal_rewrite_settings_is_array_index()`
+* `_drupal_rewrite_settings_global()`
+* `_drupal_rewrite_settings_dump()`
+* `_drupal_rewrite_settings_dump_one()`
+* `drupal_verify_profile()`
+* `drupal_install_system()`
+* `drupal_verify_install_file()`
+* `drupal_install_mkdir()`
+* `drupal_install_fix_file()`
+* `install_goto()`
+* `drupal_current_script_url()`
+* `drupal_requirements_url()`
+* `drupal_check_profile()`
+* `drupal_requirements_severity()`
+* `drupal_check_module()`
+* `install_profile_info()`
+* `db_installer_object()`
+
+Список **констант** объявленных в файле:
+
+* `REQUIREMENT_INFO`
+* `REQUIREMENT_OK`
+* `REQUIREMENT_WARNING`
+* `REQUIREMENT_ERROR`
+* `FILE_EXIST`
+* `FILE_READABLE`
+* `FILE_WRITABLE`
+* `FILE_EXECUTABLE`
+* `FILE_NOT_EXIST`
+* `FILE_NOT_READABLE`
+* `FILE_NOT_WRITABLE`
+* `FILE_NOT_EXECUTABLE`
+
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
 * [#3253093](https://www.drupal.org/node/3253093) Удалена зависимость `symfony-cmf/routing`.
 * [#3220220](https://www.drupal.org/node/3220220) Зависимость `guzzlehttp/psr7` обновлена до версии 2.1.0.
 * [#3253092](https://www.drupal.org/node/3253092) Удалена зависимость `doctrine/reflection`.
+* [#3128982](https://www.drupal.org/node/3128982) Зависимость `asm89/stack-cors` обновлена до `^2.0`.
 
 ## Database System
 
