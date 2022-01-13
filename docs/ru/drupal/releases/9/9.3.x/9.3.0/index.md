@@ -2585,3 +2585,4 @@ entity.filter_format.permission_form:
 ## Ссылки
 
 - [Drupal 9.3.0](https://www.drupal.org/project/drupal/releases/9.3.0) (англ.), drupal.org, 8 декабря 2021
+- [Bundle classes — киллер фича Drupal 9.3](http://xandeadx.ru/blog/drupal/1002) xandeadx.ru, 2021
