@@ -39,5 +39,25 @@
         "suharchuk.dima@gmail.com"
       ]
     }
+  },
+  "lukas": {
+    "name": {
+      "given": "Vasiliy",
+      "family": "Lukasevich"
+    },
+    "org": {
+      "name": "Galaxymart",
+      "unit": "Drupal developer"
+    },
+    "country": "RU",    
+    "description": {
+      "en": "I'm Drupal developer"
+    },
+    "image": "images/lukas.jpg",
+    "identification": {
+      "email": [
+        "w.lukasevich@gmail.com"
+      ]
+    }
   }
 }
