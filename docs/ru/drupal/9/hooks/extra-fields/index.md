@@ -141,3 +141,4 @@ function example_foo_bar_validation(&$form, FormStateInterface $form_state) {
 ## Ссылки
 
 - [Drupal 8: Создание псевдо-полей (Extra Fields)](https://niklan.net/blog/177), Niklan, 2018
+- [Сравнение производительности различных способов вывода псевдо полей](http://xandeadx.ru/blog/drupal/1003), xandeadx.ru, 2021

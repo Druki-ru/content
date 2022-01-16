@@ -18,5 +18,26 @@
     "identification": {
       "email": ["niklanrus@gmail.com"]
     }
+  },
+  "arraksis": {
+    "name": {
+      "given": "Dima",
+      "family": "Sukharchuk"
+    },
+    "org": {
+      "name": "Zanzarra",
+      "unit": "Drupal developer"
+    },
+    "country": "UA",
+    "homepage": "http://arraksis.com",
+    "description": {
+      "en": "I'm just Drupal developer :)"
+    },
+    "image": "images/arraksis.jpg",
+    "identification": {
+      "email": [
+        "suharchuk.dima@gmail.com"
+      ]
+    }
   }
 }

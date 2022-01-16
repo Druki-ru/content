@@ -228,6 +228,67 @@ module_load_include($type, $module, $name = NULL);
 > [!NOTE]
 > `ModuleHandler::loadInclude()` не поддерживает подключение кода для отключенных расширений ([модулей](../../../../9/modules/index.md), [тем оформления](../../../../9/themes/index.md), [установочных профилей](../../../../9/distributions/index.md)).
 
+## Функция `module_load_install()` объявлена устаревшей
+
+* [#2010380](https://www.drupal.org/node/2010380) 
+
+Функция `module_load_install()` объявлена устаревшей, вместо неё используйте метод `::loadInclude()` сервиса `module_handler`.
+
+**Ранее:**
+
+```php
+module_load_include($module);
+```
+
+**Сейчас:**
+
+```php
+\Drupal::moduleHandler()->loadInclude($module, 'install');
+```
+
+## Сервисы использующие Laminas\Feed объявлены устаревшими
+
+* [#2979588](https://www.drupal.org/node/2979588), [#2919215]
+
+Сервисы, использующие `Laminas\Feed\Reader` (`feed.reader.*`) и `Laminas\Feed\Writer` (`feed.writer.*`) расширения, объявлены устаревшими. Также объявлен устаревшим сервис `feed.bridge.writer`, который ранее использовался как замена для сервисов `feed.writer.*`.
+
+Замены для `Laminas\Feed\Reader`:
+
+* `feed.reader.dublincoreentry` → `\Drupal::service('feed.bridge.reader')->get('DublinCore\Entry')`
+* `feed.reader.dublincorefeed` → `\Drupal::service('feed.bridge.reader')->get('DublinCore\Feed')`
+* `feed.reader.contententry` → `\Drupal::service('feed.bridge.reader')->get('Content\Entry')`
+* `feed.reader.atomentry` → `\Drupal::service('feed.bridge.reader')->get('Atom\Entry')`
+* `feed.reader.atomfeed` → `\Drupal::service('feed.bridge.reader')->get('Atom\Feed')`
+* `feed.reader.slashentry` → `\Drupal::service('feed.bridge.reader')->get('Slash\Entry')`
+* `feed.reader.wellformedwebentry` → `\Drupal::service('feed.bridge.reader')->get('WellFormedWeb\Entry')`
+* `feed.reader.threadentry` → `\Drupal::service('feed.bridge.reader')->get('Thread\Entry')`
+* `feed.reader.podcastentry` → `\Drupal::service('feed.bridge.reader')->get('Podcast\Entry')`
+* `feed.reader.podcastfeed` → `\Drupal::service('feed.bridge.reader')->get('Podcast\Feed')`
+
+Замены для `Laminas\Feed\Writer` и `feed.bridge.writer`:
+
+Для замены вам потребуется [объявить собственный сервис](../../../../9/services/create/index.md) со следующим содержанием:
+
+```yaml
+  feed.bridge.writer:
+    class: Drupal\Component\Bridge\ZfExtensionManagerSfContainer
+    calls:
+      - [setContainer, ['@service_container']]
+      - [setStandalone, ['\Laminas\Feed\Writer\StandaloneExtensionManager']]
+    arguments: ['feed.writer.']
+```
+
+Вы также можете использовать класс `\Laminas\Feed\Writer\StandaloneExtensionManager` напрямую.
+
+
+## В листинге модулей добавлено визуальное обозначение для устаревших модулей, а попытка включения устаревших модулей или тем будет показывать предупреждение
+
+* [#3215043](https://www.drupal.org/node/3215043) 
+
+Теперь, на странице со списком модулей, будет визуальная индикация для устаревших модулей. Это позволит предупреждать пользователей заранее, что включение модуля может иметь последствия.
+
+Также, при попытке включения таких модулей и тем, будет показываться системное сообщение, предупреждающее о том, что модули или тема объявлены устаревшими и их использование на свой страх и риск.
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -236,6 +297,10 @@ module_load_include($type, $module, $name = NULL);
 
 * [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
   to string conversion in CacheContextsManager::convertTokensToKeys()».
+
+## CKEditor 5
+
+* [#255077](https://www.drupal.org/node/255077) Исправлены опечатки в описании для CKEditor 5 фильтра.
 
 ## Claro
 
@@ -307,6 +372,7 @@ module_load_include($type, $module, $name = NULL);
 * [#3087332](https://www.drupal.org/node/3087332) Плагин-обработчик `d6_url_alias_language` объявлен устаревшим.
 * [#3042533](https://www.drupal.org/node/3042533) Внесены улучшения в миграцию словарей таксономии из Drupal 6.
 * [#3240109](https://www.drupal.org/node/3240109) Возвращаемый тип данных для `MigrateProcessInterface::transform()` изменён с `string|array` на `mixed`.
+* [#3258009](https://www.drupal.org/node/3258009) Удалены два неиспользуемых и сломанных плагина `fieldleft` и `fieldright`.
 
 ## Olivero
 
@@ -348,3 +414,6 @@ module_load_include($type, $module, $name = NULL);
 * [#3210129](https://www.drupal.org/node/3210129) Внесены исправления опечаток для слов, начинающихся с «a» до «d» включительно.
 * [#3175428](https://www.drupal.org/node/3175428) В документацию [настройки](../../../../9/settings-php/index.md) `trusted_host_patterns` добавлена ссылка на более детальную документацию.
 * [#3031130](https://www.drupal.org/node/3031130) Улучшено поведение для `\Drupal\Core\KeyValueStore\MemoryStorage::rename()`. Если старое название и новое идентичны, данные не будут удалены, как это было ранее.
+* [#3258014](https://www.drupal.org/node/3258014) Оформление информации об устаревшем коде улучшено для `Drupal\migrate_drupal\Plugin\migrate\field\NodeReference` и `
+  Drupal\taxonomy\Plugin\views\argument_validator\Term`.
+* [#3256539](https://www.drupal.org/node/3256539) `ContentEntityDeleteForm` больше не помечен как внутренний класс (`@internal`), это означает, что вы теперь можете использовать и наследоваться от этой формы.
