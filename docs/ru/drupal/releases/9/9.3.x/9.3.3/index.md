@@ -10,9 +10,18 @@ metatags:
 > [!WARNING]
 > Данная версия находится в разработке и не предназначена для использования на живых сайтах.
 
+## CKEditor 5
+
+* [#3255077](https://www.drupal.org/node/3255077) Исправлены опечатки в описании для CKEditor 5 фильтра.
+* [#3228778](https://www.drupal.org/node/3228778) Плагины для CKEditor 5 теперь могут использовать `Drupal.t()` для перевода строк.
+
 ## File System
 
 * [#3254553](https://www.drupal.org/node/3254553) Исправлена неполадка, из-за которой `FileUrlGenerator::generate()` не работал со Stream Wrappers ведущие на внешние ресурсы.
+
+## JavaScript
+
+* [#3258371](https://www.drupal.org/node/3258371) Исправлена неполадка в команде `yarn vendor-update`.
 
 ## Прочие изменения
 

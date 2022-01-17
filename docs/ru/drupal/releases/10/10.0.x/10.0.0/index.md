@@ -235,6 +235,7 @@ class ExampleTest extends KernelTestBase {
 * [#3220220](https://www.drupal.org/node/3220220) Зависимость `guzzlehttp/psr7` обновлена до версии 2.1.0.
 * [#3253092](https://www.drupal.org/node/3253092) Удалена зависимость `doctrine/reflection`.
 * [#3128982](https://www.drupal.org/node/3128982) Зависимость `asm89/stack-cors` обновлена до `^2.0`.
+* [#3197482](https://www.drupal.org/node/3197482) Drupal ядро теперь использует компоненты Symfony `^5.4` вместо `^4.4`. 
 
 ## Database System
 

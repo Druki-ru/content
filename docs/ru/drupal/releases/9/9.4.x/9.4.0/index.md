@@ -298,10 +298,6 @@ module_load_include($module);
 * [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
   to string conversion in CacheContextsManager::convertTokensToKeys()».
 
-## CKEditor 5
-
-* [#255077](https://www.drupal.org/node/255077) Исправлены опечатки в описании для CKEditor 5 фильтра.
-
 ## Claro
 
 * [#3214170](https://www.drupal.org/node/3214170) Кнопка «Отмена» теперь отцентрована в off-canvas модальном окне.
