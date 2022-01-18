@@ -228,6 +228,45 @@ class ExampleTest extends KernelTestBase {
 * `FILE_NOT_WRITABLE`
 * `FILE_NOT_EXECUTABLE`
 
+## Обновлён `z-index` для элементов модуля Tour
+
+* [#3250357](https://www.drupal.org/node/3250357)
+
+Внесены изменения в значения `z-index` следующих селекторов:
+
+* `.shepherd-element` увеличен со 101 до 110.
+* `.shepherd-modal-overlay-container` увеличен со 100 до 105.
+
+## В Drupal ядре начали использовать статически анализатор кода PHPStan с уровнем проверки 0
+
+* [#3178534](https://www.drupal.org/node/3178534)
+
+Статический анализатор код [PHPStan](https://phpstan.org/) добавлен в ядро. На данный момент проверка будет проводиться на самом минимальном уровне (`0`). PHPStan позволяет находить общие неточности и ошибки в коде, без необходимости писать тесты. Использование PHPStan добавлено в `commit-code-check.sh` скрипт, который используется при тестировании Drupal.
+
+Основная конфигурация расположена по пути `core/phpstan.neon.dist`, а файл с исключениями для игнорирования по пути `core/phpstan-baseline.neon`.
+
+Применение:
+
+```shell
+# Запуск PHPStan для анализа Drupal ядра.
+$ phpstan analyze --configuration=core/phpstan.neon.dist
+# Сгенерировать новый файл с исключениями для игнорирования.
+$ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./core/phpstan-baseline.neon
+```
+
+> [!TIP]
+> Данные конфигурации, на данный момент, делают базовые проверки без учёта специфики и возможностей Drupal и игнорируют множество ошибок и предупреждений.
+> 
+> Если вы заинтересованы в использовании PHPStan на своём проекте, рекомендуется обратить внимание на проект [mglaman/phpstan-drupal](https://github.com/mglaman/phpstan-drupal), который предоставляет более глубокую интеграцию PHPStan в Drupal. Это позволит вам найти больше ошибок и не пропускать мелочь, которая игнорируется ядром на данный момент.
+
+## Drupal теперь предупреждает об отсутствии поддержки JSON текущей базой данных
+
+* [#3192487](https://www.drupal.org/node/3192487) 
+
+Drupal теперь выводит предупреждение, если база данных не имеет поддержки JSON.
+
+Если у вас имеются свои драйвера баз данных, убедитесь что `::hasJson()` работает корректно с вашим типом БД, в случае необходимости, переопределите его.
+
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
@@ -236,6 +275,7 @@ class ExampleTest extends KernelTestBase {
 * [#3253092](https://www.drupal.org/node/3253092) Удалена зависимость `doctrine/reflection`.
 * [#3128982](https://www.drupal.org/node/3128982) Зависимость `asm89/stack-cors` обновлена до `^2.0`.
 * [#3197482](https://www.drupal.org/node/3197482) Drupal ядро теперь использует компоненты Symfony `^5.4` вместо `^4.4`. 
+* [#3255353](https://www.drupal.org/node/3255353) Зависимости ядра обновлены 17.01.22.
 
 ## Database System
 
@@ -245,6 +285,8 @@ class ExampleTest extends KernelTestBase {
 
 * [#3255119](https://www.drupal.org/node/3255119) Для переменных, используемых для сеток, теперь используются CSS-переменные.
 * [#3255180](https://www.drupal.org/node/3255180) Внесены улучшения в стили для Views-сеток. Теперь они используют CSS-переменные.
+* [#3217924](https://www.drupal.org/node/3217924) Синие и серые цвета конвертированы из HEX в HSL.
+* [#3257583](https://www.drupal.org/node/3257583) Стили для вкладок были улучшены с использованием CSS-переменных.
 
 ## Symfony 6
 
@@ -271,8 +313,10 @@ class ExampleTest extends KernelTestBase {
 
 * [#3182103](https://www.drupal.org/node/3182103) Различные методы PHPUnit, которые переопределяют базовые тестовые классы ядра приведены в соответствие с текущими сигнатурами оригинальных методов.
 * [#3222004](https://www.drupal.org/node/3222004) Обновлена схема в файле `phpunit.xml.dist`.
+* [#3227265](https://www.drupal.org/node/3227265) Удалены устаревшие трейты для сравнений.
 
 ## Прочие изменения
 
 * [#3251936](https://www.drupal.org/node/3251936) (отменено) DrupalCI теперь поддерживает Drupal 10.
 * [#3104353](https://www.drupal.org/node/3104353) Guzzle обновлён до 7 версии.
+* [#3197729](https://www.drupal.org/node/3197729) Удалён слой обратной совместимости для `Definition::setDeprecated()`.

@@ -248,9 +248,12 @@ module_load_include($module);
 
 ## Сервисы использующие Laminas\Feed объявлены устаревшими
 
-* [#2979588](https://www.drupal.org/node/2979588), [#2919215]
+* [#2979588](https://www.drupal.org/node/2979588), [#2919215](https://www.drupal.org/node/2919215), [#3258654](https://www.drupal.org/node/3258654) 
 
 Сервисы, использующие `Laminas\Feed\Reader` (`feed.reader.*`) и `Laminas\Feed\Writer` (`feed.writer.*`) расширения, объявлены устаревшими. Также объявлен устаревшим сервис `feed.bridge.writer`, который ранее использовался как замена для сервисов `feed.writer.*`.
+
+Сервис `feed.bridge.reader` объявлен устаревшим в `core.services.yml`, но добавлена замена с одноимённым названием `aggregator.servies.yml`. Таким образом, сервис `
+feed.bridge.reader` теперь перенесён в модуль Aggregator.
 
 Замены для `Laminas\Feed\Reader`:
 
@@ -289,6 +292,22 @@ module_load_include($module);
 
 Также, при попытке включения таких модулей и тем, будет показываться системное сообщение, предупреждающее о том, что модули или тема объявлены устаревшими и их использование на свой страх и риск.
 
+## Темы оформления теперь могут предоставлять `starterkit` варианты
+
+* [#3206219](https://www.drupal.org/node/3206219) 
+
+Темы оформления теперь в `*.info.yml` файле могут добавить новую опцию `starterkit`. Если данная опция равна `true`, то данная тема может быть использована как стартовая.
+
+Темы оформления, для которых задана опция `starterkit: true` могут быть взяты за основу при генерации новой темы.
+
+Пример использования:
+
+```shell
+$ php core/scripts/drupal generate-theme --starterkit [starterkit_themename] [new_themename]
+```
+
+В результате выполнения, содержимое темы оформления `[starterkit_themename]` будет скопировано в `themes/[new_themename]`. Название файлов стартовой темы останутся неизменными.
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -297,6 +316,10 @@ module_load_include($module);
 
 * [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
   to string conversion in CacheContextsManager::convertTokensToKeys()».
+
+## CKEditor 5
+
+* [#3258250](https://www.drupal.org/node/3258250) CKEditor обновлён до версии 31.1.0.
 
 ## Claro
 
@@ -345,6 +368,7 @@ module_load_include($module);
 
 * [#3238860](https://www.drupal.org/node/3238860) Использование `jQuery.map()` заменено на нативную `map()` функцию.
 * [#3239500](https://www.drupal.org/node/3239500) Добавлен полифил для `Array.includes()`.
+* [#3239134](https://www.drupal.org/node/3239134) Использование `jQuery.val()` заменено на нативные `.value`.
 
 ## JSON:API
 
@@ -398,6 +422,10 @@ module_load_include($module);
 * [#3232131](https://www.drupal.org/node/3232131) В `DebugClassLoader` добавлены тайпхинты.
 * [#3250299](https://www.drupal.org/node/3250299) Внесены улучшения в констрейнты для совместимости с Symfony 6.
 * [#3250442](https://www.drupal.org/node/3250442) Код с использованием Prophecy на методы с тайпхинтом на возвращаемое значение `static` заменены на моки для исправления проблем, пока поддержка не появится в Prophecy.
+
+## Тестирование
+
+* [#3258995](https://www.drupal.org/node/3258995) `run-tests.sh` теперь использует `\Drupal::service('app.root')` вместо `\Drupal::root()`.
 
 ## Прочие изменения
 
