@@ -1,4 +1,4 @@
-~~---
+---
 title: SA-CORE-2022-002
 slug: wiki/security/sa-core-2022-002
 metatags:
