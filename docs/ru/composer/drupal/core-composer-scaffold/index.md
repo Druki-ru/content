@@ -5,6 +5,8 @@ search-keywords:
   - composer
 metatags:
   description: 'Метапакет Composer содержащий scaffold файлы Drupal ядра.'
+authors:
+  - Niklan
 ---
 
 **drupal/core-composer-scaffold** — метапакет содержащий [Composer](../../index.md) плагин для управления scaffold файлами (те что находятся в корне ядра, например `index.php`, `update.php`, ...) из пакета `drupal/core`.

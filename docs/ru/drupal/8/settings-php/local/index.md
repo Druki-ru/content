@@ -9,6 +9,8 @@ category:
   area: Настройки окружения
   title: settings.local.php
   order: 2
+authors:
+  - Niklan
 ---
 
 **settings.local.php** — файл с настройками локального окружения сайта. Является дополнением [settings.php](../index.md) и использует все доступные его настройки.

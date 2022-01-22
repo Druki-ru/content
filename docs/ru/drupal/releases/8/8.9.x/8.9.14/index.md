@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.9.14: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2021-002.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 21 апреля 2021

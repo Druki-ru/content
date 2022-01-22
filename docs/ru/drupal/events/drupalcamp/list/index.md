@@ -3,6 +3,8 @@ title: Список мероприятий DrupalCamp
 slug: wiki/events/drupalcamp-list
 metatags:
   description: 'Будущие и прошедшие мероприятия DrupalCamp. Информация, отчеты, доклады и докладчики.'
+authors:
+  - Niklan
 ---
 
 На данной странице представлен список мероприятий из категории DrupalCamp.

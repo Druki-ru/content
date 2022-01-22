@@ -9,6 +9,8 @@ category:
   area: Административный интерфейс
   title: Справка
   order: 9
+authors:
+  - Niklan
 ---
 
 ![Административная страница Drupal 9: Справка](https://i.imgur.com/lTLE7Xk.png)

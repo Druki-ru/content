@@ -4,6 +4,8 @@ slug: wiki/security/sa-contrib-2019-060
 metatags:
   title: 'Existing Values Autocomplete Widget: SA-CONTRIB-2019-060'
   description: 'Критическая уязвимость модуля Existing Values Autocomplete Widget. Устранена в версии 8.x-1.2'
+authors:
+  - Niklan
 ---
 
 **Проект:** [Existing Values Autocomplete Widget](https://www.drupal.org/project/existing_values_autocomplete_widget)\

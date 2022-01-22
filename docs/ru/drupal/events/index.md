@@ -3,6 +3,8 @@ title: Drupal мероприятия
 slug: wiki/events
 metatags:
   description: 'Узнайте больше о проводимых Drupal сообществом мероприятиях, их типах, датах и отчетах.'
+authors:
+  - Niklan
 ---
  
 **Drupal мероприятия** — это события, проводимые участниками [Drupal сообщества](../community/index.md) по всему миру.

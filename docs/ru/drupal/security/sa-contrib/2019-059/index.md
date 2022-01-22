@@ -4,6 +4,8 @@ slug: wiki/security/sa-contrib-2019-059
 metatags:
   title: 'Facebook Messenger Customer Chat Plugin: SA-CONTRIB-2019-059'
   description: 'Критическая уязвимость модуля Facebook Messenger Customer Chat Plugin. Устранена в версии 7.x-1.1'
+authors:
+  - Niklan
 ---
 
 **Проект:** [Facebook Messenger Customer Chat Plugin](https://www.drupal.org/project/fb_messenger_customer_chat_plugin)\

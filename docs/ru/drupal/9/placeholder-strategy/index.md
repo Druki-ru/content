@@ -4,6 +4,8 @@ slug: wiki/9/placeholder-strategy
 metatags:
   title: 'Drupal 9: Стратегия заполнителя'
   description: 'Placeholder Strategy определяет как будут обрабатываться заполнители созданные ленивым строителем.'
+authors:
+  - Niklan
 ---
 
 **Стратегия заполнителя** (англ. «Placeholder Strategy») — логика, определяющая как должны обрабатываться заполнители созданные [ленивым строителем](../lazy-builder/index.md).

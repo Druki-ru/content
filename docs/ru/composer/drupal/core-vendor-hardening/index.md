@@ -5,6 +5,8 @@ search-keywords:
   - composer
 metatags:
   description: 'Плагин Composer для чистки пакетов.'
+authors:
+  - Niklan
 ---
 
 **drupal/core-vendor-hardening** — [Composer](../../index.md) плагин предназначенный для чистки загруженных пакетов.

@@ -4,6 +4,8 @@ slug: wiki/security/sa-core-2022-001
 metatags:
   title: 'Drupal: SA-CORE-2022-001'
   description: 'Умеренно критично. Исправлено в версиях: 9.2.11, 9.3.3.'
+authors:
+  - Niklan
 ---
 
 **Проект:** Drupal Core\

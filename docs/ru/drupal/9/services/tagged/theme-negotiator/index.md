@@ -13,6 +13,8 @@ search-keywords:
 metatags:
   title: 'Drupal 9: Theme Negotiator'
   description: 'Сервисы с меткой theme_negotiator позволяют программно переключать темы оформления.'
+authors:
+  - Niklan
 ---
 
 **Theme Negotiator** — [сервисы](../../index.md) с меткой `theme_negotiator` позволяющие программно переключать [тему оформления](../../../themes/index.md).

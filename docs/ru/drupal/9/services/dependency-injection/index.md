@@ -11,6 +11,8 @@ category:
   area: Сервисы
   title: Dependency Injection
   order: 3
+authors:
+  - Niklan
 ---
 
 **Dependency Injection (DI)** — подход инициализации объектов с автоматической подготовкой зависимостей и их последующей передачей в качестве аргументов.

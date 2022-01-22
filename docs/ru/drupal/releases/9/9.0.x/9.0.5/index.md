@@ -5,6 +5,8 @@ core: 9
 metatags:
   title: 'Drupal 9.0.5: Список изменений'
   description: 'Список изменений Drupal 9.0.5.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 4 сентября 2020

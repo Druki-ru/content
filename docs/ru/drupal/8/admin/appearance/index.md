@@ -9,6 +9,8 @@ category:
   area: Административный интерфейс
   title: Оформление
   order: 4
+authors:
+  - Niklan
 ---
 
 ![Административная страница Drupal 8: Оформление](https://i.imgur.com/yogCm5Z.png)

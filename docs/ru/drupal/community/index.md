@@ -8,6 +8,8 @@ category:
 metatags:
   title: 'Drupal сообщество'
   description: 'Узнайте что такое Drupal сообщество.'
+authors:
+  - Niklan
 ---
 
 > _Приходите за программным обеспечением, оставайтесь ради сообщества._ <cite>— Drupal.org</cite>

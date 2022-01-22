@@ -3,6 +3,8 @@ title: Composer
 slug: wiki/composer
 metatags:
   description: 'Узнайте что такое Composer и как им пользоваться в Drupal.'
+authors:
+  - Niklan
 ---
 
 **Composer** — пакетный менеджер для языка программирования PHP, написанный на PHP. Основная задача Composer — управление зависимостями проекта, также, как это делает npm\yarn для node.js, pip для python и др.

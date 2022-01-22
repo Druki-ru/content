@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.9.15: Список изменений'
   description: 'Список изменений Drupal 8.9.15.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза:** 5 мая 2021

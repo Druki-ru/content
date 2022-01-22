@@ -4,6 +4,9 @@ slug: wiki/security
 metatags:
   title: 'Объявления о безопасности'
   description: 'Список анонсов безопасности Drupal.'
+authors:
+  - Niklan
+  - chesn0k
 ---
 
 На данной странице представлен список опубликованных предупреждений о безопасности Drupal.

@@ -5,6 +5,9 @@ core: 9
 metatags:
   title: 'Drupal 9.3.0: Список изменений' 
   description: 'Список изменений Drupal 9.3.0.'
+authors:
+  - Niklan
+  - chesn0k
 ---
 
 **Дата релиза**: 8 декабря 2021

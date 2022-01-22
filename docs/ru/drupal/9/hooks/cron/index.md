@@ -10,6 +10,9 @@ search-keywords:
 metatags:
   title: 'Drupal 9: Регулярные операции (cron)'
   description: 'Обработка и выполнение регулярных операций в Drupal 9.'
+authors:
+  - Niklan
+  - arraksis
 ---
 
 **Cron** (регулярные операции) — периодически выполняемые процессы описываемые инструкциями в crontab.

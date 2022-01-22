@@ -9,6 +9,8 @@ category:
   area: Формы
   title: Структура
   order: 2
+authors:
+  - Niklan
 ---
 
 Drupal предоставляет базовый объект `Drupal\Core\Form\FormBase`, который можно использовать для создания всевозможных форм.

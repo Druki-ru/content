@@ -4,6 +4,8 @@ slug: wiki/security/sa-core-2021-011
 metatags:
   title: 'Drupal: SA-CORE-2021-011'
   description: 'Умеренно критично. Исправлено в версиях: 8.9.20, 9.1.14, 9.2.9.'
+authors:
+  - Niklan
 ---
 
 **Проект:** Drupal Core\

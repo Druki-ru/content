@@ -4,6 +4,8 @@ slug: wiki/release-naming-conventions
 metatags:
   title: 'Drupal: Соглашение об именовании релизов'
   description: 'Требования к именованию версий проектов для Drupal.'
+authors:
+  - Niklan
 ---
 
 Начиная с [Drupal 8](../../8/index.md) в ядре адаптировали [семантическое версионирование](../../../semver/index.md).

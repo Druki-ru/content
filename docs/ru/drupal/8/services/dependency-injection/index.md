@@ -11,6 +11,8 @@ category:
   area: Сервисы
   title: Dependency Injection
   order: 3
+authors:
+  - Niklan
 ---
 
 **Dependency Injection (DI)** — подход внедрения внешних сервисов в объекты.

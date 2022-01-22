@@ -5,6 +5,8 @@ core: 9
 metatags:
   title: 'Drupal 9.1.8: Список изменений'
   description: 'Список изменений Drupal 9.1.8.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза:** 5 мая 2021

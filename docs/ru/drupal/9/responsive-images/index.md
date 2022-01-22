@@ -4,6 +4,8 @@ slug: wiki/9/responsive-images
 metatags:
   title: 'Drupal 9: Адаптивные изображения'
   description: 'Drupal модуль для создания адаптивных изображений.'
+authors:
+  - Niklan
 ---
 
 **Адаптивные изображения** (англ. «Responsive Images», [модуль](../modules/index.md) `responsive_image`) — стандартный модуль Drupal, для создания и форматирования изображений с использованием контрольных точек и [стилей изображений](../image/image-styles/index.md).

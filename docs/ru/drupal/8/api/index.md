@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8 API'
   description: 'Обзор API Drupal 8.'
+authors:
+  - Niklan
 ---
 
 **Drupal API** — набор программных инструментов предоставляемый Drupal для разработчиков.

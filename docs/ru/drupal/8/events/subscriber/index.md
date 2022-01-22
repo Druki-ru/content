@@ -9,6 +9,8 @@ category:
   area: События
   title: Подписка на событие
   order: 3
+authors:
+  - Niklan
 ---
 
 Подписка на событие осуществляется при помощи [создания](../../services/create/index.md) [сервиса](../../services/index.md) с меткой.

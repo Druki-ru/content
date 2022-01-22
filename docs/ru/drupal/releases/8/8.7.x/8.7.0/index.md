@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.7.0: Список изменений'
   description: 'JavaScript Messages API, JSON:API в ядре, улучшенный Media виджет и многое другое.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 1 мая 2019 г.\

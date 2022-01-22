@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.8.1: Список изменений'
   description: 'Обновления безопасности: SA-CORE-2019-009, SA-CORE-2019-010, SA-CORE-2019-011, SA-CORE-2019-012.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 19 декабря 2019 г.

@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.7.123: Список изменений'
   description: 'Список изменений Drupal 8.7.13.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 3 апреля 2020 г.

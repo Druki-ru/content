@@ -4,6 +4,8 @@ slug: wiki/security/sa-core-2019-008
 metatags:
   title: 'Drupal: SA-CORE-2019-008'
   description: 'Критический. Исправлено в версии: 8.7.5.'
+authors:
+  - Niklan
 ---
 
 **Проект:** Drupal core\

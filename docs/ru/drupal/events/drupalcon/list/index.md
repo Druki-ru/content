@@ -3,6 +3,8 @@ title: Список мероприятий DrupalCon
 slug: wiki/events/drupalcon-list
 metatags:
   description: 'Будущие и прошедшие мероприятия DrupalCon. Информация, отчеты, доклады и докладчики.'
+authors:
+  - Niklan
 ---
 
 На данной странице представлен список мероприятий из категории DrupalCon.

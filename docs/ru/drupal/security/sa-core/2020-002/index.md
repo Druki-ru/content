@@ -4,6 +4,8 @@ slug: wiki/security/sa-core-2020-002
 metatags:
   title: 'Drupal: SA-CORE-2020-002'
   description: 'Умеренно критический. Исправлено в версиях: 8.7.14 и 8.8.6.'
+authors:
+  - Niklan
 ---
 
 **Проект:** Drupal Core\

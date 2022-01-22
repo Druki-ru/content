@@ -9,6 +9,8 @@ category:
   area: Административный интерфейс
   title: Отчёты
   order: 8
+authors:
+  - Niklan
 ---
 
 ![Административная страница Drupal 9: Отчёты](https://i.imgur.com/La9dorE.png)

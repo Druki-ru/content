@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.9.2: Список изменений'
   description: 'Список изменений Drupal 8.9.2.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 9 июля 2020

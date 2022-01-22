@@ -4,6 +4,8 @@ slug: wiki/drupal-once
 metatags:
   title: 'Drupal JavaScript Once API (@drupal/once)'
   description: '@drupal/once — JavaScript библиотека отмечающая DOM элементы как обработанные для предотвращения многократных инициализаций.'
+authors:
+  - Niklan
 ---
 
 **@drupal/once** — JavaScript библиотека отмечающая DOM элементы как обработанные для предотвращения многократных инициализаций.

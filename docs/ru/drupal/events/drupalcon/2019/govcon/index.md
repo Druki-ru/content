@@ -3,6 +3,8 @@ title: Drupal GovCon 2019
 slug: wiki/events/drupalgovcon-2019
 metatags:
   description: 'Drupal GovCon 2019, Бетесда, Мэриленд, США. Описание, доклады.'
+authors:
+  - Niklan
 ---
 
 **Даты проведения:** 24-26 июля 2019\

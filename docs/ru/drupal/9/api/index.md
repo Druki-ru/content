@@ -5,6 +5,9 @@ core: 9
 metatags:
   title: 'Drupal 9 API'
   description: 'Обзор API Drupal 9.'
+authors:
+  - Niklan
+  - chesn0k
 ---
 
 **Drupal API** — набор программных инструментов предоставляемый Drupal для разработчиков.

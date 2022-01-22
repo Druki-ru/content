@@ -5,6 +5,8 @@ core: 9
 metatags:
   title: 'Drupal 9.2.7: Список изменений'
   description: 'Список изменений Drupal 9.2.7.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 6 октября 2021

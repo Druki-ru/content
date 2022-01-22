@@ -4,6 +4,8 @@ slug: wiki/security/sa-contrib-2019-058
 metatags:
   title: 'Metatag: SA-CONTRIB-2019-058'
   description: 'Умеренно критическая уязвимость модуля Metatag. Устранена в версии 8.x-1.9'
+authors:
+  - Niklan
 ---
 
 **Проект:** [Metatag](https://www.drupal.org/project/metatag)\

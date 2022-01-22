@@ -9,6 +9,8 @@ category:
   area: Административный интерфейс
   title: Пользователи
   order: 7
+authors:
+  - Niklan
 ---
 
 ![Административная страница Drupal 8: Пользователи](https://i.imgur.com/xZIc6ud.png)

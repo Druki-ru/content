@@ -5,6 +5,9 @@ core: 9
 metatags:
   title: 'Drupal 9.1.6: Список изменений'
   description: 'Список изменений Drupal 9.1.6.'
+authors:
+  - Niklan
+  - chesn0k
 ---
 
 **Дата релиза**: 7 апреля 2021

@@ -4,6 +4,8 @@ slug: wiki/security/sa-core-2020-013
 metatags:
   title: 'Drupal: SA-CORE-2020-013'
   description: 'Критическое. Исправлено в версиях: 8.8.12, 8.9.10, 9.0.9.'
+authors:
+  - Niklan
 ---
 
 **Проект:** Drupal Core\

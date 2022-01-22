@@ -3,6 +3,8 @@ title: Drupal Camp Belarus, 2019
 slug: wiki/events/drupalcamp-2019-belarus
 metatags:
   description: 'Drupal Camp 2019 в Минске, Беларусь. Даты проведения, докладчики, доклады.'
+authors:
+  - Niklan
 ---
 
 **Даты проведения:** 18-19 мая 2019, 8:40 - 18:15\

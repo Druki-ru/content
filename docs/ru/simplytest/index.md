@@ -6,6 +6,8 @@ search-keywords:
 metatags:
   title: 'Simplytest — демо-сайт на Drupal'
   description: 'Simplytest — онлайн сервис для установки демонстрационного сайта на Drupal.'
+authors:
+  - Niklan
 ---
 
 **Simplytest** — онлайн сервис позволяющий установить Drupal, модуль или дистрибутив и попробовать их.

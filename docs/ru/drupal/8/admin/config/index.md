@@ -9,6 +9,8 @@ category:
   area: Административный интерфейс
   title: Конфигурация
   order: 6
+authors:
+  - Niklan
 ---
 
 ![Административная страница Drupal 8: Конфигурация](https://i.imgur.com/mDzeSzG.png)

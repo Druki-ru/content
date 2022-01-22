@@ -11,6 +11,9 @@ search-keywords:
 metatags:
   title: 'Drupal 9: Authentication Provider (Провайдер аутентификации)'
   description: 'Сервисы с меткой authentication_provider позволяют идентифицировать пользователей сайта.'
+authors:
+  - Niklan
+  - arraksis
 ---
 
 **Authentication Provider** — [сервисы](../../index.md) с меткой `authentication_provider` позволяющие идентифицировать пользователей сайта.

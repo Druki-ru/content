@@ -5,6 +5,8 @@ core: 9
 metatags:
   title: 'Drupal 9.2.3: Список изменений'
   description: 'Список изменений Drupal 9.2.3.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 3 августа 2021 г.

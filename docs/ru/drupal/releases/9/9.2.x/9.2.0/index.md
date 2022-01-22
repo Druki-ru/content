@@ -5,6 +5,10 @@ core: 9
 metatags:
   title: 'Drupal 9.2.0: Список изменений'
   description: 'Список изменений Drupal 9.2.0.'
+authors:
+  - Niklan
+  - chesn0k
+  - arraksis
 ---
 
 **Дата релиза**: 16 июня 2021\

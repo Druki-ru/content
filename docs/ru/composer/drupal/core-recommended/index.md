@@ -5,6 +5,8 @@ search-keywords:
   - composer
 metatags:
   description: 'Метапакет Composer с Drupal ядром.'
+authors:
+  - Niklan
 ---
 
 **drupal/core-recommended** — матапакет предназначенный для использования на Drupal проектах управляемых через [Composer](../../index.md). Пакет используется в официальных Composer шаблонах проектов [drupal/recommended-project](../recommended-project/index.md) и [drupal/legacy-project](../legacy-project/index.md).

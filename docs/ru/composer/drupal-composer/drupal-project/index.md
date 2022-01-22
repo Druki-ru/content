@@ -6,6 +6,8 @@ search-keywords:
   - composer
 metatags:
   description: 'Composer шаблон с Drupal ядром, Drush и Drupal Console.'
+authors:
+  - Niklan
 ---
 
 **Composer Drupal Project** — шаблон проекта предоставляет стартовый набор для управления зависимостями сайта при помощи [Composer](../../index.md).

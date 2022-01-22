@@ -5,6 +5,9 @@ core: 9
 metatags:
   title: 'Drupal 9.1.5: Список изменений'
   description: 'Список изменений Drupal 9.1.5.'
+authors:
+  - Niklan
+  - chesn0k
 ---
 
 **Дата релиза**: 4 марта 2021

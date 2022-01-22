@@ -5,6 +5,9 @@ core: 8
 metatags:
   title: 'Drupal 8.9.17: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2021-004.'
+authors:
+  - Niklan
+  - chesn0k
 ---
 
 **Дата релиза**: 21 июля 2021

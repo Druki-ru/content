@@ -9,6 +9,8 @@ search-keywords:
 metatags:
   title: 'Drupal 9: Inbound и Outbound обработчики'
   description: 'Сервисы с меткой path_processor_inbound и path_processor_outbound позволяют обрабатывать входящие и исходящие пути сайта.'
+authors:
+  - Niklan
 ---
 
 **Inbound Processor** и **Outbound Processor** — [сервисы](../../index.md) с меткой `path_processor_inbound` и `path_processor_outbound` позволяющие программно обрабатывать входящие и исходящие пути сайта.

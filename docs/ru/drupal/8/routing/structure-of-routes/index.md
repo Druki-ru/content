@@ -11,6 +11,8 @@ search-keywords:
 metatags:
   title: 'Drupal 8: Структура маршрутов'
   description: 'Разбираемся с каждым возможным свойством маршрутов *.routing.yml файла.'
+authors:
+  - Niklan
 ---
 
 Маршруты, объявляемые в `*.routing.yml` могут содержать следующие свойства:

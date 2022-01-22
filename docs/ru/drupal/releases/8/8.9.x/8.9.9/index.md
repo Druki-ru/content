@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.9.9: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2020-012.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 18 ноября 2020

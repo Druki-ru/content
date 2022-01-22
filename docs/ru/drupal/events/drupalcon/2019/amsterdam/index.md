@@ -3,6 +3,8 @@ title: DrupalCon Amsterdam 2019
 slug: wiki/events/drupalcon-2019-amsterdam
 metatags:
   description: 'DrupalCon Amsterdam 2019, Амстердам, Нидерланды. Даты проведения, докладчики, доклады.'
+authors:
+  - Niklan
 ---
 
 **Даты проведения:** 28-31 октября 2019\

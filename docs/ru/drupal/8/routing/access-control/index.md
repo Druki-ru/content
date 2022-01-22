@@ -10,6 +10,8 @@ search-keywords:
 metatags:
   title: 'Drupal 8: Контроль доступа к маршрутам'
   description: 'Контролируем доступ к маршрутам при помощи _custom_access, или собственного сервиса Access Check.'
+authors:
+  - Niklan
 ---
 
 Каждый маршрут в Drupal должен иметь, по крайней мере одну, проверку доступа. Данные требования указываются в `requirements` разделе маршрута.

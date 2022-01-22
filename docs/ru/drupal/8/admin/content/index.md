@@ -9,6 +9,8 @@ category:
   area: Административный интерфейс
   title: Содержимое
   order: 2
+authors:
+  - Niklan
 ---
 
 ![Административная страница Drupal 8: Содержимое](https://i.imgur.com/bygiFPG.png)

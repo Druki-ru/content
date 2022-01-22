@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.7.1: Список изменений'
   description: 'Обновление безопасности исправляющее SA-CORE-2019-007.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 8 мая 2019 г.

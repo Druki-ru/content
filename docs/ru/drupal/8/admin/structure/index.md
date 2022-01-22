@@ -9,6 +9,8 @@ category:
   area: Административный интерфейс
   title: Структура
   order: 3
+authors:
+  - Niklan
 ---
 
 ![Административная страница Drupal 8: Структура](https://i.imgur.com/T2rdljY.png)

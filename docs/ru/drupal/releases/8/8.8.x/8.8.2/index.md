@@ -5,6 +5,8 @@ core: 8
 metatags:
   title: 'Drupal 8.8.2: Список изменений'
   description: 'Минорный релиз Drupal 8.8.2, список изменений.'
+authors:
+  - Niklan
 ---
 
 **Дата релиза**: 2 февраля 2020 г.

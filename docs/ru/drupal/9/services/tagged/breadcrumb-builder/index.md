@@ -12,6 +12,8 @@ search-keywords:
 metatags:
   title: 'Drupal 9: Breadcrumb Builder (Строитель хлебных крошек)'
   description: 'Сервисы с меткой breadcrumb_builder позволяют программно устанавливать хлебные крошки.'
+authors:
+  - Niklan
 ---
 
 **Breadcrumb Builder** (строитель хлебных крошек) — [сервисы](../../index.md) с меткой `breadcrumb_builder` позволяющие программно задавать хлебные крошки на сайте.

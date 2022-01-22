@@ -5,6 +5,9 @@ core: 9
 metatags:
   title: 'Drupal 9.1.0: Список изменений'
   description: 'Список изменений Drupal 9.1.0.'
+authors:
+  - Niklan
+  - arraksis
 ---
 
 **Дата релиза**: 2 декабря 2020\

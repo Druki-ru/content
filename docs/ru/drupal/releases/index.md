@@ -5,6 +5,10 @@ core: 9
 metatags:
   title: 'Drupal: Список релизов и даты выхода версий'
   description: 'Даты релиза Drupal ядра, а также списки изменений.'
+authors:
+  - Niklan
+  - chesn0k
+  - arraksis
 ---
 
 ## В разработке

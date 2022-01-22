@@ -5,6 +5,8 @@ core: 9
 metatags:
   title: 'Drupal 9.4.0: Список изменений'
   description: 'Список изменений Drupal 9.4.0.'
+authors:
+  - Niklan
 ---
 
 > [!WARNING]

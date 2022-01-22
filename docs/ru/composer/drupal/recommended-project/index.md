@@ -6,6 +6,8 @@ search-keywords:
   - composer
 metatags:
   description: 'Composer шаблон с ядром Drupal.'
+authors:
+  - Niklan
 ---
 
 **drupal/recommended-project** — рекомендуемый шаблон для создания новых сайтов на Drupal, при котором корень проекта находится на уровень выше.

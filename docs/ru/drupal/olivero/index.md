@@ -3,6 +3,8 @@ title: Olivero
 slug: wiki/olivero
 metatags:
   description: 'Тема оформления Drupal — Olivero.'
+authors:
+  - Niklan
 ---
 
 **Olivero** — экспериментальная тема оформления Drupal поставляемая с ядром начиная с версии [9.1.0](../releases/9/9.1.x/9.1.0/index.md). [Тема названа](https://www.drupal.org/forum/general/community-spotlight/2019-02-22/remembering-rachel-olivero) в честь [Рейчел Оливеро](https://www.drupal.org/u/rachelolivero) (Rachel Olivero).

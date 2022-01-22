@@ -4,6 +4,8 @@ slug: wiki/9/dynamic-page-cache
 metatags:
   title: 'Drupal 9: Internal Dynamic Page Cache'
   description: Internal Dynamic Page Cache — кеширует страницы, в том числе с динамическим содержимым.
+authors:
+  - Niklan
 ---
 
 **Internal Dynamic Page Cache** (машинное имя `dynamic_page_cache`) — стандартный модуль кеширования страниц с динамическим содержимым.

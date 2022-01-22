@@ -9,6 +9,9 @@ search-keywords:
 metatags:
   title: 'Drupal 9: События'
   description: 'События в Drupal 9 позволяют подписываться на определенные этапы работы системы.'
+authors:
+  - Niklan
+  - chesn0k
 ---
 
 ## Введение

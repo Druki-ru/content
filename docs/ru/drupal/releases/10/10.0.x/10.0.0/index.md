@@ -5,6 +5,9 @@ core: 10
 metatags:
   title: 'Drupal 10.0.0: Список изменений'
   description: 'Список изменений Drupal 10.0.0.'
+authors:
+  - Niklan
+  - arraksis
 ---
 
 > [!WARNING]

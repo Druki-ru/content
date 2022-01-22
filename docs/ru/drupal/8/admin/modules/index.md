@@ -9,6 +9,8 @@ category:
   area: Административный интерфейс
   title: Расширения
   order: 5
+authors:
+  - Niklan
 ---
 
 ![Административная страница Drupal 8: Расширения](https://i.imgur.com/CsCnAJS.png)

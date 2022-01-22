@@ -11,6 +11,8 @@ search-keywords:
 metatags:
   title: 'Drupal 9: Access Check (проверка доступа)'
   description: 'Сервисы с меткой access_check предоставляют различные проверки доступа.'
+authors:
+  - Niklan
 ---
 
 **Access Check** — [сервисы](../../index.md) с меткой `access_check` предоставляют различные проверки доступа.
