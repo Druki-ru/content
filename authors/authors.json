@@ -49,7 +49,7 @@
       "name": "Galaxymart",
       "unit": "Drupal developer"
     },
-    "country": "RU",    
+    "country": "RU",
     "description": {
       "en": "I'm Drupal developer"
     },
@@ -69,6 +69,22 @@
     "country": "UA",
     "identification": {
       "email": ["spam.yureskul@gmail.com"]
+    }
+  },
+  "a-kovrigin": {
+    "name": {
+      "given": "Alexander",
+      "family": "Kovrigin"
+    },
+    "country": "RU",
+    "description": {
+      "en": "Drupal developer"
+    },
+    "image": "images/a-kovrigin.jpg",
+    "identification": {
+      "email": [
+        "a.kovrigin.is.here@gmai.com"
+      ]
     }
   }
 }
