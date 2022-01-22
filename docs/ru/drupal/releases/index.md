@@ -9,6 +9,7 @@ authors:
   - Niklan
   - chesn0k
   - arraksis
+  - a-kovrigin
 ---
 
 ## В разработке

@@ -15,6 +15,7 @@ metatags:
   description: 'Сервисы с меткой theme_negotiator позволяют программно переключать темы оформления.'
 authors:
   - Niklan
+  - a-kovrigin
 ---
 
 **Theme Negotiator** — [сервисы](../../index.md) с меткой `theme_negotiator` позволяющие программно переключать [тему оформления](../../../themes/index.md).

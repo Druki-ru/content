@@ -11,6 +11,7 @@ metatags:
   description: 'Сервисы с меткой path_processor_inbound и path_processor_outbound позволяют обрабатывать входящие и исходящие пути сайта.'
 authors:
   - Niklan
+  - a-kovrigin
 ---
 
 **Inbound Processor** и **Outbound Processor** — [сервисы](../../index.md) с меткой `path_processor_inbound` и `path_processor_outbound` позволяющие программно обрабатывать входящие и исходящие пути сайта.

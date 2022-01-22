@@ -9,6 +9,7 @@ authors:
   - Niklan
   - chesn0k
   - arraksis
+  - a-kovrigin
 ---
 
 **Дата релиза**: 16 июня 2021\

@@ -7,6 +7,7 @@ metatags:
 authors:
   - Niklan
   - arraksis
+  - a-kovrigin
 ---
 
 **Drupal 10** — десятая мажорная версия Drupal, релиз которой состоится в июне 2022.
