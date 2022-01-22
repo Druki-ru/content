@@ -4,18 +4,18 @@
 
 # Druki Content
 
-Данный репозиторий содержит исходные данные и содержимое для [Drupal энциклопедии](https://druki.ru).
+Данный репозиторий содержит материалы для [Drupal энциклопедии](https://druki.ru).
 
-## Процесс наполнения
+## Общая информация
 
 * [Внесение вклада](CONTRIBUTING.md)
-* [Быстрый старт](_handbook/ru/quick-start.md)
 
 ## Руководство по содержимому
 
 * [Типы содержимого](_handbook/ru/content-types.md)
 * [Словарь](_handbook/ru/word-list.md)
 
-## Разметка
+## Создание, редактирование и структура материалов
 
 * [Профиль автора](_handbook/ru/author-profile.md)
+* [Документация](_handbook/ru/documentation.md)
