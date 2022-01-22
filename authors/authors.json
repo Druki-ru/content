@@ -60,5 +60,15 @@
         "w.lukasevich@gmail.com"
       ]
     }
+  },
+  "chesn0k": {
+    "name": {
+      "given": "Александр",
+      "family": "Юрескул"
+    },
+    "country": "UA",
+    "identification": {
+      "email": ["spam.yureskul@gmail.com"]
+    }
   }
 }
