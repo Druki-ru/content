@@ -17,11 +17,16 @@ authors:
 * [#3255077](https://www.drupal.org/node/3255077) Исправлены опечатки в описании для CKEditor 5 фильтра.
 * [#3228778](https://www.drupal.org/node/3228778) Плагины для CKEditor 5 теперь могут использовать `Drupal.t()` для перевода строк.
 * [#3238257](https://www.drupal.org/node/3238257) Если CKEditor заменил `<textarea>` на который вёл якорь, то теперь CKEditor перехыватает такой якорь и перенаправляет фокусировку на себя.
-[#3258668](https://www.drupal.org/node/3258668) Удалена лишняя разметка из `ckeditor5.admin.es6.js`.
+* [#3258668](https://www.drupal.org/node/3258668) Удалена лишняя разметка из `ckeditor5.admin.es6.js`.
+* [#3259179](https://www.drupal.org/node/3259179) Внесены улучшения в `ckeditor5.ckeditor5.yml` файла, для более плавного переезда на него в будущем.
 
 ## File System
 
 * [#3254553](https://www.drupal.org/node/3254553) Исправлена неполадка, из-за которой `FileUrlGenerator::generate()` не работал со Stream Wrappers ведущие на внешние ресурсы.
+
+## Filter
+
+* [#3241633](https://www.drupal.org/node/3241633) Исправлена неполадка, из-за которой не отображались режимы отображения для Media сущностей, если они имеют числовое название.
 
 ## JavaScript
 

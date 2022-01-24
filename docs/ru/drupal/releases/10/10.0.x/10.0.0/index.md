@@ -303,6 +303,8 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3233031](https://www.drupal.org/node/3233031) Методам, переопределяющие `Symfony\Component\Routing\RequestContextAwareInterface::getContext()`, добавлен тайпхинт `RequestContext`.
 * [#3254250](https://www.drupal.org/node/3254250) Внесены улучшения в код, который ожидает что метод `Symfony\Component\HttpFoundation\InputBag::get()` может вернуть значение отличное от строки.
 * [#3231688](https://www.drupal.org/node/3231688) Методам, реализующих `ExecutionContextInterface::getViolations()`, `::getValidator()`, `::getRoot()`, `::getValue()`, `::isConstraintValidated()`, `::isGroupValidated()` и `::isObjectInitialized()` добавлены тайпхинты.
+* [#3259028](https://www.drupal.org/node/3259028) Методам, реализующих `Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface::implementations()` добавлены тайпхинты.
+* [#3259026](https://www.drupal.org/node/3259026) Методам, переопределяющие методы Symfony Console добавлены тайпхинты.
 
 ## Тестирование
 
