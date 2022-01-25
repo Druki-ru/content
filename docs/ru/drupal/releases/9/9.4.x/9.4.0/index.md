@@ -464,6 +464,6 @@ Drupal теперь выводит предупреждение, если баз
   Drupal\taxonomy\Plugin\views\argument_validator\Term`.
 * [#3256539](https://www.drupal.org/node/3256539) `ContentEntityDeleteForm` больше не помечен как внутренний класс (`@internal`), это означает, что вы теперь можете использовать и наследоваться от этой формы.
 * [#3259996](https://www.drupal.org/node/3259996) Использование `t()` для списков с ссылками в `system_requirements()` заменено на `Markup`.
-* [#3181275](https://www.drupal.org/node/3181275) При использовании PHP 8+, Drupal больше не будет выдавать ошибку при использовании `phar://` URI. Так как на PHP 7 он имеет уязявимости, его использование будет по прежнему запрещено. 
+* [#3181275](https://www.drupal.org/node/3181275) При использовании PHP 8+, Drupal больше не будет выдавать ошибку при использовании `phar://` URI. Так как на PHP 7 он имеет уязвимости, его использование будет по-прежнему запрещено. 
 * [#3252406](https://www.drupal.org/node/3252406) Класс `PharExtensionInterceptor` помечен для внутреннего пользования `@internal`.
 * [#3229714](https://www.drupal.org/node/3229714) Исправлена область видимости для метода `ContextAwarePluginTrait::getPluginDefinition()` с `protected` на `public`.
