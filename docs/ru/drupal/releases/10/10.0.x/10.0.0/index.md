@@ -282,6 +282,11 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3255180](https://www.drupal.org/node/3255180) Внесены улучшения в стили для Views-сеток. Теперь они используют CSS-переменные.
 * [#3217924](https://www.drupal.org/node/3217924) Синие и серые цвета конвертированы из HEX в HSL.
 * [#3257583](https://www.drupal.org/node/3257583) Стили для вкладок были улучшены с использованием CSS-переменных.
+* [#3217926](https://www.drupal.org/node/3217926) Название CSS переменных с цветами приведено к единому стилю, `blue` цвет заменён на `primary`.
+
+## RDF
+
+* [#3176468 ](https://www.drupal.org/node/3176468 ) Удалена поддержка Easy RDF 0.9. Поддержка Easy RDF 1.0 продолжит работать без изменений.
 
 ## Symfony 6
 
@@ -305,6 +310,9 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3231688](https://www.drupal.org/node/3231688) Методам, реализующих `ExecutionContextInterface::getViolations()`, `::getValidator()`, `::getRoot()`, `::getValue()`, `::isConstraintValidated()`, `::isGroupValidated()` и `::isObjectInitialized()` добавлены тайпхинты.
 * [#3259028](https://www.drupal.org/node/3259028) Методам, реализующих `Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface::implementations()` добавлены тайпхинты.
 * [#3259026](https://www.drupal.org/node/3259026) Методам, переопределяющие методы Symfony Console добавлены тайпхинты.
+* [#3209723](https://www.drupal.org/node/3209723) Использование `HttpKernelInterface::MASTER_REQUEST` заменено на `
+  HttpKernelInterface::MAIN_REQUEST`.
+* [#3162981](https://www.drupal.org/node/3162981) Где возможно, использование `ParameterBag` заменено на `InputBag`.
 
 ## Тестирование
 
@@ -320,3 +328,4 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3104353](https://www.drupal.org/node/3104353) Guzzle обновлён до 7 версии.
 * [#3197729](https://www.drupal.org/node/3197729) Удалён слой обратной совместимости для `Definition::setDeprecated()`.
 * [#3259158](https://www.drupal.org/node/3259158) Исправлена неполадка в `commit-code-check.sh`, которая приводила к некорректным результатам PHPStan если в проверяемом коммите был удалён файл.
+* [#3260243](https://www.drupal.org/node/3260243) Внесены улучшения в `ConfigEntityResourceTestBase`.

@@ -338,6 +338,8 @@ Drupal теперь выводит предупреждение, если баз
 
 * [#3214170](https://www.drupal.org/node/3214170) Кнопка «Отмена» теперь отцентрована в off-canvas модальном окне.
 * [#3247994](https://www.drupal.org/node/3247994) Исправлена неполадка, из-за которой мог некорректно работать элемент формы `password`.
+* [#3184667](https://www.drupal.org/node/3184667) Улучшено отображение формы материала на широкоформатных экранах.
+* [#3168326](https://www.drupal.org/node/3168326) Улучшено отображение dropbutton элемента в таблицах.
 
 ## Composer
 
@@ -409,6 +411,8 @@ Drupal теперь выводит предупреждение, если баз
 * [#3042533](https://www.drupal.org/node/3042533) Внесены улучшения в миграцию словарей таксономии из Drupal 6.
 * [#3240109](https://www.drupal.org/node/3240109) Возвращаемый тип данных для `MigrateProcessInterface::transform()` изменён с `string|array` на `mixed`.
 * [#3258009](https://www.drupal.org/node/3258009) Удалены два неиспользуемых и сломанных плагина `fieldleft` и `fieldright`.
+* [#3240873](https://www.drupal.org/node/3240873) Добавлено тестирование для `hash` свойства.
+* [#3226401](https://www.drupal.org/node/3226401) В `Migration` добавлена информация, что миграции можно создавать в `MODULENAME/migrations`.
 
 ## Olivero
 
@@ -443,6 +447,7 @@ Drupal теперь выводит предупреждение, если баз
 
 * [#3258995](https://www.drupal.org/node/3258995) `run-tests.sh` теперь использует `\Drupal::service('app.root')` вместо `\Drupal::root()`.
 * [#2867871](https://www.drupal.org/node/2867871) В `OptimizedPhpArrayDumperTest` улучшено использование Symfony Expression.
+* [#3212346](https://www.drupal.org/node/3212346) Добавлен абстрактный тест `ConfigEntityResourceTestBase`. Тесты для конфигурационных сущностей и их ресурсов теперь расширяют данный тест. Это уменьшает количество установок Drupal в процессе тестирования.
 
 ## Прочие изменения
 
@@ -458,3 +463,7 @@ Drupal теперь выводит предупреждение, если баз
 * [#3258014](https://www.drupal.org/node/3258014) Оформление информации об устаревшем коде улучшено для `Drupal\migrate_drupal\Plugin\migrate\field\NodeReference` и `
   Drupal\taxonomy\Plugin\views\argument_validator\Term`.
 * [#3256539](https://www.drupal.org/node/3256539) `ContentEntityDeleteForm` больше не помечен как внутренний класс (`@internal`), это означает, что вы теперь можете использовать и наследоваться от этой формы.
+* [#3259996](https://www.drupal.org/node/3259996) Использование `t()` для списков с ссылками в `system_requirements()` заменено на `Markup`.
+* [#3181275](https://www.drupal.org/node/3181275) При использовании PHP 8+, Drupal больше не будет выдавать ошибку при использовании `phar://` URI. Так как на PHP 7 он имеет уязявимости, его использование будет по прежнему запрещено. 
+* [#3252406](https://www.drupal.org/node/3252406) Класс `PharExtensionInterceptor` помечен для внутреннего пользования `@internal`.
+* [#3229714](https://www.drupal.org/node/3229714) Исправлена область видимости для метода `ContextAwarePluginTrait::getPluginDefinition()` с `protected` на `public`.
