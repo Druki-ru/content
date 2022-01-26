@@ -374,7 +374,7 @@ class ExampleExtenderFactory {
    *   Database connection object.
    *
    * @return \Drupal\example\ExampleExtender
-   *   A query extender for pager queries.
+   *   A query extender example.
    */
   public function get(SelectInterface $query, Connection $connection): ExampleExtender {
     return new ExampleExtender($query, $connection);
