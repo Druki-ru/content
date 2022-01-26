@@ -271,6 +271,9 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3128982](https://www.drupal.org/node/3128982) Зависимость `asm89/stack-cors` обновлена до `^2.0`.
 * [#3197482](https://www.drupal.org/node/3197482) Drupal ядро теперь использует компоненты Symfony `^5.4` вместо `^4.4`. 
 * [#3255353](https://www.drupal.org/node/3255353) Зависимости ядра обновлены 17.01.22.
+* [#3210486](https://www.drupal.org/node/3210486) Удалена зависимость `typo3/phar-stream-wrapper`.
+* [#3258902](https://www.drupal.org/node/3258902) Удалена зависимость `stackphp/builder`, а его класс `Stack\StackedHttpKernel` добавлен в ядро как `
+  Drupal\Core\DependencyInjection\Compiler\StackedKernelPass`.
 
 ## Database System
 
@@ -313,6 +316,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3209723](https://www.drupal.org/node/3209723) Использование `HttpKernelInterface::MASTER_REQUEST` заменено на `
   HttpKernelInterface::MAIN_REQUEST`.
 * [#3162981](https://www.drupal.org/node/3162981) Где возможно, использование `ParameterBag` заменено на `InputBag`.
+* [#3259675](https://www.drupal.org/node/3259675) Внесены улучшения в `LazyRouteCollectionTest` для совместимости с тайпхинтом для `::all()` метода.
 
 ## Тестирование
 

@@ -321,6 +321,70 @@ Drupal теперь выводит предупреждение, если баз
 
 Если у вас имеются свои драйвера баз данных, убедитесь что `::hasJson()` работает корректно с вашим типом БД, в случае необходимости, переопределите его.
 
+## Расширения для построения SELECT запросов теперь управляются при помощи переопределяемых сервисов 
+
+* [#3217699](https://www.drupal.org/node/3217699)
+
+Расширения для построения SELECT запросов теперь управляются при помощи переопределяемых [сервисов](../../../../9/services/index.md).
+
+`\Drupal\Core\Database\Query\Select` используется Database API для построения SELECT запросов к БД. Данный класс имеет поддержку расширений, которые должны наследоваться от `Drupal\Core\Database\Query`. Эти расширения могут влиять на построение запроса, добавлять новые и редактировать уже имеющиеся условия.
+
+Ранее, данные расширения подключались при помощи вызова `Select::extend()`, где в качестве аргумента передавалось полное название класса с расширением, которое необходимо добавить к запросу.
+
+Теперь метод ожидает ключ (название) расширения. По этому ключу должен должен существовать одноимённый переопределяемый сервис, который является [фабрикой](https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B1%D1%80%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)). Данная фабрика должна подготовить экземпляр расширения и вернуть его.
+
+> [!NOTE]
+> Подключение расширений по названию классу помечено устаревшим и будет удалено в [Drupal 10](../../../../10/index.md).
+
+Давайте рассмотрим на примере, как поменялось подключение расширений предоставляемых ядром:
+
+* `Connection->select('some_table')->extend(PagerSelectExtender::class)` теперь `onnection->select('some_table')->extend('pager')`
+* `Connection->select('some_table')->extend(TableSortExtender::class)` теперь `onnection->select('some_table')->extend('table_sort')`
+* `Connection->select('some_table')->extend(SearchQuery::class)` теперь `onnection->select('some_table')->extend('search_query')`
+* `Connection->select('some_table')->extend(ViewsSearchQuery::class)` теперь `onnection->select('some_table')->extend('views_search_query')`
+
+Для того чтобы создать фабрику для своего расширения `ExampleExtender`, вам необходимо объявить сервис который удовлетворяет именованию `select_exntender_factory.[extender_name]` и имеющий тег `backend_overridable`.
+
+Например, `example.services.yml`:
+
+```yaml
+  select_extender_factory.example_extender:
+    # Название класса не имеет значения.
+    class: Drupal\example\ExampleExtenderFactory
+    tags:
+      - { name: backend_overridable }
+```
+
+```php
+<?php
+
+namespace Drupal\example;
+
+/**
+ * Select extender example factory.
+ */
+class ExampleExtenderFactory {
+
+  /**
+   * Returns a query extender for example.
+   *
+   * @param \Drupal\Core\Database\Query\SelectInterface $query
+   *   Select query object.
+   * @param \Drupal\Core\Database\Connection $connection
+   *   Database connection object.
+   *
+   * @return \Drupal\example\ExampleExtender
+   *   A query extender for pager queries.
+   */
+  public function get(SelectInterface $query, Connection $connection): ExampleExtender {
+    return new ExampleExtender($query, $connection);
+  }
+
+}
+```
+
+После чего вы можете использовать объявленную фабрику как расширение: `Connection->select('some_table')->extend('example_extender')`.
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -333,6 +397,7 @@ Drupal теперь выводит предупреждение, если баз
 ## CKEditor 5
 
 * [#3258250](https://www.drupal.org/node/3258250) CKEditor обновлён до версии 31.1.0.
+* [#3248448](https://www.drupal.org/node/3248448) Улучшено оформление индикатора загрузки диалога.
 
 ## Claro
 
@@ -387,6 +452,7 @@ Drupal теперь выводит предупреждение, если баз
 * [#3238860](https://www.drupal.org/node/3238860) Использование `jQuery.map()` заменено на нативную `map()` функцию.
 * [#3239500](https://www.drupal.org/node/3239500) Добавлен полифил для `Array.includes()`.
 * [#3239134](https://www.drupal.org/node/3239134) Использование `jQuery.val()` заменено на нативные `.value`.
+* [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
 
 ## JSON:API
 
@@ -426,6 +492,7 @@ Drupal теперь выводит предупреждение, если баз
 ## Update
 
 * [#3253639](https://www.drupal.org/node/3253639) Добавлен новый класс `UpdateUploaderTestBase` с универсальной реализацией `::setUp()` для уменьшения дублирования кода в тестах модуля.
+* [#3238311](https://www.drupal.org/node/3238311) Маршрут `system.batch_page.html` добавлен в список маршрутов, на которых не показываются предупреждения об обновлениях безопасности.
 
 ## User
 

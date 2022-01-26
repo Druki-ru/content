@@ -26,6 +26,11 @@ authors:
 * [#3259179](https://www.drupal.org/node/3259179) Внесены улучшения в `ckeditor5.ckeditor5.yml` файла, для более плавного переезда на него в будущем.
 * [#3259174](https://www.drupal.org/node/3259174) Улучшен тест `SmartDefaultSettingsTest`.
 * [#3248188](https://www.drupal.org/node/3248188) Добавлена валидация `drupal.conditions` для плагинов CKeditor5.
+* [#3248177](https://www.drupal.org/node/3248177) Исправлена неполадка, из-за которой плагин пометки языка в тексте было невозможно убрать с тулбара.
+
+## Database System
+
+* [#3256056](https://www.drupal.org/node/3256056) В `QueryAggregateInterface` добавлена документация о том что в запросах также можно использовать оператор `NOT BETWEEN`.
 
 ## File System
 
@@ -53,3 +58,4 @@ authors:
 * [#3257654](https://www.drupal.org/node/3257654) Внесены изменения для исправления ошибок выявленных PHPStan L0.
 * [#3106216](https://www.drupal.org/node/3106216) Из ядра удалены неиспользуемые переменные.
 * [#3255245](https://www.drupal.org/node/3255245) Изменение [#3231683](https://www.drupal.org/node/3231683) из [Drupal 9.3.0](../9.3.0/index.md) было откачено.
+* [#3247666](https://www.drupal.org/node/3247666) `README.txt` файл был актуализирован.
