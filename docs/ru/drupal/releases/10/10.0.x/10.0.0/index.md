@@ -333,3 +333,4 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3197729](https://www.drupal.org/node/3197729) Удалён слой обратной совместимости для `Definition::setDeprecated()`.
 * [#3259158](https://www.drupal.org/node/3259158) Исправлена неполадка в `commit-code-check.sh`, которая приводила к некорректным результатам PHPStan если в проверяемом коммите был удалён файл.
 * [#3260243](https://www.drupal.org/node/3260243) Внесены улучшения в `ConfigEntityResourceTestBase`.
+* [#3214211](https://www.drupal.org/node/3214211) Drupal больше не добавляет заголовок `X-UA-Compatible` в ответы из-за прекращения поддержки Internet Explorer.
