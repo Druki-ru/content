@@ -317,6 +317,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
   HttpKernelInterface::MAIN_REQUEST`.
 * [#3162981](https://www.drupal.org/node/3162981) Где возможно, использование `ParameterBag` заменено на `InputBag`.
 * [#3259675](https://www.drupal.org/node/3259675) Внесены улучшения в `LazyRouteCollectionTest` для совместимости с тайпхинтом для `::all()` метода.
+* [#3259169](https://www.drupal.org/node/3259169) `ControllerResolver` больше не расширяет `BaseControllerResolver`.
 
 ## Тестирование
 

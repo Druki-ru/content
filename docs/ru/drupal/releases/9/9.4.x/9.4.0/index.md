@@ -63,16 +63,6 @@ authors:
 
 Утверждение выше также подходит и для Drupal. Мы можем кешировать результат основываясь на переданном типе и формате, что позволяет сократить количество вызовов. Подобное изменение позволяет добиться увеличения производительности от 5 до 60 процентов!
 
-## Обновлены старые схемы для `uid` поля сущностей, где может использоваться устаревший метод получения ID пользователя
-
-* [#3153455](https://www.drupal.org/node/3153455) Добавлено обновление, которое исправляет
-
-Сайты, установленные на версии ранее чем Drupal 8.6.0, а теперь использующие Drupal 9, могут столкнуться с проблемой, что у некоторых сущностей из ядра поле `uid` использует устаревшее значение для `default_value_callback`. Ранее, использовался метод `{EntityTypeClass}::getCurrentUserId()`, который был объявлен устаревшим в Drupal 8.6.0 и удалён в Drupal 9.
-
-На таких проектах, подобная ситуация может приводить, как к ошибке: «The website encountered an unexpected error. Please try again later. Error: Call to a member function getAccountName() on null», так и предупреждению «call_user_func() expects parameter 1 to be a valid callback, class 'Drupal\node\Entity\Node' does not have a method 'getCurrentUserId' in Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
-
-В данном релизе добавлены обновления для всех сущностей ядра, которые проверяют, что используется современный метод, и если обнаруживается старый, он обновляется на новый.
-
 ## Драйвера баз данных, предоставляемые ядром Drupal, перенесены в соответствующие одноимённые модули
 
 * [#3129043](https://www.drupal.org/node/3129043) 
@@ -460,7 +450,7 @@ class ExampleExtenderFactory {
 * [#3238860](https://www.drupal.org/node/3238860) Использование `jQuery.map()` заменено на нативную `map()` функцию.
 * [#3239500](https://www.drupal.org/node/3239500) Добавлен полифил для `Array.includes()`.
 * [#3239134](https://www.drupal.org/node/3239134) Использование `jQuery.val()` заменено на нативные `.value`.
-* [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
+* [#3239123](https://www.drupal.org/node/3239123) Использование `jQuery.text()` заменено на нативный `.textContent`.
 
 ## JSON:API
 
@@ -497,6 +487,10 @@ class ExampleExtenderFactory {
 * [#3171149](https://www.drupal.org/node/3171149) Стандартный профиль теперь использует стиль изображения `wide` для
   публикаций вместо `large`.
 
+## Toolbar
+
+* [#3257504](https://www.drupal.org/node/3257504) Тулбар больше не показывает кнопку переключение между горизонтальной и вертикальной ориентацией если в тулбаре нет никаких пунктов.
+
 ## Update
 
 * [#3253639](https://www.drupal.org/node/3253639) Добавлен новый класс `UpdateUploaderTestBase` с универсальной реализацией `::setUp()` для уменьшения дублирования кода в тестах модуля.
@@ -523,6 +517,7 @@ class ExampleExtenderFactory {
 * [#3258995](https://www.drupal.org/node/3258995) `run-tests.sh` теперь использует `\Drupal::service('app.root')` вместо `\Drupal::root()`.
 * [#2867871](https://www.drupal.org/node/2867871) В `OptimizedPhpArrayDumperTest` улучшено использование Symfony Expression.
 * [#3212346](https://www.drupal.org/node/3212346) Добавлен абстрактный тест `ConfigEntityResourceTestBase`. Тесты для конфигурационных сущностей и их ресурсов теперь расширяют данный тест. Это уменьшает количество установок Drupal в процессе тестирования.
+* [#3257407](https://www.drupal.org/node/3257407) `BlockCreationTrait::placeBlock()` теперь помещает блоки в `content` регион вместо `sidebar_first`.
 
 ## Прочие изменения
 
