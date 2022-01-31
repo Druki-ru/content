@@ -22,9 +22,9 @@ authors:
 
 ## Минимальная версия PHP — 8.0.2
 
-* [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350) 
+* [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350), [#3261357](https://www.drupal.org/node/3261357)  
 
-Минимальная версия PHP для Drupal 10 — 8.0.2. Drupal 10 не будет работать на PHP 7 и более ранних версиях.
+Минимальная версия PHP для Drupal 10 — 8.0.2, рекомендуемая — 8.1. Drupal 10 не будет работать на PHP 7 и более ранних версиях.
 
 Весь код, который был связан с PHP 7, включая настройки для PHP в `.htaccess` файле и различные упоминания — удалены из кодовой базы.
 
@@ -274,6 +274,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3210486](https://www.drupal.org/node/3210486) Удалена зависимость `typo3/phar-stream-wrapper`.
 * [#3258902](https://www.drupal.org/node/3258902) Удалена зависимость `stackphp/builder`, а его класс `Stack\StackedHttpKernel` добавлен в ядро как `
   Drupal\Core\DependencyInjection\Compiler\StackedKernelPass`.
+* [#3254149](https://www.drupal.org/node/3254149) Из `composer.json` удалена настройка `config.autoloader-suffix`.
 
 ## Database System
 
@@ -318,6 +319,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3162981](https://www.drupal.org/node/3162981) Где возможно, использование `ParameterBag` заменено на `InputBag`.
 * [#3259675](https://www.drupal.org/node/3259675) Внесены улучшения в `LazyRouteCollectionTest` для совместимости с тайпхинтом для `::all()` метода.
 * [#3259169](https://www.drupal.org/node/3259169) `ControllerResolver` больше не расширяет `BaseControllerResolver`.
+* [#3259674](https://www.drupal.org/node/3259674) Методу `Drupal\Core\Routing\Router::matchCollection()` добавлен тайпхинт.
 
 ## Тестирование
 
@@ -335,3 +337,12 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3259158](https://www.drupal.org/node/3259158) Исправлена неполадка в `commit-code-check.sh`, которая приводила к некорректным результатам PHPStan если в проверяемом коммите был удалён файл.
 * [#3260243](https://www.drupal.org/node/3260243) Внесены улучшения в `ConfigEntityResourceTestBase`.
 * [#3214211](https://www.drupal.org/node/3214211) Drupal больше не добавляет заголовок `X-UA-Compatible` в ответы из-за прекращения поддержки Internet Explorer.
+* [#3260766](https://www.drupal.org/node/3260766) Удалён устаревший файл `includes/file.inc`.
+* [#3260805](https://www.drupal.org/node/3260805) Удалён устаревший код из `core/lib/Drupal/Core/Routing`.
+* [#3259024](https://www.drupal.org/node/3259024) Удалены устаревшие сервисы `app.root` и `site.path`.
+* [#3260778](https://www.drupal.org/node/3260778) Удалён устаревший код из `includes/bootstrap.inc`.
+* [#3260801](https://www.drupal.org/node/3260801) Удалён устаревший код из `core/lib/Drupal/Component/Utility`.
+* [#3260806](https://www.drupal.org/node/3260806) Удалён устаревший код из `core/lib/Drupal/Core/Config`.
+* [#3260780](https://www.drupal.org/node/3260780) Удалён устаревший код из `includes/common.inc`.
+* [#3210931](https://www.drupal.org/node/3210931) Удалён устаревший код из `includes/update.inc`.
+* [#3258918](https://www.drupal.org/node/3258918) Удалён устаревший сервис `cache.null`.

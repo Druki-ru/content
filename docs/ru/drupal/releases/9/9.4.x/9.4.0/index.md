@@ -383,6 +383,15 @@ class ExampleExtenderFactory {
 
 Если значение на входе не будет являться массивом, теперь выбрасывается исключение `MigrateException`.
 
+## Рекомендуемая версия PHP увеличена до 8.1
+
+* [#3261357](https://www.drupal.org/node/3261357) 
+
+Рекомендуемая версия PHP увеличена до 8.0. Минимальная версия по-прежнему остаётся PHP 7.3.0.
+
+> [!WARNING]
+> В [Drupal 10.0.0](../../../10/10.0.x/10.0.0/index.md) минимальная версия будет увеличена.
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -424,6 +433,10 @@ class ExampleExtenderFactory {
 ## Datetime
 
 * [#3251100](https://www.drupal.org/node/3251100) Исправлена неполадка, из-за которой `DateTimeWidgetBase` дважды устанавливал одну и ту же временную зону.
+
+## Entity System
+
+* [#3260520](https://www.drupal.org/node/3260520) `\Drupal\Core\Entity\EntityTypeEvent` и `\Drupal\Core\Field\FieldStorageDefinitionEvent` теперь наследуются от `Event` вместо `GenericEvent`.
 
 ## Extension System
 

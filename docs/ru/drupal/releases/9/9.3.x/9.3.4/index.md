@@ -44,6 +44,7 @@ Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
 * [#3259174](https://www.drupal.org/node/3259174) Улучшен тест `SmartDefaultSettingsTest`.
 * [#3248188](https://www.drupal.org/node/3248188) Добавлена валидация `drupal.conditions` для плагинов CKeditor5.
 * [#3248177](https://www.drupal.org/node/3248177) Исправлена неполадка, из-за которой плагин пометки языка в тексте было невозможно убрать с тулбара.
+* [#3259380](https://www.drupal.org/node/3259380) Исправлена неполадка, из-за которой тулбар CKEditor в режиме фокусировки перекрывал тулбар от Drupal.
 
 ## Database System
 
@@ -65,7 +66,7 @@ Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
 ## Render System
 
 * [#3254328](https://www.drupal.org/node/3254328) Кеш-контексты и кеш-теги заполнителей (`placeholder`) теперь сортируются, прежде будут переданы на дальнейшую обработку. Это исправляет ошибку, из-за которой рендер некоторых блоков мог производиться дважды при использовании ленивых построителей.
-* [#3172166](https://www.drupal.org/node/3172166) Улучшена проверка в `Element::properties()`, которая приводила к «Notice:
+* [#3172166](https://www.drupal.org/node/3172166) (отменено) Улучшена проверка в `Element::properties()`, которая приводила к «Notice:
   Trying to access array offset on value of type int» при попытке вызова метода с массивом в качестве аргумента, где ключи являлись числами.
 
 ## Тестирование
