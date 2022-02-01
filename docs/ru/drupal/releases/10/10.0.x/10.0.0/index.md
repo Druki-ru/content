@@ -346,3 +346,5 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3260780](https://www.drupal.org/node/3260780) Удалён устаревший код из `includes/common.inc`.
 * [#3210931](https://www.drupal.org/node/3210931) Удалён устаревший код из `includes/update.inc`.
 * [#3258918](https://www.drupal.org/node/3258918) Удалён устаревший сервис `cache.null`.
+* [#3261539](https://www.drupal.org/node/3261539) В конфигурацию PHPStan добавлено игнорирование `*.php.gz` файлов.
+* [#3261539](https://www.drupal.org/node/3261539) В конфигурацию PHPStan добавлено игнорирование `lib/Drupal/Component/Transliteration/data/*.php` файлов, содержащих данные для транслитерации..

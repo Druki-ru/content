@@ -494,6 +494,7 @@ class ExampleExtenderFactory {
 ## Olivero
 
 * [#3186992](https://www.drupal.org/node/3186992) Исправлена неполадка, из-за которой навигационные пункты меню могли выходить за рамки контейнера.
+* [#3256433](https://www.drupal.org/node/3256433) Класс `wide-image` больше не добавляется на картинку профиля пользователя.
 
 ## Standard Profile
 

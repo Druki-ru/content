@@ -69,6 +69,10 @@ Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
 * [#3172166](https://www.drupal.org/node/3172166) (отменено) Улучшена проверка в `Element::properties()`, которая приводила к «Notice:
   Trying to access array offset on value of type int» при попытке вызова метода с массивом в качестве аргумента, где ключи являлись числами.
 
+## Toolbar
+
+* [#3258642](https://www.drupal.org/node/3258642) Исправлена документация для `_toolbar_get_subtrees_hash()`.
+
 ## Тестирование
 
 * [#3259744](https://www.drupal.org/node/3259744) Сообщение об устаревшем `Drupal\Tests\Listeners\DrupalListener` добавлено в исключения (не будет проваливать тест) для PHPUnit.
@@ -81,3 +85,5 @@ Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
 * [#3255245](https://www.drupal.org/node/3255245) Изменение [#3231683](https://www.drupal.org/node/3231683) из [Drupal 9.3.0](../9.3.0/index.md) было откачено.
 * [#3247666](https://www.drupal.org/node/3247666) `README.txt` файл был актуализирован.
 * [#3219649](https://www.drupal.org/node/3219649) Исправлены опечатки в словах начинающихся с «q» до «s».
+* [#3258969](https://www.drupal.org/node/3258969) Исправлен некорректный заполнитель для `watchdog_exception()` в `ModuleInstaller` классе.
+* [#3174402](https://www.drupal.org/node/3174402) В `TrackerTest` добавлена проверка `$unpublished` материала.
