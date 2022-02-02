@@ -275,6 +275,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3258902](https://www.drupal.org/node/3258902) Удалена зависимость `stackphp/builder`, а его класс `Stack\StackedHttpKernel` добавлен в ядро как `
   Drupal\Core\DependencyInjection\Compiler\StackedKernelPass`.
 * [#3254149](https://www.drupal.org/node/3254149) Из `composer.json` удалена настройка `config.autoloader-suffix`.
+* [#3261743](https://www.drupal.org/node/3261743) Из Composer команды `drupal-phpunit-upgrade` удалена установка `phpspec/prophecy-phpunit`.
 
 ## Database System
 
@@ -347,4 +348,5 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3210931](https://www.drupal.org/node/3210931) Удалён устаревший код из `includes/update.inc`.
 * [#3258918](https://www.drupal.org/node/3258918) Удалён устаревший сервис `cache.null`.
 * [#3261539](https://www.drupal.org/node/3261539) В конфигурацию PHPStan добавлено игнорирование `*.php.gz` файлов.
-* [#3261539](https://www.drupal.org/node/3261539) В конфигурацию PHPStan добавлено игнорирование `lib/Drupal/Component/Transliteration/data/*.php` файлов, содержащих данные для транслитерации..
+* [#3261539](https://www.drupal.org/node/3261539) В конфигурацию PHPStan добавлено игнорирование `lib/Drupal/Component/Transliteration/data/*.php` файлов, содержащих данные для транслитерации.
+* [#3259110](https://www.drupal.org/node/3259110) Исправлены проблемы с использованием необъявленных переменных.

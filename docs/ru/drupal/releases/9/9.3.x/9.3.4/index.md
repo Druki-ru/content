@@ -45,10 +45,13 @@ Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
 * [#3248188](https://www.drupal.org/node/3248188) Добавлена валидация `drupal.conditions` для плагинов CKeditor5.
 * [#3248177](https://www.drupal.org/node/3248177) Исправлена неполадка, из-за которой плагин пометки языка в тексте было невозможно убрать с тулбара.
 * [#3259380](https://www.drupal.org/node/3259380) Исправлена неполадка, из-за которой тулбар CKEditor в режиме фокусировки перекрывал тулбар от Drupal.
+* [#3232550](https://www.drupal.org/node/3232550) Улучшены сообщения отображаемые при использовании Internet Explorer.
+* [#3261712](https://www.drupal.org/node/3261712) Добавлены тесты для проверки Media кнопок.
 
 ## Database System
 
 * [#3256056](https://www.drupal.org/node/3256056) В `QueryAggregateInterface` добавлена документация о том что в запросах также можно использовать оператор `NOT BETWEEN`.
+* [#3261629](https://www.drupal.org/node/3261629) Команда `DbDumpCommand` теперь не зависит от драйверов баз данных.
 
 ## File System
 

@@ -417,6 +417,7 @@ class ExampleExtenderFactory {
 
 * [#3246595](https://www.drupal.org/node/3246595) Зависимости ядра обновлены на 01.11.21.
 * [#3255623](https://www.drupal.org/node/3255623) Удалены замены для пакетов `paragonie/random_compat` и `symfony/polyfill-php70`.
+* [#3258276](https://www.drupal.org/node/3258276) В Composer скрипте `drupal-phpunit-upgrade` убрана опция `--no-suggest` при установке `phpspec/prophecy-phpunit`.
 
 ## Configuration System
 
@@ -429,6 +430,7 @@ class ExampleExtenderFactory {
 ## Database System
 
 * [#3213644](https://www.drupal.org/node/3213644) Внесены улучшения в тест `StatementWrapperLegacyTest::testClientStatementMethod()`.
+* [#3259532](https://www.drupal.org/node/3259532) Добавлено тестирование `::hasJson()`.
 
 ## Datetime
 
@@ -479,6 +481,7 @@ class ExampleExtenderFactory {
 
 * [#3173770](https://www.drupal.org/node/3173770) `MediaLibraryFieldWidgetOpener` теперь позволяет использовать другие референс поля, расширяющее поле из ядра и использующие `EntityReferenceFieldItemList`.
 * [#3248454](https://www.drupal.org/node/3248454) Внесены улучшения в `MediaLibraryStateTest` для совместимости с Symfony 5.4.
+* [#3115054](https://www.drupal.org/node/3115054) Исправлена неполадка, из-за которой добавление или удаление элементов сбрасывало сортировку в виджете.
 
 ## Migration System
 
@@ -490,6 +493,7 @@ class ExampleExtenderFactory {
 * [#3258009](https://www.drupal.org/node/3258009) Удалены два неиспользуемых и сломанных плагина `fieldleft` и `fieldright`.
 * [#3240873](https://www.drupal.org/node/3240873) Добавлено тестирование для `hash` свойства.
 * [#3226401](https://www.drupal.org/node/3226401) В `Migration` добавлена информация, что миграции можно создавать в `MODULENAME/migrations`.
+* [#3254347](https://www.drupal.org/node/3254347) Исключения для плагинов-обработчиков теперь содержат название плагина, в котором выброшено исключение.
 
 ## Olivero
 
