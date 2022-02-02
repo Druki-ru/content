@@ -1518,6 +1518,9 @@ source:
 ```php
 use Drupal\mymodule\Entity\BasicPage;
 
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
 function mymodule_entity_bundle_info_alter(array &$bundles): void {
   if (isset($bundles['node']['page'])) {
     $bundles['node']['page']['class'] = BasicPage::class;
