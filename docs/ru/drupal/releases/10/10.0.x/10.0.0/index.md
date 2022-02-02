@@ -350,3 +350,4 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3261539](https://www.drupal.org/node/3261539) В конфигурацию PHPStan добавлено игнорирование `*.php.gz` файлов.
 * [#3261539](https://www.drupal.org/node/3261539) В конфигурацию PHPStan добавлено игнорирование `lib/Drupal/Component/Transliteration/data/*.php` файлов, содержащих данные для транслитерации.
 * [#3259110](https://www.drupal.org/node/3259110) Исправлены проблемы с использованием необъявленных переменных.
+* [#3258435](https://www.drupal.org/node/3258435) Удалены устаревшие сервисы `feed.reader.*` и `feed.writer.*`.
