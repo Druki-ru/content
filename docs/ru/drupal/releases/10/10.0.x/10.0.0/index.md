@@ -327,8 +327,8 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3182103](https://www.drupal.org/node/3182103) Различные методы PHPUnit, которые переопределяют базовые тестовые классы ядра приведены в соответствие с текущими сигнатурами оригинальных методов.
 * [#3222004](https://www.drupal.org/node/3222004) Обновлена схема в файле `phpunit.xml.dist`.
 * [#3227265](https://www.drupal.org/node/3227265) Удалены устаревшие трейты для сравнений.
-* [#3259158](https://www.drupal.org/node/3259158) Исправлен некорректный путь до `simpletest` директории в
-  тесте `ClassWriter`.
+* [#3259158](https://www.drupal.org/node/3259158) Исправлен некорректный путь до `simpletest` директории в тесте `ClassWriter`.
+* [#3261262](https://www.drupal.org/node/3261262) Из `PhpUnitWarnings` удалены сообщения об устаревшем коде связанным PHPUnit 8-.
 
 ## Прочие изменения
 
@@ -351,3 +351,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3261539](https://www.drupal.org/node/3261539) В конфигурацию PHPStan добавлено игнорирование `lib/Drupal/Component/Transliteration/data/*.php` файлов, содержащих данные для транслитерации.
 * [#3259110](https://www.drupal.org/node/3259110) Исправлены проблемы с использованием необъявленных переменных.
 * [#3258435](https://www.drupal.org/node/3258435) Удалены устаревшие сервисы `feed.reader.*` и `feed.writer.*`.
+* [#3261264](https://www.drupal.org/node/3261264) Удалён устаревший код из `Drupal\Core\Cache\DatabaseCacheTagsChecksum`.
+* [#3261250](https://www.drupal.org/node/3261250) Удалён устаревший `Drupal\update\ModuleVersion`.
+* [#3261253](https://www.drupal.org/node/3261253) Удалён устаревший плагин-обработчик `d6_url_alias_language`.
+* [#3261265](https://www.drupal.org/node/3261265) Удалён код для устаревшего `MimeTypeGuesser`.
