@@ -7,6 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.4.0.'
 authors:
   - Niklan
+  - arraksis
 ---
 
 > [!WARNING]
