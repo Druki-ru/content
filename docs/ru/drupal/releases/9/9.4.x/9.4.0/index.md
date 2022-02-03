@@ -466,6 +466,7 @@ class ExampleExtenderFactory {
 * [#3239500](https://www.drupal.org/node/3239500) Добавлен полифил для `Array.includes()`.
 * [#3239134](https://www.drupal.org/node/3239134) Использование `jQuery.val()` заменено на нативные `.value`.
 * [#3239123](https://www.drupal.org/node/3239123) Использование `jQuery.text()` заменено на нативный `.textContent`.
+* [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
 
 ## JSON:API
 

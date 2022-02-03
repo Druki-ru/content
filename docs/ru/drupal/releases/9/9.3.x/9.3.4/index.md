@@ -63,7 +63,6 @@ Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
 ## JavaScript
 
 * [#3258371](https://www.drupal.org/node/3258371) Исправлена неполадка в команде `yarn vendor-update`.
-* [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
 
 ## Render System
 
@@ -89,3 +88,8 @@ Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
 * [#3219649](https://www.drupal.org/node/3219649) Исправлены опечатки в словах начинающихся с «q» до «s».
 * [#3258969](https://www.drupal.org/node/3258969) Исправлен некорректный заполнитель для `watchdog_exception()` в `ModuleInstaller` классе.
 * [#3174402](https://www.drupal.org/node/3174402) В `TrackerTest` добавлена проверка `$unpublished` материала.
+
+## Ссылки
+
+- [Drupal 9.3.4](https://www.drupal.org/project/drupal/releases/9.3.4) (англ.), drupal.org, 2 февраля 2022
+
