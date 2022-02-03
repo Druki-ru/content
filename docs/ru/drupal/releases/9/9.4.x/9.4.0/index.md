@@ -501,6 +501,11 @@ class ExampleExtenderFactory {
 * [#3186992](https://www.drupal.org/node/3186992) Исправлена неполадка, из-за которой навигационные пункты меню могли выходить за рамки контейнера.
 * [#3256433](https://www.drupal.org/node/3256433) Класс `wide-image` больше не добавляется на картинку профиля пользователя.
 
+## Render System
+
+* [#3172166](https://www.drupal.org/node/3172166) (отменено) Улучшена проверка в `Element::properties()`, которая приводила к «Notice: Trying to access array offset on value of type int» при попытке вызова метода с массивом в качестве аргумента, где
+  ключи являлись числами.
+
 ## Standard Profile
 
 * [#3171149](https://www.drupal.org/node/3171149) Стандартный профиль теперь использует стиль изображения `wide` для
