@@ -15,8 +15,11 @@ authors:
 
 Формы являются PHP объектами, расширяющие `Drupal\Core\Form\FormBase`. Для их создания необходимо создать соответствующий объект в любом неймспейcе модуля в `/src` директории.
 
-> [!TIP]
-> Хорошей практикой является создание форм в `/src/Form`.
+<Aside type="tip">
+
+Хорошей практикой является создание форм в `/src/Form`.
+
+</Aside>
 
 <Aside type="tip">
 
@@ -119,8 +122,11 @@ class FooForm extends FormBase {
 }
 ```
 
-> [!TIP]
-> Для генерации простой формы при помощи [Drush](../../../../drush/index.md) используйте команду `drush generate form-simple`.
+<Aside type="tip">
+
+Для генерации простой формы при помощи [Drush](../../../../drush/index.md) используйте команду `drush generate form-simple`.
+
+</Aside>
 
 ## Создание конфигурационной формы
 
@@ -192,8 +198,11 @@ class FooSettingsForm extends ConfigFormBase {
 }
 ```
 
-> [!TIP]
-> Для генерации конфигурационной формы при помощи [Drush](../../../../drush/index.md) используйте команду `drush generate form-config`.
+<Aside type="tip">
+
+Для генерации конфигурационной формы при помощи [Drush](../../../../drush/index.md) используйте команду `drush generate form-config`.
+
+</Aside>
 
 ## Ссылки
 

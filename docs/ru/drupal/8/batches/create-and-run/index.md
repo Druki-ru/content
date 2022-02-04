@@ -76,8 +76,11 @@ $batch->setInitMessage(new TranslatableMarkup('Prepare operations for processing
 $batch->setProgressMessage(new Translatablemarkup('Processing @current of @total. Estimated time to finish is @estimate.'))
 ```
 
-> [!TIP]
-> Вы можете динамически менять данное сообщение в процессе обработки операций через редактирование `$context['message']`.
+<Aside type="tip">
+
+Вы можете динамически менять данное сообщение в процессе обработки операций через редактирование `$context['message']`.
+
+</Aside>
 
 ### setErrorMessage()
 

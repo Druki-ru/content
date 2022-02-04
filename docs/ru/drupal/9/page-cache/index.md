@@ -10,8 +10,11 @@ authors:
 
 **Internal Page Cache** — стандартный модуль кеширования страниц для анонимных пользователей.
 
-> [!TIP]
-> Данный модуль включён по умолчанию в [стандартном профиле](../distributions/standard/index.md).
+<Aside type="tip">
+
+Данный модуль включён по умолчанию в [стандартном профиле](../distributions/standard/index.md).
+
+</Aside>
 
 <Aside>
 

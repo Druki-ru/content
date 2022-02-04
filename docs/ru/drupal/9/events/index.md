@@ -193,8 +193,11 @@ services:
       - { name: event_subscriber }
 ```
 
-> [!TIP]
-> Для быстрой генерации подписчика можно использовать [Drush](../../../../drush/index.md) команду `drush generate event-subscriber`.
+<Aside type="tip">
+
+Для быстрой генерации подписчика можно использовать [Drush](../../../../drush/index.md) команду `drush generate event-subscriber`.
+
+</Aside>
 
 ## Ссылки
 
