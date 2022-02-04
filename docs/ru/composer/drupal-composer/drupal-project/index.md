@@ -14,8 +14,14 @@ authors:
 
 Данный способ установки Drupal является альтернативой установки Drupal из архива, скаченного на drupal.org.
 
-> [!NOTE]
-> Начиная с [Drupal 8.8.0](../../../drupal/releases/8/8.8.x/8.8.0/index.md) предоставляются официальные шаблоны. Рекомендуем ознакомиться с [Drupal Recommended Project](../../drupal/recommended-project/index.md) в качестве замены или альтернативы.
+<Aside>
+
+Начиная с [Drupal 8.8.0](../../../drupal/releases/8/8.8.x/8.8.0/index.md) предоставляются официальные шаблоны.
+
+Рекомендуем ознакомиться с [Drupal Recommended Project](../../drupal/recommended-project/index.md) в качестве замены или альтернативы.
+
+</Aside>
+
 
 ## Что предоставляет данный шаблон
 

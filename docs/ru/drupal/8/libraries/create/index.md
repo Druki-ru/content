@@ -43,8 +43,11 @@ cuddly-slider:
 
 Пример выше предполагает что JavaScript файл `cuddy-slider.js` находится в папке `js` вашего модуля или темы. Если вам необходимо подключить библиотеку относительно корня Drupal ядра, путь должен начинаться с `/`. Библиотека будет называться `cuddly-slider`.
 
-> [!NOTE]
-> Используя [Drush](../../../../drush/index.md), вы можете сгенерировать заготовку для библиотеки, как для модуля, так и для темы используя команды: `drush generate module-libraries`, `drush generate theme-libraries`, `drush generate yml-module-libraries`, `drush generate yml-theme-libraries`.
+<Aside type="tip">
+
+Используя [Drush](../../../../drush/index.md), вы можете сгенерировать заготовку для библиотеки, как для модуля, так и для темы используя команды: `drush generate module-libraries`, `drush generate theme-libraries`, `drush generate yml-module-libraries`, `drush generate yml-theme-libraries`.
+
+</Aside>
 
 ## Подключение зависимостей
  
@@ -185,8 +188,11 @@ cuddly-slider:
 
 Позволяет менять вес ассета в пределах своей группы. Чем больше вес, тем позднее будет подключена библиотека.
 
-> [!NOTE]
-> `weight` не может принимать положительные значения. Это означает, что максимально допустимый вес равен 0.
+<Aside>
+
+`weight` не может принимать положительные значения. Это означает, что максимально допустимый вес равен 0.
+
+</Aside>
 
 ## Ссылки
 

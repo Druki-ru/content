@@ -18,8 +18,11 @@ Drush также имеет API, при помощи которого разра
 - **Drush 9**: PHP 5.6+, Drupal 8.4+.
 - **Drush 8**: PHP 5.4.5+, Drupal 6, 7, 8.3 и ниже.
 
-> [!NOTE]
-> Drush 9 не имеет обратной совместимости с Drush 8 и ниже. Смотрите [руководство по портированию команд](https://weitzman.github.io/blog/port-to-drush9) (англ.).
+<Aside>
+
+Drush 9 не имеет обратной совместимости с Drush 8 и ниже. Смотрите [руководство по портированию команд](https://weitzman.github.io/blog/port-to-drush9) (англ.).
+
+</Aside>
 
 ## Смотрите также
 

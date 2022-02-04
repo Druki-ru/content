@@ -13,8 +13,11 @@ authors:
 > [!TIP]
 > Данный модуль включён по умолчанию в [стандартном профиле](../distributions/standard/index.md).
 
-> [!NOTE]
-> Не путайте данный модуль с [Internal Page Cache](../page-cache/index.md)
+<Aside>
+
+Не путайте данный модуль с [Internal Page Cache](../page-cache/index.md)
+
+</Aside>
 
 ## Введение
 

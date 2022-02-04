@@ -14,8 +14,11 @@ authors:
 
 Файл "index.php" , "core" директория и т.д. расположены в корне проекте рядом с "composer.json" и "vendor" директорией. Используйте данный шаблон только если у вас нет возможности использовать рекомендуемый шаблон.
 
-> [!NOTE]
-> Рекомендуется использовать [drupal/recommended-project](../recommended-project/index.md).
+<Aside>
+
+Рекомендуется использовать [drupal/recommended-project](../recommended-project/index.md).
+
+</Aside>
 
 **Пример структуры проекта:**
 

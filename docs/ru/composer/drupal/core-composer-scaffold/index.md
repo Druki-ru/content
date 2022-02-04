@@ -260,8 +260,11 @@ Scaffold файлы хранятся в тех проектах, которые 
 "symlink": true,
 ```
 
-> [!NOTE]
-> `append` и `prepend` операции переопределяют значение `symlink` на `false`.
+<Aside>
+
+`append` и `prepend` операции переопределяют значение `symlink` на `false`.
+
+</Aside>
 
 ## Изменения в релизах
 
