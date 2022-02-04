@@ -7,6 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.3.4.'
 authors:
   - Niklan
+  - arraksis
 ---
 
 **Дата релиза**: 2 февраля 2022

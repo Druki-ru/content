@@ -321,6 +321,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3259675](https://www.drupal.org/node/3259675) Внесены улучшения в `LazyRouteCollectionTest` для совместимости с тайпхинтом для `::all()` метода.
 * [#3259169](https://www.drupal.org/node/3259169) `ControllerResolver` больше не расширяет `BaseControllerResolver`.
 * [#3259674](https://www.drupal.org/node/3259674) Методу `Drupal\Core\Routing\Router::matchCollection()` добавлен тайпхинт.
+* [#3262190](https://www.drupal.org/node/3262190) Для различных классов добавлены тайпхинты возвращаемых данных.
 
 ## Тестирование
 
@@ -329,6 +330,8 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3227265](https://www.drupal.org/node/3227265) Удалены устаревшие трейты для сравнений.
 * [#3259158](https://www.drupal.org/node/3259158) Исправлен некорректный путь до `simpletest` директории в тесте `ClassWriter`.
 * [#3261262](https://www.drupal.org/node/3261262) Из `PhpUnitWarnings` удалены сообщения об устаревшем коде связанным PHPUnit 8-.
+* [#3262227](https://www.drupal.org/node/3262227) В список для игнорирования сообщений об устаревшем коде `DeprecationListenerTrait` добавлены исключения связанные с Symfony 6.
+* [#3262183](https://www.drupal.org/node/3262183) Удалён устаревший `DrupalKernelLegacyTest`.
 
 ## Прочие изменения
 
@@ -355,3 +358,4 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3261250](https://www.drupal.org/node/3261250) Удалён устаревший `Drupal\update\ModuleVersion`.
 * [#3261253](https://www.drupal.org/node/3261253) Удалён устаревший плагин-обработчик `d6_url_alias_language`.
 * [#3261265](https://www.drupal.org/node/3261265) Удалён код для устаревшего `MimeTypeGuesser`.
+* [#3260765](https://www.drupal.org/node/3260765) Удалён устаревший код из кода связанного с навигацией (`menu`).
