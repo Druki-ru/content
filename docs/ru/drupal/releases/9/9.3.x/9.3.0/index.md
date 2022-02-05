@@ -8,6 +8,10 @@ metatags:
 authors:
   - Niklan
   - chesn0k
+category:
+  area: 'Релизы Drupal 9.3.x'
+  title: Drupal 9.3.0
+  order: 0
 ---
 
 **Дата релиза**: 8 декабря 2021

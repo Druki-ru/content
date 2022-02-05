@@ -7,6 +7,10 @@ metatags:
   description: 'Обновления безопасности исправляющее SA-CORE-2022-001.'
 authors:
   - Niklan
+category:
+  area: 'Релизы Drupal 9.3.x'
+  title: Drupal 9.3.3
+  order: 3
 ---
 
 **Дата релиза**: 19 января 2022

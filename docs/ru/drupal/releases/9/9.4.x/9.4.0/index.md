@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.4.0.'
 authors:
   - Niklan
+category:
+  area: 'Релизы Drupal 9.4.x'
+  title: Drupal 9.4.0
+  order: 0
 ---
 
 <Aside type="warning">

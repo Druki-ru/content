@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.3.6.'
 authors:
   - Niklan
+category:
+  area: 'Релизы Drupal 9.3.x'
+  title: Drupal 9.3.6 (в разработке)
+  order: 6
 ---
 
 <Aside type="warning" header="Разрабатываемая версия">

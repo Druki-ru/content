@@ -8,6 +8,10 @@ metatags:
 authors:
   - Niklan
   - arraksis
+category:
+  area: 'Релизы Drupal 9.3.x'
+  title: Drupal 9.3.4
+  order: 4
 ---
 
 **Дата релиза**: 2 февраля 2022
