@@ -1,10 +1,10 @@
 ---
-title: 'Drupal 9.3.5'
-slug: wiki/drupal/releases/9.3.5
+title: 'Drupal 9.2.12'
+slug: wiki/drupal/releases/9.2.12
 core: 9
 metatags:
-  title: 'Drupal 9.3.5: Список изменений'
-  description: 'Список изменений Drupal 9.3.5.'
+  title: 'Drupal 9.2.12: Список изменений'
+  description: 'Список изменений Drupal 9.2.12.'
 authors:
   - Niklan
 ---
@@ -25,5 +25,5 @@ Drupal использует шаблонизатор Twig, для которог
 
 ## Ссылки
 
-- [Drupal 9.3.5](https://www.drupal.org/project/drupal/releases/9.3.5) (англ.), drupal.org, 5 февраля 2022
+- [Drupal 9.2.12](https://www.drupal.org/project/drupal/releases/9.2.12) (англ.), drupal.org, 5 февраля 2022
 - [Twig Security Release: Disallow Non Closures In The Sort Filter](https://www.symfony-news.com/news/details/twig-security-release-disallow-non-closures-in-the-sort-filter) (англ.), 5 февраля 2022
