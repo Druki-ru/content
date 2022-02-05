@@ -9,6 +9,10 @@ authors:
   - Niklan
   - arraksis
   - chesn0k
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.9
+  order: 9
 ---
 
 **Дата релиза**: 26 мая 2021

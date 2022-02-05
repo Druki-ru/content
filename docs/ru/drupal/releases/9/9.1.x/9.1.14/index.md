@@ -7,6 +7,10 @@ metatags:
   description: 'Обновления безопасности исправляющее SA-CORE-2021-011.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.14
+  order: 14
 ---
 
 **Дата релиза**: 17 ноября 2021

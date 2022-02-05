@@ -7,6 +7,10 @@ metatags:
   description: 'Обновления безопасности исправляющее SA-CORE-2021-006, SA-CORE-2021-007, SA-CORE-2021-008, SA-CORE-2021-009, SA-CORE-2021-010.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.6
+  order: 6
 ---
 
 **Дата релиза**: 15 сентября 2021

@@ -7,6 +7,10 @@ metatags:
   description: 'Минорный релиз Drupal 8.8.5, список изменений.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.8.x'
+  title: Drupal 8.8.5
+  order: 5
 ---
 
 **Дата релиза**: 2 апреля 2020 г.

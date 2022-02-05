@@ -7,6 +7,10 @@ metatags:
   description: 'Обновление безопасности исправляющее уязвимости SA-CORE-2020-004, SA-CORE-2020-005, SA-CORE-2020-006.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.8.x'
+  title: Drupal 8.8.8
+  order: 8
 ---
 
 **Дата релиза**: 17 июоня 2020

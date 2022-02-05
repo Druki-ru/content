@@ -7,6 +7,10 @@ metatags:
   description: 'Обновления безопасности: SA-CORE-2020-007, SA-CORE-2020-008, SA-CORE-2020-009, SA-CORE-2020-010, SA-CORE-2020-011.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.0.x'
+  title: Drupal 9.0.6
+  order: 6
 ---
 
 **Дата релиза**: 16 сентября 2020

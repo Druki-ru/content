@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.2.7.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.7
+  order: 7
 ---
 
 **Дата релиза**: 6 октября 2021

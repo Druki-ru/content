@@ -7,6 +7,10 @@ metatags:
   description: 'Обновления безопасности исправляющее SA-CORE-2021-005.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.4
+  order: 4
 ---
 
 **Дата релиза**: 12 августа 2021

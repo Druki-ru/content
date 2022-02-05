@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.2.5.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.5
+  order: 5
 ---
 
 **Дата релиза:** 2 сентября 2021

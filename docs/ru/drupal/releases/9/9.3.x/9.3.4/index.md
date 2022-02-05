@@ -9,7 +9,7 @@ authors:
   - Niklan
   - arraksis
 category:
-  area: 'Релизы Drupal 9.3.x'
+  area: 'Drupal 9.3.x'
   title: Drupal 9.3.4
   order: 4
 ---

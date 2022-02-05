@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.1.4.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.4
+  order: 4
 ---
 
 **Дата релиза**: 4 февраля 2021

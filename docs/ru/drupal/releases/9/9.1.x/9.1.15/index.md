@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.1.15.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.15
+  order: 15
 ---
 
 **Дата релиза**: 24 ноября 2021

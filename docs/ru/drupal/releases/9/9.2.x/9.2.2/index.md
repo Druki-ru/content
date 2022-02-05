@@ -8,6 +8,10 @@ metatags:
 authors:
   - Niklan
   - chesn0k
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.2
+  order: 2
 ---
 
 **Дата релиза**: 21 июля 2021

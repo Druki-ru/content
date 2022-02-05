@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 8.8.0. Дата релиза 4 декабря 2019 г.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.8.x'
+  title: Drupal 8.8.0
+  order: 0
 ---
 
 **Дата релиза**: 4 декабря 2019 г.\

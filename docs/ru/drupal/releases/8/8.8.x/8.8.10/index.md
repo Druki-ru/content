@@ -7,6 +7,10 @@ metatags:
   description: 'Обновления безопасности: SA-CORE-2020-007, SA-CORE-2020-008, SA-CORE-2020-009, SA-CORE-2020-010, SA-CORE-2020-011.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.8.x'
+  title: Drupal 8.8.10
+  order: 10
 ---
 
 **Дата релиза**: 16 сентября 2020

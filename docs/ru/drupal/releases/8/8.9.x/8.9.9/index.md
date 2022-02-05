@@ -7,6 +7,10 @@ metatags:
   description: 'Обновления безопасности исправляющее SA-CORE-2020-012.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.9.x'
+  title: Drupal 8.9.9
+  order: 9
 ---
 
 **Дата релиза**: 18 ноября 2020

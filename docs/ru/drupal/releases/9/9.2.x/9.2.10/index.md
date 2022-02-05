@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.2.10.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.10
+  order: 10
 ---
 
 **Дата релиза**: 24 ноября 2021

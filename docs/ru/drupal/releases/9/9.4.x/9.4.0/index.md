@@ -8,7 +8,7 @@ metatags:
 authors:
   - Niklan
 category:
-  area: 'Релизы Drupal 9.4.x'
+  area: 'Drupal 9.4.x'
   title: Drupal 9.4.0
   order: 0
 ---

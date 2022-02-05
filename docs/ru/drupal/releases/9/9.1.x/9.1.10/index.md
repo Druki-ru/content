@@ -9,6 +9,10 @@ authors:
   - Niklan
   - chesn0k
   - arraksis
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.10
+  order: 10
 ---
 
 ## Aggregator

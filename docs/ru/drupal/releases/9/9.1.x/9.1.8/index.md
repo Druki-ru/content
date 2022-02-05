@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.1.8.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.8
+  order: 8
 ---
 
 **Дата релиза:** 5 мая 2021

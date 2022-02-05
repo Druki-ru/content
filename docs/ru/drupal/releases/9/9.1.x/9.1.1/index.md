@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.1.1.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.1
+  order: 1
 ---
 
 **Дата релиза**: 7 января 2021

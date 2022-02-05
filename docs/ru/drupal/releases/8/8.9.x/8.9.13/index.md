@@ -7,6 +7,10 @@ metatags:
   description: 'Обновления безопасности исправляющее SA-CORE-2021-001.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.9.x'
+  title: Drupal 8.9.13
+  order: 13
 ---
 
 **Дата релиза**: 20 января 2021

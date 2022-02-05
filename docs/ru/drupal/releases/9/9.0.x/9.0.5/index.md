@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.0.5.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.0.x'
+  title: Drupal 9.0.5
+  order: 5
 ---
 
 **Дата релиза**: 4 сентября 2020

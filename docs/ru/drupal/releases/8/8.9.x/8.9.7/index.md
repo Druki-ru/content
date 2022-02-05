@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 8.9.7.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.9.x'
+  title: Drupal 8.9.7
+  order: 7
 ---
 
 **Дата релиза**: 8 октября 2020

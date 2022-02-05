@@ -7,6 +7,10 @@ metatags:
   description: 'В данном релизе исправлены различные ошибки и внесены улучшения.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.7.x'
+  title: Drupal 8.7.7
+  order: 7
 ---
 
 **Дата релиза**: 4 сентября 2019 г.

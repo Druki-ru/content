@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 8.9.11.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.9.x'
+  title: Drupal 8.9.11
+  order: 11
 ---
 
 **Дата релиза**: 4 декабря 2020

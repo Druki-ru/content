@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.2.12.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.12
+  order: 12
 ---
 
 **Дата релиза**: 5 февраля 2022

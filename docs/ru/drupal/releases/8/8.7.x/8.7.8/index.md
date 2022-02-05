@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 8.7.8.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.7.x'
+  title: Drupal 8.7.8
+  order: 8
 ---
 
 **Дата релиза**: 2 октября 2019 г.

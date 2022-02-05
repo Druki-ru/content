@@ -7,6 +7,10 @@ metatags:
   description: 'Исправление критических ошибок и прочие изменения.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.7.x'
+  title: Drupal 8.7.2
+  order: 2
 ---
 
 **Дата релиза**: 23 мая 2019 г.

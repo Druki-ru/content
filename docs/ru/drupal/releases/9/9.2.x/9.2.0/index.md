@@ -10,6 +10,10 @@ authors:
   - chesn0k
   - arraksis
   - a-kovrigin
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.0
+  order: 0
 ---
 
 **Дата релиза**: 16 июня 2021\

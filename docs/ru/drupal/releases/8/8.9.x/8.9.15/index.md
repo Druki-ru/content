@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 8.9.15.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.9.x'
+  title: Drupal 8.9.15
+  order: 15
 ---
 
 **Дата релиза:** 5 мая 2021

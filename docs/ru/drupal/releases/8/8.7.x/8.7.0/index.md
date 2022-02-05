@@ -7,6 +7,10 @@ metatags:
   description: 'JavaScript Messages API, JSON:API в ядре, улучшенный Media виджет и многое другое.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.7.x'
+  title: Drupal 8.7.0
+  order: 0
 ---
 
 **Дата релиза**: 1 мая 2019 г.\

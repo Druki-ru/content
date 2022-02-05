@@ -8,6 +8,10 @@ metatags:
 authors:
   - Niklan
   - arraksis
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.8
+  order: 8
 ---
 
 **Дата релиза**: 3 ноября 2021

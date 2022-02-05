@@ -7,6 +7,10 @@ metatags:
   description: 'Обновление безопасности исправляющее SA-CORE-2019-008.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.7.x'
+  title: Drupal 8.7.5
+  order: 5
 ---
 
 **Дата релиза**: 17 июля 2019 г.

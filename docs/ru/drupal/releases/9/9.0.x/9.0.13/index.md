@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.0.10.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.0.x'
+  title: Drupal 9.0.13
+  order: 13
 ---
 
 **Дата релиза:** 5 мая 2021

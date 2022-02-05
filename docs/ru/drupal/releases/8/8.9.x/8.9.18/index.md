@@ -8,6 +8,10 @@ metatags:
 authors:
   - Niklan
   - chesn0k
+category:
+  area: 'Drupal 8.9.x'
+  title: Drupal 8.9.18
+  order: 18
 ---
 
 **Дата релиза**: 12 августа 2021

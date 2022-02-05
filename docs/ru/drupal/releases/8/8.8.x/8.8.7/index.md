@@ -7,6 +7,10 @@ metatags:
   description: 'Патч релиз Drupal 8.8.7, список изменений.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.8.x'
+  title: Drupal 8.8.7
+  order: 7
 ---
 
 **Дата релиза**: 3 июня 2020

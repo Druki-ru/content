@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 9.2.3.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.3
+  order: 3
 ---
 
 **Дата релиза**: 3 августа 2021 г.

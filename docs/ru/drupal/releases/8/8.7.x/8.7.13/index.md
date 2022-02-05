@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 8.7.13.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.7.x'
+  title: Drupal 8.7.13
+  order: 13
 ---
 
 **Дата релиза**: 3 апреля 2020 г.

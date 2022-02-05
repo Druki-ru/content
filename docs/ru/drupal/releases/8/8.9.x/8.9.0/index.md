@@ -7,6 +7,10 @@ metatags:
   description: 'Список изменений Drupal 8.9.0.'
 authors:
   - Niklan
+category:
+  area: 'Drupal 8.9.x'
+  title: Drupal 8.9.0
+  order: 0
 ---
 
 **Дата релиза**: 3 июня 2020

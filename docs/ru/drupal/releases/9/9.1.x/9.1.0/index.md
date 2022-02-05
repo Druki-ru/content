@@ -8,6 +8,10 @@ metatags:
 authors:
   - Niklan
   - arraksis
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.0
+  order: 0
 ---
 
 **Дата релиза**: 2 декабря 2020\

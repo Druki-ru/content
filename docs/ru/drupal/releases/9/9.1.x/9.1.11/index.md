@@ -8,6 +8,10 @@ metatags:
 authors:
   - Niklan
   - chesn0k
+category:
+  area: 'Drupal 9.1.x'
+  title: Drupal 9.1.11
+  order: 11
 ---
 
 **Дата релиза**: 21 июля 2021

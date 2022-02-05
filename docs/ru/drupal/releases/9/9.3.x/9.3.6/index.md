@@ -8,7 +8,7 @@ metatags:
 authors:
   - Niklan
 category:
-  area: 'Релизы Drupal 9.3.x'
+  area: 'Drupal 9.3.x'
   title: Drupal 9.3.6 (в разработке)
   order: 6
 ---
