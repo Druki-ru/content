@@ -13,6 +13,12 @@ authors:
   - Niklan
 ---
 
+<Aside type="deprecated">
+
+Информация на странице актуальна для [Drupal 8](../../index.md). Вы можете ознакомиться с [вариантом для Drupal 9](../../../9/forms/create/index.md).
+
+</Aside>
+
 Формы являются PHP объектами, расширяющие `Drupal\Core\Form\FormBase`. Для их создания необходимо создать соответствующий объект в любом неймспейcе модуля в `/src` директории.
 
 <Aside type="tip">

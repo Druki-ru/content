@@ -12,6 +12,12 @@ category:
 authors:
   - Niklan
 ---
+  
+<Aside type="deprecated">
+
+Информация на странице актуальна для [Drupal 8](../../index.md). Вы можете ознакомиться с [вариантом для Drupal 9](../../../9/admin/appearance/index.md).
+
+</Aside>
 
 ![Административная страница Drupal 8: Оформление](https://i.imgur.com/yogCm5Z.png)
 

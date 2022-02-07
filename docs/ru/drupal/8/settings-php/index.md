@@ -16,7 +16,7 @@ authors:
   
 <Aside type="deprecated">
 
-Вы просматриваете материал написанный для [Drupal 8](../index.md), поддержка которого прекращена. Данный материал имеет [версию для Drupal 9](../../9/settings-php/index.md).
+Информация на странице актуальна для [Drupal 8](../index.md). Вы можете ознакомиться с [вариантом для Drupal 9](../../9/settings-php/index.md).
 
 </Aside>
 

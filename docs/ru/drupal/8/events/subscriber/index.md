@@ -13,6 +13,12 @@ authors:
   - Niklan
 ---
 
+<Aside type="deprecated">
+
+Информация на странице актуальна для [Drupal 8](../../index.md). Вы можете ознакомиться с [вариантом для Drupal 9](../../../9/events/index.md).
+
+</Aside>
+
 Подписка на событие осуществляется при помощи [создания](../../services/create/index.md) [сервиса](../../services/index.md) с меткой.
 
 Сервис должен реализовывать `Symfony\Component\EventDispatcher\EventSubscriberInterface`. Данный интерфейс требует описать метод `getSubscribedEvents()`, который должен возвращать массив с событиями, на которые необходимо подписаться и что вызывать в случае возникновения события.

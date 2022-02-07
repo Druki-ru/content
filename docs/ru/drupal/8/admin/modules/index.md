@@ -13,6 +13,12 @@ authors:
   - Niklan
 ---
 
+<Aside type="deprecated">
+
+Информация на странице актуальна для [Drupal 8](../../index.md). Вы можете ознакомиться с [вариантом для Drupal 9](../../../9/admin/modules/index.md).
+
+</Aside>
+
 ![Административная страница Drupal 8: Расширения](https://i.imgur.com/CsCnAJS.png)
 
 **Административный раздел "Расширения"** — страница, позволяющая управлять [модулями](../../modules/index.md) сайта.
