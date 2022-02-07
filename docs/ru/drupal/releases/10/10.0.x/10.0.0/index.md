@@ -374,3 +374,8 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3261253](https://www.drupal.org/node/3261253) Удалён устаревший плагин-обработчик `d6_url_alias_language`.
 * [#3261265](https://www.drupal.org/node/3261265) Удалён код для устаревшего `MimeTypeGuesser`.
 * [#3260765](https://www.drupal.org/node/3260765) Удалён устаревший код из кода связанного с навигацией (`menu`).
+* [#3260615](https://www.drupal.org/node/3260615) Удалён устаревший файл `includes/schema.inc`.
+* [#3097889](https://www.drupal.org/node/3097889) Удалены устаревшие функции из `includes/theme.inc`.
+* [#3260781](https://www.drupal.org/node/3260781) Удалены устаревшие функции из `includes/module.inc`.
+* [#3262500](https://www.drupal.org/node/3262500) Удалена устаревшая функция `drupal_find_theme_functions()`.
+* [#3261252](https://www.drupal.org/node/3261252) Удалены устервшие функции из `system.module`.

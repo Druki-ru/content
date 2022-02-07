@@ -21,5 +21,18 @@ category:
 
 ## CKEditor 5
 
-* [#3248469](https://www.drupal.org/node/3248469) Оптимизирована работа CKEditor 5 в off-canvas Drupal.
-* [#3249592](https://www.drupal.org/node/3249592) Добавлена поддержка указания ширины картинки в процентах для HTML 4.
+- [#3248469](https://www.drupal.org/node/3248469) Оптимизирована работа CKEditor 5 в off-canvas Drupal.
+- [#3249592](https://www.drupal.org/node/3249592) Добавлена поддержка указания ширины картинки в процентах для HTML 4.
+
+## Render System
+
+- [#3172166](https://www.drupal.org/node/3172166) Улучшена проверка в `Element::properties()`, которая приводила к «Notice: Trying to access array offset on value of type int» при попытке вызова метода с массивом в качестве аргумента, где
+  ключи являлись числами.
+
+## Theme System
+
+- [#3262500](https://www.drupal.org/node/3262500) Функция `drupal_find_theme_functions()` помечена для внутреннего использования и будет удалена в [Drupal 10](../../../../10/index.md).
+
+## Прочие изменения
+
+- [#3065574](https://www.drupal.org/node/3065574) Улучшена документация для `TranslatableInterface::getUntranslated()`.
