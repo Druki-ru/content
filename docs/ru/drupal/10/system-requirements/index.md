@@ -66,10 +66,7 @@ Drupal разрабатывается так, что везде, где возм
 - [SPL](https://www.php.net/manual/ru/book.spl.php)
 - [Tokenizer](https://www.php.net/manual/ru/book.tokenizer.php)
 - [XML](https://www.php.net/manual/ru/book.xml.php)
-
-**Рекомендуемые расширения:**
-
-- [OpenSSL](https://www.php.net/manual/ru/book.openssl.php) рекомендуется для того чтобы Drupal мог отправлять исходящие HTTPS запросы. Данное расширение является обязательным для проверки обновлений начиная с [Drupal 9.1.0](../../releases/9/9.1.x/9.1.0/index.md) ([#1538118](https://www.drupal.org/project/drupal/issues/1538118)). .
+- [OpenSSL](https://www.php.net/manual/ru/book.openssl.php)
 
 ### Настройки PHP
 
