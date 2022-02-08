@@ -24,9 +24,9 @@ Drupal 9 продолжает начатое в Drupal 8 — ядро будет
 
 - [Список изменений Drupal 9.0.0](../releases/9/9.0.x/9.0.0/index.md)
 - [Список изменений Drupal 9.1.0](../releases/9/9.1.x/9.1.0/index.md)
-- [Список изменений Drupal 9.2.0](../releases/9/9.1.x/9.2.0/index.md)
-- [Список изменений Drupal 9.3.0](../releases/9/9.1.x/9.3.0/index.md)
-- [Список изменений Drupal 9.4.0](../releases/9/9.1.x/9.4.0/index.md)
+- [Список изменений Drupal 9.2.0](../releases/9/9.2.x/9.2.0/index.md)
+- [Список изменений Drupal 9.3.0](../releases/9/9.3.x/9.3.0/index.md)
+- [Список изменений Drupal 9.4.0](../releases/9/9.4.x/9.4.0/index.md)
 
 ### Разработка новой экспериментальной темы Olivero
 
