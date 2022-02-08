@@ -31,6 +31,7 @@ authors:
 ## Смотрите также
 
 - [Drupal 9](../9/index.md)
+- [Руководство по обновлению Drupal 9 до Drupal 10](upgrade-drupal-9-to-drupal-10/index.md)
 - [Список изменений Drupal 10.0.0](../releases/10/10.0.x/10.0.0/index.md)
 - [Список изменений Drupal](../releases/index.md)
 

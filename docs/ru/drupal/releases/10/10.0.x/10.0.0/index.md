@@ -30,7 +30,7 @@ authors:
 
 <Aside type="tip" header="Обновление Drupal 9 до Drupal 10">
 
-Если ваш сайт работает на [Drupal 9](../../../../9/index.md), то вам может оказаться полезным [руководство по обновлению Drupal 9 до Drupal 10](../../../../10/upgrade-drupal-9-to-drupal-10/index.md)
+Если ваш сайт работает на [Drupal 9](../../../../9/index.md), то вам может оказаться полезным [руководство по обновлению Drupal 9 до Drupal 10](../../../../10/upgrade-drupal-9-to-drupal-10/index.md).
 
 </Aside>
 

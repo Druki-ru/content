@@ -120,6 +120,7 @@ Drupal активно использует компоненты Symfony начи
 
 - [Drupal 8](../8/index.md)
 - [Drupal 10](../10/index.md)
+- [Руководство по обновлению Drupal 9 до Drupal 10](upgrade-drupal-9-to-drupal-10/index.md)
 - [Список изменений Drupal 9.0.0](../releases/9/9.0.x/9.0.0/index.md)
 - [Список релизов Drupal](../releases/index.md)
 
