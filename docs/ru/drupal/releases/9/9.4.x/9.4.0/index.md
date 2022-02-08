@@ -418,6 +418,30 @@ class ExampleExtenderFactory {
 
 </Aside>
 
+## Функция `drupal_required_modules()` объявлена устаревшей
+
+* [#3262805](https://www.drupal.org/node/3262805) 
+
+Функция `drupal_required_modules()` объявлена устаревшей и будет удалена в [Drupal 10](../../../../10/index.md). Явной замены не предоставляется.
+
+Данная функция использовалась для получения массива с модулями, необходимыми для работы Drupal ядра (`required: true`).
+
+Если вам требуется аналогичный список, вы можете использовать `ExtensionDiscovery` и [сервис](../../../../9/services/index.md) `info_parser`.
+
+```php
+$parser = \Drupal::service('info_parser');
+
+$required = [];
+$listing = new ExtensionDiscovery(\Drupal::root());
+$files = $listing->scan('module');
+foreach ($files as $name => $file) {
+  $parsed = $parser->parse($file->getPathname());
+  if (!empty($parsed) && !empty($parsed['required']) && $parsed['required']) {
+    $required[] = $name;
+  }
+}
+```
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -586,3 +610,4 @@ class ExampleExtenderFactory {
 * [#3252406](https://www.drupal.org/node/3252406) Класс `PharExtensionInterceptor` помечен для внутреннего пользования `@internal`.
 * [#3229714](https://www.drupal.org/node/3229714) Исправлена область видимости для метода `ContextAwarePluginTrait::getPluginDefinition()` с `protected` на `public`.
 * [#3164210](https://www.drupal.org/node/3164210) Везде где `array_merge()` используется внутри цикла, внесены улучшения в код для увеличения производительности.
+* [#3248879](https://www.drupal.org/node/3248879) Внесены улучшения в тест `UpdatePathTestTrait`.

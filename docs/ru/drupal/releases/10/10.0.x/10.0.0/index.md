@@ -347,6 +347,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3261262](https://www.drupal.org/node/3261262) Из `PhpUnitWarnings` удалены сообщения об устаревшем коде связанным PHPUnit 8-.
 * [#3262227](https://www.drupal.org/node/3262227) В список для игнорирования сообщений об устаревшем коде `DeprecationListenerTrait` добавлены исключения связанные с Symfony 6.
 * [#3262183](https://www.drupal.org/node/3262183) Удалён устаревший `DrupalKernelLegacyTest`.
+* [#3254726](https://www.drupal.org/node/3254726) Удалена поддержка SimpleTest тестов.
 
 ## Прочие изменения
 
@@ -378,4 +379,8 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3097889](https://www.drupal.org/node/3097889) Удалены устаревшие функции из `includes/theme.inc`.
 * [#3260781](https://www.drupal.org/node/3260781) Удалены устаревшие функции из `includes/module.inc`.
 * [#3262500](https://www.drupal.org/node/3262500) Удалена устаревшая функция `drupal_find_theme_functions()`.
-* [#3261252](https://www.drupal.org/node/3261252) Удалены устервшие функции из `system.module`.
+* [#3261252](https://www.drupal.org/node/3261252) Удалены устаревшие функции из `system.module`.
+* [#3261243](https://www.drupal.org/node/3261243) Удалены устаревшие функции модуля `comment`.
+* [#3124382](https://www.drupal.org/node/3124382) Удалена поддержка префиксов конкретных таблиц. Поддержка префиксов для всех таблиц не удалена.
+* [#3261241](https://www.drupal.org/node/3261241) Удалены устаревшие функции `field` модуля.
+* [#3254726](https://www.drupal.org/node/3254726) Сгенерирован обновлённый `phpstan-baseline.neon` на 08.02.2022. 

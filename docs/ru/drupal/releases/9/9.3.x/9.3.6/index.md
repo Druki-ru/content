@@ -23,6 +23,11 @@ category:
 
 - [#3248469](https://www.drupal.org/node/3248469) Оптимизирована работа CKEditor 5 в off-canvas Drupal.
 - [#3249592](https://www.drupal.org/node/3249592) Добавлена поддержка указания ширины картинки в процентах для HTML 4.
+- [#3231321](https://www.drupal.org/node/3231321) Улучшена навигация в редакторе при помощи клавиатуры.
+
+## File System
+
+- [#3254727](https://www.drupal.org/node/3254727) Исправлена неполадка, из-за которой URI-адрес файла не мог содержать query-параметры.
 
 ## Render System
 
