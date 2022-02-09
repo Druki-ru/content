@@ -279,6 +279,12 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 
 </Aside>
 
+## Удалены обновления добавленные до Drupal 9.3.0
+
+* [#3261486](https://www.drupal.org/node/3261486)
+
+Обновления добавленные до [Drupal 9.3.0](../../../9/9.3.x/9.3.0/index.md) были удалены из [Drupal 10](../../../../10/index.md). Это означает что минимальная версия для обновления на Drupal 10 — 9.3.0+.
+
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
@@ -386,3 +392,5 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3124382](https://www.drupal.org/node/3124382) Удалена поддержка префиксов конкретных таблиц. Поддержка префиксов для всех таблиц не удалена.
 * [#3261241](https://www.drupal.org/node/3261241) Удалены устаревшие функции `field` модуля.
 * [#3254726](https://www.drupal.org/node/3254726) Сгенерирован обновлённый `phpstan-baseline.neon` на 08.02.2022. 
+* [#3262931](https://www.drupal.org/node/3262931) Удалена устаревшая функция `drupal_required_modules()`.
+* [#3261251](https://www.drupal.org/node/3261251) Удалены устаревшие функции модуля `node`.
