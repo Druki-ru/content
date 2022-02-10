@@ -394,3 +394,4 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3254726](https://www.drupal.org/node/3254726) Сгенерирован обновлённый `phpstan-baseline.neon` на 08.02.2022. 
 * [#3262931](https://www.drupal.org/node/3262931) Удалена устаревшая функция `drupal_required_modules()`.
 * [#3261251](https://www.drupal.org/node/3261251) Удалены устаревшие функции модуля `node`.
+* [#3261239](https://www.drupal.org/node/3261239) Удалены устаревшие функции модуля `search`.

@@ -77,10 +77,6 @@ Drupal\Core\Field\FieldConfigBase->getDefaultValue()».
 
 * [#3258642](https://www.drupal.org/node/3258642) Исправлена документация для `_toolbar_get_subtrees_hash()`.
 
-## Тестирование
-
-* [#3259744](https://www.drupal.org/node/3259744) Сообщение об устаревшем `Drupal\Tests\Listeners\DrupalListener` добавлено в исключения (не будет проваливать тест) для PHPUnit.
-
 ## Прочие изменения
 
 * [#2612876](https://www.drupal.org/node/2612876) Исправлены ошибки в документации к `\Drupal\Core\Asset\CssOptimizer::processFile()`.
