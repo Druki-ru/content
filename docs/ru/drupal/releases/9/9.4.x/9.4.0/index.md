@@ -523,6 +523,7 @@ foreach ($files as $name => $file) {
 * [#3239134](https://www.drupal.org/node/3239134) Использование `jQuery.val()` заменено на нативные `.value`.
 * [#3239123](https://www.drupal.org/node/3239123) Использование `jQuery.text()` заменено на нативный `.textContent`.
 * [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
+* [#3262160](https://www.drupal.org/node/3262160) Внесены улучшения в `core/scripts/js/assets.js` файл, для упрощения его кода.
 
 ## JSON:API
 
