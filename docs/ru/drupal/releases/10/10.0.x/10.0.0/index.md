@@ -395,3 +395,6 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3262931](https://www.drupal.org/node/3262931) Удалена устаревшая функция `drupal_required_modules()`.
 * [#3261251](https://www.drupal.org/node/3261251) Удалены устаревшие функции модуля `node`.
 * [#3261239](https://www.drupal.org/node/3261239) Удалены устаревшие функции модуля `search`.
+* [#3262853](https://www.drupal.org/node/3262853) Удалена поддержка передачи сервисов в качестве параметров контейнера.
+* [#3262937](https://www.drupal.org/node/3262937) Добавлены исключения в коде для PHPStan, в тех местах, где код намеренно проверяет ситуацию, где вызывается ошибка.
+* [#3263391](https://www.drupal.org/node/3263391) Удалены устаревшие функции модуля `book`.
