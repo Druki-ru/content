@@ -615,3 +615,4 @@ foreach ($files as $name => $file) {
 * [#3229714](https://www.drupal.org/node/3229714) Исправлена область видимости для метода `ContextAwarePluginTrait::getPluginDefinition()` с `protected` на `public`.
 * [#3164210](https://www.drupal.org/node/3164210) Везде где `array_merge()` используется внутри цикла, внесены улучшения в код для увеличения производительности.
 * [#3248879](https://www.drupal.org/node/3248879) Внесены улучшения в тест `UpdatePathTestTrait`.
+* [#3259953](https://www.drupal.org/node/3259953) Ссылка на отчёт о состоянии системы теперь располагается вверху.
