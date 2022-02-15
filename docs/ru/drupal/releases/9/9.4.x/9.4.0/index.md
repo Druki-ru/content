@@ -534,6 +534,10 @@ foreach ($files as $name => $file) {
   Drupal\Core\Routing\RouteObjectInterface` вместо `Symfony\Cmf\Component\Routing\RouteObjectInterface`.
 * [#3190541](https://www.drupal.org/node/3190541) Исправлена неполадка, из-за которой кеш-контекст `layout_builder_is_active` мог предоставлять некорректные значения.
 
+## Media
+
+* [#3254198](https://www.drupal.org/node/3254198) Удалена временная проверка на наличие модуля `media_entity`.
+
 ## Media Library
 
 * [#3173770](https://www.drupal.org/node/3173770) `MediaLibraryFieldWidgetOpener` теперь позволяет использовать другие референс поля, расширяющее поле из ядра и использующие `EntityReferenceFieldItemList`.
@@ -616,3 +620,4 @@ foreach ($files as $name => $file) {
 * [#3164210](https://www.drupal.org/node/3164210) Везде где `array_merge()` используется внутри цикла, внесены улучшения в код для увеличения производительности.
 * [#3248879](https://www.drupal.org/node/3248879) Внесены улучшения в тест `UpdatePathTestTrait`.
 * [#3259953](https://www.drupal.org/node/3259953) Ссылка на отчёт о состоянии системы теперь располагается вверху.
+* [#3224178](https://www.drupal.org/node/3224178) Из `theme.api.php` удалены упоминания `theme()` функции.

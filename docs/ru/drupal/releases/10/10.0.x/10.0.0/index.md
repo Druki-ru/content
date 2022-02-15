@@ -304,6 +304,14 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 
 * [#3210310](https://www.drupal.org/node/3210310) Удалён код объявленный устаревшим в Drupal 9.
 
+## Entity System
+
+* [#3244802](https://www.drupal.org/node/3244802) Удалён слой [обратной совместимости](../../../../../backward-compatibility/index.md) и устаревший код из системы сущностей.
+
+## Migrate
+
+* [#2966859](https://www.drupal.org/node/2966859) Удалён устаревший модуль `migrate_drupal_multilingual`.
+
 ## Olivero
 
 * [#3255119](https://www.drupal.org/node/3255119) Для переменных, используемых для сеток, теперь используются CSS-переменные.
@@ -311,6 +319,10 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3217924](https://www.drupal.org/node/3217924) Синие и серые цвета конвертированы из HEX в HSL.
 * [#3257583](https://www.drupal.org/node/3257583) Стили для вкладок были улучшены с использованием CSS-переменных.
 * [#3217926](https://www.drupal.org/node/3217926) Название CSS переменных с цветами приведено к единому стилю, `blue` цвет заменён на `primary`.
+
+## PosgreSQL DB driver
+
+- [#3214922](https://www.drupal.org/node/3214922) PostgreSQL драйвер теперь проверяет наличие расширения `pg_tgrm` и выдаёт ошибку если он отсутствует.
 
 ## RDF
 
@@ -356,6 +368,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3262227](https://www.drupal.org/node/3262227) В список для игнорирования сообщений об устаревшем коде `DeprecationListenerTrait` добавлены исключения связанные с Symfony 6.
 * [#3262183](https://www.drupal.org/node/3262183) Удалён устаревший `DrupalKernelLegacyTest`.
 * [#3254726](https://www.drupal.org/node/3254726) Удалена поддержка SimpleTest тестов.
+* [#3254723](https://www.drupal.org/node/3254723) Удалён слушатель `SimpletestUiPrinter`.
 
 ## Прочие изменения
 
@@ -398,3 +411,11 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3262853](https://www.drupal.org/node/3262853) Удалена поддержка передачи сервисов в качестве параметров контейнера.
 * [#3262937](https://www.drupal.org/node/3262937) Добавлены исключения в коде для PHPStan, в тех местах, где код намеренно проверяет ситуацию, где вызывается ошибка.
 * [#3263391](https://www.drupal.org/node/3263391) Удалены устаревшие функции модуля `book`.
+* [#3264073](https://www.drupal.org/node/3264073) Удалён устаревший код в пространстве имён `Drupal\Core\Condition`.
+* [#3264072](https://www.drupal.org/node/3264072) Удалён устаревший код в пространстве имён `Drupal\Core\Archiver`.
+* [#3264062](https://www.drupal.org/node/3264062) Удалён устаревший код в модуле `editor`.
+* [#3263395](https://www.drupal.org/node/3263395) Удалён устаревший код в пространстве имён `Drupal\Core\Asset`.
+* [#3264057](https://www.drupal.org/node/3264057) Удалены устаревшие функции модуля `media`.
+* [#3264067](https://www.drupal.org/node/3264067) Удалён устаревший код в пространстве имён `Drupal\Core\Session`.
+* [#3264061](https://www.drupal.org/node/3264061) Удалён устаревший код в модуле `image`.
+* [#2940025](https://www.drupal.org/node/2940025) Удалён устаревший код в модуле `file`.
