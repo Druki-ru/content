@@ -308,6 +308,10 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 
 * [#3244802](https://www.drupal.org/node/3244802) Удалён слой [обратной совместимости](../../../../../backward-compatibility/index.md) и устаревший код из системы сущностей.
 
+## Media
+
+* [#3255887](https://www.drupal.org/node/3255887) В форматтере `MediaThumbnailFormatter` добавлена недостающая зависимость `file_url_generator`.
+
 ## Migrate
 
 * [#2966859](https://www.drupal.org/node/2966859) Удалён устаревший модуль `migrate_drupal_multilingual`.
@@ -419,3 +423,5 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3264067](https://www.drupal.org/node/3264067) Удалён устаревший код в пространстве имён `Drupal\Core\Session`.
 * [#3264061](https://www.drupal.org/node/3264061) Удалён устаревший код в модуле `image`.
 * [#2940025](https://www.drupal.org/node/2940025) Удалён устаревший код в модуле `file`.
+* [#3188858](https://www.drupal.org/node/3188858) Удалён устаревший модуль `entity_reference`. Весь функционал попал в ядро и одноимённый тип полей не удалён.
+* [#2966859](https://www.drupal.org/node/2966859) Удалён устаревший модуль `drupal/migrate_drupal_multilingual` из `composer.json` файла.
