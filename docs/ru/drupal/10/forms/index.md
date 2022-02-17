@@ -205,25 +205,17 @@ class ExampleForm extends FormBase {
    *
    * @var \Drupal\Core\Session\AccountProxyInterface
    */
-  protected $currentUser;
-
-  /**
-   * Constructs a new FooForm object.
-   *
-   * @param \Drupal\Core\Session\AccountProxyInterface $account_proxy
-   *   The account proxy.
-   */
-  public function __construct(AccountProxyInterface $account_proxy) {
-    $this->currentUser = $account_proxy;
-  }
+  protected AccountProxyInterface $currentUser;
 
   /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('current_user'),
-    );
+    $instance = parent::create($container);
+
+    $instance->currentUser = $container->get('current_user');
+    
+    return $instance;
   }
 
   /**
