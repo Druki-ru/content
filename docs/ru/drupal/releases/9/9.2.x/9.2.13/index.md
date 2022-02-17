@@ -4,21 +4,24 @@ slug: wiki/drupal/releases/9.2.13
 core: 9
 metatags:
   title: 'Drupal 9.2.13: Список изменений'
-  description: 'Список изменений Drupal 9.2.13.'
+  description: 'Обновления безопасности исправляющее SA-CORE-2022-003.'
 authors:
   - Niklan
 category:
   area: 'Drupal 9.2.x'
-  title: Drupal 9.2.13 (в разработке)
-  order: 12
+  title: Drupal 9.2.13
+  order: 13
 ---
 
-<Aside type="warning" header="Будущая версия">
+**Дата релиза**: 19 января 2022
 
-Данная версия находится в разработке: список изменений может меняться, даты могут смещаться.
+Этот выпуск исправляет уязвимости безопасности. Настоятельно рекомендуется обновить сайты сразу после прочтения примечаний ниже и объявления о безопасности.
 
-</Aside>
+Исправлены следующие уязвимости:
 
-## Тестирование
+- Drupal Core — Умеренно критично — Неправильная валидация ввода — [SA-CORE-2022-003](../../../../security/sa-core/2022-003/index.md)
+- Drupal Core — Умеренно критично — Раскрытие информации — [SA-CORE-2022-004](../../../../security/sa-core/2022-004/index.md)
 
-* [#3259744](https://www.drupal.org/node/3259744) Сообщение об устаревшем `Drupal\Tests\Listeners\DrupalListener` добавлено в исключения (не будет проваливать тест) для PHPUnit.
+## Ссылки
+
+- [Drupal 9.2.13](https://www.drupal.org/project/drupal/releases/9.2.13) (англ.), drupal.org, 16 февраля 2022
