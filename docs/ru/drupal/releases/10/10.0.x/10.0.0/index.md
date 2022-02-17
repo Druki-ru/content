@@ -34,11 +34,11 @@ authors:
 
 </Aside>
 
-## Минимальная версия PHP — 8.0.2
+## Минимальная версия PHP — 8.1
 
-* [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350), [#3261357](https://www.drupal.org/node/3261357)  
+* [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350), [#3261357](https://www.drupal.org/node/3261357), [#3264819](https://www.drupal.org/node/3264819) 
 
-Минимальная версия PHP для Drupal 10 — 8.0.2, рекомендуемая — 8.1. Drupal 10 не будет работать на PHP 7 и более ранних версиях.
+Минимальная и рекомендуемая версия PHP для Drupal 10 — 8.1. Drupal 10 не будет работать на PHP 8.0, PHP 7 и более ранних версиях.
 
 Весь код, который был связан с PHP 7, включая настройки для PHP в `.htaccess` файле и различные упоминания — удалены из кодовой базы.
 
@@ -425,3 +425,4 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#2940025](https://www.drupal.org/node/2940025) Удалён устаревший код в модуле `file`.
 * [#3188858](https://www.drupal.org/node/3188858) Удалён устаревший модуль `entity_reference`. Весь функционал попал в ядро и одноимённый тип полей не удалён.
 * [#2966859](https://www.drupal.org/node/2966859) Удалён устаревший модуль `drupal/migrate_drupal_multilingual` из `composer.json` файла.
+* [#3261244](https://www.drupal.org/node/3261244) Удалены устаревшие функции модуля `layout_builder`.
