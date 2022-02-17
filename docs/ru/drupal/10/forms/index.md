@@ -177,12 +177,18 @@ authors:
 
 ### Создание обычной формы
 
-Пример `/src/Form/FooForm`:
+<Aside type="tip">
+
+Вы можете использовать [Drush](../../../../drush/index.md) для создания обычной формы: `drush generate form-simple`.
+
+</Aside>
+
+Ниже представлен пример создания простой формы с ID `example_form` для модуля `example`, класс для которой располагается в `modulename/src/Form/ExampleForm`.
 
 ```php
 <?php
 
-namespace Drupal\foo\Form;
+namespace Drupal\example\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -192,7 +198,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a Foo form.
  */
-class FooForm extends FormBase {
+class ExampleForm extends FormBase {
 
   /**
    * The current user.
@@ -216,7 +222,7 @@ class FooForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('current_user')
+      $container->get('current_user'),
     );
   }
 
@@ -224,14 +230,13 @@ class FooForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'foo';
+    return 'example_form';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-
     $form['message'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Message'),
@@ -239,9 +244,7 @@ class FooForm extends FormBase {
       '#default_value' => $this->currentUser->getAccountName(),
     ];
 
-    $form['actions'] = [
-      '#type' => 'actions',
-    ];
+    $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Send'),
@@ -255,7 +258,7 @@ class FooForm extends FormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     if (mb_strlen($form_state->getValue('message')) < 10) {
-      $form_state->setErrorByName('name', $this->t('Message should be at least 10 characters.'));
+      $form_state->setErrorByName('message', $this->t('Message should be at least 10 characters.'));
     }
   }
 
@@ -270,24 +273,32 @@ class FooForm extends FormBase {
 }
 ```
 
-<Aside type="tip">
+В данной форме добавляется элемент `message` типа `textarea` в которое можно будет ввести сообщение. В качестве значения по умолчанию будет использоваться текущее имя пользователя, которое будет получено из [сервиса](../services/index.md) `current_user`.
 
-Для генерации простой формы при помощи [Drush](../../../../drush/index.md) используйте команду `drush generate form-simple`.
+Также в форме добавлена секция `actions` в виде специального элемента форм `'#type' => 'actions'`, которая позволяет вложить в себя различные «действия». Этот элемент не обязателен для добавления, фомра будет работать и без него.
 
-</Aside>
+В секцию `actions` добавлена кнопка `submit`, нажатие на которую вызовет отправку формы на стороне клиенте.
+
+На этапе валидации мы проверяем, что введённое сообщение имеет длину равную или больше 10 символов. Если символов меньше 10, мы помечаем что элемент `message` содержит ошибку и её описание.
+
+Если валидация пройдена, запустится обработка формы, в которой мы добавляем системное сообщение на сайте, что сообщение успешно отправлено. После чего мы указываем, что форма, после завершения обработки должна перенаправить пользователя на [маршрут](../routing/index.md) `<front>`, который является «переменным-маршрутом» всегда ведущим на главную страницу, независимо от того, что используется для главной. 
 
 ### Создание конфигурационной формы
 
-Конфигурационный формы расширяют `Drupal\Core\Form\ConfigFormBase`, который предоставляет ряд дополнительных возможностей поверх `Drupal\Core\Form\FormBase`.
+<Aside type="tip">
 
-Конфигурационные формы имеют дополнительный метод `getEditableConfigNames()`, который должен возвращать массив состоящий из идентификаторов конфигураций. В отличии от `FormBase::config()`, данные конфигурации будут загружены в режиме для чтения и записи, так, вы сможете без проблем записать туда необходимые данные в обработчике формы.
+Вы можете использовать [Drush](../../../../drush/index.md) для создания обычной формы: `drush generate form-config`.
 
-Пример `/src/Form/FooSettingsForm`:
+</Aside>
+
+Конфигурациионные формы расширяют `Drupal\Core\Form\ConfigFormBase`, который предоставляет ряд дополнительных возможностей поверх `Drupal\Core\Form\FormBase`.
+
+Конфигурационные формы имеют дополнительный метод `getEditableConfigNames()`, который должен возвращать массив состоящий из идентификаторов конфигураций. В отличие от `FormBase::config()`, данные конфигурации будут загружены в режиме для чтения и записи, так, вы сможете без проблем записать туда необходимые данные в обработчике формы.
 
 ```php
 <?php
 
-namespace Drupal\foo\Form;
+namespace Drupal\example\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -295,20 +306,20 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Configure Foo settings for this site.
  */
-class FooSettingsForm extends ConfigFormBase {
+class ExampleConfigForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'foo_foo_settings';
+    return 'example_configuration_form';
   }
 
   /**
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return ['foo.settings'];
+    return ['example.settings'];
   }
 
   /**
@@ -318,7 +329,7 @@ class FooSettingsForm extends ConfigFormBase {
     $form['example'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Example'),
-      '#default_value' => $this->config('foo.settings')->get('example'),
+      '#default_value' => $this->config('example.settings')->get('example'),
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -337,7 +348,7 @@ class FooSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->config('foo.settings')
+    $this->config('example.settings')
       ->set('example', $form_state->getValue('example'))
       ->save();
     parent::submitForm($form, $form_state);
@@ -346,11 +357,75 @@ class FooSettingsForm extends ConfigFormBase {
 }
 ```
 
-<Aside type="tip">
+Пример выше очень похож на пример с обычной формой. Из заметных отличей стоит отметить:
 
-Для генерации конфигурационной формы при помощи [Drush](../../../../drush/index.md) используйте команду `drush generate form-config`.
+- Мы возвращаем название конфигураций, с которыми мы хотим работать в форме: `example.settings`. Эти конфигурации будут загружены и открыты для редактирования.
+- В методах мы дополнительно вызываем родительские методы, чтобы добавить их обработчики. Например, `ConfigFormBase::buildForm()` уже добавлят кнопку для отправки формы, потому нам нет смысла её описывать заново.
+- В обработчике формы, мы записываем данные переданные с формой в нашу конфигурацию.
 
-</Aside>
+## Использование форм
+
+После создания формы, вам может потребоваться использовать её в своих целях. Для этого есть несколько вариантов.
+
+### Форма как контроллер
+
+Формы могут выступать контроллерами [маршрутов](../../routing/index.md).
+
+Для этого, конкретному маршруту необходимо указать [свойство](../../routing/structure-of-routes/index.md) `_form`.
+
+Например:
+
+```yaml
+foo.form:
+  path: '/my-custom-form'
+  defaults:
+    _form: '\Drupal\foo\Form\FooForm'
+  requirements:
+    _permission: 'access content'
+```
+
+### Программный вызов формы
+
+Формы также могут быть запрошены программно в виде рендер массива. Как вы будете использовать результат программного вызова — ложится на плечи разработчика.
+
+Для построения формы программно используется [сервис](../../services/index.md) `form_builder`. Он позволяет подготавливать форму несколькими способами.
+
+#### Получение формы
+
+Метод `getForm()` позволяет получить форму по её названию или экземпляру объекта. В качестве результата вы получите готовый рендер массив готовый для рендера.
+
+Данный способ подразумевает что вам нужна форма в том виде, в каком она объявлена.
+
+Например:
+
+```php
+$form = \Drupal::formBuilder()->getForm('Drupal\example\Form\ExampleForm');
+```
+
+Вы также можете передавать дополнительные аргументы для формы. В дальнейшем они будут доступны в форме через вызов `$form_state->getBuildInfo()['args']`.
+
+Например:
+
+```php
+$form = \Drupal::formBuilder()->getForm('Drupal\example\Form\ExampleForm', 'foo', 'bar');
+```
+
+#### Построение формы
+
+Метод `buildForm()` является более низкоуровневым вариантом `getForm()`. В действительности `getForm()` является обёрткой для `buildForm()`.
+
+Основное отличие в том, что в `buildForm()` вы должны самостоятельно подготовить состояние формы `FormStateInterface` и передать его. При помощи данного подхода, вы можете кешировать состояние формы и собирать предыдущий вариант из кеша при необходимости.
+
+Результатом выполнения будет также рендер массив.
+
+Например:
+
+```php
+$form_state = new FormState();
+$form_state->set('some_value', 'Hello World');
+
+$form = \Drupal::formBuilder()->buildForm('Drupal\foo\Form\FooForm', $form_state);
+```
 
 ## Ссылки
 
