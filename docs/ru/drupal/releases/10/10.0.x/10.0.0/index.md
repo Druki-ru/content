@@ -42,6 +42,12 @@ authors:
 
 Весь код, который был связан с PHP 7, включая настройки для PHP в `.htaccess` файле и различные упоминания — удалены из кодовой базы.
 
+## Компоненты Symfony обновлены до 6 версии
+
+* [#3252757](https://www.drupal.org/node/3252757) 
+
+Drupal 10 будет использовать компоненты Symfony 6.0. Единственный пакет, который временно останется на версии 5.4 — `symfony/console`, в связи с тем, что у 6.0 версии есть проблемы с [Composer](../../../../../composer/index.md), которые были исправлены в Comopser 2.3.
+
 ## Прекращена поддержка Internet Explorer
 
 * [#3253148](https://www.drupal.org/node/3253148) Браузер Internet Explorer удалён из browserlist. Все ассеты были пересобраны без его поддержки.
@@ -303,6 +309,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 ## Database System
 
 * [#3210310](https://www.drupal.org/node/3210310) Удалён код объявленный устаревшим в Drupal 9.
+* [#3203193](https://www.drupal.org/node/3203193) Установка Drupal 10 теперь прекращается, если БД не поддерживает тип данных JSON.
 
 ## Entity System
 
