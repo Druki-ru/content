@@ -442,6 +442,60 @@ foreach ($files as $name => $file) {
 }
 ```
 
+## Добавлена новая константа `Drupal\Core\Utility\Error::DEFAULT_ERROR_MESSAGE`
+
+* [#3260044](https://www.drupal.org/node/3260044) 
+
+В ядро была добавлена новая константа `Drupal\Core\Utility\Error::DEFAULT_ERROR_MESSAGE`. Данная константа содержит сообщение по умолчанию, которое можно использовать для вывода сообщений об ошибках: `%type: @message in %function (line %line of %file).`
+
+## Добавлено новое свойство для сущностей — `enable_page_title_template`
+
+* [#2941208](https://www.drupal.org/node/2941208) 
+
+Если у [сущности](../../../../9/entities/index.md) с поддержкой полей есть поле с меткой, то Drupal не добавляет метку в процессе рендера самой сущности, а вместо этого использует данное значение для построения заголовка страницы (см. `EntityViewController::buildTitle()`). Это позволяет предотвратить дубли заголовка и сохраняет всю дополнительную информацию, добавляемую сторонними модулями при помощи хуков.
+
+К сожалению, недостатком данного подхода является то, что может получиться неверная разметка из-за того что используется форматирование поля.
+
+В Drupal ядре данная проблема проявляется с сущностями Media. По умолчанию, сущность `node` не подвержена данной ошибке, потому что там есть специфичное решение для этой проблемы, но проблема появляется сразу же, как только это поле становится настраиваемым.
+
+**Ранее:**
+
+* Заголовок страницы мог быть сформирован с использованием таких HTML-тегов как `<h2>`, `<div>` внутри `<h1>`.
+* Если заголовок страницы был отключен для настройки отображения, тогда терялись метаданные, добавляемые модулями через хуки.
+
+**Сейчас:**
+
+Разработчикам доступно новое свойство для типов сущностей — `enable_page_title_template`, при помощи которого можно активировать использование нового шаблона `entity-page-title.html.twig` для вывода заголовка страницы, который полностью независим от форматирования поля.
+
+Например, чтобы включить поддержку данного шаблона для нод, необходимо сделать следующее:
+
+```php
+function mymodule_entity_type_build(array &$entity_types) {
+  $entity_types['node']->set('enable_page_title_template', TRUE);
+}
+```
+
+Если вы хотите добавить дополнительные аттрибуты или данные в этот шаблон, то необходимо использовать `hook_preprocess_entity_page_title()`, например:
+
+```php
+/**
+ * Implements hook_preprocess_entity_page_title().
+ */
+function quickedit_preprocess_entity_page_title(&$variables) {
+  $variables['#cache']['contexts'][] = 'user.permissions';
+  $entity = $variables['entity'];
+  if (!\Drupal::currentUser()->hasPermission('access in-place editing')) {
+    return;
+  }
+  if ($entity instanceof RevisionableInterface) && !$entity->isLatestRevision()) {
+    return;
+  }
+
+  $label_field = $entity->getEntityType()->getKey('label');
+  $variables['attributes']['data-quickedit-field-id'] = $entity->getEntityTypeId() . '/' . $entity->id() . '/' . $label_field . '/' . $entity->get('langcode')->value . '/' . $variables['view_mode'];
+}
+```
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -524,10 +578,15 @@ foreach ($files as $name => $file) {
 * [#3239134](https://www.drupal.org/node/3239134) Использование `jQuery.val()` заменено на нативные `.value`.
 * [#3239123](https://www.drupal.org/node/3239123) Использование `jQuery.text()` заменено на нативный `.textContent`.
 * [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
+* [#3262573](https://www.drupal.org/node/3262573) Обновлены зависимости для разработки.
 
 ## JSON:API
 
 * [#3199696](https://www.drupal.org/node/3199696) `ResourceObject` теперь учитывает текущий язык и корректно кеширует результаты для мультиязычных ресурсов.
+
+## HAL
+
+* [#3263654](https://www.drupal.org/node/3263654) Тесты, связанные с модулем HAL, были перенесены непосредственно в модуль, в целях последующего удаления месте с модулем.
 
 ## Layout Builder
 
@@ -575,6 +634,10 @@ foreach ($files as $name => $file) {
 
 * [#3263793](https://www.drupal.org/node/3263793) Help Topics для модуля Tracker были перенесены в его модуль.
 
+## Quick Edit
+
+* [#3264945](https://www.drupal.org/node/3264945) Вся документация Quick Edit была перенесена непосредственно в модуль.
+
 ## Update
 
 * [#3253639](https://www.drupal.org/node/3253639) Добавлен новый класс `UpdateUploaderTestBase` с универсальной реализацией `::setUp()` для уменьшения дублирования кода в тестах модуля.
@@ -604,6 +667,7 @@ foreach ($files as $name => $file) {
 * [#2867871](https://www.drupal.org/node/2867871) В `OptimizedPhpArrayDumperTest` улучшено использование Symfony Expression.
 * [#3212346](https://www.drupal.org/node/3212346) Добавлен абстрактный тест `ConfigEntityResourceTestBase`. Тесты для конфигурационных сущностей и их ресурсов теперь расширяют данный тест. Это уменьшает количество установок Drupal в процессе тестирования.
 * [#3257407](https://www.drupal.org/node/3257407) `BlockCreationTrait::placeBlock()` теперь помещает блоки в `content` регион вместо `sidebar_first`.
+* [#3253715](https://www.drupal.org/node/3253715) Обновлены тесты, в которых использовался `isset()` с результатами `xPath`.
 
 ## Прочие изменения
 

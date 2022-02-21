@@ -63,7 +63,16 @@ category:
 - [#3255809](https://www.drupal.org/node/3255809) Добавлены Nightwatch тесты для тулбара.
 - [#3259807](https://www.drupal.org/node/3259807) Использование рендер элемента `toolbar_item` без заголовка больше не будет приводить к ошибкам на PHP 8.1.
 
+## Тестирование
+
+- [#3263886](https://www.drupal.org/node/3263886) Добавлены фикстуры с Drupal 9.3.0 из [Drupal 10](../../../../10/index.md).
+- [#2861376](https://www.drupal.org/node/2861376) Внесены улучшения в `ToolkitGdTest`, в котором было некорректное использование `::checkRequirements()`.
+- [#3221507](https://www.drupal.org/node/3221507) Исправлено состояние гонки в `ClassWriter`.
+- [#3265376](https://www.drupal.org/node/3265376) Внесены улучшения в `UpdateScriptTest`, который мог проваливаться из-за `MINIMUM_SUPPORTED_PHP`.
+- [#3265378](https://www.drupal.org/node/3265378) Внесены улучшения в `NoPreExistingSchemaUpdateTest`, который мог проваливаться из-за `MINIMUM_SUPPORTED_PHP`.
+
 ## Прочие изменения
 
 - [#3065574](https://www.drupal.org/node/3065574) Улучшена документация для `TranslatableInterface::getUntranslated()`.
 - [#3166449](https://www.drupal.org/node/3166449) Улучшены описания `twig.cache` опций в сервис файле.
+- [#3265419](https://www.drupal.org/node/3265419) Улучшено сообщение об устаревшем классе `RequestStack`.

@@ -291,6 +291,14 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 
 Обновления добавленные до [Drupal 9.3.0](../../../9/9.3.x/9.3.0/index.md) были удалены из [Drupal 10](../../../../10/index.md). Это означает что минимальная версия для обновления на Drupal 10 — 9.3.0+.
 
+## `Drupal\Core\Http\RequestStack` объявлен устаревшим
+
+* [#3265356](https://www.drupal.org/node/3265356)
+
+Класс `Drupal\Core\Http\RequestStack`, предоставляемый Drupal в качестве слоя обратной совместимости с Symfony 4 `RequestStack`, объявлен устаревшим.
+
+Drupal 10 перешел на Symfony 6, следовательно, данная прослойка больше не нужна и будет удалена в Drupal 11. Замена не предоставляется, вы можете использовать класс из Symfony напрямую.
+
 ## Composer
 
 * [#3252010](https://www.drupal.org/node/3252010) Версия PHPUnit зафиксирована на релизе 9.5.
@@ -305,6 +313,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
   Drupal\Core\DependencyInjection\Compiler\StackedKernelPass`.
 * [#3254149](https://www.drupal.org/node/3254149) Из `composer.json` удалена настройка `config.autoloader-suffix`.
 * [#3261743](https://www.drupal.org/node/3261743) Из Composer команды `drupal-phpunit-upgrade` удалена установка `phpspec/prophecy-phpunit`.
+* [#3265094](https://www.drupal.org/node/3265094) Зависимости для разработки теперь имеют минимально требумые версии.
 
 ## Database System
 
@@ -380,6 +389,7 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 * [#3262183](https://www.drupal.org/node/3262183) Удалён устаревший `DrupalKernelLegacyTest`.
 * [#3254726](https://www.drupal.org/node/3254726) Удалена поддержка SimpleTest тестов.
 * [#3254723](https://www.drupal.org/node/3254723) Удалён слушатель `SimpletestUiPrinter`.
+* [#3264764](https://www.drupal.org/node/3264764) Исправлена неполадка, из-за которой тест `PhpUnitCliTest::testFunctionalTestDebugHtmlOutput()` проваливался при пустом значении `BROWSERTEST_OUTPUT_DIRECTORY`.
 
 ## Прочие изменения
 
