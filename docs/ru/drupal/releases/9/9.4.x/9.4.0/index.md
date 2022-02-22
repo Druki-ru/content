@@ -511,7 +511,6 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3248448](https://www.drupal.org/node/3248448) Улучшено оформление индикатора загрузки диалога.
 * [#3248423](https://www.drupal.org/node/3248423) Добавлен `ckeditor5.types.jsdoc` и скрипт, генерирующий актуальное содержание для него. Данный файл может быть использован в IDE для получения корректного автодополнения при написании плагинов для CKEditor.
 * [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
-* [#3228464](https://www.drupal.org/node/3228464) Добавлен API для загрузки переводов доступный сторонним модулям.
 
 ## Claro
 
@@ -519,6 +518,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3247994](https://www.drupal.org/node/3247994) Исправлена неполадка, из-за которой мог некорректно работать элемент формы `password`.
 * [#3184667](https://www.drupal.org/node/3184667) Улучшено отображение формы материала на широкоформатных экранах.
 * [#3168326](https://www.drupal.org/node/3168326) Улучшено отображение dropbutton элемента в таблицах.
+* [#3264220](https://www.drupal.org/node/3264220) Удалено переопределение шаблона `views-ui-views-listing-table.html.twig`.
 
 ## Composer
 
@@ -529,6 +529,10 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 ## Configuration System
 
 * [#2343517](https://www.drupal.org/node/2343517) Удалён код и упоминания с `@todo` на задачи, которые решены.
+
+## CSS
+
+* [#3215517](https://www.drupal.org/node/3215517) Исправлена неполадка, из-за которой множественный список выбора некорректно отображался в Chrome.
 
 ## Database Logging
 
@@ -543,6 +547,10 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 
 * [#3251100](https://www.drupal.org/node/3251100) Исправлена неполадка, из-за которой `DateTimeWidgetBase` дважды устанавливал одну и ту же временную зону.
 
+## Editor
+
+* [#3263873](https://www.drupal.org/node/3263873) Библиотеке `editor/drupal.editor.admin` добавлена зависимость `core/underscore`.
+
 ## Entity System
 
 * [#3260520](https://www.drupal.org/node/3260520) `\Drupal\Core\Entity\EntityTypeEvent` и `\Drupal\Core\Field\FieldStorageDefinitionEvent` теперь наследуются от `Event` вместо `GenericEvent`.
@@ -553,6 +561,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3250585](https://www.drupal.org/node/3250585) Добавлено отображение информации об устаревших модулях и темах на страницу отчётности.
 * [#3259850](https://www.drupal.org/node/3259850) Исправлена неполадка, из-за которой мог проваливаться тест `InstallUninstallTest`, если у модуля, объявленного устаревшим, была зависимость на стабильный.
 * [#3259888](https://www.drupal.org/node/3259888) Исправлена неполадка, из-за которой мог проваливаться тест `InstallUninstallTest`, если выключать одновременно модули объявленные устаревшими и экспериментальными.
+* [#3215044](https://www.drupal.org/node/3215044) (отменено) Добавлена пометка об устаревших темах на странице `/admin/appearance`.
 
 ## Field System
 
@@ -652,6 +661,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 ## Views
 
 * [#2569381](https://www.drupal.org/node/2569381) Из `Drupal\views\Plugin\views\area\Result` удалён лишний вызов `XSS::adminFilter()`.
+* [#1810148](https://www.drupal.org/node/1810148) Исправлена неполадка, из-за которой сгруппированные раскрытые фильтры по терминам таксономии могли не работать.
 
 ## Symfony 6
 

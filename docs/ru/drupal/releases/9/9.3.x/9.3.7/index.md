@@ -19,6 +19,25 @@ category:
 
 </Aside>
 
+## Добавлено новое условие для CKEditor 5 плагинов — `requiresConfiguration`
+
+- [#3224652](https://www.drupal.org/node/3224652) Добавлена поддержка ресайза изображений.
+
+Для плагинов CKEditor 5 добавлено новое условие — `requiresConfiguration`.
+
+Данное условие позволяет задать требование, при котором плагин активируется принудительно, если определённая настройка редактора имеет конкретной значение.
+
+**Например:**
+
+```yaml
+    conditions:
+      requiresConfiguration:
+        allow_resize: true
+      plugins: [ckeditor5_image]
+```
+
+Это означает, что плагин, у которого объявлена такая конструкция, активируется если включён плагин `ckeditor5_image`, а его настройка `allow_resize` имеет значение `true`.
+
 ## CKEditor 5
 
 - [#3248469](https://www.drupal.org/node/3248469) Оптимизирована работа CKEditor 5 в off-canvas Drupal.
@@ -29,8 +48,14 @@ category:
 - [#3261942](https://www.drupal.org/node/3261942) Улучшена поддержка инлайновых ошибок в формах.
 - [#3264451](https://www.drupal.org/node/3264451) Исправлена ошибка в селекторе для теста `ImageTest`.
 - [#3228334](https://www.drupal.org/node/3228334) `HTMLRestrictionsUtilities` был переделан `HTMLRestrictions`.
-- [#3224652](https://www.drupal.org/node/3224652) Добавлена поддержка ресайза изображений.
 - [#3262492](https://www.drupal.org/node/3262492) `isMediaUrl` переделан на более общий API, который позволяет передавать информацию от любого Media.
+- [#3228464](https://www.drupal.org/node/3228464) Добавлен API для загрузки переводов доступный сторонним модулям.
+
+## Claro
+
+- [#3261049](https://www.drupal.org/node/3261049) Удалены дублирующие свойства `margin` из `typography.pcss.css`.
+- [#3248239](https://www.drupal.org/node/3248239) Улучшено визуальное отображение подсказок от модуля Tour.
+- [#3123811](https://www.drupal.org/node/3123811) Улучшена контрастность для серого цвета, для соответствия A11Y.
 
 ## Entity System
 
@@ -47,6 +72,7 @@ category:
 ## Media
 
 - [#3260554](https://www.drupal.org/node/3260554) Добавлена поддержка выравнивания для `<drupal-media>`.
+- [#3255887](https://www.drupal.org/node/3255887) (отменено) В конструктор `MediaThumbnailFormatter` добавлен аргумент `$file_url_generator`.
 
 ## Render System
 
@@ -70,9 +96,12 @@ category:
 - [#3221507](https://www.drupal.org/node/3221507) Исправлено состояние гонки в `ClassWriter`.
 - [#3265376](https://www.drupal.org/node/3265376) Внесены улучшения в `UpdateScriptTest`, который мог проваливаться из-за `MINIMUM_SUPPORTED_PHP`.
 - [#3265378](https://www.drupal.org/node/3265378) Внесены улучшения в `NoPreExistingSchemaUpdateTest`, который мог проваливаться из-за `MINIMUM_SUPPORTED_PHP`.
+- [#3265377](https://www.drupal.org/node/3265377) Внесены улучшения в `LocaleTranslatedSchemaDefinitionTest`, который мог проваливаться из-за `MINIMUM_SUPPORTED_PHP`.
+- [#3265291](https://www.drupal.org/node/3265291) В тесте `QuickStartTest` переработано ожидание результата процесса.
 
 ## Прочие изменения
 
 - [#3065574](https://www.drupal.org/node/3065574) Улучшена документация для `TranslatableInterface::getUntranslated()`.
 - [#3166449](https://www.drupal.org/node/3166449) Улучшены описания `twig.cache` опций в сервис файле.
 - [#3265419](https://www.drupal.org/node/3265419) Улучшено сообщение об устаревшем классе `RequestStack`.
+- [#3264862](https://www.drupal.org/node/3264862) Классу `ContextAwarePluginBase` добавлена информации о [депрекации](../../../../../deprecation/index.md).
