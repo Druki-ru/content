@@ -529,6 +529,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 ## Configuration System
 
 * [#2343517](https://www.drupal.org/node/2343517) Удалён код и упоминания с `@todo` на задачи, которые решены.
+* [#2540794](https://www.drupal.org/node/2540794) Административный интерфейс синхронизации конфигураций теперь корректно отличает пустые временные конфигурации и что они соответствуют текущей активной конфигурации.
 
 ## CSS
 
@@ -561,7 +562,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3250585](https://www.drupal.org/node/3250585) Добавлено отображение информации об устаревших модулях и темах на страницу отчётности.
 * [#3259850](https://www.drupal.org/node/3259850) Исправлена неполадка, из-за которой мог проваливаться тест `InstallUninstallTest`, если у модуля, объявленного устаревшим, была зависимость на стабильный.
 * [#3259888](https://www.drupal.org/node/3259888) Исправлена неполадка, из-за которой мог проваливаться тест `InstallUninstallTest`, если выключать одновременно модули объявленные устаревшими и экспериментальными.
-* [#3215044](https://www.drupal.org/node/3215044) (отменено) Добавлена пометка об устаревших темах на странице `/admin/appearance`.
+* [#3215044](https://www.drupal.org/node/3215044) Добавлена пометка об устаревших темах на странице `/admin/appearance`.
 
 ## Field System
 
@@ -588,6 +589,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3239123](https://www.drupal.org/node/3239123) Использование `jQuery.text()` заменено на нативный `.textContent`.
 * [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
 * [#3262573](https://www.drupal.org/node/3262573) Обновлены зависимости для разработки.
+* [#3264520](https://www.drupal.org/node/3264520) Удалена зависимость `acorn`.
 
 ## JSON:API
 
@@ -702,3 +704,4 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3259953](https://www.drupal.org/node/3259953) Ссылка на отчёт о состоянии системы теперь располагается вверху.
 * [#3224178](https://www.drupal.org/node/3224178) Из `theme.api.php` удалены упоминания `theme()` функции.
 * [#3264435](https://www.drupal.org/node/3264435) Внесены улучшения в тесты модулей `help_topics` и `rest`, в которых не фильтровались устаревшие модули.
+* [#3260568](https://www.drupal.org/node/3260568) В процессах установки профилей [Demo Umami](../../../../9/distributions/demo-umami/index.md) и [Стандартный](../../../../9/distributions/standard/index.md) исправлено то, как добавляются роли для административного пользователя.
