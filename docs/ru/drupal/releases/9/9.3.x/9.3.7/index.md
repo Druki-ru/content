@@ -52,16 +52,22 @@ category:
 - [#3228464](https://www.drupal.org/node/3228464) Добавлен API для загрузки переводов доступный сторонним модулям.
 - [#3265230](https://www.drupal.org/node/3265230) Внесены множественные улучшения в `ie11.filter.warnings.es6.js`.
 - [#3248440](https://www.drupal.org/node/3248440) Исправлена неполадка, из-за которой аттрибуты встроенного элемента могли оказаться на обёртке, отображающей превью.
+- [#3259493](https://www.drupal.org/node/3259493) Добавлены новые ограничения для HTML внутри редактора. Например, больше нельзя использовать аттрибут `style` в целях безопасности.
+- [#3246385](https://www.drupal.org/node/3246385) Добавлена поддержка подписей для `<drupal-media>`.
+- [#3264512](https://www.drupal.org/node/3264512) Ассеты для CKEditor 5 теперь будут аггрегироваться.
 
 ## Claro
 
 - [#3261049](https://www.drupal.org/node/3261049) Удалены дублирующие свойства `margin` из `typography.pcss.css`.
 - [#3248239](https://www.drupal.org/node/3248239) Улучшено визуальное отображение подсказок от модуля Tour.
 - [#3123811](https://www.drupal.org/node/3123811) Улучшена контрастность для серого цвета, для соответствия A11Y.
+- [#3213556](https://www.drupal.org/node/3213556) Исправлена неполадка, из-за которой описание поле могло быть невидимым в диалоговом окне Layout Builder.
 
 ## Entity System
 
 - [#3264050](https://www.drupal.org/node/3264050) Улучшена обработка тегов в `EntityAutocompleteController::handleAutocomplete()`.
+- [#2821009](https://www.drupal.org/node/2821009) Улучшено описание для метода `EntityAccessCheck::access()`.
+- [#3261538](https://www.drupal.org/node/3261538) Исправлена неполадка, из-за которой могло выбрасываться исключение `BundleClassInheritanceException` даже если значение не указано.
 
 ## File System
 
@@ -70,6 +76,10 @@ category:
 ## JavaScript
 
 - [#3262160](https://www.drupal.org/node/3262160) Внесены улучшения в `core/scripts/js/assets.js` файл, для упрощения его кода.
+
+## JSON:API
+
+- [#3154962](https://www.drupal.org/node/3154962) Исправлена неполадка, из-за которой могло быть отказано в доступе на загрузку файла, если у поля не указано к какому бандлу она принадлежит.
 
 ## Media
 
@@ -94,6 +104,7 @@ category:
 ## User
 
 - [#3265802](https://www.drupal.org/node/3265802) Обновление `user_update_9301()` больше не запускается на Microsoft SQL Server, так как приводит к потере данных и сломанному сайту.
+- [#3255419](https://www.drupal.org/node/3255419) Исправлена неполадка, из-за которой обновление до Drupal 9.3 приводило к ошибке если MySQL переменная `sql_require_primary_key` задана как `ON`.
 
 ## Views
 

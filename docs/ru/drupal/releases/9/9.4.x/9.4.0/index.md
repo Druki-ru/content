@@ -496,6 +496,12 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 }
 ```
 
+## Устаревшие темы оформления больше не отображаются в списке тем оформлений
+
+* [#3265362](https://www.drupal.org/node/3265362) 
+
+На странице управления темами оформления (`/admin/appearance`) теперь не отображаются темы со свойством `lifecycle: obsolete`.
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -519,6 +525,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3184667](https://www.drupal.org/node/3184667) Улучшено отображение формы материала на широкоформатных экранах.
 * [#3168326](https://www.drupal.org/node/3168326) Улучшено отображение dropbutton элемента в таблицах.
 * [#3264220](https://www.drupal.org/node/3264220) Удалено переопределение шаблона `views-ui-views-listing-table.html.twig`.
+* [#3214124](https://www.drupal.org/node/3214124) Добавлены кавычки для `<blockquote>` элемента.
 
 ## Composer
 
@@ -590,6 +597,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
 * [#3262573](https://www.drupal.org/node/3262573) Обновлены зависимости для разработки.
 * [#3264520](https://www.drupal.org/node/3264520) Удалена зависимость `acorn`.
+* [#3258114](https://www.drupal.org/node/3258114) Зависимость `chromedriver` обновлена до 98 версии.
 
 ## JSON:API
 
@@ -631,6 +639,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 
 * [#3186992](https://www.drupal.org/node/3186992) Исправлена неполадка, из-за которой навигационные пункты меню могли выходить за рамки контейнера.
 * [#3256433](https://www.drupal.org/node/3256433) Класс `wide-image` больше не добавляется на картинку профиля пользователя.
+* [#3187908](https://www.drupal.org/node/3187908) Исправлен некорректный шрифт для `placeholder` значения в строке поиска.
 
 ## Standard Profile
 
@@ -680,6 +689,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3212346](https://www.drupal.org/node/3212346) Добавлен абстрактный тест `ConfigEntityResourceTestBase`. Тесты для конфигурационных сущностей и их ресурсов теперь расширяют данный тест. Это уменьшает количество установок Drupal в процессе тестирования.
 * [#3257407](https://www.drupal.org/node/3257407) `BlockCreationTrait::placeBlock()` теперь помещает блоки в `content` регион вместо `sidebar_first`.
 * [#3253715](https://www.drupal.org/node/3253715) Обновлены тесты, в которых использовался `isset()` с результатами `xPath`.
+* [#3265546](https://www.drupal.org/node/3265546) Модули и темы оформления со свойством `lifecycle: deprecated` теперь исключаются из установки в `DefaultConfigTest`.
 
 ## Прочие изменения
 
