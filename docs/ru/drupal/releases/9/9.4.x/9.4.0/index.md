@@ -502,6 +502,18 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 
 На странице управления темами оформления (`/admin/appearance`) теперь не отображаются темы со свойством `lifecycle: obsolete`.
 
+## Модуль HAL объявлен устаревшим
+
+* [#3263618](https://www.drupal.org/node/3263618) 
+
+Модуль HAL, предоставляемый Drupal, объявлен устаревшим и будет удалён в [Drupal 10](../../../../10/index.md). Проект был перенесён в сторонний проект [Heypermedia Application Language (HAL)](https://www.drupal.org/project/hal).
+
+Если ваш сайт использует данный модуль, вам необходимо добавить сторонний модуль как зависимость в проект:
+
+```bash
+$ composer require drupal/hal-hal
+```
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -690,6 +702,7 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 * [#3257407](https://www.drupal.org/node/3257407) `BlockCreationTrait::placeBlock()` теперь помещает блоки в `content` регион вместо `sidebar_first`.
 * [#3253715](https://www.drupal.org/node/3253715) Обновлены тесты, в которых использовался `isset()` с результатами `xPath`.
 * [#3265546](https://www.drupal.org/node/3265546) Модули и темы оформления со свойством `lifecycle: deprecated` теперь исключаются из установки в `DefaultConfigTest`.
+* [#3260710](https://www.drupal.org/node/3260710) `UpdateUploaderTestBase` теперь является абстрактным классом.
 
 ## Прочие изменения
 

@@ -38,6 +38,10 @@ category:
 
 Это означает, что плагин, у которого объявлена такая конструкция, активируется если включён плагин `ckeditor5_image`, а его настройка `allow_resize` имеет значение `true`.
 
+## BigPipe
+
+- [#3239738](https://www.drupal.org/node/3239738) Тест `BigPipeTest` больше не опирается на [тему оформления](../../../../9/themes/index.md) Classy.
+
 ## CKEditor 5
 
 - [#3248469](https://www.drupal.org/node/3248469) Оптимизирована работа CKEditor 5 в off-canvas Drupal.
@@ -55,6 +59,7 @@ category:
 - [#3259493](https://www.drupal.org/node/3259493) Добавлены новые ограничения для HTML внутри редактора. Например, больше нельзя использовать аттрибут `style` в целях безопасности.
 - [#3246385](https://www.drupal.org/node/3246385) Добавлена поддержка подписей для `<drupal-media>`.
 - [#3264512](https://www.drupal.org/node/3264512) Ассеты для CKEditor 5 теперь будут аггрегироваться.
+- [#3246365](https://www.drupal.org/node/3246365) Если `alt` значение не задано, показывается значение по умолчанию из Media сущности.
 
 ## Claro
 
@@ -72,6 +77,10 @@ category:
 ## File System
 
 - [#3254727](https://www.drupal.org/node/3254727) Исправлена неполадка, из-за которой URI-адрес файла не мог содержать query-параметры.
+
+## Install System
+
+- [#2833864](https://www.drupal.org/node/2833864) Исправлена неполадка, из-за которой ошибки с неудовлетворенными [системными требованиями](../../../../9/system-requirements/index.md) могли содержа рендер массивы и некорректно отображаться.
 
 ## JavaScript
 
@@ -126,3 +135,4 @@ category:
 - [#3166449](https://www.drupal.org/node/3166449) Улучшены описания `twig.cache` опций в сервис файле.
 - [#3265419](https://www.drupal.org/node/3265419) Улучшено сообщение об устаревшем классе `RequestStack`.
 - [#3264862](https://www.drupal.org/node/3264862) Классу `ContextAwarePluginBase` добавлена информации о [депрекации](../../../../../deprecation/index.md).
+- [#3088730](https://www.drupal.org/node/3088730) Директория `composer` добавлена в `phpcs.xml.dist` и будет проверяться на [стандарты кодирования](../../../../standards/index.md).
