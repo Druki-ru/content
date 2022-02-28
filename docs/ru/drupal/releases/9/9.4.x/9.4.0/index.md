@@ -610,6 +610,8 @@ $ composer require drupal/hal-hal
 * [#3262573](https://www.drupal.org/node/3262573) Обновлены зависимости для разработки.
 * [#3264520](https://www.drupal.org/node/3264520) Удалена зависимость `acorn`.
 * [#3258114](https://www.drupal.org/node/3258114) Зависимость `chromedriver` обновлена до 98 версии.
+* [#3265618](https://www.drupal.org/node/3265618) Зависимость `eslint` обновлена до 8 версии.
+* [#3265619](https://www.drupal.org/node/3265619) Зависимость `Shepherd.js` обновлена до 9 версии.
 
 ## JSON:API
 

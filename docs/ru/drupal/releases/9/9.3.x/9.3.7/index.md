@@ -60,6 +60,7 @@ category:
 - [#3246385](https://www.drupal.org/node/3246385) Добавлена поддержка подписей для `<drupal-media>`.
 - [#3264512](https://www.drupal.org/node/3264512) Ассеты для CKEditor 5 теперь будут аггрегироваться.
 - [#3246365](https://www.drupal.org/node/3246365) Если `alt` значение не задано, показывается значение по умолчанию из Media сущности.
+- [#3227822](https://www.drupal.org/node/3227822) Добавлены тесты проверяющие что собственные плагины поддерживают [GHS](https://ckeditor.com/docs/ckeditor5/latest/features/general-html-support.html).
 
 ## Claro
 
@@ -99,6 +100,10 @@ category:
 
 - [#3172166](https://www.drupal.org/node/3172166) Улучшена проверка в `Element::properties()`, которая приводила к «Notice: Trying to access array offset on value of type int» при попытке вызова метода с массивом в качестве аргумента, где
   ключи являлись числами.
+
+## Shortcut
+
+- [#3262384](https://www.drupal.org/node/3262384) Исправлена неполадка, из-за которой персональные ярлыки не удалялись при удалении пользователя.
 
 ## Theme System
 
