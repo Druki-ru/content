@@ -61,6 +61,7 @@ category:
 - [#3264512](https://www.drupal.org/node/3264512) Ассеты для CKEditor 5 теперь будут аггрегироваться.
 - [#3246365](https://www.drupal.org/node/3246365) Если `alt` значение не задано, показывается значение по умолчанию из Media сущности.
 - [#3227822](https://www.drupal.org/node/3227822) Добавлены тесты проверяющие что собственные плагины поддерживают [GHS](https://ckeditor.com/docs/ckeditor5/latest/features/general-html-support.html).
+- [#3266310](https://www.drupal.org/node/3266310) Улучшен вывод предупреждения о том что IE не поддерживается.
 
 ## Claro
 
@@ -78,6 +79,8 @@ category:
 ## File System
 
 - [#3254727](https://www.drupal.org/node/3254727) Исправлена неполадка, из-за которой URI-адрес файла не мог содержать query-параметры.
+- [#3254245](https://www.drupal.org/node/3254245) Исправлена неполадка, приводящая к исключению: `Argument 1 passed to Drupal\Core\File\FileUrlGenerator::generateString() must be of the type string, null given`.
+- [#3267078](https://www.drupal.org/node/3267078) Добавлен возвращаемый тайпхинт для `TwigExtension::getFileUrl()`.
 
 ## Install System
 
