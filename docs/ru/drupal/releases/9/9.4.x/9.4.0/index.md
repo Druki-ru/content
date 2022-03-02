@@ -517,6 +517,8 @@ $ composer require drupal/hal-hal
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
+* [#3267052](https://www.drupal.org/node/3267052) Справка по модулю была перенесена непосредственно в модуль из `help_topics` модуля.
+* [#3265424](https://www.drupal.org/node/3265424) Тесты для миграций связанные с модулем `aggregate` перенесены в сам модуль.
 
 ## Cache System
 
@@ -630,6 +632,7 @@ $ composer require drupal/hal-hal
 * [#3253666](https://www.drupal.org/node/3253666) `LayoutTempstoreRouteEnhancer` теперь использует `
   Drupal\Core\Routing\RouteObjectInterface` вместо `Symfony\Cmf\Component\Routing\RouteObjectInterface`.
 * [#3190541](https://www.drupal.org/node/3190541) Исправлена неполадка, из-за которой кеш-контекст `layout_builder_is_active` мог предоставлять некорректные значения.
+* [#3267124](https://www.drupal.org/node/3267124) Некоторые тесты временно отключены от выполнения из-за ошибок.
 
 ## Media
 
@@ -652,6 +655,7 @@ $ composer require drupal/hal-hal
 * [#3240873](https://www.drupal.org/node/3240873) Добавлено тестирование для `hash` свойства.
 * [#3226401](https://www.drupal.org/node/3226401) В `Migration` добавлена информация, что миграции можно создавать в `MODULENAME/migrations`.
 * [#3254347](https://www.drupal.org/node/3254347) Исключения для плагинов-обработчиков теперь содержат название плагина, в котором выброшено исключение.
+* [#3265483](https://www.drupal.org/node/3265483) Улучшены миграции для блоков тех модулей, которые стали сторонними после Drupal 6 или Drupal 7.
 
 ## Olivero
 
