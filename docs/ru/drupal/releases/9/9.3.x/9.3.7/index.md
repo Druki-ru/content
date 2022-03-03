@@ -13,11 +13,7 @@ category:
   order: 7
 ---
 
-<Aside type="warning" header="Разрабатываемая версия">
-
-Данная версия находится в разработке и не предназначено для использования. Список изменений на странице не полный, могут появиться новые или отменены уже имеющиеся.
-
-</Aside>
+**Дата релиза:** 3 марта 2022
 
 ## Добавлено новое условие для CKEditor 5 плагинов — `requiresConfiguration`
 
@@ -89,6 +85,7 @@ category:
 ## JavaScript
 
 - [#3262160](https://www.drupal.org/node/3262160) Внесены улучшения в `core/scripts/js/assets.js` файл, для упрощения его кода.
+- [#3262573](https://www.drupal.org/node/3262573) Обновлены зависимости для разработки.
 
 ## JSON:API
 
@@ -144,3 +141,7 @@ category:
 - [#3265419](https://www.drupal.org/node/3265419) Улучшено сообщение об устаревшем классе `RequestStack`.
 - [#3264862](https://www.drupal.org/node/3264862) Классу `ContextAwarePluginBase` добавлена информации о [депрекации](../../../../../deprecation/index.md).
 - [#3088730](https://www.drupal.org/node/3088730) Директория `composer` добавлена в `phpcs.xml.dist` и будет проверяться на [стандарты кодирования](../../../../standards/index.md).
+
+## Ссылки
+
+- [Drupal 9.3.7](https://www.drupal.org/project/drupal/releases/9.3.7) (англ.), drupal.org, 3 марта 2022

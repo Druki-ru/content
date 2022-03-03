@@ -519,6 +519,7 @@ $ composer require drupal/hal-hal
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
 * [#3267052](https://www.drupal.org/node/3267052) Справка по модулю была перенесена непосредственно в модуль из `help_topics` модуля.
 * [#3265424](https://www.drupal.org/node/3265424) Тесты для миграций связанные с модулем `aggregate` перенесены в сам модуль.
+* [#3267508](https://www.drupal.org/node/3267508) В тестах модуля теперь используется фикстура предоставляемая самим модулем вместо `migrate_drupal`.
 
 ## Cache System
 
@@ -531,6 +532,10 @@ $ composer require drupal/hal-hal
 * [#3248448](https://www.drupal.org/node/3248448) Улучшено оформление индикатора загрузки диалога.
 * [#3248423](https://www.drupal.org/node/3248423) Добавлен `ckeditor5.types.jsdoc` и скрипт, генерирующий актуальное содержание для него. Данный файл может быть использован в IDE для получения корректного автодополнения при написании плагинов для CKEditor.
 * [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
+* [#3260853](https://www.drupal.org/node/3260853) Добавлена поддержка wildcard для аттрибутов и их значений, например: `<foo data-*>`, `<foo *-bar-*>`, `<foo *-bar>`, `<h2 id="jump-*">`.
+* [#3264775](https://www.drupal.org/node/3264775) Панель инструментов больше не скрывается если `<drupal-media>` находится в фокусе.
+* [#3264727](https://www.drupal.org/node/3264727) Добавлена поддержка использования `<drupal-image>` и `<drupal-media>` внутри строки (`inline`).
+* [#3260032](https://www.drupal.org/node/3260032) Библиотеке `ckeditor5/drupal.ckeditor5` добавлена зависимость `ckeditor5/ie11.user.warnings`.
 
 ## Claro
 
@@ -613,11 +618,11 @@ $ composer require drupal/hal-hal
 * [#3239134](https://www.drupal.org/node/3239134) Использование `jQuery.val()` заменено на нативные `.value`.
 * [#3239123](https://www.drupal.org/node/3239123) Использование `jQuery.text()` заменено на нативный `.textContent`.
 * [#3246211](https://www.drupal.org/node/3246211) Stylelint обновлён до 14 версии.
-* [#3262573](https://www.drupal.org/node/3262573) Обновлены зависимости для разработки.
 * [#3264520](https://www.drupal.org/node/3264520) Удалена зависимость `acorn`.
 * [#3258114](https://www.drupal.org/node/3258114) Зависимость `chromedriver` обновлена до 98 версии.
 * [#3265618](https://www.drupal.org/node/3265618) Зависимость `eslint` обновлена до 8 версии.
 * [#3265619](https://www.drupal.org/node/3265619) Зависимость `Shepherd.js` обновлена до 9 версии.
+* [#3261734](https://www.drupal.org/node/3261734) Минимальная версия Node.js увеличена до 16.
 
 ## JSON:API
 
@@ -738,3 +743,5 @@ $ composer require drupal/hal-hal
 * [#3224178](https://www.drupal.org/node/3224178) Из `theme.api.php` удалены упоминания `theme()` функции.
 * [#3264435](https://www.drupal.org/node/3264435) Внесены улучшения в тесты модулей `help_topics` и `rest`, в которых не фильтровались устаревшие модули.
 * [#3260568](https://www.drupal.org/node/3260568) В процессах установки профилей [Demo Umami](../../../../9/distributions/demo-umami/index.md) и [Стандартный](../../../../9/distributions/standard/index.md) исправлено то, как добавляются роли для административного пользователя.
+* [#3259928](https://www.drupal.org/node/3259928) Тесты, проверяющие функционал на «всех темах» теперь также проверяют [Olivero](../../../../olivero/index.md).
+* [#3262320](https://www.drupal.org/node/3262320) Удалён устаревшее исправление в `ContextualLinksTest`.
