@@ -514,6 +514,32 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 $ composer require drupal/hal-hal
 ```
 
+## Добавлен API для подключения собственны стилей оформления CKEditor 5
+
+* [#3194084](https://www.drupal.org/node/3194084)
+
+Добавлена возможность подключение собственный файлов стилей оформления для редактора CKEditor 5 при помощи свойства `ckeditor5-stylesheets`.
+
+Новое свойство работает не так как `ckeditor_stylesheets`, которое используется для редактора CKEditor 4. В отличие от CKEditor 4, 5 версия не использует `<iframe>` для редактора, а значит, стили добавляемые для редактора будут применяться для всей страницы. В зависимости от того, какие стили использует ваша тема оформления, возможно вам потребуется добавить дополнительные стили для CKEditor 5, чтобы исправить неточности или улучшить под себя те или иные элементы.
+
+Стили указанные в `ckeditor5-stylesheets` будут загружаться только на страницах где используется соответствующий редактор.
+
+**Пример:**
+
+```yaml
+# themename.info.yml
+ckeditor5-stylesheets:
+  - css/base-ckeditor5.css
+```
+
+```css
+/* css/base-ckeditor5.css */
+/* Prefix the h2 with .ck-content to keep the style in the editor, and avoid polluting the page with unwanted h2 styles */
+.ck-content h2 {
+  color: blue;
+}
+```
+
 ## Aggregator
 
 * [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
