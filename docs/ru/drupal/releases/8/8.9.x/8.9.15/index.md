@@ -17,7 +17,7 @@ category:
 
 ## Composer
 
-* [#3211805](https://www.drupal.org/project/drupal/issues/3211805) Обновлены метапакеты для `composer/composer`. 
+- [#3211805](https://www.drupal.org/project/drupal/issues/3211805) Обновлены метапакеты для `composer/composer`. 
 
 ## Cron System
 
@@ -25,7 +25,7 @@ category:
 
 ## CSS
 
-* [#2958588](https://www.drupal.org/project/drupal/issues/2958588) Исправлены неполадки в стилях для «Off canvas» элемента приводящие к некорректному отображению.
+- [#2958588](https://www.drupal.org/project/drupal/issues/2958588) Исправлены неполадки в стилях для «Off canvas» элемента приводящие к некорректному отображению.
 
 ## Editor
 
@@ -33,7 +33,7 @@ category:
 
 ## Field UI
 
-* [#3202440](https://www.drupal.org/project/drupal/issues/3202440) `FieldStorageConfigEditForm::validateCardinality()` больше не учитывает права доступа.
+- [#3202440](https://www.drupal.org/project/drupal/issues/3202440) `FieldStorageConfigEditForm::validateCardinality()` больше не учитывает права доступа.
 
 ## Form System
 
@@ -41,9 +41,9 @@ category:
 
 ## JavaScript
 
-* [#3212177](https://www.drupal.org/project/drupal/issues/3212177) `caniuse-lite` обновлён до актуальной версии.
-* [#3211810](https://www.drupal.org/project/drupal/issues/3211810) Обновлена зависимость `nightwatch`, а также зависимости с обновлениями безопасности.
-* [#3209456](https://www.drupal.org/project/drupal/issues/3209456) Underscore.js обновлён до версии 1.13.1.
+- [#3212177](https://www.drupal.org/project/drupal/issues/3212177) `caniuse-lite` обновлён до актуальной версии.
+- [#3211810](https://www.drupal.org/project/drupal/issues/3211810) Обновлена зависимость `nightwatch`, а также зависимости с обновлениями безопасности.
+- [#3209456](https://www.drupal.org/project/drupal/issues/3209456) Underscore.js обновлён до версии 1.13.1.
 
 ## Locale
 
@@ -59,7 +59,7 @@ category:
 
 ## Routing System
 
-* [#3120301](https://www.drupal.org/project/drupal/issues/3120301) Маршруты созданные JSON:API более не предзагружаются.
+- [#3120301](https://www.drupal.org/project/drupal/issues/3120301) Маршруты созданные JSON:API более не предзагружаются.
 
 ## Serialization
 
@@ -71,7 +71,7 @@ category:
 
 ## User
 
-* [#3206540](https://www.drupal.org/project/drupal/issues/3206540) `user_is_blocked()` больше не учитывает права доступа.
+- [#3206540](https://www.drupal.org/project/drupal/issues/3206540) `user_is_blocked()` больше не учитывает права доступа.
 
 ## Views
 
@@ -80,9 +80,9 @@ category:
 
 ## Тестирование
 
-* [#3207086](https://www.drupal.org/project/drupal/issues/3207086) Исправлены проблемы с тестом `MonthDatePluginTest`.
+- [#3207086](https://www.drupal.org/project/drupal/issues/3207086) Исправлены проблемы с тестом `MonthDatePluginTest`.
 - [#2571475](https://www.drupal.org/project/drupal/issues/2571475) `KernelTestBase` теперь могу производить внешние HTTP запросы.
-* [#3211164](https://www.drupal.org/project/drupal/issues/3211164) Внесены улучшения в `WebDriverTestBase`.
+- [#3211164](https://www.drupal.org/project/drupal/issues/3211164) Внесены улучшения в `WebDriverTestBase`.
 
 ## Прочие изменения
 

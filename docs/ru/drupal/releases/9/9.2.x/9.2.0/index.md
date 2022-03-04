@@ -639,7 +639,7 @@ myfeature:
 
 ## Добавлена новая AJAX команда NewFirstCommand
 
-* [#3188938](https://www.drupal.org/project/drupal/issues/3188938)
+- [#3188938](https://www.drupal.org/project/drupal/issues/3188938)
 
 Добавлена новая AJAX команда `FocusFirstCommand` позволяющая сделать фокус на необходимый элемент. Данная команда принимает в качестве аргумента селектор контейнера, внутри которого находится элемент, на который необходимо сделать фокусировку. Элемент, который получит фокусировку, выбирается по следующим правилам:
 
@@ -660,7 +660,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 
 ## Добавлен генератор стартовой темы
 
-* [#3050384](https://www.drupal.org/project/drupal/issues/3050384)
+- [#3050384](https://www.drupal.org/project/drupal/issues/3050384)
 
 <Aside type="important">
 
@@ -670,7 +670,7 @@ $response->addCommand(new FocusFirstCommand('#some-new-form'));
 
 ## Для EntityQuery теперь нужно явно указывать проверку доступов
 
-* [#3201242](https://www.drupal.org/node/3201242)
+- [#3201242](https://www.drupal.org/node/3201242)
 
 Метод `\Drupal\Core\Entity\Query\QueryInterface::accessCheck()` позволяет разработчикам указать, должны ли сущности из запроса проверяться на возможность просмотра текущим пользователям. Данное значение всегда должно быть указано при запросе. Тем не менее, все запросы поддерживают данный метод, но ядро реализует его только для контент-сущностей с SQL-хранилищем.
 
@@ -722,7 +722,7 @@ $ids = \Drupal::entityQuery('node')
 
 ## Функции управления схемами предоставляемые schema.inc помечены устаревшими
 
-* [#2908886](https://www.drupal.org/project/drupal/issues/2908886)
+- [#2908886](https://www.drupal.org/project/drupal/issues/2908886)
 
 Следующие функции из `schema.inc` помечены устаревшими:
 
@@ -745,7 +745,7 @@ $schema = $specification[$table];
 
 ## behat/mink-browserkit-driver заменён на friends-of-behat/mink-browserkit-driver
 
-* [#3209701](https://www.drupal.org/node/3209701)
+- [#3209701](https://www.drupal.org/node/3209701)
 
 Зависимость `behat/mink-browserkit-driver` используется для функционального тестирования, но у неё нет поддержки PHP 8 и Symfony 5+, а также, отсутствует активность в более года.
 
@@ -755,7 +755,7 @@ $schema = $specification[$table];
 
 ## Ядро больше не использует jQuery UI position-min.js
 
-* [#3203837](https://www.drupal.org/node/3203837)
+- [#3203837](https://www.drupal.org/node/3203837)
 
 Все библиотеки ядра, которые загружали `assets/vendor/jquery.ui/ui/position-min.js`, больше не используют его как зависимость. Вместо данного файла добавлена новая библиотека `core/drupal.jquery.position`. Данная библиотека использует `misc/position.js`. Файл является изменённой версией jQuery UI Position и имеет тот же функционал, отформатирован в формате Drupal Coding Styles и расширяет jQuery напрямую в обход jQuery UI.
 
@@ -763,7 +763,7 @@ $schema = $specification[$table];
 
 ## Плагин обработчик миграций «Callback» теперь поддерживает множественные аргументы
 
-* [#2882276](https://www.drupal.org/project/drupal/issues/2882276)
+- [#2882276](https://www.drupal.org/project/drupal/issues/2882276)
 
 Плагин `callback` является частью Migrate API, который позволяет применить PHP функцию или метод класса на этапе подготовки данных в процессе миграции. До 9.2.0 данный плагин был ограничен функцией и методами с одним аргументом.
 
@@ -804,7 +804,7 @@ process:
 
 ## Критические предупреждения безопасности теперь отображаются администраторам
 
-* [#3041885](https://www.drupal.org/project/drupal/issues/3041885)
+- [#3041885](https://www.drupal.org/project/drupal/issues/3041885)
 
 Некоторые критические предупреждения безопасности (SA-*) и публичные объявления (PSA-*) будут отображаться на странице отчёта состояния сайта для пользователей с правом доступа `administer site configuration`.
 
@@ -844,7 +844,7 @@ protected function writeSettings(array $settings): void {
 
 ## Добавлен заголовок Permission-Policy для блокировки Google FLoC
 
-* [#3209628](https://www.drupal.org/project/drupal/issues/3209628)
+- [#3209628](https://www.drupal.org/project/drupal/issues/3209628)
 
 Начиная с 9.2.0 к ответам будет добавляться новый заголовок `Permissions-Policy: interest-cohort=()`. Данный заголовок добавлен в связи с созданием [Federated Learning of Cohorts (FLoC)](https://en.wikipedia.org/wiki/Federated_Learning_of_Cohorts), что позволяет собирать информацию о пользователе без использования cookies, независимо от того, используются ли на сайте любые аналитические сервисы Google.
 
@@ -856,7 +856,7 @@ $settings['block_interest_cohort'] = FALSE;
 
 ## jQuery Joyride заменён на ShepherdJS
 
-* [#3051766](https://www.drupal.org/project/drupal/issues/3051766)
+- [#3051766](https://www.drupal.org/project/drupal/issues/3051766)
 
 ### Библиотека Joyride помечена устаревшей
 
@@ -955,7 +955,7 @@ public function getBody() {
 
 ## Функции для кодирования и декодирования Mime заголовков помечены устаревшими
 
-* [#84883](https://www.drupal.org/project/drupal/issues/84883)
+- [#84883](https://www.drupal.org/project/drupal/issues/84883)
 
 Кодирование Mime заголовков в Drupal не соответствует RFC 2047.
 
@@ -1018,7 +1018,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 ## Block Content
 
-* [#3207405](https://www.drupal.org/project/drupal/issues/3207405) На странице блоков содержимого добавлена кнопка сброса фильтрации.
+- [#3207405](https://www.drupal.org/project/drupal/issues/3207405) На странице блоков содержимого добавлена кнопка сброса фильтрации.
 
 ## Book
 
@@ -1028,44 +1028,44 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 ## Cache System
 
-* [#3209931](https://www.drupal.org/project/drupal/issues/3209931) Сервисы `cache_tags.invalidator.checksum` и `cache.backend.database` теперь `backend_overridable`.
+- [#3209931](https://www.drupal.org/project/drupal/issues/3209931) Сервисы `cache_tags.invalidator.checksum` и `cache.backend.database` теперь `backend_overridable`.
 
 ## CKEditor
 
 - [#3150364](https://www.drupal.org/project/drupal/issues/3150364) Улучшена документация (`/admin/help/ckeditor`) для CKEditor.
-* [#3211474](https://www.drupal.org/project/drupal/issues/3211474) `CKEditorLoadingTest::testExternalStylesheets()` конвертирован в Kernel тест.
-* [#3211599](https://www.drupal.org/project/drupal/issues/3211599) CKeditor обновлён до версии 4.16.0.
-* [#3215916](https://www.drupal.org/project/drupal/issues/3215916) CKeditor обновлён до версии 4.17.0.
-* [#3215929](https://www.drupal.org/project/drupal/issues/3215929) CKeditor откачен до версии 4.16.1, чтобы соответствовать версиям обновлений для [SA-CORE-2021-003](../../../../security/sa-core/2021-003/index.md).
+- [#3211474](https://www.drupal.org/project/drupal/issues/3211474) `CKEditorLoadingTest::testExternalStylesheets()` конвертирован в Kernel тест.
+- [#3211599](https://www.drupal.org/project/drupal/issues/3211599) CKeditor обновлён до версии 4.16.0.
+- [#3215916](https://www.drupal.org/project/drupal/issues/3215916) CKeditor обновлён до версии 4.17.0.
+- [#3215929](https://www.drupal.org/project/drupal/issues/3215929) CKeditor откачен до версии 4.16.1, чтобы соответствовать версиям обновлений для [SA-CORE-2021-003](../../../../security/sa-core/2021-003/index.md).
 
 ## Claro
 
 - [#3083051](https://www.drupal.org/project/drupal/issues/3083051) Произведён рефакторинг tabledrag для соответствия изменениям в ядре.
-* [#3213557](https://www.drupal.org/project/drupal/issues/3213557) Исправлено отображение чекбоксов в Layout Builder.
-* [#3202493](https://www.drupal.org/project/drupal/issues/3202493) Добавлена библиотека со стилями для административных страниц с CKEditor.
-* [#3177415](https://www.drupal.org/project/drupal/issues/3177415) Улучшено формирование CSS классов для вертикальных табов.
+- [#3213557](https://www.drupal.org/project/drupal/issues/3213557) Исправлено отображение чекбоксов в Layout Builder.
+- [#3202493](https://www.drupal.org/project/drupal/issues/3202493) Добавлена библиотека со стилями для административных страниц с CKEditor.
+- [#3177415](https://www.drupal.org/project/drupal/issues/3177415) Улучшено формирование CSS классов для вертикальных табов.
 
 ## Comment
 
-* [#2742997](https://www.drupal.org/project/drupal/issues/2742997) `CommentActionsTest` конвертирован в Kernel тест.
-* [#3214487](https://www.drupal.org/project/drupal/issues/3214487) Для комментариев не использующих древовидный вывод, отключён вывод ссылки «Reply».
+- [#2742997](https://www.drupal.org/project/drupal/issues/2742997) `CommentActionsTest` конвертирован в Kernel тест.
+- [#3214487](https://www.drupal.org/project/drupal/issues/3214487) Для комментариев не использующих древовидный вывод, отключён вывод ссылки «Reply».
 
 ## Composer
 
 - [#3096781](https://www.drupal.org/project/drupal/issues/3096781) Зависимости `symfony/mime`, `symfony/var-dumper` и `symfony/phpunit-bridge` обновлены до версии 5.2. Добавлена новая зависимость `symfony/deprecation-contracts`.
 - [#3187025](https://www.drupal.org/project/drupal/issues/3187025) Зависимости ядра обновлены на 08.12.2020.
 - [#3206301](https://www.drupal.org/project/drupal/issues/3206301) Зависимости ядра обновлены на 30.03.2021.
-* [#3210632](https://www.drupal.org/project/drupal/issues/3210632) Зависимости ядра обновлена на 17.05.2021.
-* [#3215039](https://www.drupal.org/project/drupal/issues/3215039) Зависимости ядра обновлена на 21.05.2021.
-* [#3215280](https://www.drupal.org/project/drupal/issues/3215280) Подняты минимальные версии для некоторых зависимостей ядра с которым возникали проблемы при тестировании.
-* [#3217322](https://www.drupal.org/project/drupal/issues/3217322) Зависимости ядра обновлена на 03.06.2021.
+- [#3210632](https://www.drupal.org/project/drupal/issues/3210632) Зависимости ядра обновлена на 17.05.2021.
+- [#3215039](https://www.drupal.org/project/drupal/issues/3215039) Зависимости ядра обновлена на 21.05.2021.
+- [#3215280](https://www.drupal.org/project/drupal/issues/3215280) Подняты минимальные версии для некоторых зависимостей ядра с которым возникали проблемы при тестировании.
+- [#3217322](https://www.drupal.org/project/drupal/issues/3217322) Зависимости ядра обновлена на 03.06.2021.
 
 ## Configuration System
 
-* [#3196756](https://www.drupal.org/project/drupal/issues/3196756) Исправлена некорректное упоминание файла в документации `ConfigInstallerInterface`.
-* [#2844452](https://www.drupal.org/project/drupal/issues/2844452) Многострочные строки в YAML файлах теперь экспортируются без использования `\r\n`.
-* [#3084436](https://www.drupal.org/project/drupal/issues/3084436) Теперь при работе с единичной конфигурацией в административном интерфейсе, форма очищается после смены типа конфиграции чтобы не вводить в заблуждение.
-* [#3217861](https://www.drupal.org/project/drupal/issues/3217861) Улучшена документация для `ConfigEntityDependency::getDependencies()`.
+- [#3196756](https://www.drupal.org/project/drupal/issues/3196756) Исправлена некорректное упоминание файла в документации `ConfigInstallerInterface`.
+- [#2844452](https://www.drupal.org/project/drupal/issues/2844452) Многострочные строки в YAML файлах теперь экспортируются без использования `\r\n`.
+- [#3084436](https://www.drupal.org/project/drupal/issues/3084436) Теперь при работе с единичной конфигурацией в административном интерфейсе, форма очищается после смены типа конфиграции чтобы не вводить в заблуждение.
+- [#3217861](https://www.drupal.org/project/drupal/issues/3217861) Улучшена документация для `ConfigEntityDependency::getDependencies()`.
 
 ## Contact
 
@@ -1073,9 +1073,9 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 ## Content Moderation
 
-* [#3203809](https://www.drupal.org/project/drupal/issues/3203809) Вызовы Entity Query в модуле больше не учитывают права доступа.
-* [#3204883](https://www.drupal.org/project/drupal/issues/3204883) Сущность `taxonomy_term` теперь корректно запрещена на использование в Content Moderation.
-* [#2977495](https://www.drupal.org/project/drupal/issues/2977495) Добавлены описания правам доступа модуля.
+- [#3203809](https://www.drupal.org/project/drupal/issues/3203809) Вызовы Entity Query в модуле больше не учитывают права доступа.
+- [#3204883](https://www.drupal.org/project/drupal/issues/3204883) Сущность `taxonomy_term` теперь корректно запрещена на использование в Content Moderation.
+- [#2977495](https://www.drupal.org/project/drupal/issues/2977495) Добавлены описания правам доступа модуля.
 
 ## Cron System
 
@@ -1083,7 +1083,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 ## CSS
 
-* [#3207680](https://www.drupal.org/project/drupal/issues/3207680) Улучшено оформление списков для off-canvas модального окна.
+- [#3207680](https://www.drupal.org/project/drupal/issues/3207680) Улучшено оформление списков для off-canvas модального окна.
 
 ## Database System
 
@@ -1091,11 +1091,11 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3129534](https://www.drupal.org/project/drupal/issues/3129534) Добавлены новые методы `Drupal\Core\Database\Connection::getProvider()` и `Connection::enableModuleProvidingDatabaseDriver()`.
 - [#3192951](https://www.drupal.org/project/drupal/issues/3192951) Вызовы методов с передачей FQN класса (`'Drupal\Core\Database\Query\PagerSelectExtender'`) заменены на константу (`PagerSelectExtender::class`).
 - [#3089326](https://www.drupal.org/project/drupal/issues/3089326) Методу `Drupal\Core\Database\Log::log()` добавлен новый опциональный параметр `start`.
-* [#3186795](https://www.drupal.org/project/drupal/issues/3186795) `Drupal\Core\Database\StatementEmpty` помечен устаревшим.
-* [#3201266](https://www.drupal.org/project/drupal/issues/3201266) Код, защищающий от множественных утверждений, который был частью `Connection::query()`, перенесён в защищённый метод `::preprocessStatement()`.
-* [#3189680](https://www.drupal.org/project/drupal/issues/3189680) Опция `throw_exception` помечена устаревшей.
-* [#3211866](https://www.drupal.org/project/drupal/issues/3211866) `Upsert::execute()` теперь всегда возвращает число.
-* [#3216552](https://www.drupal.org/project/drupal/issues/3216552) Исправлены некорректные вызовы `Connection::select()` в `MenuTreeStorage`.
+- [#3186795](https://www.drupal.org/project/drupal/issues/3186795) `Drupal\Core\Database\StatementEmpty` помечен устаревшим.
+- [#3201266](https://www.drupal.org/project/drupal/issues/3201266) Код, защищающий от множественных утверждений, который был частью `Connection::query()`, перенесён в защищённый метод `::preprocessStatement()`.
+- [#3189680](https://www.drupal.org/project/drupal/issues/3189680) Опция `throw_exception` помечена устаревшей.
+- [#3211866](https://www.drupal.org/project/drupal/issues/3211866) `Upsert::execute()` теперь всегда возвращает число.
+- [#3216552](https://www.drupal.org/project/drupal/issues/3216552) Исправлены некорректные вызовы `Connection::select()` в `MenuTreeStorage`.
 
 ## Editor
 
@@ -1109,48 +1109,48 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3159744](https://www.drupal.org/project/drupal/issues/3159744) Из теста `EntitySchemaTest` удалены фиксированные ID.
 - [#3201956](https://www.drupal.org/project/drupal/issues/3201956) Удалена передача бесполезного аргумента в `ConfigEntityStorage` при вызове `$this->mapFromStorageRecords()`.
 - [#3201957](https://www.drupal.org/project/drupal/issues/3201957) Удалено неиспользуемое свойство `COnfigEntityStorage::$entities`.
-* [#3202963](https://www.drupal.org/project/drupal/issues/3202963) Формы удаления bundle сущностей теперь показывают количество материалов, которые основаны на нём.
-* [#3203147](https://www.drupal.org/project/drupal/issues/3203147) Удалён решённый `@todo` из `EntityBundleListenerInterface.
-* [#3207961](https://www.drupal.org/project/drupal/issues/3207961) Добавлено явно указание проверки прав доступа при использовании EntityQuery в пропущенных местах.
-* [#3210372](https://www.drupal.org/project/drupal/issues/3210372) `EntityConverter` теперь дополнительно проверяет что переданный `bundle` существует.
-* [#3214773](https://www.drupal.org/project/drupal/issues/3214773) Исправлены тайпхинты для `EntityRepositoryInterface::getActiveMultiple()` и `EntityRepositoryInterface::getCanonicalMultiple()`.
-* [#3012172](https://www.drupal.org/project/drupal/issues/3012172) В `EntityViewBuilder::addContextualLinks()` улучшена проверка на возможность создания ссылки для сущности.
+- [#3202963](https://www.drupal.org/project/drupal/issues/3202963) Формы удаления bundle сущностей теперь показывают количество материалов, которые основаны на нём.
+- [#3203147](https://www.drupal.org/project/drupal/issues/3203147) Удалён решённый `@todo` из `EntityBundleListenerInterface.
+- [#3207961](https://www.drupal.org/project/drupal/issues/3207961) Добавлено явно указание проверки прав доступа при использовании EntityQuery в пропущенных местах.
+- [#3210372](https://www.drupal.org/project/drupal/issues/3210372) `EntityConverter` теперь дополнительно проверяет что переданный `bundle` существует.
+- [#3214773](https://www.drupal.org/project/drupal/issues/3214773) Исправлены тайпхинты для `EntityRepositoryInterface::getActiveMultiple()` и `EntityRepositoryInterface::getCanonicalMultiple()`.
+- [#3012172](https://www.drupal.org/project/drupal/issues/3012172) В `EntityViewBuilder::addContextualLinks()` улучшена проверка на возможность создания ссылки для сущности.
 
 ## Extension System
 
-* [#3210900](https://www.drupal.org/project/drupal/issues/3210900) Функция `update_set_schema()` помечена устаревшей.
+- [#3210900](https://www.drupal.org/project/drupal/issues/3210900) Функция `update_set_schema()` помечена устаревшей.
 
 ## Field System
 
-* [#3203611](https://www.drupal.org/project/drupal/issues/3203611) Исправлен тайпхинт для `\Drupal\field\Entity\FieldConfig::loadByName`.
+- [#3203611](https://www.drupal.org/project/drupal/issues/3203611) Исправлен тайпхинт для `\Drupal\field\Entity\FieldConfig::loadByName`.
 
 ## File
 
-* [#2479607](https://www.drupal.org/project/drupal/issues/2479607) Удалены устаревшие схемы из `file.file.views.schema.yml`.
-* [#3207476](https://www.drupal.org/project/drupal/issues/3207476) `file_get_content_headers()` больше не кодирует заголовок `Content-Type`.
-* [#3048423](https://www.drupal.org/project/drupal/issues/3048423) Тест `RelationshipUserFileDataTest` конвертирован в Kernel тест.
-* [#2359675](https://www.drupal.org/project/drupal/issues/2359675) Исправлена неполадка, из-за которой проверка на максимально загружаемый размер файла всегда была положительной.
+- [#2479607](https://www.drupal.org/project/drupal/issues/2479607) Удалены устаревшие схемы из `file.file.views.schema.yml`.
+- [#3207476](https://www.drupal.org/project/drupal/issues/3207476) `file_get_content_headers()` больше не кодирует заголовок `Content-Type`.
+- [#3048423](https://www.drupal.org/project/drupal/issues/3048423) Тест `RelationshipUserFileDataTest` конвертирован в Kernel тест.
+- [#2359675](https://www.drupal.org/project/drupal/issues/2359675) Исправлена неполадка, из-за которой проверка на максимально загружаемый размер файла всегда была положительной.
 
 ## Filter
 
-* [#3217732](https://www.drupal.org/project/drupal/issues/3217732) Исправлена неполадка, из-за которой `filterStatus()` не мог найти разметку после AJAX.
+- [#3217732](https://www.drupal.org/project/drupal/issues/3217732) Исправлена неполадка, из-за которой `filterStatus()` не мог найти разметку после AJAX.
 
 ## Form System
 
 - [#3122912](https://www.drupal.org/project/drupal/issues/3122912) Вызовы `t()` заменены на `$this->t()`.
-* [#3205031](https://www.drupal.org/project/drupal/issues/3205031) В `Drupal\form_test\Form\FormTestVerticalTabsForm` добавлен отсутствующий `use`.
-* [#588438](https://www.drupal.org/project/drupal/issues/588438) Исправлена неполадка в тесте `FormTest::testRequiredFields()` которая приводила к ошибке при вызове `drupal_render()` с элементом `radios`.
+- [#3205031](https://www.drupal.org/project/drupal/issues/3205031) В `Drupal\form_test\Form\FormTestVerticalTabsForm` добавлен отсутствующий `use`.
+- [#588438](https://www.drupal.org/project/drupal/issues/588438) Исправлена неполадка в тесте `FormTest::testRequiredFields()` которая приводила к ошибке при вызове `drupal_render()` с элементом `radios`.
 
 ## HAL
 
-* [#3210898](https://www.drupal.org/project/drupal/issues/3210898) Часть тестов теперь расширяет `NormalizerDenormalizeExceptionsUnitTestBase`.
+- [#3210898](https://www.drupal.org/project/drupal/issues/3210898) Часть тестов теперь расширяет `NormalizerDenormalizeExceptionsUnitTestBase`.
 
 ## Help
 
 - [#3090659](https://www.drupal.org/project/drupal/issues/3090659) Добавлены Twig функции для установки ссылок на Help Topics: `help_route_link()` и `help_topic_link()`.
 - [#3087218](https://www.drupal.org/project/drupal/issues/3087218) Улучшена скорость индексации справки.
-* [#3209139](https://www.drupal.org/project/drupal/issues/3209139) Добавлена функция-хелпер `_help_topics_search_update()`.
-* [#3213022](https://www.drupal.org/project/drupal/issues/3213022) Теперь ссылка на несуществующий Help Topic указывает его ID.
+- [#3209139](https://www.drupal.org/project/drupal/issues/3209139) Добавлена функция-хелпер `_help_topics_search_update()`.
+- [#3213022](https://www.drupal.org/project/drupal/issues/3213022) Теперь ссылка на несуществующий Help Topic указывает его ID.
 
 ## Help Topics
 
@@ -1159,28 +1159,28 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 ## History
 
-* [#3122056](https://www.drupal.org/project/drupal/issues/3122056) Неопубликованные сущности более не учитываются в истории.
+- [#3122056](https://www.drupal.org/project/drupal/issues/3122056) Неопубликованные сущности более не учитываются в истории.
 
 ## Install system
 
-* [#3188654](https://www.drupal.org/project/drupal/issues/3188654) Исправлены ссылка на загрузку переводов.
-* [#3206168](https://www.drupal.org/project/drupal/issues/3206168) Исправлен вызов `install_display_output()` с третьим аргументом.
+- [#3188654](https://www.drupal.org/project/drupal/issues/3188654) Исправлены ссылка на загрузку переводов.
+- [#3206168](https://www.drupal.org/project/drupal/issues/3206168) Исправлен вызов `install_display_output()` с третьим аргументом.
 
 ## JavaScript
 
 - [#3191497](https://www.drupal.org/project/drupal/issues/3191497) `cpre/jquery.ui.dialog` добавлена зависимость `core/jquery`.
-* [#3211605](https://www.drupal.org/project/drupal/issues/3211605) Библиотека Popper.js обновлена до версии 2.9.2.
-* [#3211606](https://www.drupal.org/project/drupal/issues/3211606) Библиотека Tabbable обновлена до версии 5.2.0.
-* [#3211602](https://www.drupal.org/project/drupal/issues/3211602) Библиотека jQuery Form обновлена до версии 4.3.0.
-* [#3185165](https://www.drupal.org/project/drupal/issues/3185165) Библиотека Modernizr обновлена до версии 3.11.7.
-* [#3179734](https://www.drupal.org/project/drupal/issues/3179734) jQuery селектор `:tabbable` помечен устаревшим.
-* [#3191649](https://www.drupal.org/project/drupal/issues/3191649) Библиотека Sortable обновлена до версии 1.13.0.
-* [#3211601](https://www.drupal.org/project/drupal/issues/3211601) Библиотека jQuery обновлена до версии 3.6.0.
-* [#3210633](https://www.drupal.org/project/drupal/issues/3210633) JavaScript зависимости ядра обновлены на 17.05.2021.
-* [#3214412](https://www.drupal.org/project/drupal/issues/3214412) Сборка и Prettier теперь запускаются после обновления при помощи Yarn.
-* [#3144854](https://www.drupal.org/project/drupal/issues/3144854) Удалена зависимость `stylelint-no-browser-hacks`.
-* [#1870006](https://www.drupal.org/project/drupal/issues/1870006) Улучшено отображение HTML5 ошибок валидации при наличии тулбара.
-* [#3218658](https://www.drupal.org/project/drupal/issues/3218658) Библиотека `@drupal/once` обновлена до версии 1.0.1.
+- [#3211605](https://www.drupal.org/project/drupal/issues/3211605) Библиотека Popper.js обновлена до версии 2.9.2.
+- [#3211606](https://www.drupal.org/project/drupal/issues/3211606) Библиотека Tabbable обновлена до версии 5.2.0.
+- [#3211602](https://www.drupal.org/project/drupal/issues/3211602) Библиотека jQuery Form обновлена до версии 4.3.0.
+- [#3185165](https://www.drupal.org/project/drupal/issues/3185165) Библиотека Modernizr обновлена до версии 3.11.7.
+- [#3179734](https://www.drupal.org/project/drupal/issues/3179734) jQuery селектор `:tabbable` помечен устаревшим.
+- [#3191649](https://www.drupal.org/project/drupal/issues/3191649) Библиотека Sortable обновлена до версии 1.13.0.
+- [#3211601](https://www.drupal.org/project/drupal/issues/3211601) Библиотека jQuery обновлена до версии 3.6.0.
+- [#3210633](https://www.drupal.org/project/drupal/issues/3210633) JavaScript зависимости ядра обновлены на 17.05.2021.
+- [#3214412](https://www.drupal.org/project/drupal/issues/3214412) Сборка и Prettier теперь запускаются после обновления при помощи Yarn.
+- [#3144854](https://www.drupal.org/project/drupal/issues/3144854) Удалена зависимость `stylelint-no-browser-hacks`.
+- [#1870006](https://www.drupal.org/project/drupal/issues/1870006) Улучшено отображение HTML5 ошибок валидации при наличии тулбара.
+- [#3218658](https://www.drupal.org/project/drupal/issues/3218658) Библиотека `@drupal/once` обновлена до версии 1.0.1.
 
 ## JSON:API
 
@@ -1193,18 +1193,18 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 ## Locale
 
-* [#3184527](https://www.drupal.org/project/drupal/issues/3184527) `\Drupal\locale\LocaleLookup::getCid()` больше не учитывает пользовательские роли.
+- [#3184527](https://www.drupal.org/project/drupal/issues/3184527) `\Drupal\locale\LocaleLookup::getCid()` больше не учитывает пользовательские роли.
 
 ## Media
 
-* [#3085264](https://www.drupal.org/project/drupal/issues/3085264) Объединены тесты `media_test_filter` и `media_test_ckeditor`.
-* [#3134554](https://www.drupal.org/project/drupal/issues/3134554) Исправлена неполадка при которой медиа-поля с Media library виджетом приводили к «Notice: Undefined index».
-* [#3215198](https://www.drupal.org/project/drupal/issues/3215198) Обновление информации о ширине и высоте для медиа сущностей с поддержкой данных параметров, теперь загружают информацию о файлу только когда данные параметры обновляются.
+- [#3085264](https://www.drupal.org/project/drupal/issues/3085264) Объединены тесты `media_test_filter` и `media_test_ckeditor`.
+- [#3134554](https://www.drupal.org/project/drupal/issues/3134554) Исправлена неполадка при которой медиа-поля с Media library виджетом приводили к «Notice: Undefined index».
+- [#3215198](https://www.drupal.org/project/drupal/issues/3215198) Обновление информации о ширине и высоте для медиа сущностей с поддержкой данных параметров, теперь загружают информацию о файлу только когда данные параметры обновляются.
 
 ## MySQL DB Driver
 
 - [#3185231](https://www.drupal.org/project/drupal/issues/3185231) Режим SQL при инициализации теперь задаётся через `ANSI,TRADITIONAL` вместо перечисления всех возможных значений.
-* [#3210888](https://www.drupal.org/project/drupal/issues/3210888) Удалён метод `Drupal\Core\Database\Connection::serialize()`.
+- [#3210888](https://www.drupal.org/project/drupal/issues/3210888) Удалён метод `Drupal\Core\Database\Connection::serialize()`.
 
 ## Migration System
 
@@ -1227,23 +1227,23 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3189054](https://www.drupal.org/project/drupal/issues/3189054) Удалена пометка, что `MigrateException` может быть вызвано конструктором `MigrateExecutable`, так как оно там не вызывается.
 - [#3200735](https://www.drupal.org/project/drupal/issues/3200735) Добавлена документация для плагинов источников Drupal 6 и Drupal 7 `user`, `profile` и `roles`.
 - [#3175953](https://www.drupal.org/project/drupal/issues/3175953) Произведена чистка в функциональных тестах.
-* [#3191990](https://www.drupal.org/project/drupal/issues/3191990) Произведён небольшой рефакторинг кода в `DrupalSqlBaseTest`.
-* [#3205029](https://www.drupal.org/project/drupal/issues/3205029) Из `DestinationCategoryTest` удалены референсы на несуществующие классы.
-* [#3051252](https://www.drupal.org/project/drupal/issues/3051252) Добавлены миграции для модулей `multiupload_filefield_widget` и `multiupload_imagefield_widget'.
-* [#3206932](https://www.drupal.org/project/drupal/issues/3206932) Константа `targetEntityType` из `d6/ViewMode` плагина переименована в `entity_type`.
-* [#2974128](https://www.drupal.org/project/drupal/issues/2974128) Добавлен отсутствующий параметр `no_stub: false` для плагина обработчика `DefaultValue`.
-* [#3213638](https://www.drupal.org/project/drupal/issues/3213638) Исправлено некорректное описание для `Drupal\Plugin\Migration`.
-* [#3193189](https://www.drupal.org/project/drupal/issues/3193189) Плагин источник `d6_taxonomy_term_localized_migration` теперь загружает только те термины, что используют словарь с переводами.
-* [#3191782](https://www.drupal.org/project/drupal/issues/3191782) Исправлены зависимости для миграций переводов профилей из Drupal 6.
-* [#3204461](https://www.drupal.org/project/drupal/issues/3204461) Исправлена ошибка связанная с `sort()` в `ValidateMigrationStateTestTrait`.
-* [#3189463](https://www.drupal.org/project/drupal/issues/3189463) Все миграция связанные с переводами и локализацией теперь зависят от миграции `language`.
-* [#3213616](https://www.drupal.org/project/drupal/issues/3213616) Добавлены соотношения для полей модуля Datetime из D6 и D7.
-* [#3187318](https://www.drupal.org/project/drupal/issues/3187318) Миграция пользователей из прошлых версий Drupal больше не мигрирует пользователя с UID = 0.
+- [#3191990](https://www.drupal.org/project/drupal/issues/3191990) Произведён небольшой рефакторинг кода в `DrupalSqlBaseTest`.
+- [#3205029](https://www.drupal.org/project/drupal/issues/3205029) Из `DestinationCategoryTest` удалены референсы на несуществующие классы.
+- [#3051252](https://www.drupal.org/project/drupal/issues/3051252) Добавлены миграции для модулей `multiupload_filefield_widget` и `multiupload_imagefield_widget'.
+- [#3206932](https://www.drupal.org/project/drupal/issues/3206932) Константа `targetEntityType` из `d6/ViewMode` плагина переименована в `entity_type`.
+- [#2974128](https://www.drupal.org/project/drupal/issues/2974128) Добавлен отсутствующий параметр `no_stub: false` для плагина обработчика `DefaultValue`.
+- [#3213638](https://www.drupal.org/project/drupal/issues/3213638) Исправлено некорректное описание для `Drupal\Plugin\Migration`.
+- [#3193189](https://www.drupal.org/project/drupal/issues/3193189) Плагин источник `d6_taxonomy_term_localized_migration` теперь загружает только те термины, что используют словарь с переводами.
+- [#3191782](https://www.drupal.org/project/drupal/issues/3191782) Исправлены зависимости для миграций переводов профилей из Drupal 6.
+- [#3204461](https://www.drupal.org/project/drupal/issues/3204461) Исправлена ошибка связанная с `sort()` в `ValidateMigrationStateTestTrait`.
+- [#3189463](https://www.drupal.org/project/drupal/issues/3189463) Все миграция связанные с переводами и локализацией теперь зависят от миграции `language`.
+- [#3213616](https://www.drupal.org/project/drupal/issues/3213616) Добавлены соотношения для полей модуля Datetime из D6 и D7.
+- [#3187318](https://www.drupal.org/project/drupal/issues/3187318) Миграция пользователей из прошлых версий Drupal больше не мигрирует пользователя с UID = 0.
 
 ## Node System
 
 - [#3187435](https://www.drupal.org/project/drupal/issues/3187435) Для Views плагина `Vid`, аргумент `$database` помечен устаревшим.
-* [#3218024](https://www.drupal.org/project/drupal/issues/3218024) Вызов `$node->link` заменён на `$node->toUrl()`.
+- [#3218024](https://www.drupal.org/project/drupal/issues/3218024) Вызов `$node->link` заменён на `$node->toUrl()`.
 
 ## Olivero
 
@@ -1258,41 +1258,41 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3200631](https://www.drupal.org/project/drupal/issues/3200631) Исправлено отображения `<select>` элемента в jQuery UI dialog на Safari.
 - [#3191716](https://www.drupal.org/project/drupal/issues/3191716) Открытие вложенных пунктов меню на мобильной версии теперь требует всего 1 тап для открытия, а не 2 как было ранее.
 - [#3192656](https://www.drupal.org/project/drupal/issues/3192656) Исправлена неполадка с текстовыми элементами формы приводящая к появлению горизонтальной прокрутки.
-* [#3190268](https://www.drupal.org/project/drupal/issues/3190268) Полифилы поставляемые с темой, заменены на библиотеки с аналогичными полифилами из ядра.
-* [#3192903](https://www.drupal.org/project/drupal/issues/3192903) Mouseout событие при наличии активного фокуса на вложенном меню, больше не закрывает его.
-* [#3205434](https://www.drupal.org/project/drupal/issues/3205434) Добавлены Nigthwatch тесты.
-* [#3206948](https://www.drupal.org/project/drupal/issues/3206948) Для элемента `input[type="color"]` убраны отступы и увеличена ширина для корректного отображения.
-* [#3207032](https://www.drupal.org/project/drupal/issues/3207032) Исправлено отображение кнопки «Назад» в IE11.
-* [#3173900](https://www.drupal.org/project/drupal/issues/3173900) JavaScript темы теперь использует новый [Drupal JavaScript Once API](../../../../../javascript/drupal/once/index.md)
-* [#3186349](https://www.drupal.org/project/drupal/issues/3186349) Исправлены множественные проблемы доступности для функционала показа \ скрытия шапки.
-* [#3191077](https://www.drupal.org/project/drupal/issues/3191077) Исправлена неполадка с мобильным меню, которое позволяло производить навигацию при помощи «TAB» только в одну сторону.
-* [#3208286](https://www.drupal.org/project/drupal/issues/3208286) Исправлено название переменной с `topLevelMenuITem` на `topLevelMenuItem` в файле `second-level-navigation.es6.js`.
-* [#3208116](https://www.drupal.org/project/drupal/issues/3208116) Исправлено «мерцание» мобильного меню на Safari.
-* [#3206290](https://www.drupal.org/project/drupal/issues/3206290) Исправлено отображение иконки поиска в режиме повышенной контрастности Windows.
-* [#3207996](https://www.drupal.org/project/drupal/issues/3207996) Из `text-content.pcss.css` удалено свойство `text-decoration-width`.
-* [#3200599](https://www.drupal.org/project/drupal/issues/3200599) Улучшены стили для подвала и удалены не используемые.
-* [#3210130](https://www.drupal.org/project/drupal/issues/3210130) Форма комментариев теперь растягивается на всю ширину для мобильных устройств.
-* [#3191692](https://www.drupal.org/project/drupal/issues/3191692) Второстепенные меню теперь закрывают при потере фокуса.
-* [#3210329](https://www.drupal.org/project/drupal/issues/3210329) Исправлено значение для `aria-checked` для `sticky-header-toggle` в момент загрузки страницы.
-* [#3173016](https://www.drupal.org/project/drupal/issues/3173016) Улучшены стили и разметка для `node.html.twig` для их универсальности.
-* [#3209125](https://www.drupal.org/project/drupal/issues/3209125) Форма поиска теперь закрывается при нажатии Esc.
-* [#3208114](https://www.drupal.org/project/drupal/issues/3208114) Исправлена неполадка для Safari из-за которой надпись «Menu» становилась белой.
-* [#3196874](https://www.drupal.org/project/drupal/issues/3196874) Разметка для пагинации книг «БЭМифицирована».
-* [#3182200](https://www.drupal.org/project/drupal/issues/3182200) Разметка второстепенного меню теперь соответствует БЭМ.
-* [#3200644](https://www.drupal.org/project/drupal/issues/3200644) Для элемента автодополнения добавлено оформление отключенного состояния.
-* [#3211888](https://www.drupal.org/project/drupal/issues/3211888) Исправлены отображение сетки 33/34/33 на IE 11.
-* [#3212281](https://www.drupal.org/project/drupal/issues/3212281) Удален лишний отступ в списках для CKEditor.
-* [#3153265](https://www.drupal.org/project/drupal/issues/3153265) Исправлена неполадка из-за которой ссылка «Перейти к содержимому» при фокусе приводила к смещению макета.
-* [#3211897](https://www.drupal.org/project/drupal/issues/3211897) Исправлена неполадка из-за которой меню в мобильной версии могло закрываться при скроле.
-* [#3191725](https://www.drupal.org/project/drupal/issues/3191725) Улучшены стили для таблиц с сортировкой.
-* [#3190120](https://www.drupal.org/project/drupal/issues/3190120) Второстепенное меню теперь всегда в фокусе при навигации с использованием клавиатуры.
-* [#3212998](https://www.drupal.org/project/drupal/issues/3212998) Улучшены селекторы для элементов JavaScript.
-* [#3212704](https://www.drupal.org/project/drupal/issues/3212704) Исправлено отображение содержимого под макетом 33/33/33 в IE 11.
-* [#3208000](https://www.drupal.org/project/drupal/issues/3208000) Удалён временный шаблон `toolbar.html.twig`.
-* [#3210443](https://www.drupal.org/project/drupal/issues/3210443) Теперь после закрытия выпадающего меню при помощи «Esc» фокус возвращается на переключатель данного меню.
-* [#3173012](https://www.drupal.org/project/drupal/issues/3173012) Внесены корректировки в `header-search-side.pcss.css` и `header-search-narrow.pcss.css`.
-* [#3200628](https://www.drupal.org/project/drupal/issues/3200628) Исправлено выравнивание текста лдя маленьких кнопок.
-* [#3214140](https://www.drupal.org/project/drupal/issues/3214140) Иконка закрытия системного сообщения больше не имеет `border-radius`.
+- [#3190268](https://www.drupal.org/project/drupal/issues/3190268) Полифилы поставляемые с темой, заменены на библиотеки с аналогичными полифилами из ядра.
+- [#3192903](https://www.drupal.org/project/drupal/issues/3192903) Mouseout событие при наличии активного фокуса на вложенном меню, больше не закрывает его.
+- [#3205434](https://www.drupal.org/project/drupal/issues/3205434) Добавлены Nigthwatch тесты.
+- [#3206948](https://www.drupal.org/project/drupal/issues/3206948) Для элемента `input[type="color"]` убраны отступы и увеличена ширина для корректного отображения.
+- [#3207032](https://www.drupal.org/project/drupal/issues/3207032) Исправлено отображение кнопки «Назад» в IE11.
+- [#3173900](https://www.drupal.org/project/drupal/issues/3173900) JavaScript темы теперь использует новый [Drupal JavaScript Once API](../../../../../javascript/drupal/once/index.md)
+- [#3186349](https://www.drupal.org/project/drupal/issues/3186349) Исправлены множественные проблемы доступности для функционала показа \ скрытия шапки.
+- [#3191077](https://www.drupal.org/project/drupal/issues/3191077) Исправлена неполадка с мобильным меню, которое позволяло производить навигацию при помощи «TAB» только в одну сторону.
+- [#3208286](https://www.drupal.org/project/drupal/issues/3208286) Исправлено название переменной с `topLevelMenuITem` на `topLevelMenuItem` в файле `second-level-navigation.es6.js`.
+- [#3208116](https://www.drupal.org/project/drupal/issues/3208116) Исправлено «мерцание» мобильного меню на Safari.
+- [#3206290](https://www.drupal.org/project/drupal/issues/3206290) Исправлено отображение иконки поиска в режиме повышенной контрастности Windows.
+- [#3207996](https://www.drupal.org/project/drupal/issues/3207996) Из `text-content.pcss.css` удалено свойство `text-decoration-width`.
+- [#3200599](https://www.drupal.org/project/drupal/issues/3200599) Улучшены стили для подвала и удалены не используемые.
+- [#3210130](https://www.drupal.org/project/drupal/issues/3210130) Форма комментариев теперь растягивается на всю ширину для мобильных устройств.
+- [#3191692](https://www.drupal.org/project/drupal/issues/3191692) Второстепенные меню теперь закрывают при потере фокуса.
+- [#3210329](https://www.drupal.org/project/drupal/issues/3210329) Исправлено значение для `aria-checked` для `sticky-header-toggle` в момент загрузки страницы.
+- [#3173016](https://www.drupal.org/project/drupal/issues/3173016) Улучшены стили и разметка для `node.html.twig` для их универсальности.
+- [#3209125](https://www.drupal.org/project/drupal/issues/3209125) Форма поиска теперь закрывается при нажатии Esc.
+- [#3208114](https://www.drupal.org/project/drupal/issues/3208114) Исправлена неполадка для Safari из-за которой надпись «Menu» становилась белой.
+- [#3196874](https://www.drupal.org/project/drupal/issues/3196874) Разметка для пагинации книг «БЭМифицирована».
+- [#3182200](https://www.drupal.org/project/drupal/issues/3182200) Разметка второстепенного меню теперь соответствует БЭМ.
+- [#3200644](https://www.drupal.org/project/drupal/issues/3200644) Для элемента автодополнения добавлено оформление отключенного состояния.
+- [#3211888](https://www.drupal.org/project/drupal/issues/3211888) Исправлены отображение сетки 33/34/33 на IE 11.
+- [#3212281](https://www.drupal.org/project/drupal/issues/3212281) Удален лишний отступ в списках для CKEditor.
+- [#3153265](https://www.drupal.org/project/drupal/issues/3153265) Исправлена неполадка из-за которой ссылка «Перейти к содержимому» при фокусе приводила к смещению макета.
+- [#3211897](https://www.drupal.org/project/drupal/issues/3211897) Исправлена неполадка из-за которой меню в мобильной версии могло закрываться при скроле.
+- [#3191725](https://www.drupal.org/project/drupal/issues/3191725) Улучшены стили для таблиц с сортировкой.
+- [#3190120](https://www.drupal.org/project/drupal/issues/3190120) Второстепенное меню теперь всегда в фокусе при навигации с использованием клавиатуры.
+- [#3212998](https://www.drupal.org/project/drupal/issues/3212998) Улучшены селекторы для элементов JavaScript.
+- [#3212704](https://www.drupal.org/project/drupal/issues/3212704) Исправлено отображение содержимого под макетом 33/33/33 в IE 11.
+- [#3208000](https://www.drupal.org/project/drupal/issues/3208000) Удалён временный шаблон `toolbar.html.twig`.
+- [#3210443](https://www.drupal.org/project/drupal/issues/3210443) Теперь после закрытия выпадающего меню при помощи «Esc» фокус возвращается на переключатель данного меню.
+- [#3173012](https://www.drupal.org/project/drupal/issues/3173012) Внесены корректировки в `header-search-side.pcss.css` и `header-search-narrow.pcss.css`.
+- [#3200628](https://www.drupal.org/project/drupal/issues/3200628) Исправлено выравнивание текста лдя маленьких кнопок.
+- [#3214140](https://www.drupal.org/project/drupal/issues/3214140) Иконка закрытия системного сообщения больше не имеет `border-radius`.
 
 ## Plugin System
 
@@ -1304,34 +1304,34 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 ## Render System
 
-* [#3143096](https://www.drupal.org/project/drupal/issues/3143096) Теперь, если [ленивый строитель](../../../../9/lazy-builder/index.md) возвращает что-то отличное от рендер массива, будет выброшено исключение.
+- [#3143096](https://www.drupal.org/project/drupal/issues/3143096) Теперь, если [ленивый строитель](../../../../9/lazy-builder/index.md) возвращает что-то отличное от рендер массива, будет выброшено исключение.
 
 ## Responsive Image
 
-* [#3107130](https://www.drupal.org/project/drupal/issues/3107130) Список [адаптивных стилей изображения](../../../../9/responsive-images/index.md) теперь сортируется в форматтерах по метке, а не по машинному имени.
+- [#3107130](https://www.drupal.org/project/drupal/issues/3107130) Список [адаптивных стилей изображения](../../../../9/responsive-images/index.md) теперь сортируется в форматтерах по метке, а не по машинному имени.
 
 ## Routing system
 
-* [#3191061](https://www.drupal.org/project/drupal/issues/3191061) Из `\Drupal\Core\Routing\RequestContext` удалён `@todo`.
+- [#3191061](https://www.drupal.org/project/drupal/issues/3191061) Из `\Drupal\Core\Routing\RequestContext` удалён `@todo`.
 
 ## Search
 
-* [#3209453](https://www.drupal.org/project/drupal/issues/3209453) Сервис `search.index` теперь `backend_overridable`.
+- [#3209453](https://www.drupal.org/project/drupal/issues/3209453) Сервис `search.index` теперь `backend_overridable`.
 
 ## System
 
 - [#2409413](https://www.drupal.org/project/drupal/issues/2409413) Удалены неиспользуемые RSS настройки и описания.
 - [#3002983](https://www.drupal.org/project/drupal/issues/3002983) Протокол в ссылках заменён на HTTPS.
 - [#3174832](https://www.drupal.org/project/drupal/issues/3174832) Исправлена документация для `admin-block-content.html.twig`.
-* [#3204220](https://www.drupal.org/project/drupal/issues/3204220) `Drupal\system\ModuleDependencyMessageTrait` теперь `Drupal\Core\Extension\ModuleDependencyMessageTrait`.
-* [#3211480](https://www.drupal.org/project/drupal/issues/3211480) `Drupal\Tests\system\Functional\Common\UrlTest` конвертирован в Kernel тест.
-* [#3163487](https://www.drupal.org/project/drupal/issues/3163487) Улучшена документация для свойств `\Drupal\Core\Link`.
+- [#3204220](https://www.drupal.org/project/drupal/issues/3204220) `Drupal\system\ModuleDependencyMessageTrait` теперь `Drupal\Core\Extension\ModuleDependencyMessageTrait`.
+- [#3211480](https://www.drupal.org/project/drupal/issues/3211480) `Drupal\Tests\system\Functional\Common\UrlTest` конвертирован в Kernel тест.
+- [#3163487](https://www.drupal.org/project/drupal/issues/3163487) Улучшена документация для свойств `\Drupal\Core\Link`.
 
 ## Taxonomy
 
 - [#3170185](https://www.drupal.org/project/drupal/issues/3170185) `Drupal\taxonomy\Form\OverviewTerms` теперь использует `pager.manager` для получения текущей страницы вместо `Request`.
 - [#3207477](https://www.drupal.org/project/drupal/issues/3207477) Хранилище Taxonomy Term теперь явно вызывает `::accessCheck()` для `EntityQuery`.
-* [#2998826](https://www.drupal.org/project/drupal/issues/2998826) Добавлен контекст для предоставления сущности Taxonomy Term из маршрута `taxonomy_term.taxonomy_term_route_context`.
+- [#2998826](https://www.drupal.org/project/drupal/issues/2998826) Добавлен контекст для предоставления сущности Taxonomy Term из маршрута `taxonomy_term.taxonomy_term_route_context`.
 
 ## Theme System
 
@@ -1343,7 +1343,7 @@ $decoded_string = iconv_mime_decode($encoded_string);
 
 ## Transliteration System
 
-* [#3025727](https://www.drupal.org/project/drupal/issues/3025727) В данным для тестирования `PhpTransliterationTest` добавлены описания что именно за данные тестируются.
+- [#3025727](https://www.drupal.org/project/drupal/issues/3025727) В данным для тестирования `PhpTransliterationTest` добавлены описания что именно за данные тестируются.
 
 ## Umami Demo
 
@@ -1351,21 +1351,21 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3066570](https://www.drupal.org/project/drupal/issues/3066570) Роль редактора теперь имеет больше прав, в связи с чем может: управлять переводами, изучать страницы "помощи", просматривать таксономию, управлять ярлыками.
 - [#3061267](https://www.drupal.org/project/drupal/issues/3061267) Машинные имена блоков теперь имеют префикс равный машинному имени темы оформления.
 - [#3108503](https://www.drupal.org/project/drupal/issues/3108503) Теперь Layout Builder по умолчанию включен для всех типов содержимого.
-* [#2938803](https://www.drupal.org/project/drupal/issues/2938803) Убрано предупреждение о том что Umami демонстрационный профиль при выборе установочного профиля, так как это указано в его названии и описании.
+- [#2938803](https://www.drupal.org/project/drupal/issues/2938803) Убрано предупреждение о том что Umami демонстрационный профиль при выборе установочного профиля, так как это указано в его названии и описании.
 
 ## Update
 
 - [#2577407](https://www.drupal.org/project/drupal/issues/2577407) Установка нового модуля через интерфейс теперь имеет постоянный лейбл «Add».
-* [#3113798](https://www.drupal.org/project/drupal/issues/3113798) Из XML фикстур для модуля удалены теги `<tag>`.
-* [#3100386](https://www.drupal.org/project/drupal/issues/3100386) Добавлены тесты покрывающие обновление модулей с [семантическим версионированием](../../../../../semver/index.md).
-* [#3212005](https://www.drupal.org/project/drupal/issues/3212005) В `\Drupal\update\ModuleVersion` добавлены `@throws` описания для методов с исключениями.
+- [#3113798](https://www.drupal.org/project/drupal/issues/3113798) Из XML фикстур для модуля удалены теги `<tag>`.
+- [#3100386](https://www.drupal.org/project/drupal/issues/3100386) Добавлены тесты покрывающие обновление модулей с [семантическим версионированием](../../../../../semver/index.md).
+- [#3212005](https://www.drupal.org/project/drupal/issues/3212005) В `\Drupal\update\ModuleVersion` добавлены `@throws` описания для методов с исключениями.
 
 ## User
 
 - [#3186752](https://www.drupal.org/project/drupal/issues/3186752) Аргумент `$langcode` для функции `_user_mail_notify()` помечен устаревшим.
-* [#3206358](https://www.drupal.org/project/drupal/issues/3206358) Удалена инициализации `$bag` в `SessionManager`.
-* [#2799049](https://www.drupal.org/project/drupal/issues/2799049) Добавлено новое разрешение `view user email addresses` позволяющее пользователям с данным доступом просматривать email адреса пользователей. На данный момент email адреса могут просматривать исключительно администраторы.
-* [#3212034](https://www.drupal.org/project/drupal/issues/3212034) Добавлены переносы на новые строки в email письмах для пользователей.
+- [#3206358](https://www.drupal.org/project/drupal/issues/3206358) Удалена инициализации `$bag` в `SessionManager`.
+- [#2799049](https://www.drupal.org/project/drupal/issues/2799049) Добавлено новое разрешение `view user email addresses` позволяющее пользователям с данным доступом просматривать email адреса пользователей. На данный момент email адреса могут просматривать исключительно администраторы.
+- [#3212034](https://www.drupal.org/project/drupal/issues/3212034) Добавлены переносы на новые строки в email письмах для пользователей.
 
 ## Views
 
@@ -1374,15 +1374,15 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3186582](https://www.drupal.org/project/drupal/issues/3186582) Отображение по умолчанию во Views теперь именуется как «Default».
 - [#3197886](https://www.drupal.org/project/drupal/issues/3197886) Класс `ViewsPluginAnnotationBase` больше не реализуется `AnnotationInterface`.
 - [#2342807](https://www.drupal.org/project/drupal/issues/2342807) `DisplayPathTest` больше не пытается включить модуль `menu_ui`, который уже включен к тому моменту.
-* [#3202052](https://www.drupal.org/project/drupal/issues/3202052) Плагин аргументов Views теперь явно вызывает `::accessCheck()` в `::titleQuery()`.
-* [#3109110](https://www.drupal.org/project/drupal/issues/3109110) Плагин кеширования `\Drupal\views\Plugin\views\cache\Time` и все расширяющие его плагины теперь должны использовать `$this->view->getRequest()`. Объект запроса больше не передаётся в качестве аргумента.
-* [#2716019](https://www.drupal.org/project/drupal/issues/2716019) для формирования заголовка представления на основе пути, теперь используется функция обратного вызова `Drupal\views\Routing\ViewPageController::getTitle()`.
+- [#3202052](https://www.drupal.org/project/drupal/issues/3202052) Плагин аргументов Views теперь явно вызывает `::accessCheck()` в `::titleQuery()`.
+- [#3109110](https://www.drupal.org/project/drupal/issues/3109110) Плагин кеширования `\Drupal\views\Plugin\views\cache\Time` и все расширяющие его плагины теперь должны использовать `$this->view->getRequest()`. Объект запроса больше не передаётся в качестве аргумента.
+- [#2716019](https://www.drupal.org/project/drupal/issues/2716019) для формирования заголовка представления на основе пути, теперь используется функция обратного вызова `Drupal\views\Routing\ViewPageController::getTitle()`.
 
 ## Workspaces
 
 - [#3128536](https://www.drupal.org/project/drupal/issues/3128536) Свойство `WorkspaceManager::$blacklist` переименовано в `$supported`.
 - [#2998454](https://www.drupal.org/project/drupal/issues/2998454) Употребление терминов «deploy» и «publish» приведено в порядок для избежания путаницы.
-* [#3092553](https://www.drupal.org/project/drupal/issues/3092553) В список рабочих областей добавлена возможность переключиться на «Live» версию.
+- [#3092553](https://www.drupal.org/project/drupal/issues/3092553) В список рабочих областей добавлена возможность переключиться на «Live» версию.
 
 ## Тестирование
 
@@ -1399,40 +1399,40 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3193163](https://www.drupal.org/project/drupal/issues/3193163) Использование `AssertLegacyTrait::verbose()` помечено устаревшим.
 - [#3187949](https://www.drupal.org/project/drupal/issues/3187949) Метод `::cssSelectToXpath()` перенесён из `BrowserTestBase` в `UiHelperTrait`.
 - [#3187113](https://www.drupal.org/project/drupal/issues/3187113) Удалены вызовы `t()` в `::submitForm()`.
-* [#3205139](https://www.drupal.org/project/drupal/issues/3205139) Удалён `ModuleTestBase::assertTableCount()`.
-* [#2189411](https://www.drupal.org/project/drupal/issues/2189411) Из `FunctionalTestSetupTrait` удалена пересборка контейнера.
-* [#3204002](https://www.drupal.org/project/drupal/issues/3204002) Из `TestServiceProvider` удалён мёртвый код связанный с SimpleTest.
-* [#3132778](https://www.drupal.org/project/drupal/issues/3132778) Использование `strstr()` заменено на `::assertStringContainsString()` и `::assertStringNotCOntainsString()`.
-* [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
-* [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
-* [#3133162](https://www.drupal.org/project/drupal/issues/3133162) Употребление глагола «Test» заменено на «Tests».
-* [#3217709](https://www.drupal.org/project/drupal/issues/3217709) Использование `::assertRegExp()` заменено на новые методы, так как данный помечен устаревшим.
-* [#3217712](https://www.drupal.org/project/drupal/issues/3217712) Использование `::assertDirectoryNotIsWritable()` заменено на новые методы, так как данный помечен устаревшим.
-* [#3174200](https://www.drupal.org/project/drupal/issues/3174200) В ядро добавлен Symfony PHPUnit-Bridge polyfills.
-* [#3217711](https://www.drupal.org/project/drupal/issues/3217711) Использование `::assertNotRegExp()` заменено на новые методы, так как данный помечен устаревшим.
-* [#3217713](https://www.drupal.org/project/drupal/issues/3217713) Использование `::assertFileNotIsWritable()` заменено на новые методы, так как данный помечен устаревшим.
-* [#3217716](https://www.drupal.org/project/drupal/issues/3217716) Использование `::expectException(Error::class)` заменено на новые методы, так как данный помечен устаревшим.
-* [#3217714](https://www.drupal.org/project/drupal/issues/3217714) Использование `::expectException(Warning::class)` заменено на новые методы, так как данный помечен устаревшим.
-* [#3218586](https://www.drupal.org/project/drupal/issues/3218586) Улучшен тест `ConfigTest::testSetIllegalOffsetValue()` где забыли заменить `::expectException()`.
-* [#3217706](https://www.drupal.org/project/drupal/issues/3217706) Использование `::assertFileNotExists()` заменено на новые методы, так как данный помечен устаревшим.
+- [#3205139](https://www.drupal.org/project/drupal/issues/3205139) Удалён `ModuleTestBase::assertTableCount()`.
+- [#2189411](https://www.drupal.org/project/drupal/issues/2189411) Из `FunctionalTestSetupTrait` удалена пересборка контейнера.
+- [#3204002](https://www.drupal.org/project/drupal/issues/3204002) Из `TestServiceProvider` удалён мёртвый код связанный с SimpleTest.
+- [#3132778](https://www.drupal.org/project/drupal/issues/3132778) Использование `strstr()` заменено на `::assertStringContainsString()` и `::assertStringNotCOntainsString()`.
+- [#3176361](https://www.drupal.org/project/drupal/issues/3176361) Из JavaScript условий удалены точки с запятой.
+- [#3211838](https://www.drupal.org/project/drupal/issues/3211838) Сравнения с использованием `xpath` на `span` заменены на WebAssert.
+- [#3133162](https://www.drupal.org/project/drupal/issues/3133162) Употребление глагола «Test» заменено на «Tests».
+- [#3217709](https://www.drupal.org/project/drupal/issues/3217709) Использование `::assertRegExp()` заменено на новые методы, так как данный помечен устаревшим.
+- [#3217712](https://www.drupal.org/project/drupal/issues/3217712) Использование `::assertDirectoryNotIsWritable()` заменено на новые методы, так как данный помечен устаревшим.
+- [#3174200](https://www.drupal.org/project/drupal/issues/3174200) В ядро добавлен Symfony PHPUnit-Bridge polyfills.
+- [#3217711](https://www.drupal.org/project/drupal/issues/3217711) Использование `::assertNotRegExp()` заменено на новые методы, так как данный помечен устаревшим.
+- [#3217713](https://www.drupal.org/project/drupal/issues/3217713) Использование `::assertFileNotIsWritable()` заменено на новые методы, так как данный помечен устаревшим.
+- [#3217716](https://www.drupal.org/project/drupal/issues/3217716) Использование `::expectException(Error::class)` заменено на новые методы, так как данный помечен устаревшим.
+- [#3217714](https://www.drupal.org/project/drupal/issues/3217714) Использование `::expectException(Warning::class)` заменено на новые методы, так как данный помечен устаревшим.
+- [#3218586](https://www.drupal.org/project/drupal/issues/3218586) Улучшен тест `ConfigTest::testSetIllegalOffsetValue()` где забыли заменить `::expectException()`.
+- [#3217706](https://www.drupal.org/project/drupal/issues/3217706) Использование `::assertFileNotExists()` заменено на новые методы, так как данный помечен устаревшим.
 
 ## Symfony 5
 
 - [#3188056](https://www.drupal.org/project/drupal/issues/3188056) Обновлён код, который вызывал сериалайзер Symfony с `NULL` в качестве формата.
 - [#3185603](https://www.drupal.org/project/drupal/issues/3185603) Добавлен `ConstraintFactory` для инициализации констрейн плагинов Drupal.
-* [#3209239](https://www.drupal.org/project/drupal/issues/3209239) `FileUploadSanitizeNameEvent::stopPropagation()` добавлен тайпхинт возвращаемому значению (`void`).
-* [#3213295](https://www.drupal.org/project/drupal/issues/3213295) Компоненты Symfony 5 обновлены до 5.3-rc1.
-* [#3216088](https://www.drupal.org/project/drupal/issues/3216088) Компоненты Symfony 5 обновлены до 5.3.
+- [#3209239](https://www.drupal.org/project/drupal/issues/3209239) `FileUploadSanitizeNameEvent::stopPropagation()` добавлен тайпхинт возвращаемому значению (`void`).
+- [#3213295](https://www.drupal.org/project/drupal/issues/3213295) Компоненты Symfony 5 обновлены до 5.3-rc1.
+- [#3216088](https://www.drupal.org/project/drupal/issues/3216088) Компоненты Symfony 5 обновлены до 5.3.
 
 ## Symfony 6
 
 - [#3195533](https://www.drupal.org/project/drupal/issues/3195533) Константа `Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL` помечена устаревшей. Используйте либо `HEADER_X_FORWARDED_FOR | HEADER_X_FORWARDED_HOST | HEADER_X_FORWARDED_PORT | HEADER_X_FORWARDED_PROTO`, либо `HEADER_X_FORWARDED_AWS_ELB`, либо `HEADER_X_FORWARDED_TRAEFIK`.
 - [#3161983](https://www.drupal.org/project/drupal/issues/3161983) Код ядра обновлён для соответствия новому EventDispatcher. Смотрите [Drupal 9.1.0](../../9.1.x/9.1.0/index.md) для более подробных изменений.
 - [#3187857](https://www.drupal.org/project/drupal/issues/3187857) Сообщения об устаревшем коде больше не будут приводить к предупреждению об изменении сигнатуры методов `::setDeprecated()`.
-* [#3199691](https://www.drupal.org/project/drupal/issues/3199691) Временно отключено тестирование `octal` типа в YAML файлах, так как в спецификации YAML 1.2, который используется Symfony начиная с версии 5.1, поменялся его формат с `0777` на `0o777`.
-* [#3209482](https://www.drupal.org/project/drupal/issues/3209482) Тайпхинты `EventDispatcherInterface` обновлены для `FileUploadResource`.
-* [#3209618](https://www.drupal.org/project/drupal/issues/3209618) Метод `Symfony\Component\HttpKernel\Event\KernelEvent::isMasterRequest()` помечен устаревшим. Так как в [Drupal 10](../../../../10/index.md) планируется использовать Symfony 6, данный метод заранее помечен устаревшим. В качестве замены используйте `Symfony\Component\HttpKernel\Event\KernelEvent::isMainRequest()`.
-* [#3215830](https://www.drupal.org/project/drupal/issues/3215830) `KernelEvent` теперь использует `Drupal\Component\EventDispatcher\Event` вместо `Symfony\Component\EventDispatcher\Event`.
+- [#3199691](https://www.drupal.org/project/drupal/issues/3199691) Временно отключено тестирование `octal` типа в YAML файлах, так как в спецификации YAML 1.2, который используется Symfony начиная с версии 5.1, поменялся его формат с `0777` на `0o777`.
+- [#3209482](https://www.drupal.org/project/drupal/issues/3209482) Тайпхинты `EventDispatcherInterface` обновлены для `FileUploadResource`.
+- [#3209618](https://www.drupal.org/project/drupal/issues/3209618) Метод `Symfony\Component\HttpKernel\Event\KernelEvent::isMasterRequest()` помечен устаревшим. Так как в [Drupal 10](../../../../10/index.md) планируется использовать Symfony 6, данный метод заранее помечен устаревшим. В качестве замены используйте `Symfony\Component\HttpKernel\Event\KernelEvent::isMainRequest()`.
+- [#3215830](https://www.drupal.org/project/drupal/issues/3215830) `KernelEvent` теперь использует `Drupal\Component\EventDispatcher\Event` вместо `Symfony\Component\EventDispatcher\Event`.
 
 ## Прочие изменения
 
@@ -1461,41 +1461,41 @@ $decoded_string = iconv_mime_decode($encoded_string);
 - [#3185653](https://www.drupal.org/project/drupal/issues/3185653) Удалены упоминания `::drupalPostAjaxForm()`, который был удалён в [Drupal 9](../../../../9/index.md).
 - [#3200213](https://www.drupal.org/project/drupal/issues/3200213) Добавлена документация для сервиса `session_bag`.
 - [#3202014](https://www.drupal.org/project/drupal/issues/3202014) `pager_test_preprocess_pager()` теперь использует early return если пейджер не найден.
-* [#3202787](https://www.drupal.org/project/drupal/issues/3202787) Исправлены ссылка в документации к `FunctionalTestSetupTrait::setContainerParameter()`.
-* [#2508071](https://www.drupal.org/project/drupal/issues/2508071) Добавлено объявление свойства `KeyValueFactory::$options`.
-* [#2711739](https://www.drupal.org/project/drupal/issues/2711739) Добавлена отсутствующая документация для методов `QueryInterface`.
-* [#1923816](https://www.drupal.org/project/drupal/issues/1923816) Исправлены примеры для `QueryAggregateInterface`.
-* [#3186626](https://www.drupal.org/project/drupal/issues/3186626) Удалена поддержка параметра `$proxy_class_name` для метода `ProxyBuilder::build()`, так как он не используется.
-* [#3198594](https://www.drupal.org/project/drupal/issues/3198594) Добавлен класс `Drupal\Core\Http\InputBag` для предоставления моста между Symfony 4 и 5, только для внутреннего пользования.
-* [#2903911](https://www.drupal.org/project/drupal/issues/2903911) Исправлены ошибки стандарта кодирования `Drupal.Commenting.FunctionComment.ParamMissingDefinition`.
-* [#2160091](https://www.drupal.org/project/drupal/issues/2160091) `drupal_flush_all_caches()` больше не сбрасывает контейнер дважды. Данная функция теперь получает параметр `$kernel`, если он не передан, или не является экземпляром `DrupalKernel`, то будет сброшен кеш контейнера. При наличии данного аргумента, ответственность за сброс кеша контейнера ложится на того, кто вызвал данную функцию.
-* [#2937858](https://www.drupal.org/project/drupal/issues/2937858) Исправлены ошибки для соответствия стандарту `Drupal.Commenting.DocCommentAlignment`.
-* [#3207119](https://www.drupal.org/project/drupal/issues/3207119) Исправлены ошибки для соответствия стандарту `Squiz.WhiteSpace.ScopeKeywordSpacing`.
-* [#2829453](https://www.drupal.org/project/drupal/issues/2829453) Из `\Drupal` удалён docblock c `@file`.
-* [#3208266](https://www.drupal.org/project/drupal/issues/3208266) Запросы в функциях `workspaces_install()` и `demo_umami_set_users_passwords()` больше не учитывают права доступа.
-* [#3165364](https://www.drupal.org/project/drupal/issues/3165364) Проверка правописания отключена для файла `LICENSE.txt`.
-* [#2732113](https://www.drupal.org/project/drupal/issues/2732113) Улучшена документация в `dblog_help()`.
-* [#2937882](https://www.drupal.org/project/drupal/issues/2937882) Исправлены ошибки для соответствия стандарту `Drupal.Classes.PropertyDeclaration`.
-* [#2902548](https://www.drupal.org/project/drupal/issues/2902548) Исправлены ошибки для соответствия стандарту `Drupal.Semantics.RemoteAddress`.
-* [#3207456](https://www.drupal.org/project/drupal/issues/3207456) Добавлена явная зависимость на `symfony/mime`.
-* [#3212547](https://www.drupal.org/project/drupal/issues/3212547) Удалены исправленные слова из словаря CSPell.
-* [#2909369](https://www.drupal.org/project/drupal/issues/2909369) Исправлены ошибки для соответствия стандарту `Drupal.VariableComment.WrongStyle`.
-* [#3123070](https://www.drupal.org/project/drupal/issues/3123070) Исправлены ошибки для соответствия стандарту `PSR2.Classes.PropertyDelcaration.Underscore`.
-* [#3214234](https://www.drupal.org/project/drupal/issues/3214234) Добавлен новый файл `core/class_aliases.php`. Данный файл также добавлен в автозагрузчик Composer.
-* [#3214308](https://www.drupal.org/project/drupal/issues/3214308) Удалён файл `core/class_aliases.php`, а его содержимое перенесено в `bootstrap.inc`. 🤭
-* [#2969190](https://www.drupal.org/project/drupal/issues/2969190) Улучшена документация метода `ModuleInstallerInterface::uninstall()`.
-* [#3207968](https://www.drupal.org/project/drupal/issues/3207968) Комментарии с использованием `@codingStandardsIgnoreFile` заменены на `phpcs:ignoreFile`.
-* [#3214920](https://www.drupal.org/project/drupal/issues/3214920) Рекомендуемая версия PHP увеличена до 7.4.
-* [#3109767](https://www.drupal.org/project/drupal/issues/3109767) Улучшена генерация демонстрационных данных для типов полей `string` и `link`.
-* [#3195888](https://www.drupal.org/project/drupal/issues/3195888) Улучшена проверка зависимостей в `core/scripts/dev/commit-code-check.sh`.
-* [#3186364](https://www.drupal.org/project/drupal/issues/3186364) Для предварительных релизов Drupal разрешено использовать предварительные релизы зависимостей.
-* [#3214565](https://www.drupal.org/project/drupal/issues/3214565) Улучшен код в тесте `BuildTestTest::testPortMany()` приводящий к случайным провалам.
-* [#3116804](https://www.drupal.org/project/drupal/issues/3116804) Для Update Manager добавлены мейнтейнеры tedbow и dww.
-* [#3218139](https://www.drupal.org/project/drupal/issues/3218139) Упрощена логика добавления `Permissions-Policy` заголовка в ответ.
-* [#3215611](https://www.drupal.org/project/drupal/issues/3215611) Сообщение об устаревших сервисах теперь вызывается только в процессе сборки контейнера, а не на каждый их вызов.
-* [#3217357](https://www.drupal.org/project/drupal/issues/3217357) Ссылки ведущие на материалы по Drupal 8 теперь ведут на актуальные.
-* [#3064596](https://www.drupal.org/project/drupal/issues/3064596) `DateTimePlus::createFromFormat()` больше не занимается форматированием даты так как возвращает объект `DateTime`.
-* [#3214395](https://www.drupal.org/project/drupal/issues/3214395) В документацию `hook_uninstall()` добавлена подсказка о `\Drupal\Core\Extension\ModuleUninstallValidatorInterface`.
+- [#3202787](https://www.drupal.org/project/drupal/issues/3202787) Исправлены ссылка в документации к `FunctionalTestSetupTrait::setContainerParameter()`.
+- [#2508071](https://www.drupal.org/project/drupal/issues/2508071) Добавлено объявление свойства `KeyValueFactory::$options`.
+- [#2711739](https://www.drupal.org/project/drupal/issues/2711739) Добавлена отсутствующая документация для методов `QueryInterface`.
+- [#1923816](https://www.drupal.org/project/drupal/issues/1923816) Исправлены примеры для `QueryAggregateInterface`.
+- [#3186626](https://www.drupal.org/project/drupal/issues/3186626) Удалена поддержка параметра `$proxy_class_name` для метода `ProxyBuilder::build()`, так как он не используется.
+- [#3198594](https://www.drupal.org/project/drupal/issues/3198594) Добавлен класс `Drupal\Core\Http\InputBag` для предоставления моста между Symfony 4 и 5, только для внутреннего пользования.
+- [#2903911](https://www.drupal.org/project/drupal/issues/2903911) Исправлены ошибки стандарта кодирования `Drupal.Commenting.FunctionComment.ParamMissingDefinition`.
+- [#2160091](https://www.drupal.org/project/drupal/issues/2160091) `drupal_flush_all_caches()` больше не сбрасывает контейнер дважды. Данная функция теперь получает параметр `$kernel`, если он не передан, или не является экземпляром `DrupalKernel`, то будет сброшен кеш контейнера. При наличии данного аргумента, ответственность за сброс кеша контейнера ложится на того, кто вызвал данную функцию.
+- [#2937858](https://www.drupal.org/project/drupal/issues/2937858) Исправлены ошибки для соответствия стандарту `Drupal.Commenting.DocCommentAlignment`.
+- [#3207119](https://www.drupal.org/project/drupal/issues/3207119) Исправлены ошибки для соответствия стандарту `Squiz.WhiteSpace.ScopeKeywordSpacing`.
+- [#2829453](https://www.drupal.org/project/drupal/issues/2829453) Из `\Drupal` удалён docblock c `@file`.
+- [#3208266](https://www.drupal.org/project/drupal/issues/3208266) Запросы в функциях `workspaces_install()` и `demo_umami_set_users_passwords()` больше не учитывают права доступа.
+- [#3165364](https://www.drupal.org/project/drupal/issues/3165364) Проверка правописания отключена для файла `LICENSE.txt`.
+- [#2732113](https://www.drupal.org/project/drupal/issues/2732113) Улучшена документация в `dblog_help()`.
+- [#2937882](https://www.drupal.org/project/drupal/issues/2937882) Исправлены ошибки для соответствия стандарту `Drupal.Classes.PropertyDeclaration`.
+- [#2902548](https://www.drupal.org/project/drupal/issues/2902548) Исправлены ошибки для соответствия стандарту `Drupal.Semantics.RemoteAddress`.
+- [#3207456](https://www.drupal.org/project/drupal/issues/3207456) Добавлена явная зависимость на `symfony/mime`.
+- [#3212547](https://www.drupal.org/project/drupal/issues/3212547) Удалены исправленные слова из словаря CSPell.
+- [#2909369](https://www.drupal.org/project/drupal/issues/2909369) Исправлены ошибки для соответствия стандарту `Drupal.VariableComment.WrongStyle`.
+- [#3123070](https://www.drupal.org/project/drupal/issues/3123070) Исправлены ошибки для соответствия стандарту `PSR2.Classes.PropertyDelcaration.Underscore`.
+- [#3214234](https://www.drupal.org/project/drupal/issues/3214234) Добавлен новый файл `core/class_aliases.php`. Данный файл также добавлен в автозагрузчик Composer.
+- [#3214308](https://www.drupal.org/project/drupal/issues/3214308) Удалён файл `core/class_aliases.php`, а его содержимое перенесено в `bootstrap.inc`. 🤭
+- [#2969190](https://www.drupal.org/project/drupal/issues/2969190) Улучшена документация метода `ModuleInstallerInterface::uninstall()`.
+- [#3207968](https://www.drupal.org/project/drupal/issues/3207968) Комментарии с использованием `@codingStandardsIgnoreFile` заменены на `phpcs:ignoreFile`.
+- [#3214920](https://www.drupal.org/project/drupal/issues/3214920) Рекомендуемая версия PHP увеличена до 7.4.
+- [#3109767](https://www.drupal.org/project/drupal/issues/3109767) Улучшена генерация демонстрационных данных для типов полей `string` и `link`.
+- [#3195888](https://www.drupal.org/project/drupal/issues/3195888) Улучшена проверка зависимостей в `core/scripts/dev/commit-code-check.sh`.
+- [#3186364](https://www.drupal.org/project/drupal/issues/3186364) Для предварительных релизов Drupal разрешено использовать предварительные релизы зависимостей.
+- [#3214565](https://www.drupal.org/project/drupal/issues/3214565) Улучшен код в тесте `BuildTestTest::testPortMany()` приводящий к случайным провалам.
+- [#3116804](https://www.drupal.org/project/drupal/issues/3116804) Для Update Manager добавлены мейнтейнеры tedbow и dww.
+- [#3218139](https://www.drupal.org/project/drupal/issues/3218139) Упрощена логика добавления `Permissions-Policy` заголовка в ответ.
+- [#3215611](https://www.drupal.org/project/drupal/issues/3215611) Сообщение об устаревших сервисах теперь вызывается только в процессе сборки контейнера, а не на каждый их вызов.
+- [#3217357](https://www.drupal.org/project/drupal/issues/3217357) Ссылки ведущие на материалы по Drupal 8 теперь ведут на актуальные.
+- [#3064596](https://www.drupal.org/project/drupal/issues/3064596) `DateTimePlus::createFromFormat()` больше не занимается форматированием даты так как возвращает объект `DateTime`.
+- [#3214395](https://www.drupal.org/project/drupal/issues/3214395) В документацию `hook_uninstall()` добавлена подсказка о `\Drupal\Core\Extension\ModuleUninstallValidatorInterface`.
 
 ## Ссылки
 

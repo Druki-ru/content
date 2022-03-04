@@ -17,17 +17,17 @@ category:
 
 ## Composer
 
-* [#3199209](https://www.drupal.org/project/drupal/issues/3199209) Обновлены зависимости Symfony (`composer/*`).
-* [#3211805](https://www.drupal.org/project/drupal/issues/3211805) Обновлены метапакеты для `composer/composer`.
+- [#3199209](https://www.drupal.org/project/drupal/issues/3199209) Обновлены зависимости Symfony (`composer/*`).
+- [#3211805](https://www.drupal.org/project/drupal/issues/3211805) Обновлены метапакеты для `composer/composer`.
 
 ## JavaScript
 
-* [#3212177](https://www.drupal.org/project/drupal/issues/3212177) `caniuse-lite` обновлён до актуальной версии.
-* [#3211810](https://www.drupal.org/project/drupal/issues/3211810) Обновлена зависимость `nightwatch`, а также зависимости с обновлениями безопасности.
+- [#3212177](https://www.drupal.org/project/drupal/issues/3212177) `caniuse-lite` обновлён до актуальной версии.
+- [#3211810](https://www.drupal.org/project/drupal/issues/3211810) Обновлена зависимость `nightwatch`, а также зависимости с обновлениями безопасности.
 
 ## Migration System
 
-* [#3190815](https://www.drupal.org/project/drupal/issues/3190815) Улучшено кеширование счётчиков для плагинов источников основанных на `SqlBase`.
+- [#3190815](https://www.drupal.org/project/drupal/issues/3190815) Улучшено кеширование счётчиков для плагинов источников основанных на `SqlBase`.
 
 ## Ссылки
 
