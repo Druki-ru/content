@@ -7,6 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.3.7.'
 authors:
   - Niklan
+  - a-kovrigin
 category:
   area: 'Drupal 9.3.x'
   title: Drupal 9.3.7
@@ -80,7 +81,7 @@ category:
 
 ## Install System
 
-- [#2833864](https://www.drupal.org/node/2833864) Исправлена неполадка, из-за которой ошибки с неудовлетворенными [системными требованиями](../../../../9/system-requirements/index.md) могли содержа рендер массивы и некорректно отображаться.
+- [#2833864](https://www.drupal.org/node/2833864) Исправлена неполадка, из-за которой ошибки с неудовлетворенными [системными требованиями](../../../../9/system-requirements/index.md) могли содержать рендер массивы и некорректно отображаться.
 
 ## JavaScript
 
