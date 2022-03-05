@@ -7,6 +7,7 @@ metatags:
   description: 'Список изменений Drupal 9.3.7.'
 authors:
   - Niklan
+  - a-kovrigin
 category:
   area: 'Drupal 9.3.x'
   title: Drupal 9.3.7
