@@ -514,32 +514,6 @@ function quickedit_preprocess_entity_page_title(&$variables) {
 $ composer require drupal/hal-hal
 ```
 
-## Добавлен API для подключения собственны стилей оформления CKEditor 5
-
-- [#3194084](https://www.drupal.org/node/3194084)
-
-Добавлена возможность подключение собственный файлов стилей оформления для редактора CKEditor 5 при помощи свойства `ckeditor5-stylesheets`.
-
-Новое свойство работает не так как `ckeditor_stylesheets`, которое используется для редактора CKEditor 4. В отличие от CKEditor 4, 5 версия не использует `<iframe>` для редактора, а значит, стили добавляемые для редактора будут применяться для всей страницы. В зависимости от того, какие стили использует ваша тема оформления, возможно вам потребуется добавить дополнительные стили для CKEditor 5, чтобы исправить неточности или улучшить под себя те или иные элементы.
-
-Стили указанные в `ckeditor5-stylesheets` будут загружаться только на страницах где используется соответствующий редактор.
-
-**Пример:**
-
-```yaml
-# themename.info.yml
-ckeditor5-stylesheets:
-  - css/base-ckeditor5.css
-```
-
-```css
-/* css/base-ckeditor5.css */
-/* Prefix the h2 with .ck-content to keep the style in the editor, and avoid polluting the page with unwanted h2 styles */
-.ck-content h2 {
-  color: blue;
-}
-```
-
 ## Aggregator
 
 - [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -558,10 +532,6 @@ ckeditor5-stylesheets:
 - [#3248448](https://www.drupal.org/node/3248448) Улучшено оформление индикатора загрузки диалога.
 - [#3248423](https://www.drupal.org/node/3248423) Добавлен `ckeditor5.types.jsdoc` и скрипт, генерирующий актуальное содержание для него. Данный файл может быть использован в IDE для получения корректного автодополнения при написании плагинов для CKEditor.
 - [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
-- [#3260853](https://www.drupal.org/node/3260853) Добавлена поддержка wildcard для аттрибутов и их значений, например: `<foo data-*>`, `<foo *-bar-*>`, `<foo *-bar>`, `<h2 id="jump-*">`.
-- [#3264775](https://www.drupal.org/node/3264775) Панель инструментов больше не скрывается если `<drupal-media>` находится в фокусе.
-- [#3264727](https://www.drupal.org/node/3264727) Добавлена поддержка использования `<drupal-image>` и `<drupal-media>` внутри строки (`inline`).
-- [#3260032](https://www.drupal.org/node/3260032) Библиотеке `ckeditor5/drupal.ckeditor5` добавлена зависимость `ckeditor5/ie11.user.warnings`.
 
 ## Claro
 
@@ -571,6 +541,11 @@ ckeditor5-stylesheets:
 - [#3168326](https://www.drupal.org/node/3168326) Улучшено отображение dropbutton элемента в таблицах.
 - [#3264220](https://www.drupal.org/node/3264220) Удалено переопределение шаблона `views-ui-views-listing-table.html.twig`.
 - [#3214124](https://www.drupal.org/node/3214124) Добавлены кавычки для `<blockquote>` элемента.
+
+## Comment
+
+- [#3090187](https://www.drupal.org/node/3090187) Добавлена возможность отключить preprocess для полей `created`, `uid`, `pid` и `subject` с последующей настройкой отображения при помощи «Параметры отображения». См. `enable_base_field_custom_preprocess_skipping`.
+- [#3267653](https://www.drupal.org/node/3267653) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Composer
 
@@ -619,6 +594,7 @@ ckeditor5-stylesheets:
 - [#3259850](https://www.drupal.org/node/3259850) Исправлена неполадка, из-за которой мог проваливаться тест `InstallUninstallTest`, если у модуля, объявленного устаревшим, была зависимость на стабильный.
 - [#3259888](https://www.drupal.org/node/3259888) Исправлена неполадка, из-за которой мог проваливаться тест `InstallUninstallTest`, если выключать одновременно модули объявленные устаревшими и экспериментальными.
 - [#3215044](https://www.drupal.org/node/3215044) Добавлена пометка об устаревших темах на странице `/admin/appearance`.
+- [#3258782](https://www.drupal.org/node/3258782) Устаревшие модули больше не отображаются на странице `/admin/modules`.
 
 ## Field System
 
@@ -721,6 +697,7 @@ ckeditor5-stylesheets:
 
 - [#3198010](https://www.drupal.org/node/3198010) Улучшено отображение ошибки о неудачных попытках авторизации, чтобы снизить нагрузку на систему. `UserLoginForm` теперь принимает сервис `bare_html_page_renderer` в качестве аргумента.
 - [#1777270](https://www.drupal.org/node/1777270) Добавлены тесты для блока авторизации, которые покрывают ситуации, что можно авторизоваться с паролем длинной до 128 символов.
+- [#3247694](https://www.drupal.org/node/3247694) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Views
 

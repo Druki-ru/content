@@ -329,10 +329,15 @@ Drupal 10 перешел на Symfony 6, следовательно, данна�
 ## JavaScript
 
 - [#3262573](https://www.drupal.org/node/3262573) Зависимости для разработки обновлены до актуальных версий на 04.03.22.
+- [#3268228](https://www.drupal.org/node/3268228) Удалена библиотека jQuery Joyride. Она была заменена на Popper.js добавленной в [Drupal 8.8.0](../../../8/8.8.x/8.8.0/index.md).
 
 ## Migrate
 
 - [#2966859](https://www.drupal.org/node/2966859) Удалён устаревший модуль `migrate_drupal_multilingual`.
+
+## Migrate Drupal
+
+- [#3266443](https://www.drupal.org/node/3266443) Тест `StaetFileExists` переименован в `StateFileExistsTest`.
 
 ## Olivero
 
@@ -393,6 +398,7 @@ Drupal 10 перешел на Symfony 6, следовательно, данна�
 - [#3254726](https://www.drupal.org/node/3254726) Удалена поддержка SimpleTest тестов.
 - [#3254723](https://www.drupal.org/node/3254723) Удалён слушатель `SimpletestUiPrinter`.
 - [#3264764](https://www.drupal.org/node/3264764) Исправлена неполадка, из-за которой тест `PhpUnitCliTest::testFunctionalTestDebugHtmlOutput()` проваливался при пустом значении `BROWSERTEST_OUTPUT_DIRECTORY`.
+- [#3211131](https://www.drupal.org/node/3211131) Внесены улучшения в `DrupalStandardsListenerTrait`.
 
 ## Прочие изменения
 
