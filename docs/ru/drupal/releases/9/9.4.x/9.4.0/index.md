@@ -612,6 +612,7 @@ $ composer require drupal/hal-hal
 ## Image
 
 - [#3223233](https://www.drupal.org/node/3223233) Улучшены заголовки страниц для форм добавления и редактирования [стилей изображений](../../../../9/image/image-styles/index.md).
+- [#3060875](https://www.drupal.org/node/3060875) `ImageStyleStorageInterface` теперь расширяет `ConfigStorageInterface`.
 
 ## JavaScript
 
