@@ -57,6 +57,8 @@ ckeditor5-stylesheets:
 - [#3264775](https://www.drupal.org/node/3264775) Панель инструментов больше не скрывается если `<drupal-media>` находится в фокусе.
 - [#3264727](https://www.drupal.org/node/3264727) Добавлена поддержка использования `<drupal-image>` и `<drupal-media>` внутри строки (`inline`).
 - [#3268368](https://www.drupal.org/node/3268368) Внесены улучшения в тест `MediaLibraryTest`.
+- [#3268272](https://www.drupal.org/node/3268272) Добавлен тайпкастинг при вызове `strpos()`.
+- [#3248430](https://www.drupal.org/node/3248430) Улучшена документация для `ckeditor5.es6.js`.
 
 ## Database Logging
 
@@ -66,6 +68,10 @@ ckeditor5-stylesheets:
 
 - [#3265652](https://www.drupal.org/node/3265652) В связи с тем что проект jQuery UI снова получает обновления безопасности, было решено удалить форк библиотеки из ядра Drupal и загружать зависимость с официальными сборками.
 - [#3267705](https://www.drupal.org/node/3267705) Исправлена неполадка, из-за которой команда `yarn check -s` проваливалась при проверке коммита.
+
+## Migrate System
+
+- [#3252562](https://www.drupal.org/node/3252562) Для `callback` плагина добавлена документация с примером, как использовать функции обратного вызова без аргументов.
 
 ## MySQL DB Driver
 
