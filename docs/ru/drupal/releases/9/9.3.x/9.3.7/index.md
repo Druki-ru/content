@@ -86,7 +86,6 @@ category:
 ## JavaScript
 
 - [#3262160](https://www.drupal.org/node/3262160) Внесены улучшения в `core/scripts/js/assets.js` файл, для упрощения его кода.
-- [#3262573](https://www.drupal.org/node/3262573) Обновлены зависимости для разработки.
 
 ## JSON:API
 
