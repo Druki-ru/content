@@ -59,6 +59,7 @@ ckeditor5-stylesheets:
 - [#3268368](https://www.drupal.org/node/3268368) Внесены улучшения в тест `MediaLibraryTest`.
 - [#3268272](https://www.drupal.org/node/3268272) Добавлен тайпкастинг при вызове `strpos()`.
 - [#3248430](https://www.drupal.org/node/3248430) Улучшена документация для `ckeditor5.es6.js`.
+- [#3269064](https://www.drupal.org/node/3269064) CKEditor 5 обновлён до версии 33.
 
 ## Database Logging
 
@@ -83,5 +84,8 @@ ckeditor5-stylesheets:
 
 ## Тестирование
 
-- [#3268070](https://www.drupal.org/node/3268070) Расширен список тестов которые временно пропускаются.
 - [#3041900](https://www.drupal.org/node/3041900) В `JSWebAssert` упоминание «css» и «xpath» приведено к единому нижнему регистру.
+
+## Прочие изменения
+
+- [#3226716](https://www.drupal.org/node/3226716) Для методов `Drupal\Core\TypedData\TranslatableInterface` добавлена недостающая документация.

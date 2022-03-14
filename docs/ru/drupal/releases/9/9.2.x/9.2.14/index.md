@@ -9,15 +9,13 @@ authors:
   - Niklan
 category:
   area: 'Drupal 9.2.x'
-  title: Drupal 9.2.14 (в разработке)
+  title: Drupal 9.2.14
   order: 14
 ---
 
-<Aside type="warning" header="Будущая версия">
+## Layout Builder
 
-Данная версия находится в разработке: список изменений может меняться, даты могут смещаться.
-
-</Aside>
+- [#3267124](https://www.drupal.org/node/3267124) Некоторые тесты временно отключены от выполнения из-за ошибок.
 
 ## Quick Edit
 
@@ -27,3 +25,8 @@ category:
 
 - [#3259744](https://www.drupal.org/node/3259744) Сообщение об устаревшем `Drupal\Tests\Listeners\DrupalListener` добавлено в исключения (не будет проваливать тест) для PHPUnit.
 - [#3267754](https://www.drupal.org/node/3267754) Исправлена ошибка в `AjaxTest` приводящая к провалу теста.
+- [#3268070](https://www.drupal.org/node/3268070) Расширен список тестов которые временно пропускаются.
+
+## Ссылки
+
+- [Drupal 9.2.14](https://www.drupal.org/project/drupal/releases/9.2.14) (англ.), drupal.org, 11 марта 2022

@@ -644,7 +644,6 @@ $ composer require drupal/hal-hal
 - [#3253666](https://www.drupal.org/node/3253666) `LayoutTempstoreRouteEnhancer` теперь использует `
   Drupal\Core\Routing\RouteObjectInterface` вместо `Symfony\Cmf\Component\Routing\RouteObjectInterface`.
 - [#3190541](https://www.drupal.org/node/3190541) Исправлена неполадка, из-за которой кеш-контекст `layout_builder_is_active` мог предоставлять некорректные значения.
-- [#3267124](https://www.drupal.org/node/3267124) Некоторые тесты временно отключены от выполнения из-за ошибок.
 
 ## Media
 
