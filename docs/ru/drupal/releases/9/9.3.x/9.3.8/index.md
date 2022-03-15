@@ -60,15 +60,28 @@ ckeditor5-stylesheets:
 - [#3268272](https://www.drupal.org/node/3268272) Добавлен тайпкастинг при вызове `strpos()`.
 - [#3248430](https://www.drupal.org/node/3248430) Улучшена документация для `ckeditor5.es6.js`.
 - [#3269064](https://www.drupal.org/node/3269064) CKEditor 5 обновлён до версии 33.
+- [#3268174](https://www.drupal.org/node/3268174) Исправлена неполадка в обновлении `format` с CKEditor 4 до CKEditor 5. 
+
+## Composer
+
+- [#3162228](https://www.drupal.org/node/3162228) Исправлена неполадка, из-за которой на Composer 2 могла происходить фатальная ошибка «Call to undefined method Composer\DependencyResolver\Operation\UpdateOperation::getJobType() in /home/mysite/public_html/core/lib/Drupal/Core/Composer/Composer.php:170».
 
 ## Database Logging
 
-- [#3250397](https://www.drupal.org/node/3250397) 
+- [#3250397](https://www.drupal.org/node/3250397) Исправлена неполадка, из-за которой модуль мог приводить к ошибкам из CLI на PHP 8.1.
+
+## Form System
+
+- [#2911473](https://www.drupal.org/node/2911473) Улучшена обработка отключенных, но при этом активных чекбоксов. Теперь, активный (отмеченный) отключенный чекбокс корректно передаёт значение и сохраняет его.
 
 ## JavaScript
 
 - [#3265652](https://www.drupal.org/node/3265652) В связи с тем что проект jQuery UI снова получает обновления безопасности, было решено удалить форк библиотеки из ядра Drupal и загружать зависимость с официальными сборками.
 - [#3267705](https://www.drupal.org/node/3267705) Исправлена неполадка, из-за которой команда `yarn check -s` проваливалась при проверке коммита.
+
+## Migrate Drupal
+
+- [#3266443](https://www.drupal.org/node/3266443) Тест `StaetFileExists` переименован в `StateFileExistsTest`.
 
 ## Migrate System
 
