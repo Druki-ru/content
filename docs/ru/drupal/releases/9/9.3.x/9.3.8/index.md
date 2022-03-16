@@ -59,8 +59,10 @@ ckeditor5-stylesheets:
 - [#3268368](https://www.drupal.org/node/3268368) Внесены улучшения в тест `MediaLibraryTest`.
 - [#3268272](https://www.drupal.org/node/3268272) Добавлен тайпкастинг при вызове `strpos()`.
 - [#3248430](https://www.drupal.org/node/3248430) Улучшена документация для `ckeditor5.es6.js`.
-- [#3269064](https://www.drupal.org/node/3269064) CKEditor 5 обновлён до версии 33.
+- [#3269064](https://www.drupal.org/node/3269064) (отменено) CKEditor 5 обновлён до версии 33.
 - [#3268174](https://www.drupal.org/node/3268174) Исправлена неполадка в обновлении `format` с CKEditor 4 до CKEditor 5. 
+- [#3248228](https://www.drupal.org/node/3248228) Исправлена неполадка, из-за которой встроенные Media внутри строки с применением декораторов становились недоступными для редактирования. 
+- [#3231337](https://www.drupal.org/node/3231337) Внесены улучшения в плагин `DrupalMediaEditing`, которые позволяют корректно сохранять модель элемента.
 
 ## Composer
 

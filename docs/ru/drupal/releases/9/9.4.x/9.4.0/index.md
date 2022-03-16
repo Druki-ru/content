@@ -769,3 +769,5 @@ Drupal имеет две константы для указания минима
 - [#3260568](https://www.drupal.org/node/3260568) В процессах установки профилей [Demo Umami](../../../../9/distributions/demo-umami/index.md) и [Стандартный](../../../../9/distributions/standard/index.md) исправлено то, как добавляются роли для административного пользователя.
 - [#3259928](https://www.drupal.org/node/3259928) Тесты, проверяющие функционал на «всех темах» теперь также проверяют [Olivero](../../../../olivero/index.md).
 - [#3262320](https://www.drupal.org/node/3262320) Удалён устаревшее исправление в `ContextualLinksTest`.
+- [#3261517](https://www.drupal.org/node/3261517) Из `InstallTest` удалено упоминание ныне несуществующей функции `drupal_get_schema()`.
+- [#3267721](https://www.drupal.org/node/3267721) В `commit-code-check.sh` добавлена проверка, что CKEditor 5 плагины успешно собраны.
