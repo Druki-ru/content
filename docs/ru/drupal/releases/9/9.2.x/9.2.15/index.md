@@ -1,16 +1,16 @@
 ---
-title: 'Drupal 9.3.8'
-slug: wiki/drupal/releases/9.3.8
+title: 'Drupal 9.2.15'
+slug: wiki/drupal/releases/9.2.15
 core: 9
 metatags:
-  title: 'Drupal 9.3.8: Список изменений'
+  title: 'Drupal 9.2.15: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2022-005.'
 authors:
   - Niklan
 category:
-  area: 'Drupal 9.3.x'
-  title: Drupal 9.3.8
-  order: 8
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.15
+  order: 15
 ---
 
 **Дата релиза**: 16 марта 2022
@@ -23,4 +23,4 @@ category:
 
 ## Ссылки
 
-- [Drupal 9.3.8](https://www.drupal.org/project/drupal/releases/9.3.8) (англ.), drupal.org, 16 марта 2022
+- [Drupal 9.2.15](https://www.drupal.org/project/drupal/releases/9.2.15) (англ.), drupal.org, 16 марта 2022
