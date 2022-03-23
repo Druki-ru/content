@@ -123,7 +123,6 @@ services:
 namespace Drupal\example\PathProcessor;
 
 use Drupal\Core\PathProcessor\InboundPathProcessorInterface;
-use Drupal\Core\Render\BubbleableMetadata;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
