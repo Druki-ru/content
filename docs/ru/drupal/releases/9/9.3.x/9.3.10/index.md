@@ -50,6 +50,11 @@ ckeditor5-stylesheets:
 
 - [#3267644](https://www.drupal.org/node/3267644) Тесты теперь используют [тему оформления](../../../../9/themes/index.md) Stark вместо Classy.
 
+## Cache System
+
+- [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
+  to string conversion in CacheContextsManager::convertTokensToKeys()».
+
 ## CKEditor 5
 
 - [#3261600](https://www.drupal.org/node/3261600) CKEditor 5 обновлён до версии 32.
@@ -70,6 +75,7 @@ ckeditor5-stylesheets:
 - [#3231328](https://www.drupal.org/node/3231328) Улучшена «умная» выборка плагинов по умолчанию на основе используемого формата ввода.
 - [#3270108](https://www.drupal.org/node/3270108) Исправлена неполадка, из-за которой редактор не загружался в браузере Edge с активным режимом WHCM (Windows Hight Constrast Mode).
 - [#3259443](https://www.drupal.org/node/3259443) Исправлена неполадка, из-за которой не отображались настройки, если кнопка была добавлена после удаления всех прочих кнопок.
+- [#3268860](https://www.drupal.org/node/3268860) Исправлена неполадка, из-за которой оборачивание `<drupal-media>` отличным от `<a>` элементом, приводило к его некорректному преобразованию.
 
 ## Composer
 
@@ -91,6 +97,10 @@ ckeditor5-stylesheets:
 
 - [#3265652](https://www.drupal.org/node/3265652) В связи с тем что проект jQuery UI снова получает обновления безопасности, было решено удалить форк библиотеки из ядра Drupal и загружать зависимость с официальными сборками.
 - [#3267705](https://www.drupal.org/node/3267705) Исправлена неполадка, из-за которой команда `yarn check -s` проваливалась при проверке коммита.
+
+## Media Library
+
+- [#3115054](https://www.drupal.org/node/3115054) Исправлена неполадка, из-за которой добавление или удаление элементов сбрасывало сортировку в виджете. 
 
 ## Migrate Drupal
 

@@ -538,11 +538,6 @@ Drupal имеет две константы для указания минима
 - [#3267274](https://www.drupal.org/node/3267274) Тест `MigraetBlockTest` теперь использует собственную фикстуру вместо предоставляемой модулем `migrate_drupal`.
 - [#3264122](https://www.drupal.org/node/3264122) Тесты связанные с модулем `aggregate` перенесены в сам модуль.
 
-## Cache System
-
-- [#2873732](https://www.drupal.org/node/2873732) Внесены улучшения в `CookiesCacheContext`, который мог приводить к ошибке «Array
-  to string conversion in CacheContextsManager::convertTokensToKeys()».
-
 ## CKEditor 5
 
 - [#3258250](https://www.drupal.org/node/3258250) CKEditor обновлён до версии 31.1.0.
@@ -550,7 +545,7 @@ Drupal имеет две константы для указания минима
 - [#3248423](https://www.drupal.org/node/3248423) Добавлен `ckeditor5.types.jsdoc` и скрипт, генерирующий актуальное содержание для него. Данный файл может быть использован в IDE для получения корректного автодополнения при написании плагинов для CKEditor.
 - [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
 - [#3263384](https://www.drupal.org/node/3263384) Добавлен пакет `ckeditor5-code-block` и плагин `CodeBlock`.
-- [#3268860](https://www.drupal.org/node/3268860) Исправлена неполадка, из-за которой оборачивание `<drupal-media>` отличным от `<a>` элементом, приводило к его некорректному преобразованию.
+- [#3269868](https://www.drupal.org/node/3269868) Исправлена неполадка, из-за которой могли теряться аттрибуты у изображения.
 
 ## Claro
 
@@ -660,6 +655,7 @@ Drupal имеет две константы для указания минима
 ## JSON:API
 
 - [#3199696](https://www.drupal.org/node/3199696) `ResourceObject` теперь учитывает текущий язык и корректно кеширует результаты для мультиязычных ресурсов.
+- [#3031271](https://www.drupal.org/node/3031271) JSON:API теперь поддерживает версионирование для всех версионных типов сущностей.
 
 ## HAL
 
@@ -679,7 +675,6 @@ Drupal имеет две константы для указания минима
 
 - [#3173770](https://www.drupal.org/node/3173770) `MediaLibraryFieldWidgetOpener` теперь позволяет использовать другие референс поля, расширяющее поле из ядра и использующие `EntityReferenceFieldItemList`.
 - [#3248454](https://www.drupal.org/node/3248454) Внесены улучшения в `MediaLibraryStateTest` для совместимости с Symfony 5.4.
-- [#3115054](https://www.drupal.org/node/3115054) Исправлена неполадка, из-за которой добавление или удаление элементов сбрасывало сортировку в виджете.
 
 ## Migration System
 
