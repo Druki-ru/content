@@ -77,6 +77,10 @@ ckeditor5-stylesheets:
 - [#3259443](https://www.drupal.org/node/3259443) Исправлена неполадка, из-за которой не отображались настройки, если кнопка была добавлена после удаления всех прочих кнопок.
 - [#3268860](https://www.drupal.org/node/3268860) Исправлена неполадка, из-за которой оборачивание `<drupal-media>` отличным от `<a>` элементом, приводило к его некорректному преобразованию.
 
+## Claro
+
+- [#3219921](https://www.drupal.org/node/3219921) Исправлена неполадка, из-за которой отображалась полоска прокрутки для элемента автодополнения.
+
 ## Composer
 
 - [#3162228](https://www.drupal.org/node/3162228) Исправлена неполадка, из-за которой на Composer 2 могла происходить фатальная ошибка «Call to undefined method Composer\DependencyResolver\Operation\UpdateOperation::getJobType() in /home/mysite/public_html/core/lib/Drupal/Core/Composer/Composer.php:170».
