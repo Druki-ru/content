@@ -529,6 +529,92 @@ Drupal имеет две константы для указания минима
 
 `\Drupal::MINIMUM_PHP` и `\Drupal::MINIMUM_SUPPORTED_PHP` имеют одинаковое значение 7.3.0 во всех версиях [Drupal 9](../../../../9/index.md) до 9.4.0, что не скажется на ваших процессах. 
 
+## Добавлена возможность использования PHP callable в качестве функций обратного вызова для препроцесса тем хуков 
+
+- [#2760659](https://www.drupal.org/node/2760659) 
+
+Функции обратного вызова в Drupal для препроцесса тем хуков обычно объявляются при помощи `hook_preprocess_HOOK()` в модулях и темах. Данные функции хранятся в регистре тем и применяются на необходимые элементы в момент рендера.
+
+Менеджер тем позволяет использовать только функции, тогда как прочий API Drupal, например Form API, позволяет использовать PHP callables в качестве функций обратного вызова. Это изменение делает возможным использование PHP callables в качестве препроцессоров для тем хуков.
+
+Сторонние модули и темы, желающие использовать данную возможность, должны реализовать `hook_theme_registry_alter()` и объявить необходимые PHP callables.
+
+```php
+function mymodule_theme_registry_alter(&$theme_registry) {
+  if (!empty($theme_registry['node'])) {
+     // Объект реализующий магический метод __invoke().
+     $theme_registry['node']['preprocess functions'][] = new Invokable();
+
+     // Массив с экземпляром класса и его методом.
+     $preprocess = new ThemePreprocess();
+     $theme_registry['node']['preprocess functions'][] = [$preprocess, 'objectMethodName'];
+  }
+}
+```
+
+## Сервис `module_handler` теперь ответственен за вызов всех хуков
+
+- [#2616814](https://www.drupal.org/node/2616814)
+
+Сервис `module_handler` теперь ответственен за вызов всех хуков. Разработчики модулей больше не должны собирать функции для хуков самостоятельно. Это позволит в дальнейшем улучшать систему хуков так как вся работа с ними будет централизована.
+
+`\Drupal\Core\Extension\ModuleHandlerInterface::getImplementations()` объявлен устаревшим. Если вам необходим его функционал, используйте новые методы `Drupal\Core\Extension\ModuleHandlerInterface::invoke*With()`.
+
+Интерфейс для сервиса `module_handler` был изменён. Добавлено два новых метода:
+
+- `public function invokeAllWith(string $hook, callable $callback): void`
+- `public function hasImplementations(string $hook, $modules = NULL): bool`
+
+Вызов хука больше не имеет информации о реализации хука, например, об имени функции, но по-прежнему знает название модуля в котором он объявлен. Таким образом, вызов хука не должен полагаться на то, что хотя бы имеется одна реализация хука.
+
+Ответственность за итерацию по реализациям была перенесена в сервис `module_handler`. Теперь каждый вызов хука может сопровождаться замыканием, которое будет вызываться на каждую реализацию хука. В каждое замыкание передаётся названием модуля, в котором реализован хук и функция обратного вызова текущей реализации. Если замыкание не вызовет функцию обратного вызова, реализация не будет обработана (вызвана).
+
+Прежнее поведение можно повторить с использованием методов `Drupal\Core\Extension\ModuleHandlerInterface::invoke*With()` с небольшими изменениями в логике.
+
+**Ранее:**
+
+```php
+$hook = 'myhook';
+foreach ($this->moduleHandler->getImplementations($hook) as $module) {
+  $this->moduleHandler->invoke($module, $hook);
+  // Или..
+  $function = $module . '_' . $hook;
+  $function(...$args);
+}
+```
+
+**Сейчас:**
+
+```php
+$hook = 'myhook';
+
+// Простой пример:
+$this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $module) {
+  $hook();
+});
+
+// Продвинутый пример, на случай если вы хотите добавить данные или жонглировать состоянием:
+$results = [];
+$this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $module) use (&$results) {
+  $results[$module] = $hook();
+});
+
+// Получение списка модулей, реализующих хук, также просто, как использовать переменную $module.
+$implementors = [];
+$this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $module) use (&$implementors) {
+  // Небольшой оверхед так как хук не будет вызван.
+  $implementors[] = $module;
+});
+```
+
+## Модуль Aggregator объявлен устаревшим
+
+- [#3267458](https://www.drupal.org/node/3267458) 
+
+Модуль Aggregator объявлен устаревшим и будет удалён в [Drupal 10](../../../../10/index.md).
+
+Если вы хотите продолжить использовать функционал предоставляемый модулем Aggregator, прочтите [рекомендации по его замене](https://www.drupal.org/docs/core-modules-and-themes/deprecated-and-obsolete-modules-and-themes).
+
 ## Aggregator
 
 - [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -537,6 +623,10 @@ Drupal имеет две константы для указания минима
 - [#3267508](https://www.drupal.org/node/3267508) В тестах модуля теперь используется фикстура предоставляемая самим модулем вместо `migrate_drupal`.
 - [#3267274](https://www.drupal.org/node/3267274) Тест `MigraetBlockTest` теперь использует собственную фикстуру вместо предоставляемой модулем `migrate_drupal`.
 - [#3264122](https://www.drupal.org/node/3264122) Тесты связанные с модулем `aggregate` перенесены в сам модуль.
+
+## Big Pipe
+
+- [#3270835](https://www.drupal.org/node/3270835) Регрессионный тест для CKEditor 4 перенесён в соответствующий модуль `ckeditor`.
 
 ## CKEditor 5
 
@@ -547,6 +637,7 @@ Drupal имеет две константы для указания минима
 - [#3263384](https://www.drupal.org/node/3263384) Добавлен пакет `ckeditor5-code-block` и плагин `CodeBlock`.
 - [#3269868](https://www.drupal.org/node/3269868) Исправлена неполадка, из-за которой могли теряться аттрибуты у изображения.
 - [#3260857](https://www.drupal.org/node/3260857) `SourceEditingRedundantTagsConstraintValidator` теперь также проверяет аттрибуты и их значения.
+- [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKeditor 4.
 
 ## Claro
 
@@ -556,6 +647,7 @@ Drupal имеет две константы для указания минима
 - [#3168326](https://www.drupal.org/node/3168326) Улучшено отображение dropbutton элемента в таблицах.
 - [#3264220](https://www.drupal.org/node/3264220) Удалено переопределение шаблона `views-ui-views-listing-table.html.twig`.
 - [#3214124](https://www.drupal.org/node/3214124) Добавлены кавычки для `<blockquote>` элемента.
+- [#3171728](https://www.drupal.org/node/3171728) Улучшено отображение `<select>` элемента формы в режиме Windows High Contrast.
 
 ## Comment
 
@@ -593,6 +685,7 @@ Drupal имеет две константы для указания минима
 ## Database Logging
 
 - [#3246471](https://www.drupal.org/node/3246471) Из класса `DbLogController` удалены свойства, которые объявлены у родительского.
+- [#3269267](https://www.drupal.org/node/3269267) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Database System
 
@@ -623,8 +716,8 @@ Drupal имеет две константы для указания минима
 
 ## Field System
 
-- [#3213023](https://www.drupal.org/node/3213023) `FieldConfig` теперь выводит более полезные и понятные сообщения об
-  ошибках.
+- [#3213023](https://www.drupal.org/node/3213023) `FieldConfig` теперь выводит более полезные и понятные сообщения об ошибках.
+- [#3269502](https://www.drupal.org/node/3269502) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Field UI
 
@@ -736,11 +829,13 @@ Drupal имеет две константы для указания минима
 - [#3198010](https://www.drupal.org/node/3198010) Улучшено отображение ошибки о неудачных попытках авторизации, чтобы снизить нагрузку на систему. `UserLoginForm` теперь принимает сервис `bare_html_page_renderer` в качестве аргумента.
 - [#1777270](https://www.drupal.org/node/1777270) Добавлены тесты для блока авторизации, которые покрывают ситуации, что можно авторизоваться с паролем длинной до 128 символов.
 - [#3247694](https://www.drupal.org/node/3247694) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+- [#3258321](https://www.drupal.org/node/3258321) Кнопка удаления аккаунта в форме редактирования пользователя заменена на ссылку.
 
 ## Views
 
 - [#2569381](https://www.drupal.org/node/2569381) Из `Drupal\views\Plugin\views\area\Result` удалён лишний вызов `XSS::adminFilter()`.
 - [#1810148](https://www.drupal.org/node/1810148) Исправлена неполадка, из-за которой сгруппированные раскрытые фильтры по терминам таксономии могли не работать.
+- [#2845571](https://www.drupal.org/node/2845571) Исправлена неполадка, из-за которой плагин `ViewsJoin` не учитывал выбранный оператор.
 
 ## Symfony 6
 
@@ -793,3 +888,5 @@ Drupal имеет две константы для указания минима
 - [#3270323](https://www.drupal.org/node/3270323) Исправлена неполадка в тесте `ModuleConfigureRouteTest::testModuleConfigureRoutes()`.
 - [#3264911](https://www.drupal.org/node/3264911) Из стилей тем оформления удалено упоминание подозрительного сайта.
 - [#3261611](https://www.drupal.org/node/3261611) Ссылки на системные требования обновлены на универсальные.
+- [#3272035](https://www.drupal.org/node/3272035) В CSPell словарь добавлены слова «linktext» и «canvastext».
+- [#2917655](https://www.drupal.org/node/2917655) (отменено) Прекращена поддержка PHP 7.3.

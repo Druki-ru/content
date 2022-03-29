@@ -93,6 +93,10 @@ ckeditor5-stylesheets:
 
 - [#2636086](https://www.drupal.org/node/2636086) (отменено) Внесены улучшения в `FilterDateTest`.
 
+## Editor
+
+- [#3230829](https://www.drupal.org/node/3230829) `editor_form_filter_format_form_alter()` теперь также корректно очищает значение `editor_plugin`.
+
 ## Form System
 
 - [#2911473](https://www.drupal.org/node/2911473) Улучшена обработка отключенных, но при этом активных чекбоксов. Теперь, активный (отмеченный) отключенный чекбокс корректно передаёт значение и сохраняет его.
@@ -101,6 +105,10 @@ ckeditor5-stylesheets:
 
 - [#3265652](https://www.drupal.org/node/3265652) В связи с тем что проект jQuery UI снова получает обновления безопасности, было решено удалить форк библиотеки из ядра Drupal и загружать зависимость с официальными сборками.
 - [#3267705](https://www.drupal.org/node/3267705) Исправлена неполадка, из-за которой команда `yarn check -s` проваливалась при проверке коммита.
+
+## Layout Builder
+
+- [#3268680](https://www.drupal.org/node/3268680) Восстановлен и исправлен тест `LayoutBuilderDisableInteractionsTest::testFormsLinksDisabled()`.
 
 ## Media Library
 
@@ -129,3 +137,4 @@ ckeditor5-stylesheets:
 ## Прочие изменения
 
 - [#3226716](https://www.drupal.org/node/3226716) Для методов `Drupal\Core\TypedData\TranslatableInterface` добавлена недостающая документация.
+- [#3265723](https://www.drupal.org/node/3265723) В `FormattableMarkup` исправлено дублирование слова «directly».
