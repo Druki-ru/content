@@ -695,6 +695,7 @@ $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $mod
 ## Datetime
 
 - [#3251100](https://www.drupal.org/node/3251100) Исправлена неполадка, из-за которой `DateTimeWidgetBase` дважды устанавливал одну и ту же временную зону.
+- [#3269517](https://www.drupal.org/node/3269517) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Editor
 
