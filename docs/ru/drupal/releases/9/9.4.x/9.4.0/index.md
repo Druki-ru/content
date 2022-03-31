@@ -628,6 +628,10 @@ $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $mod
 
 - [#3270835](https://www.drupal.org/node/3270835) Регрессионный тест для CKEditor 4 перенесён в соответствующий модуль `ckeditor`.
 
+## CKEditor 4
+
+- [#3271046](https://www.drupal.org/node/3271046) Тесты CKEditor 4 для проверки Inline Form Errors перенесены непосредственно в модуль редактора.
+
 ## CKEditor 5
 
 - [#3258250](https://www.drupal.org/node/3258250) CKEditor обновлён до версии 31.1.0.
@@ -638,6 +642,7 @@ $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $mod
 - [#3269868](https://www.drupal.org/node/3269868) Исправлена неполадка, из-за которой могли теряться аттрибуты у изображения.
 - [#3260857](https://www.drupal.org/node/3260857) `SourceEditingRedundantTagsConstraintValidator` теперь также проверяет аттрибуты и их значения.
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKeditor 4.
+- [#3222757](https://www.drupal.org/node/3222757) Аттрибут `alt` для плагина `drupalImage` теперь обязательное поле.
 
 ## Claro
 
@@ -648,6 +653,11 @@ $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $mod
 - [#3264220](https://www.drupal.org/node/3264220) Удалено переопределение шаблона `views-ui-views-listing-table.html.twig`.
 - [#3214124](https://www.drupal.org/node/3214124) Добавлены кавычки для `<blockquote>` элемента.
 - [#3171728](https://www.drupal.org/node/3171728) Улучшено отображение `<select>` элемента формы в режиме Windows High Contrast.
+
+## Color
+
+- [#3270897](https://www.drupal.org/node/3270897) Обновлены тесты проверяющие корректную миграцию при удалении модуля Color.
+- [#3270905](https://www.drupal.org/node/3270905) Help Topics для модуля Color перенесены непосредственно в него.
 
 ## Comment
 
@@ -793,6 +803,10 @@ $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $mod
 - [#3270574](https://www.drupal.org/node/3270574) В шаблон комментария добавлен индикатор «нового» комментария.
 - [#3269716](https://www.drupal.org/node/3269716) Исправлена неполадка, из-за которой строка поиска была недоступна на Safari.
 - [#3209903](https://www.drupal.org/node/3209903) Исправлена неполадка, из-за которой изображение могло перекрывать кнопки «Add block» и «Add section» в Layout Builder.
+
+## RDF
+
+- [#3267513](https://www.drupal.org/node/3267513) Тесты миграций связанные с RDF теперь учитывают что модуль будет удалён.
 
 ## Render System
 
