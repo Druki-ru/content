@@ -615,6 +615,80 @@ $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $mod
 
 Если вы хотите продолжить использовать функционал предоставляемый модулем Aggregator, прочтите [рекомендации по его замене](https://www.drupal.org/docs/core-modules-and-themes/deprecated-and-obsolete-modules-and-themes).
 
+## Блоки и плагины лейаутов получили возможность определять, находятся ли они в режиме предпросмотра или нет
+
+- [#3027653](https://www.drupal.org/node/3027653) 
+
+В ядро добавлен новый интерфейс `PreviewAwarePluginInterface`, который реализуют `BlockBase` и `LayoutDefault` классы. Данная возможность позволяет определить, в каком состоянии сейчас происходит рендер содержимого, в режиме представления или в обычном при помощи нового свойства `$this->inPreview`.
+
+На данный момент этот функционал используется только модулем Layout Builder.
+
+**Пример блока:**
+
+```php
+/**
+ * An example block that uses preview mode detection.
+ *
+ * @Block(
+ *   id = "preview_aware_block",
+ *   admin_label = "Preview-aware block",
+ * )
+ */
+class PreviewAwareBlock extends BlockBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    $markup = $this->t('This block is being rendered normally.');
+
+    if ($this->inPreview) {
+      $markup = $this->t('This block is being rendered in preview mode.');
+    }
+
+    return [
+      '#markup' => $markup,
+    ];
+  }
+
+}
+```
+
+**Пример Layout плагина:**
+
+```php
+/**
+ * An example layout that uses preview mode detection.
+ *
+ * @Layout(
+ *   id = "preview_aware_layout",
+ *   label = @Translation("Preview-aware layout"),
+ *   regions = {
+ *     "main" = {
+ *       "label" = @Translation("Main Region")
+ *     }
+ *   },
+ * )
+ */
+class PreviewAwareLayout extends LayoutDefault {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build(array $regions) {
+    $build = parent::build($regions);
+
+    if ($this->inPreview) {
+      $build['main']['#attributes']['class'][] = 'layout-preview';
+    }
+
+    return $build;
+  }
+
+}
+
+```
+
 ## Aggregator
 
 - [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -706,6 +780,7 @@ $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $mod
 
 - [#3251100](https://www.drupal.org/node/3251100) Исправлена неполадка, из-за которой `DateTimeWidgetBase` дважды устанавливал одну и ту же временную зону.
 - [#3269517](https://www.drupal.org/node/3269517) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+- [#2636086](https://www.drupal.org/node/2636086) В `FilterDateTest` добавлено больше проверок для операторов фильтров Views.
 
 ## Editor
 
@@ -904,4 +979,4 @@ $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $mod
 - [#3264911](https://www.drupal.org/node/3264911) Из стилей тем оформления удалено упоминание подозрительного сайта.
 - [#3261611](https://www.drupal.org/node/3261611) Ссылки на системные требования обновлены на универсальные.
 - [#3272035](https://www.drupal.org/node/3272035) В CSPell словарь добавлены слова «linktext» и «canvastext».
-- [#2917655](https://www.drupal.org/node/2917655) (отменено) Прекращена поддержка PHP 7.3.
+- [#2917655](https://www.drupal.org/node/2917655) Прекращена поддержка PHP 7.3.
