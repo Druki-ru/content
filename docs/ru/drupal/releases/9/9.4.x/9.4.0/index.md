@@ -945,7 +945,7 @@ class PreviewAwareLayout extends LayoutDefault {
 - [#3265546](https://www.drupal.org/node/3265546) Модули и темы оформления со свойством `lifecycle: deprecated` теперь исключаются из установки в `DefaultConfigTest`.
 - [#3260710](https://www.drupal.org/node/3260710) `UpdateUploaderTestBase` теперь является абстрактным классом.
 - [#3268932](https://www.drupal.org/node/3268932) В `WebAssert` добавлены методы для сравнения статусных сообщений.
-
+- [#3272727](https://www.drupal.org/node/3272727) Внесены улучшения в команду `drupalModuleInstall()` для Nightwatch.
 
 ## Прочие изменения
 
