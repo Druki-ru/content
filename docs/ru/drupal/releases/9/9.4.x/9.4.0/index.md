@@ -689,6 +689,14 @@ class PreviewAwareLayout extends LayoutDefault {
 
 ```
 
+## Библиотека Underscore JS объявлена устаревшей
+
+- [#3272872](https://www.drupal.org/node/3272872)
+
+Библиотека Underscore JS объявлена устаревшей и только для внутреннего пользования. Библиотека будет удалена в [Drupal 10.0.0](../../../10/10.0.x/10.0.0/index.md).
+
+Замена данной библиотеке не предоставляется, вместо этого используйте современные возможности JavaScript. Для более удобного перехода вам может пригодиться репозиторий [You-Dont-Need-Lodash-Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore).
+
 ## Aggregator
 
 - [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -717,6 +725,7 @@ class PreviewAwareLayout extends LayoutDefault {
 - [#3260857](https://www.drupal.org/node/3260857) `SourceEditingRedundantTagsConstraintValidator` теперь также проверяет аттрибуты и их значения.
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKeditor 4.
 - [#3222757](https://www.drupal.org/node/3222757) Аттрибут `alt` для плагина `drupalImage` теперь обязательное поле.
+- [#3270765](https://www.drupal.org/node/3270765) Добавлены тесты для `createDropdown` в `drupalElementStyles`.
 
 ## Claro
 
@@ -727,6 +736,7 @@ class PreviewAwareLayout extends LayoutDefault {
 - [#3264220](https://www.drupal.org/node/3264220) Удалено переопределение шаблона `views-ui-views-listing-table.html.twig`.
 - [#3214124](https://www.drupal.org/node/3214124) Добавлены кавычки для `<blockquote>` элемента.
 - [#3171728](https://www.drupal.org/node/3171728) Улучшено отображение `<select>` элемента формы в режиме Windows High Contrast.
+- [#3067697](https://www.drupal.org/node/3067697) Исправлена неполадка, из-за которой элемент `dropbutton` работал некорректно если текст имел перенос на следующую строку.
 
 ## Color
 
@@ -749,6 +759,7 @@ class PreviewAwareLayout extends LayoutDefault {
 - [#2343517](https://www.drupal.org/node/2343517) Удалён код и упоминания с `@todo` на задачи, которые решены.
 - [#2540794](https://www.drupal.org/node/2540794) Административный интерфейс синхронизации конфигураций теперь корректно отличает пустые временные конфигурации и что они соответствуют текущей активной конфигурации.
 - [#3232494](https://www.drupal.org/node/3232494) Оптимизирована работа `StorageCopyTrait`.
+- [#3268443](https://www.drupal.org/node/3268443) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Contact
 
@@ -920,6 +931,7 @@ class PreviewAwareLayout extends LayoutDefault {
 - [#1777270](https://www.drupal.org/node/1777270) Добавлены тесты для блока авторизации, которые покрывают ситуации, что можно авторизоваться с паролем длинной до 128 символов.
 - [#3247694](https://www.drupal.org/node/3247694) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 - [#3258321](https://www.drupal.org/node/3258321) Кнопка удаления аккаунта в форме редактирования пользователя заменена на ссылку.
+- [#3268105](https://www.drupal.org/node/3268105) Добавлен новый тест `UserRegistrationRestTest`.
 
 ## Views
 
