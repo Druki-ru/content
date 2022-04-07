@@ -107,9 +107,17 @@ ckeditor5-stylesheets:
 - [#3265652](https://www.drupal.org/node/3265652) В связи с тем что проект jQuery UI снова получает обновления безопасности, было решено удалить форк библиотеки из ядра Drupal и загружать зависимость с официальными сборками.
 - [#3267705](https://www.drupal.org/node/3267705) Исправлена неполадка, из-за которой команда `yarn check -s` проваливалась при проверке коммита.
 
+## JSON:API
+
+- [#3272731](https://www.drupal.org/node/3272731) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+
 ## Layout Builder
 
 - [#3268680](https://www.drupal.org/node/3268680) Восстановлен и исправлен тест `LayoutBuilderDisableInteractionsTest::testFormsLinksDisabled()`.
+
+## Layout Discovery
+
+- [#3272746](https://www.drupal.org/node/3272746) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Media Library
 
@@ -127,9 +135,18 @@ ckeditor5-stylesheets:
 
 - [#2797141](https://www.drupal.org/node/2797141) Удалены методы `::tableExists()` и `::fieldExists()` из `Drupal\Core\Database\Driver\mysql\Schema`.
 
+## Render System
+
+- [#2779999](https://www.drupal.org/node/2779999) Добавлены примеры как индивидуальным чекбоксам или радио-кнопкам добавить описание.
+- [#3265929](https://www.drupal.org/node/3265929) Примеры для чекбоксов теперь имеют более нейтральные примеры.
+
 ## Shortcut
 
 - [#3263201](https://www.drupal.org/node/3263201) В документации [хука](../../../../9/hooks/index.md) `hook_shortcut_default_set()` добавлен тайпхинт для параметра `$account`.
+
+## Views UI
+
+- [#3112547](https://www.drupal.org/node/3112547) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Тестирование
 

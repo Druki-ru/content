@@ -710,6 +710,10 @@ class PreviewAwareLayout extends LayoutDefault {
 
 - [#3270835](https://www.drupal.org/node/3270835) Регрессионный тест для CKEditor 4 перенесён в соответствующий модуль `ckeditor`.
 
+## Block
+
+- [#3273072](https://www.drupal.org/node/3273072) Исправлена опечатка в туре по модулю.
+
 ## CKEditor 4
 
 - [#3271046](https://www.drupal.org/node/3271046) Тесты CKEditor 4 для проверки Inline Form Errors перенесены непосредственно в модуль редактора.
@@ -861,6 +865,7 @@ class PreviewAwareLayout extends LayoutDefault {
 ## Media
 
 - [#3254198](https://www.drupal.org/node/3254198) Удалена временная проверка на наличие модуля `media_entity`.
+- [#3273626](https://www.drupal.org/node/3273626) Исправлена неполадка в тестах, из-за которой JavaScript тесты могли приводить к блокировке базы данных SQLite.
 
 ## Media Library
 
@@ -893,10 +898,6 @@ class PreviewAwareLayout extends LayoutDefault {
 ## RDF
 
 - [#3267513](https://www.drupal.org/node/3267513) Тесты миграций связанные с RDF теперь учитывают что модуль будет удалён.
-
-## Render System
-
-- [#2779999](https://www.drupal.org/node/2779999) Добавлены примеры как индивидуальным чекбоксам или радио-кнопкам добавить описание.
 
 ## Responsive Image
 
