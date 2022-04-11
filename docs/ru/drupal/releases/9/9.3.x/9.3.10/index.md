@@ -46,6 +46,10 @@ ckeditor5-stylesheets:
 }
 ```
 
+## Block
+
+- [#3173159](https://www.drupal.org/node/3173159) Исправлена неполадка, из-за которой добавление блока без явного указания темы могло приводить к ошибке.
+
 ## Block Content
 
 - [#3267644](https://www.drupal.org/node/3267644) Тесты теперь используют [тему оформления](../../../../9/themes/index.md) Stark вместо Classy.
@@ -78,10 +82,17 @@ ckeditor5-stylesheets:
 - [#3268860](https://www.drupal.org/node/3268860) Исправлена неполадка, из-за которой оборачивание `<drupal-media>` отличным от `<a>` элементом, приводило к его некорректному преобразованию.
 - [#3268307](https://www.drupal.org/node/3268307) Использование `$block` заменено на `$text-container` из-за возможных пересечений с реальными блоками.
 - [#3273332](https://www.drupal.org/node/3273332) Исправлена неполадка, из-за которой не сохранялись объединённые строки и столбцы таблицы.
+- [#3273312](https://www.drupal.org/node/3273312) Добавлена поддержка апгрейда с CKEditor 4 где используются фильтры `FilterInterface::TYPE_MARKUP_LANGUAGE`.
+- [#3273527](https://www.drupal.org/node/3273527) Исправлено обновление с CKEditor 4 где используется `<h1>`.
+- [#3265626](https://www.drupal.org/node/3265626) Исправлена неполадка, из-за которой не работала возможность редактирования HTML-тегов если форма была отправлена без AJAX.
 
 ## Claro
 
 - [#3219921](https://www.drupal.org/node/3219921) Исправлена неполадка, из-за которой отображалась полоска прокрутки для элемента автодополнения.
+
+## Color
+
+- [#3270940](https://www.drupal.org/node/3270940) Из тестов и кода удалено использование модуля Color.
 
 ## Composer
 
@@ -94,6 +105,10 @@ ckeditor5-stylesheets:
 ## Datetime
 
 - [#2636086](https://www.drupal.org/node/2636086) (отменено) Внесены улучшения в `FilterDateTest`.
+
+## Demo Umami
+
+- [#3203604](https://www.drupal.org/node/3203604) Добавлен новый рецепт «Борщ со свиными ребрышками».
 
 ## Editor
 
@@ -115,10 +130,15 @@ ckeditor5-stylesheets:
 ## Layout Builder
 
 - [#3268680](https://www.drupal.org/node/3268680) Восстановлен и исправлен тест `LayoutBuilderDisableInteractionsTest::testFormsLinksDisabled()`.
+- [#3272797](https://www.drupal.org/node/3272797) Восстановлен и исправлен тест `LayoutBuilderTest::testConfigurableLayoutSections()`.
 
 ## Layout Discovery
 
 - [#3272746](https://www.drupal.org/node/3272746) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+
+## Media
+
+- [#3273626](https://www.drupal.org/node/3273626) Исправлена неполадка в тестах, из-за которой JavaScript тесты могли приводить к блокировке базы данных SQLite.
 
 ## Media Library
 
@@ -144,6 +164,10 @@ ckeditor5-stylesheets:
 ## Shortcut
 
 - [#3263201](https://www.drupal.org/node/3263201) В документации [хука](../../../../9/hooks/index.md) `hook_shortcut_default_set()` добавлен тайпхинт для параметра `$account`.
+
+## System
+
+- [#3263935](https://www.drupal.org/node/3263935) Исправлена неполадка в миграции, когда страницы для HTTP 403, 404 и главной переносились с начальным `/`.
 
 ## Views UI
 

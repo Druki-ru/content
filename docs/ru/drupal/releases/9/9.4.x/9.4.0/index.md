@@ -689,6 +689,31 @@ class PreviewAwareLayout extends LayoutDefault {
 
 ```
 
+## Библиотека Backbone.js объявлена устаревшей и для внутреннего применения
+
+- [#3258931](https://www.drupal.org/node/3258931) 
+
+Библиотека Backbone.js объявлена устаревшей и для внутреннего применения. Библиотека будет удалена в [Drupal 10.0.0](../../../10/10.0.x/10.0.0/index.md).
+
+## Добавлена поддержка post update хуков для тем оформления
+
+- [#3259188](https://www.drupal.org/node/3259188) 
+
+[Темы оформления](../../../../9/themes/index.md) теперь поддерживают post update [хуки](../../../../9/hooks/index.md) для того чтобы у разработчиков появилась возможность устанавливать зависимости, а также исправлять настройки темы, если это необходимо.
+
+Это значит, что темы оформления теперь поддерживают файл `THEME.post_update.php`, который может содержать реализации `HOOK_post_update_NAME()` и `HOOK_removed_post_updates()`:
+
+```php
+/**
+ * Install a dependent module.
+ */
+function test_theme_depending_on_modules_post_update_module_install(&$sandbox = NULL) {
+  \Drupal::service('module_installer')->install(['test_another_module_required_by_theme']);
+}
+```
+
+Данные обновления будут запускаться как и их аналоги для модулей: на странице `/update.php`, либо при помоищ Drush команды `drush updb`.
+
 ## Библиотека Underscore JS объявлена устаревшей
 
 - [#3272872](https://www.drupal.org/node/3272872)
@@ -865,7 +890,6 @@ class PreviewAwareLayout extends LayoutDefault {
 ## Media
 
 - [#3254198](https://www.drupal.org/node/3254198) Удалена временная проверка на наличие модуля `media_entity`.
-- [#3273626](https://www.drupal.org/node/3273626) Исправлена неполадка в тестах, из-за которой JavaScript тесты могли приводить к блокировке базы данных SQLite.
 
 ## Media Library
 
@@ -940,6 +964,10 @@ class PreviewAwareLayout extends LayoutDefault {
 - [#1810148](https://www.drupal.org/node/1810148) Исправлена неполадка, из-за которой сгруппированные раскрытые фильтры по терминам таксономии могли не работать.
 - [#2845571](https://www.drupal.org/node/2845571) Исправлена неполадка, из-за которой плагин `ViewsJoin` не учитывал выбранный оператор.
 
+## Views UI
+
+- [#2807241](https://www.drupal.org/node/2807241) Исправлена неполадка, из-за которой список с добавлением новых страниц представлений не работал на отличных от английского языках.
+
 ## Symfony 6
 
 - [#3232074](https://www.drupal.org/node/3232074) Для классов расширяющих `Normalizer` добавлен тайпхинт `array|string|int|float|bool|\ArrayObject|null` методу `::normalize()`.
@@ -993,3 +1021,4 @@ class PreviewAwareLayout extends LayoutDefault {
 - [#3261611](https://www.drupal.org/node/3261611) Ссылки на системные требования обновлены на универсальные.
 - [#3272035](https://www.drupal.org/node/3272035) В CSPell словарь добавлены слова «linktext» и «canvastext».
 - [#2917655](https://www.drupal.org/node/2917655) Прекращена поддержка PHP 7.3.
+- [#3270886](https://www.drupal.org/node/3270886) Удалена устаревшая заметка в `drupalci.yml`.
