@@ -722,6 +722,16 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 Замена данной библиотеке не предоставляется, вместо этого используйте современные возможности JavaScript. Для более удобного перехода вам может пригодиться репозиторий [You-Dont-Need-Lodash-Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore).
 
+## Добавлен интерфейс для настройки `loading` значения для изображений обработанных Drupal
+
+- [#3173180](https://www.drupal.org/node/3173180) 
+
+Добавлен интерфейс для настройки `loading` значения для изображений обработанных Drupal. Это значит, что вы сможете настроить какое значение для изображений будет установлено по умолчанию. На данный момент значение равно `loading="lazy"`.
+
+## Action
+
+- [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
+
 ## Aggregator
 
 - [#2610520](https://www.drupal.org/node/2610520) Улучшена справка о блоке предоставляемом модулем.
@@ -839,6 +849,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3215044](https://www.drupal.org/node/3215044) Добавлена пометка об устаревших темах на странице `/admin/appearance`.
 - [#3258782](https://www.drupal.org/node/3258782) Устаревшие модули больше не отображаются на странице `/admin/modules`.
 - [#3266308](https://www.drupal.org/node/3266308) Значение для `%extensions` заполнителя на странице статуса теперь имеет корректное значение.
+- [#3266397](https://www.drupal.org/node/3266397) Добавлена пометка о нестабильных модуля на странице `/admin/modules/uninstall`.
 
 ## Field System
 
@@ -848,6 +859,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 ## Field UI
 
 - [#3254866](https://www.drupal.org/node/3254866) Обновлены сообщения об устаревшем коде, который указывал что код, связанный со страницами управления разрешений, объявлен устаревшим в Drupal 9.3.0, вместо Drupal 9.4.0.
+- [#1948572](https://www.drupal.org/node/1948572) Добавлена документация для свойства `#region_callback` в элементе `field_ui_table`.
 
 ## Filter
 
@@ -931,6 +943,10 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 - [#3171149](https://www.drupal.org/node/3171149) Стандартный профиль теперь использует стиль изображения `wide` для
   публикаций вместо `large`.
+
+## Taxonomy
+
+- [#3272722](https://www.drupal.org/node/3272722) Исправлена ошибка в рекомендации для функции `taxonomy_term_load_multiple_by_name()`.
 
 ## Toolbar
 
