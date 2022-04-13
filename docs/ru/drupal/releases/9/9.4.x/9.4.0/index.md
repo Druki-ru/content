@@ -724,7 +724,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 ## Добавлен интерфейс для настройки `loading` значения для изображений обработанных Drupal
 
-- [#3173180](https://www.drupal.org/node/3173180) 
+- [#3173180](https://www.drupal.org/node/3173180) (отменено)
 
 Добавлен интерфейс для настройки `loading` значения для изображений обработанных Drupal. Это значит, что вы сможете настроить какое значение для изображений будет установлено по умолчанию. На данный момент значение равно `loading="lazy"`.
 
@@ -759,11 +759,8 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3248448](https://www.drupal.org/node/3248448) Улучшено оформление индикатора загрузки диалога.
 - [#3248423](https://www.drupal.org/node/3248423) Добавлен `ckeditor5.types.jsdoc` и скрипт, генерирующий актуальное содержание для него. Данный файл может быть использован в IDE для получения корректного автодополнения при написании плагинов для CKEditor.
 - [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
-- [#3263384](https://www.drupal.org/node/3263384) Добавлен пакет `ckeditor5-code-block` и плагин `CodeBlock`.
-- [#3269868](https://www.drupal.org/node/3269868) Исправлена неполадка, из-за которой могли теряться аттрибуты у изображения.
 - [#3260857](https://www.drupal.org/node/3260857) `SourceEditingRedundantTagsConstraintValidator` теперь также проверяет аттрибуты и их значения.
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKeditor 4.
-- [#3222757](https://www.drupal.org/node/3222757) Аттрибут `alt` для плагина `drupalImage` теперь обязательное поле.
 - [#3270765](https://www.drupal.org/node/3270765) Добавлены тесты для `createDropdown` в `drupalElementStyles`.
 
 ## Claro
@@ -776,6 +773,10 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3214124](https://www.drupal.org/node/3214124) Добавлены кавычки для `<blockquote>` элемента.
 - [#3171728](https://www.drupal.org/node/3171728) Улучшено отображение `<select>` элемента формы в режиме Windows High Contrast.
 - [#3067697](https://www.drupal.org/node/3067697) Исправлена неполадка, из-за которой элемент `dropbutton` работал некорректно если текст имел перенос на следующую строку.
+- [#3130305](https://www.drupal.org/node/3130305) Улучшено отображение фоновых изображений в режиме `forced-colors`.
+- [#3269417](https://www.drupal.org/node/3269417) Улучшено отображение разделителя хлебных крошек в режиме `forced-colors`.
+- [#3269341](https://www.drupal.org/node/3269341) Улучшено отображение элемента `<details>` в режиме `forced-colors`.
+- [#3210435](https://www.drupal.org/node/3210435) Исправлена неполадка, из-за которой дополнительные вкладки могли отображаться некорректно.
 
 ## Color
 
