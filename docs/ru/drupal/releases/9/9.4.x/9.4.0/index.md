@@ -724,7 +724,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 ## Добавлен интерфейс для настройки `loading` значения для изображений обработанных Drupal
 
-- [#3173180](https://www.drupal.org/node/3173180) (отменено)
+- [#3173180](https://www.drupal.org/node/3173180)
 
 Добавлен интерфейс для настройки `loading` значения для изображений обработанных Drupal. Это значит, что вы сможете настроить какое значение для изображений будет установлено по умолчанию. На данный момент значение равно `loading="lazy"`.
 
@@ -756,12 +756,8 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 ## CKEditor 5
 
 - [#3258250](https://www.drupal.org/node/3258250) CKEditor обновлён до версии 31.1.0.
-- [#3248448](https://www.drupal.org/node/3248448) Улучшено оформление индикатора загрузки диалога.
-- [#3248423](https://www.drupal.org/node/3248423) Добавлен `ckeditor5.types.jsdoc` и скрипт, генерирующий актуальное содержание для него. Данный файл может быть использован в IDE для получения корректного автодополнения при написании плагинов для CKEditor.
 - [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
-- [#3260857](https://www.drupal.org/node/3260857) `SourceEditingRedundantTagsConstraintValidator` теперь также проверяет аттрибуты и их значения.
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKeditor 4.
-- [#3270765](https://www.drupal.org/node/3270765) Добавлены тесты для `createDropdown` в `drupalElementStyles`.
 
 ## Claro
 

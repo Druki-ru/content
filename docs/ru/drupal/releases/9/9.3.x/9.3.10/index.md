@@ -10,15 +10,11 @@ authors:
   - a-kovrigin
 category:
   area: 'Drupal 9.3.x'
-  title: Drupal 9.3.10 (в разработке)
+  title: Drupal 9.3.10
   order: 10
 ---
 
-<Aside type="warning" header="В разработке">
-
-Данная версия находится в разработке и не готова к использованию. Список изменений может меняться.
-
-</Aside>
+**Дата релиза**: 14 апреля 2022
 
 ## Добавлен API для подключения собственных стилей оформления CKEditor 5
 
@@ -88,6 +84,11 @@ ckeditor5-stylesheets:
 - [#3269868](https://www.drupal.org/node/3269868) Исправлена неполадка, из-за которой могли теряться аттрибуты у изображения.
 - [#3222757](https://www.drupal.org/node/3222757) Аттрибут `alt` для плагина `drupalImage` теперь обязательное поле.
 - [#3263384](https://www.drupal.org/node/3263384) Добавлен пакет `ckeditor5-code-block` и плагин `CodeBlock`.
+- [#3268318](https://www.drupal.org/node/3268318) Исправлена неполадка, из-за которой `<a>` мог терять значение `data-acption`.
+- [#3260857](https://www.drupal.org/node/3260857) `SourceEditingRedundantTagsConstraintValidator` теперь также проверяет аттрибуты и их значения.
+- [#3270765](https://www.drupal.org/node/3270765) Добавлены тесты для `createDropdown` в `drupalElementStyles`.
+- [#3248448](https://www.drupal.org/node/3248448) Улучшено оформление индикатора загрузки диалога.
+- [#3248423](https://www.drupal.org/node/3248423) Добавлен `ckeditor5.types.jsdoc` и скрипт, генерирующий актуальное содержание для него. Данный файл может быть использован в IDE для получения корректного автодополнения при написании плагинов для CKEditor.
 
 ## Claro
 
@@ -185,3 +186,7 @@ ckeditor5-stylesheets:
 
 - [#3226716](https://www.drupal.org/node/3226716) Для методов `Drupal\Core\TypedData\TranslatableInterface` добавлена недостающая документация.
 - [#3265723](https://www.drupal.org/node/3265723) В `FormattableMarkup` исправлено дублирование слова «directly».
+
+## Ссылки
+
+- [Drupal 9.3.11](https://www.drupal.org/project/drupal/releases/9.3.11) (англ.), drupal.org, 14 апреля 2022
