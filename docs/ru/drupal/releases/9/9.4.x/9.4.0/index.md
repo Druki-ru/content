@@ -758,6 +758,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3258250](https://www.drupal.org/node/3258250) CKEditor обновлён до версии 31.1.0.
 - [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKeditor 4.
+- [#3245720](https://www.drupal.org/node/3245720) Добавлена поддержка выбора режима представления для `<drupal-media>`.
 
 ## Claro
 
@@ -896,6 +897,10 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
   Drupal\Core\Routing\RouteObjectInterface` вместо `Symfony\Cmf\Component\Routing\RouteObjectInterface`.
 - [#3190541](https://www.drupal.org/node/3190541) Исправлена неполадка, из-за которой кеш-контекст `layout_builder_is_active` мог предоставлять некорректные значения.
 
+## Locale
+
+- [#3274265](https://www.drupal.org/node/3274265) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+
 ## Media
 
 - [#3254198](https://www.drupal.org/node/3254198) Удалена временная проверка на наличие модуля `media_entity`.
@@ -1000,6 +1005,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3260710](https://www.drupal.org/node/3260710) `UpdateUploaderTestBase` теперь является абстрактным классом.
 - [#3268932](https://www.drupal.org/node/3268932) В `WebAssert` добавлены методы для сравнения статусных сообщений.
 - [#3272727](https://www.drupal.org/node/3272727) Внесены улучшения в команду `drupalModuleInstall()` для Nightwatch.
+- [#3275093](https://www.drupal.org/node/3275093) Обновлены дампы БД для Drupal 9.3.0 тестов.
 
 ## Прочие изменения
 
@@ -1035,3 +1041,4 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3272035](https://www.drupal.org/node/3272035) В CSPell словарь добавлены слова «linktext» и «canvastext».
 - [#2917655](https://www.drupal.org/node/2917655) Прекращена поддержка PHP 7.3.
 - [#3270886](https://www.drupal.org/node/3270886) Удалена устаревшая заметка в `drupalci.yml`.
+- [#3013802](https://www.drupal.org/node/3013802) Улучшено сообщение об ошибке для `Url` объектов с несуществующим маршрутом.
