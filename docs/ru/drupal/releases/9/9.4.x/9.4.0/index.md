@@ -790,6 +790,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3246595](https://www.drupal.org/node/3246595) Зависимости ядра обновлены на 01.11.21.
 - [#3255623](https://www.drupal.org/node/3255623) Удалены замены для пакетов `paragonie/random_compat` и `symfony/polyfill-php70`.
 - [#3258276](https://www.drupal.org/node/3258276) В Composer скрипте `drupal-phpunit-upgrade` убрана опция `--no-suggest` при установке `phpspec/prophecy-phpunit`.
+- [#3225706](https://www.drupal.org/node/3225706) Произведён рефакторинг `ComposerProjectTemplatesTest::testMinimumStabilityStrictness()` так, чтобы при ошибке писалось, с каким пакетом возникли проблемы.
 
 ## Configuration System
 
@@ -881,6 +882,8 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3265619](https://www.drupal.org/node/3265619) Зависимость `Shepherd.js` обновлена до 9 версии.
 - [#3261734](https://www.drupal.org/node/3261734) Минимальная версия Node.js увеличена до 16.
 - [#3239838](https://www.drupal.org/node/3239838) Из ESlint конфигурации удалены неиспользуемые правила для React и JSX.
+- [#3233491](https://www.drupal.org/node/3233491) Добавлена операция проверки изменений в сторонних JavaScript зависимостях (без предварительной минификации).
+- [#3265664](https://www.drupal.org/node/3265664) Зависимость `jsdom` обновлена до 19 мажорного релиза.
 
 ## JSON:API
 
@@ -896,6 +899,10 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3253666](https://www.drupal.org/node/3253666) `LayoutTempstoreRouteEnhancer` теперь использует `
   Drupal\Core\Routing\RouteObjectInterface` вместо `Symfony\Cmf\Component\Routing\RouteObjectInterface`.
 - [#3190541](https://www.drupal.org/node/3190541) Исправлена неполадка, из-за которой кеш-контекст `layout_builder_is_active` мог предоставлять некорректные значения.
+
+## Link
+
+- [#3274096](https://www.drupal.org/node/3274096) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Locale
 
@@ -923,6 +930,10 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3254347](https://www.drupal.org/node/3254347) Исключения для плагинов-обработчиков теперь содержат название плагина, в котором выброшено исключение.
 - [#3265483](https://www.drupal.org/node/3265483) Улучшены миграции для блоков тех модулей, которые стали сторонними после Drupal 6 или Drupal 7.
 
+## Node
+
+- [#3274066](https://www.drupal.org/node/3274066) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+
 ## Olivero
 
 - [#3186992](https://www.drupal.org/node/3186992) Исправлена неполадка, из-за которой навигационные пункты меню могли выходить за рамки контейнера.
@@ -949,6 +960,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 ## Taxonomy
 
 - [#3272722](https://www.drupal.org/node/3272722) Исправлена ошибка в рекомендации для функции `taxonomy_term_load_multiple_by_name()`.
+- [#3248295](https://www.drupal.org/node/3248295) Тесты модуля теперь используют тему оформления Stark вместо Classy. 
 
 ## Toolbar
 
@@ -1042,3 +1054,4 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#2917655](https://www.drupal.org/node/2917655) Прекращена поддержка PHP 7.3.
 - [#3270886](https://www.drupal.org/node/3270886) Удалена устаревшая заметка в `drupalci.yml`.
 - [#3013802](https://www.drupal.org/node/3013802) Улучшено сообщение об ошибке для `Url` объектов с несуществующим маршрутом.
+- [#3270395](https://www.drupal.org/node/3270395) Библиотеки `editor/drupal.editor.admin` и `filter/drupal.filter.filter_html.admin` больше не зависят от UnderscoreJS.
