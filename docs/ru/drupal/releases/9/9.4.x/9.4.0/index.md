@@ -728,6 +728,12 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 Добавлен интерфейс для настройки `loading` значения для изображений обработанных Drupal. Это значит, что вы сможете настроить какое значение для изображений будет установлено по умолчанию. На данный момент значение равно `loading="lazy"`.
 
+## Библиотека `core/drupal.date` и метод `Drupal\Core\Render\Element\Date::processDate()` объявлены устаревшими
+
+- [#3256549](https://www.drupal.org/node/3256549) 
+
+Библиотека `core/drupal.date` использовалась для поддержки браузеров, которые больше не будут поддерживаться в [Drupal 10](../../../../10/index.md), в связи с чем она объявлена устаревшей. В дополнении к библиотеке, метод `Drupal\Core\Render\Element\Date::processDate()`, который добавлял аттрибут `data-drupal-date-format`, также объявлен устаревшим. Данный аттрибут больше не будет присутствовать в HTML разметке, так как использовался устаревшей библиотекой.
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
@@ -774,6 +780,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3269417](https://www.drupal.org/node/3269417) Улучшено отображение разделителя хлебных крошек в режиме `forced-colors`.
 - [#3269341](https://www.drupal.org/node/3269341) Улучшено отображение элемента `<details>` в режиме `forced-colors`.
 - [#3210435](https://www.drupal.org/node/3210435) Исправлена неполадка, из-за которой дополнительные вкладки могли отображаться некорректно.
+- [#3271305](https://www.drupal.org/node/3271305) Улучшено отображение радио кнопок и чекбоксов в режиме `forced-colors`.
 
 ## Color
 
@@ -1055,3 +1062,4 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3270886](https://www.drupal.org/node/3270886) Удалена устаревшая заметка в `drupalci.yml`.
 - [#3013802](https://www.drupal.org/node/3013802) Улучшено сообщение об ошибке для `Url` объектов с несуществующим маршрутом.
 - [#3270395](https://www.drupal.org/node/3270395) Библиотеки `editor/drupal.editor.admin` и `filter/drupal.filter.filter_html.admin` больше не зависят от UnderscoreJS.
+- [#3270941](https://www.drupal.org/node/3270941) Модуль Color удалён из [стандартного установочного профиля](../../../../10/distributions/standard/index.md)

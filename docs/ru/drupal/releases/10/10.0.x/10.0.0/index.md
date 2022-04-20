@@ -477,3 +477,4 @@ Drupal 10 перешел на Symfony 6, следовательно, данна�
 - [#3274016](https://www.drupal.org/node/3274016) Удалён устаревший метод `AssertMailTrait::verboseEmail()`.
 - [#3260928](https://www.drupal.org/node/3260928) Добавлено больше правил в `phpstan-baseline.neon`.
 - [#3274938](https://www.drupal.org/node/3274938) Удалены устаревшие библиотеки BackboneJS и Undescore.
+- [#3256549](https://www.drupal.org/node/3256549) Удалена устаревшая библиотека `core/drupal.date` и метод `Drupal\Core\Render\Element\Date::processDate()`.
