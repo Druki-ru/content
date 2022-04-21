@@ -831,6 +831,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 - [#3213644](https://www.drupal.org/node/3213644) Внесены улучшения в тест `StatementWrapperLegacyTest::testClientStatementMethod()`.
 - [#3259532](https://www.drupal.org/node/3259532) Добавлено тестирование `::hasJson()`.
+- [#2236983](https://www.drupal.org/node/2236983) Улучшена документация для метода `Database::addConnectionInfo()`.
 
 ## Datetime
 
@@ -900,6 +901,10 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 ## HAL
 
 - [#3263654](https://www.drupal.org/node/3263654) Тесты, связанные с модулем HAL, были перенесены непосредственно в модуль, в целях последующего удаления месте с модулем.
+
+## Help Topics
+
+- [#3272537](https://www.drupal.org/node/3272537) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Layout Builder
 
