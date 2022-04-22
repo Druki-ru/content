@@ -763,8 +763,9 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 - [#3258250](https://www.drupal.org/node/3258250) CKEditor обновлён до версии 31.1.0.
 - [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
-- [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKeditor 4.
+- [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKEditor 4.
 - [#3245720](https://www.drupal.org/node/3245720) Добавлена поддержка выбора режима представления для `<drupal-media>`.
+- [#3275114](https://www.drupal.org/node/3275114) В `MAINTAINERS.txt` добавлены мейнтейнеры CKEditor 5.
 
 ## Claro
 
@@ -776,9 +777,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3214124](https://www.drupal.org/node/3214124) Добавлены кавычки для `<blockquote>` элемента.
 - [#3171728](https://www.drupal.org/node/3171728) Улучшено отображение `<select>` элемента формы в режиме Windows High Contrast.
 - [#3067697](https://www.drupal.org/node/3067697) Исправлена неполадка, из-за которой элемент `dropbutton` работал некорректно если текст имел перенос на следующую строку.
-- [#3130305](https://www.drupal.org/node/3130305) Улучшено отображение фоновых изображений в режиме `forced-colors`.
 - [#3269417](https://www.drupal.org/node/3269417) Улучшено отображение разделителя хлебных крошек в режиме `forced-colors`.
-- [#3269341](https://www.drupal.org/node/3269341) Улучшено отображение элемента `<details>` в режиме `forced-colors`.
 - [#3210435](https://www.drupal.org/node/3210435) Исправлена неполадка, из-за которой дополнительные вкладки могли отображаться некорректно.
 - [#3271305](https://www.drupal.org/node/3271305) Улучшено отображение радио кнопок и чекбоксов в режиме `forced-colors`.
 
@@ -955,6 +954,8 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3270574](https://www.drupal.org/node/3270574) В шаблон комментария добавлен индикатор «нового» комментария.
 - [#3269716](https://www.drupal.org/node/3269716) Исправлена неполадка, из-за которой строка поиска была недоступна на Safari.
 - [#3209903](https://www.drupal.org/node/3209903) Исправлена неполадка, из-за которой изображение могло перекрывать кнопки «Add block» и «Add section» в Layout Builder.
+- [#3276615](https://www.drupal.org/node/3276615) Удалена реализация `olivero_form_comment_form_alter()`.
+- [#3271666](https://www.drupal.org/node/3271666) Улучшено отображение иконок пагинации в режиме `forced-colors`.
 
 ## RDF
 
@@ -991,6 +992,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3253639](https://www.drupal.org/node/3253639) Добавлен новый класс `UpdateUploaderTestBase` с универсальной реализацией `::setUp()` для уменьшения дублирования кода в тестах модуля.
 - [#3238311](https://www.drupal.org/node/3238311) Маршрут `system.batch_page.html` добавлен в список маршрутов, на которых не показываются предупреждения об обновлениях безопасности.
 - [#2807949](https://www.drupal.org/node/2807949) Исправлена неполадка, из-за которой не происходила очистка кеша модуля в момент установки или удаления сторонних модулей, что приводило к ненужным загрузкам переводов и прочим ошибкам. Эта проблема наблюдалась при включении или отключении модуля без участия интерфейса расширений Drupal (например через Drush).
+- [#3275216](https://www.drupal.org/node/3275216) Обновлён Dependency Injection в `UpdateSettingsForm`.
 
 ## User
 

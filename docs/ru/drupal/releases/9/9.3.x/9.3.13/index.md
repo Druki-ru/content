@@ -24,6 +24,11 @@ category:
 - [#3274278](https://www.drupal.org/node/3274278) Добавлена поддержка миграции `codetag` плагина, предоставляемого одноимённым сторонним модулем, из CKEditor 4.
 - [#3273325](https://www.drupal.org/node/3273325) Улучшено сообщение с информацией о совместимости сторонних плагинов.
 
+## Claro
+
+- [#3269341](https://www.drupal.org/node/3269341) Улучшено отображение элемента `<details>` в режиме `forced-colors`.
+- [#3130305](https://www.drupal.org/node/3130305) Улучшено отображение фоновых изображений в режиме `forced-colors`.
+
 ## Database API
 
 - [#3269091](https://www.drupal.org/node/3269091) Улучшена документация для метода `Schema::findTables()`.
