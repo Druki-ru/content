@@ -766,6 +766,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKEditor 4.
 - [#3245720](https://www.drupal.org/node/3245720) Добавлена поддержка выбора режима представления для `<drupal-media>`.
 - [#3275114](https://www.drupal.org/node/3275114) В `MAINTAINERS.txt` добавлены мейнтейнеры CKEditor 5.
+- [#3261943](https://www.drupal.org/node/3261943) Улучшено поведение при нажатии «Применить изменения для разрешённых тегов» с недопустимыми значениями.
 
 ## Claro
 
@@ -1064,7 +1065,6 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3270323](https://www.drupal.org/node/3270323) Исправлена неполадка в тесте `ModuleConfigureRouteTest::testModuleConfigureRoutes()`.
 - [#3264911](https://www.drupal.org/node/3264911) Из стилей тем оформления удалено упоминание подозрительного сайта.
 - [#3261611](https://www.drupal.org/node/3261611) Ссылки на системные требования обновлены на универсальные.
-- [#3272035](https://www.drupal.org/node/3272035) В CSPell словарь добавлены слова «linktext» и «canvastext».
 - [#2917655](https://www.drupal.org/node/2917655) Прекращена поддержка PHP 7.3.
 - [#3270886](https://www.drupal.org/node/3270886) Удалена устаревшая заметка в `drupalci.yml`.
 - [#3013802](https://www.drupal.org/node/3013802) Улучшено сообщение об ошибке для `Url` объектов с несуществующим маршрутом.
