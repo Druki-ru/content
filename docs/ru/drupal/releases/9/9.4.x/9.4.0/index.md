@@ -754,6 +754,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 ## Block
 
 - [#3273072](https://www.drupal.org/node/3273072) Исправлена опечатка в туре по модулю.
+- [#3271507](https://www.drupal.org/node/3271507) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## CKEditor 4
 
@@ -781,6 +782,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3269417](https://www.drupal.org/node/3269417) Улучшено отображение разделителя хлебных крошек в режиме `forced-colors`.
 - [#3210435](https://www.drupal.org/node/3210435) Исправлена неполадка, из-за которой дополнительные вкладки могли отображаться некорректно.
 - [#3271305](https://www.drupal.org/node/3271305) Улучшено отображение радио кнопок и чекбоксов в режиме `forced-colors`.
+- [#3020418](https://www.drupal.org/node/3020418) Улучшена контрастность для заполнителей элементов форм.
 
 ## Color
 
@@ -945,6 +947,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 ## Node
 
 - [#3274066](https://www.drupal.org/node/3274066) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+- [#3275464](https://www.drupal.org/node/3275464) Удалён устаревший метод `FrontPageTest::testAdminFrontPage()`.
 
 ## Olivero
 
@@ -970,6 +973,10 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 - [#3171149](https://www.drupal.org/node/3171149) Стандартный профиль теперь использует стиль изображения `wide` для
   публикаций вместо `large`.
+
+## Statistics
+
+- [#3272734](https://www.drupal.org/node/3272734) Тесты модуля теперь используют тему оформления Stark вместо Classy. 
 
 ## Taxonomy
 
@@ -1013,6 +1020,10 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 - [#2807241](https://www.drupal.org/node/2807241) Исправлена неполадка, из-за которой список с добавлением новых страниц представлений не работал на отличных от английского языках.
 
+## Workspaces
+
+- [#3272737](https://www.drupal.org/node/3272737) Тесты модуля теперь используют тему оформления Stark вместо Classy.  
+
 ## Symfony 6
 
 - [#3232074](https://www.drupal.org/node/3232074) Для классов расширяющих `Normalizer` добавлен тайпхинт `array|string|int|float|bool|\ArrayObject|null` методу `::normalize()`.
@@ -1033,6 +1044,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3268932](https://www.drupal.org/node/3268932) В `WebAssert` добавлены методы для сравнения статусных сообщений.
 - [#3272727](https://www.drupal.org/node/3272727) Внесены улучшения в команду `drupalModuleInstall()` для Nightwatch.
 - [#3275093](https://www.drupal.org/node/3275093) Обновлены дампы БД для Drupal 9.3.0 тестов.
+- [#3266739](https://www.drupal.org/node/3266739) Из `FunctionalTestSetupTrait::prepareEnvironment()` удалён комментарий о том что метод является приватным.
 
 ## Прочие изменения
 
