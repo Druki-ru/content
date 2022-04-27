@@ -734,6 +734,14 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 Библиотека `core/drupal.date` использовалась для поддержки браузеров, которые больше не будут поддерживаться в [Drupal 10](../../../../10/index.md), в связи с чем она объявлена устаревшей. В дополнении к библиотеке, метод `Drupal\Core\Render\Element\Date::processDate()`, который добавлял аттрибут `data-drupal-date-format`, также объявлен устаревшим. Данный аттрибут больше не будет присутствовать в HTML разметке, так как использовался устаревшей библиотекой.
 
+## Тема оформления Claro помечена стабильной и является административной темой по умолчанию
+
+- [#3277053](https://www.drupal.org/node/3277053), [#3277057](https://www.drupal.org/node/3277057), [#3087701](https://www.drupal.org/node/3087701)
+
+[Тема оформления](../../../../9/themes/index.md) Claro с этого релиза является стабильной и пригодна для использования на живых проектах.
+
+Начиная с данного релиза, Claro будет использована в качестве административной темы по умолчанию при установке сайта с использованием [стандартного профиля](../../../../9/distributions/standard/index.md) и [демонстрационного профиля Umami](../../../../9/distributions/demo-umami/index.md).
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
@@ -765,9 +773,8 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3258250](https://www.drupal.org/node/3258250) CKEditor обновлён до версии 31.1.0.
 - [#3258030](https://www.drupal.org/node/3258030) Поля с CKEditor 5 редактором теперь имеет красную рамку если в поле ошибка.
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKEditor 4.
-- [#3245720](https://www.drupal.org/node/3245720) Добавлена поддержка выбора режима представления для `<drupal-media>`.
 - [#3275114](https://www.drupal.org/node/3275114) В `MAINTAINERS.txt` добавлены мейнтейнеры CKEditor 5.
-- [#3261943](https://www.drupal.org/node/3261943) Улучшено поведение при нажатии «Применить изменения для разрешённых тегов» с недопустимыми значениями.
+- [#3231334](https://www.drupal.org/node/3231334) Добавлена поддержка глобальных аттрибутов `<* lang>` и `<* dir="ltr rtl">`.
 
 ## Claro
 
@@ -783,6 +790,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3210435](https://www.drupal.org/node/3210435) Исправлена неполадка, из-за которой дополнительные вкладки могли отображаться некорректно.
 - [#3271305](https://www.drupal.org/node/3271305) Улучшено отображение радио кнопок и чекбоксов в режиме `forced-colors`.
 - [#3020418](https://www.drupal.org/node/3020418) Улучшена контрастность для заполнителей элементов форм.
+- [#3081489](https://www.drupal.org/node/3081489) Удалён дублирующийся код в `vertical-tabs.es6.js`.
 
 ## Color
 

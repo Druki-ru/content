@@ -24,6 +24,10 @@ category:
 - [#3274278](https://www.drupal.org/node/3274278) Добавлена поддержка миграции `codetag` плагина, предоставляемого одноимённым сторонним модулем, из CKEditor 4.
 - [#3273325](https://www.drupal.org/node/3273325) Улучшено сообщение с информацией о совместимости сторонних плагинов.
 - [#3230230](https://www.drupal.org/node/3230230) Добавлена поддержка подписей для таблиц.
+- [#3261943](https://www.drupal.org/node/3261943) Улучшено поведение при нажатии «Применить изменения для разрешённых тегов» с недопустимыми значениями.
+- [#3245720](https://www.drupal.org/node/3245720) Добавлена поддержка выбора режима представления для `<drupal-media>`.
+- [#3276670](https://www.drupal.org/node/3276670) Исправлена неполадка, из-за которой при наличии определённых режимов отображения редактор не мог инициализироваться.
+- [#3276627](https://www.drupal.org/node/3276627) Внесены улучшения в логику `CKEditor5::shouldHaveVisiblePluginSettingsForm()`.
 
 ## Claro
 
@@ -35,6 +39,11 @@ category:
 
 - [#3269091](https://www.drupal.org/node/3269091) Улучшена документация для метода `Schema::findTables()`.
 
+## Render API
+
+- [#2717921](https://www.drupal.org/node/2717921) Добавлена документация для свойства `#has_garbage_value`.
+
 ## Прочие изменения
 
 - [#3272035](https://www.drupal.org/node/3272035) В CSPell словарь добавлены слова «linktext» и «canvastext».
+- [#3269085](https://www.drupal.org/node/3269085) Исправлена неполадка в `EntityAutocompleteController` которая могла приводить к провалу `EntityAutocompleteTest`.
