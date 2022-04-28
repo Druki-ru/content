@@ -28,6 +28,9 @@ category:
 - [#3245720](https://www.drupal.org/node/3245720) Добавлена поддержка выбора режима представления для `<drupal-media>`.
 - [#3276670](https://www.drupal.org/node/3276670) Исправлена неполадка, из-за которой при наличии определённых режимов отображения редактор не мог инициализироваться.
 - [#3276627](https://www.drupal.org/node/3276627) Внесены улучшения в логику `CKEditor5::shouldHaveVisiblePluginSettingsForm()`.
+- [#3248425](https://www.drupal.org/node/3248425) Добавлены недостающая документация для плагинов.
+- [#3229078](https://www.drupal.org/node/3229078) Добавлены юнит-тесты для всех `@CKEditor5Plugin` плагинов.
+- [#3277405](https://www.drupal.org/node/3277405) Обновлена зависимость `@ckeditor/ckeditor5-list` до версии 34.0.1.
 
 ## Claro
 

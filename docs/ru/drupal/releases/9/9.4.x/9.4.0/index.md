@@ -791,6 +791,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3271305](https://www.drupal.org/node/3271305) Улучшено отображение радио кнопок и чекбоксов в режиме `forced-colors`.
 - [#3020418](https://www.drupal.org/node/3020418) Улучшена контрастность для заполнителей элементов форм.
 - [#3081489](https://www.drupal.org/node/3081489) Удалён дублирующийся код в `vertical-tabs.es6.js`.
+- [#3266216](https://www.drupal.org/node/3266216) Улучшена контрастность для `.section-title` элемента Views.
 
 ## Color
 
@@ -968,6 +969,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3209903](https://www.drupal.org/node/3209903) Исправлена неполадка, из-за которой изображение могло перекрывать кнопки «Add block» и «Add section» в Layout Builder.
 - [#3276615](https://www.drupal.org/node/3276615) Удалена реализация `olivero_form_comment_form_alter()`.
 - [#3271666](https://www.drupal.org/node/3271666) Улучшено отображение иконок пагинации в режиме `forced-colors`.
+- [#3276618](https://www.drupal.org/node/3276618) Классы активного пункта меню для `book-tree.html.twig` теперь соответствуют классам из меню.
 
 ## RDF
 
@@ -1053,6 +1055,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3272727](https://www.drupal.org/node/3272727) Внесены улучшения в команду `drupalModuleInstall()` для Nightwatch.
 - [#3275093](https://www.drupal.org/node/3275093) Обновлены дампы БД для Drupal 9.3.0 тестов.
 - [#3266739](https://www.drupal.org/node/3266739) Из `FunctionalTestSetupTrait::prepareEnvironment()` удалён комментарий о том что метод является приватным.
+- [#3276620](https://www.drupal.org/node/3276620) Тест `NoJavaScriptAnonymousTest` теперь использует `stark` тему оформления.
 
 ## Прочие изменения
 
