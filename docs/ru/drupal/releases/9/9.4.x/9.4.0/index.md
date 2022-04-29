@@ -742,6 +742,12 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 Начиная с данного релиза, Claro будет использована в качестве административной темы по умолчанию при установке сайта с использованием [стандартного профиля](../../../../9/distributions/standard/index.md) и [демонстрационного профиля Umami](../../../../9/distributions/demo-umami/index.md).
 
+## Тема оформления Olivero теперь является темой по умолчанию
+
+- [#3219959](https://www.drupal.org/node/3219959)
+
+Тема оформления [Olivero](../../../../olivero/index.md) теперь является темой по умолчанию при установке стандартного профиля.
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.

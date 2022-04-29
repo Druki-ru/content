@@ -31,6 +31,9 @@ category:
 - [#3248425](https://www.drupal.org/node/3248425) Добавлены недостающая документация для плагинов.
 - [#3229078](https://www.drupal.org/node/3229078) Добавлены юнит-тесты для всех `@CKEditor5Plugin` плагинов.
 - [#3277405](https://www.drupal.org/node/3277405) Обновлена зависимость `@ckeditor/ckeditor5-list` до версии 34.0.1.
+- [#3261599](https://www.drupal.org/node/3261599) Добавлена поддержка `<ol start>` и `<ol reversed>`.
+- [#3276974](https://www.drupal.org/node/3276974) (отменено) Исправлена неполадка, из-за которой не работали режимы отображения Media сущностей при отключенном выравнивании.
+- [#3228691](https://www.drupal.org/node/3228691) Расширена валидация аттрибутов на предмет XSS.
 
 ## Claro
 
@@ -50,3 +53,4 @@ category:
 
 - [#3272035](https://www.drupal.org/node/3272035) В CSPell словарь добавлены слова «linktext» и «canvastext».
 - [#3269085](https://www.drupal.org/node/3269085) Исправлена неполадка в `EntityAutocompleteController` которая могла приводить к провалу `EntityAutocompleteTest`.
+- [#3277743](https://www.drupal.org/node/3277743) Обновлены имена мейнтенеров в `MAINTAINERS.txt` файле.
