@@ -748,6 +748,39 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 
 Тема оформления [Olivero](../../../../olivero/index.md) теперь является темой по умолчанию при установке стандартного профиля.
 
+## Стартовые темы теперь могут участвовать в процессе генерации новой темы
+
+- [#3206217](https://www.drupal.org/node/3206217)
+
+Для тем, которые являются стартовыми (шаблонными) и используются для генерации новых тем, добавлена возможность также выполнять свои действия в процессе генерации новой темы.
+
+Для этого в теме необходимо создать класс `StarterKit` в директории `THEME/src`. Данный класс должен реализовывать интерфейс `StarterKitInterface`.
+
+Пример:
+
+```php
+<?php
+
+namespace Drupal\starterkit_theme;
+
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Theme\StarterKitInterface;
+
+final class StarterKit implements StarterKitInterface {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function postProcess(string $working_dir, string $machine_name, string $theme_name): void {
+    $info_file = "$working_dir/$machine_name.info.yml";
+    $info = Yaml::decode(file_get_contents($info_file));
+    unset($info['hidden']);
+    file_put_contents($info_file, Yaml::encode($info));
+  }
+
+}
+```
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
@@ -834,6 +867,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 ## Contextual Links
 
 - [#3269266](https://www.drupal.org/node/3269266) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+- [#2168711](https://www.drupal.org/node/2168711) Исправлена неполадка, при которой, использование `Modernizr.touchevents` могло приводить к поломке контекстуальных ссылок.
 
 ## CSS
 
@@ -888,6 +922,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 ## Filter
 
 - [#3227821](https://www.drupal.org/node/3227821) Исправлена неполадка в фильтре «Заменять переводы строк соответствующими HTML-тегами», которая могла приводить к поломке SVG элементов.
+- [#3272516](https://www.drupal.org/node/3272516) Метод `FilterInterface::getHTMLRestrictions()` объявлен устаревшим. Это также значит что и функционал `forbidden_tags` объявлен устаревшим.
 
 ## Image
 
@@ -976,6 +1011,7 @@ function test_theme_depending_on_modules_post_update_module_install(&$sandbox = 
 - [#3276615](https://www.drupal.org/node/3276615) Удалена реализация `olivero_form_comment_form_alter()`.
 - [#3271666](https://www.drupal.org/node/3271666) Улучшено отображение иконок пагинации в режиме `forced-colors`.
 - [#3276618](https://www.drupal.org/node/3276618) Классы активного пункта меню для `book-tree.html.twig` теперь соответствуют классам из меню.
+- [#3226016](https://www.drupal.org/node/3226016) Классы в шаблоне `form--search-block-form.html.twig` теперь задаются в массиве, а не сразу присваиваются обёртке.
 
 ## RDF
 

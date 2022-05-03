@@ -40,6 +40,11 @@ category:
 - [#3269341](https://www.drupal.org/node/3269341) Улучшено отображение элемента `<details>` в режиме `forced-colors`.
 - [#3130305](https://www.drupal.org/node/3130305) Улучшено отображение фоновых изображений в режиме `forced-colors`.
 - [#3273056](https://www.drupal.org/node/3273056) Улучшено отображение «skip link» в режиме `forced-colors`.
+- [#3277274](https://www.drupal.org/node/3277274) Использование несуществующей переменной `--color-whitesmoke` заменено на `--color-gray-050`.
+
+## Contextual Links
+
+- [#3270709](https://www.drupal.org/node/3270709) Упоминание `contextual_pre_render_placeholder()` заменено на `\Drupal\contextual\Element\ContextualLinksPlaceholder`.
 
 ## Database API
 
@@ -48,6 +53,14 @@ category:
 ## Render API
 
 - [#2717921](https://www.drupal.org/node/2717921) Добавлена документация для свойства `#has_garbage_value`.
+
+## Umami
+
+- [#3277309](https://www.drupal.org/node/3277309) Обновлены ссылки на документацию в `README.txt`.
+
+## Update
+
+- [#2995367](https://www.drupal.org/node/2995367) Обновлены название фикстур в `release-history`.
 
 ## Прочие изменения
 
