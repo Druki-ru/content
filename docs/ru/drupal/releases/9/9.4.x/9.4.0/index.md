@@ -1017,6 +1017,10 @@ final class StarterKit implements StarterKitInterface {
 
 - [#3267513](https://www.drupal.org/node/3267513) Тесты миграций связанные с RDF теперь учитывают что модуль будет удалён.
 
+## Render System
+
+- [#2958358](https://www.drupal.org/node/2958358) `drupal/core-utility` больше не зависит от `drupal/core-render`, а `drupal/core-gettext` теперь зависит от `drupal/core-render` вместо `drupal/core-utility`.
+
 ## Responsive Image
 
 - [#3267870](https://www.drupal.org/node/3267870) (отменено) Стили для точек остановы теперь сортируются в порядке возрастания множителя, а затем по ID стиля.
