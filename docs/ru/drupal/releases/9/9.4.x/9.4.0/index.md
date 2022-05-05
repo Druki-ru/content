@@ -1012,6 +1012,8 @@ final class StarterKit implements StarterKitInterface {
 - [#3271666](https://www.drupal.org/node/3271666) Улучшено отображение иконок пагинации в режиме `forced-colors`.
 - [#3276618](https://www.drupal.org/node/3276618) Классы активного пункта меню для `book-tree.html.twig` теперь соответствуют классам из меню.
 - [#3226016](https://www.drupal.org/node/3226016) Классы в шаблоне `form--search-block-form.html.twig` теперь задаются в массиве, а не сразу присваиваются обёртке.
+- [#3278215](https://www.drupal.org/node/3278215) Опциональные конфигурации блоков перенесены в тему из стандартного профиля.
+- [#3278696](https://www.drupal.org/node/3278696) Конфигурации `block.block.book_navigation.yml` и `block.block.primary_admin_actions.yml` были переименованы в `block.block.olivero_book_navigation.yml` и `block.block.olivero_primary_admin_actions.yml` соответственно.
 
 ## RDF
 
@@ -1029,6 +1031,8 @@ final class StarterKit implements StarterKitInterface {
 
 - [#3171149](https://www.drupal.org/node/3171149) Стандартный профиль теперь использует стиль изображения `wide` для
   публикаций вместо `large`.
+- [#3278568](https://www.drupal.org/node/3278568) В профиль добавлены опциональные конфигурации блоков для Bartik и Seven.
+- [#3278565](https://www.drupal.org/node/3278565) Из профиля удалены конфигурации блоков для Claro.
 
 ## Statistics
 
@@ -1057,6 +1061,10 @@ final class StarterKit implements StarterKitInterface {
 - [#3238311](https://www.drupal.org/node/3238311) Маршрут `system.batch_page.html` добавлен в список маршрутов, на которых не показываются предупреждения об обновлениях безопасности.
 - [#2807949](https://www.drupal.org/node/2807949) Исправлена неполадка, из-за которой не происходила очистка кеша модуля в момент установки или удаления сторонних модулей, что приводило к ненужным загрузкам переводов и прочим ошибкам. Эта проблема наблюдалась при включении или отключении модуля без участия интерфейса расширений Drupal (например через Drush).
 - [#3275216](https://www.drupal.org/node/3275216) Обновлён Dependency Injection в `UpdateSettingsForm`.
+
+## Umami
+
+- [#3278732](https://www.drupal.org/node/3278732) Удалены конфигурации для блоков Claro.
 
 ## User
 
