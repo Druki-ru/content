@@ -848,6 +848,7 @@ final class StarterKit implements StarterKitInterface {
 - [#3255623](https://www.drupal.org/node/3255623) Удалены замены для пакетов `paragonie/random_compat` и `symfony/polyfill-php70`.
 - [#3258276](https://www.drupal.org/node/3258276) В Composer скрипте `drupal-phpunit-upgrade` убрана опция `--no-suggest` при установке `phpspec/prophecy-phpunit`.
 - [#3225706](https://www.drupal.org/node/3225706) Произведён рефакторинг `ComposerProjectTemplatesTest::testMinimumStabilityStrictness()` так, чтобы при ошибке писалось, с каким пакетом возникли проблемы.
+- [#3278162](https://www.drupal.org/node/3278162) Зависимости ядра обновлены на 06.05.2022.
 
 ## Configuration System
 
