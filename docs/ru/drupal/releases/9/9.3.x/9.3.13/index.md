@@ -9,15 +9,11 @@ authors:
   - Niklan
 category:
   area: 'Drupal 9.3.x'
-  title: Drupal 9.3.13 (в разработке)
+  title: Drupal 9.3.13
   order: 13
 ---
 
-<Aside type="warning">
-
-Текущий релиз находится в разработке и не предназначен для использования на рабочих сайтах.
-
-</Aside>
+**Дата релиза:** 11 мая 2022
 
 ## CKEditor 5
 
@@ -75,3 +71,7 @@ category:
 - [#3272035](https://www.drupal.org/node/3272035) В CSPell словарь добавлены слова «linktext» и «canvastext».
 - [#3269085](https://www.drupal.org/node/3269085) Исправлена неполадка в `EntityAutocompleteController` которая могла приводить к провалу `EntityAutocompleteTest`.
 - [#3277743](https://www.drupal.org/node/3277743) Обновлены имена мейнтенеров в `MAINTAINERS.txt` файле.
+
+## Ссылки
+
+- [Drupal 9.3.13](https://www.drupal.org/project/drupal/releases/9.3.13) (англ.), drupal.org, 11 мая 2022

@@ -781,6 +781,71 @@ final class StarterKit implements StarterKitInterface {
 }
 ```
 
+## Добавлена новая вкладка «Управление разрешениями» после вкладки «Управление отображением»
+
+- [#3253955](https://www.drupal.org/node/3253955)
+
+При редактировании типа материала, словаря таксономии или иных типов сущностей, администраторы сайтов уже имеют вкладки: Редактирование, Управление полями, Управление отображением и т.д.
+
+Начиная с текущего релиза добавлена новая вкладка «Управление разрешениями». Она будет появляться, если соответствующие сущности предоставляют необходимые данные для вкладки. На данной странице будут представлены все настройки прав доступа связанные с данной сущностью и её типами.
+
+### Для разработчиков модулей
+
+Данный функционал поддерживается сущностями с подтипами (бандлами). В будущем это ограничение может быть ослаблено.
+
+Если вы хотите добавить вкладку управления правами для своего типа сущности, вам необходимо объявить следующие ключи в аннотации сущности: `handlers.route_provider.permissions` и `links.entity-permissions-form`.
+
+Например из `MediaType.php`:
+
+```php
+ * @ConfigEntityType(
+ *   ...
+ *   handlers = {
+ *   ...
+ *     "route_provider" = {
+ *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
+ *       "permissions" = "Drupal\user\Entity\EntityPermissionsRouteProvider",
+ *     }
+ *   },
+ *   ...
+ *   bundle_of = "media",
+ *   ...
+ *   links = {
+ *     ...
+ *     "entity-permissions-form" = "/admin/structure/media/manage/{media_type}/permissions",
+ *     ...
+ *   },
+ * )
+```
+
+Провайдер маршрутов должен быть либо `Drupal\user\Entity\EntityPermissionsRouteProvider`, либо `Drupal\user\Entity\EntityPermissionsRouteProviderWithCheck`.
+
+Для того чтобы у пользователей был доступ к данной форме, у них должно быть разрешение `administer permissions`. Если вы будете использовать `EntityPermissionsRouteProviderWithCheck`, тогда проверка доступа к странице будет провалена если нет ни одного разрешения имеющего зависимость на текущую сущность. При этом, ссылки на данную форму будут также скрыты.
+
+Проверка прав доступа может быть медленной и если вы столкнулись с данной проблемой, рекомендуется использовать `EntityPermissionsRouteProvider` вместо `EntityPermissionsRouteProviderWithCheck`.
+
+Если ваша сущность является сущностью подтипом для сторонней сущности, а та сущность имеет в аннотации `field_ui_base_route`, тогда вкладка появится автоматически.
+
+В качестве альтернативы, вы можете объявить маршрут для соответствующей формы самостоятельно, например:
+
+```yaml
+entity.filter_format.permissions_form:
+  path: '/admin/config/content/formats/manage/{bundle}/permissions'
+  defaults:
+    _title: 'Manage permissions'
+    _form: 'Drupal\user\Form\EntityPermissionsForm'
+    bundle_entity_type: filter_format
+  requirements:
+    _permission: 'administer permissions'
+  options:
+    parameters:
+      bundle:
+        type: 'entity:filter_format'
+        with_config_overrides: true
+```
+
+Это будет крайне полезно в тех случаях, когда у сущности нет UI для управления типами.
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
@@ -814,6 +879,8 @@ final class StarterKit implements StarterKitInterface {
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKEditor 4.
 - [#3275114](https://www.drupal.org/node/3275114) В `MAINTAINERS.txt` добавлены мейнтейнеры CKEditor 5.
 - [#3231334](https://www.drupal.org/node/3231334) Добавлена поддержка глобальных аттрибутов `<* lang>` и `<* dir="ltr rtl">`.
+- [#3278394](https://www.drupal.org/node/3278394) Исправлена неполадка, из-за которой `diff()` мог возвращать некорректный результат при наличии значения в аттрибуте.
+- [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
 
 ## Claro
 
@@ -831,6 +898,7 @@ final class StarterKit implements StarterKitInterface {
 - [#3020418](https://www.drupal.org/node/3020418) Улучшена контрастность для заполнителей элементов форм.
 - [#3081489](https://www.drupal.org/node/3081489) Удалён дублирующийся код в `vertical-tabs.es6.js`.
 - [#3266216](https://www.drupal.org/node/3266216) Улучшена контрастность для `.section-title` элемента Views.
+- [#3251709](https://www.drupal.org/node/3251709) Добавлены новые градации синего.
 
 ## Color
 
@@ -1039,6 +1107,10 @@ final class StarterKit implements StarterKitInterface {
 
 - [#3272734](https://www.drupal.org/node/3272734) Тесты модуля теперь используют тему оформления Stark вместо Classy. 
 
+## System
+
+- [#3279640](https://www.drupal.org/node/3279640) При использовании темы оформления Claro в качестве административной, она также будет использована для страницы `update.php`.
+
 ## Taxonomy
 
 - [#3272722](https://www.drupal.org/node/3272722) Исправлена ошибка в рекомендации для функции `taxonomy_term_load_multiple_by_name()`.
@@ -1111,6 +1183,7 @@ final class StarterKit implements StarterKitInterface {
 - [#3275093](https://www.drupal.org/node/3275093) Обновлены дампы БД для Drupal 9.3.0 тестов.
 - [#3266739](https://www.drupal.org/node/3266739) Из `FunctionalTestSetupTrait::prepareEnvironment()` удалён комментарий о том что метод является приватным.
 - [#3276620](https://www.drupal.org/node/3276620) Тест `NoJavaScriptAnonymousTest` теперь использует `stark` тему оформления.
+- [#3279788](https://www.drupal.org/node/3279788) `RequirementsPageTrait::assertRequirementSummaries()` теперь учитывает что темой оформления для `update.php` может быть и Claro.
 
 ## Прочие изменения
 
