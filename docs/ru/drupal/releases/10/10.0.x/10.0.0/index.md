@@ -327,6 +327,7 @@ Drupal 10 перешел на Symfony 6, следовательно, данна�
 ## Database Logging
 
 - [#3268078](https://www.drupal.org/node/3268078) Добавлен тест для `DbLogResource`.
+- [#3278052](https://www.drupal.org/node/3278052) В `DbLogResourceTest` добавлено отсутствующее свойство.
 
 ## Database System
 
@@ -493,3 +494,4 @@ Drupal 10 перешел на Symfony 6, следовательно, данна�
 - [#3256549](https://www.drupal.org/node/3256549) Удалена устаревшая библиотека `core/drupal.date` и метод `Drupal\Core\Render\Element\Date::processDate()`.
 - [#3269154](https://www.drupal.org/node/3269154) Удалён слой [обратной совместимости](../../../../../backward-compatibility/index.md) из системы темизации.
 - [#3269143](https://www.drupal.org/node/3269143) Удалёно устаревшее свойство тем `stylesheets-remove`.
+- [#3278782](https://www.drupal.org/node/3278782) Обновлён файл `phpstan-baseline.neon` на 12.05.2022.

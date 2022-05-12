@@ -846,6 +846,12 @@ entity.filter_format.permissions_form:
 
 Это будет крайне полезно в тех случаях, когда у сущности нет UI для управления типами.
 
+## Команды `yarn build:js` и `yarn watch:js` объявлены устаревшими
+
+- [#3278246](https://www.drupal.org/node/3278246)
+
+Внутренние команды `yarn build:js` и `yarn watch:js` объявлены устаревшими и будут удалены в Drupal 10, так как все браузеры, которые поддерживает Drupal, поддерживают ES6.
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
@@ -881,6 +887,7 @@ entity.filter_format.permissions_form:
 - [#3231334](https://www.drupal.org/node/3231334) Добавлена поддержка глобальных аттрибутов `<* lang>` и `<* dir="ltr rtl">`.
 - [#3278394](https://www.drupal.org/node/3278394) Исправлена неполадка, из-за которой `diff()` мог возвращать некорректный результат при наличии значения в аттрибуте.
 - [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
+- [#3269657](https://www.drupal.org/node/3269657) Добавлена миграция для `media_embed` фильтра из CKEditor 4 → 5.
 
 ## Claro
 
@@ -1221,3 +1228,5 @@ entity.filter_format.permissions_form:
 - [#3013802](https://www.drupal.org/node/3013802) Улучшено сообщение об ошибке для `Url` объектов с несуществующим маршрутом.
 - [#3270395](https://www.drupal.org/node/3270395) Библиотеки `editor/drupal.editor.admin` и `filter/drupal.filter.filter_html.admin` больше не зависят от UnderscoreJS.
 - [#3270941](https://www.drupal.org/node/3270941) Модуль Color удалён из [стандартного установочного профиля](../../../../10/distributions/standard/index.md)
+- [#3206226](https://www.drupal.org/node/3206226) Тема созданная при помощи команды генерации темы теперь имеет комментарий о том, из какой версии темы исходника она была сгенерирована.
+- [#3253286](https://www.drupal.org/node/3253286) Из `starterkit_theme` удален ненужны переопределения.

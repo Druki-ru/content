@@ -19,6 +19,12 @@ category:
 
 </Aside>
 
+**Дата релиза:** 11 мая 2022
+
 ## JavaScript
 
 - [#3278163](https://www.drupal.org/node/3278163) Yarn зависимости обновлены до последних версий обновлений безопасности.
+
+## Ссылки
+
+- [Drupal 9.2.19](https://www.drupal.org/project/drupal/releases/9.2.19) (англ.), drupal.org, 11 мая 2022
