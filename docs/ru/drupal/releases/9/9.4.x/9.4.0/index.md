@@ -887,7 +887,7 @@ entity.filter_format.permissions_form:
 - [#3231334](https://www.drupal.org/node/3231334) Добавлена поддержка глобальных аттрибутов `<* lang>` и `<* dir="ltr rtl">`.
 - [#3278394](https://www.drupal.org/node/3278394) Исправлена неполадка, из-за которой `diff()` мог возвращать некорректный результат при наличии значения в аттрибуте.
 - [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
-- [#3269657](https://www.drupal.org/node/3269657) Добавлена миграция для `media_embed` фильтра из CKEditor 4 → 5.
+- [#3259593](https://www.drupal.org/node/3259593) Функционал выравнивания теперь доступен только как выпадающий список без отдельных кнопок.
 
 ## Claro
 
@@ -1020,6 +1020,8 @@ entity.filter_format.permissions_form:
 - [#3239838](https://www.drupal.org/node/3239838) Из ESlint конфигурации удалены неиспользуемые правила для React и JSX.
 - [#3233491](https://www.drupal.org/node/3233491) Добавлена операция проверки изменений в сторонних JavaScript зависимостях (без предварительной минификации).
 - [#3265664](https://www.drupal.org/node/3265664) Зависимость `jsdom` обновлена до 19 мажорного релиза.
+- [#3278786](https://www.drupal.org/node/3278786) Зависимости ядра обновлены на 12.05.22.
+- [#3101922](https://www.drupal.org/node/3101922) Функционал `touchevent` из Modernizr заменён нативной реализацией.
 
 ## JSON:API
 
@@ -1117,6 +1119,7 @@ entity.filter_format.permissions_form:
 ## System
 
 - [#3279640](https://www.drupal.org/node/3279640) При использовании темы оформления Claro в качестве административной, она также будет использована для страницы `update.php`.
+- [#3279850](https://www.drupal.org/node/3279850) Исправлена неполадка, из-за которой обновления не распознавались если тема используется в установщике.
 
 ## Taxonomy
 
@@ -1134,6 +1137,7 @@ entity.filter_format.permissions_form:
 ## Quick Edit
 
 - [#3264945](https://www.drupal.org/node/3264945) Вся документация Quick Edit была перенесена непосредственно в модуль.
+- [#3279840](https://www.drupal.org/node/3279840) Исправлен тест `SettingsTrayIntegrationTest::createBlockContent()`.
 
 ## Update
 
