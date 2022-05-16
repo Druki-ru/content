@@ -868,6 +868,7 @@ entity.filter_format.permissions_form:
 ## Big Pipe
 
 - [#3270835](https://www.drupal.org/node/3270835) Регрессионный тест для CKEditor 4 перенесён в соответствующий модуль `ckeditor`.
+- [#3276839](https://www.drupal.org/node/3276839) Удалены остатки кода от свойства `$dumpHeaders`.
 
 ## Block
 
@@ -939,11 +940,14 @@ entity.filter_format.permissions_form:
 ## Content Translation
 
 - [#2873648](https://www.drupal.org/node/2873648) Улучшена производительность при выводе множества альтернативных ссылок для разных языков.
+- [#3278032](https://www.drupal.org/node/3278032) Из `ContentTranslationController` удалён неиспользуемый код.
+- [#3272558](https://www.drupal.org/node/3272558) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Contextual Links
 
 - [#3269266](https://www.drupal.org/node/3269266) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 - [#2168711](https://www.drupal.org/node/2168711) Исправлена неполадка, при которой, использование `Modernizr.touchevents` могло приводить к поломке контекстуальных ссылок.
+- [#3277311](https://www.drupal.org/node/3277311) Contextual JS API теперь являтеся внутренним и помечено устаревшим.
 
 ## CSS
 
@@ -964,7 +968,6 @@ entity.filter_format.permissions_form:
 
 - [#3251100](https://www.drupal.org/node/3251100) Исправлена неполадка, из-за которой `DateTimeWidgetBase` дважды устанавливал одну и ту же временную зону.
 - [#3269517](https://www.drupal.org/node/3269517) Тесты модуля теперь используют тему оформления Stark вместо Classy.
-- [#2636086](https://www.drupal.org/node/2636086) В `FilterDateTest` добавлено больше проверок для операторов фильтров Views.
 
 ## Editor
 
@@ -999,11 +1002,13 @@ entity.filter_format.permissions_form:
 
 - [#3227821](https://www.drupal.org/node/3227821) Исправлена неполадка в фильтре «Заменять переводы строк соответствующими HTML-тегами», которая могла приводить к поломке SVG элементов.
 - [#3272516](https://www.drupal.org/node/3272516) Метод `FilterInterface::getHTMLRestrictions()` объявлен устаревшим. Это также значит что и функционал `forbidden_tags` объявлен устаревшим.
+- [#3272354](https://www.drupal.org/node/3272354) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Image
 
 - [#3223233](https://www.drupal.org/node/3223233) Улучшены заголовки страниц для форм добавления и редактирования [стилей изображений](../../../../9/image/image-styles/index.md).
 - [#3060875](https://www.drupal.org/node/3060875) `ImageStyleStorageInterface` теперь расширяет `ConfigStorageInterface`.
+- [#3272581](https://www.drupal.org/node/3272581) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## JavaScript
 
@@ -1022,6 +1027,7 @@ entity.filter_format.permissions_form:
 - [#3265664](https://www.drupal.org/node/3265664) Зависимость `jsdom` обновлена до 19 мажорного релиза.
 - [#3278786](https://www.drupal.org/node/3278786) Зависимости ядра обновлены на 12.05.22.
 - [#3101922](https://www.drupal.org/node/3101922) Функционал `touchevent` из Modernizr заменён нативной реализацией.
+- [#3280359](https://www.drupal.org/node/3280359) Библиотека `jquery.form` теперь является внутренней и будет удалена в Drupal 10.
 
 ## JSON:API
 
@@ -1035,6 +1041,14 @@ entity.filter_format.permissions_form:
 ## Help Topics
 
 - [#3272537](https://www.drupal.org/node/3272537) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+
+## History
+
+- [#3272543](https://www.drupal.org/node/3272543) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+
+## Language
+
+- [#3275530](https://www.drupal.org/node/3275530) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 
 ## Layout Builder
 
@@ -1092,6 +1106,7 @@ entity.filter_format.permissions_form:
 - [#3226016](https://www.drupal.org/node/3226016) Классы в шаблоне `form--search-block-form.html.twig` теперь задаются в массиве, а не сразу присваиваются обёртке.
 - [#3278215](https://www.drupal.org/node/3278215) Опциональные конфигурации блоков перенесены в тему из стандартного профиля.
 - [#3278696](https://www.drupal.org/node/3278696) Конфигурации `block.block.book_navigation.yml` и `block.block.primary_admin_actions.yml` были переименованы в `block.block.olivero_book_navigation.yml` и `block.block.olivero_primary_admin_actions.yml` соответственно.
+- [#3277557](https://www.drupal.org/node/3277557) Улучшено отображение процентной метки в прогресс баре.
 
 ## RDF
 
@@ -1120,6 +1135,7 @@ entity.filter_format.permissions_form:
 
 - [#3279640](https://www.drupal.org/node/3279640) При использовании темы оформления Claro в качестве административной, она также будет использована для страницы `update.php`.
 - [#3279850](https://www.drupal.org/node/3279850) Исправлена неполадка, из-за которой обновления не распознавались если тема используется в установщике.
+- [#3276652](https://www.drupal.org/node/3276652) `AssertMenuActiveTrailTrait` теперь опирается на конкретный класс независящий от темы оформления.
 
 ## Taxonomy
 

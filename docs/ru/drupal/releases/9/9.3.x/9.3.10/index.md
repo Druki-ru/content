@@ -106,10 +106,6 @@ ckeditor5-stylesheets:
 
 - [#3250397](https://www.drupal.org/node/3250397) Исправлена неполадка, из-за которой модуль мог приводить к ошибкам из CLI на PHP 8.1.
 
-## Datetime
-
-- [#2636086](https://www.drupal.org/node/2636086) (отменено) Внесены улучшения в `FilterDateTest`.
-
 ## Demo Umami
 
 - [#3203604](https://www.drupal.org/node/3203604) Добавлен новый рецепт «Борщ со свиными ребрышками».
