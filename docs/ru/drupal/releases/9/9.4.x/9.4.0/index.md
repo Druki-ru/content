@@ -852,6 +852,14 @@ entity.filter_format.permissions_form:
 
 Внутренние команды `yarn build:js` и `yarn watch:js` объявлены устаревшими и будут удалены в Drupal 10, так как все браузеры, которые поддерживает Drupal, поддерживают ES6.
 
+## Добавлено новое разрешение `view update notifications`
+
+- [#332796](https://www.drupal.org/node/332796)
+
+В Update модуль было добавлено новое разрешение «Просмотр уведомлений об обновлениях». Это разрешение позволяет настраивать то, кто будет видеть уведомление о новых обновлениях для Drupal на административных страницах.
+
+Для уже существующих сайтов данное разрешение будет установлено всем ролям которые имеют разрешение `administer site configuration`.
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
@@ -886,7 +894,6 @@ entity.filter_format.permissions_form:
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKEditor 4.
 - [#3275114](https://www.drupal.org/node/3275114) В `MAINTAINERS.txt` добавлены мейнтейнеры CKEditor 5.
 - [#3231334](https://www.drupal.org/node/3231334) Добавлена поддержка глобальных аттрибутов `<* lang>` и `<* dir="ltr rtl">`.
-- [#3278394](https://www.drupal.org/node/3278394) Исправлена неполадка, из-за которой `diff()` мог возвращать некорректный результат при наличии значения в аттрибуте.
 - [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
 - [#3259593](https://www.drupal.org/node/3259593) Функционал выравнивания теперь доступен только как выпадающий список без отдельных кнопок.
 
@@ -947,7 +954,8 @@ entity.filter_format.permissions_form:
 
 - [#3269266](https://www.drupal.org/node/3269266) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 - [#2168711](https://www.drupal.org/node/2168711) Исправлена неполадка, при которой, использование `Modernizr.touchevents` могло приводить к поломке контекстуальных ссылок.
-- [#3277311](https://www.drupal.org/node/3277311) Contextual JS API теперь являтеся внутренним и помечено устаревшим.
+- [#3277311](https://www.drupal.org/node/3277311) Contextual JS API теперь является внутренним и помечено устаревшим.
+- [#3276565](https://www.drupal.org/node/3276565) `larowlan` добавлен в качестве мейнтейнера модуля.
 
 ## CSS
 
@@ -1250,3 +1258,4 @@ entity.filter_format.permissions_form:
 - [#3270941](https://www.drupal.org/node/3270941) Модуль Color удалён из [стандартного установочного профиля](../../../../10/distributions/standard/index.md)
 - [#3206226](https://www.drupal.org/node/3206226) Тема созданная при помощи команды генерации темы теперь имеет комментарий о том, из какой версии темы исходника она была сгенерирована.
 - [#3253286](https://www.drupal.org/node/3253286) Из `starterkit_theme` удален ненужны переопределения.
+- [#3112283](https://www.drupal.org/node/3112283) Использование `REQUEST_TIME` заменено на более подходящие функции и методы.

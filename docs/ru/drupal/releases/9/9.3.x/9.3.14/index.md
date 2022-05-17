@@ -23,6 +23,15 @@ category:
 
 - [#3269657](https://www.drupal.org/node/3269657) Добавлена миграция для `media_embed` фильтра из CKEditor 4 → 5.
 - [#3276218](https://www.drupal.org/node/3276218) Включено тестирование unrestrcited ссылок.
+- [#3278394](https://www.drupal.org/node/3278394) Исправлена неполадка, из-за которой `diff()` мог возвращать некорректный результат при наличии значения в аттрибуте.
+
+## Contact
+
+- [#3260920](https://www.drupal.org/node/3260920) Исправлена некорректная операция в `MessageEntityTest`.
+
+## Contextual Links
+
+- [#2580263](https://www.drupal.org/node/2580263) Внесены улучшения в `contextual_preprecess()` для увеличения производительности (на 6%).
 
 ## Datetime
 
@@ -51,6 +60,10 @@ category:
 ## Render
 
 - [#3270081](https://www.drupal.org/node/3270081) Исправлено форматирование документации в `RenderInterface`.
+
+## Responsive Image
+
+- [#3250582](https://www.drupal.org/node/3250582) Плагин источника миграции `ResponsiveImageStyles` теперь расширяет `DrupalSqlBase`.
 
 ## Search
 
