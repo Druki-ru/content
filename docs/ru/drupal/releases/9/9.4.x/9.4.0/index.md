@@ -895,7 +895,6 @@ entity.filter_format.permissions_form:
 - [#3275114](https://www.drupal.org/node/3275114) В `MAINTAINERS.txt` добавлены мейнтейнеры CKEditor 5.
 - [#3231334](https://www.drupal.org/node/3231334) Добавлена поддержка глобальных аттрибутов `<* lang>` и `<* dir="ltr rtl">`.
 - [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
-- [#3259593](https://www.drupal.org/node/3259593) Функционал выравнивания теперь доступен только как выпадающий список без отдельных кнопок.
 
 ## Claro
 
@@ -932,6 +931,7 @@ entity.filter_format.permissions_form:
 - [#3258276](https://www.drupal.org/node/3258276) В Composer скрипте `drupal-phpunit-upgrade` убрана опция `--no-suggest` при установке `phpspec/prophecy-phpunit`.
 - [#3225706](https://www.drupal.org/node/3225706) Произведён рефакторинг `ComposerProjectTemplatesTest::testMinimumStabilityStrictness()` так, чтобы при ошибке писалось, с каким пакетом возникли проблемы.
 - [#3278162](https://www.drupal.org/node/3278162) Зависимости ядра обновлены на 06.05.2022.
+- [#3262874](https://www.drupal.org/node/3262874) Зависимость `drupal/coder` обновлена до 8.3.15.
 
 ## Configuration System
 
@@ -1169,6 +1169,7 @@ entity.filter_format.permissions_form:
 - [#3238311](https://www.drupal.org/node/3238311) Маршрут `system.batch_page.html` добавлен в список маршрутов, на которых не показываются предупреждения об обновлениях безопасности.
 - [#2807949](https://www.drupal.org/node/2807949) Исправлена неполадка, из-за которой не происходила очистка кеша модуля в момент установки или удаления сторонних модулей, что приводило к ненужным загрузкам переводов и прочим ошибкам. Эта проблема наблюдалась при включении или отключении модуля без участия интерфейса расширений Drupal (например через Drush).
 - [#3275216](https://www.drupal.org/node/3275216) Обновлён Dependency Injection в `UpdateSettingsForm`.
+- [#3272956](https://www.drupal.org/node/3272956) В `ProjectSecurityData` добавлены даты EOL для Drupal 9.4 и [Drupal 9.5](../../9.5.x/9.5.0/index.md).
 
 ## Umami
 
