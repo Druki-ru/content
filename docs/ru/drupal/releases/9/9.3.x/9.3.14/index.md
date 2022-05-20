@@ -76,6 +76,10 @@ category:
 
 - [#3277552](https://www.drupal.org/node/3277552) Добавлено визуальное оформление фокусировки элементов CKEditor.
 
+## Taxonomy
+
+- [#3058409](https://www.drupal.org/node/3058409) Улучшена документация для `TermStorage::loadTree()`.
+
 ## Views
 
 - [#2917239](https://www.drupal.org/node/2917239) Views больше не собирает форму настроек когда не используются поля.

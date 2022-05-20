@@ -932,6 +932,7 @@ entity.filter_format.permissions_form:
 - [#3225706](https://www.drupal.org/node/3225706) Произведён рефакторинг `ComposerProjectTemplatesTest::testMinimumStabilityStrictness()` так, чтобы при ошибке писалось, с каким пакетом возникли проблемы.
 - [#3278162](https://www.drupal.org/node/3278162) Зависимости ядра обновлены на 06.05.2022.
 - [#3262874](https://www.drupal.org/node/3262874) Зависимость `drupal/coder` обновлена до 8.3.15.
+- [#322596](https://www.drupal.org/node/322596) `guzzlehttp/guzzle` теперь может быть как 6 так и 7 версии.
 
 ## Configuration System
 
@@ -1220,6 +1221,7 @@ entity.filter_format.permissions_form:
 - [#3266739](https://www.drupal.org/node/3266739) Из `FunctionalTestSetupTrait::prepareEnvironment()` удалён комментарий о том что метод является приватным.
 - [#3276620](https://www.drupal.org/node/3276620) Тест `NoJavaScriptAnonymousTest` теперь использует `stark` тему оформления.
 - [#3279788](https://www.drupal.org/node/3279788) `RequirementsPageTrait::assertRequirementSummaries()` теперь учитывает что темой оформления для `update.php` может быть и Claro.
+- [#3280882](https://www.drupal.org/node/3280882) Исправлена неполадка в `KernelTestBase` из-за которой свойствам теста с тайпхинтами нужно было добавлять `?` к типу.
 
 ## Прочие изменения
 
