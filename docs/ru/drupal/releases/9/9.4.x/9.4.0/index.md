@@ -860,6 +860,40 @@ entity.filter_format.permissions_form:
 
 Для уже существующих сайтов данное разрешение будет установлено всем ролям которые имеют разрешение `administer site configuration`.
 
+## Модуль Color объявлен устаревшим
+
+- [#3270936](https://www.drupal.org/node/3270936)
+
+Модуль Color объявлен устаревшим и будет удалён в [Drupal 10.0.0](../../../10/10.0.x/10.0.0/index.md).
+
+Функционал модуля вынесен в сторонний модуль [drupal/color](https://www.drupal.org/project/color).
+
+## Добавлен новый метод `Token::replacePlain()`
+
+- [#2580723](https://www.drupal.org/node/2580723)
+
+Некорректное использование системы токенов может привести в двойному экранированию или поломке разметки. Для предотвращения данного рода проблем, в Token API были внесены улучшения в документацию, а также новый метод, который позволяет производить замену в тексте без обработки.
+
+Примеры правильного применения:
+
+- `::replace()`: На ввод и вывод передаётся разметка. Возвращаемое значение должно расцениваться как небезопасное, даже если на входе вы передали «безопасную» разметку. Это необходимо в связи с тем, что позволяет производить атаку когда результатом токена может оказаться небезопасная разметка.
+- `::replacePlain()`: На ввод и вывод передаётся обычный текст.
+
+**Ранее:**
+
+```php
+use Drupal\Component\Render\PlainTextOutput;
+use Drupal\Component\Utility\Html
+
+PlainTextOutput::renderFromHtml($token_service->replace(Html::escape($plain)));
+```
+
+**Сейчас:**
+
+```php
+$token_service->replacePlain($plain);
+```
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
@@ -894,7 +928,6 @@ entity.filter_format.permissions_form:
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKEditor 4.
 - [#3275114](https://www.drupal.org/node/3275114) В `MAINTAINERS.txt` добавлены мейнтейнеры CKEditor 5.
 - [#3231334](https://www.drupal.org/node/3231334) Добавлена поддержка глобальных аттрибутов `<* lang>` и `<* dir="ltr rtl">`.
-- [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
 
 ## Claro
 
@@ -918,6 +951,7 @@ entity.filter_format.permissions_form:
 
 - [#3270897](https://www.drupal.org/node/3270897) Обновлены тесты проверяющие корректную миграцию при удалении модуля Color.
 - [#3270905](https://www.drupal.org/node/3270905) Help Topics для модуля Color перенесены непосредственно в него.
+- [#3270842](https://www.drupal.org/node/3270842) Объявлены переменные с градацией красного цвета.
 
 ## Comment
 
@@ -1082,6 +1116,10 @@ entity.filter_format.permissions_form:
 - [#3173770](https://www.drupal.org/node/3173770) `MediaLibraryFieldWidgetOpener` теперь позволяет использовать другие референс поля, расширяющее поле из ядра и использующие `EntityReferenceFieldItemList`.
 - [#3248454](https://www.drupal.org/node/3248454) Внесены улучшения в `MediaLibraryStateTest` для совместимости с Symfony 5.4.
 
+## Menu Link Content
+
+- [#3245553](https://www.drupal.org/node/3245553) Улучшена миграция мультиязычных ссылок из Drupal 6.
+
 ## Migration System
 
 - [#3246053](https://www.drupal.org/node/3246053) Обновлено значение `filesize` файла `ds9.txt` в `file_managed`.
@@ -1116,6 +1154,7 @@ entity.filter_format.permissions_form:
 - [#3278215](https://www.drupal.org/node/3278215) Опциональные конфигурации блоков перенесены в тему из стандартного профиля.
 - [#3278696](https://www.drupal.org/node/3278696) Конфигурации `block.block.book_navigation.yml` и `block.block.primary_admin_actions.yml` были переименованы в `block.block.olivero_book_navigation.yml` и `block.block.olivero_primary_admin_actions.yml` соответственно.
 - [#3277557](https://www.drupal.org/node/3277557) Улучшено отображение процентной метки в прогресс баре.
+- [#3274080](https://www.drupal.org/node/3274080) Улучшено отображение мобильного меню в режиме `forced-colors`.
 
 ## RDF
 
