@@ -1155,6 +1155,7 @@ $token_service->replacePlain($plain);
 - [#3278696](https://www.drupal.org/node/3278696) Конфигурации `block.block.book_navigation.yml` и `block.block.primary_admin_actions.yml` были переименованы в `block.block.olivero_book_navigation.yml` и `block.block.olivero_primary_admin_actions.yml` соответственно.
 - [#3277557](https://www.drupal.org/node/3277557) Улучшено отображение процентной метки в прогресс баре.
 - [#3274080](https://www.drupal.org/node/3274080) Улучшено отображение мобильного меню в режиме `forced-colors`.
+- [#3279693](https://www.drupal.org/node/3279693) Исправлено отображение ссылок с классом `button` и `button--primary` внутри контейнера `text-content`.
 
 ## RDF
 
