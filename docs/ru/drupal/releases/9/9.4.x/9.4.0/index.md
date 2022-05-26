@@ -968,6 +968,7 @@ $token_service->replacePlain($plain);
 - [#3262874](https://www.drupal.org/node/3262874) Зависимость `drupal/coder` обновлена до 8.3.15.
 - [#322596](https://www.drupal.org/node/322596) `guzzlehttp/guzzle` теперь может быть как 6 так и 7 версии.
 - [#3282050](https://www.drupal.org/node/3282050) Исправлен некорректный хеш в `composer.lock`, который приводил к провалу теста.
+- [#3282342](https://www.drupal.org/node/3282342) Минимальные версии `guzzlehttp/guzzle` обновлены до 6.5.6 и 7.4.3.
 
 ## Configuration System
 
@@ -1305,3 +1306,4 @@ $token_service->replacePlain($plain);
 - [#3253286](https://www.drupal.org/node/3253286) Из `starterkit_theme` удален ненужны переопределения.
 - [#3112283](https://www.drupal.org/node/3112283) Использование `REQUEST_TIME` заменено на более подходящие функции и методы.
 - [#3279703](https://www.drupal.org/node/3279703) Заголовок главной страницы теперь просто «Добро пожаловать».
+- [#3282395](https://www.drupal.org/node/3282395) Исправлена неполадка, из-за которой PHPStan и `mglaman/phpstan-drupal` не могли обнаружить `PhpUnitCompatibilityTrait`.
