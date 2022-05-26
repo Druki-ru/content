@@ -4,7 +4,7 @@ slug: wiki/drupal/releases/9.2.20
 core: 9
 metatags:
   title: 'Drupal 9.2.20: Список изменений'
-  description: 'Список изменений Drupal 9.2.20.'
+  description: 'Обновления безопасности исправляющее SA-CORE-2022-010.'
 authors:
   - Niklan
 category:

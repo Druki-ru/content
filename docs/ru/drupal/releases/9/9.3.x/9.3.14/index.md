@@ -3,11 +3,11 @@ title: 'Drupal 9.3.14'
 slug: wiki/drupal/releases/9.3.14
 core: 9
 metatags:
-title: 'Drupal 9.3.14: Список изменений'
-description: 'Обновления безопасности исправляющее SA-CORE-2022-008.'
+  title: 'Drupal 9.3.14: Список изменений'
+  description: 'Обновления безопасности исправляющее SA-CORE-2022-010.' 
 authors:
-- Niklan
-  category:
+  - Niklan
+category:
   area: 'Drupal 9.3.x'
   title: Drupal 9.3.14
   order: 14
