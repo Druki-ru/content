@@ -967,6 +967,7 @@ $token_service->replacePlain($plain);
 - [#3278162](https://www.drupal.org/node/3278162) Зависимости ядра обновлены на 06.05.2022.
 - [#3262874](https://www.drupal.org/node/3262874) Зависимость `drupal/coder` обновлена до 8.3.15.
 - [#322596](https://www.drupal.org/node/322596) `guzzlehttp/guzzle` теперь может быть как 6 так и 7 версии.
+- [#3282050](https://www.drupal.org/node/3282050) Исправлен некорректный хеш в `composer.lock`, который приводил к провалу теста.
 
 ## Configuration System
 
@@ -1156,6 +1157,7 @@ $token_service->replacePlain($plain);
 - [#3277557](https://www.drupal.org/node/3277557) Улучшено отображение процентной метки в прогресс баре.
 - [#3274080](https://www.drupal.org/node/3274080) Улучшено отображение мобильного меню в режиме `forced-colors`.
 - [#3279693](https://www.drupal.org/node/3279693) Исправлено отображение ссылок с классом `button` и `button--primary` внутри контейнера `text-content`.
+- [#3246755](https://www.drupal.org/node/3246755) Меню с большим кол-вом элементов теперь конвертируются в мобильную навигацию.
 
 ## RDF
 
@@ -1302,3 +1304,4 @@ $token_service->replacePlain($plain);
 - [#3206226](https://www.drupal.org/node/3206226) Тема созданная при помощи команды генерации темы теперь имеет комментарий о том, из какой версии темы исходника она была сгенерирована.
 - [#3253286](https://www.drupal.org/node/3253286) Из `starterkit_theme` удален ненужны переопределения.
 - [#3112283](https://www.drupal.org/node/3112283) Использование `REQUEST_TIME` заменено на более подходящие функции и методы.
+- [#3279703](https://www.drupal.org/node/3279703) Заголовок главной страницы теперь просто «Добро пожаловать».

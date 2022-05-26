@@ -431,6 +431,7 @@ Drupal 10 перешел на Symfony 6, следовательно, данна�
 - [#3254723](https://www.drupal.org/node/3254723) Удалён слушатель `SimpletestUiPrinter`.
 - [#3264764](https://www.drupal.org/node/3264764) Исправлена неполадка, из-за которой тест `PhpUnitCliTest::testFunctionalTestDebugHtmlOutput()` проваливался при пустом значении `BROWSERTEST_OUTPUT_DIRECTORY`.
 - [#3211131](https://www.drupal.org/node/3211131) Внесены улучшения в `DrupalStandardsListenerTrait`.
+- [#3281863](https://www.drupal.org/node/3281863) Внесены улучшения в `drupalInstallModule.js`.
 
 ## Прочие изменения
 
