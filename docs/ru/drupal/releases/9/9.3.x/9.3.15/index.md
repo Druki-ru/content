@@ -27,6 +27,7 @@ category:
 - [#3259593](https://www.drupal.org/node/3259593) Функционал выравнивания теперь доступен только как выпадающий список без отдельных кнопок.
 - [#3280602](https://www.drupal.org/node/3280602) Внесены улучшения в `HTMLRestrictions`.
 - [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
+- [#3277438](https://www.drupal.org/node/3277438) CKEditor обновлён до версии 34.1.0.
 
 ## Contact
 

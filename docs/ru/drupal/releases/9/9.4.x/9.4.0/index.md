@@ -894,6 +894,14 @@ PlainTextOutput::renderFromHtml($token_service->replace(Html::escape($plain)));
 $token_service->replacePlain($plain);
 ```
 
+## Константа `\Drupal::MINIMUM_SUPPORTED_PHP` объявлена устаревшей в пользу динамического метода
+
+- [#3261447](https://www.drupal.org/node/3261447)
+
+Для того чтобы предоставить сайтам максимально полную информацию о текущих поддерживаемых и рекомендуемых версиях PHP, константа `\Drupal::MINIMUM_SUPPORTED_PHP` объявлена устаревшей и заменена новым методом `\Drupal\Core\PhpRequirements::minimumSupportedPhp()`.
+
+Данный метод возвращает версию PHP на основе известных и ожидаемых релиз циклах для PHP и Drupal.
+
 ## Action
 
 - [#3067299](https://www.drupal.org/node/3067299) Миграции модуля перенесены в модуль `system`.
@@ -1206,6 +1214,7 @@ $token_service->replacePlain($plain);
 
 - [#3264945](https://www.drupal.org/node/3264945) Вся документация Quick Edit была перенесена непосредственно в модуль.
 - [#3279840](https://www.drupal.org/node/3279840) Исправлен тест `SettingsTrayIntegrationTest::createBlockContent()`.
+- [#3265140](https://www.drupal.org/node/3265140) `QuickEditImageController` перемещён из модуля image в quickedit.
 
 ## Update
 
