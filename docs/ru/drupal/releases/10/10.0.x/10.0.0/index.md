@@ -299,12 +299,6 @@ $ phpstan analyze --configuration=core/phpstan.neon.dist --generate-baseline ./c
 
 Drupal 10 перешел на Symfony 6, следовательно, данная прослойка больше не нужна и будет удалена в Drupal 11. Замена не предоставляется, вы можете использовать класс из Symfony напрямую.
 
-## Метод `Connection::lastInsertId()` теперь является частью публичного Database API
-
-- [#3260007](https://www.drupal.org/node/3260007)
-
-Метод `Drupal\Core\Database\Connection::lastInsertId()` больше не является `@internel` для того чтобы стать публичным API. Данный метод возвращает ID последней вставленной строки или последовательного значения.
-
 ## CKEditor 5
 
 - [#3261585](https://www.drupal.org/node/3261585) Удалены предупреждения для Internet Explorer 11, так как Drupal 10 больше его не поддерживает.
