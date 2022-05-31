@@ -978,6 +978,7 @@ $token_service->replacePlain($plain);
 - [#3282050](https://www.drupal.org/node/3282050) Исправлен некорректный хеш в `composer.lock`, который приводил к провалу теста.
 - [#3282342](https://www.drupal.org/node/3282342) Минимальные версии `guzzlehttp/guzzle` обновлены до 6.5.6 и 7.4.3.
 - [#3281578](https://www.drupal.org/node/3281578) Обновлены минимальные патч версии для всех зависимостей ядра.
+- [#3283093](https://www.drupal.org/node/3283093) Зависимости ядра обновлены на 30.05.2022.
 
 ## Configuration System
 

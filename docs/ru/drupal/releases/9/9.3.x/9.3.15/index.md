@@ -28,6 +28,7 @@ category:
 - [#3280602](https://www.drupal.org/node/3280602) Внесены улучшения в `HTMLRestrictions`.
 - [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
 - [#3277438](https://www.drupal.org/node/3277438) CKEditor обновлён до версии 34.1.0.
+- [#3274651](https://www.drupal.org/node/3274651) Исправлена неполадка, из-за которой невозможно было включить поддержку `<ol type>` и `<ul type>` с GHS.
 
 ## Contact
 
