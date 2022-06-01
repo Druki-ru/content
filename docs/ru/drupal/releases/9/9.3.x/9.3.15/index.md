@@ -29,6 +29,8 @@ category:
 - [#3275237](https://www.drupal.org/node/3275237) Внесены улучшения в `DrupalImageUploadEditing`.
 - [#3277438](https://www.drupal.org/node/3277438) CKEditor обновлён до версии 34.1.0.
 - [#3274651](https://www.drupal.org/node/3274651) Исправлена неполадка, из-за которой невозможно было включить поддержку `<ol type>` и `<ul type>` с GHS.
+- [#3276217](https://www.drupal.org/node/3276217) Добавлены тесты для GHS аттрибутов в связанном Media.
+- [#3274648](https://www.drupal.org/node/3274648) Исправлена неполадка в `HTMLRestrictions::merge()` и `::toGeneralHtmlSupportConfig()`, которая могла приводить к некорректным значениям при аттрибутах с цифрами.
 
 ## Contact
 
@@ -58,9 +60,13 @@ category:
 
 - [#3279103](https://www.drupal.org/node/3279103) Удалён неиспользуемый код из `JsonApiFunctionalTest`.
 
-## Layout BUilder
+## Layout Builder
 
 - [#3278314](https://www.drupal.org/node/3278314) Улучшена документация для метода `InlineBlockUsageInterface::getUsage()`, который также может возвращать `FALSE`.
+
+## Olivero
+
+- [#3280985](https://www.drupal.org/node/3280985) Исправлена неполадка, из-за которой на некоторых вьюпортах отображение могло быть слегка неточным.
 
 ## Quick Edit
 
