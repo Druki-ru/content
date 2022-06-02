@@ -9,15 +9,11 @@ authors:
   - Niklan
 category:
   area: 'Drupal 9.3.x'
-  title: Drupal 9.3.15 (в разработке)
+  title: Drupal 9.3.15
   order: 15
 ---
 
-<Aside type="warning">
-
-Данная версия находится в разработке и не предназначена для использования.
-
-</Aside>
+**Дата релиза:** 1 июня 2022
 
 ## CKEditor 5
 
@@ -102,3 +98,7 @@ category:
 - [#3279502](https://www.drupal.org/node/3279502) Исправлены некорректные аннотации `@property`.
 - [#3268746](https://www.drupal.org/node/3268746) Исправлены ошибки стандарта кодирования `Drupal.Commenting.DocComment.ShortSingleLine`.
 - [#3232714](https://www.drupal.org/node/3232714) Создание экземпляра класса через мокинг заменено на вызов класса непосредственно, если никакой функционал мока не был при этом задействован.
+
+## Ссылки
+
+- [Drupal 9.3.15](https://www.drupal.org/project/drupal/releases/9.3.15) (англ.), drupal.org, 1 июня 2022
