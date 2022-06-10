@@ -928,6 +928,7 @@ $token_service->replacePlain($plain);
 ## CKEditor 4
 
 - [#3271046](https://www.drupal.org/node/3271046) Тесты CKEditor 4 для проверки Inline Form Errors перенесены непосредственно в модуль редактора.
+- [#3281438](https://www.drupal.org/node/3281438) `CKEditorTest` больше не использует темы Bartik и Seven.
 
 ## CKEditor 5
 
@@ -1019,6 +1020,7 @@ $token_service->replacePlain($plain);
 - [#3213644](https://www.drupal.org/node/3213644) Внесены улучшения в тест `StatementWrapperLegacyTest::testClientStatementMethod()`.
 - [#3259532](https://www.drupal.org/node/3259532) Добавлено тестирование `::hasJson()`.
 - [#2236983](https://www.drupal.org/node/2236983) Улучшена документация для метода `Database::addConnectionInfo()`.
+- [#3284502](https://www.drupal.org/node/3284502) Исправлена неполадка, из-за которой могли некорректно загружаться драйверы баз данных.
 
 ## Datetime
 
