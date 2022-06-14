@@ -924,6 +924,7 @@ $token_service->replacePlain($plain);
 
 - [#3273072](https://www.drupal.org/node/3273072) Исправлена опечатка в туре по модулю.
 - [#3271507](https://www.drupal.org/node/3271507) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+- [#2430133](https://www.drupal.org/node/2430133) Внесены улучшения в `BlockLanguageTest`.
 
 ## CKEditor 4
 
@@ -937,6 +938,7 @@ $token_service->replacePlain($plain);
 - [#3271050](https://www.drupal.org/node/3271050) Тесты для REST и JSON:API связанные с редактором теперь используют CKEditor 5 вместо CKEditor 4.
 - [#3275114](https://www.drupal.org/node/3275114) В `MAINTAINERS.txt` добавлены мейнтейнеры CKEditor 5.
 - [#3231334](https://www.drupal.org/node/3231334) Добавлена поддержка глобальных аттрибутов `<* lang>` и `<* dir="ltr rtl">`.
+- [#3283599](https://www.drupal.org/node/3283599) Исправлена опечатка в `hook_help()`.
 
 ## Claro
 
@@ -980,6 +982,7 @@ $token_service->replacePlain($plain);
 - [#3282342](https://www.drupal.org/node/3282342) Минимальные версии `guzzlehttp/guzzle` обновлены до 6.5.6 и 7.4.3.
 - [#3281578](https://www.drupal.org/node/3281578) Обновлены минимальные патч версии для всех зависимостей ядра.
 - [#3283093](https://www.drupal.org/node/3283093) Зависимости ядра обновлены на 30.05.2022.
+- [#3277025](https://www.drupal.org/node/3277025) В фикстуру `composer.json.tmpl` добавлена конфигурация `allow-plugins`.
 
 ## Configuration System
 
@@ -1034,6 +1037,7 @@ $token_service->replacePlain($plain);
 ## Entity System
 
 - [#3260520](https://www.drupal.org/node/3260520) `\Drupal\Core\Entity\EntityTypeEvent` и `\Drupal\Core\Field\FieldStorageDefinitionEvent` теперь наследуются от `Event` вместо `GenericEvent`.
+- [#3269215](https://www.drupal.org/node/3269215) Тайпхинт для `EntityTypeInterface::getKey()` теперь содержит `FALSE` вместо `bool`, так как он никогда не возвращает `TRUE`.
 
 ## Extension System
 
@@ -1067,6 +1071,11 @@ $token_service->replacePlain($plain);
 - [#3223233](https://www.drupal.org/node/3223233) Улучшены заголовки страниц для форм добавления и редактирования [стилей изображений](../../../../9/image/image-styles/index.md).
 - [#3060875](https://www.drupal.org/node/3060875) `ImageStyleStorageInterface` теперь расширяет `ConfigStorageInterface`.
 - [#3272581](https://www.drupal.org/node/3272581) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+
+## Install System
+
+- [#3280398](https://www.drupal.org/node/3280398) Post update хуки теперь корректно указывают тип расширения на странице обновлений.
+- [#2392815](https://www.drupal.org/node/2392815) Теперь, при удалении модулей, запускаются проверки конфигураций, что модуль может быть удалён, прежде чем действительно его удалять.
 
 ## JavaScript
 
@@ -1121,6 +1130,10 @@ $token_service->replacePlain($plain);
 ## Locale
 
 - [#3274265](https://www.drupal.org/node/3274265) Тесты модуля теперь используют тему оформления Stark вместо Classy.
+
+## Mail System
+
+- [#3265429](https://www.drupal.org/node/3265429) Улучшены ключи в `MailManagerTest`.
 
 ## Media
 
@@ -1186,6 +1199,10 @@ $token_service->replacePlain($plain);
 
 - [#3267870](https://www.drupal.org/node/3267870) (отменено) Стили для точек остановы теперь сортируются в порядке возрастания множителя, а затем по ID стиля.
 
+## REST
+
+- [#3277148](https://www.drupal.org/node/3277148) `ResourceResponse` теперь содержит информацию в документации о том что маршрут для такого ответа должен содержать `_format`.
+
 ## Standard Profile
 
 - [#3171149](https://www.drupal.org/node/3171149) Стандартный профиль теперь использует стиль изображения `wide` для
@@ -1221,6 +1238,7 @@ $token_service->replacePlain($plain);
 - [#3264945](https://www.drupal.org/node/3264945) Вся документация Quick Edit была перенесена непосредственно в модуль.
 - [#3279840](https://www.drupal.org/node/3279840) Исправлен тест `SettingsTrayIntegrationTest::createBlockContent()`.
 - [#3265140](https://www.drupal.org/node/3265140) `QuickEditImageController` перемещён из модуля image в quickedit.
+- [#3265492](https://www.drupal.org/node/3265492) Исправлены неточности в документации модуля для Help Topics.
 
 ## Update
 
@@ -1322,3 +1340,7 @@ $token_service->replacePlain($plain);
 - [#3112283](https://www.drupal.org/node/3112283) Использование `REQUEST_TIME` заменено на более подходящие функции и методы.
 - [#3279703](https://www.drupal.org/node/3279703) Заголовок главной страницы теперь просто «Добро пожаловать».
 - [#3282395](https://www.drupal.org/node/3282395) Исправлена неполадка, из-за которой PHPStan и `mglaman/phpstan-drupal` не могли обнаружить `PhpUnitCompatibilityTrait`.
+- [#3284970](https://www.drupal.org/node/3284970) Упрощён метод `Settings::initialize()`.
+- [#3281451](https://www.drupal.org/node/3281451) `AjaxTest` больше не использует темы Bartik и Seven.
+- [#3281443](https://www.drupal.org/node/3281443) `ThemeTest` больше не использует темы Bartik и Seven.
+- [#3283619](https://www.drupal.org/node/3283619) Исправлена опечатка в `core/includes/common.inc`.

@@ -334,6 +334,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3282315](https://www.drupal.org/node/3282315) (отменено) Зависимости `phpstan/phpstan` и `mglaman/phpstan-drupal` обновлены до последних версий на 07.06.2022.
 - [#3275864](https://www.drupal.org/node/3275864) Зависимости Symfony обновлены до версии 6.1.1.
 - [#3272447](https://www.drupal.org/node/3272447) Зависимость `psr/log` обновлена до 3 версии.
+- [#3285061](https://www.drupal.org/node/3285061) Добавлен запрет на установку `phpstan/phpstan >=1.7`.
 
 ## Database Logging
 
@@ -426,6 +427,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## Tour
 
 - [#3195193](https://www.drupal.org/node/3195193) Из модуля удалён шим Shepherd.
+
+## Translation System
+
+- [#3269141](https://www.drupal.org/node/3269141) (отменено) `TranslationWrapper` теперь является синонимом для `TranslatableMarkup`. Одноимённый класс удалён.
 
 ## Тестирование
 
@@ -521,3 +526,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3261266](https://www.drupal.org/node/3261266) Удалён устаревший код из тестовых классов.
 - [#3281755](https://www.drupal.org/node/3281755) Обновлён файл `phpstan-baseline.neon` на 22.05.2022.
 - [#3261245](https://www.drupal.org/node/3261245) Удалены устаревшие функции модуля Views.
+- [#3284759](https://www.drupal.org/node/3284759) Удалён устаревший трейт `BcTimestampNormalizerUnixTestTrait`.
+- [#3284760](https://www.drupal.org/node/3284760) Удалён устаревший класс `ToolkitTestBase`.
+- [#3281175](https://www.drupal.org/node/3281175) Исправлена неполадка в тесте `PhpUnitCliTest`.
+- [#3284761](https://www.drupal.org/node/3284761) Удалён устаревший код подсистемы обновлений.
+- [#3285136](https://www.drupal.org/node/3285136) Удалена часть кода в конструкторах для обратной совместимости.
+- [#3285503](https://www.drupal.org/node/3285503) Удалён устаревший код в конструкторах классов.
+- [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property»
