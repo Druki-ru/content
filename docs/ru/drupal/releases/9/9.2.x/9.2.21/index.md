@@ -1,16 +1,16 @@
 ---
-title: 'Drupal 9.3.16'
-slug: wiki/drupal/releases/9.3.16
+title: 'Drupal 9.2.21'
+slug: wiki/drupal/releases/9.2.21
 core: 9
 metatags:
-  title: 'Drupal 9.3.16: Список изменений'
-  description: 'Обновления безопасности исправляющее SA-CORE-2022-011.' 
+  title: 'Drupal 9.2.21: Список изменений'
+  description: 'Обновления безопасности исправляющее SA-CORE-2022-011.'
 authors:
   - Niklan
 category:
-  area: 'Drupal 9.3.x'
-  title: Drupal 9.3.16
-  order: 16
+  area: 'Drupal 9.2.x'
+  title: Drupal 9.2.21
+  order: 21
 ---
 
 **Дата релиза:** 11 июня 2022
@@ -23,4 +23,4 @@ category:
 
 ## Ссылки
 
-- [Drupal 9.3.16](https://www.drupal.org/project/drupal/releases/9.3.16) (англ.), drupal.org, 11 июня 2022
+- [Drupal 9.2.21](https://www.drupal.org/project/drupal/releases/9.2.21) (англ.), drupal.org, 11 июня 2022
