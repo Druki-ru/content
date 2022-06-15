@@ -362,6 +362,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3269152](https://www.drupal.org/node/3269152) Удалён слой обратной совместимости `element_settings` в `ajax.es6.js`.
 - [#3265617](https://www.drupal.org/node/3265617) Зависимость Nightwatch обновлена до 2 версии.
 
+## Language
+
+- [#2430379](https://www.drupal.org/node/2430379) Добавлен явный тест по определению языка через сессию `LanguageNegotiationSessionTest`.
+
 ## Libraries System
 
 - [#3101620](https://www.drupal.org/node/3101620) Удалена устаревшая поддержка условий для IE.
@@ -532,4 +536,5 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3284761](https://www.drupal.org/node/3284761) Удалён устаревший код подсистемы обновлений.
 - [#3285136](https://www.drupal.org/node/3285136) Удалена часть кода в конструкторах для обратной совместимости.
 - [#3285503](https://www.drupal.org/node/3285503) Удалён устаревший код в конструкторах классов.
-- [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property»
+- [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property».
+- [#3283794](https://www.drupal.org/node/3283794) Внесены исправления для «should return {type} but return statement is missing».
