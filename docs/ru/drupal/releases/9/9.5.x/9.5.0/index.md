@@ -32,6 +32,10 @@ authors:
 
 - [#3280399](https://www.drupal.org/node/3280399) Пакет `drupal/core-bridge:9.5.x` объявлен заброшенным. 
 
+## Layout Builder
+
+- [#3264633](https://www.drupal.org/node/3264633) Функционал для интеграции Layout Builder с модулем Quick Edit вынесен непосредственно в Quick Edit.
+
 ## Прочие изменения
 
 - [#3279192](https://www.drupal.org/node/3279192) Внесены улучшения в `DrupalKernel::handle()` для того чтобы Drupal мог работать со Swoole.
