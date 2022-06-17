@@ -19,6 +19,15 @@ category:
 
 </Aside>
 
+## Form API
+
+- [#2747273](https://www.drupal.org/node/2747273) Улучшен пример программной отправки формы в `FormBuilderInterface`.
+
 ## Quick Edit
 
 - [#3268244](https://www.drupal.org/node/3268244) Исправлен тест `QuickEditIntegrationTest::testArticleNode()`.
+
+
+## Settings Tray
+
+- [#3257600](https://www.drupal.org/node/3257600) Удалено лишнее переопределение метода `::getTestThemes()` в `SettingsTrayBlockFormTest`.
