@@ -71,9 +71,15 @@ $databases['default']['default'] = [
 
 - [#3264633](https://www.drupal.org/node/3264633) Функционал для интеграции Layout Builder с модулем Quick Edit вынесен непосредственно в Quick Edit.
 
+## Theme System
+
+- [#3285131](https://www.drupal.org/node/3285131) Инициализация `Drupal\Core\Theme\Registry::__construct()` без передачи параметра `$runtime_cache` объявлена устаревшей.
+
 ## Quick Edit
 
 - [#3267258](https://www.drupal.org/node/3267258) Функционал интеграции модуля Quick Edit с модулем Editor, перенесён непосредственно в Quick Edit.
+- [#3291047](https://www.drupal.org/node/3291047) Функционал интеграции модуля CKEditor 4/5 с модулем Editor, перенесён непосредственно в Quick Edit.
+- [#3291018](https://www.drupal.org/node/3291018) `CKEditor5QuickEditLibraryTest` перенесён в Quick Edit.
 
 ## Прочие изменения
 

@@ -423,6 +423,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3259674](https://www.drupal.org/node/3259674) Методу `Drupal\Core\Routing\Router::matchCollection()` добавлен тайпхинт.
 - [#3262190](https://www.drupal.org/node/3262190) Для различных классов добавлены тайпхинты возвращаемых данных.
 - [#3276195](https://www.drupal.org/node/3276195) Обновлены сигнатуры для нормалайзеров в соответствии с Symfony 6.1.
+- [#3272779](https://www.drupal.org/node/3272779) Удалён `DeprecationListenerTrait`.
+- [#3276187](https://www.drupal.org/node/3276187) Обновлены вызовы `MissingMandatoryParametersException`.
 
 ## System
 
@@ -537,4 +539,3 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3285136](https://www.drupal.org/node/3285136) Удалена часть кода в конструкторах для обратной совместимости.
 - [#3285503](https://www.drupal.org/node/3285503) Удалён устаревший код в конструкторах классов.
 - [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property».
-- [#3283794](https://www.drupal.org/node/3283794) Внесены исправления для «should return {type} but return statement is missing».
