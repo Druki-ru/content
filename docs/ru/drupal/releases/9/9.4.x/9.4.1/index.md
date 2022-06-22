@@ -13,11 +13,7 @@ category:
   order: 1
 ---
 
-<Aside type="warning">
-
-Данная версия находится в разработке и не предназначена для использования.
-
-</Aside>
+**Дата релиза:** 22 июня 2022
 
 ## Composer
 
@@ -56,3 +52,7 @@ category:
 ## Прочие изменения
 
 - [#3283794](https://www.drupal.org/node/3283794) Внесены исправления для «should return {type} but return statement is missing».
+
+## Ссылки
+
+- [Drupal 9.4.1](https://www.drupal.org/project/drupal/releases/9.4.1) (англ.), drupal.org, 22 июня 2022

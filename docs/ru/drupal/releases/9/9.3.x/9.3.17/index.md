@@ -9,15 +9,15 @@ authors:
   - Niklan
 category:
   area: 'Drupal 9.3.x'
-  title: Drupal 9.3.17 (в разработке)
+  title: Drupal 9.3.17
   order: 17
 ---
 
-<Aside type="warning">
+**Дата релиза:** 22 июня 2022
 
-Данный релиз находится в разработке и не предназначен для использования на живых сайтах.
+## Composer
 
-</Aside>
+- [#3291780](https://www.drupal.org/node/3291780) Минорная версия для `guzzlehttp/psr7` увеличена до 1.9.
 
 ## CKEditor 5
 
@@ -31,3 +31,7 @@ category:
 ## Прочие изменения
 
 - [#3285193](https://www.drupal.org/node/3285193) В ряд тестов добавлен пропуск до устранения случайных фейлов в этих тестах.
+
+## Ссылки
+
+- [Drupal 9.3.17](https://www.drupal.org/project/drupal/releases/9.3.17) (англ.), drupal.org, 22 июня 2022
