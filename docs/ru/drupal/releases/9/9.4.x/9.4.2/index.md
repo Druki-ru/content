@@ -19,6 +19,10 @@ category:
 
 </Aside>
 
+## Layout Builder
+
+- [#3264633](https://www.drupal.org/node/3264633) Функционал для интеграции Layout Builder с модулем Quick Edit вынесен непосредственно в Quick Edit.
+
 ## Прочие изменения
 
 - [#3291877](https://www.drupal.org/node/3291877) Исправлен `InstallerTestBase`.
