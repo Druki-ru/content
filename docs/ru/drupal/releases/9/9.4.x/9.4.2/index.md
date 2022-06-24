@@ -26,3 +26,4 @@ category:
 ## Прочие изменения
 
 - [#3291877](https://www.drupal.org/node/3291877) Исправлен `InstallerTestBase`.
+- [#3285230](https://www.drupal.org/node/3285230) В `DownloadFunctionalTest:: testExceptionThrow()` внесены улучшения для совместимости с `guzzlehttp/psr7` 2.3.0.
