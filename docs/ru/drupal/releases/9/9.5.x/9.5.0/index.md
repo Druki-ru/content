@@ -63,6 +63,11 @@ $databases['default']['default'] = [
 ];
 ```
 
+## CKEditor 5
+
+- [#3292626](https://www.drupal.org/node/3292626) Удалён файл стилей 
+  `core/modules/ckeditor5/css/quickedit.css`.
+
 ## Composer
 
 - [#3280399](https://www.drupal.org/node/3280399) Пакет `drupal/core-bridge:9.5.x` объявлен заброшенным.
@@ -87,3 +92,7 @@ $databases['default']['default'] = [
 - [#3227431](https://www.drupal.org/node/3227431) Иконка для Tabledrag API теперь адаптируется по режим `forced-colors`.
 - [#3276108](https://www.drupal.org/node/3276108) Добавлена возможность указывать заголовок для блока RSS.
 - [#3257485](https://www.drupal.org/node/3257485) Удалён лишний код в `TestDiscoveryTest`.
+- [#3153852](https://www.drupal.org/node/3153852) `ContextAwarePluginBase` 
+  объявлен устаревшим.
+- [#3291283](https://www.drupal.org/node/3291283) Восстановлен файл 
+  `backbone-min.js.map`.

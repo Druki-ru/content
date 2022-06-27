@@ -543,3 +543,9 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3285136](https://www.drupal.org/node/3285136) Удалена часть кода в конструкторах для обратной совместимости.
 - [#3285503](https://www.drupal.org/node/3285503) Удалён устаревший код в конструкторах классов.
 - [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property».
+- [#3291780](https://www.drupal.org/node/3291780) Исправлена неполадка, 
+  из-за `guzzlehttp/guzzle` 7.4.5.
+- [#3290808](https://www.drupal.org/node/3290808) Из `system_requirements()` 
+  удалена проверка модуля `wokspaces`.
+- [#3238501](https://www.drupal.org/node/3238501) (отменено) Удалены 
+  полифилы для Internet Explorer 11.
