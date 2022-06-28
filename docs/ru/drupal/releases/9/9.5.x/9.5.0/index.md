@@ -71,6 +71,13 @@ $databases['default']['default'] = [
 ## Composer
 
 - [#3280399](https://www.drupal.org/node/3280399) Пакет `drupal/core-bridge:9.5.x` объявлен заброшенным.
+- [#3280589](https://www.drupal.org/node/3280589) Скрипт для чистки vendor 
+  директории объявлен устаревшим.
+
+## JavaScript
+
+- [#3086931](https://www.drupal.org/node/3086931) Удалён файл `postcss.
+  config.js`.
 
 ## Theme System
 

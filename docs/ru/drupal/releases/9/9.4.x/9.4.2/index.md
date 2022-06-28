@@ -26,6 +26,17 @@ authors:
 - [#3264633](https://www.drupal.org/node/3264633), [#3292413](https://www.drupal.org/node/3292413) Функционал для интеграции
   Layout Builder с модулем Quick Edit вынесен непосредственно в Quick Edit.
 
+## Olivero
+
+- [#3291317](https://www.drupal.org/node/3291317) Исправлена метка 
+  «Предыдущая страница» в 
+  мини-пейджере для кнопки «Следующая страница».
+
+## Views
+
+- [#2987089](https://www.drupal.org/node/2987089) `ViewExecutable` больше не 
+  использует свойство `_serviceId`.
+
 ## Прочие изменения
 
 - [#3291877](https://www.drupal.org/node/3291877) Исправлен `InstallerTestBase`.

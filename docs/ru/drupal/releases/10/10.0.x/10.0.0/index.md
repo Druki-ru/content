@@ -335,6 +335,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3275864](https://www.drupal.org/node/3275864) Зависимости Symfony обновлены до версии 6.1.1.
 - [#3272447](https://www.drupal.org/node/3272447) Зависимость `psr/log` обновлена до 3 версии.
 - [#3285061](https://www.drupal.org/node/3285061) Добавлен запрет на установку `phpstan/phpstan >=1.7`.
+- [#3292730](https://www.drupal.org/node/3292730) Зависимости Symfony 
+  обновлены до версии 6.1.2
 
 ## Database Logging
 
@@ -549,3 +551,5 @@ Drupal прекращает поддержку всех версий UC Browser 
   удалена проверка модуля `wokspaces`.
 - [#3238501](https://www.drupal.org/node/3238501) (отменено) Удалены 
   полифилы для Internet Explorer 11.
+- [#3153956](https://www.drupal.org/node/3153956) Удалён устаревший код 
+  который использовался для «context form configuration».
