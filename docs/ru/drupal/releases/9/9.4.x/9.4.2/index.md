@@ -20,16 +20,29 @@ category:
 
 </Aside>
 
+## Composer
+
+- [#3293051](https://www.drupal.org/node/3293051) В 
+  `Composer::preAutoloadDump()` удалено лишнее условие.
+
 ## Layout Builder
 
 - [#3264633](https://www.drupal.org/node/3264633), [#3292413](https://www.drupal.org/node/3292413) Функционал для интеграции
   Layout Builder с модулем Quick Edit вынесен непосредственно в Quick Edit.
+
+## Migrate
+
+- [#3270556](https://www.drupal.org/node/3270556) `FieldInstanceSettings` 
+  для Drupal 6 теперь корректно обрабатывает отсутствующее значение 
+  `max_filesize_per_file`.
 
 ## Olivero
 
 - [#3291317](https://www.drupal.org/node/3291317) Исправлена метка 
   «Предыдущая страница» в 
   мини-пейджере для кнопки «Следующая страница».
+- [#3284010](https://www.drupal.org/node/3284010) Ссылка в `get-started.html.
+  twig` для добавления содержимого заменена с фиксированной на маршрут.
 
 ## Views
 
@@ -42,3 +55,9 @@ category:
 - [#3285230](https://www.drupal.org/node/3285230)
   В `DownloadFunctionalTest:: testExceptionThrow()` внесены улучшения для
   совместимости с `guzzlehttp/psr7` 2.3.0.
+- [#3293114](https://www.drupal.org/node/3293114) Исправлен некорректный 
+  комментарий в `BrowserHtmlDebugTrait`.
+- [#3070747](https://www.drupal.org/node/3070747) Теперь при сбросе кеша 
+  очищаются пути до установочных профилей и движков темизации.
+- [#3291830](https://www.drupal.org/node/3291830) Пути до драйверов баз 
+  данных теперь соответствуют PSR4.

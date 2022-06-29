@@ -63,6 +63,11 @@ $databases['default']['default'] = [
 ];
 ```
 
+## CKEditor 4
+
+- [#3271057](https://www.drupal.org/node/3271057) Интеграция Media Library с 
+  CKEditor 4 перенесена в модуль CKEditor 4.
+
 ## CKEditor 5
 
 - [#3292626](https://www.drupal.org/node/3292626) Удалён файл стилей 
@@ -103,3 +108,4 @@ $databases['default']['default'] = [
   объявлен устаревшим.
 - [#3291283](https://www.drupal.org/node/3291283) Восстановлен файл 
   `backbone-min.js.map`.
+- [#3293215](https://www.drupal.org/node/3293215) Удалены остатки от Simpletest.

@@ -348,6 +348,11 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3210310](https://www.drupal.org/node/3210310) Удалён код объявленный устаревшим в Drupal 9.
 - [#3203193](https://www.drupal.org/node/3203193) Установка Drupal 10 теперь прекращается, если БД не поддерживает тип данных JSON.
 
+## Date
+
+- [#3293077](https://www.drupal.org/node/3293077) Использование 
+  `TrustedCallbackInterface` для `#date_date_callbacks` теперь обязательно.
+
 ## Entity System
 
 - [#3244802](https://www.drupal.org/node/3244802) Удалён слой [обратной совместимости](../../../../../backward-compatibility/index.md) и устаревший код из системы сущностей.
@@ -393,7 +398,12 @@ Drupal прекращает поддержку всех версий UC Browser 
 
 ## RDF
 
-- [#3176468 ](https://www.drupal.org/node/3176468 ) Удалена поддержка Easy RDF 0.9. Поддержка Easy RDF 1.0 продолжит работать без изменений.
+- [#3176468](https://www.drupal.org/node/3176468) Удалена поддержка Easy RDF 0.9. Поддержка Easy RDF 1.0 продолжит работать без изменений.
+
+## Routing
+
+- [#3278122](https://www.drupal.org/node/3278122) `Router::doMatchCollection
+  ()` обновлён для будущей совместимости с `symfony/routing` 7.0. 
 
 ## Symfony 6
 
@@ -553,3 +563,9 @@ Drupal прекращает поддержку всех версий UC Browser 
   полифилы для Internet Explorer 11.
 - [#3153956](https://www.drupal.org/node/3153956) Удалён устаревший код 
   который использовался для «context form configuration».
+- [#3076684](https://www.drupal.org/node/3076684) Удалены устаревшие 
+  зависимости Composer.
+- [#3291208](https://www.drupal.org/node/3291208) Удалена часть правил из `.
+  deprecation-ignore.txt`
+- [#3293075](https://www.drupal.org/node/3293075) Удалён устаревший код 
+  связанный с `ModuleHandlerInterface`.
