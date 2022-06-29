@@ -3,12 +3,11 @@ title: 'Drupal 9.4.2'
 slug: wiki/drupal/releases/9.4.2
 core: 9
 metatags:
-title: 'Drupal 9.4.2: Список изменений'
-description: 'Список изменений Drupal 9.4.2.'
+  title: 'Drupal 9.4.2: Список изменений'
+  description: 'Список изменений Drupal 9.4.2.'
 authors:
-
-- Niklan
-  category:
+  - Niklan
+category:
   area: 'Drupal 9.4.x'
   title: Drupal 9.4.2 (в разработке)
   order: 2
