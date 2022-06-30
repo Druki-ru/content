@@ -72,6 +72,8 @@ $databases['default']['default'] = [
 
 - [#3292626](https://www.drupal.org/node/3292626) Удалён файл стилей 
   `core/modules/ckeditor5/css/quickedit.css`.
+- [#3270831](https://www.drupal.org/node/3270831) Обновление с CKEditor 4 до 
+  CKEditor 5 теперь возможно даже если CKEditor 4 удалён.
 
 ## Composer
 

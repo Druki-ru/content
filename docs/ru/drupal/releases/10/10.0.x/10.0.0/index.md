@@ -396,6 +396,11 @@ Drupal прекращает поддержку всех версий UC Browser 
 
 - [#3214922](https://www.drupal.org/node/3214922) PostgreSQL драйвер теперь проверяет наличие расширения `pg_tgrm` и выдаёт ошибку если он отсутствует.
 
+## Quick Edit
+
+- [#3292428](https://www.drupal.org/node/3292428) Удалён файл 
+  `CKEditor5QuickEditLibraryTest.php.orig`.
+
 ## RDF
 
 - [#3176468](https://www.drupal.org/node/3176468) Удалена поддержка Easy RDF 0.9. Поддержка Easy RDF 1.0 продолжит работать без изменений.
@@ -441,6 +446,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## System
 
 - [#3264120](https://www.drupal.org/node/3264120) Обновлена фикстура с базой данных Drupal 9.3.0 отражающая удаление модуля Aggregator и изменения в драйвера баз данных Posgres/SQLite.
+- [#3173031](https://www.drupal.org/node/3173031) В `GDToolkit` удалён код 
+  для совместимости со старыми версиями PHP.
 
 ## Tour
 
@@ -569,3 +576,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   deprecation-ignore.txt`
 - [#3293075](https://www.drupal.org/node/3293075) Удалён устаревший код 
   связанный с `ModuleHandlerInterface`.
+- [#3293297](https://www.drupal.org/node/3293297) Удалён слой обратной 
+  совместимости из `Registry::__construct()`.
+- [#3239935](https://www.drupal.org/node/3239935) Произведён рефакторинг 
+  `ToolkitGdTest`.
