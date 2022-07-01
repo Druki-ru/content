@@ -2073,10 +2073,6 @@ entity.filter_format.permission_form:
 - [#3240906](https://www.drupal.org/node/3240906) Внесены улучшения в `template_preprocess_image_formatter()` для
   совместимости с PHP 8.1.
 
-## Image System
-
-- [#3239935](https://www.drupal.org/node/3239935) (отменено) Произведён рефакторинг `ToolkitGdTest`.
-
 ## Install system
 
 - [#3185768](https://www.drupal.org/node/3185768) Из установщика удалены `InlineServiceDefinitionsPass`

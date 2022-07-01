@@ -380,6 +380,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## Migrate
 
 - [#2966859](https://www.drupal.org/node/2966859) Удалён устаревший модуль `migrate_drupal_multilingual`.
+- [#3285667](https://www.drupal.org/node/3285667) Из `NodeTest` удалён 
+  дублирующий тест.
 
 ## Olivero
 
@@ -578,5 +580,5 @@ Drupal прекращает поддержку всех версий UC Browser 
   связанный с `ModuleHandlerInterface`.
 - [#3293297](https://www.drupal.org/node/3293297) Удалён слой обратной 
   совместимости из `Registry::__construct()`.
-- [#3239935](https://www.drupal.org/node/3239935) Произведён рефакторинг 
-  `ToolkitGdTest`.
+- [#3284420](https://www.drupal.org/node/3284420) Удалён весь код связанный 
+  с Composer 1.

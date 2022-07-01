@@ -20,15 +20,33 @@ category:
 
 </Aside>
 
+## CKEditor 5
+
+- [#3291295](https://www.drupal.org/node/3291295) В схему `ckeditor5.plugin.
+  media_media` добавлена отсутствующая метка.
+
 ## Composer
 
 - [#3293051](https://www.drupal.org/node/3293051) В 
   `Composer::preAutoloadDump()` удалено лишнее условие.
+- [#3255749](https://www.drupal.org/node/3255749) В `composer.json` ядра 
+  добавлены разрешения для плагинов предоставляемых ядром.
+
+## Config System
+
+- [#3264145](https://www.drupal.org/node/3264145) В `ConfigOverrider` 
+  добавлен отсутствующий `use`.
+
+## Image System
+
+- [#3239935](https://www.drupal.org/node/3239935) (отменено) Произведён рефакторинг `ToolkitGdTest`.
 
 ## Layout Builder
 
 - [#3264633](https://www.drupal.org/node/3264633), [#3292413](https://www.drupal.org/node/3292413) Функционал для интеграции
   Layout Builder с модулем Quick Edit вынесен непосредственно в Quick Edit.
+- [#3031492](https://www.drupal.org/node/3031492) Из конструктора 
+  `InlineBlockEntityOperations` удалён `@todo`.
 
 ## Migrate
 
@@ -48,6 +66,8 @@ category:
 
 - [#2987089](https://www.drupal.org/node/2987089) `ViewExecutable` больше не 
   использует свойство `_serviceId`.
+- [#3291303](https://www.drupal.org/node/3291303) Из `BasicTest` удалена 
+  устаревшая проверка.
 
 ## Прочие изменения
 
@@ -64,3 +84,5 @@ category:
 - [#2896993](https://www.drupal.org/node/2896993) Декораторы сервисов, 
   которые были ранее сериализованы теперь корректно обрабатываются при 
   десириализации.
+- [#3292850](https://www.drupal.org/node/3292850) В `MAINTAINERS.txt` 
+  добавлены мейнтейнеры инициативы Project Browser.
