@@ -336,7 +336,9 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3272447](https://www.drupal.org/node/3272447) Зависимость `psr/log` обновлена до 3 версии.
 - [#3285061](https://www.drupal.org/node/3285061) Добавлен запрет на установку `phpstan/phpstan >=1.7`.
 - [#3292730](https://www.drupal.org/node/3292730) Зависимости Symfony 
-  обновлены до версии 6.1.2
+  обновлены до версии 6.1.2.
+- [#3215870](https://www.drupal.org/node/3215870) Для разработки Drupal ядра 
+  теперь требуется Composer версии не меньше 2.3.5.
 
 ## Database Logging
 
@@ -393,6 +395,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3262139](https://www.drupal.org/node/3262139) Из JavaScript файлов удалён слой обратной совместимости который поддерживал событие нажатия `Esc` для IE11.
 - [#3277809](https://www.drupal.org/node/3277809) `site-header.pcss.css` теперь использует новые CSS переменные добавляемые `Drupal.displace()`.
 - [#3257274](https://www.drupal.org/node/3257274) Добавлена возможность настраивать цвета сайта из административного интерфейса.
+- [#3284912](https://www.drupal.org/node/3284912) Добавлены новые переменные 
+  для различных оттенков текста.
+- [#3291729](https://www.drupal.org/node/3291729) Добавленные новые CSS 
+  переменные с размерами тулбара.
 
 ## PosgreSQL DB driver
 
@@ -411,6 +417,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 
 - [#3278122](https://www.drupal.org/node/3278122) `Router::doMatchCollection
   ()` обновлён для будущей совместимости с `symfony/routing` 7.0. 
+- [#3293284](https://www.drupal.org/node/3293284) При вызове 
+  `Router::generate()` теперь выбрасывается исключение.
 
 ## Symfony 6
 
@@ -582,3 +590,5 @@ Drupal прекращает поддержку всех версий UC Browser 
   совместимости из `Registry::__construct()`.
 - [#3284420](https://www.drupal.org/node/3284420) Удалён весь код связанный 
   с Composer 1.
+- [#3293952](https://www.drupal.org/node/3293952) Удалён метод 
+  `AssertContentTrait::getUrl()`.

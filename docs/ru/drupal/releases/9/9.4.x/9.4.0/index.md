@@ -1167,6 +1167,9 @@ $token_service->replacePlain($plain);
 
 - [#3274066](https://www.drupal.org/node/3274066) Тесты модуля теперь используют тему оформления Stark вместо Classy.
 - [#3275464](https://www.drupal.org/node/3275464) Удалён устаревший метод `FrontPageTest::testAdminFrontPage()`.
+- [#3259671](https://www.drupal.org/node/3259671) Улучшена 
+  производительность для запроса генерируемого плагином аргумента Views 
+  `node_vid`.
 
 ## Olivero
 
@@ -1346,3 +1349,5 @@ $token_service->replacePlain($plain);
 - [#3281451](https://www.drupal.org/node/3281451) `AjaxTest` больше не использует темы Bartik и Seven.
 - [#3281443](https://www.drupal.org/node/3281443) `ThemeTest` больше не использует темы Bartik и Seven.
 - [#3283619](https://www.drupal.org/node/3283619) Исправлена опечатка в `core/includes/common.inc`.
+- [#3248078](https://www.drupal.org/node/3248078) Ссылки ведущие на 
+  документацию для Drupal 8 заменены на универсальные.

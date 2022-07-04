@@ -29,8 +29,6 @@ category:
 
 - [#3293051](https://www.drupal.org/node/3293051) В 
   `Composer::preAutoloadDump()` удалено лишнее условие.
-- [#3255749](https://www.drupal.org/node/3255749) В `composer.json` ядра 
-  добавлены разрешения для плагинов предоставляемых ядром.
 
 ## Config System
 
