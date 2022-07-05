@@ -111,3 +111,7 @@ $databases['default']['default'] = [
 - [#3291283](https://www.drupal.org/node/3291283) Восстановлен файл 
   `backbone-min.js.map`.
 - [#3293215](https://www.drupal.org/node/3293215) Удалены остатки от Simpletest.
+- [#3112290](https://www.drupal.org/node/3112290) Заменено использование 
+  `REQUEST_TIME` в процедурном коде.
+- [#3294076](https://www.drupal.org/node/3294076) Удалён неиспользуемый 
+  сервис `exception.test_site`.

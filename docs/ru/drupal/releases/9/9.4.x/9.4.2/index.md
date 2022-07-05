@@ -34,6 +34,8 @@ category:
 
 - [#3264145](https://www.drupal.org/node/3264145) В `ConfigOverrider` 
   добавлен отсутствующий `use`.
+- [#3225381](https://www.drupal.org/node/3225381) Исправлена неполадка в 
+  `ConfigSingleExportForm`, приводящая к PHP уведомлению.
 
 ## Image System
 

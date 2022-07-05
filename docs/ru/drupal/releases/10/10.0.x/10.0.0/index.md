@@ -370,6 +370,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3256768](https://www.drupal.org/node/3256768) `Drupal.displace()` теперь задаёт CSS переменные с обновлёнными значениями.
 - [#3269152](https://www.drupal.org/node/3269152) Удалён слой обратной совместимости `element_settings` в `ajax.es6.js`.
 - [#3265617](https://www.drupal.org/node/3265617) Зависимость Nightwatch обновлена до 2 версии.
+- [#3266274](https://www.drupal.org/node/3266274) Удалена зависимость `chalk`.
 
 ## Language
 
