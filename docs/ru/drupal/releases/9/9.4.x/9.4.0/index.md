@@ -1349,5 +1349,5 @@ $token_service->replacePlain($plain);
 - [#3281451](https://www.drupal.org/node/3281451) `AjaxTest` больше не использует темы Bartik и Seven.
 - [#3281443](https://www.drupal.org/node/3281443) `ThemeTest` больше не использует темы Bartik и Seven.
 - [#3283619](https://www.drupal.org/node/3283619) Исправлена опечатка в `core/includes/common.inc`.
-- [#3248078](https://www.drupal.org/node/3248078) Ссылки ведущие на 
+- [#3248078](https://www.drupal.org/node/3248078) (отменено) Ссылки ведущие на 
   документацию для Drupal 8 заменены на универсальные.

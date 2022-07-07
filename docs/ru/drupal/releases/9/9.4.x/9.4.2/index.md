@@ -9,16 +9,12 @@ authors:
   - Niklan
 category:
   area: 'Drupal 9.4.x'
-  title: Drupal 9.4.2 (в разработке)
+  title: Drupal 9.4.2
   order: 2
 
 ---
 
-<Aside type="warning">
-
-Данная версия находится в разработке и не предназначена для использования.
-
-</Aside>
+**Дата релиза:** 7 июля 2022
 
 ## CKEditor 5
 
@@ -86,3 +82,8 @@ category:
   десириализации.
 - [#3292850](https://www.drupal.org/node/3292850) В `MAINTAINERS.txt` 
   добавлены мейнтейнеры инициативы Project Browser.
+
+## Ссылки
+
+- [Drupal 9.4.2](https://www.drupal.org/project/drupal/releases/9.4.2) (англ.
+  ), drupal.org, 7 июля 2022

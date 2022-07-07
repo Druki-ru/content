@@ -18,6 +18,8 @@ category:
 ## Composer
 
 - [#3291780](https://www.drupal.org/node/3291780) Минорная версия для `guzzlehttp/psr7` увеличена до 1.9.
+- [#3294205](https://www.drupal.org/node/3294205) В заранее разрешённые 
+  плагины также добавлен `dealerdirect/phpcodesniffer-composer-installer`.
 
 ## CKEditor 5
 
