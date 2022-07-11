@@ -10,7 +10,7 @@ authors:
   - arraksis
 ---
 
-**Дата релиза**: июнь 2022\
+**Дата релиза**: 2022\
 **Активная поддержка до**: ноябрь 2022\
 **Поддержка безопасности до**: июнь 2023
 
@@ -36,7 +36,10 @@ authors:
 
 ## Минимальная версия PHP — 8.1
 
-- [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350), [#3261357](https://www.drupal.org/node/3261357), [#3264819](https://www.drupal.org/node/3264819) 
+- [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.
+  drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350), 
+  [#3261357](https://www.drupal.org/node/3261357), [#3264819](https://www.
+  drupal.org/node/3264819)
 
 Минимальная и рекомендуемая версия PHP для Drupal 10 — 8.1. Drupal 10 не будет работать на PHP 8.0, PHP 7 и более ранних версиях.
 
@@ -339,6 +342,9 @@ Drupal прекращает поддержку всех версий UC Browser 
   обновлены до версии 6.1.2.
 - [#3215870](https://www.drupal.org/node/3215870) Для разработки Drupal ядра 
   теперь требуется Composer версии не меньше 2.3.5.
+- [#3282315](https://www.drupal.org/node/3282315) Зависимости 
+  `phpstan/phpstan` и `mglaman/phpstan-drupal` обновлены до последних версий 
+  на 9.07.22.
 
 ## Database Logging
 
@@ -385,6 +391,11 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#2966859](https://www.drupal.org/node/2966859) Удалён устаревший модуль `migrate_drupal_multilingual`.
 - [#3285667](https://www.drupal.org/node/3285667) Из `NodeTest` удалён 
   дублирующий тест.
+
+## Migrate Drupal UI
+
+- [#3082211](https://www.drupal.org/node/3082211) Внесены улучшения в тесты
+  модуля.
 
 ## Olivero
 
@@ -593,3 +604,5 @@ Drupal прекращает поддержку всех версий UC Browser 
   с Composer 1.
 - [#3293952](https://www.drupal.org/node/3293952) Удалён метод 
   `AssertContentTrait::getUrl()`.
+- [#3293288](https://www.drupal.org/node/3293288) Удалена директория 
+  `/core/modules/simpletest`.

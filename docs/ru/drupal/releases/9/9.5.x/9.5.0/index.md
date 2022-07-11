@@ -63,10 +63,21 @@ $databases['default']['default'] = [
 ];
 ```
 
+## Рекомендуемая версия PHP — 8.1.6
+
+- [#3294938](https://www.drupal.org/node/3294938)
+
+Рекомендуемая версия PHP увеличена до 8.1.6.
+
 ## CKEditor 4
 
 - [#3271057](https://www.drupal.org/node/3271057) Интеграция Media Library с 
   CKEditor 4 перенесена в модуль CKEditor 4.
+- [#3291744](https://www.drupal.org/node/3291744) Внесены улучшения в 
+  сохраняемые конфигурации редактора. Теперь они хранят только информацию 
+  только об активных плагинах.
+- [#3271094](https://www.drupal.org/node/3271094) Интеграция с Media 
+  перенесена из одноимённого модуля в CKEditor.
 
 ## CKEditor 5
 
@@ -85,6 +96,11 @@ $databases['default']['default'] = [
 
 - [#3086931](https://www.drupal.org/node/3086931) Удалён файл `postcss.
   config.js`.
+
+## Render System
+
+- [#3117291](https://www.drupal.org/node/3117291) Внесены улучшения в метод 
+  `Element::isEmpty()`.
 
 ## Theme System
 
@@ -115,3 +131,8 @@ $databases['default']['default'] = [
   `REQUEST_TIME` в процедурном коде.
 - [#3294076](https://www.drupal.org/node/3294076) Удалён неиспользуемый 
   сервис `exception.test_site`.
+- [#3275585](https://www.drupal.org/node/3275585) Исправлены ошибки в 
+  реализации `::getInstance()` для классов `FormatterPluginManager` и 
+  `WidgetPluginManager`.
+- [#3295157](https://www.drupal.org/node/3295157) Исправлены ошибки PHPStan 
+  «Access to an undefined property».
