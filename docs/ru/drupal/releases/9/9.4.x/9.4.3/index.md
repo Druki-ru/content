@@ -42,6 +42,11 @@ category:
   `FieldUiTestTrait`, которая могла приводить к случайным ошибкам в 
   JavaScript тестах.
 
+## Locale
+
+- [#3266123](https://www.drupal.org/node/3266123) Исправлена неполадка с 
+  отображением фокусировки на элементах административных страниц.
+
 ## Media
 
 - [#3294883](https://www.drupal.org/node/3294883) Исправлена ошибка в 
@@ -61,6 +66,8 @@ category:
 
 - [#2494617](https://www.drupal.org/node/2494617) Исправлена неполадка в 
   валидаторе аргумента Views `taxonomy_term_name`. 
+- [#3293996](https://www.drupal.org/node/3293996) Исправлен пример в 
+  документации функции `taxonomy_term_load_multiple_by_name()`.
 
 ## User
 
@@ -68,6 +75,11 @@ category:
   `User::setExistingPassword()` теперь возвращает `$this`.
 - [#3270564](https://www.drupal.org/node/3270564) `data` из Drupal 7 теперь 
   корректно передаётся в миграцию.
+
+## Views
+
+- [#2916682](https://www.drupal.org/node/2916682) Исправлена неполадка, 
+  из-за которой значения по умолчанию не работали для сгруппированных фильтров.
 
 ## Прочие изменения
 

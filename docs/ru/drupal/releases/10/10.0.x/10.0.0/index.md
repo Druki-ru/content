@@ -394,7 +394,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 
 ## Migrate Drupal UI
 
-- [#3082211](https://www.drupal.org/node/3082211) Внесены улучшения в тесты
+- [#3082211](https://www.drupal.org/node/3082211) (отменено) Внесены 
+  улучшения в тесты
   модуля.
 
 ## Olivero
@@ -606,3 +607,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   `AssertContentTrait::getUrl()`.
 - [#3293288](https://www.drupal.org/node/3293288) Удалена директория 
   `/core/modules/simpletest`.
+- [#3293431](https://www.drupal.org/node/3293431) Удалены устаревшие 
+  `AppRootFactory` и `SitePathFactory`.
+- [#3263823](https://www.drupal.org/node/3263823) Удалены библиотеки и 
+  полифилы для Internet Explorer 11.

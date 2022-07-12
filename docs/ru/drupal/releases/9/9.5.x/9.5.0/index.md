@@ -69,6 +69,11 @@ $databases['default']['default'] = [
 
 Рекомендуемая версия PHP увеличена до 8.1.6.
 
+## Big Pipe
+
+- [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
+  теперь вызывается на элементы до окончания загрузки.
+
 ## CKEditor 4
 
 - [#3271057](https://www.drupal.org/node/3271057) Интеграция Media Library с 
@@ -92,10 +97,31 @@ $databases['default']['default'] = [
 - [#3280589](https://www.drupal.org/node/3280589) Скрипт для чистки vendor 
   директории объявлен устаревшим.
 
+## File
+
+- [#2588013](https://www.drupal.org/node/2588013) Из `managed_file` элемента 
+  удалён суффикс `<span class="ajax-new-content"></span>`.
+
 ## JavaScript
 
 - [#3086931](https://www.drupal.org/node/3086931) Удалён файл `postcss.
   config.js`.
+
+## Help Topics
+
+- [#3086075](https://www.drupal.org/node/3086075) Twig синтаксис, не 
+  являющийся частью самой разметки (пример для документации), внутри Help 
+  Topics теперь обрабатывается корректно.
+
+## Media
+
+- [#3255887](https://www.drupal.org/node/3255887) Исправлена ошибка в 
+  конструкторе `MediaThumbnailFormatter`.
+
+## Node
+
+- [#1198120](https://www.drupal.org/node/1198120) Добавлены описания для 
+  прав доступа «Edit own *».
 
 ## Render System
 
