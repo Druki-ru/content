@@ -26,6 +26,17 @@ category:
   `BlockContentViewBuilder` добавлено уточнение, что Блок сущности не 
   предназначены для вывода за пределами блоков.
 
+## CKEditor 4
+
+- [#3291744](https://www.drupal.org/node/3291744) Внесены улучшения в
+  сохраняемые конфигурации редактора. Теперь они хранят только информацию
+  только об активных плагинах.
+
+## CKEditor 5
+
+- [#3246246](https://www.drupal.org/node/3246246) Внесены улучшения в 
+  документацию в CKEditor 5 API.
+
 ## Composer
 
 - [#3292380](https://www.drupal.org/node/3292380) Из `composer.json` 
@@ -41,6 +52,12 @@ category:
 - [#3121325](https://www.drupal.org/node/3121325) Исправлена неполадка в 
   `FieldUiTestTrait`, которая могла приводить к случайным ошибкам в 
   JavaScript тестах.
+
+## Filter
+
+- [#3268983](https://www.drupal.org/node/3268983) (отменено) Исправлена 
+  неполадка, из-за которой использование `*` совместно с названием аттрибута 
+  (`attribute*`) приводило к исключению.
 
 ## Locale
 
@@ -86,3 +103,7 @@ category:
 - [#3284665](https://www.drupal.org/node/3284665) Исправлены опечатки в `@see`.
 - [#3293122](https://www.drupal.org/node/3293122) В документацию 
   `TwigExtension::getPath()` добавлено что параметр `$parameters` опциональный.
+- [#3295421](https://www.drupal.org/node/3295421) `TranslationWrapper`, 
+  который объявлен устаревшим, будет удалён в Drupal 11 вместо Drupal 10..
+- [#3291887](https://www.drupal.org/node/3291887) Удалена устаревшая отсылка 
+  к функции `form_type_checkboxes_value()`.

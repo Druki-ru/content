@@ -69,6 +69,29 @@ $databases['default']['default'] = [
 
 Рекомендуемая версия PHP увеличена до 8.1.6.
 
+## Добавлена поддержка `_defaults` ключа в `*.services.yml` файлах
+
+- [#3021898](https://www.drupal.org/node/3021898)
+
+Drupal теперь предоставляет функционал для установки значений по умолчанию 
+для всех сервисов файла `*.services.yml`. На данный момент можно задать 
+значения для трёк ключей: `autowire`, `public`, `tags`.
+
+Эти значения будут применяться ко всем сервисам файла ([подробнее на сайте 
+Symfony](https://symfony.com/doc/current/service_container.html):
+
+```yaml
+services:
+  _defaults:
+    autowire: true
+    public: true
+    tags:
+      - 'foo.tag'
+      - {name: bar.tag, value: 123}
+  your_service:
+    class: Drupal\your_module\YourClass
+```
+
 ## Big Pipe
 
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
@@ -78,9 +101,6 @@ $databases['default']['default'] = [
 
 - [#3271057](https://www.drupal.org/node/3271057) Интеграция Media Library с 
   CKEditor 4 перенесена в модуль CKEditor 4.
-- [#3291744](https://www.drupal.org/node/3291744) Внесены улучшения в 
-  сохраняемые конфигурации редактора. Теперь они хранят только информацию 
-  только об активных плагинах.
 - [#3271094](https://www.drupal.org/node/3271094) Интеграция с Media 
   перенесена из одноимённого модуля в CKEditor.
 
@@ -122,11 +142,18 @@ $databases['default']['default'] = [
 
 - [#1198120](https://www.drupal.org/node/1198120) Добавлены описания для 
   прав доступа «Edit own *».
+- [#3264987](https://www.drupal.org/node/3264987) Исправлено двойное 
+  присвоение переменной в `NodeViewsData`.
 
 ## Render System
 
 - [#3117291](https://www.drupal.org/node/3117291) Внесены улучшения в метод 
   `Element::isEmpty()`.
+
+## Shortcut
+
+- [#3281440](https://www.drupal.org/node/3281440) Тесты модуля больше не 
+  используют темы оформления Bartik и Seven.
 
 ## Theme System
 
@@ -141,6 +168,12 @@ $databases['default']['default'] = [
 - [#3267258](https://www.drupal.org/node/3267258) Функционал интеграции модуля Quick Edit с модулем Editor, перенесён непосредственно в Quick Edit.
 - [#3291047](https://www.drupal.org/node/3291047) Функционал интеграции модуля CKEditor 4/5 с модулем Editor, перенесён непосредственно в Quick Edit.
 - [#3291018](https://www.drupal.org/node/3291018) `CKEditor5QuickEditLibraryTest` перенесён в Quick Edit.
+
+## Views UI
+
+- [#2473877](https://www.drupal.org/node/2473877) Исправлена неполадка, 
+  из-за которой индикатор прогресса оформлялся как пагинация и находился в 
+  неположенном месте.
 
 ## Прочие изменения
 
@@ -162,3 +195,11 @@ $databases['default']['default'] = [
   `WidgetPluginManager`.
 - [#3295157](https://www.drupal.org/node/3295157) Исправлены ошибки PHPStan 
   «Access to an undefined property».
+- [#3281452](https://www.drupal.org/node/3281452) Тесты ядра больше не 
+  используют темы оформления Bartik и Seven.
+- [#3252587](https://www.drupal.org/node/3252587) `Xss` теперь не будет 
+  проверять CSS классы с префиксом `:`.
+- [#3267900](https://www.drupal.org/node/3267900) Внесены улучшения в 
+  `ComposerProjectTemplatesTest`.
+- [#3281454](https://www.drupal.org/node/3281454) Из тестов различных 
+  модулей ядра удалено использование темы оформления Bartik и Seven.

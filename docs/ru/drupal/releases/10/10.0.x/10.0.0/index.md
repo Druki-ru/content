@@ -345,6 +345,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3282315](https://www.drupal.org/node/3282315) Зависимости 
   `phpstan/phpstan` и `mglaman/phpstan-drupal` обновлены до последних версий 
   на 9.07.22.
+- [#3293933](https://www.drupal.org/node/3293933) Зависимость 
+  `phpstan/phpstan` обновлена до версии 1.8.1.
 
 ## Database Logging
 
@@ -377,6 +379,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3269152](https://www.drupal.org/node/3269152) Удалён слой обратной совместимости `element_settings` в `ajax.es6.js`.
 - [#3265617](https://www.drupal.org/node/3265617) Зависимость Nightwatch обновлена до 2 версии.
 - [#3266274](https://www.drupal.org/node/3266274) Удалена зависимость `chalk`.
+- [#3294850](https://www.drupal.org/node/3294850) Зависимость `cspell` 
+  обновлена до 6 версии.
 
 ## Language
 
@@ -611,3 +615,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   `AppRootFactory` и `SitePathFactory`.
 - [#3263823](https://www.drupal.org/node/3263823) Удалены библиотеки и 
   полифилы для Internet Explorer 11.
+- [#3295625](https://www.drupal.org/node/3295625) Удалён устаревший код из 
+  `FormattableMarkup`.
+- [#3295626](https://www.drupal.org/node/3295626) Удалён слой обратной 
+  совместимости из `FileUploadResource`.
