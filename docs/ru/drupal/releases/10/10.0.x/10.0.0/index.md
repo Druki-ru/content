@@ -330,7 +330,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   Drupal\Core\DependencyInjection\Compiler\StackedKernelPass`.
 - [#3254149](https://www.drupal.org/node/3254149) Из `composer.json` удалена настройка `config.autoloader-suffix`.
 - [#3261743](https://www.drupal.org/node/3261743) Из Composer команды `drupal-phpunit-upgrade` удалена установка `phpspec/prophecy-phpunit`.
-- [#3265094](https://www.drupal.org/node/3265094) Зависимости для разработки теперь имеют минимально требумые версии.
+- [#3265094](https://www.drupal.org/node/3265094) Зависимости для разработки теперь имеют минимально требуемые версии.
 - [#3266017](https://www.drupal.org/node/3266017) Зависимость `psr/log` обновлена до 2 версии.
 - [#3253059](https://www.drupal.org/node/3253059) Зависимость `composer/installers` обновлена до 2 версии.
 - [#3270882](https://www.drupal.org/node/3270882) Зависимость `guzzlehttp/psr7` теперь явно прописана в `composer.json`. Ранее она была неявной зависимостью.
