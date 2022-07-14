@@ -203,3 +203,7 @@ services:
   `ComposerProjectTemplatesTest`.
 - [#3281454](https://www.drupal.org/node/3281454) Из тестов различных 
   модулей ядра удалено использование темы оформления Bartik и Seven.
+- [#3295650](https://www.drupal.org/node/3295650) Из `example.settings.local.
+  php` убрана строка с `\Drupal\Component\Assertion\Handle::register()`.
+- [#3278124](https://www.drupal.org/node/3278124) Из тестов различных
+  модулей ядра удалено использование темы оформления Bartik и Seven.
