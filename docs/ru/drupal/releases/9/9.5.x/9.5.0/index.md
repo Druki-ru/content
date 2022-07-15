@@ -111,6 +111,12 @@ services:
 - [#3270831](https://www.drupal.org/node/3270831) Обновление с CKEditor 4 до 
   CKEditor 5 теперь возможно даже если CKEditor 4 удалён.
 
+## Comment
+
+- [#2958241](https://www.drupal.org/node/2958241) Внесены улучшения в 
+  `CommentSelection` для корректной работы комментариев с различными типами 
+  сущностей.
+
 ## Composer
 
 - [#3280399](https://www.drupal.org/node/3280399) Пакет `drupal/core-bridge:9.5.x` объявлен заброшенным.
@@ -207,3 +213,5 @@ services:
   php` убрана строка с `\Drupal\Component\Assertion\Handle::register()`.
 - [#3278124](https://www.drupal.org/node/3278124) Из тестов различных
   модулей ядра удалено использование темы оформления Bartik и Seven.
+- [#3295709](https://www.drupal.org/node/3295709) Удалены стили для 
+  неиспользуемого  селектора `.views-progress-indicator`.

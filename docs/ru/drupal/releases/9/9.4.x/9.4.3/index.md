@@ -36,6 +36,8 @@ category:
 
 - [#3246246](https://www.drupal.org/node/3246246) Внесены улучшения в 
   документацию в CKEditor 5 API.
+- [#3245967](https://www.drupal.org/node/3245967) Уменьшен информационный 
+  шум при переключении на CKEditor 5.
 
 ## Composer
 
