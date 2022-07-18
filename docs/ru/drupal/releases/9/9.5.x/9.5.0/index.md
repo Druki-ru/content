@@ -144,6 +144,11 @@ services:
 - [#3255887](https://www.drupal.org/node/3255887) Исправлена ошибка в 
   конструкторе `MediaThumbnailFormatter`.
 
+## MySQL
+
+- [#3296108](https://www.drupal.org/node/3296108) `mysql_requirements()` 
+  теперь производит проверки, только если подключение использует MySQL.
+
 ## Node
 
 - [#1198120](https://www.drupal.org/node/1198120) Добавлены описания для 
@@ -215,3 +220,5 @@ services:
   модулей ядра удалено использование темы оформления Bartik и Seven.
 - [#3295709](https://www.drupal.org/node/3295709) Удалены стили для 
   неиспользуемого  селектора `.views-progress-indicator`.
+- [#3283602](https://www.drupal.org/node/3283602) В комментариях удалены 
+  повторы слов.
