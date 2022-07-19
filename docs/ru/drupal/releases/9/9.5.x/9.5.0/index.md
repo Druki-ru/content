@@ -180,6 +180,11 @@ services:
 - [#3291047](https://www.drupal.org/node/3291047) Функционал интеграции модуля CKEditor 4/5 с модулем Editor, перенесён непосредственно в Quick Edit.
 - [#3291018](https://www.drupal.org/node/3291018) `CKEditor5QuickEditLibraryTest` перенесён в Quick Edit.
 
+## User
+
+- [#2563995](https://www.drupal.org/node/2563995) Оптимизирован код в методе 
+  `RoleStorage::isPermissionInRoles()`.
+
 ## Views UI
 
 - [#2473877](https://www.drupal.org/node/2473877) Исправлена неполадка, 
@@ -219,6 +224,8 @@ services:
 - [#3278124](https://www.drupal.org/node/3278124) Из тестов различных
   модулей ядра удалено использование темы оформления Bartik и Seven.
 - [#3295709](https://www.drupal.org/node/3295709) Удалены стили для 
-  неиспользуемого  селектора `.views-progress-indicator`.
+  неиспользуемого селектора `.views-progress-indicator`.
 - [#3283602](https://www.drupal.org/node/3283602) В комментариях удалены 
   повторы слов.
+- [#3292908](https://www.drupal.org/node/3292908) Быстрые 404 ответы теперь 
+  быстрее регулярных.

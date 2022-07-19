@@ -114,3 +114,5 @@ category:
   который объявлен устаревшим, будет удалён в Drupal 11 вместо Drupal 10..
 - [#3291887](https://www.drupal.org/node/3291887) Удалена устаревшая отсылка 
   к функции `form_type_checkboxes_value()`.
+- [#3295085](https://www.drupal.org/node/3295085) Рекомендуемая версия PHP 
+  для Drupal 9.4.x - 8.0, вместо 8.1.
