@@ -1,16 +1,16 @@
 ---
-title: 'Drupal 9.4.3'
-slug: wiki/drupal/releases/9.4.3
+title: 'Drupal 9.3.19'
+slug: wiki/drupal/releases/9.3.19
 core: 9
 metatags:
-  title: 'Drupal 9.4.3: Список изменений'
+  title: 'Drupal 9.3.19: Список изменений'
   description: 'Обновления безопасности исправляющее SA-CORE-2022-012, SA-CORE-2022-013, SA-CORE-2022-014, SA-CORE-2022-015.'
 authors:
   - Niklan
 category:
   area: 'Drupal 9.4.x'
-  title: Drupal 9.4.3
-  order: 3
+  title: Drupal 9.3.19
+  order: 19
 ---
 
 **Дата релиза:** 20 июля 2022
@@ -26,5 +26,5 @@ category:
 
 ## Ссылки
 
-- [Drupal 9.4.3](https://www.drupal.org/project/drupal/releases/9.4.3) (англ.),
+- [Drupal 9.3.19](https://www.drupal.org/project/drupal/releases/9.3.19) (англ.),
   drupal.org, 20 июля 2022
