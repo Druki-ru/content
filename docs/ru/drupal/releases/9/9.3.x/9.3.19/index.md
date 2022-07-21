@@ -8,7 +8,7 @@ metatags:
 authors:
   - Niklan
 category:
-  area: 'Drupal 9.4.x'
+  area: 'Drupal 9.3.x'
   title: Drupal 9.3.19
   order: 19
 ---
