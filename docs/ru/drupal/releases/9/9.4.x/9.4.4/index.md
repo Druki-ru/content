@@ -38,6 +38,8 @@ category:
   документацию в CKEditor 5 API.
 - [#3245967](https://www.drupal.org/node/3245967) Уменьшен информационный 
   шум при переключении на CKEditor 5.
+- [#3270831](https://www.drupal.org/node/3270831) Обновление с CKEditor 4 до
+  CKEditor 5 теперь возможно даже если CKEditor 4 удалён.
 
 ## Composer
 

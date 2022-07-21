@@ -108,8 +108,6 @@ services:
 
 - [#3292626](https://www.drupal.org/node/3292626) Удалён файл стилей 
   `core/modules/ckeditor5/css/quickedit.css`.
-- [#3270831](https://www.drupal.org/node/3270831) Обновление с CKEditor 4 до 
-  CKEditor 5 теперь возможно даже если CKEditor 4 удалён.
 
 ## Comment
 
@@ -179,6 +177,10 @@ services:
 - [#3267258](https://www.drupal.org/node/3267258) Функционал интеграции модуля Quick Edit с модулем Editor, перенесён непосредственно в Quick Edit.
 - [#3291047](https://www.drupal.org/node/3291047) Функционал интеграции модуля CKEditor 4/5 с модулем Editor, перенесён непосредственно в Quick Edit.
 - [#3291018](https://www.drupal.org/node/3291018) `CKEditor5QuickEditLibraryTest` перенесён в Quick Edit.
+
+## Update
+
+- [#3279279](https://www.drupal.org/node/3279279) Удалена ссылка «Скачать» со страницы доступных обновлений.
 
 ## User
 
