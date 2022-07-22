@@ -26,6 +26,11 @@ category:
   `BlockContentViewBuilder` добавлено уточнение, что Блок сущности не 
   предназначены для вывода за пределами блоков.
 
+## Cache
+
+- [#2820580](https://www.drupal.org/node/2820580) Обновлена и улучшена
+  документация о перезаписи кеш-бинов при помощи `settings.php`.
+
 ## CKEditor 4
 
 - [#3291744](https://www.drupal.org/node/3291744) Внесены улучшения в
@@ -113,8 +118,12 @@ category:
 - [#3293122](https://www.drupal.org/node/3293122) В документацию 
   `TwigExtension::getPath()` добавлено что параметр `$parameters` опциональный.
 - [#3295421](https://www.drupal.org/node/3295421) `TranslationWrapper`, 
-  который объявлен устаревшим, будет удалён в Drupal 11 вместо Drupal 10..
+  который объявлен устаревшим, будет удалён в Drupal 11 вместо Drupal 10.
 - [#3291887](https://www.drupal.org/node/3291887) Удалена устаревшая отсылка 
   к функции `form_type_checkboxes_value()`.
 - [#3295085](https://www.drupal.org/node/3295085) Рекомендуемая версия PHP 
   для Drupal 9.4.x - 8.0, вместо 8.1.
+- [#3204929](https://www.drupal.org/node/3204929) `Html::load()` теперь 
+  игнорирует пустые ноды.
+- [#3292980](https://www.drupal.org/node/3292980) В `BrowserHtmlDebugTrait`
+  добавлено объяснение почему ответы могут быть недоступны для чтения.

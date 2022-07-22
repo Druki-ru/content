@@ -419,6 +419,8 @@ Drupal прекращает поддержку всех версий UC Browser 
   для различных оттенков текста.
 - [#3291729](https://www.drupal.org/node/3291729) Добавленные новые CSS 
   переменные с размерами тулбара.
+- [#3212691](https://www.drupal.org/node/3212691) Удалено оформление 
+  плейсхолдера для IE11.
 
 ## PosgreSQL DB driver
 
@@ -622,3 +624,5 @@ Drupal прекращает поддержку всех версий UC Browser 
   `FormattableMarkup`.
 - [#3295626](https://www.drupal.org/node/3295626) Удалён слой обратной 
   совместимости из `FileUploadResource`.
+- [#2647778](https://www.drupal.org/node/2647778) Улучшена документация метода 
+  `AssetResolver::sort()`.
