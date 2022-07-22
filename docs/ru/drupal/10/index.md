@@ -3,14 +3,14 @@ title: Drupal 10
 slug: wiki/10
 core: 10
 metatags:
-  description: 'Drupal 10 — десятая мажорная версия Drupal, релиз которой состоится в июне 2022.'
+  description: 'Drupal 10 — десятая мажорная версия Drupal, релиз которой состоится в декабре 2022.'
 authors:
   - Niklan
   - arraksis
   - a-kovrigin
 ---
 
-**Drupal 10** — десятая мажорная версия [Drupal](../index.md), релиз которой состоится в июне 2022.
+**Drupal 10** — десятая мажорная версия [Drupal](../index.md), релиз которой состоится 14 декабря 2022.
 
 ## Почему так быстро?
 
