@@ -350,6 +350,8 @@ Drupal прекращает поддержку всех версий UC Browser 
   на 9.07.22.
 - [#3293933](https://www.drupal.org/node/3293933) Зависимость 
   `phpstan/phpstan` обновлена до версии 1.8.1.
+- [#3298199](https://www.drupal.org/node/3298199) Зависимость `phpstan/phpstan` обновлена до версии 1.8.2.
+- [#3299606](https://www.drupal.org/node/3299606) Зависимость `mglaman/phpstan-drupal` до версии 1.1.25.
 
 ## Database Logging
 
@@ -493,6 +495,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 
 - [#3291893](https://www.drupal.org/node/3291893) Исправлена неполадка, из-за которой тесты для 10.1.x могли проваливаться.
 
+## Views
+
+- [#3296112](https://www.drupal.org/node/3296112) Удалено использование метода `ViewsConfigUpdater::processSortFieldIdentifierUpdateHandler()`.
+
 ## Тестирование
 
 - [#3182103](https://www.drupal.org/node/3182103) Различные методы PHPUnit, которые переопределяют базовые тестовые классы ядра приведены в соответствие с текущими сигнатурами оригинальных методов.
@@ -593,7 +599,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3284761](https://www.drupal.org/node/3284761) Удалён устаревший код подсистемы обновлений.
 - [#3285136](https://www.drupal.org/node/3285136) Удалена часть кода в конструкторах для обратной совместимости.
 - [#3285503](https://www.drupal.org/node/3285503) Удалён устаревший код в конструкторах классов.
-- [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property».
 - [#3291780](https://www.drupal.org/node/3291780) Исправлена неполадка, 
   из-за `guzzlehttp/guzzle` 7.4.5.
 - [#3290808](https://www.drupal.org/node/3290808) Из `system_requirements()` 

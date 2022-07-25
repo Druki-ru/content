@@ -97,6 +97,11 @@ services:
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
   теперь вызывается на элементы до окончания загрузки.
 
+## Claro
+
+- [#3291100](https://www.drupal.org/node/3291100) Улучшено отображение `details` элемента.
+- [#3085219](https://www.drupal.org/node/3085219) Улучшено оформление процесса установки сайта.
+
 ## CKEditor 4
 
 - [#3271057](https://www.drupal.org/node/3271057) Интеграция Media Library с 
@@ -120,6 +125,11 @@ services:
 - [#3280399](https://www.drupal.org/node/3280399) Пакет `drupal/core-bridge:9.5.x` объявлен заброшенным.
 - [#3280589](https://www.drupal.org/node/3280589) Скрипт для чистки vendor 
   директории объявлен устаревшим.
+- [#3298343](https://www.drupal.org/node/3298343) Зависимость `egulias/email-validator` обновлена до версии 3.2.1.
+
+## Entity API
+
+- [#3266589](https://www.drupal.org/node/3266589) Удалён заголовок `Link` из ответа страницы сущности.
 
 ## File
 
@@ -136,6 +146,7 @@ services:
 - [#3086075](https://www.drupal.org/node/3086075) Twig синтаксис, не 
   являющийся частью самой разметки (пример для документации), внутри Help 
   Topics теперь обрабатывается корректно.
+- [#3281439](https://www.drupal.org/node/3281439) Тесты модуля больше не используют темы оформления Bartik и Seven.
 
 ## Media
 
@@ -193,6 +204,10 @@ services:
   из-за которой индикатор прогресса оформлялся как пагинация и находился в 
   неположенном месте.
 
+## Тестирование
+
+- [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property».
+
 ## Прочие изменения
 
 - [#3279192](https://www.drupal.org/node/3279192) Внесены улучшения в `DrupalKernel::handle()` для того чтобы Drupal мог работать со Swoole.
@@ -235,3 +250,4 @@ services:
   слешей для входящих запросов.
 - [#3281449](https://www.drupal.org/node/3281449) Unit тесты ядра больше не
   используют тему оформления Bartik и Seven.
+- [#3119840](https://www.drupal.org/node/3119840) Улучшены настройки `.gitattributes` для того чтобы нестандартные PHP файлы имели подсветку синтаксиса.

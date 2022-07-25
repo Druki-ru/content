@@ -62,6 +62,10 @@ category:
   `FieldUiTestTrait`, которая могла приводить к случайным ошибкам в 
   JavaScript тестах.
 
+## Form API
+
+- [#2939237](https://www.drupal.org/node/2939237) Обновлено описание для `$form_id`.
+
 ## Filter
 
 - [#3268983](https://www.drupal.org/node/3268983) Исправлена 
@@ -87,6 +91,10 @@ category:
 
 - [#3291949](https://www.drupal.org/node/3291949) Улучшено предупреждение 
   для проверки уровня изоляции транзакций MySQL.
+
+## Path
+
+- [#3280773](https://www.drupal.org/node/3280773) Тесты модуля `path` больше не используют тему Classy.
 
 ## Taxonomy
 
@@ -127,3 +135,8 @@ category:
   игнорирует пустые ноды.
 - [#3292980](https://www.drupal.org/node/3292980) В `BrowserHtmlDebugTrait`
   добавлено объяснение почему ответы могут быть недоступны для чтения.
+- [#3281535](https://www.drupal.org/node/3281535) Исправлены ошибки PHPStan «Access to an undefined property».
+- [#2464041](https://www.drupal.org/node/2464041) Добавлено тестирование методов `EntityStorageBase::load()` и `::loadMultiple()` с невалидными ID и UUID.
+- [#3281996](https://www.drupal.org/node/3281996) Исправлена неполадка в `UnchaughtExceptionTest`.
+- [#3188327](https://www.drupal.org/node/3188327) Улучшена документация `BaseFieldDefinition::setDsiplayOptions()`.
+- [#3295972](https://www.drupal.org/node/3295972) Исправлена некорректная документация для `initial_form_field` в `Schema`.
