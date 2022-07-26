@@ -352,6 +352,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   `phpstan/phpstan` обновлена до версии 1.8.1.
 - [#3298199](https://www.drupal.org/node/3298199) Зависимость `phpstan/phpstan` обновлена до версии 1.8.2.
 - [#3299606](https://www.drupal.org/node/3299606) Зависимость `mglaman/phpstan-drupal` до версии 1.1.25.
+- [#3299213](https://www.drupal.org/node/3299213) Зависимость `mikey179/vfsstream` теперь запрашивается версии ^1.6.11.
 
 ## Database Logging
 
@@ -629,5 +630,6 @@ Drupal прекращает поддержку всех версий UC Browser 
   `FormattableMarkup`.
 - [#3295626](https://www.drupal.org/node/3295626) Удалён слой обратной 
   совместимости из `FileUploadResource`.
-- [#2647778](https://www.drupal.org/node/2647778) Улучшена документация метода 
-  `AssetResolver::sort()`.
+- [#2647778](https://www.drupal.org/node/2647778) Улучшена документация метода `AssetResolver::sort()`.
+- [#3299853](https://www.drupal.org/node/3299853) Части классов ядра добавлен аттрибут `#[\AllowDynamicProperties]` для уменьшения количества предупреждений на PHP 8.2.
+- [#3299327](https://www.drupal.org/node/3299327) Вызовы `static::method()` заменены на нормальные `callable`.

@@ -45,6 +45,7 @@ category:
   шум при переключении на CKEditor 5.
 - [#3270831](https://www.drupal.org/node/3270831) Обновление с CKEditor 4 до
   CKEditor 5 теперь возможно даже если CKEditor 4 удалён.
+- [#3295935](https://www.drupal.org/node/3295935) Добавлены новые тест-кейсы для `HTMLRestrictionsTest`.
 
 ## Composer
 
@@ -140,3 +141,4 @@ category:
 - [#3281996](https://www.drupal.org/node/3281996) Исправлена неполадка в `UnchaughtExceptionTest`.
 - [#3188327](https://www.drupal.org/node/3188327) Улучшена документация `BaseFieldDefinition::setDsiplayOptions()`.
 - [#3295972](https://www.drupal.org/node/3295972) Исправлена некорректная документация для `initial_form_field` в `Schema`.
+- [#3295487](https://www.drupal.org/node/3295487) Исправлено некорректное описание для конструктора `HtmlFormController`.

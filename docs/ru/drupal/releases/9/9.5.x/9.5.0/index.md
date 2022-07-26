@@ -97,6 +97,11 @@ services:
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
   теперь вызывается на элементы до окончания загрузки.
 
+## Block
+
+- [#3281429](https://www.drupal.org/node/3281429) Тесты, не использующие миграции, обновлены чтобы не использовать темы Bartik и Seven.
+- 
+
 ## Claro
 
 - [#3291100](https://www.drupal.org/node/3291100) Улучшено отображение `details` элемента.
@@ -198,11 +203,19 @@ services:
 - [#2563995](https://www.drupal.org/node/2563995) Оптимизирован код в методе 
   `RoleStorage::isPermissionInRoles()`.
 
+## Views
+
+- [#3295813](https://www.drupal.org/node/3295813) Добавлено отсутствующее объявление свойства `ViewsEntitySchemaSubscriber::$viewsToSave`.
+
 ## Views UI
 
 - [#2473877](https://www.drupal.org/node/2473877) Исправлена неполадка, 
   из-за которой индикатор прогресса оформлялся как пагинация и находился в 
   неположенном месте.
+
+## Стандартный установочный профиль
+
+- [#3243121](https://www.drupal.org/node/3243121) Профиль больше не устанавливает модуль RDF.
 
 ## Тестирование
 
