@@ -131,6 +131,7 @@ services:
 - [#3280589](https://www.drupal.org/node/3280589) Скрипт для чистки vendor 
   директории объявлен устаревшим.
 - [#3298343](https://www.drupal.org/node/3298343) Зависимость `egulias/email-validator` обновлена до версии 3.2.1.
+- [#3299213](https://www.drupal.org/node/3299213) Зависимость `mikey179/vfsstream` теперь запрашивается версии ^1.6.11.
 
 ## Entity API
 
