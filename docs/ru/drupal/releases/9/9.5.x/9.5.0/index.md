@@ -100,7 +100,7 @@ services:
 ## Block
 
 - [#3281429](https://www.drupal.org/node/3281429) Тесты, не использующие миграции, обновлены чтобы не использовать темы Bartik и Seven.
-- 
+- [#3105880](https://www.drupal.org/node/3105880) Из теста `BlockRepositoryTest` удалён неиспользуемый код.
 
 ## Claro
 
@@ -132,6 +132,10 @@ services:
   директории объявлен устаревшим.
 - [#3298343](https://www.drupal.org/node/3298343) Зависимость `egulias/email-validator` обновлена до версии 3.2.1.
 - [#3299213](https://www.drupal.org/node/3299213) Зависимость `mikey179/vfsstream` теперь запрашивается версии ^1.6.11.
+
+## Configuration System
+
+- [#3295735](https://www.drupal.org/node/3295735) Улучшена работа теста `ConfigImportUITest` с темой Olivero.
 
 ## Entity API
 
@@ -265,3 +269,4 @@ services:
 - [#3281449](https://www.drupal.org/node/3281449) Unit тесты ядра больше не
   используют тему оформления Bartik и Seven.
 - [#3119840](https://www.drupal.org/node/3119840) Улучшены настройки `.gitattributes` для того чтобы нестандартные PHP файлы имели подсветку синтаксиса.
+- [#3281427](https://www.drupal.org/node/3281427) Миграции модулей Block и System больше не используют темы оформления Bartik и Seven.
