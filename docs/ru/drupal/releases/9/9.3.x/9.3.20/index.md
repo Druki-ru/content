@@ -17,7 +17,7 @@ category:
 
 ## Composer
 
-- [#3300518](https://www.drupal.org/node/3300518) 
+- [#3300518](https://www.drupal.org/node/3300518) Зависимость `laminas/laminas-diactoros` обновлена до версии 2.11.1.
 
 ## Прочие изменения
 
