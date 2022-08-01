@@ -132,6 +132,7 @@ services:
   директории объявлен устаревшим.
 - [#3298343](https://www.drupal.org/node/3298343) Зависимость `egulias/email-validator` обновлена до версии 3.2.1.
 - [#3299213](https://www.drupal.org/node/3299213) Зависимость `mikey179/vfsstream` теперь запрашивается версии ^1.6.11.
+- [#3300773](https://www.drupal.org/node/3300773) Зависимость `symfony/http-foundation` обновлена до 4.4.44.
 
 ## Configuration System
 
@@ -145,6 +146,10 @@ services:
 
 - [#2588013](https://www.drupal.org/node/2588013) Из `managed_file` элемента 
   удалён суффикс `<span class="ajax-new-content"></span>`.
+
+## Forum
+
+- [#2774399](https://www.drupal.org/node/2774399) Улучшена проверка на возможность удаления модуля.
 
 ## JavaScript
 
@@ -211,6 +216,8 @@ services:
 ## Views
 
 - [#3295813](https://www.drupal.org/node/3295813) Добавлено отсутствующее объявление свойства `ViewsEntitySchemaSubscriber::$viewsToSave`.
+- [#2796045](https://www.drupal.org/node/2796045) Улучшено сообщение об ошибки при добавлении поля связью когда эта связь недоступна.
+- [#2568889](https://www.drupal.org/node/2568889) Исправлена неполадка, из-за которой раскрытый фильтр для текстового поля с обязательным значением мог показывать пустую ошибку.
 
 ## Views UI
 
@@ -270,3 +277,4 @@ services:
   используют тему оформления Bartik и Seven.
 - [#3119840](https://www.drupal.org/node/3119840) Улучшены настройки `.gitattributes` для того чтобы нестандартные PHP файлы имели подсветку синтаксиса.
 - [#3281427](https://www.drupal.org/node/3281427) Миграции модулей Block и System больше не используют темы оформления Bartik и Seven.
+- [#2967627](https://www.drupal.org/node/2967627) Исправлена неполадка при формировании кеша препроцессоров в Registry, которая могла приводить к временным дубликатам.

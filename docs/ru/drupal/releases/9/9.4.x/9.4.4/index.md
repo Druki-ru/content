@@ -137,3 +137,7 @@ category:
 - [#3188327](https://www.drupal.org/node/3188327) Улучшена документация `BaseFieldDefinition::setDsiplayOptions()`.
 - [#3295972](https://www.drupal.org/node/3295972) Исправлена некорректная документация для `initial_form_field` в `Schema`.
 - [#3295487](https://www.drupal.org/node/3295487) Исправлено некорректное описание для конструктора `HtmlFormController`.
+
+## Ссылки
+
+- [Drupal 9.4.4](https://www.drupal.org/project/drupal/releases/9.4.4) (англ.), drupal.org, 28 июля 2022

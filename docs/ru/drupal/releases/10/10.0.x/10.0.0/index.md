@@ -492,6 +492,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 
 - [#3269141](https://www.drupal.org/node/3269141) (отменено) `TranslationWrapper` теперь является синонимом для `TranslatableMarkup`. Одноимённый класс удалён.
 
+## Twig
+
+- [#3298717](https://www.drupal.org/node/3298717) Ссылки на документацию Twig обновлены до актуальных версий шаблонизатора в ядре.
+
 ## Update System
 
 - [#3291893](https://www.drupal.org/node/3291893) Исправлена неполадка, из-за которой тесты для 10.1.x могли проваливаться.
@@ -633,3 +637,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#2647778](https://www.drupal.org/node/2647778) Улучшена документация метода `AssetResolver::sort()`.
 - [#3299853](https://www.drupal.org/node/3299853) Части классов ядра добавлен аттрибут `#[\AllowDynamicProperties]` для уменьшения количества предупреждений на PHP 8.2.
 - [#3299327](https://www.drupal.org/node/3299327) Вызовы `static::method()` заменены на нормальные `callable`.
+- [#3299890](https://www.drupal.org/node/3299890) Использование `$this` заменено на `self::class` в `ViewsDataHelper`.
