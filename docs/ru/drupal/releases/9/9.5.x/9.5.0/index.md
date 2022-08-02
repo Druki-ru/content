@@ -132,7 +132,6 @@ services:
   директории объявлен устаревшим.
 - [#3298343](https://www.drupal.org/node/3298343) Зависимость `egulias/email-validator` обновлена до версии 3.2.1.
 - [#3299213](https://www.drupal.org/node/3299213) Зависимость `mikey179/vfsstream` теперь запрашивается версии ^1.6.11.
-- [#3300773](https://www.drupal.org/node/3300773) Зависимость `symfony/http-foundation` обновлена до 4.4.44.
 
 ## Configuration System
 
@@ -155,6 +154,7 @@ services:
 
 - [#3086931](https://www.drupal.org/node/3086931) Удалён файл `postcss.
   config.js`.
+- [#3296096](https://www.drupal.org/node/3296096) Сообщение о депрекации `:tabbable` обновлено. JavaScript код будет удалён в Drupal 11.
 
 ## Help Topics
 
