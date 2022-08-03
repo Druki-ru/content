@@ -19,6 +19,10 @@ category:
 
 </Aside>
 
+## Composer
+
+- [#3116405](https://www.drupal.org/node/3116405) В `core/compose.json` добавлена секция с `replace`.
+
 ## Link
 
 - [#3056652](https://www.drupal.org/node/3056652) Исправлена неполадка из-за которой значения аттрибутов не сохранялись в виджете.

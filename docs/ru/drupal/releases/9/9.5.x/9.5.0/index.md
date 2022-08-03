@@ -101,6 +101,7 @@ services:
 
 - [#3281429](https://www.drupal.org/node/3281429) Тесты, не использующие миграции, обновлены чтобы не использовать темы Bartik и Seven.
 - [#3105880](https://www.drupal.org/node/3105880) Из теста `BlockRepositoryTest` удалён неиспользуемый код.
+- [#3061148](https://www.drupal.org/node/3061148) Исправлена неполадка, из-за которой заголовки отключеных блоков проходили через двойное экранирование.
 
 ## Claro
 
@@ -155,6 +156,10 @@ services:
 - [#3086931](https://www.drupal.org/node/3086931) Удалён файл `postcss.
   config.js`.
 - [#3296096](https://www.drupal.org/node/3296096) Сообщение о депрекации `:tabbable` обновлено. JavaScript код будет удалён в Drupal 11.
+
+## JSON:API
+
+- [#3280302](https://www.drupal.org/node/3280302) В `JsonApiDocumentTopLevelNormalizerTest` исправлен вызов с лишним аргументом.
 
 ## Help Topics
 
