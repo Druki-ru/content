@@ -23,3 +23,7 @@ category:
 
 - [#3298821](https://www.drupal.org/node/3298821) Тесты для `drupal/core-composer-scaffold`
   больше не запускаются если этот пакет не используется.
+
+## Ссылки
+
+- [Drupal 9.3.20](https://www.drupal.org/project/drupal/releases/9.3.20) (англ.), drupal.org, 28 июля 2022

@@ -92,6 +92,40 @@ services:
     class: Drupal\your_module\YourClass
 ```
 
+## Добавлена новая AJAX команда `add_js`
+
+- [#1988968](https://www.drupal.org/node/1988968)
+
+Добавлена новая AJAX команда `add_js` которая позоволяет дождаться загрузки всех необходимых JavaScript файлов прежде чем выполнять следующую команду \ код.
+
+Это изменение меняет порядок вызовов AJAX команд. Ранее, добавляя JavaScript файлы через AJAX, команды идущие за командой добавления JavaScript не ожидали загрузки этих скриптов и сразу выполнялись. Это приводило к проблемам когда код вызывается прежде чем его зависимости доступны для использования.
+
+### Изменения API
+
+AJAX команды теперь могут возвращать Promise, который дожидается выполнения предыдущей команды прежде чем перейти к следующей на очереди.
+
+```javascript
+// This command will wait for one second. The command execution queue will be 
+// paused until the promise is resolved to continue.
+Drupal.AjaxCommands.prototype.delayedCommand = function (ajax, response) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000);
+  });
+}
+```
+
+`Drupal.Ajax.prototype.success` теперь возвращает Promise — если ваш код перезаписывает данный метод, убедитесь что он тоже возвращает Promise. В общем случае это решается следующим образом:
+
+```javascript
+const oldSuccess = Drupal.Ajax.prototype.success;
+Drupal.Ajax.prototype.success = function (response, status) {
+  // Custom processing here
+
+  // Make sure that this method returns a Promise.
+  return oldSuccess.call(this, response, status);
+};
+```
+
 ## Big Pipe
 
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
@@ -125,6 +159,7 @@ services:
 - [#2958241](https://www.drupal.org/node/2958241) Внесены улучшения в 
   `CommentSelection` для корректной работы комментариев с различными типами 
   сущностей.
+- [#3166561](https://www.drupal.org/node/3166561) Исправлена неполадка, из-за которой при удалении пользователя, его комментарии могли быть удалены, вместо того чтобы быть переназначены на анонимного пользователя.
 
 ## Composer
 
@@ -141,6 +176,10 @@ services:
 ## Entity API
 
 - [#3266589](https://www.drupal.org/node/3266589) Удалён заголовок `Link` из ответа страницы сущности.
+
+## Field Layout
+
+- [#3292560](https://www.drupal.org/node/3292560) Тесты модуля больше не используют тему оформления Classy.
 
 ## File
 
@@ -190,6 +229,10 @@ services:
 - [#3117291](https://www.drupal.org/node/3117291) Внесены улучшения в метод 
   `Element::isEmpty()`.
 
+## Search
+
+- [#3275843](https://www.drupal.org/node/3275843) Тесты модуля больше не используют тему оформления Classy.
+
 ## Shortcut
 
 - [#3281440](https://www.drupal.org/node/3281440) Тесты модуля больше не 
@@ -208,6 +251,7 @@ services:
 - [#3267258](https://www.drupal.org/node/3267258) Функционал интеграции модуля Quick Edit с модулем Editor, перенесён непосредственно в Quick Edit.
 - [#3291047](https://www.drupal.org/node/3291047) Функционал интеграции модуля CKEditor 4/5 с модулем Editor, перенесён непосредственно в Quick Edit.
 - [#3291018](https://www.drupal.org/node/3291018) `CKEditor5QuickEditLibraryTest` перенесён в Quick Edit.
+- [#3292780](https://www.drupal.org/node/3292780) Код связанный с модулем и CKEditor 5 перенесён в модуль Quick Edit.
 
 ## Update
 
@@ -283,3 +327,5 @@ services:
 - [#3119840](https://www.drupal.org/node/3119840) Улучшены настройки `.gitattributes` для того чтобы нестандартные PHP файлы имели подсветку синтаксиса.
 - [#3281427](https://www.drupal.org/node/3281427) Миграции модулей Block и System больше не используют темы оформления Bartik и Seven.
 - [#2967627](https://www.drupal.org/node/2967627) Исправлена неполадка при формировании кеша препроцессоров в Registry, которая могла приводить к временным дубликатам.
+- [#3298319](https://www.drupal.org/node/3298319) `ExtensionDiscoveryTrait` больше не использует тему оформления Seven.
+- [#3281444](https://www.drupal.org/node/3281444) Тесты для установочных профилей больше не используют Bartik и Seven.

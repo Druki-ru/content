@@ -387,6 +387,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3266274](https://www.drupal.org/node/3266274) Удалена зависимость `chalk`.
 - [#3294850](https://www.drupal.org/node/3294850) Зависимость `cspell` 
   обновлена до 6 версии.
+- [#3296481](https://www.drupal.org/node/3296481) (отменено) Обновлены зависимости `terser` и `terser-webpack-plugin`.
 
 ## Language
 
@@ -638,5 +639,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3299853](https://www.drupal.org/node/3299853) Части классов ядра добавлен аттрибут `#[\AllowDynamicProperties]` для уменьшения количества предупреждений на PHP 8.2.
 - [#3299327](https://www.drupal.org/node/3299327) Вызовы `static::method()` заменены на нормальные `callable`.
 - [#3299890](https://www.drupal.org/node/3299890) Использование `$this` заменено на `self::class` в `ViewsDataHelper`.
-- [#3281444](https://www.drupal.org/node/3281444) Тесты для установочных профилей больше не используют Bartik и Seven.
 - [#3293090](https://www.drupal.org/node/3293090) JavaScript тесты теперь будут проваливаться при JavaScript ошибках.

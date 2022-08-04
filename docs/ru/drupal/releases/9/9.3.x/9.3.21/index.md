@@ -13,12 +13,16 @@ authors:
   order: 21
 ---
 
-<Aside type="warning">
+**Дата релиза:** 3 августа 2022
 
-Данная версия находится в разработке и не предназначеноа для использования.
+## CKEditor 5
 
-</Aside>
+- [#3301495](https://www.drupal.org/node/3301495) CKEditor обновлён до версии 35.0.1.
 
 ## Composer
 
 - [#3300773](https://www.drupal.org/node/3300773) Зависимость `symfony/http-foundation` обновлена до 4.4.44.
+
+## Ссылки
+
+- [Drupal 9.3.21](https://www.drupal.org/project/drupal/releases/9.3.21) (англ.), drupal.org, 3 августа 2022
