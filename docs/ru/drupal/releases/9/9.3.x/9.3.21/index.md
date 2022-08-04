@@ -3,11 +3,11 @@ title: 'Drupal 9.3.21'
 slug: wiki/drupal/releases/9.3.21
 core: 9
 metatags:
-title: 'Drupal 9.3.21: Список изменений'
-description: 'Список изменений Drupal 9.3.21.'
+  title: 'Drupal 9.3.21: Список изменений'
+  description: 'Список изменений Drupal 9.3.21.'
 authors:
 - Niklan
-  category:
+category:
   area: 'Drupal 9.3.x'
   title: Drupal 9.3.21
   order: 21

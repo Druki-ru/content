@@ -3,11 +3,11 @@ title: 'Drupal 9.3.22'
 slug: wiki/drupal/releases/9.3.22
 core: 9
 metatags:
-title: 'Drupal 9.3.22: Список изменений'
-description: 'Список изменений Drupal 9.3.22.'
+  title: 'Drupal 9.3.22: Список изменений'
+  description: 'Список изменений Drupal 9.3.22.'
 authors:
-- Niklan
-  category:
+  - Niklan
+category:
   area: 'Drupal 9.3.x'
   title: Drupal 9.3.22
   order: 22
