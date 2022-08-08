@@ -324,10 +324,9 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## CKEditor 5
 
 - [#3261585](https://www.drupal.org/node/3261585) Удалены предупреждения для Internet Explorer 11, так как Drupal 10 больше его не поддерживает.
-- [#3274937](https://www.drupal.org/node/3274937) Улучшена работа редактора 
-  в модальных и диалоговых окнах.
 - [#3295898](https://www.drupal.org/node/3295898) Удалён лишний файл 
   `ckeditor5.libraries.yml.orig`.
+- [#3301631](https://www.drupal.org/node/3301631) Исправлена неполадка с модальными окнами с CKEditor 35.0.1.
 
 ## Composer
 
@@ -438,6 +437,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   переменные с размерами тулбара.
 - [#3212691](https://www.drupal.org/node/3212691) Удалено оформление 
   плейсхолдера для IE11.
+- [#3259929](https://www.drupal.org/node/3259929) Улучшены стили для dropbutton элемента. Добавлено больше CSS переменных.
 
 ## PosgreSQL DB driver
 

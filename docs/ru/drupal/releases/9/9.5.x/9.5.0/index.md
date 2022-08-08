@@ -141,6 +141,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
 
 - [#3291100](https://www.drupal.org/node/3291100) Улучшено отображение `details` элемента.
 - [#3085219](https://www.drupal.org/node/3085219) Улучшено оформление процесса установки сайта.
+- [#3300941](https://www.drupal.org/node/3300941) Исправлена неполадка в выравнивании лейаута Views UI.
 
 ## CKEditor 4
 
@@ -329,3 +330,4 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#2967627](https://www.drupal.org/node/2967627) Исправлена неполадка при формировании кеша препроцессоров в Registry, которая могла приводить к временным дубликатам.
 - [#3298319](https://www.drupal.org/node/3298319) `ExtensionDiscoveryTrait` больше не использует тему оформления Seven.
 - [#3281444](https://www.drupal.org/node/3281444) Тесты для установочных профилей больше не используют Bartik и Seven.
+- [#3262674](https://www.drupal.org/node/3262674) В качестве темы по умолчанию в режиме обслуживания теперь используется Claro.
