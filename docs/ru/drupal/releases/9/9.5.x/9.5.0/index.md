@@ -208,6 +208,10 @@ Drupal.Ajax.prototype.success = function (response, status) {
   Topics теперь обрабатывается корректно.
 - [#3281439](https://www.drupal.org/node/3281439) Тесты модуля больше не используют темы оформления Bartik и Seven.
 
+## Layout Builder
+
+- [#2935999](https://www.drupal.org/node/2935999) Модуль больше не требует включения модуля Field UI.
+
 ## Media
 
 - [#3255887](https://www.drupal.org/node/3255887) Исправлена ошибка в 
@@ -224,6 +228,10 @@ Drupal.Ajax.prototype.success = function (response, status) {
   прав доступа «Edit own *».
 - [#3264987](https://www.drupal.org/node/3264987) Исправлено двойное 
   присвоение переменной в `NodeViewsData`.
+
+## RDF
+
+- [#3293814](https://www.drupal.org/node/3293814) Help Topic связанные с модулем перенесены непосредственно в RDF модуль.
 
 ## Render System
 
@@ -262,6 +270,8 @@ Drupal.Ajax.prototype.success = function (response, status) {
 
 - [#2563995](https://www.drupal.org/node/2563995) Оптимизирован код в методе 
   `RoleStorage::isPermissionInRoles()`.
+- [#3282420](https://www.drupal.org/node/3282420) При использовании одноразовой ссылки для входа теперь предлагается «установить», а не «менять» пароль. Это изменение касается текста сообщения.
+- [#3285593](https://www.drupal.org/node/3285593) Улучшена документация для `Section::getComponents()`.
 
 ## Views
 
