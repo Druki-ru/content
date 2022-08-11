@@ -365,7 +365,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3298199](https://www.drupal.org/node/3298199) Зависимость `phpstan/phpstan` обновлена до версии 1.8.2.
 - [#3299606](https://www.drupal.org/node/3299606) Зависимость `mglaman/phpstan-drupal` до версии 1.1.25.
 - [#3298396](https://www.drupal.org/node/3298396) Минимальная версия Composer увеличена до 2.3.6.
-- [#3295520](https://www.drupal.org/node/3295520) Зависимости ядра обновлены на 08.08.2022.
 
 ## Database Logging
 
@@ -419,8 +418,9 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## Migrate Drupal UI
 
 - [#3082211](https://www.drupal.org/node/3082211) (отменено) Внесены 
-  улучшения в тесты
-  модуля.
+  улучшения в тесты модуля.
+- [#3302096](https://www.drupal.org/node/3302096) Параметр `$module_handler` для 
+  `\Drupal\migrate_drupal_ui\Form\ReviewForm::__construct` больше не имеет значение `NULL` по умолчанию.
 
 ## Olivero
 
@@ -498,6 +498,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3264120](https://www.drupal.org/node/3264120) Обновлена фикстура с базой данных Drupal 9.3.0 отражающая удаление модуля Aggregator и изменения в драйвера баз данных Posgres/SQLite.
 - [#3173031](https://www.drupal.org/node/3173031) В `GDToolkit` удалён код 
   для совместимости со старыми версиями PHP.
+- [#3281434](https://www.drupal.org/node/3281434) Тесты модуля больше не используют Bartik и Seven.
 
 ## Tour
 

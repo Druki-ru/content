@@ -136,6 +136,8 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3281429](https://www.drupal.org/node/3281429) Тесты, не использующие миграции, обновлены чтобы не использовать темы Bartik и Seven.
 - [#3105880](https://www.drupal.org/node/3105880) Из теста `BlockRepositoryTest` удалён неиспользуемый код.
 - [#3061148](https://www.drupal.org/node/3061148) Исправлена неполадка, из-за которой заголовки отключеных блоков проходили через двойное экранирование.
+- [#3301663](https://www.drupal.org/node/3301663) Из метода `\Drupal\block\BlockForm::buildVisibilityInterface()` 
+  удалена проверка устаревшего условия `node_type`.
 
 ## Claro
 
@@ -149,11 +151,16 @@ Drupal.Ajax.prototype.success = function (response, status) {
   CKEditor 4 перенесена в модуль CKEditor 4.
 - [#3271094](https://www.drupal.org/node/3271094) Интеграция с Media 
   перенесена из одноимённого модуля в CKEditor.
+- [#3285049](https://www.drupal.org/node/3285049) Внесены улучшения в стили для редактора.
 
 ## CKEditor 5
 
 - [#3292626](https://www.drupal.org/node/3292626) Удалён файл стилей 
   `core/modules/ckeditor5/css/quickedit.css`.
+
+## Colors
+
+- [#3281430](https://www.drupal.org/node/3281430) Тесты модля, не связанные с миграциями, больше не используют Bartik.
 
 ## Comment
 
@@ -169,6 +176,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
   директории объявлен устаревшим.
 - [#3298343](https://www.drupal.org/node/3298343) Зависимость `egulias/email-validator` обновлена до версии 3.2.1.
 - [#3299213](https://www.drupal.org/node/3299213) Зависимость `mikey179/vfsstream` теперь запрашивается версии ^1.6.11.
+- [#3295520](https://www.drupal.org/node/3295520) Зависимости ядра обновлены на 08.08.2022.
 
 ## Configuration System
 
@@ -284,6 +292,8 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#2473877](https://www.drupal.org/node/2473877) Исправлена неполадка, 
   из-за которой индикатор прогресса оформлялся как пагинация и находился в 
   неположенном месте.
+- [#2313073](https://www.drupal.org/node/2313073) Исправлена неполадка, из-за которой не работала передача «0» в 
+  качестве контекстного фильтра.
 
 ## Стандартный установочный профиль
 
@@ -341,3 +351,5 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3298319](https://www.drupal.org/node/3298319) `ExtensionDiscoveryTrait` больше не использует тему оформления Seven.
 - [#3281444](https://www.drupal.org/node/3281444) Тесты для установочных профилей больше не используют Bartik и Seven.
 - [#3262674](https://www.drupal.org/node/3262674) В качестве темы по умолчанию в режиме обслуживания теперь используется Claro.
+- [#3281457](https://www.drupal.org/node/3281457) Тесты для Seven и Bartik перенесены в пространство имён 
+  `FunctionalTests\Theme`.
