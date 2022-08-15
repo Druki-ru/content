@@ -498,7 +498,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3264120](https://www.drupal.org/node/3264120) Обновлена фикстура с базой данных Drupal 9.3.0 отражающая удаление модуля Aggregator и изменения в драйвера баз данных Posgres/SQLite.
 - [#3173031](https://www.drupal.org/node/3173031) В `GDToolkit` удалён код 
   для совместимости со старыми версиями PHP.
-- [#3281434](https://www.drupal.org/node/3281434) Тесты модуля больше не используют Bartik и Seven.
 
 ## Tour
 
@@ -655,3 +654,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3299327](https://www.drupal.org/node/3299327) Вызовы `static::method()` заменены на нормальные `callable`.
 - [#3299890](https://www.drupal.org/node/3299890) Использование `$this` заменено на `self::class` в `ViewsDataHelper`.
 - [#3293090](https://www.drupal.org/node/3293090) JavaScript тесты теперь будут проваливаться при JavaScript ошибках.
+- [#3293216](https://www.drupal.org/node/3293216) Упоминание Simpletest в тестах заменено или удалено.

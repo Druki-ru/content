@@ -224,6 +224,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
 
 - [#3255887](https://www.drupal.org/node/3255887) Исправлена ошибка в 
   конструкторе `MediaThumbnailFormatter`.
+- [#3275807](https://www.drupal.org/node/3275807) Тесты модуля больше не используют тему Classy.
 
 ## MySQL
 
@@ -236,10 +237,12 @@ Drupal.Ajax.prototype.success = function (response, status) {
   прав доступа «Edit own *».
 - [#3264987](https://www.drupal.org/node/3264987) Исправлено двойное 
   присвоение переменной в `NodeViewsData`.
+- [#3303278](https://www.drupal.org/node/3303278) Тесты связанные с модулем RDF перенесены в одноимённый модуль.
 
 ## RDF
 
 - [#3293814](https://www.drupal.org/node/3293814) Help Topic связанные с модулем перенесены непосредственно в RDF модуль.
+- [#3303435](https://www.drupal.org/node/3303435) Опциональные конфигурации связанные с модулем перенесены в модуль RDF.
 
 ## Render System
 
@@ -254,6 +257,10 @@ Drupal.Ajax.prototype.success = function (response, status) {
 
 - [#3281440](https://www.drupal.org/node/3281440) Тесты модуля больше не 
   используют темы оформления Bartik и Seven.
+
+## System
+
+- [#3281434](https://www.drupal.org/node/3281434) Тесты модуля больше не используют Bartik и Seven.
 
 ## Theme System
 
@@ -273,6 +280,10 @@ Drupal.Ajax.prototype.success = function (response, status) {
 ## Update
 
 - [#3279279](https://www.drupal.org/node/3279279) Удалена ссылка «Скачать» со страницы доступных обновлений.
+
+## Umami
+
+- [#3302984](https://www.drupal.org/node/3302984) Установочный профиль больше не используем модуль RDF.
 
 ## User
 
@@ -302,6 +313,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
 ## Тестирование
 
 - [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property».
+- [#3302760](https://www.drupal.org/node/3302760) Добавлены фикстуры с БД Drupal 9.4.0.
 
 ## Прочие изменения
 
@@ -353,3 +365,4 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3262674](https://www.drupal.org/node/3262674) В качестве темы по умолчанию в режиме обслуживания теперь используется Claro.
 - [#3281457](https://www.drupal.org/node/3281457) Тесты для Seven и Bartik перенесены в пространство имён 
   `FunctionalTests\Theme`.
+- [#3303453](https://www.drupal.org/node/3303453) Тест `NoJavaScriptAnonymousTest` больше не использует модуль RDF.
