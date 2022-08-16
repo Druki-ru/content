@@ -226,6 +226,10 @@ Drupal.Ajax.prototype.success = function (response, status) {
   конструкторе `MediaThumbnailFormatter`.
 - [#3275807](https://www.drupal.org/node/3275807) Тесты модуля больше не используют тему Classy.
 
+## Media Library
+
+- [#3278418](https://www.drupal.org/node/3278418) Тесты модуля больше не используют тему оформления Classy.
+
 ## MySQL
 
 - [#3296108](https://www.drupal.org/node/3296108) `mysql_requirements()` 
@@ -366,3 +370,4 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3281457](https://www.drupal.org/node/3281457) Тесты для Seven и Bartik перенесены в пространство имён 
   `FunctionalTests\Theme`.
 - [#3303453](https://www.drupal.org/node/3303453) Тест `NoJavaScriptAnonymousTest` больше не использует модуль RDF.
+- [#3223061](https://www.drupal.org/node/3223061) Улучшено отображение dropbutton по умолчанию с длинными названиями.
