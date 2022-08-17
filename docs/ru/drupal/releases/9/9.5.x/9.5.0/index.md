@@ -139,6 +139,10 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3301663](https://www.drupal.org/node/3301663) Из метода `\Drupal\block\BlockForm::buildVisibilityInterface()` 
   удалена проверка устаревшего условия `node_type`.
 
+## Book
+
+- [#3303033](https://www.drupal.org/node/3303033) Тесты модуля больше не используют тему оформления Classy.
+
 ## Claro
 
 - [#3291100](https://www.drupal.org/node/3291100) Улучшено отображение `details` элемента.
@@ -257,6 +261,11 @@ Drupal.Ajax.prototype.success = function (response, status) {
 
 - [#3275843](https://www.drupal.org/node/3275843) Тесты модуля больше не используют тему оформления Classy.
 
+## Seven
+
+- [#3303787](https://www.drupal.org/node/3303787) Опциональная конфигурация `block.block.seven_help_search.yml` 
+  перенесена из Help Topics модуля в тему.
+
 ## Shortcut
 
 - [#3281440](https://www.drupal.org/node/3281440) Тесты модуля больше не 
@@ -371,3 +380,4 @@ Drupal.Ajax.prototype.success = function (response, status) {
   `FunctionalTests\Theme`.
 - [#3303453](https://www.drupal.org/node/3303453) Тест `NoJavaScriptAnonymousTest` больше не использует модуль RDF.
 - [#3223061](https://www.drupal.org/node/3223061) Улучшено отображение dropbutton по умолчанию с длинными названиями.
+- [#3302800](https://www.drupal.org/node/3302800) Внесены корректировки в некоторые тесты со списком доступных тем.
