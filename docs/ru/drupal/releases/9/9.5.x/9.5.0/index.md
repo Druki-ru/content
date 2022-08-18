@@ -161,6 +161,8 @@ Drupal.Ajax.prototype.success = function (response, status) {
 
 - [#3292626](https://www.drupal.org/node/3292626) Удалён файл стилей 
   `core/modules/ckeditor5/css/quickedit.css`.
+- [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
+  `StyleSensibleElementConstraintValidator`.
 
 ## Colors
 
