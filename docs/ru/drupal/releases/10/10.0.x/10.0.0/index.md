@@ -390,6 +390,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3077703](https://www.drupal.org/node/3077703) Удалены проверки используемые перед обновлением [Drupal 8.7.7](../../../8/8.7.x/8.7.7/index.md). Данные проверки являлись слоем обратной совместим для свойств `core` и `core_version_requirement`.
 - [#3269153](https://www.drupal.org/node/3269153) Удалён слой обратной совместимости в системе расширений.
 
+## Help Topics
+
+- [#3304596](https://www.drupal.org/node/3304596) В справку о редакторе добавлено упоминание CKEditor 5.
+
 ## JavaScript
 
 - [#3268228](https://www.drupal.org/node/3268228) Удалена библиотека jQuery Joyride. Она была заменена на Popper.js добавленной в [Drupal 8.8.0](../../../8/8.8.x/8.8.0/index.md).
