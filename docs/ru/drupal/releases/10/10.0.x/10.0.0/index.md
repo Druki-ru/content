@@ -659,3 +659,5 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3299890](https://www.drupal.org/node/3299890) Использование `$this` заменено на `self::class` в `ViewsDataHelper`.
 - [#3293090](https://www.drupal.org/node/3293090) JavaScript тесты теперь будут проваливаться при JavaScript ошибках.
 - [#3293216](https://www.drupal.org/node/3293216) Упоминание Simpletest в тестах заменено или удалено.
+- [#3270899](https://www.drupal.org/node/3270899) Удалён устаревший модуль Color.
+- [#3304256](https://www.drupal.org/node/3304256) Удалена устаревшая тема оформления Bartik.

@@ -100,6 +100,16 @@ services:
 
 Это изменение меняет порядок вызовов AJAX команд. Ранее, добавляя JavaScript файлы через AJAX, команды идущие за командой добавления JavaScript не ожидали загрузки этих скриптов и сразу выполнялись. Это приводило к проблемам когда код вызывается прежде чем его зависимости доступны для использования.
 
+## Тема оформления Bartik объявлена устаревшей
+
+- [#3249109](https://www.drupal.org/node/3249109)
+
+Тема оформления Bartik объявлена устаревшей и не будет включена в поставку Drupal 10. Основная тема по умолчанию в 
+Drupal 10 — Olivero. Если вы используете Bartik, рекомендуется перейти на Olivero.
+
+Если вам по прежнему необходим Bartik, запросите сторонний проект где будет продолжена поддержка и развитие данный темы
+оформления — `composer require drupal/bartik`.
+
 ### Изменения API
 
 AJAX команды теперь могут возвращать Promise, который дожидается выполнения предыдущей команды прежде чем перейти к следующей на очереди.
@@ -139,6 +149,11 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3301663](https://www.drupal.org/node/3301663) Из метода `\Drupal\block\BlockForm::buildVisibilityInterface()` 
   удалена проверка устаревшего условия `node_type`.
 
+## Block Content
+
+- [#3053881](https://www.drupal.org/node/3053881) Исправлена неполадка, из-за которой возврат старой ревизии с 
+  использованием собственных блоков могло приводить к вызову `EntityChangedConstraint`.
+
 ## Book
 
 - [#3303033](https://www.drupal.org/node/3303033) Тесты модуля больше не используют тему оформления Classy.
@@ -163,6 +178,9 @@ Drupal.Ajax.prototype.success = function (response, status) {
   `core/modules/ckeditor5/css/quickedit.css`.
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
+- [#3268306](https://www.drupal.org/node/3268306) Исправлена неполадка, из-за которой могли не сохранятся 
+  собственные HTML-теги, например: `<drupal-media>`, `<drupal-entity>`, `<foobar>`.
+- [#3283776](https://www.drupal.org/node/3283776) Внесены улучшения в `CKEditor5PluginDefinition::getElements()`.
 
 ## Colors
 
@@ -183,6 +201,8 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3298343](https://www.drupal.org/node/3298343) Зависимость `egulias/email-validator` обновлена до версии 3.2.1.
 - [#3299213](https://www.drupal.org/node/3299213) Зависимость `mikey179/vfsstream` теперь запрашивается версии ^1.6.11.
 - [#3295520](https://www.drupal.org/node/3295520) Зависимости ядра обновлены на 08.08.2022.
+- [#3272110](https://www.drupal.org/node/3272110) `composer.json` файлы компонентов `Drupal\Component` приведены в 
+  порядок и актуализированы.
 
 ## Configuration System
 

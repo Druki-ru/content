@@ -39,6 +39,10 @@ category:
 - [#3285637](https://www.drupal.org/node/3285637) Плагин-обработчик `get` теперь может обрабатывать множественные
   значения (`handle_multiple`).
 
+## RDF
+
+- [#3293813](https://www.drupal.org/node/3293813) Тесты связанные с модулем RDF перенесены в данный модуль.
+
 ## Render system
 
 - [#2157567](https://www.drupal.org/node/2157567) Улучшена документация для свойства `path` в `hook_theme()`.
