@@ -207,6 +207,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
 ## Configuration System
 
 - [#3295735](https://www.drupal.org/node/3295735) Улучшена работа теста `ConfigImportUITest` с темой Olivero.
+- [#2232051](https://www.drupal.org/node/2232051) Запись конфигурации в файл больше не вызывает `chmod()`.
 
 ## Entity API
 
@@ -319,6 +320,8 @@ Drupal.Ajax.prototype.success = function (response, status) {
 ## Umami
 
 - [#3302984](https://www.drupal.org/node/3302984) Установочный профиль больше не используем модуль RDF.
+- [#3273665](https://www.drupal.org/node/3273665) Установочный профиль теперь использует CKEditor 5 в качестве 
+  редактора.
 
 ## User
 

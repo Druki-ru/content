@@ -23,6 +23,8 @@ category:
 
 - [#3222797](https://www.drupal.org/node/3222797) Добавлена поддержка миграции StyleCombo из CKEditor 4.
 - [#3274937](https://www.drupal.org/node/3274937) Улучшена работа редактора в модальных и диалоговых окнах.
+- [#3278636](https://www.drupal.org/node/3278636) Исправлена неполадка в `HTMLRestrictions::fromString()`, из-за 
+  которой повторяющиеся разрешенные теги могли обрабатываться некорректно.
 
 ## JavaScript
 
@@ -41,7 +43,7 @@ category:
 
 ## RDF
 
-- [#3293813](https://www.drupal.org/node/3293813) Тесты связанные с модулем RDF перенесены в данный модуль.
+- [#3293813](https://www.drupal.org/node/3293813) (отменено) Тесты связанные с модулем RDF перенесены в данный модуль.
 
 ## Render system
 
