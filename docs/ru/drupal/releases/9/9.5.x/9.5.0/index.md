@@ -246,6 +246,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
 ## Layout Builder
 
 - [#2935999](https://www.drupal.org/node/2935999) Модуль больше не требует включения модуля Field UI.
+- [#3304371](https://www.drupal.org/node/3304371) Исправлена ошибка в `AjaxBlockTest`.
 
 ## Media
 
@@ -322,6 +323,8 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3302984](https://www.drupal.org/node/3302984) Установочный профиль больше не используем модуль RDF.
 - [#3273665](https://www.drupal.org/node/3273665) Установочный профиль теперь использует CKEditor 5 в качестве 
   редактора.
+- [#3304655](https://www.drupal.org/node/3304655) Исправлена неполадка в библиотеке `demo-umami-tour` которая по
+  ошибке имела зависимость на библиотеку из темы оформления `seven`.
 
 ## User
 
@@ -406,3 +409,4 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3303453](https://www.drupal.org/node/3303453) Тест `NoJavaScriptAnonymousTest` больше не использует модуль RDF.
 - [#3223061](https://www.drupal.org/node/3223061) Улучшено отображение dropbutton по умолчанию с длинными названиями.
 - [#3302800](https://www.drupal.org/node/3302800) Внесены корректировки в некоторые тесты со списком доступных тем.
+- [#2937010](https://www.drupal.org/node/2937010) В `ContainerBuilder` портирован изменения из Symfony контейнера.

@@ -31,6 +31,11 @@ category:
 - [#3301712](https://www.drupal.org/node/3301712) Команда `yarn build` в конце сборки теперь также обновляет 
   зависимости.
 
+## Layout Builder
+
+- [#3268678](https://www.drupal.org/node/3268678) Восстановлена работа 
+  `ContentPreviewToggleTest::testContentPreviewToggle()`.
+
 ## Link
 
 - [#3056652](https://www.drupal.org/node/3056652) (отменено) Исправлена неполадка из-за которой значения аттрибутов 
@@ -48,6 +53,10 @@ category:
 ## Render system
 
 - [#2157567](https://www.drupal.org/node/2157567) Улучшена документация для свойства `path` в `hook_theme()`.
+
+## Starterkit theme
+
+- [#3302654](https://www.drupal.org/node/3302654) Добавлено описание для темы.
 
 ## Update system
 
