@@ -136,6 +136,21 @@ Drupal.Ajax.prototype.success = function (response, status) {
 };
 ```
 
+## Модуль Quick Edit объявлен устаревшим
+
+- [#3270434](https://www.drupal.org/node/3270434)
+
+Модуль Quick Edit объявлен устаревшим и будет удалён в Drupal 10. Модуль 
+можно безопасно удалить без какого-либо влияния на сайт.
+
+Многие пользователи Drupal не используют Quick Edit, поскольку он имеет 
+целый ряд проблем, связанных с удобством использования, поэтому подумайте, 
+возможно удаление данного модуля — лучшее решение.
+
+Если вы хотите продолжать использовать Quick Edit, вы можете добавить 
+сторонний модуль [Quick Edit](https://www.drupal.org/project/quickedit), 
+чтобы продолжить использование на Drupal 10.x.
+
 ## Big Pipe
 
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
@@ -246,7 +261,6 @@ Drupal.Ajax.prototype.success = function (response, status) {
 ## Layout Builder
 
 - [#2935999](https://www.drupal.org/node/2935999) Модуль больше не требует включения модуля Field UI.
-- [#3304371](https://www.drupal.org/node/3304371) Исправлена ошибка в `AjaxBlockTest`.
 
 ## Media
 

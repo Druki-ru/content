@@ -25,6 +25,14 @@ category:
 - [#3274937](https://www.drupal.org/node/3274937) Улучшена работа редактора в модальных и диалоговых окнах.
 - [#3278636](https://www.drupal.org/node/3278636) Исправлена неполадка в `HTMLRestrictions::fromString()`, из-за 
   которой повторяющиеся разрешенные теги могли обрабатываться некорректно.
+- [#3305621](https://www.drupal.org/node/3305621) Исправлена неполадка, 
+  из-за которой `HTMLRestrictions::mergeAllowedElementsLevel()` некорректно 
+  обрабатывал `<ol type="1">`.
+
+## Filter
+
+- [#3216214](https://www.drupal.org/node/3216214) Внесены улучшения в 
+  JavaScript административного интерфейса текстовых фильтров.
 
 ## JavaScript
 
@@ -35,6 +43,8 @@ category:
 
 - [#3268678](https://www.drupal.org/node/3268678) Восстановлена работа 
   `ContentPreviewToggleTest::testContentPreviewToggle()`.
+- [#3304371](https://www.drupal.org/node/3304371) Исправлена ошибка в 
+  `AjaxBlockTest`.
 
 ## Link
 
@@ -53,6 +63,11 @@ category:
 ## Render system
 
 - [#2157567](https://www.drupal.org/node/2157567) Улучшена документация для свойства `path` в `hook_theme()`.
+
+## Settings Tray
+
+- [#3304901](https://www.drupal.org/node/3304901) Исправлены неполадки в 
+  тесте `SettingsTrayBlockFormTest` которые приводили к провалу тестов.
 
 ## Starterkit theme
 
