@@ -285,6 +285,11 @@ Drupal.Ajax.prototype.success = function (response, status) {
   присвоение переменной в `NodeViewsData`.
 - [#3303278](https://www.drupal.org/node/3303278) Тесты связанные с модулем RDF перенесены в одноимённый модуль.
 
+## Olivero
+
+- [#3302052](https://www.drupal.org/node/3302052) Исправлена неполадка, 
+  из-за которой выпадающий список `dropbutton` мог перекрываться подвалом темы.
+
 ## RDF
 
 - [#3293814](https://www.drupal.org/node/3293814) Help Topic связанные с модулем перенесены непосредственно в RDF модуль.
@@ -308,6 +313,11 @@ Drupal.Ajax.prototype.success = function (response, status) {
 
 - [#3281440](https://www.drupal.org/node/3281440) Тесты модуля больше не 
   используют темы оформления Bartik и Seven.
+
+## Standard Profile
+
+- [#3271097](https://www.drupal.org/node/3271097) Стандартный профиль теперь 
+  использует CKEditor5 в качестве редактора по умолчанию.
 
 ## System
 
