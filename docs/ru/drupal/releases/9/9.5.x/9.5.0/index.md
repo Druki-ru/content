@@ -198,6 +198,8 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3283776](https://www.drupal.org/node/3283776) Внесены улучшения в `CKEditor5PluginDefinition::getElements()`.
 - [#3306216](https://www.drupal.org/node/3306216) Прозрачные иконки теперь 
   форсируются быть полностью видимыми.
+- [#3222756](https://www.drupal.org/node/3222756) Добавлена поддержка 
+  загрузки изображений из внешних источников.
 
 ## Colors
 
@@ -440,3 +442,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
   CKEditor 5 больше не используют CKEditor 4.
 - [#3291797](https://www.drupal.org/node/3291797) Обновлены стили для 
   off-canvas элемента с использованием CSS переменных.
+- [#3306720](https://www.drupal.org/node/3306720) `twig_theme_test` теперь 
+  подключает библиотеки CKEditor 5.
+- [#3304731](https://www.drupal.org/node/3304731) Оставшиеся тесты что 
+  используют Classy, теперь используют Starterkit.

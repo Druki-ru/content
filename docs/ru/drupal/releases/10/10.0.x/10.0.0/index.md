@@ -404,6 +404,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3294850](https://www.drupal.org/node/3294850) Зависимость `cspell` 
   обновлена до 6 версии.
 - [#3296481](https://www.drupal.org/node/3296481) (отменено) Обновлены зависимости `terser` и `terser-webpack-plugin`.
+- [#3306167](https://www.drupal.org/node/3306167) Библиотека tabbable 
+  обновлена до 6 версии.
 
 ## Language
 
@@ -496,6 +498,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3276195](https://www.drupal.org/node/3276195) Обновлены сигнатуры для нормалайзеров в соответствии с Symfony 6.1.
 - [#3272779](https://www.drupal.org/node/3272779) Удалён `DeprecationListenerTrait`.
 - [#3276187](https://www.drupal.org/node/3276187) Обновлены вызовы `MissingMandatoryParametersException`.
+- [#3304991](https://www.drupal.org/node/3304991) Использование `\Exception` 
+  заменено на `\Trowable` в `FormAjaxSubscriber`.
 
 ## System
 

@@ -56,6 +56,11 @@ category:
 - [#3285637](https://www.drupal.org/node/3285637) Плагин-обработчик `get` теперь может обрабатывать множественные
   значения (`handle_multiple`).
 
+## Olivero
+
+- [#3303112](https://www.drupal.org/node/3303112) Исправлена неполадка, 
+  из-за которой могло не работать закрытие поиска в Safari.
+
 ## RDF
 
 - [#3293813](https://www.drupal.org/node/3293813) (отменено) Тесты связанные с модулем RDF перенесены в данный модуль.
@@ -88,6 +93,14 @@ category:
 - [#3298923](https://www.drupal.org/node/3298923) Тест `ProtectedUserFieldConstraintValidatorTest` больше не выводит 
   сообщения об устаревшем коде на PHP 8.2.
 
+## Тестирование
+
+- [#3298906](https://www.drupal.org/node/3298906) Исправлена работа
+  `TestSetupTraitTest::testChangeDatabasePrefix()` на PHP 8.2.
+
 ## Прочие изменения
 
 - [#3135933](https://www.drupal.org/node/3135933) Правила для `phpcs.xml` теперь сортируются в алфавитном порядке.
+- [#3306712](https://www.drupal.org/node/3306712) 
+  `NoJavaScriptAnonymousTest` теперь использует установочный профиль 
+  `standard` вместо указания всех модулей.
