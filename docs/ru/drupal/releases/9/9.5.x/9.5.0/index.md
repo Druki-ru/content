@@ -151,6 +151,36 @@ Drupal.Ajax.prototype.success = function (response, status) {
 сторонний модуль [Quick Edit](https://www.drupal.org/project/quickedit), 
 чтобы продолжить использование на Drupal 10.x.
 
+## Библиотека `farbtastic` объявлена устаревшей
+
+- [#3306208](https://www.drupal.org/node/3306208)
+
+Библиотека `core/jquery.farbtastic` объявлена устаревшей и будет удалена в 
+Drupal 10.
+
+## Функция Twig dump() теперь использует Symfony VarDumper (если доступен)
+
+- [#3306864](https://www.drupal.org/node/3306864)
+
+Встроенная в Twig функция `dump()` теперь будет отдавать предпочтение Symfony 
+VarDumper для форматирования вывода, если данный пакет доступен.
+
+Вы можете запросить данную зависимость для разработки: `composer require --dev symfony/var-dumper`.
+
+## Модуль RDF объявлен устаревшим
+
+- [#3267703](https://www.drupal.org/node/3267703)
+
+Модуль RDF объявлен устаревшим и будет удалён в Drupal 10.
+
+Модуль RDF устанавливался по умолчанию при использовании стандартного 
+установочного профиля, но многие сайты не использовали функционал 
+предоставляемый данным модулем. Если вы не знаете что это за модуль, скорее 
+всего, вы можете отключить без последствий.
+
+Если вам нужен данный модуль в Drupal 10, рекомендуется использовать проект 
+`drupal/rdf` где будет продолжена поддержка данного модуля.
+
 ## Big Pipe
 
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
@@ -200,10 +230,11 @@ Drupal.Ajax.prototype.success = function (response, status) {
   форсируются быть полностью видимыми.
 - [#3222756](https://www.drupal.org/node/3222756) Добавлена поддержка 
   загрузки изображений из внешних источников.
+- [#3306153](https://www.drupal.org/node/3306153) CKEditor 5 обновлён до версии 35.1.0.
 
 ## Colors
 
-- [#3281430](https://www.drupal.org/node/3281430) Тесты модля, не связанные с миграциями, больше не используют Bartik.
+- [#3281430](https://www.drupal.org/node/3281430) Тесты модуля, не связанные с миграциями, больше не используют Bartik.
 
 ## Comment
 
@@ -222,6 +253,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
 - [#3295520](https://www.drupal.org/node/3295520) Зависимости ядра обновлены на 08.08.2022.
 - [#3272110](https://www.drupal.org/node/3272110) `composer.json` файлы компонентов `Drupal\Component` приведены в 
   порядок и актуализированы.
+- [#3306946](https://www.drupal.org/node/3306946) Зависимости ядра обновлены на 01.09.2022.
 
 ## Configuration System
 
@@ -298,6 +330,7 @@ Drupal.Ajax.prototype.success = function (response, status) {
 
 - [#3293814](https://www.drupal.org/node/3293814) Help Topic связанные с модулем перенесены непосредственно в RDF модуль.
 - [#3303435](https://www.drupal.org/node/3303435) Опциональные конфигурации связанные с модулем перенесены в модуль RDF.
+- [#3307230](https://www.drupal.org/node/3307230) Внесены улучшения в интеграцию модуля и Views.
 
 ## Render System
 
@@ -446,3 +479,6 @@ Drupal.Ajax.prototype.success = function (response, status) {
   подключает библиотеки CKEditor 5.
 - [#3304731](https://www.drupal.org/node/3304731) Оставшиеся тесты что 
   используют Classy, теперь используют Starterkit.
+- [#3285054](https://www.drupal.org/node/3285054) В темы Claro и Olivero 
+  добавлено отключение стилей CKEditor 5 `ckeditor5-stylesheets: false`.
+- [#3306897](https://www.drupal.org/node/3306897) Обновлены фикстуры с дампами БД Drupal 9.4.0.

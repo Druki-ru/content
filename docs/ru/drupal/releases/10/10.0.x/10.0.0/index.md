@@ -445,6 +445,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3212691](https://www.drupal.org/node/3212691) Удалено оформление 
   плейсхолдера для IE11.
 - [#3259929](https://www.drupal.org/node/3259929) Улучшены стили для dropbutton элемента. Добавлено больше CSS переменных.
+- [#3306938](https://www.drupal.org/node/3306938) Возвращено обновление `olivero_post_update_add_olivero_primary_color`.
 
 ## PosgreSQL DB driver
 
