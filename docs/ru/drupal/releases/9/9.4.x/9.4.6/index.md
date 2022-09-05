@@ -36,6 +36,7 @@ PHP версий 8.1.0-8.1.5 содержит [баг с OPCache](https://github
 - [#3305621](https://www.drupal.org/node/3305621) Исправлена неполадка, 
   из-за которой `HTMLRestrictions::mergeAllowedElementsLevel()` некорректно 
   обрабатывал `<ol type="1">`.
+- [#3275120](https://www.drupal.org/node/3275120) Исправлена неполадка, из-за которой `alt_field` настройка могла не работать с `drupalMedia` плагином.
 
 ## Filter
 
