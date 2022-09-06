@@ -407,6 +407,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3296481](https://www.drupal.org/node/3296481) (отменено) Обновлены зависимости `terser` и `terser-webpack-plugin`.
 - [#3306167](https://www.drupal.org/node/3306167) Библиотека tabbable 
   обновлена до 6 версии.
+- [#3307713](https://www.drupal.org/node/3307713) Удалена зависимость `@ckeditor/ckeditor5-dev-utils`.
 
 ## Language
 
@@ -447,6 +448,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   плейсхолдера для IE11.
 - [#3259929](https://www.drupal.org/node/3259929) Улучшены стили для dropbutton элемента. Добавлено больше CSS переменных.
 - [#3306938](https://www.drupal.org/node/3306938) Возвращено обновление `olivero_post_update_add_olivero_primary_color`.
+- [#3262135](https://www.drupal.org/node/3262135) Удалён устаревший класс `ie11-autorow`.
 
 ## PosgreSQL DB driver
 
@@ -672,3 +674,5 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3227033](https://www.drupal.org/node/3227033) Удалён устаревший модуль 
   Quick Edit.
 - [#3267515](https://www.drupal.org/node/3267515) Удалён устаревший модуль RDF.
+- [#3306545](https://www.drupal.org/node/3306545) Фикстуры с дампами базы данных Drupal 9.4.0 обновлены с заменой CKEditor на CKEditor 5.
+- [#3301545](https://www.drupal.org/node/3301545) Удалена устаревшая библиотека PopperJS.
