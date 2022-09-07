@@ -407,7 +407,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3296481](https://www.drupal.org/node/3296481) (отменено) Обновлены зависимости `terser` и `terser-webpack-plugin`.
 - [#3306167](https://www.drupal.org/node/3306167) Библиотека tabbable 
   обновлена до 6 версии.
-- [#3307713](https://www.drupal.org/node/3307713) Удалена зависимость `@ckeditor/ckeditor5-dev-utils`.
 
 ## Language
 
