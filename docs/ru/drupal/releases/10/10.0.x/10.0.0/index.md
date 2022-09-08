@@ -366,6 +366,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3299606](https://www.drupal.org/node/3299606) Зависимость `mglaman/phpstan-drupal` до версии 1.1.25.
 - [#3298396](https://www.drupal.org/node/3298396) Минимальная версия Composer увеличена до 2.3.6.
 - [#3307361](https://www.drupal.org/node/3307361) `phpstan/phpstan` версии 1.8.3 добавлен в `conflicts` и будет пропускаться.
+- [#3308427](https://www.drupal.org/node/3308427) Зависимость `phpstan/phpstan` обновлена до версии 1.8.5.
 
 ## Database Logging
 
