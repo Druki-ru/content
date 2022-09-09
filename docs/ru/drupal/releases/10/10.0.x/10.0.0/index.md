@@ -676,3 +676,5 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3267515](https://www.drupal.org/node/3267515) Удалён устаревший модуль RDF.
 - [#3306545](https://www.drupal.org/node/3306545) Фикстуры с дампами базы данных Drupal 9.4.0 обновлены с заменой CKEditor на CKEditor 5.
 - [#3301545](https://www.drupal.org/node/3301545) Удалена устаревшая библиотека PopperJS.
+- [#3270438](https://www.drupal.org/node/3270438) Удалён устаревший модуль CKEditor 4. 
+- [#3278415](https://www.drupal.org/node/3278415) Удалены устаревшие скрипты для сборки JavaScript и все сопутствующие зависимости.
