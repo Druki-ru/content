@@ -408,6 +408,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3296481](https://www.drupal.org/node/3296481) (отменено) Обновлены зависимости `terser` и `terser-webpack-plugin`.
 - [#3306167](https://www.drupal.org/node/3306167) Библиотека tabbable 
   обновлена до 6 версии.
+- [#3308783](https://www.drupal.org/node/3308783) Библиотека shepherd.js обновлена до версии 10.0.1.
+- [#3308821](https://www.drupal.org/node/3308821) Библиотека stylelint-config-standard обновлена до версии 28.0.0.
 
 ## Language
 
@@ -678,3 +680,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3301545](https://www.drupal.org/node/3301545) Удалена устаревшая библиотека PopperJS.
 - [#3270438](https://www.drupal.org/node/3270438) Удалён устаревший модуль CKEditor 4. 
 - [#3278415](https://www.drupal.org/node/3278415) Удалены устаревшие скрипты для сборки JavaScript и все сопутствующие зависимости.
+- [#3110137](https://www.drupal.org/node/3110137) Удалена устаревшая тема оформления Classy.
