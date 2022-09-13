@@ -312,6 +312,10 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3295735](https://www.drupal.org/node/3295735) Улучшена работа теста `ConfigImportUITest` с темой Olivero.
 - [#2232051](https://www.drupal.org/node/2232051) Запись конфигурации в файл больше не вызывает `chmod()`.
 
+## Dependency Injection
+
+- [#2531564](https://www.drupal.org/node/2531564) Улучшена сериализация контейнера.
+
 ## Editor
 
 - [#3306715](https://www.drupal.org/node/3306715) Для `editor_private_test` зависимость от `ckeditor` заменена на `editor_test`.
@@ -344,6 +348,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3308780](https://www.drupal.org/node/3308780) Библиотека glob обновлена до версии 8.0.3.
 - [#3308781](https://www.drupal.org/node/3308781) Библиотека jsdom обновлена до версии 20.0.0.
 - [#3308826](https://www.drupal.org/node/3308826) Библиотека eslint-plugin-yml обновлена до версии 1.2.0.
+- [#3261163](https://www.drupal.org/node/3261163) PostCSS обновлён до 8 версии.
 
 ## JSON:API
 
@@ -546,3 +551,4 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3306897](https://www.drupal.org/node/3306897) Обновлены фикстуры с дампами БД Drupal 9.4.0.
 - [#3307454](https://www.drupal.org/node/3307454) Тесты связанные с темой Classy перенесены непосредственно в тему.
 - [#3308458](https://www.drupal.org/node/3308458) В `core.libraries.yml` внесены утерянные исправления из более новых веток.
+- [#3308987](https://www.drupal.org/node/3308987) Удалены упоминанися Stable темы.

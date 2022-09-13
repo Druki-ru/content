@@ -327,6 +327,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3295898](https://www.drupal.org/node/3295898) Удалён лишний файл 
   `ckeditor5.libraries.yml.orig`.
 - [#3301631](https://www.drupal.org/node/3301631) Исправлена неполадка с модальными окнами с CKEditor 35.0.1.
+- [#3309318](https://www.drupal.org/node/3309318) Из модуля удалён код для совместимости с IE11.
 
 ## Composer
 
@@ -513,6 +514,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3173031](https://www.drupal.org/node/3173031) В `GDToolkit` удалён код 
   для совместимости со старыми версиями PHP.
 
+## Toolbar
+
+- [#3309341](https://www.drupal.org/node/3309341) Модуль Toolbar больше не зависит от библиотеки Modernizr.
+
 ## Tour
 
 - [#3195193](https://www.drupal.org/node/3195193) Из модуля удалён шим Shepherd.
@@ -528,6 +533,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## Update System
 
 - [#3291893](https://www.drupal.org/node/3291893) Исправлена неполадка, из-за которой тесты для 10.1.x могли проваливаться.
+
+## User
+
+- [#2953111](https://www.drupal.org/node/2953111) Миграции прав доступа теперь не мегрирует те, которые отсутствуют на новом сайте.
 
 ## Views
 
@@ -681,3 +690,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3270438](https://www.drupal.org/node/3270438) Удалён устаревший модуль CKEditor 4. 
 - [#3278415](https://www.drupal.org/node/3278415) Удалены устаревшие скрипты для сборки JavaScript и все сопутствующие зависимости.
 - [#3110137](https://www.drupal.org/node/3110137) Удалена устаревшая тема оформления Classy.
+- [#3307736](https://www.drupal.org/node/3307736) `EmailValidator` теперь в `EmailConstraint` имеет явную отсылку через класс.
+- [#3269082](https://www.drupal.org/node/3269082) Удалены полифилы для функционала сворачивания `details`.
+- [#3309247](https://www.drupal.org/node/3309247) Из `ThemeInitialization` удалена неиспользуемая переменная `$theme_engine`.
+- [#3309317](https://www.drupal.org/node/3309317) Удалён файл стилей `normalize-fixes.css`.
