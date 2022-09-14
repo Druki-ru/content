@@ -368,6 +368,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3298396](https://www.drupal.org/node/3298396) Минимальная версия Composer увеличена до 2.3.6.
 - [#3307361](https://www.drupal.org/node/3307361) `phpstan/phpstan` версии 1.8.3 добавлен в `conflicts` и будет пропускаться.
 - [#3308427](https://www.drupal.org/node/3308427) Зависимость `phpstan/phpstan` обновлена до версии 1.8.5.
+- [#3296390](https://www.drupal.org/node/3296390) Удалены зависимости `symfony/polyfill-php74`, `symfony/polyfill-php80` и `symfony/polyfill-php81`.
 
 ## Database Logging
 
@@ -694,3 +695,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3269082](https://www.drupal.org/node/3269082) Удалены полифилы для функционала сворачивания `details`.
 - [#3309247](https://www.drupal.org/node/3309247) Из `ThemeInitialization` удалена неиспользуемая переменная `$theme_engine`.
 - [#3309317](https://www.drupal.org/node/3309317) Удалён файл стилей `normalize-fixes.css`.
+- [#3309176](https://www.drupal.org/node/3309176) Удалена устаревшая тема оформления Stable.
