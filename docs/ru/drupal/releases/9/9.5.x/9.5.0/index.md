@@ -563,3 +563,4 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3308458](https://www.drupal.org/node/3308458) В `core.libraries.yml` внесены утерянные исправления из более новых веток.
 - [#3308987](https://www.drupal.org/node/3308987) Удалены упоминания Stable темы.
 - [#3274474](https://www.drupal.org/node/3274474) Исправлены ошибки PHPStan «Access to an undefined property».
+- [#3298731](https://www.drupal.org/node/3298731) Исправлена неполадка с `ConstraintViolation::$arrayPropertyPath` для PHP 8.2.

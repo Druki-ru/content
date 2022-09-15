@@ -328,6 +328,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   `ckeditor5.libraries.yml.orig`.
 - [#3301631](https://www.drupal.org/node/3301631) Исправлена неполадка с модальными окнами с CKEditor 35.0.1.
 - [#3309318](https://www.drupal.org/node/3309318) Из модуля удалён код для совместимости с IE11.
+- [#3309800](https://www.drupal.org/node/3309800) В файле `ckeditor5.js` исправлены ошибки стандартов кодирования.
 
 ## Composer
 
@@ -473,6 +474,10 @@ Drupal прекращает поддержку всех версий UC Browser 
   ()` обновлён для будущей совместимости с `symfony/routing` 7.0. 
 - [#3293284](https://www.drupal.org/node/3293284) При вызове 
   `Router::generate()` теперь выбрасывается исключение.
+
+## Stable9
+
+- [#3307225](https://www.drupal.org/node/3307225) Из темы оформления удалены неиспользуемые шаблон, стили и прочие файлы.
 
 ## Symfony 6
 
@@ -696,3 +701,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3309247](https://www.drupal.org/node/3309247) Из `ThemeInitialization` удалена неиспользуемая переменная `$theme_engine`.
 - [#3309317](https://www.drupal.org/node/3309317) Удалён файл стилей `normalize-fixes.css`.
 - [#3309176](https://www.drupal.org/node/3309176) Удалена устаревшая тема оформления Stable.
+- [#3306210](https://www.drupal.org/node/3306210) Удалена устаревшая библиотека Farbtastic.
