@@ -389,6 +389,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## Entity System
 
 - [#3244802](https://www.drupal.org/node/3244802) Удалён слой [обратной совместимости](../../../../../backward-compatibility/index.md) и устаревший код из системы сущностей.
+- [#3145501](https://www.drupal.org/node/3145501) Исправлена неполадка, из-за которой вызов `::processMultivalueBaseFieldHandler()` мог приводить к ошибкам обновления. 
 
 ## Extensions System
 
@@ -411,8 +412,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3296481](https://www.drupal.org/node/3296481) (отменено) Обновлены зависимости `terser` и `terser-webpack-plugin`.
 - [#3306167](https://www.drupal.org/node/3306167) Библиотека tabbable 
   обновлена до 6 версии.
-- [#3308783](https://www.drupal.org/node/3308783) Библиотека shepherd.js обновлена до версии 10.0.1.
-- [#3308821](https://www.drupal.org/node/3308821) Библиотека stylelint-config-standard обновлена до версии 28.0.0.
+- [#3308783](https://www.drupal.org/node/3308783) Библиотека shepherd.js обновлена до версии 10.0.1..
 
 ## Language
 
@@ -702,3 +702,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3309317](https://www.drupal.org/node/3309317) Удалён файл стилей `normalize-fixes.css`.
 - [#3309176](https://www.drupal.org/node/3309176) Удалена устаревшая тема оформления Stable.
 - [#3306210](https://www.drupal.org/node/3306210) Удалена устаревшая библиотека Farbtastic.
+- [#3309807](https://www.drupal.org/node/3309807) Из `commit-code-check.sh` удалены ESLint проверки для ES6.

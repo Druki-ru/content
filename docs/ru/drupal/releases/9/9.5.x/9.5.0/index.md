@@ -359,6 +359,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3308781](https://www.drupal.org/node/3308781) Библиотека jsdom обновлена до версии 20.0.0.
 - [#3308826](https://www.drupal.org/node/3308826) Библиотека eslint-plugin-yml обновлена до версии 1.2.0.
 - [#3261163](https://www.drupal.org/node/3261163) PostCSS обновлён до 8 версии.
+- [#3308821](https://www.drupal.org/node/3308821) Библиотека stylelint-config-standard обновлена до версии 28.0.0
 
 ## JSON:API
 
@@ -563,4 +564,5 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3308458](https://www.drupal.org/node/3308458) В `core.libraries.yml` внесены утерянные исправления из более новых веток.
 - [#3308987](https://www.drupal.org/node/3308987) Удалены упоминания Stable темы.
 - [#3274474](https://www.drupal.org/node/3274474) Исправлены ошибки PHPStan «Access to an undefined property».
+- [#3308744](https://www.drupal.org/node/3308744) Улучшена работа с магическим свойством `connection` в `FileTransfer`.
 - [#3298731](https://www.drupal.org/node/3298731) Исправлена неполадка с `ConstraintViolation::$arrayPropertyPath` для PHP 8.2.
