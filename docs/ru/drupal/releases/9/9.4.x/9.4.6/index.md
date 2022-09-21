@@ -10,14 +10,10 @@ authors:
 category:
   area: 'Drupal 9.4.x'
   title: Drupal 9.4.6
-  order: 5
+  order: 6
 ---
 
-<Aside type="warning">
-
-Данная версия находится в разработке и не предназначена для использования.
-
-</Aside>
+**Дата релиза:** 20 сентября 2022
 
 ## Рекомендуемая версия PHP увеличена до версии 8.1.6
 
@@ -113,3 +109,8 @@ PHP версий 8.1.0-8.1.5 содержит [баг с OPCache](https://github
 - [#3306712](https://www.drupal.org/node/3306712) 
   `NoJavaScriptAnonymousTest` теперь использует установочный профиль 
   `standard` вместо указания всех модулей.
+
+
+## Ссылки
+
+- [Drupal 9.4.6](https://www.drupal.org/project/drupal/releases/9.4.6) (англ.), drupal.org, 20 сентября 2022
