@@ -240,6 +240,60 @@ Starterkit темы. Данный генератор рекомендуется 
 Если ваша тема зависит от Stable, замените зависимость на Stable9. Для более
 подробной информации обратитесь к [инструкции на данной странице](https://www.drupal.org/node/3309392).
 
+## Добавлена возможность отладки кеш-метаданных при помощи HTML комментариев
+
+- [#2381797](https://www.drupal.org/node/2381797)
+
+В настройки рендера добавлена новая опция `debug` которая позволяет включить
+отладку кеш-метаданных в HTML комментариях.
+
+Для активации данной опции добавьте `debug` в `render.config`:
+
+```yaml
+  renderer.config:
+    required_cache_contexts: ['languages:language_interface', 'theme', 'user.permissions']
+    auto_placeholder_conditions:
+      max-age: 0
+      contexts: ['session', 'user']
+      tags: []
+    debug: true
+```
+
+Пример результата дебага:
+
+```html
+<!-- START RENDERER -->
+<!-- CACHE-HIT: No -->
+<!-- CACHE TAGS:
+   * node:1
+   * node_view
+   * user:1
+   * user_view
+-->
+<!-- CACHE CONTEXTS:
+   * languages:language_interface
+   * theme
+   * timezone
+   * url.site
+   * user.permissions
+   * user.roles
+   * user.roles:anonymous
+   * user.roles:authenticated
+-->
+<!-- CACHE KEYS:
+   * entity_view
+   * node
+   * 1
+   * full
+-->
+
+<article data-history-node-id="1" data-quickedit-entity-id="node/1" role="article" class="contextual-region node node--type-page node--
+...
+</article>
+
+<!-- END RENDER -->
+```
+
 ## Big Pipe
 
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
@@ -290,7 +344,6 @@ Starterkit темы. Данный генератор рекомендуется 
   форсируются быть полностью видимыми.
 - [#3222756](https://www.drupal.org/node/3222756) Добавлена поддержка 
   загрузки изображений из внешних источников.
-- [#3306153](https://www.drupal.org/node/3306153) CKEditor 5 обновлён до версии 35.1.0.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
 - [#3280343](https://www.drupal.org/node/3280343) Актуализированы `@todo` комментарии.
 
