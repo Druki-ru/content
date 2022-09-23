@@ -337,8 +337,6 @@ Starterkit темы. Данный генератор рекомендуется 
   `core/modules/ckeditor5/css/quickedit.css`.
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
-- [#3268306](https://www.drupal.org/node/3268306) Исправлена неполадка, из-за которой могли не сохранятся 
-  собственные HTML-теги, например: `<drupal-media>`, `<drupal-entity>`, `<foobar>`.
 - [#3283776](https://www.drupal.org/node/3283776) Внесены улучшения в `CKEditor5PluginDefinition::getElements()`.
 - [#3306216](https://www.drupal.org/node/3306216) Прозрачные иконки теперь 
   форсируются быть полностью видимыми.
@@ -621,3 +619,4 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3274474](https://www.drupal.org/node/3274474) Исправлены ошибки PHPStan «Access to an undefined property».
 - [#3308744](https://www.drupal.org/node/3308744) Улучшена работа с магическим свойством `connection` в `FileTransfer`.
 - [#3298731](https://www.drupal.org/node/3298731) Исправлена неполадка с `ConstraintViolation::$arrayPropertyPath` для PHP 8.2.
+- [#3310887](https://www.drupal.org/node/3310887) Mike Herchel 'mherchel' добавлен в качестве мейнтейнера CSS подсистемы ядра.

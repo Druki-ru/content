@@ -22,6 +22,8 @@ category:
 ## CKEditor 5
 
 - [#3306153](https://www.drupal.org/node/3306153) CKEditor 5 обновлён до версии 35.1.0.
+- [#3268306](https://www.drupal.org/node/3268306) Исправлена неполадка, из-за которой могли не сохранятся
+  собственные HTML-теги, например: `<drupal-media>`, `<drupal-entity>`, `<foobar>`.
 
 ## Comment
 
