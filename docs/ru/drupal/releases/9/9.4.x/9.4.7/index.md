@@ -36,4 +36,5 @@ category:
 ## Прочие изменения
 
 - [#3309719](https://www.drupal.org/node/3309719) Исправлен некорректный тайпхинт для переменной в `EntityAutocomplete`.
-- [#3060716](https://www.drupal.org/node/3060716) Исправлен некорректный `@oversDefaultClsas` 
+- [#3060716](https://www.drupal.org/node/3060716) Исправлен некорректный `@oversDefaultClsas`.
+- [#3311476](https://www.drupal.org/node/3311476) Тест `DownloadTest` будет пропускаться на SQLite базах данных, так как сейчас это приводит к блокировке БД.

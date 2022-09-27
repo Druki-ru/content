@@ -312,6 +312,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3053881](https://www.drupal.org/node/3053881) Исправлена неполадка, из-за которой возврат старой ревизии с 
   использованием собственных блоков могло приводить к вызову `EntityChangedConstraint`.
 - [#3307182](https://www.drupal.org/node/3307182) smustgrave добавлен в качестве мейнтейнера `block_content`.
+- [#1937266](https://www.drupal.org/node/1937266) В сущности `BlockContent` метод `::delete()` заменён на `::preDelete()`.
 
 ## Book
 
@@ -385,7 +386,11 @@ Starterkit темы. Данный генератор рекомендуется 
 ## Entity API
 
 - [#3266589](https://www.drupal.org/node/3266589) Удалён заголовок `Link` из ответа страницы сущности.
-- [#3311562](https://www.drupal.org/node/3311562) В классы `Condition` и `ConditionAggregate` добавлено свойство `$sqlQuery`.
+- [#3311562](https://www.drupal.org/node/3311562) (отменено) В классы `Condition` и `ConditionAggregate` добавлено свойство `$sqlQuery`.
+
+## Field
+
+- [#3299024](https://www.drupal.org/node/3299024) `EntityReferenceFormatterTest` теперь использует `::label()` вместо `->name->value`.
 
 ## Field Layout
 
@@ -428,6 +433,7 @@ Starterkit темы. Данный генератор рекомендуется 
 ## Layout Builder
 
 - [#2935999](https://www.drupal.org/node/2935999) Модуль больше не требует включения модуля Field UI.
+- [#3119786](https://www.drupal.org/node/3119786) Исправлена неполадка, из-за которой не отображались изображения по умолчанию указанные в настройках поля.
 
 ## Media
 
@@ -467,6 +473,10 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3117291](https://www.drupal.org/node/3117291) Внесены улучшения в метод 
   `Element::isEmpty()`.
+
+## REST
+
+- [#3082053](https://www.drupal.org/node/3082053) Из теста `EntityResourceTestBase` удалён код тестирующий кеш-прослойку.
 
 ## Search
 
@@ -534,6 +544,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3309750](https://www.drupal.org/node/3309750) Исправлена неполадка с синтаксисом `callable` для PHP 8.2.
 - [#3291520](https://www.drupal.org/node/3291520) Исправлена неполадка, из-за которой неправильно отображалось название термина если оно начиналось с нуля.
 - [#3311466](https://www.drupal.org/node/3311466) Удалено свойство `ViewExecutable::$editing`.
+- [#3299800](https://www.drupal.org/node/3299800) Исправлена неполадка в `CachePluginBase`, из-за которой могла не работать часть функционала если запросы был задекорирован.
 
 ## Views UI
 
@@ -627,3 +638,10 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3311383](https://www.drupal.org/node/3311383) Для PHP классов из ядра добавлен аттрибут `#[\AllowDynamicProperties]` чтобы уменьшить количество шума в логах на новых версиях PHP.
 - [#3299853](https://www.drupal.org/node/3299853) Для базовых PHP классов из ядра добавлен аттрибут `#[\AllowDynamicProperties]`.
 - [#3079404](https://www.drupal.org/node/3079404) В `.htaccess` добавлена пометка, что 301-й редирект не учитывает настройки Drupal и сохраняется на 2 недели по умолчанию.
+- [#3311214](https://www.drupal.org/node/3311214) Внесены небольшие улучшения в `RecursiveContextualValidatorTest`.
+- [#2254187](https://www.drupal.org/node/2254187) Улучшена производительность теста `NodeAccessBaseTableTest`.
+- [#3087862](https://www.drupal.org/node/3087862) Исправлена неполадка в команде установки тестового сайта.
+- [#3309173](https://www.drupal.org/node/3309173) Исправлены ссылки на документацию драйверов баз данных на актуальные.
+- [#2941148](https://www.drupal.org/node/2941148) Исправлены ошибки стандарта «Drupal.Commenting.FunctionComment.MissingReturnType».
+- [#2937515](https://www.drupal.org/node/2937515) Исправлены ошибки стандартов «Fix Drupal.Array.Array.ArrayClosingIndentation, ArrayIndentation».
+- [#3264947](https://www.drupal.org/node/3264947) Методам тестов `::setUp()` и `::tearDown()` добавлена документация.
