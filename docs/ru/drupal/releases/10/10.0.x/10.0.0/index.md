@@ -321,6 +321,52 @@ Drupal прекращает поддержку всех версий UC Browser 
 
 - [Простой пример поведения](https://codepen.io/mherchel/pen/xxXXbog) (англ.), Codepen, Mike Herchel
 
+## Добавлен новый Twig фильтр `|add_suggestion`
+
+- [#3301373](https://www.drupal.org/node/3301373)
+
+Добавлен новый Twig фильтра `|add_suggestion` который позволяет добавить
+дополнительные theme suggestions к рендер массиву. Например `content.body` по
+умолчанию будет иметь тем хук `'#theme' => 'field'`, используя новый фильтр вы
+можете добавить `details` вариант `{{ content.body|add_suggestion('details') }}`,
+что позволит позволить создать `field--details.html.twig` шаблон и он будет
+использован для разметки данного поля.
+
+Добавленный таким способом суджешен будет иметь максимальный приоритет.
+
+### Пример вывода значений как маркированный список
+
+`{{ content.field_items|add_suggestion('unordered-list') }}`
+
+Шаблон `field--unordered-list.html.twig`:
+
+```twig
+{% extends 'field.html.twig' %}
+
+{% block content %}
+  <ul{{ attributes }}>
+    {{ parent() }}
+  </ul>
+{% endblock content %}
+
+{% block item %}
+  <li{{ item.attributes }}>{{ parent() }}</li>
+{% endblock item %}
+```
+
+### Переопределение элемента для поля
+
+`{{ label|add_suggestion('h4') }}`
+
+Шаблон `field--h4.html.twig`:
+
+```twig
+{% extends 'field.html.twig' %}
+{% block content %}
+  <h4{{ attributes }}>{{ parent() }}</h4>
+{% endblock content %}
+```
+
 ## CKEditor 5
 
 - [#3261585](https://www.drupal.org/node/3261585) Удалены предупреждения для Internet Explorer 11, так как Drupal 10 больше его не поддерживает.
@@ -329,6 +375,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3301631](https://www.drupal.org/node/3301631) Исправлена неполадка с модальными окнами с CKEditor 35.0.1.
 - [#3309318](https://www.drupal.org/node/3309318) Из модуля удалён код для совместимости с IE11.
 - [#3309800](https://www.drupal.org/node/3309800) В файле `ckeditor5.js` исправлены ошибки стандартов кодирования.
+
+## Claor
+
+- [#3254202](https://www.drupal.org/node/3254202) Из темы оформления удалена поддержка IE11.
 
 ## Composer
 
@@ -547,6 +597,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## Views
 
 - [#3296112](https://www.drupal.org/node/3296112) Удалено использование метода `ViewsConfigUpdater::processSortFieldIdentifierUpdateHandler()`.
+- [#3309748](https://www.drupal.org/node/3309748) В `ManyToOneHelper` добавлено объявление свойства `$formula`.
 
 ## Тестирование
 
@@ -703,3 +754,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3309176](https://www.drupal.org/node/3309176) Удалена устаревшая тема оформления Stable.
 - [#3306210](https://www.drupal.org/node/3306210) Удалена устаревшая библиотека Farbtastic.
 - [#3309807](https://www.drupal.org/node/3309807) Из `commit-code-check.sh` удалены ESLint проверки для ES6.
+- [#3310346](https://www.drupal.org/node/3310346) `TitleResolverInterface::getTitle()` теперь поддерживает `\Stringable` тип в качестве результата.

@@ -318,6 +318,10 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3303033](https://www.drupal.org/node/3303033) Тесты модуля больше не используют тему оформления Classy.
 
+## Cache
+
+- [#3296987](https://www.drupal.org/node/3296987) В документацию метода `CacheableDependencyInterface::getCacheMaxAge()` добавлена информация о `Cache::PERMANENT`.
+
 ## Claro
 
 - [#3291100](https://www.drupal.org/node/3291100) Улучшено отображение `details` элемента.
@@ -387,6 +391,7 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3266589](https://www.drupal.org/node/3266589) Удалён заголовок `Link` из ответа страницы сущности.
 - [#3311562](https://www.drupal.org/node/3311562) (отменено) В классы `Condition` и `ConditionAggregate` добавлено свойство `$sqlQuery`.
+- [#3266287](https://www.drupal.org/node/3266287) Классы бандлов теперь могут объявлять свои собственные поля в `::bundleFieldDefinitions()`.
 
 ## Field
 
@@ -400,6 +405,10 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#2588013](https://www.drupal.org/node/2588013) Из `managed_file` элемента 
   удалён суффикс `<span class="ajax-new-content"></span>`.
+
+## Filter
+
+- [#2710427](https://www.drupal.org/node/2710427) Исправлена неполадка из-за которой обновление разрешенных тегов могло приводить к некорректным разрешениям при использовании пустого значения.
 
 ## Forum
 
@@ -501,6 +510,10 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3281434](https://www.drupal.org/node/3281434) Тесты модуля больше не используют Bartik и Seven.
 
+## Taxonomy
+
+- [#3305410](https://www.drupal.org/node/3305410) Удалён тест `TaxonomyImageTest`.
+
 ## Theme System
 
 - [#3285131](https://www.drupal.org/node/3285131) Инициализация `Drupal\Core\Theme\Registry::__construct()` без передачи параметра `$runtime_cache` объявлена устаревшей.
@@ -545,6 +558,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3291520](https://www.drupal.org/node/3291520) Исправлена неполадка, из-за которой неправильно отображалось название термина если оно начиналось с нуля.
 - [#3311466](https://www.drupal.org/node/3311466) Удалено свойство `ViewExecutable::$editing`.
 - [#3299800](https://www.drupal.org/node/3299800) Исправлена неполадка в `CachePluginBase`, из-за которой могла не работать часть функционала если запросы был задекорирован.
+- [#3230681](https://www.drupal.org/node/3230681) `ViewsExposedFilterBlock::build()` теперь всегда возвращает массив в качестве результата.
 
 ## Views UI
 
@@ -617,8 +631,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3223061](https://www.drupal.org/node/3223061) Улучшено отображение dropbutton по умолчанию с длинными названиями.
 - [#3302800](https://www.drupal.org/node/3302800) Внесены корректировки в некоторые тесты со списком доступных тем.
 - [#2937010](https://www.drupal.org/node/2937010) В `ContainerBuilder` портирован изменения из Symfony контейнера.
-- [#3270734](https://www.drupal.org/node/3270734) Тесты модулей Editor и 
-  CKEditor 5 больше не используют CKEditor 4.
 - [#3291797](https://www.drupal.org/node/3291797) Обновлены стили для 
   off-canvas элемента с использованием CSS переменных.
 - [#3306720](https://www.drupal.org/node/3306720) `twig_theme_test` теперь 
@@ -645,3 +657,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#2941148](https://www.drupal.org/node/2941148) Исправлены ошибки стандарта «Drupal.Commenting.FunctionComment.MissingReturnType».
 - [#2937515](https://www.drupal.org/node/2937515) Исправлены ошибки стандартов «Fix Drupal.Array.Array.ArrayClosingIndentation, ArrayIndentation».
 - [#3264947](https://www.drupal.org/node/3264947) Методам тестов `::setUp()` и `::tearDown()` добавлена документация.
+- [#3309907](https://www.drupal.org/node/3309907) Исправлена неполадка в `WebAssert` приводящая к случайным провалам теста `BookTest::testGetTableOfContents`.
+- [#3308162](https://www.drupal.org/node/3308162) `KernelTestBase::installConfig()` теперь перехватывает исключения и выбрасывает своё собственно с указанием проблемного модуля.
+- [#3181778](https://www.drupal.org/node/3181778) Использование функции `t()` во всех плагинах заменено на `$this->t()`.
