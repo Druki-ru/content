@@ -13,6 +13,7 @@ authors:
 
 ## 2022
 
+- [SA-CORE-2022-016](sa-core/2022-016/index.md) - 28 сентября 2022
 - [SA-CORE-2022-015](sa-core/2022-015/index.md) - 20 июля 2022
 - [SA-CORE-2022-014](sa-core/2022-014/index.md) - 20 июля 2022
 - [SA-CORE-2022-013](sa-core/2022-013/index.md) - 20 июля 2022
