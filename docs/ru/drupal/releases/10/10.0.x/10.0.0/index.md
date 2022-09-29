@@ -504,6 +504,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3259929](https://www.drupal.org/node/3259929) Улучшены стили для dropbutton элемента. Добавлено больше CSS переменных.
 - [#3306938](https://www.drupal.org/node/3306938) Возвращено обновление `olivero_post_update_add_olivero_primary_color`.
 - [#3262135](https://www.drupal.org/node/3262135) Удалён устаревший класс `ie11-autorow`.
+- [#3311218](https://www.drupal.org/node/3311218) Добавлены CSS переменные для цвета ссылки при наведении.
 
 ## PosgreSQL DB driver
 

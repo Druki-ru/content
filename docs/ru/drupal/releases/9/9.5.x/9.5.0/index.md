@@ -345,8 +345,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3283776](https://www.drupal.org/node/3283776) Внесены улучшения в `CKEditor5PluginDefinition::getElements()`.
 - [#3306216](https://www.drupal.org/node/3306216) Прозрачные иконки теперь 
   форсируются быть полностью видимыми.
-- [#3222756](https://www.drupal.org/node/3222756) Добавлена поддержка 
-  загрузки изображений из внешних источников.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
 - [#3280343](https://www.drupal.org/node/3280343) Актуализированы `@todo` комментарии.
 
