@@ -26,6 +26,7 @@ category:
   собственные HTML-теги, например: `<drupal-media>`, `<drupal-entity>`, `<foobar>`.
 - [#3270734](https://www.drupal.org/node/3270734) Тесты модулей Editor и CKEditor 5 больше не используют CKEditor 4.
 - [#3222756](https://www.drupal.org/node/3222756) Добавлена поддержка загрузки изображений из внешних источников.
+- [#3280343](https://www.drupal.org/node/3280343) Актуализированы `@todo` комментарии.
 
 ## Comment
 

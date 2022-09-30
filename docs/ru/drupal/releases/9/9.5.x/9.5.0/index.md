@@ -346,7 +346,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3306216](https://www.drupal.org/node/3306216) Прозрачные иконки теперь 
   форсируются быть полностью видимыми.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
-- [#3280343](https://www.drupal.org/node/3280343) Актуализированы `@todo` комментарии.
 
 ## Colors
 
@@ -394,6 +393,7 @@ Starterkit темы. Данный генератор рекомендуется 
 ## Field
 
 - [#3299024](https://www.drupal.org/node/3299024) `EntityReferenceFormatterTest` теперь использует `::label()` вместо `->name->value`.
+- [#3269000](https://www.drupal.org/node/3269000) Улучшена документация `TestFieldWidgetMultiple::isApplicable()`.
 
 ## Field Layout
 
@@ -403,6 +403,7 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#2588013](https://www.drupal.org/node/2588013) Из `managed_file` элемента 
   удалён суффикс `<span class="ajax-new-content"></span>`.
+- [#3189876](https://www.drupal.org/node/3189876) Улучшена документация для плагинов миграций.
 
 ## Filter
 
@@ -511,6 +512,7 @@ Starterkit темы. Данный генератор рекомендуется 
 ## Taxonomy
 
 - [#3305410](https://www.drupal.org/node/3305410) Удалён тест `TaxonomyImageTest`.
+- [#3117069](https://www.drupal.org/node/3117069) Исправлена неполадка в `OverviewTerms`, из-за которой могла появляться ошибка несуществующего индекса.
 
 ## Theme System
 
@@ -658,3 +660,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3309907](https://www.drupal.org/node/3309907) Исправлена неполадка в `WebAssert` приводящая к случайным провалам теста `BookTest::testGetTableOfContents`.
 - [#3308162](https://www.drupal.org/node/3308162) `KernelTestBase::installConfig()` теперь перехватывает исключения и выбрасывает своё собственно с указанием проблемного модуля.
 - [#3181778](https://www.drupal.org/node/3181778) Использование функции `t()` во всех плагинах заменено на `$this->t()`.
+- [#2617330](https://www.drupal.org/node/2617330) Исправлено некорректное условие в `LogMessageParser::parseMessagePlaceholders()`.
+- [#2341553](https://www.drupal.org/node/2341553) В `AlreadyInstalledException` добавлена информация о том, почему невозможно использовать систему маршрутизации в процессе установки.
+- [#3226139](https://www.drupal.org/node/3226139) В некоторых тестах `->will()` заменены на `->willReturnMap()`.
