@@ -27,6 +27,7 @@ category:
 - [#3270734](https://www.drupal.org/node/3270734) Тесты модулей Editor и CKEditor 5 больше не используют CKEditor 4.
 - [#3222756](https://www.drupal.org/node/3222756) Добавлена поддержка загрузки изображений из внешних источников.
 - [#3280343](https://www.drupal.org/node/3280343) Актуализированы `@todo` комментарии.
+- [#3306216](https://www.drupal.org/node/3306216) Прозрачные иконки теперь форсируются быть полностью видимыми.
 
 ## Comment
 
@@ -49,3 +50,4 @@ category:
 - [#3309719](https://www.drupal.org/node/3309719) Исправлен некорректный тайпхинт для переменной в `EntityAutocomplete`.
 - [#3060716](https://www.drupal.org/node/3060716) Исправлен некорректный `@oversDefaultClsas`.
 - [#3311476](https://www.drupal.org/node/3311476) Тест `DownloadTest` будет пропускаться на SQLite базах данных, так как сейчас это приводит к блокировке БД.
+- [#3285054](https://www.drupal.org/node/3285054) В темы Claro и Olivero добавлено отключение стилей CKEditor 5 `ckeditor5-stylesheets: false`.

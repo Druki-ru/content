@@ -343,8 +343,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
 - [#3283776](https://www.drupal.org/node/3283776) Внесены улучшения в `CKEditor5PluginDefinition::getElements()`.
-- [#3306216](https://www.drupal.org/node/3306216) Прозрачные иконки теперь 
-  форсируются быть полностью видимыми.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
 
 ## Colors
@@ -374,6 +372,10 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3295735](https://www.drupal.org/node/3295735) Улучшена работа теста `ConfigImportUITest` с темой Olivero.
 - [#2232051](https://www.drupal.org/node/2232051) Запись конфигурации в файл больше не вызывает `chmod()`.
+
+## Database API
+
+- [#3312439](https://www.drupal.org/node/3312439) Исправлены тайпхинты в `@return` для `StatementInterface`.
 
 ## Dependency Injection
 
@@ -457,6 +459,7 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3296108](https://www.drupal.org/node/3296108) `mysql_requirements()` 
   теперь производит проверки, только если подключение использует MySQL.
+- [#3311474](https://www.drupal.org/node/3311474) Проверка на совместимость с `translaction_isolation` теперь проверяет на корректную версию MySQL.
 
 ## Node
 
@@ -559,6 +562,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3311466](https://www.drupal.org/node/3311466) Удалено свойство `ViewExecutable::$editing`.
 - [#3299800](https://www.drupal.org/node/3299800) Исправлена неполадка в `CachePluginBase`, из-за которой могла не работать часть функционала если запросы был задекорирован.
 - [#3230681](https://www.drupal.org/node/3230681) `ViewsExposedFilterBlock::build()` теперь всегда возвращает массив в качестве результата.
+- [#2875987](https://www.drupal.org/node/2875987) Исправлена неполадка из-за которой вызов альтера формы Views вызывался дважды.
 
 ## Views UI
 
@@ -576,6 +580,7 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property».
 - [#3302760](https://www.drupal.org/node/3302760) Добавлены фикстуры с БД Drupal 9.4.0.
+- [#3313021](https://www.drupal.org/node/3313021) Удалён устаревший метод `KernelTestBase::prepareTemplate()`.
 
 ## Прочие изменения
 
@@ -637,8 +642,6 @@ Starterkit темы. Данный генератор рекомендуется 
   подключает библиотеки CKEditor 5.
 - [#3304731](https://www.drupal.org/node/3304731) Оставшиеся тесты что 
   используют Classy, теперь используют Starterkit.
-- [#3285054](https://www.drupal.org/node/3285054) В темы Claro и Olivero 
-  добавлено отключение стилей CKEditor 5 `ckeditor5-stylesheets: false`.
 - [#3306897](https://www.drupal.org/node/3306897) Обновлены фикстуры с дампами БД Drupal 9.4.0.
 - [#3307454](https://www.drupal.org/node/3307454) Тесты связанные с темой Classy перенесены непосредственно в тему.
 - [#3308458](https://www.drupal.org/node/3308458) В `core.libraries.yml` внесены утерянные исправления из более новых веток.
@@ -663,3 +666,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#2617330](https://www.drupal.org/node/2617330) Исправлено некорректное условие в `LogMessageParser::parseMessagePlaceholders()`.
 - [#2341553](https://www.drupal.org/node/2341553) В `AlreadyInstalledException` добавлена информация о том, почему невозможно использовать систему маршрутизации в процессе установки.
 - [#3226139](https://www.drupal.org/node/3226139) В некоторых тестах `->will()` заменены на `->willReturnMap()`.
+- [#3231694](https://www.drupal.org/node/3231694) Исправлен некорректный тип для `@return` в `TestFileCreationTrait`.
+- [#3268829](https://www.drupal.org/node/3268829) Исправлены ошибки стандарта «Drupal.Commenting.DocComment.ShortSingleLine».
+- [#3273317](https://www.drupal.org/node/3273317) В шаблоны по умолчанию `block*.html.twig` и `layout*.html.twig` добавлена переменная `in_preview`.
