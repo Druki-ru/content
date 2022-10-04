@@ -318,10 +318,6 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3303033](https://www.drupal.org/node/3303033) Тесты модуля больше не используют тему оформления Classy.
 
-## Cache
-
-- [#3296987](https://www.drupal.org/node/3296987) В документацию метода `CacheableDependencyInterface::getCacheMaxAge()` добавлена информация о `Cache::PERMANENT`.
-
 ## Claro
 
 - [#3291100](https://www.drupal.org/node/3291100) Улучшено отображение `details` элемента.
@@ -342,7 +338,6 @@ Starterkit темы. Данный генератор рекомендуется 
   `core/modules/ckeditor5/css/quickedit.css`.
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
-- [#3283776](https://www.drupal.org/node/3283776) Внесены улучшения в `CKEditor5PluginDefinition::getElements()`.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
 
 ## Colors
@@ -406,10 +401,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#2588013](https://www.drupal.org/node/2588013) Из `managed_file` элемента 
   удалён суффикс `<span class="ajax-new-content"></span>`.
 - [#3189876](https://www.drupal.org/node/3189876) Улучшена документация для плагинов миграций.
-
-## Filter
-
-- [#2710427](https://www.drupal.org/node/2710427) Исправлена неполадка из-за которой обновление разрешенных тегов могло приводить к некорректным разрешениям при использовании пустого значения.
+- [#59750](https://www.drupal.org/node/59750) Элемент формы `file` теперь корректно обрабатывает `#required` свойство.
 
 ## Forum
 
@@ -440,10 +432,15 @@ Starterkit темы. Данный генератор рекомендуется 
   Topics теперь обрабатывается корректно.
 - [#3281439](https://www.drupal.org/node/3281439) Тесты модуля больше не используют темы оформления Bartik и Seven.
 
+## Image
+
+- [#3291622](https://www.drupal.org/node/3291622) Внесены улучшения в код `ImageUrlFormatter`.
+
 ## Layout Builder
 
 - [#2935999](https://www.drupal.org/node/2935999) Модуль больше не требует включения модуля Field UI.
-- [#3119786](https://www.drupal.org/node/3119786) Исправлена неполадка, из-за которой не отображались изображения по умолчанию указанные в настройках поля.
+- [#3111192](https://www.drupal.org/node/3111192) Если для макета была использована сущность, она добавляется в переменную шаблона `entity`.
+- [#3044117](https://www.drupal.org/node/3044117) В `ConfigureSectionForm` добавлены методы для получения информации о текущем макете.
 
 ## Media
 
@@ -454,6 +451,10 @@ Starterkit темы. Данный генератор рекомендуется 
 ## Media Library
 
 - [#3278418](https://www.drupal.org/node/3278418) Тесты модуля больше не используют тему оформления Classy.
+
+## Migrate
+
+- [#2919158](https://www.drupal.org/node/2919158) В плагин маппинга ID `sql` добавлена зависимость `MigrationPluginManager`.
 
 ## MySQL
 
@@ -558,11 +559,9 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#2796045](https://www.drupal.org/node/2796045) Улучшено сообщение об ошибки при добавлении поля связью когда эта связь недоступна.
 - [#2568889](https://www.drupal.org/node/2568889) Исправлена неполадка, из-за которой раскрытый фильтр для текстового поля с обязательным значением мог показывать пустую ошибку.
 - [#3309750](https://www.drupal.org/node/3309750) Исправлена неполадка с синтаксисом `callable` для PHP 8.2.
-- [#3291520](https://www.drupal.org/node/3291520) Исправлена неполадка, из-за которой неправильно отображалось название термина если оно начиналось с нуля.
 - [#3311466](https://www.drupal.org/node/3311466) Удалено свойство `ViewExecutable::$editing`.
 - [#3299800](https://www.drupal.org/node/3299800) Исправлена неполадка в `CachePluginBase`, из-за которой могла не работать часть функционала если запросы был задекорирован.
 - [#3230681](https://www.drupal.org/node/3230681) `ViewsExposedFilterBlock::build()` теперь всегда возвращает массив в качестве результата.
-- [#2875987](https://www.drupal.org/node/2875987) Исправлена неполадка из-за которой вызов альтера формы Views вызывался дважды.
 
 ## Views UI
 
@@ -581,6 +580,8 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3281535](https://www.drupal.org/node/3281535) Внесены исправления для «Access to an undefined property».
 - [#3302760](https://www.drupal.org/node/3302760) Добавлены фикстуры с БД Drupal 9.4.0.
 - [#3313021](https://www.drupal.org/node/3313021) Удалён устаревший метод `KernelTestBase::prepareTemplate()`.
+- [#3211992](https://www.drupal.org/node/3211992) Исправлено состояние гонки в `TestSiteApplicationTest::testInstallWithNonExistingFile()`.
+- [#3293446](https://www.drupal.org/node/3293446) Kernel тесты теперь создают меньше статического кеша в `ExtensionDiscovery`.
 
 ## Прочие изменения
 
@@ -656,16 +657,16 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3311214](https://www.drupal.org/node/3311214) Внесены небольшие улучшения в `RecursiveContextualValidatorTest`.
 - [#2254187](https://www.drupal.org/node/2254187) Улучшена производительность теста `NodeAccessBaseTableTest`.
 - [#3087862](https://www.drupal.org/node/3087862) Исправлена неполадка в команде установки тестового сайта.
-- [#3309173](https://www.drupal.org/node/3309173) Исправлены ссылки на документацию драйверов баз данных на актуальные.
 - [#2941148](https://www.drupal.org/node/2941148) Исправлены ошибки стандарта «Drupal.Commenting.FunctionComment.MissingReturnType».
 - [#2937515](https://www.drupal.org/node/2937515) Исправлены ошибки стандартов «Fix Drupal.Array.Array.ArrayClosingIndentation, ArrayIndentation».
 - [#3264947](https://www.drupal.org/node/3264947) Методам тестов `::setUp()` и `::tearDown()` добавлена документация.
 - [#3309907](https://www.drupal.org/node/3309907) Исправлена неполадка в `WebAssert` приводящая к случайным провалам теста `BookTest::testGetTableOfContents`.
 - [#3308162](https://www.drupal.org/node/3308162) `KernelTestBase::installConfig()` теперь перехватывает исключения и выбрасывает своё собственно с указанием проблемного модуля.
 - [#3181778](https://www.drupal.org/node/3181778) Использование функции `t()` во всех плагинах заменено на `$this->t()`.
-- [#2617330](https://www.drupal.org/node/2617330) Исправлено некорректное условие в `LogMessageParser::parseMessagePlaceholders()`.
 - [#2341553](https://www.drupal.org/node/2341553) В `AlreadyInstalledException` добавлена информация о том, почему невозможно использовать систему маршрутизации в процессе установки.
 - [#3226139](https://www.drupal.org/node/3226139) В некоторых тестах `->will()` заменены на `->willReturnMap()`.
 - [#3231694](https://www.drupal.org/node/3231694) Исправлен некорректный тип для `@return` в `TestFileCreationTrait`.
 - [#3268829](https://www.drupal.org/node/3268829) Исправлены ошибки стандарта «Drupal.Commenting.DocComment.ShortSingleLine».
 - [#3273317](https://www.drupal.org/node/3273317) В шаблоны по умолчанию `block*.html.twig` и `layout*.html.twig` добавлена переменная `in_preview`.
+- [#3295880](https://www.drupal.org/node/3295880) В некоторых тестах `->will()` заменены на `->willReturn()`.
+- [#3307972](https://www.drupal.org/node/3307972) Исправлено некорректное указание класса в `ModulesListForm`.

@@ -615,6 +615,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3264764](https://www.drupal.org/node/3264764) Исправлена неполадка, из-за которой тест `PhpUnitCliTest::testFunctionalTestDebugHtmlOutput()` проваливался при пустом значении `BROWSERTEST_OUTPUT_DIRECTORY`.
 - [#3211131](https://www.drupal.org/node/3211131) Внесены улучшения в `DrupalStandardsListenerTrait`.
 - [#3281863](https://www.drupal.org/node/3281863) Внесены улучшения в `drupalInstallModule.js`.
+- [#3254199](https://www.drupal.org/node/3254199) Удалена проверка на совместимость с PHPUnit Prophecy.
 
 ## Прочие изменения
 
