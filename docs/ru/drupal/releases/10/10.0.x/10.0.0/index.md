@@ -507,6 +507,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3262135](https://www.drupal.org/node/3262135) Удалён устаревший класс `ie11-autorow`.
 - [#3311218](https://www.drupal.org/node/3311218) Добавлены CSS переменные для цвета ссылки при наведении.
 
+## Path alias
+
+- [#3313448](https://www.drupal.org/node/3313448) Для параметра `$alias_repository` конструктора `AliasManager` добавлен тайпхинт.
+
 ## PosgreSQL DB driver
 
 - [#3214922](https://www.drupal.org/node/3214922) PostgreSQL драйвер теперь проверяет наличие расширения `pg_tgrm` и выдаёт ошибку если он отсутствует.

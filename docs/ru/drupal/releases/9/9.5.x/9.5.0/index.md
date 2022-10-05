@@ -431,6 +431,7 @@ Starterkit темы. Данный генератор рекомендуется 
   являющийся частью самой разметки (пример для документации), внутри Help 
   Topics теперь обрабатывается корректно.
 - [#3281439](https://www.drupal.org/node/3281439) Тесты модуля больше не используют темы оформления Bartik и Seven.
+- [#3204175](https://www.drupal.org/node/3204175) Добавлены ссылки на Security Advisories.
 
 ## Image
 
@@ -447,6 +448,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3255887](https://www.drupal.org/node/3255887) Исправлена ошибка в 
   конструкторе `MediaThumbnailFormatter`.
 - [#3275807](https://www.drupal.org/node/3275807) Тесты модуля больше не используют тему Classy.
+- [#3310510](https://www.drupal.org/node/3310510) Улучшена ошибка в OEmbed плагине, если загрузка превью завершилась ошибкой.
 
 ## Media Library
 
@@ -552,6 +554,8 @@ Starterkit темы. Данный генератор рекомендуется 
   `RoleStorage::isPermissionInRoles()`.
 - [#3282420](https://www.drupal.org/node/3282420) При использовании одноразовой ссылки для входа теперь предлагается «установить», а не «менять» пароль. Это изменение касается текста сообщения.
 - [#3285593](https://www.drupal.org/node/3285593) Улучшена документация для `Section::getComponents()`.
+- [#3110761](https://www.drupal.org/node/3110761) Улучшено описание email поля пользователя.
+- [#3168624](https://www.drupal.org/node/3168624) Добавлен новый маршрут `user.edit` (`user/edit`) для открытия формы редактирования текущего пользователя.
 
 ## Views
 
@@ -562,6 +566,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3311466](https://www.drupal.org/node/3311466) Удалено свойство `ViewExecutable::$editing`.
 - [#3299800](https://www.drupal.org/node/3299800) Исправлена неполадка в `CachePluginBase`, из-за которой могла не работать часть функционала если запросы был задекорирован.
 - [#3230681](https://www.drupal.org/node/3230681) `ViewsExposedFilterBlock::build()` теперь всегда возвращает массив в качестве результата.
+- [#2864115](https://www.drupal.org/node/2864115) Упрощен лейбл с «Create CSS class» на «Add HTML class».
 
 ## Views UI
 
@@ -670,3 +675,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3273317](https://www.drupal.org/node/3273317) В шаблоны по умолчанию `block*.html.twig` и `layout*.html.twig` добавлена переменная `in_preview`.
 - [#3295880](https://www.drupal.org/node/3295880) В некоторых тестах `->will()` заменены на `->willReturn()`.
 - [#3307972](https://www.drupal.org/node/3307972) Исправлено некорректное указание класса в `ModulesListForm`.
+- [#3195033](https://www.drupal.org/node/3195033) Исправлена неполадка в стилях тем оформления с посещёнными ссылками, из-за которых это сказывалось на ссылках тулбара.
+- [#3313435](https://www.drupal.org/node/3313435) «daffie» добавлен в качестве мейнтенера Database API.
+- [#3271222](https://www.drupal.org/node/3271222) В стандартный robots.txt добавлены запреты на пути встроенных OEmbed элементов.
