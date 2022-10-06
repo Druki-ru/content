@@ -762,3 +762,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3306210](https://www.drupal.org/node/3306210) Удалена устаревшая библиотека Farbtastic.
 - [#3309807](https://www.drupal.org/node/3309807) Из `commit-code-check.sh` удалены ESLint проверки для ES6.
 - [#3310346](https://www.drupal.org/node/3310346) `TitleResolverInterface::getTitle()` теперь поддерживает `\Stringable` тип в качестве результата.
+- [#3116611](https://www.drupal.org/node/3116611) Добавлена проверка на поддержку всех доступных форматов изображений GD.
