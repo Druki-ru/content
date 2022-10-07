@@ -13,11 +13,7 @@ category:
   order: 8
 ---
 
-<Aside type="warning">
-
-Данная версия находится в разработке и не предназначена для использования.
-
-</Aside>
+**Дата релиза:** 6 октября 2022
 
 ## Cache
 
@@ -34,6 +30,7 @@ category:
 - [#3306216](https://www.drupal.org/node/3306216) Прозрачные иконки теперь форсируются быть полностью видимыми.
 - [#3283776](https://www.drupal.org/node/3283776) Внесены улучшения в `CKEditor5PluginDefinition::getElements()`.
 - [#3284254](https://www.drupal.org/node/3284254) `HTMLRestrictions` больше не позволяет добавить разрешение `<tag attr="*">` потому что это равносильно `<tag attr>`.
+- [#3300246](https://www.drupal.org/node/3300246) Добавлена поддержка сторонних аттрибутов для `<drupal-media>` от сторонних плагинов.
 
 ## Comment
 
@@ -64,10 +61,12 @@ category:
 ## Layout Builder
 
 - [#3119786](https://www.drupal.org/node/3119786) Исправлена неполадка, из-за которой не отображались изображения по умолчанию указанные в настройках поля.
+- [#3165010](https://www.drupal.org/node/3165010) Кнопка «Отмены изменений» теперь игнорирует любой ввод и пропускает валидацию данных.
 
 ## Migrate
 
 - [#3202665](https://www.drupal.org/node/3202665) `migration_lookup` теперь выдаёт больше информации при выбрасывании исключения.
+- [#3250683](https://www.drupal.org/node/3250683) Улучшена документация для `MigrateException`.
 
 ## Olivero
 
@@ -78,6 +77,10 @@ category:
 - [#2875987](https://www.drupal.org/node/2875987) Исправлена неполадка из-за которой вызов альтера формы Views вызывался дважды.
 - [#3291520](https://www.drupal.org/node/3291520) Исправлена неполадка, из-за которой неправильно отображалось название термина если оно начиналось с нуля.
 - [#3006812](https://www.drupal.org/node/3006812) Исправлен некорректный тип для `ViewsExecutable->exposed_widgets` со `string` на `array`.
+
+## Workspaces
+
+- [#3308915](https://www.drupal.org/node/3308915) Улучшена производительность `WorkspacesUninstallTest`.
 
 ## Прочие изменения
 
@@ -90,3 +93,9 @@ category:
 - [#3310760](https://www.drupal.org/node/3310760) Исправленные битые линки в `@todo`.
 - [#3308449](https://www.drupal.org/node/3308449) Исправлена неполадка в `CategorizingPluginManagerTrait::getSortedDefinitions()`, из-за которой результат мог отличаться если категория не являлась строкой.
 - [#3265574](https://www.drupal.org/node/3265574) Там где возможно, оставшиеся вызовы с использованием xpath заменены на WebAssert методы.
+- [#3313833](https://www.drupal.org/node/3313833) В `drupalci.yml` добавлена возможность указывать список запускаемых тестовых групп.
+- [#3121157](https://www.drupal.org/node/3121157) Улучшена документация для `ThemeInstallerInterface::uninstall()`.
+
+## Ссылки
+
+- [Drupal 9.4.8](https://www.drupal.org/project/drupal/releases/9.4.8) (англ.), drupal.org, 6 октября 2022

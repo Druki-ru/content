@@ -339,6 +339,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
+- [#3276469](https://www.drupal.org/node/3276469) Исправлена рамка для элемента `MediaImageTextAlternativeUi`.
 
 ## Colors
 
@@ -435,6 +436,9 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3307697](https://www.drupal.org/node/3307697) Вызовы `url()` заменены на специальную функцию `help_route_link()`.
 - [#3307691](https://www.drupal.org/node/3307691) Вызовы `url()` заменены на специальную функцию `help_route_link()`.
 - [#3307700](https://www.drupal.org/node/3307700) Вызовы `url()` заменены на специальную функцию `help_route_link()`.
+- [#3307692](https://www.drupal.org/node/3307692) Вызовы `url()` заменены на специальную функцию `help_route_link()`.
+- [#3307694](https://www.drupal.org/node/3307694) Вызовы `url()` заменены на специальную функцию `help_route_link()`.
+- [#3307696](https://www.drupal.org/node/3307696) Вызовы `url()` заменены на специальную функцию `help_route_link()`.
 
 ## Image
 
@@ -460,6 +464,10 @@ Starterkit темы. Данный генератор рекомендуется 
 ## Migrate
 
 - [#2919158](https://www.drupal.org/node/2919158) В плагин маппинга ID `sql` добавлена зависимость `MigrationPluginManager`.
+
+## Migrate Drupal
+
+- [#3219539](https://www.drupal.org/node/3219539) Обновлена фикстура для Drupal 7.
 
 ## MySQL
 
