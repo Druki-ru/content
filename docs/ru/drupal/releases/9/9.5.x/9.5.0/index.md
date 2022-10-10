@@ -339,7 +339,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
-- [#3276469](https://www.drupal.org/node/3276469) Исправлена рамка для элемента `MediaImageTextAlternativeUi`.
 
 ## Colors
 
@@ -421,10 +420,6 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3308826](https://www.drupal.org/node/3308826) Библиотека eslint-plugin-yml обновлена до версии 1.2.0.
 - [#3261163](https://www.drupal.org/node/3261163) PostCSS обновлён до 8 версии.
 - [#3308821](https://www.drupal.org/node/3308821) Библиотека stylelint-config-standard обновлена до версии 28.0.0
-
-## JSON:API
-
-- [#3280302](https://www.drupal.org/node/3280302) В `JsonApiDocumentTopLevelNormalizerTest` исправлен вызов с лишним аргументом.
 
 ## Help Topics
 
@@ -691,3 +686,4 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3313435](https://www.drupal.org/node/3313435) «daffie» добавлен в качестве мейнтенера Database API.
 - [#3271222](https://www.drupal.org/node/3271222) В стандартный robots.txt добавлены запреты на пути встроенных OEmbed элементов.
 - [#2895352](https://www.drupal.org/node/2895352) Для элемента `tableselect` добавлена возможность отключения конкретных опций.
+- [#3112452](https://www.drupal.org/node/3112452) В `.yml` файлах ядра исправлены некорректные отступы.
