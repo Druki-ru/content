@@ -764,3 +764,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3309807](https://www.drupal.org/node/3309807) Из `commit-code-check.sh` удалены ESLint проверки для ES6.
 - [#3310346](https://www.drupal.org/node/3310346) `TitleResolverInterface::getTitle()` теперь поддерживает `\Stringable` тип в качестве результата.
 - [#3116611](https://www.drupal.org/node/3116611) Добавлена проверка на поддержку всех доступных форматов изображений GD.
+- [#3313146](https://www.drupal.org/node/3313146) Относительные свойства, такие как `float: inline-start` не поддерживаются PostCSS, поэтому были заменены на старые решения.
