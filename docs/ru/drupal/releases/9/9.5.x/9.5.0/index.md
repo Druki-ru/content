@@ -368,9 +368,10 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3295735](https://www.drupal.org/node/3295735) Улучшена работа теста `ConfigImportUITest` с темой Olivero.
 - [#2232051](https://www.drupal.org/node/2232051) Запись конфигурации в файл больше не вызывает `chmod()`.
 
-## Database API
+## Database System
 
 - [#3312439](https://www.drupal.org/node/3312439) Исправлены тайпхинты в `@return` для `StatementInterface`.
+- [#3231950](https://www.drupal.org/node/3231950) Тесты связанные с БД были разделены на тесты «ядра» (API) и драйверов баз данных.
 
 ## Dependency Injection
 
@@ -688,3 +689,4 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#2895352](https://www.drupal.org/node/2895352) Для элемента `tableselect` добавлена возможность отключения конкретных опций.
 - [#3112452](https://www.drupal.org/node/3112452) В `.yml` файлах ядра исправлены некорректные отступы.
 - [#3314353](https://www.drupal.org/node/3314353) Из `EntityTestRev` удалёно дублированное объявление view builder.
+- [#3314523](https://www.drupal.org/node/3314523) Теперь, после обработки стилей при помощи PostCSS, запускается линтер для того чтобы конечные CSS файлы соответствовали стандартам Drupal.
