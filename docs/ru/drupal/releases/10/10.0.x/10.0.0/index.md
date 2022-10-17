@@ -420,6 +420,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3307361](https://www.drupal.org/node/3307361) `phpstan/phpstan` версии 1.8.3 добавлен в `conflicts` и будет пропускаться.
 - [#3308427](https://www.drupal.org/node/3308427) Зависимость `phpstan/phpstan` обновлена до версии 1.8.5.
 - [#3296390](https://www.drupal.org/node/3296390) Удалены зависимости `symfony/polyfill-php74`, `symfony/polyfill-php80` и `symfony/polyfill-php81`.
+- [#3314774](https://www.drupal.org/node/3314774) Добавлен запрет на обновление `phpstan/phpstan` до `>=1.8.7`. 
 
 ## Database Logging
 

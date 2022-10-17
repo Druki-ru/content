@@ -595,6 +595,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3313021](https://www.drupal.org/node/3313021) Удалён устаревший метод `KernelTestBase::prepareTemplate()`.
 - [#3211992](https://www.drupal.org/node/3211992) Исправлено состояние гонки в `TestSiteApplicationTest::testInstallWithNonExistingFile()`.
 - [#3293446](https://www.drupal.org/node/3293446) Kernel тесты теперь создают меньше статического кеша в `ExtensionDiscovery`.
+- [#3183423](https://www.drupal.org/node/3183423) Удалён метод `\Drupal\FunctionalJavascriptTests\DrupalSelenium2Driver::attachFile()`.
 
 ## Прочие изменения
 
