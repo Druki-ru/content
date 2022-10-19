@@ -23,6 +23,7 @@ category:
 
 - [#3276469](https://www.drupal.org/node/3276469) Исправлена рамка для элемента `MediaImageTextAlternativeUi`.
 - [#3314511](https://www.drupal.org/node/3314511) Исправлена неполадка в миграции CKEditor 4 → 5 из-за которой могли проваливаться тесты.
+- [#3315319](https://www.drupal.org/node/3315319) Исправлены неполадки в тестах приводящие к их провалам.
 
 ## Claro
 
@@ -36,6 +37,10 @@ category:
 ## Media
 
 - [#3251647](https://www.drupal.org/node/3251647) Исправлена неполадка из-за которой могла некорректно отображаться форма ассоциаций значенйи при создании или редактировании медиа типа.
+
+## Media Library
+
+- [#3315753](https://www.drupal.org/node/3315753) Внесены улучшения в `WidgetUploadTest`.
 
 ## Migrate Drupal
 
@@ -54,3 +59,5 @@ category:
 ## Прочие изменения
 
 - [#3259109](https://www.drupal.org/node/3259109) Исправлены ошибки PHPStan «Cannot unset offset».
+- [#3045612](https://www.drupal.org/node/3045612) (отменено) В DrupalCI уменьшено количество одновременно выполняемых JavaScript тестов с 15 до 10 из-за возможных проблем с DNS на AWS.
+- [#3309047](https://www.drupal.org/node/3309047) Исправлены ошибки PHPStan «should return {type} but return statement is missing».
