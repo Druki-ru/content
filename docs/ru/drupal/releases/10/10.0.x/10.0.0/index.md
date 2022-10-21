@@ -433,6 +433,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 
 - [#3210310](https://www.drupal.org/node/3210310) Удалён код объявленный устаревшим в Drupal 9.
 - [#3203193](https://www.drupal.org/node/3203193) Установка Drupal 10 теперь прекращается, если БД не поддерживает тип данных JSON.
+- [#3312641](https://www.drupal.org/node/3312641) Возвращён функционал создания временных таблиц `Connection::queryTemporary()`.
+- [#3315604](https://www.drupal.org/node/3315604) Оставшиеся тесты для специфичных драйверов баз данных перенесены в соответствующие модули.
 
 ## Date
 
@@ -767,3 +769,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3310346](https://www.drupal.org/node/3310346) `TitleResolverInterface::getTitle()` теперь поддерживает `\Stringable` тип в качестве результата.
 - [#3116611](https://www.drupal.org/node/3116611) Добавлена проверка на поддержку всех доступных форматов изображений GD.
 - [#3313146](https://www.drupal.org/node/3313146) Относительные свойства, такие как `float: inline-start` не поддерживаются PostCSS, поэтому были заменены на старые решения.
+- [#3316276](https://www.drupal.org/node/3316276) Исправлены ошибки PHPStan 'undefined variable'.
+- [#3316198](https://www.drupal.org/node/3316198) Исправлены ошибки PHPStan L0 для `Database\Schema`.
+- [#3316129](https://www.drupal.org/node/3316129) Исправлены ошибки PHPStan L0 для `AssertContentTraitTest`.

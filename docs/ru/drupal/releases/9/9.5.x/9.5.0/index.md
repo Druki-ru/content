@@ -294,6 +294,36 @@ Starterkit темы. Данный генератор рекомендуется 
 <!-- END RENDER -->
 ```
 
+## Добавлен новый хук `hook_requirements_alter()`
+
+- [#309040](https://www.drupal.org/node/309040)
+
+Добавлен новый хук `hook_requirements_alter()` при помощи которого вы можете
+править проверки и требования для сторонних модулей. Например, его можно
+использовать для:
+
+- Изменений заголовков, значений, описаний или даже уровня важности которые были
+  объявлены в оригинальном `hook_requirements()`.
+- Удалять записи объявленные в `hook_requirements()`.
+
+Вы также можете добавлять новые требования при помощи данного хука, но данное
+применение не рекомендуется. Для объявления новых требований используйте `hook_requirements()`.
+
+Пример использования нового хука:
+
+```php
+function mymodule_requirements_alter(array &$requirements): void {
+  // Change the title from 'PHP' to 'PHP version'.
+  $requirements['php']['title'] = t('PHP version');
+
+  // Decrease the 'update status' requirement severity from warning to warning.
+  $requirements['update status']['severity'] = REQUIREMENT_INFO;
+
+  // Remove a requirements entry.
+  unset($requirements['foo']);
+}
+```
+
 ## Big Pipe
 
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
@@ -339,6 +369,8 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
+- [#3313946](https://www.drupal.org/node/3313946) Редактор обновлён до версии 35.2.1.
+- [#3314770](https://www.drupal.org/node/3314770) Добавлена сортировка настроек в файлах конфигураций.
 
 ## Colors
 
@@ -440,11 +472,16 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3291622](https://www.drupal.org/node/3291622) Внесены улучшения в код `ImageUrlFormatter`.
 
+## Language
+
+- [#3316136](https://www.drupal.org/node/3316136) Улучшена документация для `LanguageNegotiationInterface`.
+
 ## Layout Builder
 
 - [#2935999](https://www.drupal.org/node/2935999) Модуль больше не требует включения модуля Field UI.
 - [#3111192](https://www.drupal.org/node/3111192) Если для макета была использована сущность, она добавляется в переменную шаблона `entity`.
 - [#3044117](https://www.drupal.org/node/3044117) В `ConfigureSectionForm` добавлены методы для получения информации о текущем макете.
+- [#3315490](https://www.drupal.org/node/3315490) Исправлены случайные провалы тестов `InlineBlockPrivateFilesTest`.
 
 ## Media
 
@@ -526,6 +563,7 @@ Starterkit темы. Данный генератор рекомендуется 
 
 - [#3305410](https://www.drupal.org/node/3305410) Удалён тест `TaxonomyImageTest`.
 - [#3117069](https://www.drupal.org/node/3117069) Исправлена неполадка в `OverviewTerms`, из-за которой могла появляться ошибка несуществующего индекса.
+- [#2826592](https://www.drupal.org/node/2826592) После изменения существующего термина таксономии пользователь будет перенаправлен на страницу термина.
 
 ## Theme System
 
@@ -596,6 +634,7 @@ Starterkit темы. Данный генератор рекомендуется 
 - [#3211992](https://www.drupal.org/node/3211992) Исправлено состояние гонки в `TestSiteApplicationTest::testInstallWithNonExistingFile()`.
 - [#3293446](https://www.drupal.org/node/3293446) Kernel тесты теперь создают меньше статического кеша в `ExtensionDiscovery`.
 - [#3183423](https://www.drupal.org/node/3183423) Удалён метод `\Drupal\FunctionalJavascriptTests\DrupalSelenium2Driver::attachFile()`.
+- [#3256356](https://www.drupal.org/node/3256356) Улучшена интеграция браузерных тестов с Xdebug 3.
 
 ## Прочие изменения
 

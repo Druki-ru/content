@@ -24,6 +24,7 @@ category:
 - [#3276469](https://www.drupal.org/node/3276469) Исправлена рамка для элемента `MediaImageTextAlternativeUi`.
 - [#3314511](https://www.drupal.org/node/3314511) Исправлена неполадка в миграции CKEditor 4 → 5 из-за которой могли проваливаться тесты.
 - [#3315319](https://www.drupal.org/node/3315319) Исправлены неполадки в тестах приводящие к их провалам.
+- [#3314478](https://www.drupal.org/node/3314478) Правила для глобальных аттрибутов теперь упрощаются в `HTMLRestrictions`.
 
 ## Claro
 
@@ -34,9 +35,14 @@ category:
 
 - [#3280302](https://www.drupal.org/node/3280302) В `JsonApiDocumentTopLevelNormalizerTest` исправлен вызов с лишним аргументом.
 
+## Layout Builder
+
+- [#3315490](https://www.drupal.org/node/3315490) Внесены улучшения в `InlineBlockPrivateFilesTest`, исправляющие случайные фейлы теста.
+- [#3316224](https://www.drupal.org/node/3316224) Исправлены случайные провалы теста `JSWebAssertTest`.
+
 ## Media
 
-- [#3251647](https://www.drupal.org/node/3251647) Исправлена неполадка из-за которой могла некорректно отображаться форма ассоциаций значенйи при создании или редактировании медиа типа.
+- [#3251647](https://www.drupal.org/node/3251647) Исправлена неполадка из-за которой могла некорректно отображаться форма ассоциаций значений при создании или редактировании медиа типа.
 
 ## Media Library
 
@@ -61,3 +67,4 @@ category:
 - [#3259109](https://www.drupal.org/node/3259109) Исправлены ошибки PHPStan «Cannot unset offset».
 - [#3045612](https://www.drupal.org/node/3045612) (отменено) В DrupalCI уменьшено количество одновременно выполняемых JavaScript тестов с 15 до 10 из-за возможных проблем с DNS на AWS.
 - [#3309047](https://www.drupal.org/node/3309047) Исправлены ошибки PHPStan «should return {type} but return statement is missing».
+- [#3316224](https://www.drupal.org/node/3316224) Исправлены случайные провалы тестов `JSWebAssertTest`.
