@@ -25,11 +25,16 @@ category:
 - [#3314511](https://www.drupal.org/node/3314511) Исправлена неполадка в миграции CKEditor 4 → 5 из-за которой могли проваливаться тесты.
 - [#3315319](https://www.drupal.org/node/3315319) Исправлены неполадки в тестах приводящие к их провалам.
 - [#3314478](https://www.drupal.org/node/3314478) Правила для глобальных аттрибутов теперь упрощаются в `HTMLRestrictions`.
+- [#3313946](https://www.drupal.org/node/3313946) Редактор обновлён до версии 35.2.1.
 
 ## Claro
 
 - [#3311776](https://www.drupal.org/node/3311776) Проблемы с зависимостями теперь выделены цветом.
 - [#3308733](https://www.drupal.org/node/3308733) Иконка анимации загрузки теперь корректно выровнена по вертикали.
+
+## Database System
+
+- [#3312641](https://www.drupal.org/node/3312641) Возвращён функционал создания временных таблиц `Connection::queryTemporary()`.
 
 ## JSON:API
 
@@ -39,6 +44,10 @@ category:
 
 - [#3315490](https://www.drupal.org/node/3315490) Внесены улучшения в `InlineBlockPrivateFilesTest`, исправляющие случайные фейлы теста.
 - [#3316224](https://www.drupal.org/node/3316224) Исправлены случайные провалы теста `JSWebAssertTest`.
+
+## Locale
+
+- [#3074765](https://www.drupal.org/node/3074765) Улучшена производительность импорта переводов для конкретного проекта.
 
 ## Media
 
@@ -61,6 +70,7 @@ category:
 - [#3314710](https://www.drupal.org/node/3314710) В `DrupalSelenium2Driver` добавлен собственная реализация `::dragTo()`.
 - [#3315227](https://www.drupal.org/node/3315227) Улучшена реализация ожиданий в `JSWebAssert` и `DocumentElement`.
 - [#3315362](https://www.drupal.org/node/3315362) Удалён дублирующий тест `JSWebWithWebDriverAssertTest`.
+- [#3316816](https://www.drupal.org/node/3316816) `DrupalSelenuim2Driver::setValue()` теперь вызывает события обновления инпута и формы.
 
 ## Прочие изменения
 

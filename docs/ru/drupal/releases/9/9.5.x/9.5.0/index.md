@@ -369,7 +369,6 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
-- [#3313946](https://www.drupal.org/node/3313946) Редактор обновлён до версии 35.2.1.
 - [#3314770](https://www.drupal.org/node/3314770) Добавлена сортировка настроек в файлах конфигураций.
 
 ## Colors
