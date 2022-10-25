@@ -453,6 +453,10 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3261163](https://www.drupal.org/node/3261163) PostCSS обновлён до 8 версии.
 - [#3308821](https://www.drupal.org/node/3308821) Библиотека stylelint-config-standard обновлена до версии 28.0.0
 
+## JSON:API
+
+- [#3127883](https://www.drupal.org/node/3127883) Улучшено сообщение об ошибке, если поле указано с опечаткой.
+
 ## Help Topics
 
 - [#3086075](https://www.drupal.org/node/3086075) Twig синтаксис, не 
@@ -514,6 +518,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3264987](https://www.drupal.org/node/3264987) Исправлено двойное 
   присвоение переменной в `NodeViewsData`.
 - [#3303278](https://www.drupal.org/node/3303278) Тесты связанные с модулем RDF перенесены в одноимённый модуль.
+- [#3316813](https://www.drupal.org/node/3316813) Удалены упоминания `node_access_example.module`.
 
 ## Olivero
 
@@ -729,3 +734,4 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3112452](https://www.drupal.org/node/3112452) В `.yml` файлах ядра исправлены некорректные отступы.
 - [#3314353](https://www.drupal.org/node/3314353) Из `EntityTestRev` удалёно дублированное объявление view builder.
 - [#3314523](https://www.drupal.org/node/3314523) Теперь, после обработки стилей при помощи PostCSS, запускается линтер для того чтобы конечные CSS файлы соответствовали стандартам Drupal.
+- [#3316971](https://www.drupal.org/node/3316971) В `run-tests.sh` улучшена совместимость с будущими версиями PHP.

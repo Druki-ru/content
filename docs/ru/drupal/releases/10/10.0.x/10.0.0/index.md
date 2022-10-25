@@ -773,3 +773,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3316129](https://www.drupal.org/node/3316129) Исправлены ошибки PHPStan L0 для `AssertContentTraitTest`.
 - [#3316815](https://www.drupal.org/node/3316815) Исправлены ошибки PHPStan L0 для вызовов `::drupalPost*()`.
 - [#3316825](https://www.drupal.org/node/3316825) Исправлены ошибки PHPStan L0 для `RenderCacheIntegrationTest`.
+- [#3316960](https://www.drupal.org/node/3316960) Исправлены ошибки PHPStan L0 для `PageRenderTest`.
+- [#3316950](https://www.drupal.org/node/3316950) Исправлены ошибки PHPStan L0 для `ReadOnlyStream`.
+- [#3317243](https://www.drupal.org/node/3317243) Исправлены ошибки PHPStan L0 для `PluginManagerBase`.

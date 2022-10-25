@@ -78,3 +78,5 @@ category:
 - [#3045612](https://www.drupal.org/node/3045612) (отменено) В DrupalCI уменьшено количество одновременно выполняемых JavaScript тестов с 15 до 10 из-за возможных проблем с DNS на AWS.
 - [#3309047](https://www.drupal.org/node/3309047) Исправлены ошибки PHPStan «should return {type} but return statement is missing».
 - [#3316224](https://www.drupal.org/node/3316224) Исправлены случайные провалы тестов `JSWebAssertTest`.
+- [#3314469](https://www.drupal.org/node/3314469) `ContextDefinition::isSatisfiedBy()` теперь учитывает множественное поле или нет.
+- [#3251817](https://www.drupal.org/node/3251817) Для тестов с более чем одной группой теперь корректно собирается информация о всех необходимых тестах для запуска в `run-tests.sh`.
