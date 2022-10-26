@@ -369,7 +369,9 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3294908](https://www.drupal.org/node/3294908) Внесены улучшения в проверку на доступные классы 
   `StyleSensibleElementConstraintValidator`.
 - [#3231336](https://www.drupal.org/node/3231336) Внесены улучшения в `HtmlRestrictions.`
-- [#3314770](https://www.drupal.org/node/3314770) Добавлена сортировка настроек в файлах конфигураций.
+- [#3314770](https://www.drupal.org/node/3314770) (отменено) Добавлена сортировка настроек в файлах конфигураций.
+- [#3317332](https://www.drupal.org/node/3317332) Удалён неактуальный `README.md`.
+- [#3315884](https://www.drupal.org/node/3315884) Исправлены опечатки в коде модуля.
 
 ## Colors
 
@@ -629,6 +631,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 ## Стандартный установочный профиль
 
 - [#3243121](https://www.drupal.org/node/3243121) Профиль больше не устанавливает модуль RDF.
+- [#3316921](https://www.drupal.org/node/3316921) Формат «Ограниченный HTML» больше не разрешает использовать `<span>`.
 
 ## Тестирование
 

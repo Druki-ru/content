@@ -776,3 +776,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3316960](https://www.drupal.org/node/3316960) Исправлены ошибки PHPStan L0 для `PageRenderTest`.
 - [#3316950](https://www.drupal.org/node/3316950) Исправлены ошибки PHPStan L0 для `ReadOnlyStream`.
 - [#3317243](https://www.drupal.org/node/3317243) Исправлены ошибки PHPStan L0 для `PluginManagerBase`.
+- [#3317223](https://www.drupal.org/node/3317223) Исправлены ошибки PHPStan L0 для `RecursiveExtensionFilterIterator`.
