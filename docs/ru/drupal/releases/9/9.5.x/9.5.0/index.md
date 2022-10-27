@@ -372,6 +372,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3314770](https://www.drupal.org/node/3314770) (отменено) Добавлена сортировка настроек в файлах конфигураций.
 - [#3317332](https://www.drupal.org/node/3317332) Удалён неактуальный `README.md`.
 - [#3315884](https://www.drupal.org/node/3315884) Исправлены опечатки в коде модуля.
+- [#3317330](https://www.drupal.org/node/3317330) Исправлены случайные провалы теста `ImageTest::testAltTextRequired()`.
 
 ## Colors
 
