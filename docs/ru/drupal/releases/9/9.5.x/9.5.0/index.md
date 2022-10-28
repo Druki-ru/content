@@ -296,7 +296,7 @@ Starterkit темы. Данный генератор рекомендуется 
 
 ## Добавлен новый хук `hook_requirements_alter()`
 
-- [#309040](https://www.drupal.org/node/309040)
+- [#309040](https://www.drupal.org/node/309040), [#3316871](https://www.drupal.org/node/3316871)
 
 Добавлен новый хук `hook_requirements_alter()` при помощи которого вы можете
 править проверки и требования для сторонних модулей. Например, его можно
@@ -437,6 +437,12 @@ function mymodule_requirements_alter(array &$requirements): void {
   удалён суффикс `<span class="ajax-new-content"></span>`.
 - [#3189876](https://www.drupal.org/node/3189876) Улучшена документация для плагинов миграций.
 - [#59750](https://www.drupal.org/node/59750) Элемент формы `file` теперь корректно обрабатывает `#required` свойство.
+- [#2867336](https://www.drupal.org/node/2867336) Улучшена валидация размера файла.
+- [#3279289](https://www.drupal.org/node/3279289) `\file_requirements()` теперь предоставляет значение по умолчанию для `SERVER_SOFTWARE`.
+
+## Form API
+
+- [#2965929](https://www.drupal.org/node/2965929) Ошибка «The form argument is not a valid form.» замена на две новых, одну на случай если класс формы не найден, а вторую, если форма не расширяет интерфейс.
 
 ## Forum
 
@@ -503,6 +509,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 ## Migrate
 
 - [#2919158](https://www.drupal.org/node/2919158) В плагин маппинга ID `sql` добавлена зависимость `MigrationPluginManager`.
+- [#3254986](https://www.drupal.org/node/3254986) `RequirementsException` больше не выводит массив требований в сообщении.
 
 ## Migrate Drupal
 
@@ -643,6 +650,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3293446](https://www.drupal.org/node/3293446) Kernel тесты теперь создают меньше статического кеша в `ExtensionDiscovery`.
 - [#3183423](https://www.drupal.org/node/3183423) Удалён метод `\Drupal\FunctionalJavascriptTests\DrupalSelenium2Driver::attachFile()`.
 - [#3256356](https://www.drupal.org/node/3256356) Улучшена интеграция браузерных тестов с Xdebug 3.
+- [#3317504](https://www.drupal.org/node/3317504) Из `run-tests.sh` удалено упоминание что можно запускать тест конкретного метода.
 
 ## Прочие изменения
 
@@ -739,3 +747,4 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3314353](https://www.drupal.org/node/3314353) Из `EntityTestRev` удалёно дублированное объявление view builder.
 - [#3314523](https://www.drupal.org/node/3314523) Теперь, после обработки стилей при помощи PostCSS, запускается линтер для того чтобы конечные CSS файлы соответствовали стандартам Drupal.
 - [#3316971](https://www.drupal.org/node/3316971) В `run-tests.sh` улучшена совместимость с будущими версиями PHP.
+- [#1120020](https://www.drupal.org/node/1120020) Улучшен код в модулях связанный с транзакциями БД.
