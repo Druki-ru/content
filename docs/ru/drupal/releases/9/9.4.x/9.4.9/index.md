@@ -36,6 +36,10 @@ category:
 
 - [#3312641](https://www.drupal.org/node/3312641) Возвращён функционал создания временных таблиц `Connection::queryTemporary()`.
 
+## Entity System
+
+- [#3145501](https://www.drupal.org/node/3145501) Исправлена неполадка, из-за которой вызов `::processMultivalueBaseFieldHandler()` мог приводить к ошибкам обновления.
+
 ## JSON:API
 
 - [#3280302](https://www.drupal.org/node/3280302) В `JsonApiDocumentTopLevelNormalizerTest` исправлен вызов с лишним аргументом.

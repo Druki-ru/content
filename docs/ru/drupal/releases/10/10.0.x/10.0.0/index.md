@@ -443,7 +443,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## Entity System
 
 - [#3244802](https://www.drupal.org/node/3244802) Удалён слой [обратной совместимости](../../../../../backward-compatibility/index.md) и устаревший код из системы сущностей.
-- [#3145501](https://www.drupal.org/node/3145501) Исправлена неполадка, из-за которой вызов `::processMultivalueBaseFieldHandler()` мог приводить к ошибкам обновления. 
 
 ## Extensions System
 
@@ -468,6 +467,7 @@ Drupal прекращает поддержку всех версий UC Browser 
   обновлена до 6 версии.
 - [#3308783](https://www.drupal.org/node/3308783) Библиотека shepherd.js обновлена до версии 10.0.1.
 - [#3312481](https://www.drupal.org/node/3312481) Обновлена зависимость `browserlist`.
+- [#3306446](https://www.drupal.org/node/3306446) Nightwatch обновлён до версии 2.4.1.
 
 ## Language
 

@@ -509,7 +509,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 ## Migrate
 
 - [#2919158](https://www.drupal.org/node/2919158) В плагин маппинга ID `sql` добавлена зависимость `MigrationPluginManager`.
-- [#3254986](https://www.drupal.org/node/3254986) `RequirementsException` больше не выводит массив требований в сообщении.
+- [#3254986](https://www.drupal.org/node/3254986) (отменено) `RequirementsException` больше не выводит массив требований в сообщении.
 
 ## Migrate Drupal
 
