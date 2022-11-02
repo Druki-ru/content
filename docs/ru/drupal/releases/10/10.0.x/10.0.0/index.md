@@ -423,6 +423,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3314774](https://www.drupal.org/node/3314774) Добавлен запрет на обновление `phpstan/phpstan` до `>=1.8.7`. 
 - [#3314873](https://www.drupal.org/node/3314873) Зависимость `phpstan/phpstan` обновлена до `^1.8.10` и убрана из конфликтов.
 - [#3315783](https://www.drupal.org/node/3315783) Из описания проектов удалены упоминания версии Drupal.
+- [#3317874](https://www.drupal.org/node/3317874) Зависимости ядра обновлены на 01.11.2022.
 
 ## Database Logging
 
@@ -434,6 +435,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3210310](https://www.drupal.org/node/3210310) Удалён код объявленный устаревшим в Drupal 9.
 - [#3203193](https://www.drupal.org/node/3203193) Установка Drupal 10 теперь прекращается, если БД не поддерживает тип данных JSON.
 - [#3315604](https://www.drupal.org/node/3315604) Оставшиеся тесты для специфичных драйверов баз данных перенесены в соответствующие модули.
+- [#3130579](https://www.drupal.org/node/3130579) `Drupal\Core\Database\Schema` и соответствующие классы для драйверов БД теперь используют `[]` для зарезервированных ключевых слов.
 
 ## Date
 
@@ -510,6 +512,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3306938](https://www.drupal.org/node/3306938) Возвращено обновление `olivero_post_update_add_olivero_primary_color`.
 - [#3262135](https://www.drupal.org/node/3262135) Удалён устаревший класс `ie11-autorow`.
 - [#3311218](https://www.drupal.org/node/3311218) Добавлены CSS переменные для цвета ссылки при наведении.
+- [#3314532](https://www.drupal.org/node/3314532) Произведён рефакторинг `autocomplete-loading.module.pcss.css`.
 
 ## Path alias
 

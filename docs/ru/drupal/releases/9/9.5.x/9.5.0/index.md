@@ -514,6 +514,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 ## Migrate Drupal
 
 - [#3219539](https://www.drupal.org/node/3219539) Обновлена фикстура для Drupal 7.
+- [#3176393](https://www.drupal.org/node/3176393) В `DrupalSqlBase::checkRequirements()` теперь используется `SourcePluginBase::getSourceModule()`.
 
 ## MySQL
 
@@ -626,6 +627,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3299800](https://www.drupal.org/node/3299800) Исправлена неполадка в `CachePluginBase`, из-за которой могла не работать часть функционала если запросы был задекорирован.
 - [#3230681](https://www.drupal.org/node/3230681) `ViewsExposedFilterBlock::build()` теперь всегда возвращает массив в качестве результата.
 - [#2864115](https://www.drupal.org/node/2864115) Упрощен лейбл с «Create CSS class» на «Add HTML class».
+- [#3247121](https://www.drupal.org/node/3247121) Исправлена неполадка из-за которой агрегация `nid` совместно с `COUNT()` приводило к синтаксической ошибке.
 
 ## Views UI
 
@@ -748,3 +750,4 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3314523](https://www.drupal.org/node/3314523) Теперь, после обработки стилей при помощи PostCSS, запускается линтер для того чтобы конечные CSS файлы соответствовали стандартам Drupal.
 - [#3316971](https://www.drupal.org/node/3316971) В `run-tests.sh` улучшена совместимость с будущими версиями PHP.
 - [#1120020](https://www.drupal.org/node/1120020) Улучшен код в модулях связанный с транзакциями БД.
+- [#3029782](https://www.drupal.org/node/3029782) Исправлена неполадка из-за которой `UniqueFieldValueValidator` в сообщении с ошибкой приводил лейбл поля к нижнему регистру.
