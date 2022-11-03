@@ -436,6 +436,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3203193](https://www.drupal.org/node/3203193) Установка Drupal 10 теперь прекращается, если БД не поддерживает тип данных JSON.
 - [#3315604](https://www.drupal.org/node/3315604) Оставшиеся тесты для специфичных драйверов баз данных перенесены в соответствующие модули.
 - [#3130579](https://www.drupal.org/node/3130579) `Drupal\Core\Database\Schema` и соответствующие классы для драйверов БД теперь используют `[]` для зарезервированных ключевых слов.
+- [#3316923](https://www.drupal.org/node/3316923) Внесены улучшения в тесты для драйверов баз данных.
 
 ## Date
 
@@ -470,6 +471,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3308783](https://www.drupal.org/node/3308783) Библиотека shepherd.js обновлена до версии 10.0.1.
 - [#3312481](https://www.drupal.org/node/3312481) Обновлена зависимость `browserlist`.
 - [#3306446](https://www.drupal.org/node/3306446) Nightwatch обновлён до версии 2.4.1.
+- [#3317885](https://www.drupal.org/node/3317885) Обновлены зависимости `jsdom`, `terser`, `minimist` и `underscore` на 02.11.2022.
 
 ## Language
 
@@ -780,3 +782,5 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3316950](https://www.drupal.org/node/3316950) Исправлены ошибки PHPStan L0 для `ReadOnlyStream`.
 - [#3317243](https://www.drupal.org/node/3317243) Исправлены ошибки PHPStan L0 для `PluginManagerBase`.
 - [#3317223](https://www.drupal.org/node/3317223) Исправлены ошибки PHPStan L0 для `RecursiveExtensionFilterIterator`.
+- [#3317658](https://www.drupal.org/node/3317658) Исправлены ошибки PHPStan L0 для `HoldTestSubscriber`.
+- [#3317652](https://www.drupal.org/node/3317652) Исправлены ошибки PHPStan L0 для `Updater`.

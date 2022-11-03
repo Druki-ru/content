@@ -751,3 +751,5 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3316971](https://www.drupal.org/node/3316971) В `run-tests.sh` улучшена совместимость с будущими версиями PHP.
 - [#1120020](https://www.drupal.org/node/1120020) Улучшен код в модулях связанный с транзакциями БД.
 - [#3029782](https://www.drupal.org/node/3029782) Исправлена неполадка из-за которой `UniqueFieldValueValidator` в сообщении с ошибкой приводил лейбл поля к нижнему регистру.
+- [#3318581](https://www.drupal.org/node/3318581) `ConfigImporter::doSyncStep()` теперь также может принимать `callable`.
+- [#3312198](https://www.drupal.org/node/3312198) `fast_404` теперь учитывает что некоторые маршруты отвечают HTTP 404 в зависимости от разных условий и через исключение.
