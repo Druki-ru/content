@@ -627,7 +627,6 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3299800](https://www.drupal.org/node/3299800) Исправлена неполадка в `CachePluginBase`, из-за которой могла не работать часть функционала если запросы был задекорирован.
 - [#3230681](https://www.drupal.org/node/3230681) `ViewsExposedFilterBlock::build()` теперь всегда возвращает массив в качестве результата.
 - [#2864115](https://www.drupal.org/node/2864115) Упрощен лейбл с «Create CSS class» на «Add HTML class».
-- [#3247121](https://www.drupal.org/node/3247121) Исправлена неполадка из-за которой агрегация `nid` совместно с `COUNT()` приводило к синтаксической ошибке.
 
 ## Views UI
 

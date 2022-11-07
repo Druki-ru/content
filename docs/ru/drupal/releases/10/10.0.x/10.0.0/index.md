@@ -36,10 +36,8 @@ authors:
 
 ## Минимальная версия PHP — 8.1
 
-- [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.
-  drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350), 
-  [#3261357](https://www.drupal.org/node/3261357), [#3264819](https://www.
-  drupal.org/node/3264819)
+- [#3252088](https://www.drupal.org/node/3252088), [#3255271](https://www.drupal.org/node/3255271), [#3255350](https://www.drupal.org/node/3255350), 
+  [#3261357](https://www.drupal.org/node/3261357), [#3264819](https://www.drupal.org/node/3264819)
 
 Минимальная и рекомендуемая версия PHP для Drupal 10 — 8.1. Drupal 10 не будет работать на PHP 8.0, PHP 7 и более ранних версиях.
 
@@ -376,7 +374,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3309318](https://www.drupal.org/node/3309318) Из модуля удалён код для совместимости с IE11.
 - [#3309800](https://www.drupal.org/node/3309800) В файле `ckeditor5.js` исправлены ошибки стандартов кодирования.
 
-## Claor
+## Claro
 
 - [#3254202](https://www.drupal.org/node/3254202) Из темы оформления удалена поддержка IE11.
 
@@ -424,6 +422,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3314873](https://www.drupal.org/node/3314873) Зависимость `phpstan/phpstan` обновлена до `^1.8.10` и убрана из конфликтов.
 - [#3315783](https://www.drupal.org/node/3315783) Из описания проектов удалены упоминания версии Drupal.
 - [#3317874](https://www.drupal.org/node/3317874) Зависимости ядра обновлены на 01.11.2022.
+- [#3319112](https://www.drupal.org/node/3319112) Зависимость `phpstan/phpstan` обновлена до версии 1.9.1.
 
 ## Database Logging
 
@@ -472,6 +471,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3312481](https://www.drupal.org/node/3312481) Обновлена зависимость `browserlist`.
 - [#3306446](https://www.drupal.org/node/3306446) Nightwatch обновлён до версии 2.4.1.
 - [#3317885](https://www.drupal.org/node/3317885) Обновлены зависимости `jsdom`, `terser`, `minimist` и `underscore` на 02.11.2022.
+- [#3317879](https://www.drupal.org/node/3317879) Удалена зависимость `chromedriver`.
+- [#3319158](https://www.drupal.org/node/3319158) Зависимость `cspell` обновлена до версии 6.14.0.
 
 ## Language
 
@@ -578,6 +579,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3276187](https://www.drupal.org/node/3276187) Обновлены вызовы `MissingMandatoryParametersException`.
 - [#3304991](https://www.drupal.org/node/3304991) Использование `\Exception` 
   заменено на `\Trowable` в `FormAjaxSubscriber`.
+- [#3284422](https://www.drupal.org/node/3284422) Компоненты Symfony обновлены до версии 6.2.
 
 ## System
 
@@ -784,3 +786,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3317223](https://www.drupal.org/node/3317223) Исправлены ошибки PHPStan L0 для `RecursiveExtensionFilterIterator`.
 - [#3317658](https://www.drupal.org/node/3317658) Исправлены ошибки PHPStan L0 для `HoldTestSubscriber`.
 - [#3317652](https://www.drupal.org/node/3317652) Исправлены ошибки PHPStan L0 для `Updater`.
+- [#3190406](https://www.drupal.org/node/3190406) PHPStan конфигурация теперь использует уровень проверок L1.
