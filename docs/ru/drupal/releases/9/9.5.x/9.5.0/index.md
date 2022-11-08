@@ -579,6 +579,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3305410](https://www.drupal.org/node/3305410) Удалён тест `TaxonomyImageTest`.
 - [#3117069](https://www.drupal.org/node/3117069) Исправлена неполадка в `OverviewTerms`, из-за которой могла появляться ошибка несуществующего индекса.
 - [#2826592](https://www.drupal.org/node/2826592) После изменения существующего термина таксономии пользователь будет перенаправлен на страницу термина.
+- [#3317758](https://www.drupal.org/node/3317758) `Term::getWeight()` теперь всегда возвращает `int`.
 
 ## Theme System
 

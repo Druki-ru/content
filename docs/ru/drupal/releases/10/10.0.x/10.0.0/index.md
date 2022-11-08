@@ -423,6 +423,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3315783](https://www.drupal.org/node/3315783) Из описания проектов удалены упоминания версии Drupal.
 - [#3317874](https://www.drupal.org/node/3317874) Зависимости ядра обновлены на 01.11.2022.
 - [#3319112](https://www.drupal.org/node/3319112) Зависимость `phpstan/phpstan` обновлена до версии 1.9.1.
+- [#3313486](https://www.drupal.org/node/3313486) `drupal/core` теперь запрашивает `composer-runtime-api`.
 
 ## Database Logging
 
@@ -580,6 +581,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3304991](https://www.drupal.org/node/3304991) Использование `\Exception` 
   заменено на `\Trowable` в `FormAjaxSubscriber`.
 - [#3284422](https://www.drupal.org/node/3284422) Компоненты Symfony обновлены до версии 6.2.
+- [#3319170](https://www.drupal.org/node/3319170) `http_kernel.basic` теперь передаёт `FALSE` в качестве последнего аргумента.
 
 ## System
 
