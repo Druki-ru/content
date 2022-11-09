@@ -28,6 +28,7 @@ category:
 - [#3313946](https://www.drupal.org/node/3313946) Редактор обновлён до версии 35.2.1.
 - [#3313473](https://www.drupal.org/node/3313473) Плагины CKEditor 5 теперь поддерживают объявление через деривативы.
 - [#3318867](https://www.drupal.org/node/3318867) CKEditor 5 обновлён до версии 35.3.0.
+- [#3319735](https://www.drupal.org/node/3319735) Подсказка «Insert Drupal Media» заменена на «Insert Media».
 
 ## Claro
 

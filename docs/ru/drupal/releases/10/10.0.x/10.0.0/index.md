@@ -474,6 +474,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3317885](https://www.drupal.org/node/3317885) Обновлены зависимости `jsdom`, `terser`, `minimist` и `underscore` на 02.11.2022.
 - [#3317879](https://www.drupal.org/node/3317879) Удалена зависимость `chromedriver`.
 - [#3319158](https://www.drupal.org/node/3319158) Зависимость `cspell` обновлена до версии 6.14.0.
+- [#3319819](https://www.drupal.org/node/3319819) Зависимость `eslint` обновлена до версии 8.27.
 
 ## Language
 
@@ -789,3 +790,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3317658](https://www.drupal.org/node/3317658) Исправлены ошибки PHPStan L0 для `HoldTestSubscriber`.
 - [#3317652](https://www.drupal.org/node/3317652) Исправлены ошибки PHPStan L0 для `Updater`.
 - [#3190406](https://www.drupal.org/node/3190406) PHPStan конфигурация теперь использует уровень проверок L1.
+- [#3317651](https://www.drupal.org/node/3317651) Исправлены ошибки PHPStan L0 для `DataReferenceBase`.
+- [#3319839](https://www.drupal.org/node/3319839) Исправлена неполадка из-за которой не отображались ошибки в процессе обновления.
+- [#3319683](https://www.drupal.org/node/3319683) Исправлены ошибки PHPStan L0 для `UserCreationTrait` и `AssertMailTrait`.

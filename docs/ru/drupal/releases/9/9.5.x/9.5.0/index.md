@@ -461,6 +461,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3308826](https://www.drupal.org/node/3308826) Библиотека eslint-plugin-yml обновлена до версии 1.2.0.
 - [#3261163](https://www.drupal.org/node/3261163) PostCSS обновлён до 8 версии.
 - [#3308821](https://www.drupal.org/node/3308821) Библиотека stylelint-config-standard обновлена до версии 28.0.0
+- [#3317882](https://www.drupal.org/node/3317882) Зависимость `styleint` обновлена до версии 14.14.1, а также обновлена `stylint-config-standard` до 29.0.0.
 
 ## JSON:API
 
@@ -617,6 +618,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3285593](https://www.drupal.org/node/3285593) Улучшена документация для `Section::getComponents()`.
 - [#3110761](https://www.drupal.org/node/3110761) Улучшено описание email поля пользователя.
 - [#3168624](https://www.drupal.org/node/3168624) Добавлен новый маршрут `user.edit` (`user/edit`) для открытия формы редактирования текущего пользователя.
+- [#3319845](https://www.drupal.org/node/3319845) `user_post_update_update_migrated_roles_followup()` перенесён в Drupal 10 как `user_update_10000()`.
 
 ## Views
 
@@ -753,3 +755,4 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3029782](https://www.drupal.org/node/3029782) Исправлена неполадка из-за которой `UniqueFieldValueValidator` в сообщении с ошибкой приводил лейбл поля к нижнему регистру.
 - [#3318581](https://www.drupal.org/node/3318581) `ConfigImporter::doSyncStep()` теперь также может принимать `callable`.
 - [#3312198](https://www.drupal.org/node/3312198) `fast_404` теперь учитывает что некоторые маршруты отвечают HTTP 404 в зависимости от разных условий и через исключение.
+- [#3319780](https://www.drupal.org/node/3319780) longwave добавлен в MAINTAINERS.txt как временный менеджер релизов.
