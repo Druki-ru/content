@@ -471,10 +471,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3308783](https://www.drupal.org/node/3308783) Библиотека shepherd.js обновлена до версии 10.0.1.
 - [#3312481](https://www.drupal.org/node/3312481) Обновлена зависимость `browserlist`.
 - [#3306446](https://www.drupal.org/node/3306446) Nightwatch обновлён до версии 2.4.1.
-- [#3317885](https://www.drupal.org/node/3317885) Обновлены зависимости `jsdom`, `terser`, `minimist` и `underscore` на 02.11.2022.
 - [#3317879](https://www.drupal.org/node/3317879) Удалена зависимость `chromedriver`.
 - [#3319158](https://www.drupal.org/node/3319158) Зависимость `cspell` обновлена до версии 6.14.0.
 - [#3319819](https://www.drupal.org/node/3319819) Зависимость `eslint` обновлена до версии 8.27.
+- [#3317887](https://www.drupal.org/node/3317887) Обновлены зависимости PostCSS, `postcss-header` и `postcss-preset-env`.
 
 ## Language
 
@@ -793,3 +793,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3317651](https://www.drupal.org/node/3317651) Исправлены ошибки PHPStan L0 для `DataReferenceBase`.
 - [#3319839](https://www.drupal.org/node/3319839) Исправлена неполадка из-за которой не отображались ошибки в процессе обновления.
 - [#3319683](https://www.drupal.org/node/3319683) Исправлены ошибки PHPStan L0 для `UserCreationTrait` и `AssertMailTrait`.
+- [#3320025](https://www.drupal.org/node/3320025) `phpstan-baseline.neon` синхронизирован с веткой 10.1.x. 

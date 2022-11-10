@@ -411,6 +411,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 
 - [#2531564](https://www.drupal.org/node/2531564) Улучшена сериализация контейнера.
 - [#3310271](https://www.drupal.org/node/3310271) Улучшена сериализация строковых сервисов.
+- [#3320315](https://www.drupal.org/node/3320315) Добавлена поддержка названий сервисов в верхнем регистре.
 
 ## Editor
 
@@ -462,6 +463,8 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3261163](https://www.drupal.org/node/3261163) PostCSS обновлён до 8 версии.
 - [#3308821](https://www.drupal.org/node/3308821) Библиотека stylelint-config-standard обновлена до версии 28.0.0
 - [#3317882](https://www.drupal.org/node/3317882) Зависимость `styleint` обновлена до версии 14.14.1, а также обновлена `stylint-config-standard` до 29.0.0.
+- [#3319917](https://www.drupal.org/node/3319917) Удалена зависимость `raw-loader`.
+- [#3317885](https://www.drupal.org/node/3317885) Обновлены зависимости `jsdom`, `terser`, `minimist` и `underscore` на 02.11.2022.
 
 ## JSON:API
 
