@@ -465,6 +465,9 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3317882](https://www.drupal.org/node/3317882) Зависимость `styleint` обновлена до версии 14.14.1, а также обновлена `stylint-config-standard` до 29.0.0.
 - [#3319917](https://www.drupal.org/node/3319917) Удалена зависимость `raw-loader`.
 - [#3317885](https://www.drupal.org/node/3317885) Обновлены зависимости `jsdom`, `terser`, `minimist` и `underscore` на 02.11.2022.
+- [#3320370](https://www.drupal.org/node/3320370) Библиотека `tabbable` обновлена до версии 6.0.1.
+- [#3320515](https://www.drupal.org/node/3320515) Обновлены зависимости `cspell` и `nightwatch` на 11.11.2022.
+- [#3320518](https://www.drupal.org/node/3320518) Обновлена зависимость `webpack` до версии 3.1.0.
 
 ## JSON:API
 
@@ -759,3 +762,4 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3318581](https://www.drupal.org/node/3318581) `ConfigImporter::doSyncStep()` теперь также может принимать `callable`.
 - [#3312198](https://www.drupal.org/node/3312198) `fast_404` теперь учитывает что некоторые маршруты отвечают HTTP 404 в зависимости от разных условий и через исключение.
 - [#3319780](https://www.drupal.org/node/3319780) longwave добавлен в MAINTAINERS.txt как временный менеджер релизов.
+- [#3320483](https://www.drupal.org/node/3320483) Удалена неиспользуемая переменная `$pos` из `system.install`.

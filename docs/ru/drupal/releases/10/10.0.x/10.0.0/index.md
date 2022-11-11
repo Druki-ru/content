@@ -791,6 +791,5 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3317652](https://www.drupal.org/node/3317652) Исправлены ошибки PHPStan L0 для `Updater`.
 - [#3190406](https://www.drupal.org/node/3190406) PHPStan конфигурация теперь использует уровень проверок L1.
 - [#3317651](https://www.drupal.org/node/3317651) Исправлены ошибки PHPStan L0 для `DataReferenceBase`.
-- [#3319839](https://www.drupal.org/node/3319839) Исправлена неполадка из-за которой не отображались ошибки в процессе обновления.
 - [#3319683](https://www.drupal.org/node/3319683) Исправлены ошибки PHPStan L0 для `UserCreationTrait` и `AssertMailTrait`.
 - [#3320025](https://www.drupal.org/node/3320025) `phpstan-baseline.neon` синхронизирован с веткой 10.1.x. 
