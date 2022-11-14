@@ -467,7 +467,9 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3317885](https://www.drupal.org/node/3317885) Обновлены зависимости `jsdom`, `terser`, `minimist` и `underscore` на 02.11.2022.
 - [#3320370](https://www.drupal.org/node/3320370) Библиотека `tabbable` обновлена до версии 6.0.1.
 - [#3320515](https://www.drupal.org/node/3320515) Обновлены зависимости `cspell` и `nightwatch` на 11.11.2022.
+- [#3317879](https://www.drupal.org/node/3317879) Удалена зависимость `chromedriver`.
 - [#3320518](https://www.drupal.org/node/3320518) Обновлена зависимость `webpack` до версии 3.1.0.
+- [#3321003](https://www.drupal.org/node/3321003) Обновлена зависимость Shepherd до версии 9.1.1.
 
 ## JSON:API
 

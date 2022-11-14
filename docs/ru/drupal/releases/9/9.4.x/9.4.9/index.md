@@ -68,6 +68,10 @@ category:
 
 - [#3314134](https://www.drupal.org/node/3314134) В плагин миграции поля `taxonomy_term_reference` добавлена поддержка `i18n_taxonomy_term_reference_plain`.
 
+## Node
+
+- [#3010132](https://www.drupal.org/node/3010132) `NodeCreationTrait::createNode()` больше не требует `filter` модуля.
+
 ## Quickedit
 
 - [#3317515](https://www.drupal.org/node/3317515) Исправлены случайные провалы теста `CKEditor5IntegrationTest::testArticleNode()`.

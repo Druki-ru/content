@@ -471,7 +471,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3308783](https://www.drupal.org/node/3308783) Библиотека shepherd.js обновлена до версии 10.0.1.
 - [#3312481](https://www.drupal.org/node/3312481) Обновлена зависимость `browserlist`.
 - [#3306446](https://www.drupal.org/node/3306446) Nightwatch обновлён до версии 2.4.1.
-- [#3317879](https://www.drupal.org/node/3317879) Удалена зависимость `chromedriver`.
 - [#3319158](https://www.drupal.org/node/3319158) Зависимость `cspell` обновлена до версии 6.14.0.
 - [#3319819](https://www.drupal.org/node/3319819) Зависимость `eslint` обновлена до версии 8.27.
 - [#3317887](https://www.drupal.org/node/3317887) Обновлены зависимости PostCSS, `postcss-header` и `postcss-preset-env`.
