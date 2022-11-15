@@ -373,6 +373,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3317332](https://www.drupal.org/node/3317332) Удалён неактуальный `README.md`.
 - [#3315884](https://www.drupal.org/node/3315884) Исправлены опечатки в коде модуля.
 - [#3317330](https://www.drupal.org/node/3317330) Исправлены случайные провалы теста `ImageTest::testAltTextRequired()`.
+- [#3321191](https://www.drupal.org/node/3321191) CKEditor 5 обновлён до версии 35.3.1
 
 ## Colors
 
@@ -384,6 +385,7 @@ function mymodule_requirements_alter(array &$requirements): void {
   `CommentSelection` для корректной работы комментариев с различными типами 
   сущностей.
 - [#3308912](https://www.drupal.org/node/3308912) Улучшена производительность теста `CommentEditTest`.
+- [#2254175](https://www.drupal.org/node/2254175) Улучшена производительность теста `CommentPreviewTest`.
 
 ## Composer
 
@@ -396,6 +398,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3272110](https://www.drupal.org/node/3272110) `composer.json` файлы компонентов `Drupal\Component` приведены в 
   порядок и актуализированы.
 - [#3306946](https://www.drupal.org/node/3306946) Зависимости ядра обновлены на 01.09.2022.
+- [#3317873](https://www.drupal.org/node/3317873) Зависимости ядра обновлены на 15.11.2022.
 
 ## Configuration System
 
@@ -470,6 +473,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3317879](https://www.drupal.org/node/3317879) Удалена зависимость `chromedriver`.
 - [#3320518](https://www.drupal.org/node/3320518) Обновлена зависимость `webpack` до версии 3.1.0.
 - [#3321003](https://www.drupal.org/node/3321003) Обновлена зависимость Shepherd до версии 9.1.1.
+- [#3321002](https://www.drupal.org/node/3321002) Обновлена зависимость Babel до версии 7.20.2.
 
 ## JSON:API
 
