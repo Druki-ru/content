@@ -424,6 +424,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3317874](https://www.drupal.org/node/3317874) Зависимости ядра обновлены на 01.11.2022.
 - [#3319112](https://www.drupal.org/node/3319112) Зависимость `phpstan/phpstan` обновлена до версии 1.9.1.
 - [#3313486](https://www.drupal.org/node/3313486) `drupal/core` теперь запрашивает `composer-runtime-api`.
+- [#3319794](https://www.drupal.org/node/3319794) Для `drupal/core` RC временно установлено stability в `beta` из-за того что Symfony 6.2 ещё в бете.
 
 ## Database Logging
 

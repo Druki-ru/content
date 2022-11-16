@@ -29,6 +29,7 @@ category:
 - [#3313473](https://www.drupal.org/node/3313473) Плагины CKEditor 5 теперь поддерживают объявление через деривативы.
 - [#3318867](https://www.drupal.org/node/3318867) CKEditor 5 обновлён до версии 35.3.0.
 - [#3319735](https://www.drupal.org/node/3319735) Подсказка «Insert Drupal Media» заменена на «Insert Media».
+- [#3321191](https://www.drupal.org/node/3321191) CKEditor 5 обновлён до версии 35.3.1
 
 ## Claro
 
@@ -87,6 +88,7 @@ category:
 - [#3315227](https://www.drupal.org/node/3315227) Улучшена реализация ожиданий в `JSWebAssert` и `DocumentElement`.
 - [#3315362](https://www.drupal.org/node/3315362) Удалён дублирующий тест `JSWebWithWebDriverAssertTest`.
 - [#3316816](https://www.drupal.org/node/3316816) `DrupalSelenuim2Driver::setValue()` теперь вызывает события обновления инпута и формы.
+- [#3276213](https://www.drupal.org/node/3276213) Улучшена обработка `data-caption` с HTML разметкой.
 
 ## Прочие изменения
 

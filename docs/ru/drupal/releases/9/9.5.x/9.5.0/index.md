@@ -373,7 +373,6 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3317332](https://www.drupal.org/node/3317332) Удалён неактуальный `README.md`.
 - [#3315884](https://www.drupal.org/node/3315884) Исправлены опечатки в коде модуля.
 - [#3317330](https://www.drupal.org/node/3317330) Исправлены случайные провалы теста `ImageTest::testAltTextRequired()`.
-- [#3321191](https://www.drupal.org/node/3321191) CKEditor 5 обновлён до версии 35.3.1
 
 ## Colors
 
