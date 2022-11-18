@@ -425,6 +425,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3319112](https://www.drupal.org/node/3319112) Зависимость `phpstan/phpstan` обновлена до версии 1.9.1.
 - [#3313486](https://www.drupal.org/node/3313486) `drupal/core` теперь запрашивает `composer-runtime-api`.
 - [#3319794](https://www.drupal.org/node/3319794) Для `drupal/core` RC временно установлено stability в `beta` из-за того что Symfony 6.2 ещё в бете.
+- [#3321779](https://www.drupal.org/node/3321779) Зависимость `phpstan/phpstan` обновлена до версии 1.9.2.
+- [#3163123](https://www.drupal.org/node/3163123) Добавлена опциональная зависимость `ext-zip`.
 
 ## Database Logging
 
@@ -793,3 +795,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3317651](https://www.drupal.org/node/3317651) Исправлены ошибки PHPStan L0 для `DataReferenceBase`.
 - [#3319683](https://www.drupal.org/node/3319683) Исправлены ошибки PHPStan L0 для `UserCreationTrait` и `AssertMailTrait`.
 - [#3320025](https://www.drupal.org/node/3320025) `phpstan-baseline.neon` синхронизирован с веткой 10.1.x. 
+- [#3321425](https://www.drupal.org/node/3321425) Обновлён файл `dictionary.txt`.
+- [#3321945](https://www.drupal.org/node/3321945) Удалены проверки связанные с PHP 5.4 и более ранними версиями.
+- [#3321004](https://www.drupal.org/node/3321004) Из `fieldset.css` удалены хаки связанные с IE11.

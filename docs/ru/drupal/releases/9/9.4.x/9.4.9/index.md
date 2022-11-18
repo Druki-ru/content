@@ -30,6 +30,7 @@ category:
 - [#3318867](https://www.drupal.org/node/3318867) CKEditor 5 обновлён до версии 35.3.0.
 - [#3319735](https://www.drupal.org/node/3319735) Подсказка «Insert Drupal Media» заменена на «Insert Media».
 - [#3321191](https://www.drupal.org/node/3321191) CKEditor 5 обновлён до версии 35.3.1
+- [#3321771](https://www.drupal.org/node/3321771) Исправлено дублирование констант в `FundamentalCompatibilityConstraintValidator`. 
 
 ## Claro
 
@@ -43,6 +44,7 @@ category:
 ## Entity System
 
 - [#3145501](https://www.drupal.org/node/3145501) Исправлена неполадка, из-за которой вызов `::processMultivalueBaseFieldHandler()` мог приводить к ошибкам обновления.
+- [#3164428](https://www.drupal.org/node/3164428) Кеш сущностей теперь сохраняется не по одной, а сразу коллекцией.
 
 ## JSON:API
 
@@ -60,6 +62,8 @@ category:
 ## Media
 
 - [#3251647](https://www.drupal.org/node/3251647) Исправлена неполадка из-за которой могла некорректно отображаться форма ассоциаций значений при создании или редактировании медиа типа.
+- [#3260173](https://www.drupal.org/node/3260173) (отменено) Поле `uid` у медиа сущности теперь обязательное. 
+- [#3260175](https://www.drupal.org/node/3260175) Если для медиа сущности не указан владелец, то будет установлен анонимный пользователь.
 
 ## Media Library
 
@@ -101,3 +105,4 @@ category:
 - [#2503063](https://www.drupal.org/node/2503063) Тесты связанные с `XssTest` теперь запускаются в отдельном процессе.
 - [#3318985](https://www.drupal.org/node/3318985) Константа `REQUEST_TIME`, объявленая устаревшей, теперь будет удалена только в Drupal 11.
 - [#3319839](https://www.drupal.org/node/3319839) Исправлена неполадка из-за которой не отображались ошибки в процессе обновления.
+- [#3032078](https://www.drupal.org/node/3032078) Улучшен Twig кеш для избежания создания бесконечных дублей. 

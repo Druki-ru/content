@@ -518,6 +518,10 @@ function mymodule_requirements_alter(array &$requirements): void {
 
 - [#3278418](https://www.drupal.org/node/3278418) Тесты модуля больше не используют тему оформления Classy.
 
+## Menu
+
+- [#3321955](https://www.drupal.org/node/3321955) Улучшена проверка кеш-контекста для теста `DefaultMenuLinkTreeManipulatorsTest`.
+
 ## Migrate
 
 - [#2919158](https://www.drupal.org/node/2919158) В плагин маппинга ID `sql` добавлена зависимость `MigrationPluginManager`.
@@ -641,6 +645,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3299800](https://www.drupal.org/node/3299800) Исправлена неполадка в `CachePluginBase`, из-за которой могла не работать часть функционала если запросы был задекорирован.
 - [#3230681](https://www.drupal.org/node/3230681) `ViewsExposedFilterBlock::build()` теперь всегда возвращает массив в качестве результата.
 - [#2864115](https://www.drupal.org/node/2864115) Упрощен лейбл с «Create CSS class» на «Add HTML class».
+- [#3266243](https://www.drupal.org/node/3266243) Из плагинов модуля удалены вызовы `trigger_error()`.
 
 ## Views UI
 
@@ -768,3 +773,5 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3312198](https://www.drupal.org/node/3312198) `fast_404` теперь учитывает что некоторые маршруты отвечают HTTP 404 в зависимости от разных условий и через исключение.
 - [#3319780](https://www.drupal.org/node/3319780) longwave добавлен в MAINTAINERS.txt как временный менеджер релизов.
 - [#3320483](https://www.drupal.org/node/3320483) Удалена неиспользуемая переменная `$pos` из `system.install`.
+- [#3260401](https://www.drupal.org/node/3260401) Удалена настройка `block_interest_cohort` в связи с прекращением поддержки Google заголовка `Permissions-Policy`.
+- [#3308369](https://www.drupal.org/node/3308369) `.htaccess` предоставляемый Drupal теперь блокирует доступ к `yarn.lock` и `package.json` файлам.
