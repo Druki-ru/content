@@ -29,8 +29,9 @@ category:
 - [#3313473](https://www.drupal.org/node/3313473) Плагины CKEditor 5 теперь поддерживают объявление через деривативы.
 - [#3318867](https://www.drupal.org/node/3318867) CKEditor 5 обновлён до версии 35.3.0.
 - [#3319735](https://www.drupal.org/node/3319735) Подсказка «Insert Drupal Media» заменена на «Insert Media».
-- [#3321191](https://www.drupal.org/node/3321191) CKEditor 5 обновлён до версии 35.3.1
+- [#3321191](https://www.drupal.org/node/3321191) CKEditor 5 обновлён до версии 35.3.1.
 - [#3321771](https://www.drupal.org/node/3321771) Исправлено дублирование констант в `FundamentalCompatibilityConstraintValidator`. 
+- [#3283802](https://www.drupal.org/node/3283802) CKEditor 5 обновлён до версии 35.3.2.
 
 ## Claro
 
@@ -106,4 +107,6 @@ category:
 - [#2503063](https://www.drupal.org/node/2503063) Тесты связанные с `XssTest` теперь запускаются в отдельном процессе.
 - [#3318985](https://www.drupal.org/node/3318985) Константа `REQUEST_TIME`, объявленая устаревшей, теперь будет удалена только в Drupal 11.
 - [#3319839](https://www.drupal.org/node/3319839) Исправлена неполадка из-за которой не отображались ошибки в процессе обновления.
-- [#3032078](https://www.drupal.org/node/3032078) Улучшен Twig кеш для избежания создания бесконечных дублей. 
+- [#3032078](https://www.drupal.org/node/3032078) Улучшен Twig кеш для избежания создания бесконечных дублей.
+- [#3322763](https://www.drupal.org/node/3322763) Исправлены ошибки PHPStan L2 «PHPDoc tag @return with type Foo is incompatible with native type void.».
+- [#1120020](https://www.drupal.org/node/1120020) Улучшен код в модулях связанный с транзакциями БД.

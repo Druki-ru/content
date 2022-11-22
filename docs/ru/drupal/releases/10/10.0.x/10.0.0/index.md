@@ -427,6 +427,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3319794](https://www.drupal.org/node/3319794) Для `drupal/core` RC временно установлено stability в `beta` из-за того что Symfony 6.2 ещё в бете.
 - [#3321779](https://www.drupal.org/node/3321779) Зависимость `phpstan/phpstan` обновлена до версии 1.9.2.
 - [#3163123](https://www.drupal.org/node/3163123) Добавлена опциональная зависимость `ext-zip`.
+- [#3322984](https://www.drupal.org/node/3322984) Зависимости Symfony обновлены до 6.2.0-BETA3.
 
 ## Database Logging
 
@@ -636,6 +637,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3211131](https://www.drupal.org/node/3211131) Внесены улучшения в `DrupalStandardsListenerTrait`.
 - [#3281863](https://www.drupal.org/node/3281863) Внесены улучшения в `drupalInstallModule.js`.
 - [#3254199](https://www.drupal.org/node/3254199) Удалена проверка на совместимость с PHPUnit Prophecy.
+- [#3322986](https://www.drupal.org/node/3322986) Из `AssertMailTrait::assertMail()` удалён `$group` параметр.
 
 ## Прочие изменения
 
@@ -799,3 +801,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3321945](https://www.drupal.org/node/3321945) Удалены проверки связанные с PHP 5.4 и более ранними версиями.
 - [#3321004](https://www.drupal.org/node/3321004) Из `fieldset.css` удалены хаки связанные с IE11.
 - [#3226117](https://www.drupal.org/node/3226117) Исправлена неполадка из-за которой могли не отправляться письма если у адресата в имени используется запятая.
+- [#3322182](https://www.drupal.org/node/3322182) В `phpstan.neon.dist` добавлено исключение директории `sites`.
