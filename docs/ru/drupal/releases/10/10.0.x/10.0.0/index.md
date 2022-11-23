@@ -638,6 +638,8 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3281863](https://www.drupal.org/node/3281863) Внесены улучшения в `drupalInstallModule.js`.
 - [#3254199](https://www.drupal.org/node/3254199) Удалена проверка на совместимость с PHPUnit Prophecy.
 - [#3322986](https://www.drupal.org/node/3322986) Из `AssertMailTrait::assertMail()` удалён `$group` параметр.
+- [#3323036](https://www.drupal.org/node/3323036) Из `AssertContentTrait` удалён `$group` параметр.
+- [#3322961](https://www.drupal.org/node/3322961) Из `WebAssert` удалены проверки на количество аргументов, так как это теперь покрывает PHPStan.
 
 ## Прочие изменения
 
@@ -802,3 +804,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3321004](https://www.drupal.org/node/3321004) Из `fieldset.css` удалены хаки связанные с IE11.
 - [#3226117](https://www.drupal.org/node/3226117) Исправлена неполадка из-за которой могли не отправляться письма если у адресата в имени используется запятая.
 - [#3322182](https://www.drupal.org/node/3322182) В `phpstan.neon.dist` добавлено исключение директории `sites`.
+- [#3304267](https://www.drupal.org/node/3304267) В `drupal.js` `{Drupal~behaviorDetach}` помечен как опциональный.
