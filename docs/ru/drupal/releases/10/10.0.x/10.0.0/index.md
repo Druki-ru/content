@@ -500,6 +500,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3302096](https://www.drupal.org/node/3302096) Параметр `$module_handler` для 
   `\Drupal\migrate_drupal_ui\Form\ReviewForm::__construct` больше не имеет значение `NULL` по умолчанию.
 
+## Node
+
+- [#3323260](https://www.drupal.org/node/3323260) Использование функции `node_revision_load()` в ядре заменено на соответствующий метод сущности.
+
 ## Olivero
 
 - [#3255119](https://www.drupal.org/node/3255119) Для переменных, используемых для сеток, теперь используются CSS-переменные.
@@ -805,3 +809,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3226117](https://www.drupal.org/node/3226117) Исправлена неполадка из-за которой могли не отправляться письма если у адресата в имени используется запятая.
 - [#3322182](https://www.drupal.org/node/3322182) В `phpstan.neon.dist` добавлено исключение директории `sites`.
 - [#3304267](https://www.drupal.org/node/3304267) В `drupal.js` `{Drupal~behaviorDetach}` помечен как опциональный.
+- [#3319791](https://www.drupal.org/node/3319791) Прерывание события теперь происходит только если событие реализует `StoppableEventInterface`.
