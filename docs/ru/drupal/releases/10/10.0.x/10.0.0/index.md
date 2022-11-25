@@ -810,3 +810,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3322182](https://www.drupal.org/node/3322182) В `phpstan.neon.dist` добавлено исключение директории `sites`.
 - [#3304267](https://www.drupal.org/node/3304267) В `drupal.js` `{Drupal~behaviorDetach}` помечен как опциональный.
 - [#3319791](https://www.drupal.org/node/3319791) Прерывание события теперь происходит только если событие реализует `StoppableEventInterface`.
+- [#2927407](https://www.drupal.org/node/2927407) В `ajax.js` удалён бесполезный `return`.
