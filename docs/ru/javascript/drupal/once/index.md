@@ -164,6 +164,10 @@ myfeature:
   Drupal.behaviors.myfeature = {
     attach(context) {
       const elements = once('myfeature', '.myfeature', context);
+      elements.forEach((el) => {
+        // что-то делаем с элементами
+        console.log(el);
+      });
     }
   };
 }(Drupal, once));
