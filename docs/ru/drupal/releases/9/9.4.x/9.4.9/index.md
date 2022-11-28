@@ -91,6 +91,7 @@ category:
 - [#3284983](https://www.drupal.org/node/3284983) Исправлена неполадка из-за которой `FilterPluginBase::groupForm()` мог вызывать запрос перевода на уже переведённую строку.
 - [#3247121](https://www.drupal.org/node/3247121) Исправлена неполадка из-за которой агрегация `nid` совместно с `COUNT()` приводило к синтаксической ошибке.
 - [#2689923](https://www.drupal.org/node/2689923) Улучшена документация для `Views::getViewsAsOptions()`.
+- [#3318108](https://www.drupal.org/node/3318108) Исправлена неполадка из-за которой контекстуальный фильтр с несколькими ролями мог не сохраняться. 
 
 ## Тестирование
 
@@ -114,3 +115,4 @@ category:
 - [#3032078](https://www.drupal.org/node/3032078) Улучшен Twig кеш для избежания создания бесконечных дублей.
 - [#3322763](https://www.drupal.org/node/3322763) Исправлены ошибки PHPStan L2 «PHPDoc tag @return with type Foo is incompatible with native type void.».
 - [#1120020](https://www.drupal.org/node/1120020) Улучшен код в модулях связанный с транзакциями БД.
+- [#3322485](https://www.drupal.org/node/3322485) Улучшена документация для `EntityInterface::toLink()`.

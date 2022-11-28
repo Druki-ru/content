@@ -428,6 +428,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3321779](https://www.drupal.org/node/3321779) Зависимость `phpstan/phpstan` обновлена до версии 1.9.2.
 - [#3163123](https://www.drupal.org/node/3163123) Добавлена опциональная зависимость `ext-zip`.
 - [#3322984](https://www.drupal.org/node/3322984) Зависимости Symfony обновлены до 6.2.0-BETA3.
+- [#3323741](https://www.drupal.org/node/3323741) Зависимости Symfony обновлены до RC1.
 
 ## Database Logging
 
@@ -478,6 +479,12 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3319158](https://www.drupal.org/node/3319158) Зависимость `cspell` обновлена до версии 6.14.0.
 - [#3319819](https://www.drupal.org/node/3319819) Зависимость `eslint` обновлена до версии 8.27.
 - [#3317887](https://www.drupal.org/node/3317887) Обновлены зависимости PostCSS, `postcss-header` и `postcss-preset-env`.
+- [#3323944](https://www.drupal.org/node/3323944) Зависимости JavaScript обновлены на 28.11.2022.
+- [#2894269](https://www.drupal.org/node/2894269) В документации к JavaScript `bool` был заменён на `boolean`.
+
+## JSON:API
+
+- [#3283929](https://www.drupal.org/node/3283929) Исправлена опечатка в `jsonapi.api.php`.
 
 ## Language
 
@@ -486,6 +493,10 @@ Drupal прекращает поддержку всех версий UC Browser 
 ## Libraries System
 
 - [#3101620](https://www.drupal.org/node/3101620) Удалена устаревшая поддержка условий для IE.
+
+## Locale
+
+- [#3323057](https://www.drupal.org/node/3323057) Исправлены ошибки в документации функций `locale.compare.inc`.
 
 ## Migrate
 
@@ -644,6 +655,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3322986](https://www.drupal.org/node/3322986) Из `AssertMailTrait::assertMail()` удалён `$group` параметр.
 - [#3323036](https://www.drupal.org/node/3323036) Из `AssertContentTrait` удалён `$group` параметр.
 - [#3322961](https://www.drupal.org/node/3322961) Из `WebAssert` удалены проверки на количество аргументов, так как это теперь покрывает PHPStan.
+- [#3301288](https://www.drupal.org/node/3301288) Удалён метод `DrupalTestBrowser::filterResponse()`.
 
 ## Прочие изменения
 
@@ -811,3 +823,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3304267](https://www.drupal.org/node/3304267) В `drupal.js` `{Drupal~behaviorDetach}` помечен как опциональный.
 - [#3319791](https://www.drupal.org/node/3319791) Прерывание события теперь происходит только если событие реализует `StoppableEventInterface`.
 - [#2927407](https://www.drupal.org/node/2927407) В `ajax.js` удалён бесполезный `return`.
+- [#3323855](https://www.drupal.org/node/3323855) Улучшена документация для `MenuLinkTreeElement`.

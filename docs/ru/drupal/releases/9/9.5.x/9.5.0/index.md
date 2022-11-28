@@ -598,6 +598,10 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#2826592](https://www.drupal.org/node/2826592) После изменения существующего термина таксономии пользователь будет перенаправлен на страницу термина.
 - [#3317758](https://www.drupal.org/node/3317758) `Term::getWeight()` теперь всегда возвращает `int`.
 
+## Telephone
+
+- [#2862922](https://www.drupal.org/node/2862922) Добавлена новая константа `TelephoneItem::MAX_LENGTH` с макс длиной для значения (256) и теперь используется вместо фиксированного значения.
+
 ## Theme System
 
 - [#3285131](https://www.drupal.org/node/3285131) Инициализация `Drupal\Core\Theme\Registry::__construct()` без передачи параметра `$runtime_cache` объявлена устаревшей.
@@ -672,6 +676,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3183423](https://www.drupal.org/node/3183423) Удалён метод `\Drupal\FunctionalJavascriptTests\DrupalSelenium2Driver::attachFile()`.
 - [#3256356](https://www.drupal.org/node/3256356) Улучшена интеграция браузерных тестов с Xdebug 3.
 - [#3317504](https://www.drupal.org/node/3317504) Из `run-tests.sh` удалено упоминание что можно запускать тест конкретного метода.
+- [#3259751](https://www.drupal.org/node/3259751) Добавлена возможность передачи аргументов в `chromedriver` при помощи env переменной `DRUPAL_TEST_WEBDRIVER_CLI_ARGS`.
 
 ## Прочие изменения
 
@@ -775,3 +780,5 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3320483](https://www.drupal.org/node/3320483) Удалена неиспользуемая переменная `$pos` из `system.install`.
 - [#3260401](https://www.drupal.org/node/3260401) Удалена настройка `block_interest_cohort` в связи с прекращением поддержки Google заголовка `Permissions-Policy`.
 - [#3308369](https://www.drupal.org/node/3308369) `.htaccess` предоставляемый Drupal теперь блокирует доступ к `yarn.lock` и `package.json` файлам.
+- [#3205578](https://www.drupal.org/node/3205578) Из репозитория удалён файл `/core/scripts/transliteration_data.php.txt`.
+- [#3312089](https://www.drupal.org/node/3312089) `commit-code-check.sh` теперь запускает PHPCS в параллельном процессе.
