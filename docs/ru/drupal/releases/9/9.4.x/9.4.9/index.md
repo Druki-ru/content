@@ -82,6 +82,10 @@ category:
 
 - [#3010132](https://www.drupal.org/node/3010132) `NodeCreationTrait::createNode()` больше не требует `filter` модуля.
 
+## Taxonomy
+
+- [#2898903](https://www.drupal.org/node/2898903) Исправлена неполадка из-за которой могла теряться информация о родительском термине при редактировании.
+
 ## Quickedit
 
 - [#3317515](https://www.drupal.org/node/3317515) Исправлены случайные провалы теста `CKEditor5IntegrationTest::testArticleNode()`.
@@ -100,6 +104,7 @@ category:
 - [#3315362](https://www.drupal.org/node/3315362) Удалён дублирующий тест `JSWebWithWebDriverAssertTest`.
 - [#3316816](https://www.drupal.org/node/3316816) `DrupalSelenuim2Driver::setValue()` теперь вызывает события обновления инпута и формы.
 - [#3276213](https://www.drupal.org/node/3276213) Улучшена обработка `data-caption` с HTML разметкой.
+- [#3159842](https://www.drupal.org/node/3159842) Улучшена документация для параметра `BROWSERTEST_OUTPUT_BASE_URL`.
 
 ## Прочие изменения
 
@@ -116,3 +121,4 @@ category:
 - [#3322763](https://www.drupal.org/node/3322763) Исправлены ошибки PHPStan L2 «PHPDoc tag @return with type Foo is incompatible with native type void.».
 - [#1120020](https://www.drupal.org/node/1120020) Улучшен код в модулях связанный с транзакциями БД.
 - [#3322485](https://www.drupal.org/node/3322485) Улучшена документация для `EntityInterface::toLink()`.
+- [#3268818](https://www.drupal.org/node/3268818) Исправлены проблемы PHPCS «Drupal.Commenting.DocComment.ShortSingleLine».

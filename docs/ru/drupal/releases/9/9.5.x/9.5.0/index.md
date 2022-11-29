@@ -336,6 +336,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3061148](https://www.drupal.org/node/3061148) Исправлена неполадка, из-за которой заголовки отключеных блоков проходили через двойное экранирование.
 - [#3301663](https://www.drupal.org/node/3301663) Из метода `\Drupal\block\BlockForm::buildVisibilityInterface()` 
   удалена проверка устаревшего условия `node_type`.
+- [#2779321](https://www.drupal.org/node/2779321) Исправлена неполадка из-за которой сохранение пустой структуры блоков могло привести к поломке всех блок сущностей.
 
 ## Block Content
 
@@ -405,10 +406,15 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3295735](https://www.drupal.org/node/3295735) Улучшена работа теста `ConfigImportUITest` с темой Olivero.
 - [#2232051](https://www.drupal.org/node/2232051) Запись конфигурации в файл больше не вызывает `chmod()`.
 
+## Database Log
+
+- [#2888872](https://www.drupal.org/node/2888872) Форма фильтрации больше не отображается если нет логов.
+
 ## Database System
 
 - [#3312439](https://www.drupal.org/node/3312439) Исправлены тайпхинты в `@return` для `StatementInterface`.
 - [#3231950](https://www.drupal.org/node/3231950) Тесты связанные с БД были разделены на тесты «ядра» (API) и драйверов баз данных.
+- [#3320240](https://www.drupal.org/node/3320240) «count» запросы теперь возвращают `int` вместо `string`.
 
 ## Dependency Injection
 
@@ -425,6 +431,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3266589](https://www.drupal.org/node/3266589) Удалён заголовок `Link` из ответа страницы сущности.
 - [#3311562](https://www.drupal.org/node/3311562) (отменено) В классы `Condition` и `ConditionAggregate` добавлено свойство `$sqlQuery`.
 - [#3266287](https://www.drupal.org/node/3266287) Классы бандлов теперь могут объявлять свои собственные поля в `::bundleFieldDefinitions()`.
+- [#3067024](https://www.drupal.org/node/3067024) Добавлен тест для проверки удаления ревизионной сущности для которой больше нет кодовой базы.
 
 ## Field
 
@@ -451,6 +458,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 ## Forum
 
 - [#2774399](https://www.drupal.org/node/2774399) Улучшена проверка на возможность удаления модуля.
+- [#3196619](https://www.drupal.org/node/3196619) Удалено использование `forum_controller` при создании нового «форума».
 
 ## JavaScript
 
@@ -782,3 +790,4 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3308369](https://www.drupal.org/node/3308369) `.htaccess` предоставляемый Drupal теперь блокирует доступ к `yarn.lock` и `package.json` файлам.
 - [#3205578](https://www.drupal.org/node/3205578) Из репозитория удалён файл `/core/scripts/transliteration_data.php.txt`.
 - [#3312089](https://www.drupal.org/node/3312089) `commit-code-check.sh` теперь запускает PHPCS в параллельном процессе.
+- [#2514582](https://www.drupal.org/node/2514582) Добавлена документация по ленивым сервисам.

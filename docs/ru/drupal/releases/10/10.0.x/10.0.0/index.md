@@ -429,6 +429,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3163123](https://www.drupal.org/node/3163123) Добавлена опциональная зависимость `ext-zip`.
 - [#3322984](https://www.drupal.org/node/3322984) Зависимости Symfony обновлены до 6.2.0-BETA3.
 - [#3323741](https://www.drupal.org/node/3323741) Зависимости Symfony обновлены до RC1.
+- [#3324215](https://www.drupal.org/node/3324215) Зависимость `composer/pcre` обновлена до 3.1.0.
 
 ## Database Logging
 
@@ -824,3 +825,4 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3319791](https://www.drupal.org/node/3319791) Прерывание события теперь происходит только если событие реализует `StoppableEventInterface`.
 - [#2927407](https://www.drupal.org/node/2927407) В `ajax.js` удалён бесполезный `return`.
 - [#3323855](https://www.drupal.org/node/3323855) Улучшена документация для `MenuLinkTreeElement`.
+- [#3319582](https://www.drupal.org/node/3319582) Удалены бесполезные параметры при вызове функций и методов.
