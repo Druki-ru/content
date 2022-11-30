@@ -82,6 +82,10 @@ category:
 
 - [#3010132](https://www.drupal.org/node/3010132) `NodeCreationTrait::createNode()` больше не требует `filter` модуля.
 
+## Serialization
+
+- [#3174108](https://www.drupal.org/node/3174108) Исправлены ошибки в документации к методу `FieldableEntityNormalizerTrait::extractBundleData()`.
+
 ## Taxonomy
 
 - [#2898903](https://www.drupal.org/node/2898903) Исправлена неполадка из-за которой могла теряться информация о родительском термине при редактировании.

@@ -365,6 +365,45 @@ Drupal прекращает поддержку всех версий UC Browser 
 {% endblock content %}
 ```
 
+## Для сервисов предоставляемых ядром добавлены синонимы для автомонитрования
+
+- [#3049525](https://www.drupal.org/node/3049525) 
+
+Сервисы предоставляемые ядром Drupal теперь имеют синонимы для автомониторования. Это означает что вы можете применять
+автомонитирование с сервисами из ядра.
+
+**Конструктор:**
+
+```php
+public function __construct(ModuleHandlerInterface $module_handler, TranslationInterface $string_translation, ControllerResolverInterface $controller_resolver) {
+```
+
+Пример `MODULENAME.services.yml` **ранее**:
+
+```yaml
+  user.permissions:
+    class: Drupal\user\PermissionHandler
+    arguments: ['@module_handler', '@string_translation', '@controller_resolver']
+```
+
+Пример `MODULENAME.services.yml` **сейчас**:
+
+```yaml
+  user.permissions:
+    class: Drupal\user\PermissionHandler
+    autowire: true
+```
+
+Вы также можете включить автомонтирование для всех сервисов модуля:
+
+```yaml
+services:
+  _defaults:
+    autowire: true
+  user.permissions:
+    class: Drupal\user\PermissionHandler
+```
+
 ## CKEditor 5
 
 - [#3261585](https://www.drupal.org/node/3261585) Удалены предупреждения для Internet Explorer 11, так как Drupal 10 больше его не поддерживает.
@@ -373,6 +412,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3301631](https://www.drupal.org/node/3301631) Исправлена неполадка с модальными окнами с CKEditor 35.0.1.
 - [#3309318](https://www.drupal.org/node/3309318) Из модуля удалён код для совместимости с IE11.
 - [#3309800](https://www.drupal.org/node/3309800) В файле `ckeditor5.js` исправлены ошибки стандартов кодирования.
+- [#3273532](https://www.drupal.org/node/3273532) В случае возникновении ошибок в `ckeditor5.js` теперь в консоль выводится сообщение для разработчиков, как провести отладку проблемы. 
 
 ## Claro
 
@@ -430,6 +470,9 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3322984](https://www.drupal.org/node/3322984) Зависимости Symfony обновлены до 6.2.0-BETA3.
 - [#3323741](https://www.drupal.org/node/3323741) Зависимости Symfony обновлены до RC1.
 - [#3324215](https://www.drupal.org/node/3324215) Зависимость `composer/pcre` обновлена до 3.1.0.
+- [#3314632](https://www.drupal.org/node/3314632) Зависимость `phpspec/prophecy` обновлена до версии 1.16.0.
+- [#3324213](https://www.drupal.org/node/3324213) Зависимости Symfony обновлены до RC2.
+- [#3322989](https://www.drupal.org/node/3322989) Зависимости ядра обновлены на 30.11.2022.
 
 ## Database Logging
 
