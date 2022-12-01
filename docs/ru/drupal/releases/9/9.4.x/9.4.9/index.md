@@ -50,6 +50,7 @@ category:
 
 - [#3145501](https://www.drupal.org/node/3145501) Исправлена неполадка, из-за которой вызов `::processMultivalueBaseFieldHandler()` мог приводить к ошибкам обновления.
 - [#3164428](https://www.drupal.org/node/3164428) Кеш сущностей теперь сохраняется не по одной, а сразу коллекцией.
+- [#3303329](https://www.drupal.org/node/3303329) Исправлены ошибки в документации `NoCorrespondingEntityClassException`.
 
 ## JSON:API
 
@@ -93,6 +94,10 @@ category:
 ## Quickedit
 
 - [#3317515](https://www.drupal.org/node/3317515) Исправлены случайные провалы теста `CKEditor5IntegrationTest::testArticleNode()`.
+
+## User
+
+- [#3265724](https://www.drupal.org/node/3265724) Из `UserViewsData` удалена неактуальная справка.
 
 ## Views
 

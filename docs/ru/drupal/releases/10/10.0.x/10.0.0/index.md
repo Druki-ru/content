@@ -473,6 +473,7 @@ services:
 - [#3314632](https://www.drupal.org/node/3314632) Зависимость `phpspec/prophecy` обновлена до версии 1.16.0.
 - [#3324213](https://www.drupal.org/node/3324213) Зависимости Symfony обновлены до RC2.
 - [#3322989](https://www.drupal.org/node/3322989) Зависимости ядра обновлены на 30.11.2022.
+- [#3319426](https://www.drupal.org/node/3319426) Зависимости Symfony обновлены до стабильной версии 6.2.
 
 ## Database Logging
 
@@ -869,3 +870,4 @@ services:
 - [#2927407](https://www.drupal.org/node/2927407) В `ajax.js` удалён бесполезный `return`.
 - [#3323855](https://www.drupal.org/node/3323855) Улучшена документация для `MenuLinkTreeElement`.
 - [#3319582](https://www.drupal.org/node/3319582) Удалены бесполезные параметры при вызове функций и методов.
+- [#3319173](https://www.drupal.org/node/3319173) Из CSS файлов удалены префиксы для keyframes.

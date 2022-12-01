@@ -400,6 +400,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3306946](https://www.drupal.org/node/3306946) Зависимости ядра обновлены на 01.09.2022.
 - [#3317873](https://www.drupal.org/node/3317873) Зависимости ядра обновлены на 15.11.2022.
 - [#3269457](https://www.drupal.org/node/3269457) Зависимость `laminas/escaper` обновлена до версии 2.10.0.
+- [#3324544](https://www.drupal.org/node/3324544) Зависимости ядра обновлены на 30.11.2022.
 
 ## Configuration System
 
@@ -482,6 +483,8 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3320518](https://www.drupal.org/node/3320518) Обновлена зависимость `webpack` до версии 3.1.0.
 - [#3321003](https://www.drupal.org/node/3321003) Обновлена зависимость Shepherd до версии 9.1.1.
 - [#3321002](https://www.drupal.org/node/3321002) Обновлена зависимость Babel до версии 7.20.2.
+- [#3324378](https://www.drupal.org/node/3324378) Зависимости ядра обновлены на 01.12.2022.
+- [#3324723](https://www.drupal.org/node/3324723) Зависимость `cspell` обновлена до версии 6.15.1.
 
 ## JSON:API
 
@@ -791,3 +794,5 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3205578](https://www.drupal.org/node/3205578) Из репозитория удалён файл `/core/scripts/transliteration_data.php.txt`.
 - [#3312089](https://www.drupal.org/node/3312089) `commit-code-check.sh` теперь запускает PHPCS в параллельном процессе.
 - [#2514582](https://www.drupal.org/node/2514582) Добавлена документация по ленивым сервисам.
+- [#3324540](https://www.drupal.org/node/3324540) Исправлены ошибки PHPCS приводящие к провалу проверки коммитов.
+- [#3032746](https://www.drupal.org/node/3032746) Улучшена документация для настройки `reverse_proxy_addresses`.
