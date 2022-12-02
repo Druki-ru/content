@@ -374,6 +374,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3317332](https://www.drupal.org/node/3317332) Удалён неактуальный `README.md`.
 - [#3315884](https://www.drupal.org/node/3315884) Исправлены опечатки в коде модуля.
 - [#3317330](https://www.drupal.org/node/3317330) Исправлены случайные провалы теста `ImageTest::testAltTextRequired()`.
+- [#3273532](https://www.drupal.org/node/3273532) В случае возникновении ошибок в `ckeditor5.js` теперь в консоль выводится сообщение для разработчиков, как провести отладку проблемы.
 
 ## Colors
 
