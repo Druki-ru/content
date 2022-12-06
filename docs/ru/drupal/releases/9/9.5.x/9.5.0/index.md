@@ -324,6 +324,45 @@ function mymodule_requirements_alter(array &$requirements): void {
 }
 ```
 
+## Для сервисов предоставляемых ядром добавлены синонимы для автомонитрования
+
+- [#3049525](https://www.drupal.org/node/3049525)
+
+Сервисы предоставляемые ядром Drupal теперь имеют синонимы для автомониторования. Это означает что вы можете применять
+автомонитирование с сервисами из ядра.
+
+**Конструктор:**
+
+```php
+public function __construct(ModuleHandlerInterface $module_handler, TranslationInterface $string_translation, ControllerResolverInterface $controller_resolver) {
+```
+
+Пример `MODULENAME.services.yml` **ранее**:
+
+```yaml
+  user.permissions:
+    class: Drupal\user\PermissionHandler
+    arguments: ['@module_handler', '@string_translation', '@controller_resolver']
+```
+
+Пример `MODULENAME.services.yml` **сейчас**:
+
+```yaml
+  user.permissions:
+    class: Drupal\user\PermissionHandler
+    autowire: true
+```
+
+Вы также можете включить автомонтирование для всех сервисов модуля:
+
+```yaml
+services:
+  _defaults:
+    autowire: true
+  user.permissions:
+    class: Drupal\user\PermissionHandler
+```
+
 ## Big Pipe
 
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
@@ -486,6 +525,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3321002](https://www.drupal.org/node/3321002) Обновлена зависимость Babel до версии 7.20.2.
 - [#3324378](https://www.drupal.org/node/3324378) Зависимости ядра обновлены на 01.12.2022.
 - [#3324723](https://www.drupal.org/node/3324723) Зависимость `cspell` обновлена до версии 6.15.1.
+- [#3325114](https://www.drupal.org/node/3325114) Зависимости `cspell`, `eslint`, `postcss-import`, `styleint`, `terser` и `webpack-cli` обновлены до последних актуальных версий на 06.12.2022.
 
 ## JSON:API
 
@@ -797,3 +837,4 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#2514582](https://www.drupal.org/node/2514582) Добавлена документация по ленивым сервисам.
 - [#3324540](https://www.drupal.org/node/3324540) Исправлены ошибки PHPCS приводящие к провалу проверки коммитов.
 - [#3032746](https://www.drupal.org/node/3032746) Улучшена документация для настройки `reverse_proxy_addresses`.
+- [#3279725](https://www.drupal.org/node/3279725) Для типа содержимого по умолчанию «Article» улучшено отображение по умолчанию (настройки полей).

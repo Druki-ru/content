@@ -365,45 +365,6 @@ Drupal прекращает поддержку всех версий UC Browser 
 {% endblock content %}
 ```
 
-## Для сервисов предоставляемых ядром добавлены синонимы для автомонитрования
-
-- [#3049525](https://www.drupal.org/node/3049525) 
-
-Сервисы предоставляемые ядром Drupal теперь имеют синонимы для автомониторования. Это означает что вы можете применять
-автомонитирование с сервисами из ядра.
-
-**Конструктор:**
-
-```php
-public function __construct(ModuleHandlerInterface $module_handler, TranslationInterface $string_translation, ControllerResolverInterface $controller_resolver) {
-```
-
-Пример `MODULENAME.services.yml` **ранее**:
-
-```yaml
-  user.permissions:
-    class: Drupal\user\PermissionHandler
-    arguments: ['@module_handler', '@string_translation', '@controller_resolver']
-```
-
-Пример `MODULENAME.services.yml` **сейчас**:
-
-```yaml
-  user.permissions:
-    class: Drupal\user\PermissionHandler
-    autowire: true
-```
-
-Вы также можете включить автомонтирование для всех сервисов модуля:
-
-```yaml
-services:
-  _defaults:
-    autowire: true
-  user.permissions:
-    class: Drupal\user\PermissionHandler
-```
-
 ## CKEditor 5
 
 - [#3261585](https://www.drupal.org/node/3261585) Удалены предупреждения для Internet Explorer 11, так как Drupal 10 больше его не поддерживает.
@@ -588,6 +549,7 @@ services:
 ## PosgreSQL DB driver
 
 - [#3214922](https://www.drupal.org/node/3214922) PostgreSQL драйвер теперь проверяет наличие расширения `pg_tgrm` и выдаёт ошибку если он отсутствует.
+- [#3325295](https://www.drupal.org/node/3325295) Минимальная версия PostgreSQL увеличена до 12.
 
 ## Quick Edit
 
@@ -871,3 +833,4 @@ services:
 - [#3319582](https://www.drupal.org/node/3319582) Удалены бесполезные параметры при вызове функций и методов.
 - [#3319173](https://www.drupal.org/node/3319173) Из CSS файлов удалены префиксы для keyframes.
 - [#3294914](https://www.drupal.org/node/3294914) Улучшена информация об удалённых модулях и темах в ядре.
+- [#3266004](https://www.drupal.org/node/3266004) Актуализирована информация по обновлению в `UPDATE.txt`.

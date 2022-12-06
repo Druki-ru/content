@@ -46,6 +46,10 @@ category:
 
 - [#3312641](https://www.drupal.org/node/3312641) Возвращён функционал создания временных таблиц `Connection::queryTemporary()`.
 
+## Datetime
+
+- [#2314645](https://www.drupal.org/node/2314645) Исправлен тип свойства `DateFormat::$pattern`.
+
 ## Entity System
 
 - [#3145501](https://www.drupal.org/node/3145501) Исправлена неполадка, из-за которой вызов `::processMultivalueBaseFieldHandler()` мог приводить к ошибкам обновления.
