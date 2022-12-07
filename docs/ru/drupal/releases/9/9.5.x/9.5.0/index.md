@@ -838,3 +838,5 @@ services:
 - [#3324540](https://www.drupal.org/node/3324540) Исправлены ошибки PHPCS приводящие к провалу проверки коммитов.
 - [#3032746](https://www.drupal.org/node/3032746) Улучшена документация для настройки `reverse_proxy_addresses`.
 - [#3279725](https://www.drupal.org/node/3279725) Для типа содержимого по умолчанию «Article» улучшено отображение по умолчанию (настройки полей).
+- [#3255637](https://www.drupal.org/node/3255637) Передача `NULL` в качестве аргумента для `Html::escape()`, `Html::decodeEntities()` а также `FormattableMarkup::placeholderEscape()` объявлено устаревшим.
+- [#3324801](https://www.drupal.org/node/3324801) Исправлены ошибки PHPStan L2 «Свойство Foo::$bar имеет неизвестный тип Baz».

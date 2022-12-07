@@ -434,6 +434,7 @@ Drupal прекращает поддержку всех версий UC Browser 
 - [#3324213](https://www.drupal.org/node/3324213) Зависимости Symfony обновлены до RC2.
 - [#3322989](https://www.drupal.org/node/3322989) Зависимости ядра обновлены на 30.11.2022.
 - [#3319426](https://www.drupal.org/node/3319426) Зависимости Symfony обновлены до стабильной версии 6.2.
+- [#3325648](https://www.drupal.org/node/3325648) Зависимости Symfony обновлены до версии 6.2.1.
 
 ## Database Logging
 
