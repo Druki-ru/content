@@ -13,11 +13,7 @@ category:
   order: 9
 ---
 
-<Aside type="warning">
-
-Данная версия находится в разработке и не предназначена для использования.
-
-</Aside>
+**Дата релиза:** 7 декабря 2022
 
 ## CKEditor 5
 
@@ -135,3 +131,7 @@ category:
 - [#1120020](https://www.drupal.org/node/1120020) Улучшен код в модулях связанный с транзакциями БД.
 - [#3322485](https://www.drupal.org/node/3322485) Улучшена документация для `EntityInterface::toLink()`.
 - [#3268818](https://www.drupal.org/node/3268818) Исправлены проблемы PHPCS «Drupal.Commenting.DocComment.ShortSingleLine».
+
+## Ссылки
+
+- [Drupal 9.4.9](https://www.drupal.org/project/drupal/releases/9.4.9) (англ.), drupal.org, 8 декабря 2022
