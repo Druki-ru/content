@@ -487,6 +487,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3324378](https://www.drupal.org/node/3324378) Зависимости ядра обновлены на 01.12.2022.
 - [#3324723](https://www.drupal.org/node/3324723) Зависимость `cspell` обновлена до версии 6.15.1.
 - [#3325114](https://www.drupal.org/node/3325114) Зависимости `cspell`, `eslint`, `postcss-import`, `styleint`, `terser` и `webpack-cli` обновлены до последних актуальных версий на 06.12.2022.
+- [#3325517](https://www.drupal.org/node/3325517) Зависимость `vm2` обновлена до версии 3.9.12.
 
 ## JSON:API
 
@@ -603,6 +604,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 ## System
 
 - [#3281434](https://www.drupal.org/node/3281434) Тесты модуля больше не используют Bartik и Seven.
+- [#2787529](https://www.drupal.org/node/2787529) Добавлена схема конфигурации для плагина-условия `current_theme`.
 
 ## Taxonomy
 
