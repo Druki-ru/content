@@ -324,45 +324,6 @@ function mymodule_requirements_alter(array &$requirements): void {
 }
 ```
 
-## Для сервисов предоставляемых ядром добавлены синонимы для автомонитрования
-
-- [#3049525](https://www.drupal.org/node/3049525)
-
-Сервисы предоставляемые ядром Drupal теперь имеют синонимы для автомониторования. Это означает что вы можете применять
-автомонитирование с сервисами из ядра.
-
-**Конструктор:**
-
-```php
-public function __construct(ModuleHandlerInterface $module_handler, TranslationInterface $string_translation, ControllerResolverInterface $controller_resolver) {
-```
-
-Пример `MODULENAME.services.yml` **ранее**:
-
-```yaml
-  user.permissions:
-    class: Drupal\user\PermissionHandler
-    arguments: ['@module_handler', '@string_translation', '@controller_resolver']
-```
-
-Пример `MODULENAME.services.yml` **сейчас**:
-
-```yaml
-  user.permissions:
-    class: Drupal\user\PermissionHandler
-    autowire: true
-```
-
-Вы также можете включить автомонтирование для всех сервисов модуля:
-
-```yaml
-services:
-  _defaults:
-    autowire: true
-  user.permissions:
-    class: Drupal\user\PermissionHandler
-```
-
 ## Big Pipe
 
 - [#3294720](https://www.drupal.org/node/3294720) `Drupal.attachBehaviors()` 
@@ -840,3 +801,5 @@ services:
 - [#3279725](https://www.drupal.org/node/3279725) Для типа содержимого по умолчанию «Article» улучшено отображение по умолчанию (настройки полей).
 - [#3255637](https://www.drupal.org/node/3255637) Передача `NULL` в качестве аргумента для `Html::escape()`, `Html::decodeEntities()` а также `FormattableMarkup::placeholderEscape()` объявлено устаревшим.
 - [#3324801](https://www.drupal.org/node/3324801) Исправлены ошибки PHPStan L2 «Свойство Foo::$bar имеет неизвестный тип Baz».
+- [#3324062](https://www.drupal.org/node/3324062) Исправлена регрессия в `Drupal.ajax`.
+- [#3266006](https://www.drupal.org/node/3266006) Актуализирован `COPYRIGHT.txt`.
