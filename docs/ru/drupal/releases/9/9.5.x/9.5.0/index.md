@@ -492,6 +492,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 ## JSON:API
 
 - [#3127883](https://www.drupal.org/node/3127883) Улучшено сообщение об ошибке, если поле указано с опечаткой.
+- [#3213752](https://www.drupal.org/node/3213752) Удалён неиспользуемый код в `JsonApiDocumentTopLevelNormalizerTest`.
 
 ## Help Topics
 
@@ -666,6 +667,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3230681](https://www.drupal.org/node/3230681) `ViewsExposedFilterBlock::build()` теперь всегда возвращает массив в качестве результата.
 - [#2864115](https://www.drupal.org/node/2864115) Упрощен лейбл с «Create CSS class» на «Add HTML class».
 - [#3266243](https://www.drupal.org/node/3266243) Из плагинов модуля удалены вызовы `trigger_error()`.
+- [#3259090](https://www.drupal.org/node/3259090) Исправлена неполадка со сравнением значений на PHP 8.0.
 
 ## Views UI
 
