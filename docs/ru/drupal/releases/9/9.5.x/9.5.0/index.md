@@ -668,6 +668,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#2864115](https://www.drupal.org/node/2864115) Упрощен лейбл с «Create CSS class» на «Add HTML class».
 - [#3266243](https://www.drupal.org/node/3266243) Из плагинов модуля удалены вызовы `trigger_error()`.
 - [#3259090](https://www.drupal.org/node/3259090) Исправлена неполадка со сравнением значений на PHP 8.0.
+- [#2810985](https://www.drupal.org/node/2810985) Удалены повторные проверки.
 
 ## Views UI
 
@@ -807,3 +808,5 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3324801](https://www.drupal.org/node/3324801) Исправлены ошибки PHPStan L2 «Свойство Foo::$bar имеет неизвестный тип Baz».
 - [#3324062](https://www.drupal.org/node/3324062) Исправлена регрессия в `Drupal.ajax`.
 - [#3266006](https://www.drupal.org/node/3266006) Актуализирован `COPYRIGHT.txt`.
+- [#3325772](https://www.drupal.org/node/3325772) Исправлены некорректные тайпхинты в `SchemaCheckTrait`.
+- [#2828724](https://www.drupal.org/node/2828724) Улучшена логика для одноразовых ссылок входа.
