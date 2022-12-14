@@ -489,6 +489,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3325114](https://www.drupal.org/node/3325114) Зависимости `cspell`, `eslint`, `postcss-import`, `styleint`, `terser` и `webpack-cli` обновлены до последних актуальных версий на 06.12.2022.
 - [#3325517](https://www.drupal.org/node/3325517) Зависимость `vm2` обновлена до версии 3.9.12.
 - [#3326874](https://www.drupal.org/node/3326874) Библиотека jQuery обновлена до версии 3.6.2.
+- [#3326896](https://www.drupal.org/node/3326896) Библиотека CKEditor обновлена до версии 35.4.0.
 
 ## JSON:API
 
