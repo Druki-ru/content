@@ -812,3 +812,4 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3266006](https://www.drupal.org/node/3266006) Актуализирован `COPYRIGHT.txt`.
 - [#3325772](https://www.drupal.org/node/3325772) Исправлены некорректные тайпхинты в `SchemaCheckTrait`.
 - [#2828724](https://www.drupal.org/node/2828724) Улучшена логика для одноразовых ссылок входа.
+- [#3327115](https://www.drupal.org/node/3327115) Улучшены правила `.htaccess` связанные с `yarn.lock` и `package.json`.
