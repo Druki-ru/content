@@ -14,13 +14,7 @@ category:
   order: 0
 ---
 
-**Дата релиза**: не позднее декабря 2022
-
-<Aside type="warning">
-
-Данная версия находится в разработке. Список изменений может меняться и дополняться, даты могут смещаться.
-
-</Aside>
+**Дата релиза**: 15 декабря 2022
 
 ## Метод `Connection::lastInsertId()` теперь является частью публичного Database API
 
@@ -813,3 +807,7 @@ function mymodule_requirements_alter(array &$requirements): void {
 - [#3325772](https://www.drupal.org/node/3325772) Исправлены некорректные тайпхинты в `SchemaCheckTrait`.
 - [#2828724](https://www.drupal.org/node/2828724) Улучшена логика для одноразовых ссылок входа.
 - [#3327115](https://www.drupal.org/node/3327115) Улучшены правила `.htaccess` связанные с `yarn.lock` и `package.json`.
+
+## Ссылки
+
+- [Drupal 9.5.0](https://www.drupal.org/project/drupal/releases/9.5.0) (англ.), drupal.org, 15 декабря 2022
